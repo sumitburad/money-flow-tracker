@@ -1,0 +1,32 @@
+assets:
+  - name: S&P 500
+    symbol: ^GSPC
+    class: US Equity
+
+  - name: Nasdaq 100
+    symbol: ^NDX
+    class: US Equity
+
+  - name: Nifty 50
+    symbol: ^NSEI
+    class: India Equity
+
+  - name: Gold
+    symbol: GC=F
+    class: Commodity
+
+  - name: Silver
+    symbol: SI=F
+    class: Commodity
+
+  - name: Bitcoin
+    symbol: BTC-USD
+    class: Crypto
+
+  - name: Ethereum
+    symbol: ETH-USD
+    class: Crypto
+
+  - name: USD/INR
+    symbol: INR=X
+    class: Currency
