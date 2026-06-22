@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-06-22T15:59:07.883674+00:00
+Date: 2026-06-22T16:16:01.083047+00:00
 
 ## 1. Market Regime
 
@@ -14,13 +14,13 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.34 | 0.59 | 0.57 | neutral | 46 | Neutral or mixed signal |
-| Nasdaq 100 | -0.51 | 2.08 | 3.26 | bullish | 66 | Positive flow signal |
+| S&P 500 | -0.33 | 0.59 | 0.57 | neutral | 46 | Neutral or mixed signal |
+| Nasdaq 100 | -0.5 | 2.08 | 3.26 | bullish | 66 | Positive flow signal |
 | Nifty 50 | 0.37 | 1.04 | 1.89 | neutral | 51 | Neutral or mixed signal |
-| Gold | -0.73 | -0.51 | -7.46 | bearish | 33 | Selling pressure |
-| Silver | -1.22 | -3.55 | -13.71 | bearish | 15 | Strong outflow / distribution signal |
-| Bitcoin | 2.39 | 0.51 | -9.21 | neutral | 53 | Neutral or mixed signal |
-| Ethereum | 2.24 | -0.3 | -13.01 | neutral | 53 | Neutral or mixed signal |
+| Gold | -0.68 | -0.47 | -7.41 | bearish | 33 | Selling pressure |
+| Silver | -1.26 | -3.59 | -13.75 | bearish | 15 | Strong outflow / distribution signal |
+| Bitcoin | 2.17 | 0.29 | -9.41 | neutral | 53 | Neutral or mixed signal |
+| Ethereum | 1.95 | -0.57 | -13.25 | neutral | 53 | Neutral or mixed signal |
 | USD/INR | 0.35 | -0.47 | -1.57 | neutral | 50 | Neutral or mixed signal |
 
 
