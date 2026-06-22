@@ -1,0 +1,38 @@
+name: Daily Money Flow Tracker
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 1 * * 1-6"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install packages
+        run: |
+          pip install -r backend/requirements.txt
+
+      - name: Run tracker
+        run: |
+          python backend/run_daily.py
+
+      - name: Commit updated report
+        run: |
+          git config user.name "money-flow-bot"
+          git config user.email "money-flow-bot@example.com"
+          git add data reports frontend
+          git commit -m "Update daily money flow report" || echo "No changes to commit"
+          git push
