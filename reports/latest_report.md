@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-06-29T06:15:25.637254+00:00
+Date: 2026-06-30T05:44:48.983788+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.05 | -1.95 | -2.21 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -1.09 | -4.24 | -2.85 | neutral | 32 | Selling pressure |
-| Nifty 50 | -0.11 | 0.07 | 0.51 | neutral | 46 | Neutral or mixed signal |
-| Gold | -0.15 | -2.61 | -9.48 | bearish | 28 | Selling pressure |
-| Silver | -0.16 | -9.77 | -21.84 | bearish | 23 | Selling pressure |
-| Bitcoin | 0.15 | -4.21 | -5.07 | bearish | 15 | Strong outflow / distribution signal |
-| Ethereum | 0.69 | -4.99 | -6.17 | bearish | 11 | Strong outflow / distribution signal |
-| USD/INR | -0.06 | 0.02 | -1.77 | bearish | 35 | Selling pressure |
+| S&P 500 | 1.18 | -0.43 | -1.63 | neutral | 58 | Neutral or mixed signal |
+| Nasdaq 100 | 2.25 | -1.89 | -1.49 | bullish | 68 | Positive flow signal |
+| Nifty 50 | -0.05 | -0.7 | 1.64 | neutral | 51 | Neutral or mixed signal |
+| Gold | -0.78 | -3.36 | -12.49 | bearish | 28 | Selling pressure |
+| Silver | -0.83 | -6.98 | -23.71 | bearish | 23 | Selling pressure |
+| Bitcoin | -0.14 | -2.53 | -5.77 | bearish | 15 | Strong outflow / distribution signal |
+| Ethereum | 1.04 | -2.05 | -6.12 | bearish | 23 | Selling pressure |
+| USD/INR | 0.2 | -0.16 | -0.48 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Neutral or mixed signal with score 50
-- Nifty 50: Neutral or mixed signal with score 46
-- USD/INR: Selling pressure with score 35
+- Nasdaq 100: Positive flow signal with score 68
+- S&P 500: Neutral or mixed signal with score 58
+- Nifty 50: Neutral or mixed signal with score 51
 
 
 Weakest signals:
-- Ethereum: Strong outflow / distribution signal with score 11
 - Bitcoin: Strong outflow / distribution signal with score 15
 - Silver: Selling pressure with score 23
+- Ethereum: Selling pressure with score 23
 
 
 ## 4. Data Missing or Delayed
