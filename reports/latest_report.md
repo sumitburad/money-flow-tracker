@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-01T06:04:02.312030+00:00
+Date: 2026-07-02T05:31:35.397954+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.79 | 1.82 | -1.06 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | 1.68 | 3.17 | -0.19 | bullish | 83 | Strong inflow / accumulation signal |
-| Nifty 50 | 0.55 | 0.73 | 2.63 | neutral | 51 | Neutral or mixed signal |
-| Gold | -0.87 | -0.07 | -10.89 | bearish | 38 | Selling pressure |
-| Silver | -2.45 | -0.06 | -22.65 | bearish | 30 | Selling pressure |
-| Bitcoin | -1.95 | -1.27 | -4.35 | bearish | 27 | Selling pressure |
-| Ethereum | -1.45 | 1.41 | -3.1 | bearish | 27 | Selling pressure |
-| USD/INR | -0.07 | -0.48 | -0.87 | bearish | 40 | Neutral or mixed signal |
+| S&P 500 | -0.22 | 1.7 | -1.54 | bullish | 65 | Positive flow signal |
+| Nasdaq 100 | -1.54 | 2.02 | -2.31 | bullish | 67 | Positive flow signal |
+| Nifty 50 | 0.44 | 0.37 | 2.67 | neutral | 46 | Neutral or mixed signal |
+| Gold | 0.08 | 1.02 | -9.3 | bearish | 38 | Selling pressure |
+| Silver | 0.42 | 3.41 | -19.88 | bearish | 48 | Neutral or mixed signal |
+| Bitcoin | 3.64 | 1.12 | -1.24 | bearish | 48 | Neutral or mixed signal |
+| Ethereum | 3.84 | 3.38 | 0.6 | bearish | 58 | Neutral or mixed signal |
+| USD/INR | 0.05 | 0.56 | -0.31 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nasdaq 100: Strong inflow / accumulation signal with score 83
+- Nasdaq 100: Positive flow signal with score 67
 - S&P 500: Positive flow signal with score 65
-- Nifty 50: Neutral or mixed signal with score 51
+- Ethereum: Neutral or mixed signal with score 58
 
 
 Weakest signals:
-- Bitcoin: Selling pressure with score 27
-- Ethereum: Selling pressure with score 27
-- Silver: Selling pressure with score 30
+- Gold: Selling pressure with score 38
+- Nifty 50: Neutral or mixed signal with score 46
+- Silver: Neutral or mixed signal with score 48
 
 
 ## 4. Data Missing or Delayed
