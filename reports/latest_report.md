@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-06T05:56:53.621251+00:00
+Date: 2026-07-07T05:38:06.018187+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.0 | 1.71 | -1.66 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | -1.61 | -0.38 | -4.34 | neutral | 42 | Neutral or mixed signal |
-| Nifty 50 | 0.6 | 1.96 | 4.27 | bullish | 61 | Positive flow signal |
-| Gold | 1.25 | 2.1 | -6.14 | bearish | 56 | Neutral or mixed signal |
-| Silver | 2.61 | 5.08 | -15.31 | bearish | 56 | Neutral or mixed signal |
-| Bitcoin | -0.01 | 7.73 | -4.0 | neutral | 60 | Positive flow signal |
-| Ethereum | -0.31 | 12.99 | 2.84 | neutral | 65 | Positive flow signal |
-| USD/INR | -0.12 | 1.12 | -0.39 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 0.72 | 2.49 | -0.22 | bullish | 75 | Positive flow signal |
+| Nasdaq 100 | 1.26 | 1.99 | -2.86 | bullish | 64 | Positive flow signal |
+| Nifty 50 | 0.29 | 2.66 | 4.85 | bullish | 71 | Positive flow signal |
+| Gold | -0.4 | 2.89 | -7.53 | bearish | 48 | Neutral or mixed signal |
+| Silver | -1.3 | 5.05 | -17.16 | bearish | 35 | Selling pressure |
+| Bitcoin | -0.65 | 5.21 | -4.76 | neutral | 60 | Positive flow signal |
+| Ethereum | -0.82 | 9.9 | -1.48 | neutral | 68 | Positive flow signal |
+| USD/INR | 0.1 | 0.55 | 0.38 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 65
-- Ethereum: Positive flow signal with score 65
-- Nifty 50: Positive flow signal with score 61
+- S&P 500: Positive flow signal with score 75
+- Nifty 50: Positive flow signal with score 71
+- Ethereum: Positive flow signal with score 68
 
 
 Weakest signals:
-- Nasdaq 100: Neutral or mixed signal with score 42
+- Silver: Selling pressure with score 35
+- Gold: Neutral or mixed signal with score 48
 - USD/INR: Neutral or mixed signal with score 55
-- Gold: Neutral or mixed signal with score 56
 
 
 ## 4. Data Missing or Delayed
