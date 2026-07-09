@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-08T04:45:47.015411+00:00
+Date: 2026-07-09T05:39:12.284039+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.45 | 0.85 | -1.06 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | -1.77 | -2.02 | -4.06 | neutral | 32 | Selling pressure |
-| Nifty 50 | -0.68 | 0.95 | 4.8 | bullish | 56 | Neutral or mixed signal |
-| Gold | -0.18 | 2.86 | -4.6 | bearish | 58 | Neutral or mixed signal |
-| Silver | -0.19 | 2.25 | -11.79 | bearish | 43 | Neutral or mixed signal |
-| Bitcoin | -2.08 | 1.92 | -4.47 | neutral | 42 | Neutral or mixed signal |
-| Ethereum | -2.51 | 3.2 | -2.12 | neutral | 57 | Neutral or mixed signal |
-| USD/INR | -0.61 | 0.11 | -0.7 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -0.28 | -0.22 | 1.34 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | 0.27 | -3.38 | 1.02 | neutral | 40 | Neutral or mixed signal |
+| Nifty 50 | 0.53 | -0.69 | 3.3 | bullish | 56 | Neutral or mixed signal |
+| Gold | 0.23 | 0.29 | -5.89 | bearish | 33 | Selling pressure |
+| Silver | 0.56 | -2.65 | -14.52 | bearish | 23 | Selling pressure |
+| Bitcoin | -1.56 | -0.37 | -3.27 | neutral | 47 | Neutral or mixed signal |
+| Ethereum | -1.61 | -0.94 | -0.45 | neutral | 47 | Neutral or mixed signal |
+| USD/INR | -0.16 | 0.02 | 0.08 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
 - S&P 500: Positive flow signal with score 60
-- Gold: Neutral or mixed signal with score 58
-- Ethereum: Neutral or mixed signal with score 57
+- Nifty 50: Neutral or mixed signal with score 56
+- USD/INR: Neutral or mixed signal with score 55
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 32
-- Bitcoin: Neutral or mixed signal with score 42
-- Silver: Neutral or mixed signal with score 43
+- Silver: Selling pressure with score 23
+- Gold: Selling pressure with score 33
+- Nasdaq 100: Neutral or mixed signal with score 40
 
 
 ## 4. Data Missing or Delayed
