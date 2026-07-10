@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-09T05:39:12.284039+00:00
+Date: 2026-07-10T05:35:08.927009+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.28 | -0.22 | 1.34 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | 0.27 | -3.38 | 1.02 | neutral | 40 | Neutral or mixed signal |
-| Nifty 50 | 0.53 | -0.69 | 3.3 | bullish | 56 | Neutral or mixed signal |
-| Gold | 0.23 | 0.29 | -5.89 | bearish | 33 | Selling pressure |
-| Silver | 0.56 | -2.65 | -14.52 | bearish | 23 | Selling pressure |
-| Bitcoin | -1.56 | -0.37 | -3.27 | neutral | 47 | Neutral or mixed signal |
-| Ethereum | -1.61 | -0.94 | -0.45 | neutral | 47 | Neutral or mixed signal |
-| USD/INR | -0.16 | 0.02 | 0.08 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 0.81 | 0.81 | 1.86 | bullish | 65 | Positive flow signal |
+| Nasdaq 100 | 1.62 | -0.28 | 1.06 | bullish | 64 | Positive flow signal |
+| Nifty 50 | 0.98 | -0.3 | 4.23 | bullish | 56 | Neutral or mixed signal |
+| Gold | -0.18 | 0.26 | -3.21 | bearish | 48 | Neutral or mixed signal |
+| Silver | 0.43 | -0.0 | -6.84 | bearish | 38 | Selling pressure |
+| Bitcoin | 2.88 | 1.52 | 1.83 | neutral | 63 | Positive flow signal |
+| Ethereum | 1.95 | -0.14 | 3.92 | neutral | 53 | Neutral or mixed signal |
+| USD/INR | -0.57 | -0.22 | -0.34 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 60
-- Nifty 50: Neutral or mixed signal with score 56
-- USD/INR: Neutral or mixed signal with score 55
+- S&P 500: Positive flow signal with score 65
+- Nasdaq 100: Positive flow signal with score 64
+- Bitcoin: Positive flow signal with score 63
 
 
 Weakest signals:
-- Silver: Selling pressure with score 23
-- Gold: Selling pressure with score 33
-- Nasdaq 100: Neutral or mixed signal with score 40
+- Silver: Selling pressure with score 38
+- Gold: Neutral or mixed signal with score 48
+- Ethereum: Neutral or mixed signal with score 53
 
 
 ## 4. Data Missing or Delayed
