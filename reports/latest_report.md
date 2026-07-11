@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-10T05:35:08.927009+00:00
+Date: 2026-07-11T04:41:15.325775+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.81 | 0.81 | 1.86 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | 1.62 | -0.28 | 1.06 | bullish | 64 | Positive flow signal |
-| Nifty 50 | 0.98 | -0.3 | 4.23 | bullish | 56 | Neutral or mixed signal |
-| Gold | -0.18 | 0.26 | -3.21 | bearish | 48 | Neutral or mixed signal |
-| Silver | 0.43 | -0.0 | -6.84 | bearish | 38 | Selling pressure |
-| Bitcoin | 2.88 | 1.52 | 1.83 | neutral | 63 | Positive flow signal |
-| Ethereum | 1.95 | -0.14 | 3.92 | neutral | 53 | Neutral or mixed signal |
-| USD/INR | -0.57 | -0.22 | -0.34 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 0.42 | 1.23 | 2.56 | bullish | 61 | Positive flow signal |
+| Nasdaq 100 | 0.33 | 1.69 | 2.55 | bullish | 56 | Neutral or mixed signal |
+| Nifty 50 | 1.02 | -0.26 | 4.27 | bullish | 68 | Positive flow signal |
+| Gold | -0.64 | -0.21 | -3.66 | bearish | 36 | Selling pressure |
+| Silver | -0.94 | -1.38 | -8.12 | bearish | 21 | Selling pressure |
+| Bitcoin | 1.5 | 0.94 | 0.95 | neutral | 63 | Positive flow signal |
+| Ethereum | 3.02 | 0.79 | 5.04 | neutral | 63 | Positive flow signal |
+| USD/INR | -0.51 | -0.16 | -0.29 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 65
-- Nasdaq 100: Positive flow signal with score 64
+- Nifty 50: Positive flow signal with score 68
 - Bitcoin: Positive flow signal with score 63
+- Ethereum: Positive flow signal with score 63
 
 
 Weakest signals:
-- Silver: Selling pressure with score 38
-- Gold: Neutral or mixed signal with score 48
-- Ethereum: Neutral or mixed signal with score 53
+- Silver: Selling pressure with score 21
+- Gold: Selling pressure with score 36
+- USD/INR: Neutral or mixed signal with score 55
 
 
 ## 4. Data Missing or Delayed
