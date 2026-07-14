@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-13T04:59:34.577938+00:00
+Date: 2026-07-14T04:26:53.234618+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.42 | 1.23 | 2.56 | bullish | 61 | Positive flow signal |
-| Nasdaq 100 | 0.33 | 1.69 | 2.55 | bullish | 56 | Neutral or mixed signal |
-| Nifty 50 | -0.22 | -1.13 | 4.28 | bullish | 56 | Neutral or mixed signal |
-| Gold | -1.06 | -2.27 | -1.16 | bearish | 30 | Selling pressure |
-| Silver | -2.13 | -5.47 | -9.39 | bearish | 15 | Strong outflow / distribution signal |
-| Bitcoin | -1.78 | -1.0 | -0.91 | neutral | 47 | Neutral or mixed signal |
-| Ethereum | -0.56 | 0.54 | 4.31 | neutral | 50 | Neutral or mixed signal |
-| USD/INR | 0.39 | 0.57 | -0.0 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | -0.79 | -0.29 | 3.42 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | -1.88 | -1.46 | 2.65 | neutral | 38 | Selling pressure |
+| Nifty 50 | -0.57 | -1.34 | 1.91 | neutral | 51 | Neutral or mixed signal |
+| Gold | 0.63 | -2.97 | -1.66 | bearish | 38 | Selling pressure |
+| Silver | 0.39 | -5.04 | -9.43 | bearish | 28 | Selling pressure |
+| Bitcoin | -1.86 | 0.51 | -2.15 | neutral | 47 | Neutral or mixed signal |
+| Ethereum | -1.12 | 2.46 | 3.42 | neutral | 52 | Neutral or mixed signal |
+| USD/INR | 0.84 | 0.54 | 1.06 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 61
-- Nasdaq 100: Neutral or mixed signal with score 56
-- Nifty 50: Neutral or mixed signal with score 56
+- S&P 500: Positive flow signal with score 60
+- USD/INR: Neutral or mixed signal with score 55
+- Ethereum: Neutral or mixed signal with score 52
 
 
 Weakest signals:
-- Silver: Strong outflow / distribution signal with score 15
-- Gold: Selling pressure with score 30
-- Bitcoin: Neutral or mixed signal with score 47
+- Silver: Selling pressure with score 28
+- Nasdaq 100: Selling pressure with score 38
+- Gold: Selling pressure with score 38
 
 
 ## 4. Data Missing or Delayed
