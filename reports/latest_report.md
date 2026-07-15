@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-14T04:26:53.234618+00:00
+Date: 2026-07-15T04:26:51.587688+00:00
 
 ## 1. Market Regime
 
@@ -16,26 +16,26 @@ Reason:
 |---|---:|---:|---:|---|---:|---|
 | S&P 500 | -0.79 | -0.29 | 3.42 | bullish | 60 | Positive flow signal |
 | Nasdaq 100 | -1.88 | -1.46 | 2.65 | neutral | 38 | Selling pressure |
-| Nifty 50 | -0.57 | -1.34 | 1.91 | neutral | 51 | Neutral or mixed signal |
-| Gold | 0.63 | -2.97 | -1.66 | bearish | 38 | Selling pressure |
-| Silver | 0.39 | -5.04 | -9.43 | bearish | 28 | Selling pressure |
-| Bitcoin | -1.86 | 0.51 | -2.15 | neutral | 47 | Neutral or mixed signal |
-| Ethereum | -1.12 | 2.46 | 3.42 | neutral | 52 | Neutral or mixed signal |
-| USD/INR | 0.84 | 0.54 | 1.06 | neutral | 55 | Neutral or mixed signal |
+| Nifty 50 | -0.06 | -0.83 | 2.43 | bullish | 61 | Positive flow signal |
+| Gold | -0.56 | -0.8 | -4.19 | bearish | 48 | Neutral or mixed signal |
+| Silver | -0.05 | 1.0 | -13.43 | bearish | 38 | Selling pressure |
+| Bitcoin | 4.04 | 2.47 | 3.33 | neutral | 68 | Positive flow signal |
+| Ethereum | 5.79 | 7.55 | 12.65 | neutral | 73 | Positive flow signal |
+| USD/INR | -0.18 | 0.56 | 1.46 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 60
-- USD/INR: Neutral or mixed signal with score 55
-- Ethereum: Neutral or mixed signal with score 52
+- Ethereum: Positive flow signal with score 73
+- Bitcoin: Positive flow signal with score 68
+- Nifty 50: Positive flow signal with score 61
 
 
 Weakest signals:
-- Silver: Selling pressure with score 28
 - Nasdaq 100: Selling pressure with score 38
-- Gold: Selling pressure with score 38
+- Silver: Selling pressure with score 38
+- Gold: Neutral or mixed signal with score 48
 
 
 ## 4. Data Missing or Delayed
