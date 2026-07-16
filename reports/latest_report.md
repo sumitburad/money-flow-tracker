@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-15T04:26:51.587688+00:00
+Date: 2026-07-16T04:38:07.471526+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.79 | -0.29 | 3.42 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | -1.88 | -1.46 | 2.65 | neutral | 38 | Selling pressure |
-| Nifty 50 | -0.06 | -0.83 | 2.43 | bullish | 61 | Positive flow signal |
-| Gold | -0.56 | -0.8 | -4.19 | bearish | 48 | Neutral or mixed signal |
-| Silver | -0.05 | 1.0 | -13.43 | bearish | 38 | Selling pressure |
-| Bitcoin | 4.04 | 2.47 | 3.33 | neutral | 68 | Positive flow signal |
-| Ethereum | 5.79 | 7.55 | 12.65 | neutral | 73 | Positive flow signal |
-| USD/INR | -0.18 | 0.56 | 1.46 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | 0.38 | 1.2 | 1.9 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | -0.28 | 0.85 | -0.45 | neutral | 50 | Neutral or mixed signal |
+| Nifty 50 | 0.18 | 0.67 | 0.56 | bullish | 56 | Neutral or mixed signal |
+| Gold | -0.15 | -2.24 | -6.7 | bearish | 28 | Selling pressure |
+| Silver | 0.54 | -4.9 | -18.05 | bearish | 28 | Selling pressure |
+| Bitcoin | -0.61 | 0.67 | 5.84 | neutral | 65 | Positive flow signal |
+| Ethereum | 1.46 | 6.76 | 18.34 | neutral | 73 | Positive flow signal |
+| USD/INR | -0.1 | 0.49 | 1.52 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
 - Ethereum: Positive flow signal with score 73
-- Bitcoin: Positive flow signal with score 68
-- Nifty 50: Positive flow signal with score 61
+- Bitcoin: Positive flow signal with score 65
+- S&P 500: Positive flow signal with score 60
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 38
-- Silver: Selling pressure with score 38
-- Gold: Neutral or mixed signal with score 48
+- Gold: Selling pressure with score 28
+- Silver: Selling pressure with score 28
+- Nasdaq 100: Neutral or mixed signal with score 50
 
 
 ## 4. Data Missing or Delayed
