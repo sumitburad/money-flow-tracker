@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-20T05:05:30.485665+00:00
+Date: 2026-07-21T04:46:34.280035+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -1.01 | -1.55 | -0.71 | neutral | 47 | Neutral or mixed signal |
-| Nasdaq 100 | -1.49 | -4.13 | -4.59 | bearish | 22 | Selling pressure |
-| Nifty 50 | -0.48 | 0.03 | 0.21 | bullish | 61 | Positive flow signal |
-| Gold | 0.32 | 0.72 | -7.64 | bearish | 38 | Selling pressure |
-| Silver | 2.1 | -0.73 | -19.07 | bearish | 46 | Neutral or mixed signal |
-| Bitcoin | -0.65 | -0.9 | 8.13 | neutral | 56 | Neutral or mixed signal |
-| Ethereum | 0.15 | -1.34 | 18.71 | bullish | 75 | Positive flow signal |
-| USD/INR | -0.21 | 1.17 | 2.23 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -0.19 | -0.96 | 0.31 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | 0.04 | -2.25 | -3.6 | bearish | 30 | Selling pressure |
+| Nifty 50 | -0.12 | 0.66 | 0.82 | bullish | 61 | Positive flow signal |
+| Gold | 1.0 | -0.26 | -4.11 | bearish | 48 | Neutral or mixed signal |
+| Silver | 2.17 | -1.25 | -12.41 | bearish | 46 | Neutral or mixed signal |
+| Bitcoin | 1.24 | 1.2 | 8.9 | bullish | 83 | Strong inflow / accumulation signal |
+| Ethereum | 2.79 | 0.35 | 19.47 | bullish | 83 | Strong inflow / accumulation signal |
+| USD/INR | 0.05 | 0.04 | 2.13 | bullish | 65 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Positive flow signal with score 75
-- Nifty 50: Positive flow signal with score 61
-- Bitcoin: Neutral or mixed signal with score 56
+- Bitcoin: Strong inflow / accumulation signal with score 83
+- Ethereum: Strong inflow / accumulation signal with score 83
+- USD/INR: Positive flow signal with score 65
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 22
-- Gold: Selling pressure with score 38
+- Nasdaq 100: Selling pressure with score 30
 - Silver: Neutral or mixed signal with score 46
+- Gold: Neutral or mixed signal with score 48
 
 
 ## 4. Data Missing or Delayed
