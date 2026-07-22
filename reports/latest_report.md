@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-21T04:46:34.280035+00:00
+Date: 2026-07-22T04:46:15.098986+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.19 | -0.96 | 0.31 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | 0.04 | -2.25 | -3.6 | bearish | 30 | Selling pressure |
-| Nifty 50 | -0.12 | 0.66 | 0.82 | bullish | 61 | Positive flow signal |
-| Gold | 1.0 | -0.26 | -4.11 | bearish | 48 | Neutral or mixed signal |
-| Silver | 2.17 | -1.25 | -12.41 | bearish | 46 | Neutral or mixed signal |
-| Bitcoin | 1.24 | 1.2 | 8.9 | bullish | 83 | Strong inflow / accumulation signal |
-| Ethereum | 2.79 | 0.35 | 19.47 | bullish | 83 | Strong inflow / accumulation signal |
-| USD/INR | 0.05 | 0.04 | 2.13 | bullish | 65 | Positive flow signal |
+| S&P 500 | 0.89 | -0.46 | 0.11 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | 1.93 | -1.46 | -4.11 | bearish | 48 | Neutral or mixed signal |
+| Nifty 50 | -0.65 | -0.2 | -0.31 | neutral | 46 | Neutral or mixed signal |
+| Gold | 1.47 | 2.15 | -1.22 | neutral | 76 | Positive flow signal |
+| Silver | 1.83 | 4.9 | -8.57 | neutral | 66 | Positive flow signal |
+| Bitcoin | 1.71 | 4.01 | 13.3 | bullish | 93 | Strong inflow / accumulation signal |
+| Ethereum | 1.74 | 3.96 | 23.41 | bullish | 93 | Strong inflow / accumulation signal |
+| USD/INR | -0.11 | -0.04 | 1.78 | bullish | 65 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Bitcoin: Strong inflow / accumulation signal with score 83
-- Ethereum: Strong inflow / accumulation signal with score 83
-- USD/INR: Positive flow signal with score 65
+- Bitcoin: Strong inflow / accumulation signal with score 93
+- Ethereum: Strong inflow / accumulation signal with score 93
+- Gold: Positive flow signal with score 76
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 30
-- Silver: Neutral or mixed signal with score 46
-- Gold: Neutral or mixed signal with score 48
+- Nifty 50: Neutral or mixed signal with score 46
+- Nasdaq 100: Neutral or mixed signal with score 48
+- S&P 500: Positive flow signal with score 60
 
 
 ## 4. Data Missing or Delayed
