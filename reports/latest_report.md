@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-22T04:46:15.098986+00:00
+Date: 2026-07-23T04:50:56.814403+00:00
 
 ## 1. Market Regime
 
@@ -14,27 +14,27 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.89 | -0.46 | 0.11 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | 1.93 | -1.46 | -4.11 | bearish | 48 | Neutral or mixed signal |
-| Nifty 50 | -0.65 | -0.2 | -0.31 | neutral | 46 | Neutral or mixed signal |
-| Gold | 1.47 | 2.15 | -1.22 | neutral | 76 | Positive flow signal |
-| Silver | 1.83 | 4.9 | -8.57 | neutral | 66 | Positive flow signal |
-| Bitcoin | 1.71 | 4.01 | 13.3 | bullish | 93 | Strong inflow / accumulation signal |
-| Ethereum | 1.74 | 3.96 | 23.41 | bullish | 93 | Strong inflow / accumulation signal |
-| USD/INR | -0.11 | -0.04 | 1.78 | bullish | 65 | Positive flow signal |
+| S&P 500 | -0.14 | -0.97 | 0.35 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | -0.54 | -1.71 | -4.45 | bearish | 40 | Neutral or mixed signal |
+| Nifty 50 | -0.17 | -0.48 | 0.56 | neutral | 46 | Neutral or mixed signal |
+| Gold | -0.46 | 3.57 | -0.05 | neutral | 68 | Positive flow signal |
+| Silver | 0.04 | 7.42 | -3.18 | neutral | 68 | Positive flow signal |
+| Bitcoin | -1.39 | 2.63 | 9.29 | bullish | 77 | Positive flow signal |
+| Ethereum | -0.42 | 4.31 | 19.35 | bullish | 80 | Strong inflow / accumulation signal |
+| USD/INR | 0.19 | 0.02 | 1.4 | bullish | 65 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Bitcoin: Strong inflow / accumulation signal with score 93
-- Ethereum: Strong inflow / accumulation signal with score 93
-- Gold: Positive flow signal with score 76
+- Ethereum: Strong inflow / accumulation signal with score 80
+- Bitcoin: Positive flow signal with score 77
+- Gold: Positive flow signal with score 68
 
 
 Weakest signals:
+- Nasdaq 100: Neutral or mixed signal with score 40
 - Nifty 50: Neutral or mixed signal with score 46
-- Nasdaq 100: Neutral or mixed signal with score 48
 - S&P 500: Positive flow signal with score 60
 
 
