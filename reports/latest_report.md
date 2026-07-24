@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-23T04:50:56.814403+00:00
+Date: 2026-07-24T04:47:18.937195+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.14 | -0.97 | 0.35 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | -0.54 | -1.71 | -4.45 | bearish | 40 | Neutral or mixed signal |
-| Nifty 50 | -0.17 | -0.48 | 0.56 | neutral | 46 | Neutral or mixed signal |
-| Gold | -0.46 | 3.57 | -0.05 | neutral | 68 | Positive flow signal |
-| Silver | 0.04 | 7.42 | -3.18 | neutral | 68 | Positive flow signal |
-| Bitcoin | -1.39 | 2.63 | 9.29 | bullish | 77 | Positive flow signal |
-| Ethereum | -0.42 | 4.31 | 19.35 | bullish | 80 | Strong inflow / accumulation signal |
-| USD/INR | 0.19 | 0.02 | 1.4 | bullish | 65 | Positive flow signal |
+| S&P 500 | -1.21 | -1.67 | 0.58 | neutral | 42 | Neutral or mixed signal |
+| Nasdaq 100 | -1.87 | -1.97 | -3.04 | bearish | 32 | Selling pressure |
+| Nifty 50 | -1.03 | -2.92 | -1.65 | neutral | 23 | Selling pressure |
+| Gold | -0.42 | 0.42 | 0.98 | bearish | 48 | Neutral or mixed signal |
+| Silver | -0.29 | 2.84 | -0.73 | bearish | 58 | Neutral or mixed signal |
+| Bitcoin | -1.21 | 0.78 | 6.2 | bullish | 67 | Positive flow signal |
+| Ethereum | -3.02 | 0.74 | 10.42 | bullish | 67 | Positive flow signal |
+| USD/INR | -0.04 | -0.13 | 2.2 | bullish | 65 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Strong inflow / accumulation signal with score 80
-- Bitcoin: Positive flow signal with score 77
-- Gold: Positive flow signal with score 68
+- Bitcoin: Positive flow signal with score 67
+- Ethereum: Positive flow signal with score 67
+- USD/INR: Positive flow signal with score 65
 
 
 Weakest signals:
-- Nasdaq 100: Neutral or mixed signal with score 40
-- Nifty 50: Neutral or mixed signal with score 46
-- S&P 500: Positive flow signal with score 60
+- Nifty 50: Selling pressure with score 23
+- Nasdaq 100: Selling pressure with score 32
+- S&P 500: Neutral or mixed signal with score 42
 
 
 ## 4. Data Missing or Delayed
