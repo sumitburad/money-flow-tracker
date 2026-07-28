@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-27T05:10:59.553055+00:00
+Date: 2026-07-28T04:41:58.283542+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.05 | -0.61 | 0.73 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -1.15 | -1.62 | -3.74 | bearish | 27 | Selling pressure |
-| Nifty 50 | 0.58 | -1.38 | -0.63 | neutral | 46 | Neutral or mixed signal |
-| Gold | 0.57 | 2.0 | 1.49 | neutral | 58 | Neutral or mixed signal |
-| Silver | 1.55 | 4.86 | 2.09 | neutral | 76 | Positive flow signal |
-| Bitcoin | 1.54 | -1.81 | 2.76 | bullish | 69 | Positive flow signal |
-| Ethereum | 4.38 | 1.4 | 9.66 | bullish | 83 | Strong inflow / accumulation signal |
-| USD/INR | -0.67 | -0.06 | 1.93 | bullish | 65 | Positive flow signal |
+| S&P 500 | 0.02 | -0.4 | 0.76 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -0.32 | -1.98 | -4.76 | bearish | 40 | Neutral or mixed signal |
+| Nifty 50 | -0.12 | -0.91 | 0.09 | neutral | 46 | Neutral or mixed signal |
+| Gold | -0.72 | -0.64 | -0.83 | bearish | 48 | Neutral or mixed signal |
+| Silver | -1.75 | -2.35 | -2.98 | bearish | 30 | Selling pressure |
+| Bitcoin | -3.31 | -4.43 | -1.28 | neutral | 32 | Selling pressure |
+| Ethereum | -3.99 | -3.0 | 4.34 | bullish | 47 | Neutral or mixed signal |
+| USD/INR | -0.91 | -0.83 | 1.41 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Strong inflow / accumulation signal with score 83
-- Silver: Positive flow signal with score 76
-- Bitcoin: Positive flow signal with score 69
+- S&P 500: Neutral or mixed signal with score 50
+- USD/INR: Neutral or mixed signal with score 50
+- Gold: Neutral or mixed signal with score 48
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 27
-- Nifty 50: Neutral or mixed signal with score 46
-- S&P 500: Neutral or mixed signal with score 50
+- Silver: Selling pressure with score 30
+- Bitcoin: Selling pressure with score 32
+- Nasdaq 100: Neutral or mixed signal with score 40
 
 
 ## 4. Data Missing or Delayed
