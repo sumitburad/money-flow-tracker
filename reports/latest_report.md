@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-28T04:41:58.283542+00:00
+Date: 2026-07-29T04:46:19.173743+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.02 | -0.4 | 0.76 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -0.32 | -1.98 | -4.76 | bearish | 40 | Neutral or mixed signal |
-| Nifty 50 | -0.12 | -0.91 | 0.09 | neutral | 46 | Neutral or mixed signal |
-| Gold | -0.72 | -0.64 | -0.83 | bearish | 48 | Neutral or mixed signal |
-| Silver | -1.75 | -2.35 | -2.98 | bearish | 30 | Selling pressure |
-| Bitcoin | -3.31 | -4.43 | -1.28 | neutral | 32 | Selling pressure |
-| Ethereum | -3.99 | -3.0 | 4.34 | bullish | 47 | Neutral or mixed signal |
-| USD/INR | -0.91 | -0.83 | 1.41 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | 0.21 | -1.07 | 1.02 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -0.98 | -4.77 | -4.65 | bearish | 25 | Selling pressure |
+| Nifty 50 | 0.99 | 0.94 | 1.49 | bullish | 61 | Positive flow signal |
+| Gold | -0.3 | -2.96 | 0.05 | bearish | 38 | Selling pressure |
+| Silver | 0.64 | -3.92 | -0.88 | bearish | 38 | Selling pressure |
+| Bitcoin | 0.07 | -1.96 | 0.75 | neutral | 50 | Neutral or mixed signal |
+| Ethereum | 0.4 | 1.12 | 7.33 | bullish | 70 | Positive flow signal |
+| USD/INR | -0.04 | -0.63 | 0.99 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
+- Ethereum: Positive flow signal with score 70
+- Nifty 50: Positive flow signal with score 61
 - S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 50
-- Gold: Neutral or mixed signal with score 48
 
 
 Weakest signals:
-- Silver: Selling pressure with score 30
-- Bitcoin: Selling pressure with score 32
-- Nasdaq 100: Neutral or mixed signal with score 40
+- Nasdaq 100: Selling pressure with score 25
+- Gold: Selling pressure with score 38
+- Silver: Selling pressure with score 38
 
 
 ## 4. Data Missing or Delayed
