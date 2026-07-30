@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-29T04:46:19.173743+00:00
+Date: 2026-07-30T04:33:52.720735+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.21 | -1.07 | 1.02 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -0.98 | -4.77 | -4.65 | bearish | 25 | Selling pressure |
-| Nifty 50 | 0.99 | 0.94 | 1.49 | bullish | 61 | Positive flow signal |
-| Gold | -0.3 | -2.96 | 0.05 | bearish | 38 | Selling pressure |
-| Silver | 0.64 | -3.92 | -0.88 | bearish | 38 | Selling pressure |
-| Bitcoin | 0.07 | -1.96 | 0.75 | neutral | 50 | Neutral or mixed signal |
-| Ethereum | 0.4 | 1.12 | 7.33 | bullish | 70 | Positive flow signal |
-| USD/INR | -0.04 | -0.63 | 0.99 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -1.52 | -2.44 | -1.67 | neutral | 27 | Selling pressure |
+| Nasdaq 100 | -2.06 | -6.23 | -8.67 | bearish | 7 | Strong outflow / distribution signal |
+| Nifty 50 | 0.09 | 1.69 | 1.11 | bullish | 56 | Neutral or mixed signal |
+| Gold | 1.83 | 1.53 | 2.13 | neutral | 66 | Positive flow signal |
+| Silver | -0.47 | -0.36 | -3.17 | bearish | 48 | Neutral or mixed signal |
+| Bitcoin | 0.31 | -0.04 | 2.91 | neutral | 50 | Neutral or mixed signal |
+| Ethereum | -0.76 | 2.43 | 9.34 | bullish | 80 | Strong inflow / accumulation signal |
+| USD/INR | -0.01 | -1.0 | 0.71 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Positive flow signal with score 70
-- Nifty 50: Positive flow signal with score 61
-- S&P 500: Neutral or mixed signal with score 50
+- Ethereum: Strong inflow / accumulation signal with score 80
+- Gold: Positive flow signal with score 66
+- Nifty 50: Neutral or mixed signal with score 56
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 25
-- Gold: Selling pressure with score 38
-- Silver: Selling pressure with score 38
+- Nasdaq 100: Strong outflow / distribution signal with score 7
+- S&P 500: Selling pressure with score 27
+- Silver: Neutral or mixed signal with score 48
 
 
 ## 4. Data Missing or Delayed
