@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-07-31T04:59:20.760997+00:00
+Date: 2026-08-01T04:51:13.584522+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 1.66 | 0.4 | -0.82 | neutral | 58 | Neutral or mixed signal |
-| Nasdaq 100 | 3.36 | -1.22 | -7.17 | bearish | 33 | Selling pressure |
-| Nifty 50 | 0.15 | 2.47 | 0.74 | bullish | 66 | Positive flow signal |
-| Gold | 0.84 | 1.65 | 1.63 | neutral | 63 | Positive flow signal |
-| Silver | 0.0 | 0.27 | -2.11 | neutral | 58 | Neutral or mixed signal |
-| Bitcoin | 0.53 | -0.1 | 1.66 | neutral | 50 | Neutral or mixed signal |
-| Ethereum | -0.24 | 1.64 | 9.14 | bullish | 75 | Positive flow signal |
-| USD/INR | -0.37 | -1.56 | -0.05 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | 0.7 | 1.05 | 0.09 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | 0.6 | 0.52 | -5.15 | bearish | 30 | Selling pressure |
+| Nifty 50 | 0.27 | 2.59 | 0.86 | bullish | 75 | Positive flow signal |
+| Gold | -1.24 | -0.45 | -0.47 | bearish | 40 | Neutral or mixed signal |
+| Silver | -2.08 | -1.82 | -4.15 | bearish | 28 | Selling pressure |
+| Bitcoin | -2.63 | -3.54 | -1.72 | neutral | 32 | Selling pressure |
+| Ethereum | -2.56 | -4.35 | 4.05 | neutral | 32 | Selling pressure |
+| USD/INR | -0.31 | -1.22 | -0.14 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Positive flow signal with score 75
-- Nifty 50: Positive flow signal with score 66
-- Gold: Positive flow signal with score 63
+- Nifty 50: Positive flow signal with score 75
+- S&P 500: Positive flow signal with score 60
+- USD/INR: Neutral or mixed signal with score 50
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 33
-- Bitcoin: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 50
+- Silver: Selling pressure with score 28
+- Nasdaq 100: Selling pressure with score 30
+- Bitcoin: Selling pressure with score 32
 
 
 ## 4. Data Missing or Delayed
