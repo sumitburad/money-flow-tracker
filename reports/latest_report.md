@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-05T04:42:23.337499+00:00
+Date: 2026-08-06T04:42:51.186179+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 1.79 | 4.14 | 2.64 | bullish | 83 | Strong inflow / accumulation signal |
-| Nasdaq 100 | 3.32 | 7.1 | 0.12 | neutral | 68 | Positive flow signal |
-| Nifty 50 | -0.0 | 1.5 | 0.88 | bullish | 61 | Positive flow signal |
-| Gold | 4.0 | 3.93 | 0.96 | neutral | 81 | Strong inflow / accumulation signal |
-| Silver | 5.94 | 6.62 | -1.34 | neutral | 81 | Strong inflow / accumulation signal |
-| Bitcoin | 1.05 | -0.92 | -1.27 | neutral | 58 | Neutral or mixed signal |
-| Ethereum | 0.44 | -2.66 | -1.22 | neutral | 40 | Neutral or mixed signal |
-| USD/INR | -0.34 | -0.62 | -0.62 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | 2.19 | 2.54 | 2.15 | bullish | 78 | Positive flow signal |
+| Nasdaq 100 | -0.83 | 8.44 | 1.08 | neutral | 60 | Positive flow signal |
+| Nifty 50 | 0.03 | 1.29 | 3.14 | bullish | 61 | Positive flow signal |
+| Gold | 1.69 | 5.3 | 6.06 | neutral | 86 | Strong inflow / accumulation signal |
+| Silver | 0.37 | 5.98 | 7.16 | neutral | 83 | Strong inflow / accumulation signal |
+| Bitcoin | 0.86 | 2.86 | -0.16 | bullish | 70 | Positive flow signal |
+| Ethereum | 2.45 | -0.71 | 0.76 | bullish | 68 | Positive flow signal |
+| USD/INR | 0.05 | -0.61 | -0.47 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Strong inflow / accumulation signal with score 83
-- Gold: Strong inflow / accumulation signal with score 81
-- Silver: Strong inflow / accumulation signal with score 81
+- Gold: Strong inflow / accumulation signal with score 86
+- Silver: Strong inflow / accumulation signal with score 83
+- S&P 500: Positive flow signal with score 78
 
 
 Weakest signals:
-- Ethereum: Neutral or mixed signal with score 40
 - USD/INR: Neutral or mixed signal with score 45
-- Bitcoin: Neutral or mixed signal with score 58
+- Nasdaq 100: Positive flow signal with score 60
+- Nifty 50: Positive flow signal with score 61
 
 
 ## 4. Data Missing or Delayed
