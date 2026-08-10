@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-08T03:08:59.653672+00:00
+Date: 2026-08-10T03:26:23.912454+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.62 | 3.58 | 2.84 | bullish | 71 | Positive flow signal |
-| Nasdaq 100 | 1.19 | 5.12 | -0.02 | neutral | 69 | Positive flow signal |
+| S&P 500 | 0.62 | 3.58 | 2.84 | bullish | 75 | Positive flow signal |
+| Nasdaq 100 | 1.19 | 5.12 | -0.02 | neutral | 73 | Positive flow signal |
 | Nifty 50 | -0.27 | 0.77 | 2.54 | bullish | 65 | Positive flow signal |
-| Gold | 3.76 | 8.7 | 6.55 | neutral | 86 | Strong inflow / accumulation signal |
-| Silver | 3.84 | 10.78 | 5.67 | neutral | 91 | Strong inflow / accumulation signal |
-| Bitcoin | 0.99 | 2.23 | 1.56 | bullish | 70 | Positive flow signal |
-| Ethereum | 0.61 | 1.65 | 3.95 | bullish | 65 | Positive flow signal |
-| USD/INR | 0.13 | -0.51 | -0.69 | neutral | 45 | Neutral or mixed signal |
+| Gold | 0.92 | 8.6 | 6.74 | neutral | 78 | Positive flow signal |
+| Silver | 0.34 | 10.2 | 6.25 | neutral | 83 | Strong inflow / accumulation signal |
+| Bitcoin | 0.31 | 1.64 | 0.64 | bullish | 56 | Neutral or mixed signal |
+| Ethereum | 0.37 | 2.91 | 2.74 | bullish | 66 | Positive flow signal |
+| USD/INR | -0.12 | -0.21 | -0.2 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 91
-- Gold: Strong inflow / accumulation signal with score 86
-- S&P 500: Positive flow signal with score 71
+- Silver: Strong inflow / accumulation signal with score 83
+- Gold: Positive flow signal with score 78
+- S&P 500: Positive flow signal with score 75
 
 
 Weakest signals:
 - USD/INR: Neutral or mixed signal with score 45
+- Bitcoin: Neutral or mixed signal with score 56
 - Nifty 50: Positive flow signal with score 65
-- Ethereum: Positive flow signal with score 65
 
 
 ## 4. Data Missing or Delayed
