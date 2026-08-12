@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-11T03:19:15.717205+00:00
+Date: 2026-08-12T03:37:35.225653+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.06 | 2.01 | 2.35 | bullish | 71 | Positive flow signal |
-| Nasdaq 100 | -0.34 | 2.94 | -0.68 | neutral | 56 | Neutral or mixed signal |
-| Nifty 50 | 0.05 | -0.77 | 1.56 | bullish | 65 | Positive flow signal |
-| Gold | 3.07 | 10.92 | 9.02 | neutral | 86 | Strong inflow / accumulation signal |
-| Silver | 4.2 | 14.43 | 10.33 | neutral | 91 | Strong inflow / accumulation signal |
-| Bitcoin | -1.17 | -0.79 | -1.75 | neutral | 42 | Neutral or mixed signal |
-| Ethereum | -1.54 | -1.43 | -1.29 | neutral | 42 | Neutral or mixed signal |
-| USD/INR | 0.08 | -0.04 | -0.04 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | -0.32 | -0.11 | 2.83 | bullish | 61 | Positive flow signal |
+| Nasdaq 100 | -0.33 | -0.7 | 0.89 | neutral | 51 | Neutral or mixed signal |
+| Nifty 50 | 0.0 | -0.62 | 1.75 | bullish | 56 | Neutral or mixed signal |
+| Gold | 2.4 | 9.07 | 11.75 | neutral | 86 | Strong inflow / accumulation signal |
+| Silver | 0.95 | 9.44 | 14.04 | neutral | 83 | Strong inflow / accumulation signal |
+| Bitcoin | -0.25 | -0.8 | -4.14 | neutral | 50 | Neutral or mixed signal |
+| Ethereum | 0.69 | -0.94 | -2.29 | neutral | 50 | Neutral or mixed signal |
+| USD/INR | 0.01 | 0.32 | -0.93 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 91
 - Gold: Strong inflow / accumulation signal with score 86
-- S&P 500: Positive flow signal with score 71
+- Silver: Strong inflow / accumulation signal with score 83
+- S&P 500: Positive flow signal with score 61
 
 
 Weakest signals:
-- Bitcoin: Neutral or mixed signal with score 42
-- Ethereum: Neutral or mixed signal with score 42
 - USD/INR: Neutral or mixed signal with score 45
+- Bitcoin: Neutral or mixed signal with score 50
+- Ethereum: Neutral or mixed signal with score 50
 
 
 ## 4. Data Missing or Delayed
