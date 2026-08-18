@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-17T02:41:34.865272+00:00
+Date: 2026-08-18T02:35:50.472356+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.17 | 0.36 | 3.34 | bullish | 55 | Neutral or mixed signal |
-| Nasdaq 100 | -0.13 | 1.09 | 3.52 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -0.52 | -0.1 | 3.85 | bullish | 56 | Neutral or mixed signal |
+| Nasdaq 100 | -0.17 | 1.26 | 4.91 | neutral | 46 | Neutral or mixed signal |
 | Nifty 50 | -0.12 | -0.83 | 1.22 | bullish | 65 | Positive flow signal |
-| Gold | 1.68 | 2.11 | 10.99 | bullish | 91 | Strong inflow / accumulation signal |
-| Silver | 1.48 | 1.3 | 17.69 | neutral | 71 | Positive flow signal |
-| Bitcoin | 0.31 | -0.52 | -3.24 | neutral | 46 | Neutral or mixed signal |
-| Ethereum | 0.75 | 0.73 | -2.99 | bullish | 56 | Neutral or mixed signal |
-| USD/INR | 0.01 | 0.22 | -1.28 | neutral | 50 | Neutral or mixed signal |
+| Gold | 1.84 | 2.27 | 11.17 | bullish | 91 | Strong inflow / accumulation signal |
+| Silver | 0.98 | 0.8 | 17.11 | neutral | 63 | Positive flow signal |
+| Bitcoin | 2.03 | 1.09 | 0.58 | bullish | 73 | Positive flow signal |
+| Ethereum | 1.11 | 0.88 | 0.21 | bullish | 73 | Positive flow signal |
+| USD/INR | 0.15 | 0.2 | -0.72 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
 - Gold: Strong inflow / accumulation signal with score 91
-- Silver: Positive flow signal with score 71
-- Nifty 50: Positive flow signal with score 65
+- Bitcoin: Positive flow signal with score 73
+- Ethereum: Positive flow signal with score 73
 
 
 Weakest signals:
-- Bitcoin: Neutral or mixed signal with score 46
-- Nasdaq 100: Neutral or mixed signal with score 50
+- Nasdaq 100: Neutral or mixed signal with score 46
 - USD/INR: Neutral or mixed signal with score 50
+- S&P 500: Neutral or mixed signal with score 56
 
 
 ## 4. Data Missing or Delayed
