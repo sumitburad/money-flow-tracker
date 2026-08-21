@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-20T02:37:13.662619+00:00
+Date: 2026-08-21T02:44:21.964060+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.21 | -0.52 | 2.65 | bullish | 56 | Neutral or mixed signal |
-| Nasdaq 100 | -0.22 | -1.06 | 0.93 | neutral | 51 | Neutral or mixed signal |
-| Nifty 50 | -0.32 | -1.46 | -0.45 | neutral | 50 | Neutral or mixed signal |
-| Gold | 4.2 | 3.19 | 11.75 | bullish | 91 | Strong inflow / accumulation signal |
-| Silver | 4.94 | 2.36 | 14.05 | bullish | 96 | Strong inflow / accumulation signal |
-| Bitcoin | 7.25 | 10.15 | 8.54 | bullish | 96 | Strong inflow / accumulation signal |
-| Ethereum | 17.75 | 19.99 | 18.24 | bullish | 91 | Strong inflow / accumulation signal |
-| USD/INR | -0.08 | 0.42 | -0.62 | bullish | 60 | Positive flow signal |
+| S&P 500 | -0.87 | -2.02 | 2.46 | bullish | 51 | Neutral or mixed signal |
+| Nasdaq 100 | -0.72 | -2.9 | 2.17 | neutral | 41 | Neutral or mixed signal |
+| Nifty 50 | 0.64 | -0.67 | -0.42 | neutral | 50 | Neutral or mixed signal |
+| Gold | 2.08 | 5.02 | 10.51 | bullish | 91 | Strong inflow / accumulation signal |
+| Silver | 4.57 | 5.96 | 14.53 | bullish | 91 | Strong inflow / accumulation signal |
+| Bitcoin | 7.81 | 18.49 | 15.38 | bullish | 91 | Strong inflow / accumulation signal |
+| Ethereum | 4.61 | 25.22 | 22.84 | bullish | 91 | Strong inflow / accumulation signal |
+| USD/INR | 0.2 | 0.3 | -0.9 | bullish | 65 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 96
-- Bitcoin: Strong inflow / accumulation signal with score 96
 - Gold: Strong inflow / accumulation signal with score 91
+- Silver: Strong inflow / accumulation signal with score 91
+- Bitcoin: Strong inflow / accumulation signal with score 91
 
 
 Weakest signals:
+- Nasdaq 100: Neutral or mixed signal with score 41
 - Nifty 50: Neutral or mixed signal with score 50
-- Nasdaq 100: Neutral or mixed signal with score 51
-- S&P 500: Neutral or mixed signal with score 56
+- S&P 500: Neutral or mixed signal with score 51
 
 
 ## 4. Data Missing or Delayed
