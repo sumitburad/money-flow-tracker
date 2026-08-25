@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-24T02:45:18.815456+00:00
+Date: 2026-08-25T02:38:45.286021+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.43 | -1.43 | 3.59 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | 0.33 | -2.45 | 3.0 | neutral | 45 | Neutral or mixed signal |
-| Nifty 50 | 0.08 | -0.47 | 1.6 | neutral | 45 | Neutral or mixed signal |
-| Gold | 1.85 | 6.6 | 15.78 | bullish | 91 | Strong inflow / accumulation signal |
-| Silver | -0.37 | 4.67 | 17.99 | bullish | 83 | Strong inflow / accumulation signal |
-| Bitcoin | 0.45 | 19.71 | 21.97 | bullish | 75 | Positive flow signal |
-| Ethereum | 0.86 | 27.59 | 29.89 | bullish | 83 | Strong inflow / accumulation signal |
-| USD/INR | -0.1 | 0.24 | -1.24 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | -0.28 | -1.19 | 3.25 | neutral | 46 | Neutral or mixed signal |
+| Nasdaq 100 | -0.97 | -3.24 | 3.18 | bearish | 26 | Selling pressure |
+| Nifty 50 | -0.14 | -0.28 | 1.9 | neutral | 45 | Neutral or mixed signal |
+| Gold | 1.91 | 6.67 | 15.85 | bullish | 91 | Strong inflow / accumulation signal |
+| Silver | -1.61 | 3.37 | 16.53 | bullish | 80 | Strong inflow / accumulation signal |
+| Bitcoin | 4.06 | 16.82 | 27.5 | bullish | 91 | Strong inflow / accumulation signal |
+| Ethereum | 2.22 | 11.86 | 35.53 | bullish | 91 | Strong inflow / accumulation signal |
+| USD/INR | 0.04 | 0.04 | -0.86 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
 - Gold: Strong inflow / accumulation signal with score 91
-- Silver: Strong inflow / accumulation signal with score 83
-- Ethereum: Strong inflow / accumulation signal with score 83
+- Bitcoin: Strong inflow / accumulation signal with score 91
+- Ethereum: Strong inflow / accumulation signal with score 91
 
 
 Weakest signals:
-- Nasdaq 100: Neutral or mixed signal with score 45
+- Nasdaq 100: Selling pressure with score 26
 - Nifty 50: Neutral or mixed signal with score 45
-- USD/INR: Neutral or mixed signal with score 55
+- S&P 500: Neutral or mixed signal with score 46
 
 
 ## 4. Data Missing or Delayed
