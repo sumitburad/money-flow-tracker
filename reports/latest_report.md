@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-25T02:38:45.286021+00:00
+Date: 2026-08-26T02:47:25.195816+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.28 | -1.19 | 3.25 | neutral | 46 | Neutral or mixed signal |
-| Nasdaq 100 | -0.97 | -3.24 | 3.18 | bearish | 26 | Selling pressure |
-| Nifty 50 | -0.14 | -0.28 | 1.9 | neutral | 45 | Neutral or mixed signal |
-| Gold | 1.91 | 6.67 | 15.85 | bullish | 91 | Strong inflow / accumulation signal |
-| Silver | -1.61 | 3.37 | 16.53 | bullish | 80 | Strong inflow / accumulation signal |
-| Bitcoin | 4.06 | 16.82 | 27.5 | bullish | 91 | Strong inflow / accumulation signal |
-| Ethereum | 2.22 | 11.86 | 35.53 | bullish | 91 | Strong inflow / accumulation signal |
-| USD/INR | 0.04 | 0.04 | -0.86 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 0.32 | -0.19 | 3.56 | bullish | 56 | Neutral or mixed signal |
+| Nasdaq 100 | 0.64 | -0.96 | 4.17 | bearish | 36 | Selling pressure |
+| Nifty 50 | 0.48 | 0.74 | 1.41 | neutral | 45 | Neutral or mixed signal |
+| Gold | 1.65 | 8.05 | 15.78 | bullish | 91 | Strong inflow / accumulation signal |
+| Silver | 1.35 | 8.64 | 18.8 | bullish | 96 | Strong inflow / accumulation signal |
+| Bitcoin | 0.21 | 8.35 | 23.53 | bullish | 75 | Positive flow signal |
+| Ethereum | -0.58 | 6.06 | 32.06 | bullish | 75 | Positive flow signal |
+| USD/INR | -0.34 | -0.43 | -0.39 | bearish | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
+- Silver: Strong inflow / accumulation signal with score 96
 - Gold: Strong inflow / accumulation signal with score 91
-- Bitcoin: Strong inflow / accumulation signal with score 91
-- Ethereum: Strong inflow / accumulation signal with score 91
+- Bitcoin: Positive flow signal with score 75
 
 
 Weakest signals:
-- Nasdaq 100: Selling pressure with score 26
+- Nasdaq 100: Selling pressure with score 36
 - Nifty 50: Neutral or mixed signal with score 45
-- S&P 500: Neutral or mixed signal with score 46
+- USD/INR: Neutral or mixed signal with score 45
 
 
 ## 4. Data Missing or Delayed
