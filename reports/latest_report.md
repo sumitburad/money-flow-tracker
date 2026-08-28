@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-08-27T11:48:53.469171+00:00
+Date: 2026-08-28T13:11:52.465516+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.02 | -0.42 | 3.32 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | 0.05 | -0.68 | 5.26 | neutral | 60 | Positive flow signal |
-| Nifty 50 | -0.48 | -0.58 | -0.66 | neutral | 41 | Neutral or mixed signal |
-| Gold | 1.09 | 2.93 | 15.21 | bullish | 91 | Strong inflow / accumulation signal |
-| Silver | 1.66 | 1.61 | 19.45 | bullish | 91 | Strong inflow / accumulation signal |
-| Bitcoin | 0.53 | 3.06 | 23.63 | bullish | 75 | Positive flow signal |
-| Ethereum | -0.22 | 3.16 | 31.48 | bullish | 75 | Positive flow signal |
-| USD/INR | 2.12 | 0.04 | -0.07 | neutral | 58 | Neutral or mixed signal |
+| S&P 500 | 0.72 | 1.18 | 5.67 | bullish | 70 | Positive flow signal |
+| Nasdaq 100 | 1.43 | 1.47 | 9.01 | bullish | 78 | Positive flow signal |
+| Nifty 50 | 0.35 | -0.31 | -0.58 | neutral | 41 | Neutral or mixed signal |
+| Gold | 0.93 | 0.62 | 13.48 | bullish | 73 | Positive flow signal |
+| Silver | 3.0 | 2.94 | 21.58 | bullish | 96 | Strong inflow / accumulation signal |
+| Bitcoin | -1.11 | 2.07 | 22.33 | bullish | 67 | Positive flow signal |
+| Ethereum | -0.4 | 1.48 | 30.69 | bullish | 65 | Positive flow signal |
+| USD/INR | -0.07 | -0.42 | -0.38 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Gold: Strong inflow / accumulation signal with score 91
-- Silver: Strong inflow / accumulation signal with score 91
-- Bitcoin: Positive flow signal with score 75
+- Silver: Strong inflow / accumulation signal with score 96
+- Nasdaq 100: Positive flow signal with score 78
+- Gold: Positive flow signal with score 73
 
 
 Weakest signals:
 - Nifty 50: Neutral or mixed signal with score 41
-- S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 58
+- USD/INR: Neutral or mixed signal with score 50
+- Ethereum: Positive flow signal with score 65
 
 
 ## 4. Data Missing or Delayed
