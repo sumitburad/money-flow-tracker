@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-09T06:24:51.267916+00:00
+Date: 2026-09-10T06:23:39.709436+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.58 | -0.16 | -1.08 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -0.12 | 0.17 | -0.72 | bullish | 60 | Positive flow signal |
-| Nifty 50 | -0.55 | -1.71 | -3.95 | bearish | 31 | Selling pressure |
-| Gold | 1.17 | 2.24 | 1.91 | neutral | 76 | Positive flow signal |
-| Silver | 1.6 | 4.24 | 3.46 | bullish | 91 | Strong inflow / accumulation signal |
-| Bitcoin | 0.12 | -2.54 | 22.46 | bullish | 60 | Positive flow signal |
-| Ethereum | 0.43 | -0.25 | 30.53 | bullish | 75 | Positive flow signal |
-| USD/INR | 0.73 | 0.24 | -0.23 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -0.48 | 0.06 | -1.51 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -0.29 | 1.18 | -0.68 | neutral | 50 | Neutral or mixed signal |
+| Nifty 50 | -0.0 | -1.85 | -4.11 | bearish | 31 | Selling pressure |
+| Gold | 1.04 | 2.19 | 1.8 | neutral | 76 | Positive flow signal |
+| Silver | 0.53 | 5.53 | 5.46 | bullish | 88 | Strong inflow / accumulation signal |
+| Bitcoin | -0.36 | -1.9 | 12.84 | neutral | 60 | Positive flow signal |
+| Ethereum | -0.52 | 0.64 | 9.79 | bullish | 70 | Positive flow signal |
+| USD/INR | 0.43 | 0.79 | -0.15 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 91
+- Silver: Strong inflow / accumulation signal with score 88
 - Gold: Positive flow signal with score 76
-- Ethereum: Positive flow signal with score 75
+- Ethereum: Positive flow signal with score 70
 
 
 Weakest signals:
 - Nifty 50: Selling pressure with score 31
 - S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 50
+- Nasdaq 100: Neutral or mixed signal with score 50
 
 
 ## 4. Data Missing or Delayed
