@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-10T06:23:39.709436+00:00
+Date: 2026-09-11T06:25:50.717487+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.48 | 0.06 | -1.51 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -0.29 | 1.18 | -0.68 | neutral | 50 | Neutral or mixed signal |
-| Nifty 50 | -0.0 | -1.85 | -4.11 | bearish | 31 | Selling pressure |
-| Gold | 1.04 | 2.19 | 1.8 | neutral | 76 | Positive flow signal |
-| Silver | 0.53 | 5.53 | 5.46 | bullish | 88 | Strong inflow / accumulation signal |
-| Bitcoin | -0.36 | -1.9 | 12.84 | neutral | 60 | Positive flow signal |
-| Ethereum | -0.52 | 0.64 | 9.79 | bullish | 70 | Positive flow signal |
-| USD/INR | 0.43 | 0.79 | -0.15 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | -0.58 | -0.98 | -1.77 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -1.08 | -0.14 | -1.43 | neutral | 42 | Neutral or mixed signal |
+| Nifty 50 | -0.56 | -2.31 | -4.31 | bearish | 21 | Selling pressure |
+| Gold | 0.83 | -2.02 | -0.18 | neutral | 43 | Neutral or mixed signal |
+| Silver | 0.58 | -3.45 | -1.37 | neutral | 48 | Neutral or mixed signal |
+| Bitcoin | -1.3 | -3.24 | 5.76 | neutral | 42 | Neutral or mixed signal |
+| Ethereum | -0.07 | -0.63 | 5.97 | bullish | 70 | Positive flow signal |
+| USD/INR | 0.64 | 1.3 | 0.4 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 88
-- Gold: Positive flow signal with score 76
 - Ethereum: Positive flow signal with score 70
+- S&P 500: Neutral or mixed signal with score 50
+- USD/INR: Neutral or mixed signal with score 50
 
 
 Weakest signals:
-- Nifty 50: Selling pressure with score 31
-- S&P 500: Neutral or mixed signal with score 50
-- Nasdaq 100: Neutral or mixed signal with score 50
+- Nifty 50: Selling pressure with score 21
+- Nasdaq 100: Neutral or mixed signal with score 42
+- Bitcoin: Neutral or mixed signal with score 42
 
 
 ## 4. Data Missing or Delayed
