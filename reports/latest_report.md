@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-11T06:25:50.717487+00:00
+Date: 2026-09-12T06:12:13.759646+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.58 | -0.98 | -1.77 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -1.08 | -0.14 | -1.43 | neutral | 42 | Neutral or mixed signal |
-| Nifty 50 | -0.56 | -2.31 | -4.31 | bearish | 21 | Selling pressure |
-| Gold | 0.83 | -2.02 | -0.18 | neutral | 43 | Neutral or mixed signal |
-| Silver | 0.58 | -3.45 | -1.37 | neutral | 48 | Neutral or mixed signal |
-| Bitcoin | -1.3 | -3.24 | 5.76 | neutral | 42 | Neutral or mixed signal |
-| Ethereum | -0.07 | -0.63 | 5.97 | bullish | 70 | Positive flow signal |
-| USD/INR | 0.64 | 1.3 | 0.4 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | 0.86 | -1.17 | -1.18 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | 0.91 | -0.39 | -1.26 | neutral | 50 | Neutral or mixed signal |
+| Nifty 50 | -0.34 | -2.09 | -4.09 | bearish | 25 | Selling pressure |
+| Gold | 0.04 | -2.79 | -0.97 | neutral | 31 | Selling pressure |
+| Silver | 0.42 | -3.61 | -1.53 | neutral | 36 | Selling pressure |
+| Bitcoin | 0.82 | -3.92 | -1.45 | neutral | 40 | Neutral or mixed signal |
+| Ethereum | 3.01 | -0.16 | -0.19 | bullish | 81 | Strong inflow / accumulation signal |
+| USD/INR | -0.16 | 1.18 | 0.15 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Positive flow signal with score 70
+- Ethereum: Strong inflow / accumulation signal with score 81
 - S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 50
+- Nasdaq 100: Neutral or mixed signal with score 50
 
 
 Weakest signals:
-- Nifty 50: Selling pressure with score 21
-- Nasdaq 100: Neutral or mixed signal with score 42
-- Bitcoin: Neutral or mixed signal with score 42
+- Nifty 50: Selling pressure with score 25
+- Gold: Selling pressure with score 31
+- Silver: Selling pressure with score 36
 
 
 ## 4. Data Missing or Delayed
