@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-17T06:27:37.573745+00:00
+Date: 2026-09-18T06:21:04.104585+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.45 | -1.11 | -2.5 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | 0.02 | -1.62 | -3.5 | neutral | 50 | Neutral or mixed signal |
-| Nifty 50 | 0.36 | -0.55 | -3.53 | bearish | 31 | Selling pressure |
-| Gold | -1.0 | -1.44 | -1.74 | neutral | 41 | Neutral or mixed signal |
-| Silver | -0.18 | -0.18 | 0.36 | neutral | 53 | Neutral or mixed signal |
-| Bitcoin | 0.87 | -1.17 | -3.49 | neutral | 50 | Neutral or mixed signal |
-| Ethereum | 1.45 | -3.22 | -2.89 | neutral | 48 | Neutral or mixed signal |
-| USD/INR | -0.11 | 0.82 | 0.07 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 1.14 | 0.61 | -0.7 | neutral | 58 | Neutral or mixed signal |
+| Nasdaq 100 | 1.73 | 1.18 | -0.15 | bullish | 68 | Positive flow signal |
+| Nifty 50 | 0.18 | -0.71 | -3.18 | bearish | 31 | Selling pressure |
+| Gold | 0.6 | 0.39 | -2.62 | neutral | 46 | Neutral or mixed signal |
+| Silver | 2.65 | 4.11 | 2.24 | bullish | 86 | Strong inflow / accumulation signal |
+| Bitcoin | 1.7 | 0.22 | -3.51 | neutral | 58 | Neutral or mixed signal |
+| Ethereum | 2.72 | -1.75 | -1.14 | bullish | 68 | Positive flow signal |
+| USD/INR | -0.37 | 0.09 | 0.3 | neutral | 50 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- USD/INR: Neutral or mixed signal with score 55
-- Silver: Neutral or mixed signal with score 53
-- S&P 500: Neutral or mixed signal with score 50
+- Silver: Strong inflow / accumulation signal with score 86
+- Nasdaq 100: Positive flow signal with score 68
+- Ethereum: Positive flow signal with score 68
 
 
 Weakest signals:
 - Nifty 50: Selling pressure with score 31
-- Gold: Neutral or mixed signal with score 41
-- Ethereum: Neutral or mixed signal with score 48
+- Gold: Neutral or mixed signal with score 46
+- USD/INR: Neutral or mixed signal with score 50
 
 
 ## 4. Data Missing or Delayed
