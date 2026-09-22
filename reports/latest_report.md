@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-21T06:48:11.833504+00:00
+Date: 2026-09-22T06:35:23.798878+00:00
 
 ## 1. Market Regime
 
@@ -14,27 +14,27 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.17 | -0.08 | -0.75 | neutral | 58 | Neutral or mixed signal |
-| Nasdaq 100 | 0.67 | 0.94 | 0.74 | bullish | 68 | Positive flow signal |
-| Nifty 50 | 0.31 | 0.09 | -3.36 | bearish | 31 | Selling pressure |
-| Gold | -0.82 | 0.85 | -3.99 | neutral | 46 | Neutral or mixed signal |
-| Silver | -0.12 | 4.66 | -2.28 | bullish | 78 | Positive flow signal |
-| Bitcoin | 0.57 | 8.04 | 5.19 | bullish | 80 | Strong inflow / accumulation signal |
-| Ethereum | 1.25 | 11.08 | 10.22 | bullish | 93 | Strong inflow / accumulation signal |
-| USD/INR | 0.03 | 0.84 | 0.06 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 1.49 | 1.9 | 1.62 | bullish | 73 | Positive flow signal |
+| Nasdaq 100 | 2.83 | 4.65 | 4.34 | bullish | 83 | Strong inflow / accumulation signal |
+| Nifty 50 | -0.23 | 1.05 | -3.68 | bearish | 31 | Selling pressure |
+| Gold | -0.68 | 0.5 | -6.97 | neutral | 36 | Selling pressure |
+| Silver | -0.09 | 4.0 | -5.33 | neutral | 58 | Neutral or mixed signal |
+| Bitcoin | 5.32 | 12.22 | 8.8 | bullish | 100 | Strong inflow / accumulation signal |
+| Ethereum | 3.38 | 13.09 | 10.76 | bullish | 100 | Strong inflow / accumulation signal |
+| USD/INR | -0.21 | -0.02 | 0.12 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Ethereum: Strong inflow / accumulation signal with score 93
-- Bitcoin: Strong inflow / accumulation signal with score 80
-- Silver: Positive flow signal with score 78
+- Bitcoin: Strong inflow / accumulation signal with score 100
+- Ethereum: Strong inflow / accumulation signal with score 100
+- Nasdaq 100: Strong inflow / accumulation signal with score 83
 
 
 Weakest signals:
 - Nifty 50: Selling pressure with score 31
-- Gold: Neutral or mixed signal with score 46
+- Gold: Selling pressure with score 36
 - USD/INR: Neutral or mixed signal with score 55
 
 
