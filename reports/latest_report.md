@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-23T06:22:01.879895+00:00
+Date: 2026-09-24T06:30:31.633949+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 1.49 | 1.9 | 1.62 | bullish | 73 | Positive flow signal |
-| Nasdaq 100 | 2.83 | 4.65 | 4.34 | bullish | 83 | Strong inflow / accumulation signal |
-| Nifty 50 | 0.06 | 1.34 | -3.39 | bearish | 31 | Selling pressure |
-| Gold | -0.2 | -0.45 | -7.02 | neutral | 36 | Selling pressure |
-| Silver | 1.13 | 3.72 | -2.72 | bullish | 91 | Strong inflow / accumulation signal |
-| Bitcoin | -0.13 | 13.21 | 11.74 | bullish | 80 | Strong inflow / accumulation signal |
-| Ethereum | -0.68 | 12.69 | 14.06 | bullish | 85 | Strong inflow / accumulation signal |
-| USD/INR | -0.03 | -0.32 | -0.04 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | -0.76 | 1.59 | 0.41 | bullish | 65 | Positive flow signal |
+| Nasdaq 100 | -0.04 | 5.3 | 3.96 | bullish | 70 | Positive flow signal |
+| Nifty 50 | -1.07 | -0.1 | -4.23 | bearish | 23 | Selling pressure |
+| Gold | 0.01 | -1.83 | -8.0 | neutral | 31 | Selling pressure |
+| Silver | 0.44 | -1.23 | -5.79 | neutral | 48 | Neutral or mixed signal |
+| Bitcoin | -2.34 | 4.03 | 8.87 | bullish | 77 | Positive flow signal |
+| Ethereum | -2.38 | 2.9 | 12.36 | bullish | 77 | Positive flow signal |
+| USD/INR | 0.2 | -0.26 | 2.5 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Silver: Strong inflow / accumulation signal with score 91
-- Ethereum: Strong inflow / accumulation signal with score 85
-- Nasdaq 100: Strong inflow / accumulation signal with score 83
+- Bitcoin: Positive flow signal with score 77
+- Ethereum: Positive flow signal with score 77
+- Nasdaq 100: Positive flow signal with score 70
 
 
 Weakest signals:
-- Nifty 50: Selling pressure with score 31
-- Gold: Selling pressure with score 36
-- USD/INR: Neutral or mixed signal with score 55
+- Nifty 50: Selling pressure with score 23
+- Gold: Selling pressure with score 31
+- Silver: Neutral or mixed signal with score 48
 
 
 ## 4. Data Missing or Delayed
