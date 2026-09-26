@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-25T06:24:33.770137+00:00
+Date: 2026-09-26T06:26:39.772295+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.02 | 2.02 | 0.67 | bullish | 70 | Positive flow signal |
-| Nasdaq 100 | 0.03 | 5.3 | 5.02 | bullish | 80 | Strong inflow / accumulation signal |
-| Nifty 50 | 0.1 | -0.8 | -5.13 | bearish | 21 | Selling pressure |
-| Gold | 0.27 | -2.6 | -7.38 | neutral | 21 | Selling pressure |
-| Silver | 1.17 | -3.54 | -5.57 | neutral | 46 | Neutral or mixed signal |
-| Bitcoin | -0.22 | 3.64 | 3.6 | bullish | 70 | Positive flow signal |
-| Ethereum | -0.17 | 1.84 | 6.87 | bullish | 75 | Positive flow signal |
-| USD/INR | 0.15 | 0.09 | 0.48 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | 0.51 | 1.21 | 0.88 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | 0.42 | 3.25 | 4.73 | bullish | 75 | Positive flow signal |
+| Nifty 50 | 0.34 | -0.88 | -4.41 | bearish | 35 | Selling pressure |
+| Gold | 0.54 | -2.34 | -7.14 | neutral | 25 | Selling pressure |
+| Silver | 1.24 | -3.47 | -5.51 | neutral | 34 | Selling pressure |
+| Bitcoin | -0.57 | 3.4 | 5.31 | bullish | 85 | Strong inflow / accumulation signal |
+| Ethereum | -0.14 | 1.53 | 9.26 | bullish | 75 | Positive flow signal |
+| USD/INR | -0.35 | -0.2 | 0.37 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nasdaq 100: Strong inflow / accumulation signal with score 80
+- Bitcoin: Strong inflow / accumulation signal with score 85
+- Nasdaq 100: Positive flow signal with score 75
 - Ethereum: Positive flow signal with score 75
-- S&P 500: Positive flow signal with score 70
 
 
 Weakest signals:
-- Nifty 50: Selling pressure with score 21
-- Gold: Selling pressure with score 21
-- Silver: Neutral or mixed signal with score 46
+- Gold: Selling pressure with score 25
+- Silver: Selling pressure with score 34
+- Nifty 50: Selling pressure with score 35
 
 
 ## 4. Data Missing or Delayed
