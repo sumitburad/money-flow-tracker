@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-28T07:21:10.224763+00:00
+Date: 2026-09-29T07:17:19.263910+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.51 | 1.21 | 0.88 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | 0.42 | 3.25 | 4.73 | bullish | 75 | Positive flow signal |
-| Nifty 50 | -1.32 | -2.47 | -5.21 | bearish | 3 | Strong outflow / distribution signal |
-| Gold | -2.9 | -4.29 | -10.04 | neutral | 13 | Strong outflow / distribution signal |
-| Silver | -4.17 | -6.47 | -11.33 | neutral | 30 | Selling pressure |
-| Bitcoin | -1.59 | -1.5 | 5.05 | bullish | 67 | Positive flow signal |
-| Ethereum | -1.38 | -1.29 | 6.38 | bullish | 67 | Positive flow signal |
-| USD/INR | -0.22 | -0.07 | 0.5 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | -0.77 | -1.04 | -0.61 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | -1.08 | -0.67 | 2.14 | bullish | 57 | Neutral or mixed signal |
+| Nifty 50 | -0.53 | -2.87 | -6.27 | bearish | 11 | Strong outflow / distribution signal |
+| Gold | 0.16 | -4.6 | -7.84 | neutral | 21 | Selling pressure |
+| Silver | 0.06 | -7.09 | -8.57 | neutral | 33 | Selling pressure |
+| Bitcoin | 0.62 | -0.42 | 7.12 | bullish | 65 | Positive flow signal |
+| Ethereum | 0.91 | 0.96 | 9.19 | bullish | 65 | Positive flow signal |
+| USD/INR | 0.31 | 0.39 | 0.74 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nasdaq 100: Positive flow signal with score 75
-- Bitcoin: Positive flow signal with score 67
-- Ethereum: Positive flow signal with score 67
+- Bitcoin: Positive flow signal with score 65
+- Ethereum: Positive flow signal with score 65
+- S&P 500: Positive flow signal with score 60
 
 
 Weakest signals:
-- Nifty 50: Strong outflow / distribution signal with score 3
-- Gold: Strong outflow / distribution signal with score 13
-- Silver: Selling pressure with score 30
+- Nifty 50: Strong outflow / distribution signal with score 11
+- Gold: Selling pressure with score 21
+- Silver: Selling pressure with score 33
 
 
 ## 4. Data Missing or Delayed
