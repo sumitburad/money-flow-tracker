@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-09-29T07:17:19.263910+00:00
+Date: 2026-09-30T07:07:44.801470+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.77 | -1.04 | -0.61 | bullish | 60 | Positive flow signal |
-| Nasdaq 100 | -1.08 | -0.67 | 2.14 | bullish | 57 | Neutral or mixed signal |
-| Nifty 50 | -0.53 | -2.87 | -6.27 | bearish | 11 | Strong outflow / distribution signal |
-| Gold | 0.16 | -4.6 | -7.84 | neutral | 21 | Selling pressure |
-| Silver | 0.06 | -7.09 | -8.57 | neutral | 33 | Selling pressure |
-| Bitcoin | 0.62 | -0.42 | 7.12 | bullish | 65 | Positive flow signal |
-| Ethereum | 0.91 | 0.96 | 9.19 | bullish | 65 | Positive flow signal |
-| USD/INR | 0.31 | 0.39 | 0.74 | neutral | 55 | Neutral or mixed signal |
+| S&P 500 | -0.17 | -1.21 | -0.53 | bullish | 60 | Positive flow signal |
+| Nasdaq 100 | 0.21 | -1.28 | 3.08 | bullish | 65 | Positive flow signal |
+| Nifty 50 | 0.27 | -2.85 | -5.41 | bearish | 11 | Strong outflow / distribution signal |
+| Gold | 1.12 | -2.13 | -5.69 | neutral | 29 | Selling pressure |
+| Silver | 1.64 | -4.23 | -6.89 | neutral | 46 | Neutral or mixed signal |
+| Bitcoin | -0.79 | -1.28 | 6.01 | bullish | 70 | Positive flow signal |
+| Ethereum | -0.6 | -1.11 | 7.85 | bullish | 70 | Positive flow signal |
+| USD/INR | -0.02 | 0.29 | 0.89 | neutral | 55 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Bitcoin: Positive flow signal with score 65
-- Ethereum: Positive flow signal with score 65
-- S&P 500: Positive flow signal with score 60
+- Bitcoin: Positive flow signal with score 70
+- Ethereum: Positive flow signal with score 70
+- Nasdaq 100: Positive flow signal with score 65
 
 
 Weakest signals:
 - Nifty 50: Strong outflow / distribution signal with score 11
-- Gold: Selling pressure with score 21
-- Silver: Selling pressure with score 33
+- Gold: Selling pressure with score 29
+- Silver: Neutral or mixed signal with score 46
 
 
 ## 4. Data Missing or Delayed
