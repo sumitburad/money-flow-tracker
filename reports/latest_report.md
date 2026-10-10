@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-09T07:46:08.139475+00:00
+Date: 2026-10-10T07:33:25.882971+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.47 | 1.29 | 1.69 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | -1.39 | 0.74 | 4.43 | bullish | 57 | Neutral or mixed signal |
-| Nifty 50 | 1.24 | 0.38 | -4.77 | bearish | 39 | Selling pressure |
-| Gold | 1.49 | 1.36 | -4.27 | bearish | 39 | Selling pressure |
-| Silver | 2.81 | 1.25 | -5.54 | bearish | 41 | Neutral or mixed signal |
-| Bitcoin | 0.96 | -4.65 | 1.93 | neutral | 40 | Neutral or mixed signal |
-| Ethereum | 1.15 | -8.3 | -4.25 | neutral | 43 | Neutral or mixed signal |
-| USD/INR | -0.03 | 0.53 | 1.7 | bullish | 65 | Positive flow signal |
+| S&P 500 | 0.59 | 1.15 | 2.9 | bullish | 65 | Positive flow signal |
+| Nasdaq 100 | 0.51 | 0.24 | 6.11 | bullish | 75 | Positive flow signal |
+| Nifty 50 | 1.3 | 0.44 | -4.72 | bearish | 43 | Neutral or mixed signal |
+| Gold | 1.43 | 1.3 | -4.33 | bearish | 43 | Neutral or mixed signal |
+| Silver | 2.72 | 1.16 | -5.62 | bearish | 33 | Selling pressure |
+| Bitcoin | 0.03 | -3.75 | 1.64 | neutral | 36 | Selling pressure |
+| Ethereum | 0.22 | -8.12 | -5.36 | neutral | 21 | Selling pressure |
+| USD/INR | -0.1 | 0.42 | 1.08 | bullish | 60 | Positive flow signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
+- Nasdaq 100: Positive flow signal with score 75
 - S&P 500: Positive flow signal with score 65
-- USD/INR: Positive flow signal with score 65
-- Nasdaq 100: Neutral or mixed signal with score 57
+- USD/INR: Positive flow signal with score 60
 
 
 Weakest signals:
-- Nifty 50: Selling pressure with score 39
-- Gold: Selling pressure with score 39
-- Bitcoin: Neutral or mixed signal with score 40
+- Ethereum: Selling pressure with score 21
+- Silver: Selling pressure with score 33
+- Bitcoin: Selling pressure with score 36
 
 
 ## 4. Data Missing or Delayed
