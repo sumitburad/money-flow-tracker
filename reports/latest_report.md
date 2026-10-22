@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-21T06:20:53.054522+00:00
+Date: 2026-10-22T06:24:26.597915+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.28 | -1.19 | -0.67 | neutral | 55 | Neutral or mixed signal |
-| Nasdaq 100 | -0.13 | -3.53 | -3.25 | neutral | 40 | Neutral or mixed signal |
-| Nifty 50 | -0.32 | 0.42 | -2.27 | neutral | 46 | Neutral or mixed signal |
-| Gold | -0.22 | 0.62 | -5.55 | bearish | 26 | Selling pressure |
-| Silver | -0.58 | 3.28 | -12.99 | bearish | 48 | Neutral or mixed signal |
-| Bitcoin | 0.91 | 0.55 | -1.23 | neutral | 50 | Neutral or mixed signal |
-| Ethereum | 1.31 | -0.17 | -8.98 | bearish | 33 | Selling pressure |
-| USD/INR | -0.28 | -0.58 | -1.03 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | 0.58 | 0.5 | -0.1 | bullish | 65 | Positive flow signal |
+| Nasdaq 100 | 1.13 | -0.43 | -2.96 | neutral | 58 | Neutral or mixed signal |
+| Nifty 50 | -0.82 | 0.01 | -3.37 | bearish | 36 | Selling pressure |
+| Gold | -0.88 | -1.36 | -4.75 | bearish | 36 | Selling pressure |
+| Silver | -1.46 | -0.44 | -12.11 | bearish | 30 | Selling pressure |
+| Bitcoin | -0.37 | 1.39 | -1.1 | neutral | 50 | Neutral or mixed signal |
+| Ethereum | -0.55 | 0.56 | -9.33 | bearish | 30 | Selling pressure |
+| USD/INR | -0.04 | -0.49 | -1.05 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Neutral or mixed signal with score 55
+- S&P 500: Positive flow signal with score 65
+- Nasdaq 100: Neutral or mixed signal with score 58
 - Bitcoin: Neutral or mixed signal with score 50
-- Silver: Neutral or mixed signal with score 48
 
 
 Weakest signals:
-- Gold: Selling pressure with score 26
-- Ethereum: Selling pressure with score 33
-- Nasdaq 100: Neutral or mixed signal with score 40
+- Silver: Selling pressure with score 30
+- Ethereum: Selling pressure with score 30
+- Nifty 50: Selling pressure with score 36
 
 
 ## 4. Data Missing or Delayed
