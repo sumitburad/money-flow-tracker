@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-22T06:24:26.597915+00:00
+Date: 2026-10-23T06:18:31.153910+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.58 | 0.5 | -0.1 | bullish | 65 | Positive flow signal |
-| Nasdaq 100 | 1.13 | -0.43 | -2.96 | neutral | 58 | Neutral or mixed signal |
-| Nifty 50 | -0.82 | 0.01 | -3.37 | bearish | 36 | Selling pressure |
-| Gold | -0.88 | -1.36 | -4.75 | bearish | 36 | Selling pressure |
-| Silver | -1.46 | -0.44 | -12.11 | bearish | 30 | Selling pressure |
-| Bitcoin | -0.37 | 1.39 | -1.1 | neutral | 50 | Neutral or mixed signal |
-| Ethereum | -0.55 | 0.56 | -9.33 | bearish | 30 | Selling pressure |
-| USD/INR | -0.04 | -0.49 | -1.05 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | -1.21 | -1.04 | -0.55 | neutral | 42 | Neutral or mixed signal |
+| Nasdaq 100 | -2.9 | -3.26 | -4.96 | neutral | 27 | Selling pressure |
+| Nifty 50 | -1.03 | -2.36 | -3.75 | bearish | 18 | Strong outflow / distribution signal |
+| Gold | -0.71 | -3.58 | -6.2 | bearish | 16 | Strong outflow / distribution signal |
+| Silver | -0.99 | -4.87 | -14.56 | bearish | 23 | Selling pressure |
+| Bitcoin | -2.64 | 0.51 | -3.6 | neutral | 42 | Neutral or mixed signal |
+| Ethereum | -2.7 | 0.17 | -11.15 | bearish | 22 | Selling pressure |
+| USD/INR | 0.65 | 0.43 | -0.85 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- S&P 500: Positive flow signal with score 65
-- Nasdaq 100: Neutral or mixed signal with score 58
-- Bitcoin: Neutral or mixed signal with score 50
+- USD/INR: Neutral or mixed signal with score 45
+- S&P 500: Neutral or mixed signal with score 42
+- Bitcoin: Neutral or mixed signal with score 42
 
 
 Weakest signals:
-- Silver: Selling pressure with score 30
-- Ethereum: Selling pressure with score 30
-- Nifty 50: Selling pressure with score 36
+- Gold: Strong outflow / distribution signal with score 16
+- Nifty 50: Strong outflow / distribution signal with score 18
+- Ethereum: Selling pressure with score 22
 
 
 ## 4. Data Missing or Delayed
