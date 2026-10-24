@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-23T06:18:31.153910+00:00
+Date: 2026-10-24T06:14:31.052933+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -1.21 | -1.04 | -0.55 | neutral | 42 | Neutral or mixed signal |
-| Nasdaq 100 | -2.9 | -3.26 | -4.96 | neutral | 27 | Selling pressure |
-| Nifty 50 | -1.03 | -2.36 | -3.75 | bearish | 18 | Strong outflow / distribution signal |
-| Gold | -0.71 | -3.58 | -6.2 | bearish | 16 | Strong outflow / distribution signal |
-| Silver | -0.99 | -4.87 | -14.56 | bearish | 23 | Selling pressure |
-| Bitcoin | -2.64 | 0.51 | -3.6 | neutral | 42 | Neutral or mixed signal |
-| Ethereum | -2.7 | 0.17 | -11.15 | bearish | 22 | Selling pressure |
-| USD/INR | 0.65 | 0.43 | -0.85 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | -0.52 | -0.47 | -1.04 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -0.0 | -0.79 | -4.99 | neutral | 45 | Neutral or mixed signal |
+| Nifty 50 | -0.39 | -1.73 | -3.12 | bearish | 40 | Neutral or mixed signal |
+| Gold | -1.29 | -4.14 | -6.75 | bearish | 12 | Strong outflow / distribution signal |
+| Silver | -1.92 | -5.76 | -15.36 | bearish | 3 | Strong outflow / distribution signal |
+| Bitcoin | -0.81 | -1.66 | -4.55 | neutral | 50 | Neutral or mixed signal |
+| Ethereum | -0.47 | -1.4 | -10.98 | bearish | 30 | Selling pressure |
+| USD/INR | 0.24 | -0.04 | -1.27 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- USD/INR: Neutral or mixed signal with score 45
-- S&P 500: Neutral or mixed signal with score 42
-- Bitcoin: Neutral or mixed signal with score 42
+- S&P 500: Neutral or mixed signal with score 50
+- Bitcoin: Neutral or mixed signal with score 50
+- Nasdaq 100: Neutral or mixed signal with score 45
 
 
 Weakest signals:
-- Gold: Strong outflow / distribution signal with score 16
-- Nifty 50: Strong outflow / distribution signal with score 18
-- Ethereum: Selling pressure with score 22
+- Silver: Strong outflow / distribution signal with score 3
+- Gold: Strong outflow / distribution signal with score 12
+- Ethereum: Selling pressure with score 30
 
 
 ## 4. Data Missing or Delayed
