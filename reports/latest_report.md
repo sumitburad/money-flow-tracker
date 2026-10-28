@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-27T06:37:13.705814+00:00
+Date: 2026-10-28T07:08:42.500367+00:00
 
 ## 1. Market Regime
 
@@ -14,14 +14,14 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.7 | -0.18 | -0.86 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | 1.09 | -0.87 | -4.36 | neutral | 53 | Neutral or mixed signal |
-| Nifty 50 | 0.03 | -0.56 | -1.31 | neutral | 46 | Neutral or mixed signal |
-| Gold | -0.53 | -3.04 | -3.64 | bearish | 26 | Selling pressure |
-| Silver | -1.97 | -8.09 | -13.36 | bearish | 15 | Strong outflow / distribution signal |
-| Bitcoin | -0.47 | -5.19 | -7.15 | neutral | 30 | Selling pressure |
-| Ethereum | -0.85 | -6.62 | -14.9 | bearish | 15 | Strong outflow / distribution signal |
-| USD/INR | 0.24 | 0.18 | -0.65 | neutral | 50 | Neutral or mixed signal |
+| S&P 500 | 0.6 | 0.13 | 0.51 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | 1.29 | 0.55 | -2.07 | neutral | 53 | Neutral or mixed signal |
+| Nifty 50 | -0.36 | -0.63 | -2.04 | bearish | 36 | Selling pressure |
+| Gold | -0.76 | -2.56 | -3.26 | bearish | 26 | Selling pressure |
+| Silver | -0.85 | -6.26 | -11.27 | bearish | 23 | Selling pressure |
+| Bitcoin | 0.97 | -0.65 | -5.58 | neutral | 40 | Neutral or mixed signal |
+| Ethereum | 1.27 | -1.52 | -12.89 | bearish | 33 | Selling pressure |
+| USD/INR | -0.0 | 0.49 | -0.83 | neutral | 45 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
@@ -29,13 +29,13 @@ Reason:
 Strongest signals:
 - Nasdaq 100: Neutral or mixed signal with score 53
 - S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 50
+- USD/INR: Neutral or mixed signal with score 45
 
 
 Weakest signals:
-- Silver: Strong outflow / distribution signal with score 15
-- Ethereum: Strong outflow / distribution signal with score 15
+- Silver: Selling pressure with score 23
 - Gold: Selling pressure with score 26
+- Ethereum: Selling pressure with score 33
 
 
 ## 4. Data Missing or Delayed
