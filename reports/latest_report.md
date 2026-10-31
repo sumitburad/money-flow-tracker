@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-10-30T07:33:22.002304+00:00
+Date: 2026-10-31T07:20:27.034863+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.3 | 0.74 | 0.9 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -1.38 | 1.53 | -3.31 | neutral | 37 | Selling pressure |
-| Nifty 50 | 0.75 | 2.25 | 1.73 | neutral | 61 | Positive flow signal |
-| Gold | -0.93 | -0.34 | -4.95 | bearish | 31 | Selling pressure |
-| Silver | -2.66 | -5.41 | -16.34 | bearish | 15 | Strong outflow / distribution signal |
-| Bitcoin | 0.73 | -2.1 | -5.09 | bearish | 28 | Selling pressure |
-| Ethereum | -0.18 | -3.5 | -9.66 | bearish | 23 | Selling pressure |
-| USD/INR | -0.16 | 0.36 | -0.91 | neutral | 45 | Neutral or mixed signal |
+| S&P 500 | -1.82 | -0.57 | -1.13 | neutral | 37 | Selling pressure |
+| Nasdaq 100 | -3.46 | -1.98 | -6.94 | neutral | 27 | Selling pressure |
+| Nifty 50 | 0.51 | 2.0 | 1.48 | neutral | 55 | Neutral or mixed signal |
+| Gold | -3.29 | -2.72 | -7.22 | bearish | 7 | Strong outflow / distribution signal |
+| Silver | -5.93 | -8.59 | -19.15 | bearish | 7 | Strong outflow / distribution signal |
+| Bitcoin | 0.12 | -3.39 | -6.78 | bearish | 15 | Strong outflow / distribution signal |
+| Ethereum | 0.07 | -3.35 | -10.44 | bearish | 15 | Strong outflow / distribution signal |
+| USD/INR | -0.21 | 0.01 | -1.32 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nifty 50: Positive flow signal with score 61
-- S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Neutral or mixed signal with score 45
+- Nifty 50: Neutral or mixed signal with score 55
+- USD/INR: Neutral or mixed signal with score 40
+- S&P 500: Selling pressure with score 37
 
 
 Weakest signals:
-- Silver: Strong outflow / distribution signal with score 15
-- Ethereum: Selling pressure with score 23
-- Bitcoin: Selling pressure with score 28
+- Gold: Strong outflow / distribution signal with score 7
+- Silver: Strong outflow / distribution signal with score 7
+- Bitcoin: Strong outflow / distribution signal with score 15
 
 
 ## 4. Data Missing or Delayed
