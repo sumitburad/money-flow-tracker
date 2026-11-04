@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-11-03T08:20:01.364214+00:00
+Date: 2026-11-04T07:49:02.690126+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.51 | -1.76 | -2.35 | neutral | 45 | Neutral or mixed signal |
-| Nasdaq 100 | -1.39 | -4.38 | -9.15 | neutral | 17 | Strong outflow / distribution signal |
-| Nifty 50 | 1.19 | 4.26 | 5.79 | neutral | 74 | Positive flow signal |
-| Gold | -1.37 | -3.91 | -5.81 | bearish | 3 | Strong outflow / distribution signal |
-| Silver | -3.35 | -9.71 | -19.47 | bearish | 15 | Strong outflow / distribution signal |
-| Bitcoin | -0.11 | -1.52 | -7.82 | bearish | 25 | Selling pressure |
-| Ethereum | 0.23 | 0.2 | -9.72 | bearish | 25 | Selling pressure |
-| USD/INR | -0.2 | -0.5 | -1.67 | bearish | 40 | Neutral or mixed signal |
+| S&P 500 | 0.36 | -1.99 | -2.64 | neutral | 50 | Neutral or mixed signal |
+| Nasdaq 100 | 0.68 | -4.96 | -9.32 | bearish | 15 | Strong outflow / distribution signal |
+| Nifty 50 | 0.2 | 5.11 | 5.77 | neutral | 61 | Positive flow signal |
+| Gold | 2.38 | -0.43 | -3.65 | bearish | 44 | Neutral or mixed signal |
+| Silver | 4.36 | -3.19 | -15.4 | bearish | 31 | Selling pressure |
+| Bitcoin | 1.02 | 1.21 | -4.2 | bearish | 43 | Neutral or mixed signal |
+| Ethereum | 1.5 | 2.93 | -4.61 | bearish | 53 | Neutral or mixed signal |
+| USD/INR | 0.12 | -0.36 | -1.56 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nifty 50: Positive flow signal with score 74
-- S&P 500: Neutral or mixed signal with score 45
-- USD/INR: Neutral or mixed signal with score 40
+- Nifty 50: Positive flow signal with score 61
+- Ethereum: Neutral or mixed signal with score 53
+- S&P 500: Neutral or mixed signal with score 50
 
 
 Weakest signals:
-- Gold: Strong outflow / distribution signal with score 3
-- Silver: Strong outflow / distribution signal with score 15
-- Nasdaq 100: Strong outflow / distribution signal with score 17
+- Nasdaq 100: Strong outflow / distribution signal with score 15
+- Silver: Selling pressure with score 31
+- USD/INR: Neutral or mixed signal with score 40
 
 
 ## 4. Data Missing or Delayed
