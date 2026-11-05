@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-11-04T07:49:02.690126+00:00
+Date: 2026-11-05T08:13:59.850682+00:00
 
 ## 1. Market Regime
 
@@ -14,27 +14,27 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.36 | -1.99 | -2.64 | neutral | 50 | Neutral or mixed signal |
-| Nasdaq 100 | 0.68 | -4.96 | -9.32 | bearish | 15 | Strong outflow / distribution signal |
-| Nifty 50 | 0.2 | 5.11 | 5.77 | neutral | 61 | Positive flow signal |
-| Gold | 2.38 | -0.43 | -3.65 | bearish | 44 | Neutral or mixed signal |
-| Silver | 4.36 | -3.19 | -15.4 | bearish | 31 | Selling pressure |
-| Bitcoin | 1.02 | 1.21 | -4.2 | bearish | 43 | Neutral or mixed signal |
-| Ethereum | 1.5 | 2.93 | -4.61 | bearish | 53 | Neutral or mixed signal |
-| USD/INR | 0.12 | -0.36 | -1.56 | bearish | 40 | Neutral or mixed signal |
+| S&P 500 | 1.58 | -0.71 | -1.67 | neutral | 58 | Neutral or mixed signal |
+| Nasdaq 100 | 0.91 | -4.62 | -8.93 | bearish | 20 | Selling pressure |
+| Nifty 50 | 2.4 | 6.97 | 7.73 | neutral | 69 | Positive flow signal |
+| Gold | 1.4 | 2.45 | -0.26 | neutral | 64 | Positive flow signal |
+| Silver | 0.69 | 0.55 | -12.39 | bearish | 38 | Selling pressure |
+| Bitcoin | 0.06 | 3.9 | -2.05 | neutral | 60 | Positive flow signal |
+| Ethereum | -0.1 | 7.42 | -0.84 | neutral | 60 | Positive flow signal |
+| USD/INR | -0.33 | -0.81 | -2.0 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nifty 50: Positive flow signal with score 61
-- Ethereum: Neutral or mixed signal with score 53
-- S&P 500: Neutral or mixed signal with score 50
+- Nifty 50: Positive flow signal with score 69
+- Gold: Positive flow signal with score 64
+- Bitcoin: Positive flow signal with score 60
 
 
 Weakest signals:
-- Nasdaq 100: Strong outflow / distribution signal with score 15
-- Silver: Selling pressure with score 31
+- Nasdaq 100: Selling pressure with score 20
+- Silver: Selling pressure with score 38
 - USD/INR: Neutral or mixed signal with score 40
 
 
