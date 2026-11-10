@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-11-09T08:27:04.238603+00:00
+Date: 2026-11-10T08:41:29.093886+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 0.31 | -2.68 | -5.0 | bearish | 25 | Selling pressure |
-| Nasdaq 100 | 1.35 | -4.91 | -12.16 | bearish | 23 | Selling pressure |
-| Nifty 50 | -0.4 | 6.35 | 12.13 | neutral | 61 | Positive flow signal |
-| Gold | 0.58 | 3.25 | -2.79 | neutral | 56 | Neutral or mixed signal |
-| Silver | 0.86 | 3.02 | -13.88 | bearish | 43 | Neutral or mixed signal |
-| Bitcoin | -0.62 | -7.81 | -9.44 | bearish | 15 | Strong outflow / distribution signal |
-| Ethereum | -0.71 | -13.06 | -12.43 | bearish | 15 | Strong outflow / distribution signal |
-| USD/INR | -0.45 | -0.92 | -2.88 | bearish | 35 | Selling pressure |
+| S&P 500 | 2.35 | 0.11 | -3.35 | bearish | 48 | Neutral or mixed signal |
+| Nasdaq 100 | 3.4 | -0.29 | -9.63 | bearish | 38 | Selling pressure |
+| Nifty 50 | 0.06 | 6.84 | 12.65 | neutral | 65 | Positive flow signal |
+| Gold | 0.28 | 4.71 | -1.54 | neutral | 56 | Neutral or mixed signal |
+| Silver | 0.46 | 6.49 | -12.2 | bearish | 48 | Neutral or mixed signal |
+| Bitcoin | -1.05 | -1.99 | -10.26 | bearish | 17 | Strong outflow / distribution signal |
+| Ethereum | -1.04 | -5.6 | -13.79 | bearish | 7 | Strong outflow / distribution signal |
+| USD/INR | 0.02 | -0.85 | -2.95 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
-- Nifty 50: Positive flow signal with score 61
+- Nifty 50: Positive flow signal with score 65
 - Gold: Neutral or mixed signal with score 56
-- Silver: Neutral or mixed signal with score 43
+- S&P 500: Neutral or mixed signal with score 48
 
 
 Weakest signals:
-- Bitcoin: Strong outflow / distribution signal with score 15
-- Ethereum: Strong outflow / distribution signal with score 15
-- Nasdaq 100: Selling pressure with score 23
+- Ethereum: Strong outflow / distribution signal with score 7
+- Bitcoin: Strong outflow / distribution signal with score 17
+- Nasdaq 100: Selling pressure with score 38
 
 
 ## 4. Data Missing or Delayed
