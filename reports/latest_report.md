@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-11-12T08:40:53.303548+00:00
+Date: 2026-11-13T08:30:49.566992+00:00
 
 ## 1. Market Regime
 
@@ -14,28 +14,28 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | 1.31 | -0.9 | -2.38 | bearish | 48 | Neutral or mixed signal |
-| Nasdaq 100 | 2.28 | -0.22 | -7.18 | bearish | 38 | Selling pressure |
-| Nifty 50 | 0.01 | 5.42 | 12.95 | bullish | 71 | Positive flow signal |
-| Gold | -1.16 | -3.88 | -3.74 | bearish | 18 | Strong outflow / distribution signal |
-| Silver | -1.11 | -1.78 | -7.64 | bearish | 30 | Selling pressure |
-| Bitcoin | -0.67 | -3.01 | -9.65 | bearish | 20 | Selling pressure |
-| Ethereum | -0.4 | -8.44 | -14.19 | bearish | 15 | Strong outflow / distribution signal |
-| USD/INR | 0.09 | -0.53 | -1.34 | bearish | 35 | Selling pressure |
+| S&P 500 | -0.35 | 3.25 | -1.64 | bearish | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -0.3 | 6.23 | -5.55 | bearish | 40 | Neutral or mixed signal |
+| Nifty 50 | -0.8 | 2.28 | 10.45 | bullish | 71 | Positive flow signal |
+| Gold | 0.32 | -4.34 | -6.53 | bearish | 16 | Strong outflow / distribution signal |
+| Silver | -0.31 | -3.84 | -12.35 | bearish | 28 | Selling pressure |
+| Bitcoin | -3.7 | -7.89 | -15.26 | bearish | 15 | Strong outflow / distribution signal |
+| Ethereum | -4.16 | -8.87 | -18.93 | bearish | 7 | Strong outflow / distribution signal |
+| USD/INR | 0.58 | -0.23 | -0.96 | bearish | 40 | Neutral or mixed signal |
 
 
 ## 3. Where Money Appears to Be Moving
 
 Strongest signals:
 - Nifty 50: Positive flow signal with score 71
-- S&P 500: Neutral or mixed signal with score 48
-- Nasdaq 100: Selling pressure with score 38
+- S&P 500: Neutral or mixed signal with score 50
+- Nasdaq 100: Neutral or mixed signal with score 40
 
 
 Weakest signals:
-- Ethereum: Strong outflow / distribution signal with score 15
-- Gold: Strong outflow / distribution signal with score 18
-- Bitcoin: Selling pressure with score 20
+- Ethereum: Strong outflow / distribution signal with score 7
+- Bitcoin: Strong outflow / distribution signal with score 15
+- Gold: Strong outflow / distribution signal with score 16
 
 
 ## 4. Data Missing or Delayed
