@@ -1,6 +1,6 @@
 # Daily Money Flow Tracker Report
 
-Date: 2026-11-13T08:30:49.566992+00:00
+Date: 2026-11-14T07:51:45.116957+00:00
 
 ## 1. Market Regime
 
@@ -14,14 +14,14 @@ Reason:
 
 | Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
 |---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.35 | 3.25 | -1.64 | bearish | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -0.3 | 6.23 | -5.55 | bearish | 40 | Neutral or mixed signal |
-| Nifty 50 | -0.8 | 2.28 | 10.45 | bullish | 71 | Positive flow signal |
-| Gold | 0.32 | -4.34 | -6.53 | bearish | 16 | Strong outflow / distribution signal |
-| Silver | -0.31 | -3.84 | -12.35 | bearish | 28 | Selling pressure |
-| Bitcoin | -3.7 | -7.89 | -15.26 | bearish | 15 | Strong outflow / distribution signal |
-| Ethereum | -4.16 | -8.87 | -18.93 | bearish | 7 | Strong outflow / distribution signal |
-| USD/INR | 0.58 | -0.23 | -0.96 | bearish | 40 | Neutral or mixed signal |
+| S&P 500 | -0.4 | 2.51 | -2.36 | bearish | 50 | Neutral or mixed signal |
+| Nasdaq 100 | -1.22 | 3.53 | -6.65 | bearish | 32 | Selling pressure |
+| Nifty 50 | -0.61 | 2.48 | 10.66 | bullish | 71 | Positive flow signal |
+| Gold | 0.03 | -4.63 | -6.81 | bearish | 20 | Selling pressure |
+| Silver | -1.88 | -5.35 | -13.73 | bearish | 8 | Strong outflow / distribution signal |
+| Bitcoin | -1.84 | -10.94 | -17.08 | bearish | 7 | Strong outflow / distribution signal |
+| Ethereum | -1.81 | -11.2 | -19.66 | bearish | 7 | Strong outflow / distribution signal |
+| USD/INR | 0.22 | 0.36 | -0.3 | bearish | 35 | Selling pressure |
 
 
 ## 3. Where Money Appears to Be Moving
@@ -29,13 +29,13 @@ Reason:
 Strongest signals:
 - Nifty 50: Positive flow signal with score 71
 - S&P 500: Neutral or mixed signal with score 50
-- Nasdaq 100: Neutral or mixed signal with score 40
+- USD/INR: Selling pressure with score 35
 
 
 Weakest signals:
+- Bitcoin: Strong outflow / distribution signal with score 7
 - Ethereum: Strong outflow / distribution signal with score 7
-- Bitcoin: Strong outflow / distribution signal with score 15
-- Gold: Strong outflow / distribution signal with score 16
+- Silver: Strong outflow / distribution signal with score 8
 
 
 ## 4. Data Missing or Delayed
