@@ -37,7 +37,7 @@ The manual's wider source coverage (NSE/NSDL actual FPI-DII, CFTC positioning, s
 \`\`\`bash
 python -m pip install -r backend/requirements.txt
 python -m pytest -q tests
-python backend/run_daily.py --sample 4
+python -m backend.run_daily --sample 4
 python scripts/validate_feed.py data/feed/v1/latest.json
 \`\`\`
 
