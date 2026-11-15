@@ -1,5 +1,0 @@
-# Narrative generation is deterministic until explicitly configured, checked, and approved.
-mode: templates
-external_model_calls: false
-# Model integration must never determine labels or fabricate numbers.
-fallback: deterministic_evidence_templates
