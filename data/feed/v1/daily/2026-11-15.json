@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T08:16:53.888738+00:00",
-  "as_of_ist": "2026-11-15T13:46:53.888738+05:30",
+  "generated_at_utc": "2026-11-15T08:20:44.238376+00:00",
+  "as_of_ist": "2026-11-15T13:50:44.238376+05:30",
   "run_date_ist": "2026-11-15",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
@@ -95,7 +95,7 @@
           "value": 4.56
         }
       ],
-      "fetched_at_utc": "2026-11-15T08:17:03.409665+00:00",
+      "fetched_at_utc": "2026-11-15T08:20:54.004753+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY02_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
@@ -193,7 +193,7 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T08:17:13.024359+00:00",
+      "fetched_at_utc": "2026-11-15T08:21:03.526747+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY10_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
@@ -201,6 +201,206 @@
       "raw_file": "data/raw/2026-11-15/DBN_DGS10.json.gz",
       "freshness": "stale",
       "last_good_date": "2026-11-09",
+      "allowed_age": "2 weekday sessions (exchange holidays require review)"
+    },
+    "UST_PAR_2Y": {
+      "id": "UST_PAR_2Y",
+      "latest": {
+        "observation_date": "2026-11-13",
+        "value": 4.88
+      },
+      "recent": [
+        {
+          "observation_date": "2026-10-16",
+          "value": 4.74
+        },
+        {
+          "observation_date": "2026-10-19",
+          "value": 4.77
+        },
+        {
+          "observation_date": "2026-10-20",
+          "value": 4.79
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 4.81
+        },
+        {
+          "observation_date": "2026-10-22",
+          "value": 4.65
+        },
+        {
+          "observation_date": "2026-10-23",
+          "value": 4.69
+        },
+        {
+          "observation_date": "2026-10-26",
+          "value": 4.68
+        },
+        {
+          "observation_date": "2026-10-27",
+          "value": 4.7
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 4.67
+        },
+        {
+          "observation_date": "2026-10-29",
+          "value": 4.61
+        },
+        {
+          "observation_date": "2026-10-30",
+          "value": 4.56
+        },
+        {
+          "observation_date": "2026-11-02",
+          "value": 4.59
+        },
+        {
+          "observation_date": "2026-11-03",
+          "value": 4.61
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 4.58
+        },
+        {
+          "observation_date": "2026-11-05",
+          "value": 4.46
+        },
+        {
+          "observation_date": "2026-11-06",
+          "value": 4.51
+        },
+        {
+          "observation_date": "2026-11-09",
+          "value": 4.56
+        },
+        {
+          "observation_date": "2026-11-10",
+          "value": 4.73
+        },
+        {
+          "observation_date": "2026-11-12",
+          "value": 4.86
+        },
+        {
+          "observation_date": "2026-11-13",
+          "value": 4.88
+        }
+      ],
+      "fetched_at_utc": "2026-11-15T08:21:44.014925+00:00",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
+      "source_provider": "U.S. Department of the Treasury",
+      "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
+      "unit": "percent_per_annum",
+      "raw_sha256": "7940584cb08f8aa016d786b71015d85e3226612c7a3756129c064b32fa9795da",
+      "raw_file": "data/raw/2026-11-15/US_TREASURY_PAR_2026.csv.gz",
+      "mirror": false,
+      "freshness": "current",
+      "last_good_date": "2026-11-13",
+      "allowed_age": "2 weekday sessions (exchange holidays require review)"
+    },
+    "UST_PAR_10Y": {
+      "id": "UST_PAR_10Y",
+      "latest": {
+        "observation_date": "2026-11-13",
+        "value": 5.15
+      },
+      "recent": [
+        {
+          "observation_date": "2026-10-16",
+          "value": 5.09
+        },
+        {
+          "observation_date": "2026-10-19",
+          "value": 5.15
+        },
+        {
+          "observation_date": "2026-10-20",
+          "value": 5.12
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 5.13
+        },
+        {
+          "observation_date": "2026-10-22",
+          "value": 4.96
+        },
+        {
+          "observation_date": "2026-10-23",
+          "value": 5.0
+        },
+        {
+          "observation_date": "2026-10-26",
+          "value": 5.0
+        },
+        {
+          "observation_date": "2026-10-27",
+          "value": 4.99
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 5.05
+        },
+        {
+          "observation_date": "2026-10-29",
+          "value": 4.98
+        },
+        {
+          "observation_date": "2026-10-30",
+          "value": 4.94
+        },
+        {
+          "observation_date": "2026-11-02",
+          "value": 4.91
+        },
+        {
+          "observation_date": "2026-11-03",
+          "value": 4.95
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 4.9
+        },
+        {
+          "observation_date": "2026-11-05",
+          "value": 4.84
+        },
+        {
+          "observation_date": "2026-11-06",
+          "value": 4.86
+        },
+        {
+          "observation_date": "2026-11-09",
+          "value": 4.88
+        },
+        {
+          "observation_date": "2026-11-10",
+          "value": 4.98
+        },
+        {
+          "observation_date": "2026-11-12",
+          "value": 5.1
+        },
+        {
+          "observation_date": "2026-11-13",
+          "value": 5.15
+        }
+      ],
+      "fetched_at_utc": "2026-11-15T08:21:44.014925+00:00",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
+      "source_provider": "U.S. Department of the Treasury",
+      "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
+      "unit": "percent_per_annum",
+      "raw_sha256": "7940584cb08f8aa016d786b71015d85e3226612c7a3756129c064b32fa9795da",
+      "raw_file": "data/raw/2026-11-15/US_TREASURY_PAR_2026.csv.gz",
+      "mirror": false,
+      "freshness": "current",
+      "last_good_date": "2026-11-13",
       "allowed_age": "2 weekday sessions (exchange holidays require review)"
     }
   },
@@ -3220,7 +3420,7 @@
     "status": "degraded",
     "price_proxies_current": 50,
     "items_configured": 50,
-    "macro_series_current": 0,
+    "macro_series_current": 2,
     "macro_series_stale": [
       "DGS10",
       "DGS2"

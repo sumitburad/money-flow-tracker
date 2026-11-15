@@ -150,15 +150,16 @@ function renderNews(drivers){
 function renderMacro(macro){
   const table=add($("macro"),"table");
   const head=add(table,"thead");const tr=add(head,"tr");
-  ["Official series","Observed value","Observation date","Freshness","Source"].forEach(t=>add(tr,"th",t));
+  ["Official series","Observed value","Unit","Observation date","Freshness","Source"].forEach(t=>add(tr,"th",t));
   const body=add(table,"tbody");
   for(const [id,s] of Object.entries(macro||{})){
     const row=add(body,"tr");
     add(row,"td",id);
     add(row,"td",s.latest?.value ?? "Data unavailable");
+    add(row,"td",s.unit==="percent_per_annum"?"% per annum":"See source");
     add(row,"td",s.latest?.observation_date ?? "Data unavailable");
     add(row,"td",s.freshness==="current"?"Current":"Stale — not for live decisions",s.freshness==="stale"?"warn":"");
-    const cell=add(row,"td");href(cell,s.source,s.mirror?"Fed (via DBnomics)":"Source");
+    const cell=add(row,"td");href(cell,s.source,s.mirror?"Fed (via DBnomics)":"Official source");
   }
   if(!Object.keys(macro||{}).length)add($("macro"),"p","Official macro data unavailable.");
 }

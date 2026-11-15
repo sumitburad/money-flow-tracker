@@ -1,10 +1,10 @@
 {
-  "as_of_ist": "2026-11-15T13:46:53.888738+05:30",
+  "as_of_ist": "2026-11-15T13:50:44.238376+05:30",
   "status": "degraded",
   "items_configured": 50,
   "price_proxies_current": 50,
-  "macro_series_available": 2,
-  "macro_series_current": 0,
+  "macro_series_available": 4,
+  "macro_series_current": 2,
   "macro_series_stale": [
     "DGS10",
     "DGS2"

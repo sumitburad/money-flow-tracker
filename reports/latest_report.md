@@ -1,4 +1,4 @@
-# Global Money-Flow Brief | 2026-11-15T13:46:53.888738+05:30
+# Global Money-Flow Brief | 2026-11-15T13:50:44.238376+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
@@ -25,4 +25,4 @@
 ## Watch next
 Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-15T13:46:53.888738+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-15T13:50:44.238376+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
