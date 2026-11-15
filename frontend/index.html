@@ -52,6 +52,9 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
     <a href="#rotation">Rotation checks</a>
     <a href="#drivers">Policy drivers</a>
     <a href="#liquidity">Liquidity</a>
+    <a href="#institutions">Institutional flows</a>
+    <a href="#positioning">CFTC positioning</a>
+    <a href="#breadth">Breadth</a>
     <a href="#health">Data quality</a>
   </nav>
   <section id="markets"><h2>Asset and market flow map</h2>
@@ -68,6 +71,18 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   </section>
   <section id="liquidity"><h2>Official macro and liquidity observations</h2>
     <div id="macro" class="scroller"></div>
+  </section>
+  <section id="institutions"><h2>Institutional cash flows — permissioned data only</h2>
+    <p class="note">NSE provisional trading activity is not final NSDL FPI investment flow. Unknown access or license means data unavailable, never estimated.</p>
+    <div class="grid" id="institutional-records"></div>
+  </section>
+  <section id="positioning"><h2>CFTC futures positioning</h2>
+    <p class="note">Weekly U.S. futures asset-manager positioning; not equity cash flows or stock recommendations.</p>
+    <div id="cftc-records" class="grid"></div>
+  </section>
+  <section id="breadth"><h2>Market breadth proxies</h2>
+    <p class="note">Relative equal-weight ETF performance is not the share of individual constituents advancing.</p>
+    <div id="breadth-records" class="grid"></div>
   </section>
   <section id="health"><h2>Data health and provenance</h2><div id="healthbox" class="status"></div></section>
   <footer>Public research information only, not an instruction to transact. Human approval required for publication under a personal or company identity. The underlying daily data feed is versioned at <a href="feed/v1/latest.json">feed/v1/latest.json</a>.</footer>
@@ -163,6 +178,57 @@ function renderMacro(macro){
   }
   if(!Object.keys(macro||{}).length)add($("macro"),"p","Official macro data unavailable.");
 }
+function renderAdvanced(feed){
+  const institution=feed.institutional_flows||{};
+  const up= institution.nse_cash_via_authorized_broker||{};
+  for(const [title,desc,status,src] of [
+    ["NSE participant cash via authorized provider",
+     "NSE equity cash only, provisional status and coverage unconfirmed",
+     up.status||"not_available",up.source],
+    ["NSDL final FPI investments","Final NSDL report; not the same as exchange participant trading",
+     institution.nsdl_final?.status||"not_available",institution.nsdl_final?.source],
+    ["CDSL final FPI investments","Alternative depository records; independent reconciliation required",
+     institution.cdsl_final?.status||"not_available",institution.cdsl_final?.source],
+  ]){
+    const card=add($("institutional-records"),"article",undefined,"card");
+    add(card,"h3",title);add(card,"p","Status: "+status);
+    add(card,"p",desc,"note");href(card,src,"Source information");
+  }
+  for(const [region,entry] of Object.entries(feed.liquidity_coverage||{})){
+    const card=add($("institutional-records"),"article",undefined,"card");
+    add(card,"h3",region+" central bank liquidity");
+    add(card,"p","Evidence: "+entry.status+"; observed "+(entry.observation_date||"not available"));
+    add(card,"p","Data: "+entry.series_id+". No comparable worldwide net money-flow total.","note");
+    href(card,entry.source,"Source");
+  }
+  const cftc=feed.positioning||{};
+  const entries=cftc.entries||{};
+  if(!Object.keys(entries).length)
+    add($("cftc-records"),"p","Independent weekly positioning data unavailable.");
+  for(const [id,entry] of Object.entries(entries)){
+    const card=add($("cftc-records"),"article",undefined,"card");
+    add(card,"h3",id+": "+entry.market);
+    add(card,"p",entry.evidence);
+    add(card,"small","CFTC observation "+entry.observation_date+"; report date is not release time");
+    href(card,entry.source,"CFTC TFF dataset");
+  }
+  const breadth=feed.breadth_proxies||{};
+  if(!Object.keys(breadth).length)
+    add($("breadth-records"),"p","Fresh independently calculated breadth proxies unavailable.");
+  for(const [id,entry] of Object.entries(breadth)){
+    const card=add($("breadth-records"),"article",undefined,"card");
+    add(card,"h3",id);
+    add(card,"p",entry.evidence);
+    add(card,"small","Date "+entry.observation_date+" | "+entry.state);
+    href(card,entry.source,"Equal-weight ETF source");
+  }
+  const health=feed.classification_health||{};
+  const details=add($("news"),"p",undefined,"note");
+  details.textContent="News tags: "+(health.model_classified||0)+
+    " accepted AI classifications; "+(health.rule_fallback||0)+
+    " explicit non-AI fallbacks. All impacts remain unconfirmed until verified. Human review required.";
+}
+
 async function start(){
   try{
     const response=await fetch("feed/v1/latest.json",{cache:"no-store"});
@@ -176,6 +242,7 @@ async function start(){
     renderRotation(feed.items);
     renderNews(feed.drivers);
     renderMacro(feed.macro);
+    renderAdvanced(feed);
     const h=await fetch("status.json",{cache:"no-store"}).then(x=>x.ok?x.json():null).catch(()=>null);
     $("healthbox").textContent=h?
       "Status: "+h.status+" | Current market price proxies: "+

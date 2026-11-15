@@ -8,7 +8,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "bbea3780f69cefa3",
+      "event_type": "other",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "697d000e72a48d8d",
@@ -19,7 +35,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "697d000e72a48d8d",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "8780e9f08f2f30f4",
@@ -30,7 +62,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "8780e9f08f2f30f4",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "f6a5d6fe91ea2450",
@@ -41,7 +89,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "f6a5d6fe91ea2450",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "83a40e1376ed5923",
@@ -52,7 +116,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "83a40e1376ed5923",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "451bf10485d71230",
@@ -63,7 +143,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "451bf10485d71230",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "68ab46e128b42907",
@@ -74,7 +170,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "68ab46e128b42907",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "beacfe1806dadbf1",
@@ -85,7 +197,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "beacfe1806dadbf1",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "3c40d7e034eb31eb",
@@ -96,7 +224,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "3c40d7e034eb31eb",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "13bcdbfd6a06c614",
@@ -107,7 +251,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "13bcdbfd6a06c614",
+      "event_type": "other",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "37905465dacd3a6e",
@@ -118,7 +278,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "37905465dacd3a6e",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "32455b1e07840b0e",
@@ -129,7 +305,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "32455b1e07840b0e",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "bd8e513455ef0121",
@@ -140,7 +332,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "bd8e513455ef0121",
+      "event_type": "other",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "a9dd368621e5ce5b",
@@ -151,7 +359,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "a9dd368621e5ce5b",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "bdb0be338f340e1c",
@@ -162,7 +386,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "bdb0be338f340e1c",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "fd0775022c84a7c8",
@@ -173,7 +413,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "fd0775022c84a7c8",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "7c2cb421a660685d",
@@ -184,7 +440,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "7c2cb421a660685d",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "8e1b1d63568ba41e",
@@ -195,7 +467,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "8e1b1d63568ba41e",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "0477ebfc41ad1eea",
@@ -206,7 +494,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "0477ebfc41ad1eea",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "c5cdf90c2e4d6ce8",
@@ -217,7 +521,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "c5cdf90c2e4d6ce8",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "1674d1a2208e7db3",
@@ -228,7 +548,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "1674d1a2208e7db3",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "62181200734254e6",
@@ -239,7 +575,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "62181200734254e6",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "ca9b3d5143b40937",
@@ -250,7 +602,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "ca9b3d5143b40937",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "f4a0adedfd13d6ae",
@@ -261,7 +629,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "f4a0adedfd13d6ae",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "8521f1424e9a626e",
@@ -272,7 +656,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "8521f1424e9a626e",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "2110c34707bfbb49",
@@ -283,7 +683,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "2110c34707bfbb49",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "3ec90a8bac1c5216",
@@ -294,7 +710,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "3ec90a8bac1c5216",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "e7e7a99f01791d12",
@@ -305,7 +737,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "e7e7a99f01791d12",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "76f7f4f2b70005a5",
@@ -316,7 +764,23 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "76f7f4f2b70005a5",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   },
   {
     "headline_id": "6d9b0b8a7920f9e6",
@@ -327,6 +791,22 @@
     "impact": "unconfirmed",
     "direction": "unclear",
     "data": "Headline only",
-    "reading": "No verified causal market reaction"
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "6d9b0b8a7920f9e6",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
   }
 ]

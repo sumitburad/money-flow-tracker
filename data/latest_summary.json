@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-15T08:20:44.238376+00:00",
+  "generated_at": "2026-11-15T09:08:56.279688+00:00",
   "assets": [
     {
       "id": "sp500",
@@ -34,9 +34,11 @@
           "method": "price_trend"
         },
         "breadth": {
-          "state": "not_available",
-          "evidence": "No independently sourced constituent breadth",
-          "source": null
+          "state": "supportive",
+          "evidence": "Equal-weight ETF outperformed cap-weight ETF over 20 sessions; NOT constituent breadth or direct flows",
+          "source": "https://finance.yahoo.com/quote/RSP/",
+          "observed_at": "2026-11-13",
+          "method": "relative_equal_weight_vs_cap_weight_etf_proxy"
         },
         "positioning": {
           "state": "not_available",
@@ -88,9 +90,11 @@
           "method": "price_trend"
         },
         "breadth": {
-          "state": "not_available",
-          "evidence": "No independently sourced constituent breadth",
-          "source": null
+          "state": "supportive",
+          "evidence": "Equal-weight ETF outperformed cap-weight ETF over 20 sessions; NOT constituent breadth or direct flows",
+          "source": "https://finance.yahoo.com/quote/QQEW/",
+          "observed_at": "2026-11-13",
+          "method": "relative_equal_weight_vs_cap_weight_etf_proxy"
         },
         "positioning": {
           "state": "not_available",
@@ -1815,9 +1819,11 @@
           "source": null
         },
         "positioning": {
-          "state": "not_available",
-          "evidence": "No verified CFTC/positioning series mapped",
-          "source": null
+          "state": "supportive",
+          "evidence": "CFTC TFF weekly asset-manager net futures position increased; positions do not reveal why traders hold them",
+          "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+          "observed_at": "2026-11-03",
+          "method": "cftc_asset_manager_futures_only_weekly"
         },
         "macro_liquidity": {
           "state": "not_available",
