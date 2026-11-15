@@ -1,12 +1,203 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T07:56:35.554524+00:00",
-  "as_of_ist": "2026-11-15T13:26:35.554524+05:30",
+  "generated_at_utc": "2026-11-15T08:11:24.189574+00:00",
+  "as_of_ist": "2026-11-15T13:41:24.189574+05:30",
   "run_date_ist": "2026-11-15",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
   "usage": "research_only_not_order_authorization",
-  "macro": {},
+  "macro": {
+    "DGS2": {
+      "id": "DGS2",
+      "latest": {
+        "observation_date": "2026-11-09",
+        "value": 4.56
+      },
+      "recent": [
+        {
+          "observation_date": "2026-10-13",
+          "value": 4.79
+        },
+        {
+          "observation_date": "2026-10-14",
+          "value": 4.82
+        },
+        {
+          "observation_date": "2026-10-15",
+          "value": 4.77
+        },
+        {
+          "observation_date": "2026-10-16",
+          "value": 4.74
+        },
+        {
+          "observation_date": "2026-10-19",
+          "value": 4.77
+        },
+        {
+          "observation_date": "2026-10-20",
+          "value": 4.79
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 4.81
+        },
+        {
+          "observation_date": "2026-10-22",
+          "value": 4.65
+        },
+        {
+          "observation_date": "2026-10-23",
+          "value": 4.69
+        },
+        {
+          "observation_date": "2026-10-26",
+          "value": 4.68
+        },
+        {
+          "observation_date": "2026-10-27",
+          "value": 4.7
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 4.67
+        },
+        {
+          "observation_date": "2026-10-29",
+          "value": 4.61
+        },
+        {
+          "observation_date": "2026-10-30",
+          "value": 4.56
+        },
+        {
+          "observation_date": "2026-11-02",
+          "value": 4.59
+        },
+        {
+          "observation_date": "2026-11-03",
+          "value": 4.61
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 4.58
+        },
+        {
+          "observation_date": "2026-11-05",
+          "value": 4.46
+        },
+        {
+          "observation_date": "2026-11-06",
+          "value": 4.51
+        },
+        {
+          "observation_date": "2026-11-09",
+          "value": 4.56
+        }
+      ],
+      "fetched_at_utc": "2026-11-15T08:11:33.679515+00:00",
+      "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY02_N.B",
+      "source_provider": "Federal Reserve H.15 via DBnomics",
+      "mirror": true,
+      "raw_sha256": "6bb7a8d6bb3bcd5f838e061d2e9cdfd6b6d0ba5482f18e5f52eb7824b6fab04a",
+      "raw_file": "data/raw/2026-11-15/DBN_DGS2.json.gz"
+    },
+    "DGS10": {
+      "id": "DGS10",
+      "latest": {
+        "observation_date": "2026-11-09",
+        "value": 4.88
+      },
+      "recent": [
+        {
+          "observation_date": "2026-10-13",
+          "value": 5.21
+        },
+        {
+          "observation_date": "2026-10-14",
+          "value": 5.19
+        },
+        {
+          "observation_date": "2026-10-15",
+          "value": 5.1
+        },
+        {
+          "observation_date": "2026-10-16",
+          "value": 5.09
+        },
+        {
+          "observation_date": "2026-10-19",
+          "value": 5.15
+        },
+        {
+          "observation_date": "2026-10-20",
+          "value": 5.12
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 5.13
+        },
+        {
+          "observation_date": "2026-10-22",
+          "value": 4.96
+        },
+        {
+          "observation_date": "2026-10-23",
+          "value": 5.0
+        },
+        {
+          "observation_date": "2026-10-26",
+          "value": 5.0
+        },
+        {
+          "observation_date": "2026-10-27",
+          "value": 4.99
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 5.05
+        },
+        {
+          "observation_date": "2026-10-29",
+          "value": 4.98
+        },
+        {
+          "observation_date": "2026-10-30",
+          "value": 4.94
+        },
+        {
+          "observation_date": "2026-11-02",
+          "value": 4.91
+        },
+        {
+          "observation_date": "2026-11-03",
+          "value": 4.95
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 4.9
+        },
+        {
+          "observation_date": "2026-11-05",
+          "value": 4.84
+        },
+        {
+          "observation_date": "2026-11-06",
+          "value": 4.86
+        },
+        {
+          "observation_date": "2026-11-09",
+          "value": 4.88
+        }
+      ],
+      "fetched_at_utc": "2026-11-15T08:11:43.240374+00:00",
+      "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY10_N.B",
+      "source_provider": "Federal Reserve H.15 via DBnomics",
+      "mirror": true,
+      "raw_sha256": "6e491bb9ca364324984121631aa6a176b6e7182ecd1739de61b5f96e597b40c6",
+      "raw_file": "data/raw/2026-11-15/DBN_DGS10.json.gz"
+    }
+  },
   "items": [
     {
       "id": "sp500",
@@ -334,16 +525,16 @@
     },
     {
       "id": "niftymid",
-      "item": "Nifty Midcap 100",
+      "item": "Nifty Midcap 150 ETF proxy",
       "group": "style",
       "region": "IN",
       "currency": "INR",
-      "symbol": "NIFTY_MIDCAP_100.NS",
+      "symbol": "MID150BEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "freshness": "unavailable",
-      "observation_date": null,
-      "source_error": "ValueError: fewer than two observations",
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
+      "freshness": "current",
       "volume_observed": false,
       "label": "Neutral/Mixed",
       "tag": "Steady",
@@ -351,12 +542,12 @@
       "families": {
         "money_flow": {
           "state": "not_available",
-          "evidence": "Independent evidence unavailable",
+          "evidence": "Trading volume insufficient; no measured fund flow",
           "source": null
         },
         "price_trend": {
           "state": "not_available",
-          "evidence": "Independent evidence unavailable",
+          "evidence": "Insufficient 200-session price history",
           "source": null
         },
         "breadth": {
@@ -380,34 +571,38 @@
           "source": null
         }
       },
-      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Insufficient 200-session price history. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "niftysmall",
-      "item": "Nifty Smallcap 100",
+      "item": "Nifty Smallcap 250 ETF proxy",
       "group": "style",
       "region": "IN",
       "currency": "INR",
-      "symbol": "NIFTY_SMLCAP_100.NS",
+      "symbol": "SMALLADD.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "freshness": "unavailable",
-      "observation_date": null,
-      "source_error": "ValueError: no historical observations",
-      "volume_observed": false,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+      "freshness": "current",
+      "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Steady",
+      "tag": "Strengthening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "not_available",
-          "evidence": "Independent evidence unavailable",
-          "source": null
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
         },
         "price_trend": {
-          "state": "not_available",
-          "evidence": "Independent evidence unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
         },
         "breadth": {
           "state": "not_available",
@@ -430,7 +625,7 @@
           "source": null
         }
       },
-      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "china",
@@ -3017,7 +3212,7 @@
   ],
   "health": {
     "status": "degraded",
-    "price_proxies_current": 48,
+    "price_proxies_current": 50,
     "items_configured": 50
   },
   "source_manifest": "config/sources.yaml"

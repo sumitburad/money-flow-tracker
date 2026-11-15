@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-15T07:56:35.554524+00:00",
+  "generated_at": "2026-11-15T08:11:24.189574+00:00",
   "assets": [
     {
       "id": "sp500",
@@ -328,16 +328,16 @@
     },
     {
       "id": "niftymid",
-      "item": "Nifty Midcap 100",
+      "item": "Nifty Midcap 150 ETF proxy",
       "group": "style",
       "region": "IN",
       "currency": "INR",
-      "symbol": "NIFTY_MIDCAP_100.NS",
+      "symbol": "MID150BEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "freshness": "unavailable",
-      "observation_date": null,
-      "source_error": "ValueError: fewer than two observations",
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
+      "freshness": "current",
       "volume_observed": false,
       "label": "Neutral/Mixed",
       "tag": "Steady",
@@ -345,12 +345,12 @@
       "families": {
         "money_flow": {
           "state": "not_available",
-          "evidence": "Independent evidence unavailable",
+          "evidence": "Trading volume insufficient; no measured fund flow",
           "source": null
         },
         "price_trend": {
           "state": "not_available",
-          "evidence": "Independent evidence unavailable",
+          "evidence": "Insufficient 200-session price history",
           "source": null
         },
         "breadth": {
@@ -374,34 +374,38 @@
           "source": null
         }
       },
-      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Insufficient 200-session price history. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "niftysmall",
-      "item": "Nifty Smallcap 100",
+      "item": "Nifty Smallcap 250 ETF proxy",
       "group": "style",
       "region": "IN",
       "currency": "INR",
-      "symbol": "NIFTY_SMLCAP_100.NS",
+      "symbol": "SMALLADD.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "freshness": "unavailable",
-      "observation_date": null,
-      "source_error": "ValueError: no historical observations",
-      "volume_observed": false,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+      "freshness": "current",
+      "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Steady",
+      "tag": "Strengthening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "not_available",
-          "evidence": "Independent evidence unavailable",
-          "source": null
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
         },
         "price_trend": {
-          "state": "not_available",
-          "evidence": "Independent evidence unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
         },
         "breadth": {
           "state": "not_available",
@@ -424,7 +428,7 @@
           "source": null
         }
       },
-      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "china",
