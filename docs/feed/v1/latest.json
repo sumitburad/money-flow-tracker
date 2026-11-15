@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T09:08:56.279688+00:00",
-  "as_of_ist": "2026-11-15T14:38:56.279688+05:30",
+  "generated_at_utc": "2026-11-15T09:15:27.774517+00:00",
+  "as_of_ist": "2026-11-15T14:45:27.774517+05:30",
   "run_date_ist": "2026-11-15",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
@@ -95,7 +95,7 @@
           "value": 4.56
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:09:05.541156+00:00",
+      "fetched_at_utc": "2026-11-15T09:15:37.447623+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY02_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
@@ -193,7 +193,7 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:09:14.909424+00:00",
+      "fetched_at_utc": "2026-11-15T09:15:46.793932+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY10_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
@@ -202,6 +202,414 @@
       "freshness": "stale",
       "last_good_date": "2026-11-09",
       "allowed_age": "2 weekday sessions (exchange holidays require review)"
+    },
+    "WALCL": {
+      "id": "WALCL",
+      "latest": {
+        "observation_date": "2026-11-11",
+        "value": 6758.867
+      },
+      "recent": [
+        {
+          "observation_date": "2026-07-01",
+          "value": 6724.564
+        },
+        {
+          "observation_date": "2026-07-08",
+          "value": 6735.609
+        },
+        {
+          "observation_date": "2026-07-15",
+          "value": 6743.028
+        },
+        {
+          "observation_date": "2026-07-22",
+          "value": 6747.378
+        },
+        {
+          "observation_date": "2026-07-29",
+          "value": 6738.1900000000005
+        },
+        {
+          "observation_date": "2026-08-05",
+          "value": 6748.567
+        },
+        {
+          "observation_date": "2026-08-12",
+          "value": 6759.955
+        },
+        {
+          "observation_date": "2026-08-19",
+          "value": 6745.6990000000005
+        },
+        {
+          "observation_date": "2026-08-26",
+          "value": 6730.912
+        },
+        {
+          "observation_date": "2026-09-02",
+          "value": 6737.204
+        },
+        {
+          "observation_date": "2026-09-09",
+          "value": 6740.619
+        },
+        {
+          "observation_date": "2026-09-16",
+          "value": 6746.548
+        },
+        {
+          "observation_date": "2026-09-23",
+          "value": 6747.704
+        },
+        {
+          "observation_date": "2026-09-30",
+          "value": 6743.031
+        },
+        {
+          "observation_date": "2026-10-07",
+          "value": 6747.56
+        },
+        {
+          "observation_date": "2026-10-14",
+          "value": 6755.639
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 6753.604
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 6745.635
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 6748.145
+        },
+        {
+          "observation_date": "2026-11-11",
+          "value": 6758.867
+        }
+      ],
+      "source": "https://m0.com/data/fed-balance-sheet",
+      "original_series": "https://fred.stlouisfed.org/series/WALCL",
+      "source_provider": "M0.com secondary public mirror of FRED, normalized by M0",
+      "mirror": true,
+      "frequency": "weekly",
+      "unit": "billions_usd",
+      "not_official_primary": true,
+      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_WALCL.csv.gz",
+      "raw_sha256": "bbe5adb9ff8098f92e99024873be1b5403a3eeea4c3d041889b191df2d1c97a8",
+      "fetched_at_utc": "2026-11-15T09:15:55.642961+00:00",
+      "freshness": "current",
+      "last_good_date": "2026-11-11",
+      "allowed_age": "10 weekday sessions (exchange holidays require review)"
+    },
+    "WTREGEN": {
+      "id": "WTREGEN",
+      "latest": {
+        "observation_date": "2026-11-11",
+        "value": 914.37
+      },
+      "recent": [
+        {
+          "observation_date": "2026-07-01",
+          "value": 880.237
+        },
+        {
+          "observation_date": "2026-07-08",
+          "value": 774.062
+        },
+        {
+          "observation_date": "2026-07-15",
+          "value": 756.218
+        },
+        {
+          "observation_date": "2026-07-22",
+          "value": 829.623
+        },
+        {
+          "observation_date": "2026-07-29",
+          "value": 910.7760000000001
+        },
+        {
+          "observation_date": "2026-08-05",
+          "value": 907.3240000000001
+        },
+        {
+          "observation_date": "2026-08-12",
+          "value": 963.95
+        },
+        {
+          "observation_date": "2026-08-19",
+          "value": 953.612
+        },
+        {
+          "observation_date": "2026-08-26",
+          "value": 950.736
+        },
+        {
+          "observation_date": "2026-09-02",
+          "value": 967.9350000000001
+        },
+        {
+          "observation_date": "2026-09-09",
+          "value": 883.335
+        },
+        {
+          "observation_date": "2026-09-16",
+          "value": 877.028
+        },
+        {
+          "observation_date": "2026-09-23",
+          "value": 977.0840000000001
+        },
+        {
+          "observation_date": "2026-09-30",
+          "value": 948.674
+        },
+        {
+          "observation_date": "2026-10-07",
+          "value": 880.253
+        },
+        {
+          "observation_date": "2026-10-14",
+          "value": 883.373
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 952.0020000000001
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 999.727
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 957.1750000000001
+        },
+        {
+          "observation_date": "2026-11-11",
+          "value": 914.37
+        }
+      ],
+      "source": "https://m0.com/data/treasury-general-account",
+      "original_series": "https://fred.stlouisfed.org/series/WTREGEN",
+      "source_provider": "M0.com secondary public mirror of FRED, normalized by M0",
+      "mirror": true,
+      "frequency": "weekly",
+      "unit": "billions_usd",
+      "not_official_primary": true,
+      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_WTREGEN.csv.gz",
+      "raw_sha256": "0ef5209d7b0284cf5fcf86a88188db8cd480607632875b4759a902128259252f",
+      "fetched_at_utc": "2026-11-15T09:16:04.469185+00:00",
+      "freshness": "current",
+      "last_good_date": "2026-11-11",
+      "allowed_age": "10 weekday sessions (exchange holidays require review)"
+    },
+    "RRPONTSYD": {
+      "id": "RRPONTSYD",
+      "latest": {
+        "observation_date": "2026-11-13",
+        "value": 0.325
+      },
+      "recent": [
+        {
+          "observation_date": "2026-10-16",
+          "value": 0.1
+        },
+        {
+          "observation_date": "2026-10-19",
+          "value": 0.33
+        },
+        {
+          "observation_date": "2026-10-20",
+          "value": 0.227
+        },
+        {
+          "observation_date": "2026-10-21",
+          "value": 0.237
+        },
+        {
+          "observation_date": "2026-10-22",
+          "value": 0.351
+        },
+        {
+          "observation_date": "2026-10-23",
+          "value": 0.2
+        },
+        {
+          "observation_date": "2026-10-26",
+          "value": 0.2
+        },
+        {
+          "observation_date": "2026-10-27",
+          "value": 0.226
+        },
+        {
+          "observation_date": "2026-10-28",
+          "value": 0.176
+        },
+        {
+          "observation_date": "2026-10-29",
+          "value": 0.353
+        },
+        {
+          "observation_date": "2026-10-30",
+          "value": 4.375
+        },
+        {
+          "observation_date": "2026-11-02",
+          "value": 5.087
+        },
+        {
+          "observation_date": "2026-11-03",
+          "value": 0.427
+        },
+        {
+          "observation_date": "2026-11-04",
+          "value": 0.225
+        },
+        {
+          "observation_date": "2026-11-05",
+          "value": 0.125
+        },
+        {
+          "observation_date": "2026-11-06",
+          "value": 0.15
+        },
+        {
+          "observation_date": "2026-11-09",
+          "value": 0.252
+        },
+        {
+          "observation_date": "2026-11-10",
+          "value": 0.152
+        },
+        {
+          "observation_date": "2026-11-12",
+          "value": 0.25
+        },
+        {
+          "observation_date": "2026-11-13",
+          "value": 0.325
+        }
+      ],
+      "source": "https://m0.com/data/reverse-repo",
+      "original_series": "https://fred.stlouisfed.org/series/RRPONTSYD",
+      "source_provider": "M0.com secondary public mirror of FRED, normalized by M0",
+      "mirror": true,
+      "frequency": "daily",
+      "unit": "billions_usd",
+      "not_official_primary": true,
+      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_RRPONTSYD.csv.gz",
+      "raw_sha256": "ba47fa5aa39dbba2531416d213706dd0f869139eca2647dc91109e95cc409981",
+      "fetched_at_utc": "2026-11-15T09:16:13.142829+00:00",
+      "freshness": "current",
+      "last_good_date": "2026-11-13",
+      "allowed_age": "2 weekday sessions (exchange holidays require review)"
+    },
+    "M2SL": {
+      "id": "M2SL",
+      "latest": {
+        "observation_date": "2026-09-01",
+        "value": 23413.9
+      },
+      "recent": [
+        {
+          "observation_date": "2025-02-01",
+          "value": 21581.1
+        },
+        {
+          "observation_date": "2025-03-01",
+          "value": 21657.4
+        },
+        {
+          "observation_date": "2025-04-01",
+          "value": 21743.3
+        },
+        {
+          "observation_date": "2025-05-01",
+          "value": 21808.8
+        },
+        {
+          "observation_date": "2025-06-01",
+          "value": 21916.1
+        },
+        {
+          "observation_date": "2025-07-01",
+          "value": 21998.1
+        },
+        {
+          "observation_date": "2025-08-01",
+          "value": 22065.9
+        },
+        {
+          "observation_date": "2025-09-01",
+          "value": 22149.2
+        },
+        {
+          "observation_date": "2025-10-01",
+          "value": 22223.1
+        },
+        {
+          "observation_date": "2025-11-01",
+          "value": 22253.2
+        },
+        {
+          "observation_date": "2025-12-01",
+          "value": 22328.8
+        },
+        {
+          "observation_date": "2026-01-01",
+          "value": 22386.6
+        },
+        {
+          "observation_date": "2026-02-01",
+          "value": 22572.3
+        },
+        {
+          "observation_date": "2026-03-01",
+          "value": 22613.9
+        },
+        {
+          "observation_date": "2026-04-01",
+          "value": 22728.0
+        },
+        {
+          "observation_date": "2026-05-01",
+          "value": 22980.9
+        },
+        {
+          "observation_date": "2026-06-01",
+          "value": 23077.7
+        },
+        {
+          "observation_date": "2026-07-01",
+          "value": 23177.4
+        },
+        {
+          "observation_date": "2026-08-01",
+          "value": 23300.9
+        },
+        {
+          "observation_date": "2026-09-01",
+          "value": 23413.9
+        }
+      ],
+      "source": "https://m0.com/data/m2",
+      "original_series": "https://fred.stlouisfed.org/series/M2SL",
+      "source_provider": "M0.com secondary public mirror of FRED, normalized by M0",
+      "mirror": true,
+      "frequency": "monthly",
+      "unit": "billions_usd",
+      "not_official_primary": true,
+      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_M2SL.csv.gz",
+      "raw_sha256": "bcff35e9a7dc4e5a424457b9f6839561029ef0e67162ce52170b26c568ace88e",
+      "fetched_at_utc": "2026-11-15T09:16:21.770372+00:00",
+      "freshness": "stale",
+      "last_good_date": "2026-09-01",
+      "allowed_age": "45 calendar days"
     },
     "ECB_ILM_TOTAL_ASSETS": {
       "id": "ECB_ILM_TOTAL_ASSETS",
@@ -299,7 +707,7 @@
       "mirror": false,
       "raw_sha256": "93e0a042bf47380a717e715f6343b17a916b466441e63c1a691c98a7953e57a9",
       "raw_file": "data/raw/2026-11-15/ECB_ILM_TOTAL_ASSETS.gz",
-      "fetched_at_utc": "2026-11-15T09:09:59.635393+00:00",
+      "fetched_at_utc": "2026-11-15T09:16:31.002550+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-06",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -392,7 +800,7 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:10:00.193231+00:00",
+      "fetched_at_utc": "2026-11-15T09:16:31.685971+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -492,7 +900,7 @@
           "value": 5.15
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:10:00.193231+00:00",
+      "fetched_at_utc": "2026-11-15T09:16:31.685971+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -550,9 +958,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -606,9 +1016,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -631,9 +1043,9 @@
       "price_source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -660,9 +1072,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -670,7 +1084,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "niftybank",
@@ -685,9 +1099,9 @@
       "price_source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -714,9 +1128,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -724,7 +1140,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "niftyit",
@@ -768,9 +1184,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -793,9 +1211,9 @@
       "price_source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -822,9 +1240,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -832,7 +1252,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "niftymid",
@@ -872,9 +1292,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -926,9 +1348,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -980,9 +1404,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1034,9 +1460,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1088,9 +1516,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1142,9 +1572,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1196,9 +1628,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1250,9 +1684,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1304,9 +1740,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1358,9 +1796,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1383,9 +1823,9 @@
       "price_source": "https://finance.yahoo.com/quote/IWD/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -1412,9 +1852,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1422,7 +1864,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "semis",
@@ -1466,9 +1908,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1520,9 +1964,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1545,9 +1991,9 @@
       "price_source": "https://finance.yahoo.com/quote/XLF/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -1574,9 +2020,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1584,7 +2032,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "us_banks",
@@ -1628,9 +2076,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1682,9 +2132,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1736,9 +2188,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1790,9 +2244,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1844,9 +2300,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1898,9 +2356,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1952,9 +2412,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -1977,9 +2439,9 @@
       "price_source": "https://finance.yahoo.com/quote/XLRE/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -2006,9 +2468,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -2016,7 +2480,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "us_materials",
@@ -2031,9 +2495,9 @@
       "price_source": "https://finance.yahoo.com/quote/XLB/history/",
       "freshness": "current",
       "volume_observed": true,
-      "label": "Neutral/Mixed",
+      "label": "Bullish",
       "tag": "Strengthening",
-      "agreement": "Weak",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
           "state": "supportive",
@@ -2060,9 +2524,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -2070,7 +2536,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
     },
     {
       "id": "us_communications",
@@ -2114,9 +2580,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -2168,9 +2636,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "neutral",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -2222,9 +2692,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "neutral",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -2276,9 +2748,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "neutral",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -3020,9 +3494,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -3074,9 +3550,11 @@
           "source": null
         },
         "macro_liquidity": {
-          "state": "not_available",
-          "evidence": "Fed balance sheet series unavailable",
-          "source": null
+          "state": "supportive",
+          "evidence": "Fed assets expanded over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://m0.com/data/fed-balance-sheet",
+          "observed_at": "2026-11-11",
+          "method": "official_macro_context"
         },
         "news": {
           "state": "not_available",
@@ -4040,7 +4518,7 @@
       }
     },
     "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
-    "fetched_at_utc": "2026-11-15T09:10:03.128534+00:00",
+    "fetched_at_utc": "2026-11-15T09:16:32.392444+00:00",
     "raw_sha256": "5c3947b7df7f4546dbb7d93feac52434bcdcf75673c259ba60936a1ded35191d",
     "raw_file": "data/raw/2026-11-15/CFTC_TFF_FUTURES_ONLY.gz",
     "type": "TFF_FUTURES_ONLY",
@@ -4069,9 +4547,9 @@
   "liquidity_coverage": {
     "US": {
       "series_id": "WALCL",
-      "status": "not_available",
-      "observation_date": null,
-      "source": "https://fred.stlouisfed.org/series/WALCL",
+      "status": "current",
+      "observation_date": "2026-11-11",
+      "source": "https://m0.com/data/fed-balance-sheet",
       "note": "Not a complete cross-border money flow measurement"
     },
     "EU": {
@@ -4116,10 +4594,11 @@
     "status": "degraded",
     "price_proxies_current": 50,
     "items_configured": 50,
-    "macro_series_current": 3,
+    "macro_series_current": 6,
     "macro_series_stale": [
       "DGS10",
-      "DGS2"
+      "DGS2",
+      "M2SL"
     ]
   },
   "source_manifest": "config/sources.yaml"

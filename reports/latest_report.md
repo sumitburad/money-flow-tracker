@@ -1,10 +1,12 @@
-# Global Money-Flow Brief | 2026-11-15T14:38:56.279688+05:30
+# Global Money-Flow Brief | 2026-11-15T14:45:27.774517+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Where money is flowing
 **Data — supportive evidence:**
-- No qualifying directional signal; data may be incomplete.
+- Nifty 50: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ENSEI/history/)
+- Nifty Bank: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ENSEBANK/history/)
+- Nifty 500: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ECRSLDX/history/)
 **Data — opposing evidence:**
 - No qualifying directional signal; data may be incomplete.
 
@@ -25,4 +27,4 @@
 ## Watch next
 Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-15T14:38:56.279688+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-15T14:45:27.774517+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

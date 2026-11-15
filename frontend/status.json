@@ -1,30 +1,27 @@
 {
-  "as_of_ist": "2026-11-15T14:38:56.279688+05:30",
+  "as_of_ist": "2026-11-15T14:45:27.774517+05:30",
   "status": "degraded",
   "items_configured": 50,
   "price_proxies_current": 50,
-  "macro_series_available": 5,
-  "macro_series_current": 3,
+  "macro_series_available": 9,
+  "macro_series_current": 6,
   "macro_series_stale": [
     "DGS10",
-    "DGS2"
+    "DGS2",
+    "M2SL"
   ],
   "macro_series_unavailable": [
     "BOJ_TOTAL_ASSETS",
     "DEXINUS",
-    "M2SL",
     "PBOC_TOTAL_ASSETS",
-    "RBI_SYSTEM_LIQUIDITY",
-    "RRPONTSYD",
-    "WALCL",
-    "WTREGEN"
+    "RBI_SYSTEM_LIQUIDITY"
   ],
   "liquidity_regions": {
     "US": {
       "series_id": "WALCL",
-      "status": "not_available",
-      "observation_date": null,
-      "source": "https://fred.stlouisfed.org/series/WALCL",
+      "status": "current",
+      "observation_date": "2026-11-11",
+      "source": "https://m0.com/data/fed-balance-sheet",
       "note": "Not a complete cross-border money flow measurement"
     },
     "EU": {
@@ -80,24 +77,24 @@
       "error": "primary_ReadTimeout; DBnomics mirror used"
     },
     {
-      "source": "macro:WALCL",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError"
+      "source": "fred:WALCL",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
     },
     {
-      "source": "macro:WTREGEN",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError"
+      "source": "fred:WTREGEN",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
     },
     {
-      "source": "macro:RRPONTSYD",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError"
+      "source": "fred:RRPONTSYD",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
     },
     {
-      "source": "macro:M2SL",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError"
+      "source": "fred:M2SL",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
     },
     {
       "source": "macro:DEXINUS",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError"
+      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
     },
     {
       "source": "boj_assets",
@@ -110,6 +107,10 @@
     {
       "source": "macro_stale:DGS10",
       "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "macro_stale:M2SL",
+      "error": "Last observation 2026-09-01; permitted 45 calendar days"
     },
     {
       "source": "institutional_flows",
