@@ -55,6 +55,25 @@ def generate_review(root: Path, asof: date) -> tuple[dict, str]:
                            "total": entry.get("items_configured"),
                            "missing": entry.get("missing", []),
                            "errors": entry.get("errors", [])})
+    # Fixed reproducible review sample. This is a human-review QUEUE, not
+    # evidence that a human or model has already checked the tags.
+    review_sample = []
+    latest_news = root / "data" / "news" / (asof.isoformat() + ".json")
+    if not latest_news.exists():
+        for d in sorted(days, reverse=True):
+            candidate = root / "data" / "news" / (d + ".json")
+            if candidate.exists():
+                latest_news = candidate
+                break
+    if latest_news.is_file():
+        raw_news = json.loads(latest_news.read_text(encoding="utf-8"))
+        if isinstance(raw_news, list):
+            review_sample = [{
+                "headline_id": x.get("headline_id"),
+                "title": x.get("title"), "source": x.get("url"),
+                "classifier": x.get("classification", {}).get("classifier", "not_classified"),
+                "human_review_status": "pending"
+            } for x in raw_news[:20]]
     review = {
        "schema_version": "1.0",
        "run_day": asof.isoformat(),
@@ -68,6 +87,8 @@ def generate_review(root: Path, asof: date) -> tuple[dict, str]:
        "health": health,
        "warnings": warnings,
        "research_only": True,
+       "sample_news_for_human_review": review_sample,
+       "news_review_completed": False,
        "no_predictive_claim": True,
     }
     lines = [
