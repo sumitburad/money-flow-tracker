@@ -1,38 +1,64 @@
-name: Daily Money Flow Tracker
-
+name: Global money-flow daily research
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 1 * * 1-6"
+    # 07:30 and 19:00 IST, Monday–Saturday. US Friday close reaches Saturday morning.
+    - cron: "0 2 * * 1-6"
+    - cron: "30 13 * * 1-6"
+  push:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - "config/**"
+      - ".github/workflows/daily.yml"
 
 permissions:
   contents: write
 
+concurrency:
+  group: money-flow-scheduled
+  cancel-in-progress: false
+
 jobs:
-  run:
+  research:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 55
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install packages
-        run: |
-          pip install -r backend/requirements.txt
-
-      - name: Run tracker
-        run: |
-          python backend/run_daily.py
-
-      - name: Commit updated report
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: python -m pip install -r backend/requirements.txt
+      - name: Unit and contract tests
+        run: python -m pytest -q tests
+      - name: Collect official data and research price proxies
+        run: python backend/run_daily.py
+      - name: Reject invalid or non-cited output
+        run: python scripts/validate_feed.py data/feed/v1/latest.json
+      - name: Commit immutable daily labels and public research feed
         run: |
           git config user.name "money-flow-bot"
-          git config user.email "money-flow-bot@example.com"
-          git add data reports frontend
-          git commit -m "Update daily money flow report" || echo "No changes to commit"
-          git push
+          git config user.email "money-flow-bot@users.noreply.github.com"
+          git add data docs briefs reports frontend
+          if git diff --cached --quiet; then
+            echo "No change to commit"
+          else
+            git commit -m "research: publish sourced money-flow snapshot"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Upload run health and logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: money-flow-failure-${{ github.run_id }}
+          path: |
+            docs/status.json
+            data/health/
+          if-no-files-found: ignore
+          retention-days: 7
