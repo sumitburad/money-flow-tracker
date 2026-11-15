@@ -219,6 +219,31 @@ def fetch_fred(series_id, run_day):
             "raw_file": str(raw_path.relative_to(ROOT))}
 
 
+def annotate_macro_freshness(series_id, record, today):
+    """Mark source age according to the observed series' actual reporting frequency.
+
+    A mirrored but old observation is still usable for history, NOT a live
+    macro confirmation. The age is measured from observation day, never fetch day.
+    """
+    observation = record.get("latest", {}).get("observation_date")
+    monthly = series_id in ("M2SL",)
+    weekly = series_id in ("WALCL", "WTREGEN")
+    try:
+        observed_day = date.fromisoformat(str(observation)[:10])
+    except (TypeError, ValueError):
+        observed_day = None
+    if monthly:
+        allowed = "45 calendar days"
+        current = observed_day is not None and (today - observed_day).days <= 45 and observed_day <= today
+    else:
+        days = 10 if weekly else 2
+        allowed = str(days) + " weekday sessions (exchange holidays require review)"
+        current = source_fresh(observation, today, days)
+    return {**record, "freshness": "current" if current else "stale",
+            "last_good_date": observation,
+            "allowed_age": allowed}
+
+
 def macro_family(asset, macro, today):
     if asset["asset_type"] not in ("equity", "crypto", "bond"):
         return na("Macro effect varies by asset; no verified mapping")
@@ -453,9 +478,15 @@ def main():
                 errors.append({"source": "macro:" + sid,
                                "error": "FRED_" + primary_error +
                                         "; fallback_" + type(fallback_exc).__name__})
+    today = now_ist.date()
+    for sid, series_record in list(macro.items()):
+        macro[sid] = annotate_macro_freshness(sid, series_record, today)
+        if macro[sid]["freshness"] == "stale":
+            errors.append({"source": "macro_stale:" + sid,
+                           "error": "Last observation " + str(macro[sid]["last_good_date"]) +
+                                    "; permitted " + macro[sid]["allowed_age"]})
     news, news_errors = collect_news(day)
     errors.extend(news_errors)
-    today = now_ist.date()
     items = []
     for asset in universe:
         LOG.info("Checking %s", asset["id"])
@@ -465,12 +496,17 @@ def main():
             errors.append({"source": "price:" + asset["id"],
                            "error": record["source_error"]})
     fresh = sum(x.get("freshness") == "current" for x in items)
-    usable = bool(macro) or fresh > 0
+    macro_current = sum(v.get("freshness") == "current" for v in macro.values())
+    macro_stale = sorted(k for k, v in macro.items() if v.get("freshness") != "current")
+    usable = macro_current > 0 or fresh > 0
     health = {
         "as_of_ist": now_ist.isoformat(),
         "status": "degraded" if errors or fresh < len(items) else "ok",
         "items_configured": len(items), "price_proxies_current": fresh,
         "macro_series_available": len(macro),
+        "macro_series_current": macro_current,
+        "macro_series_stale": macro_stale,
+        "macro_series_unavailable": sorted(set(series) - set(macro)),
         "missing": [x["id"] for x in items if x["freshness"] != "current"],
         "errors": errors, "vendor_price_exported": False,
         "publication": "categorical_research_only",
@@ -489,7 +525,9 @@ def main():
         "macro": macro, "items": items,
         "drivers": news, "health": {"status": health["status"],
                                     "price_proxies_current": fresh,
-                                    "items_configured": len(items)},
+                                    "items_configured": len(items),
+                                    "macro_series_current": macro_current,
+                                    "macro_series_stale": macro_stale},
         "source_manifest": "config/sources.yaml"
     }
     publish(feed, news, health)
