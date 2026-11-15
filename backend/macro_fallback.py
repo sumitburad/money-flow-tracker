@@ -34,7 +34,7 @@ def fetch_dbnomics_fed_yield(series_id: str, run_day: str, root: Path,
                                     "Accept": "application/json"})
     response.raise_for_status()
     raw = response.content
-    if not 100 <= len(raw) <= 3_000_000:
+    if not 20 <= len(raw) <= 3_000_000:
         raise ValueError("Unexpected DBnomics response size")
     payload = json.loads(raw)
     container = payload.get("series", {})
