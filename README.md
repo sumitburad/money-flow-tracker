@@ -50,3 +50,5 @@ This first delivery is the read-only engineering foundation, **not** the end of 
 See \`docs/RUNBOOK.md\` for troubleshooting, provenance, public-data restrictions and how to add new proxies.
 
 **Freshness gate:** Every series carries `freshness`, `last_good_date` and `allowed_age`. A successful mirror fetch does not make an old economic observation current. Daily stale observations remain viewable for historical research but are explicitly unavailable for live reasoning. The dashboard shows current vs stale separately.
+
+**Additional official daily yield observations:** `UST_PAR_2Y` and `UST_PAR_10Y` come from the U.S. Treasury keyless annual CSV, archived and labeled explicitly as *Treasury par yield curve*. They are **not** substitutes for the separate Federal Reserve H.15 `DGS2` and `DGS10` yields; the two definitions remain distinct in the versioned feed. The latest observed date and source-age rule apply independently.

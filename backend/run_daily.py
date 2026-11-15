@@ -462,7 +462,9 @@ def main():
     universe = read_yaml("config/universe.yaml")["assets"]
     if args.sample:
         universe = universe[:args.sample]
-    series = read_yaml("config/sources.yaml")["macro_series"]
+    source_config = read_yaml("config/sources.yaml")
+    series = source_config["macro_series"]
+    treasury_ids = source_config.get("treasury_par_series", {})
     macro, errors = {}, []
     from backend.macro_fallback import fetch_dbnomics_fed_yield
     for sid in series:
@@ -478,6 +480,18 @@ def main():
                 errors.append({"source": "macro:" + sid,
                                "error": "FRED_" + primary_error +
                                         "; fallback_" + type(fallback_exc).__name__})
+    from backend.treasury_rates import fetch_us_treasury_par_curve
+    try:
+        treasury_rates = fetch_us_treasury_par_curve(day, ROOT)
+        for sid in treasury_ids:
+            if sid in treasury_rates:
+                macro[sid] = treasury_rates[sid]
+            else:
+                errors.append({"source": "us_treasury:" + sid,
+                               "error": "official CSV missing valid observations"})
+    except Exception as exc:
+        errors.append({"source": "us_treasury_par_curve",
+                       "error": type(exc).__name__ + ": " + str(exc)[:110]})
     today = now_ist.date()
     for sid, series_record in list(macro.items()):
         macro[sid] = annotate_macro_freshness(sid, series_record, today)
@@ -506,7 +520,7 @@ def main():
         "macro_series_available": len(macro),
         "macro_series_current": macro_current,
         "macro_series_stale": macro_stale,
-        "macro_series_unavailable": sorted(set(series) - set(macro)),
+        "macro_series_unavailable": sorted((set(series) | set(treasury_ids)) - set(macro)),
         "missing": [x["id"] for x in items if x["freshness"] != "current"],
         "errors": errors, "vendor_price_exported": False,
         "publication": "categorical_research_only",

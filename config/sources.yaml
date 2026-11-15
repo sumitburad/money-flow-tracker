@@ -18,6 +18,12 @@ sources:
     verified_mappings: "DGS2=RIFLGFCY02_N.B; DGS10=RIFLGFCY10_N.B"
     fallback: unavailable
     note: "Unmapped series remain unavailable. Mirror observed dates and origin are preserved."
+  treasury_daily_par_curve:
+    kind: official_us_treasury_daily_par_yield_curve
+    key_required: false
+    url: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all"
+    fallback: unavailable
+    note: "Not interchangeable with FRED H15 DGS2 or DGS10. Preserve both by distinct series IDs."
   fed_rss:
     kind: official_headlines
     key_required: false
@@ -28,6 +34,9 @@ sources:
     key_required: false
     url: "https://www.ecb.europa.eu/rss/press.html"
     fallback: unavailable
+treasury_par_series:
+  UST_PAR_2Y: "US Treasury 2-year daily par yield"
+  UST_PAR_10Y: "US Treasury 10-year daily par yield"
 macro_series:
   DGS2: "US 2-year Treasury yield"
   DGS10: "US 10-year Treasury yield"
