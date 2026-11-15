@@ -1,9 +1,21 @@
 {
-  "as_of_ist": "2026-11-15T13:41:24.189574+05:30",
+  "as_of_ist": "2026-11-15T13:46:53.888738+05:30",
   "status": "degraded",
   "items_configured": 50,
   "price_proxies_current": 50,
   "macro_series_available": 2,
+  "macro_series_current": 0,
+  "macro_series_stale": [
+    "DGS10",
+    "DGS2"
+  ],
+  "macro_series_unavailable": [
+    "DEXINUS",
+    "M2SL",
+    "RRPONTSYD",
+    "WALCL",
+    "WTREGEN"
+  ],
   "missing": [],
   "errors": [
     {
@@ -33,6 +45,14 @@
     {
       "source": "macro:DEXINUS",
       "error": "FRED_ReadTimeout; fallback_ValueError"
+    },
+    {
+      "source": "macro_stale:DGS2",
+      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "macro_stale:DGS10",
+      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
     }
   ],
   "vendor_price_exported": false,

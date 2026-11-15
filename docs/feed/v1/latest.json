@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T08:11:24.189574+00:00",
-  "as_of_ist": "2026-11-15T13:41:24.189574+05:30",
+  "generated_at_utc": "2026-11-15T08:16:53.888738+00:00",
+  "as_of_ist": "2026-11-15T13:46:53.888738+05:30",
   "run_date_ist": "2026-11-15",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
@@ -95,12 +95,15 @@
           "value": 4.56
         }
       ],
-      "fetched_at_utc": "2026-11-15T08:11:33.679515+00:00",
+      "fetched_at_utc": "2026-11-15T08:17:03.409665+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY02_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
       "raw_sha256": "6bb7a8d6bb3bcd5f838e061d2e9cdfd6b6d0ba5482f18e5f52eb7824b6fab04a",
-      "raw_file": "data/raw/2026-11-15/DBN_DGS2.json.gz"
+      "raw_file": "data/raw/2026-11-15/DBN_DGS2.json.gz",
+      "freshness": "stale",
+      "last_good_date": "2026-11-09",
+      "allowed_age": "2 weekday sessions (exchange holidays require review)"
     },
     "DGS10": {
       "id": "DGS10",
@@ -190,12 +193,15 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T08:11:43.240374+00:00",
+      "fetched_at_utc": "2026-11-15T08:17:13.024359+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY10_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
       "raw_sha256": "6e491bb9ca364324984121631aa6a176b6e7182ecd1739de61b5f96e597b40c6",
-      "raw_file": "data/raw/2026-11-15/DBN_DGS10.json.gz"
+      "raw_file": "data/raw/2026-11-15/DBN_DGS10.json.gz",
+      "freshness": "stale",
+      "last_good_date": "2026-11-09",
+      "allowed_age": "2 weekday sessions (exchange holidays require review)"
     }
   },
   "items": [
@@ -3213,7 +3219,12 @@
   "health": {
     "status": "degraded",
     "price_proxies_current": 50,
-    "items_configured": 50
+    "items_configured": 50,
+    "macro_series_current": 0,
+    "macro_series_stale": [
+      "DGS10",
+      "DGS2"
+    ]
   },
   "source_manifest": "config/sources.yaml"
 }
