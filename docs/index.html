@@ -150,14 +150,15 @@ function renderNews(drivers){
 function renderMacro(macro){
   const table=add($("macro"),"table");
   const head=add(table,"thead");const tr=add(head,"tr");
-  ["Official series","Latest value","Observation date","Source"].forEach(t=>add(tr,"th",t));
+  ["Official series","Observed value","Observation date","Freshness","Source"].forEach(t=>add(tr,"th",t));
   const body=add(table,"tbody");
   for(const [id,s] of Object.entries(macro||{})){
     const row=add(body,"tr");
     add(row,"td",id);
     add(row,"td",s.latest?.value ?? "Data unavailable");
     add(row,"td",s.latest?.observation_date ?? "Data unavailable");
-    const cell=add(row,"td");href(cell,s.source,"FRED");
+    add(row,"td",s.freshness==="current"?"Current":"Stale — not for live decisions",s.freshness==="stale"?"warn":"");
+    const cell=add(row,"td");href(cell,s.source,s.mirror?"Fed (via DBnomics)":"Source");
   }
   if(!Object.keys(macro||{}).length)add($("macro"),"p","Official macro data unavailable.");
 }
@@ -178,7 +179,7 @@ async function start(){
     $("healthbox").textContent=h?
       "Status: "+h.status+" | Current market price proxies: "+
       h.price_proxies_current+"/"+h.items_configured+
-      " | Official macro series available: "+h.macro_series_available+
+      " | Official macro series: "+(h.macro_series_current ?? "unknown")+" current / "+h.macro_series_available+" available"+
       " | Unavailable items: "+(h.missing||[]).join(", ")+
       " | Most recent publication: "+h.as_of_ist:
       "Detailed health report unavailable. Last visible feed: "+feed.generated_at_utc;

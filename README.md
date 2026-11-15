@@ -48,3 +48,5 @@ python scripts/validate_feed.py data/feed/v1/latest.json
 This first delivery is the read-only engineering foundation, **not** the end of the manual's nine-phase acceptance and shadow-validation process. Before treating conclusions as validated: reach 95% recent coverage of the configured set; verify provider terms, 10 dated hand-reviewed labels, 50 tagged headlines, source consistency and the 4–6-week private shadow review. Do not describe an unpassed gate as complete.
 
 See \`docs/RUNBOOK.md\` for troubleshooting, provenance, public-data restrictions and how to add new proxies.
+
+**Freshness gate:** Every series carries `freshness`, `last_good_date` and `allowed_age`. A successful mirror fetch does not make an old economic observation current. Daily stale observations remain viewable for historical research but are explicitly unavailable for live reasoning. The dashboard shows current vs stale separately.
