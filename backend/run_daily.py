@@ -482,6 +482,7 @@ def main():
     treasury_ids = source_config.get("treasury_par_series", {})
     macro, errors = {}, []
     from backend.macro_fallback import fetch_dbnomics_fed_yield
+    from backend.m0_fallback import fetch_m0_fred_series
     from backend.advanced_sources import fetch_fred_mirror, fetch_ecb_assets
     for sid in series:
         try:
@@ -498,10 +499,16 @@ def main():
                     errors.append({"source": "fred:" + sid,
                                    "error": "Primary and H15 fallback failed; clearly labelled DBnomics FRED mirror used"})
                 except Exception as final_exc:
-                    errors.append({"source": "macro:" + sid,
-                                   "error": "FRED_" + primary_error + "; fallbacks_" +
-                                            type(fallback_exc).__name__ + "_" +
-                                            type(final_exc).__name__})
+                    try:
+                        macro[sid] = fetch_m0_fred_series(sid, ROOT, day)
+                        errors.append({"source": "fred:" + sid,
+                                       "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"})
+                    except Exception as third_exc:
+                        errors.append({"source": "macro:" + sid,
+                                       "error": "FRED_" + primary_error + "; fallbacks_" +
+                                                type(fallback_exc).__name__ + "_" +
+                                                type(final_exc).__name__ + "_" +
+                                                type(third_exc).__name__})
     # Cross-central-bank liquidity: direct ECB first, then expressly attributed
     # FRED/DBnomics secondary; BOJ is a separate dated monthly series.
     for bank_id, mirror_id in (("ECB_ILM_TOTAL_ASSETS", "ECBASSETSW"),
