@@ -74,7 +74,7 @@ def generate_review(root: Path, asof: date) -> tuple[dict, str]:
                 "classifier": x.get("classification", {}).get("classifier", "not_classified"),
                 "human_review_status": "pending"
             } for x in raw_news[:20]]
-        review = {
+    review = {
        "schema_version": "1.0",
        "run_day": asof.isoformat(),
        "coverage_start": min(days),
