@@ -24,7 +24,7 @@ Each instrument contains a stable \`id\`, \`symbol\`, \`group\`, \`region\`, \`c
 ## Inputs, limits and alternatives
 
 - Research-only, existing unofficial price interface: yfinance. Data availability is best effort, provider terms may restrict collection and redistribution, and published output excludes quotes. Unsupported/stale symbols stay present and receive \`not_available\` evidence.
-- Official macro: keyless FRED CSV, individual time series and raw response SHA-256. Macro collection continues when individual series fail.
+- Official macro: keyless FRED CSV, individual time series and raw response SHA-256. For 2Y/10Y U.S. Treasury yields only, a keyless DBnomics mirror of official Federal Reserve H.15 series is attempted on direct FRED failure. Macro collection continues when individual series fail. Source note: the original seven FRED CSV requests timed out in the first production run. For DGS2/DGS10 only, the source-coded keyless DBnomics Federal Reserve H.15 mirror is a traceable fallback; other fields remain unavailable rather than being silently imputed. Missing Indian mid/small-cap index-provider symbols were replaced with explicitly named, listed ETF proxies (MID150BEES.NS and SMALLADD.NS), not mislabeled as the original indices.
 - News: Fed and ECB official RSS headlines with source links. Headline direction remains unconfirmed until independently validated by actual market reactions.
 - \`config/universe.yaml\`: stable ID, region, group, symbol, currency, primary and fallback for 50 cross-asset research proxies. Symbols are candidates and need live provider checks.
 - \`config/sources.yaml\`: source provenance and fallback declarations.

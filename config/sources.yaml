@@ -10,7 +10,14 @@ sources:
     kind: official_macro
     key_required: false
     url: "https://fred.stlouisfed.org/graph/fredgraph.csv"
+    fallback: dbnomics_fed_h15_for_verified_yields
+  dbnomics_fed_h15_for_verified_yields:
+    kind: official_fed_observations_through_keyless_mirror
+    key_required: false
+    url: "https://api.db.nomics.world/v22/series/FED/H15"
+    verified_mappings: "DGS2=RIFLGFCY02_N.B; DGS10=RIFLGFCY10_N.B"
     fallback: unavailable
+    note: "Unmapped series remain unavailable. Mirror observed dates and origin are preserved."
   fed_rss:
     kind: official_headlines
     key_required: false
