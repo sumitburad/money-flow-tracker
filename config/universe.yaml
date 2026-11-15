@@ -1,0 +1,453 @@
+version: 1
+# Proxies are hypotheses, not direct fund-flow data; failed symbols remain visible.
+assets:
+  - id: sp500
+    name: "S&P 500"
+    group: equity_market
+    region: US
+    symbol: "^GSPC"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: nasdaq100
+    name: "Nasdaq 100"
+    group: equity_market
+    region: US
+    symbol: "^NDX"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: nifty50
+    name: "Nifty 50"
+    group: equity_market
+    region: IN
+    symbol: "^NSEI"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: niftybank
+    name: "Nifty Bank"
+    group: india_sector
+    region: IN
+    symbol: "^NSEBANK"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: niftyit
+    name: "Nifty IT"
+    group: india_sector
+    region: IN
+    symbol: "^CNXIT"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: nifty500
+    name: "Nifty 500"
+    group: equity_market
+    region: IN
+    symbol: "^CRSLDX"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: niftymid
+    name: "Nifty Midcap 100"
+    group: style
+    region: IN
+    symbol: "NIFTY_MIDCAP_100.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: niftysmall
+    name: "Nifty Smallcap 100"
+    group: style
+    region: IN
+    symbol: "NIFTY_SMLCAP_100.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: china
+    name: "China equities proxy"
+    group: equity_market
+    region: CN
+    symbol: "FXI"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: hongkong
+    name: "Hong Kong equities"
+    group: equity_market
+    region: HK
+    symbol: "^HSI"
+    currency: HKD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: europe
+    name: "Euro area equities proxy"
+    group: equity_market
+    region: EU
+    symbol: "FEZ"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: japan
+    name: "Japan equities"
+    group: equity_market
+    region: JP
+    symbol: "^N225"
+    currency: JPY
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: uk
+    name: "UK equities"
+    group: equity_market
+    region: UK
+    symbol: "^FTSE"
+    currency: GBP
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: em
+    name: "Emerging markets"
+    group: equity_market
+    region: GLOBAL
+    symbol: "EEM"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: russell2000
+    name: "US small-cap stocks"
+    group: style
+    region: US
+    symbol: "IWM"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_growth
+    name: "US growth stocks"
+    group: style
+    region: US
+    symbol: "IWF"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_value
+    name: "US value stocks"
+    group: style
+    region: US
+    symbol: "IWD"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: semis
+    name: "Semiconductors"
+    group: global_sector
+    region: US
+    symbol: "SOXX"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_technology
+    name: "US technology"
+    group: global_sector
+    region: US
+    symbol: "XLK"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_financials
+    name: "US financials"
+    group: global_sector
+    region: US
+    symbol: "XLF"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_banks
+    name: "US banks"
+    group: global_sector
+    region: US
+    symbol: "KBE"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_healthcare
+    name: "US healthcare"
+    group: global_sector
+    region: US
+    symbol: "XLV"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_energy
+    name: "US energy"
+    group: global_sector
+    region: US
+    symbol: "XLE"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_industrials
+    name: "US industrials"
+    group: global_sector
+    region: US
+    symbol: "XLI"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_staples
+    name: "US consumer staples"
+    group: global_sector
+    region: US
+    symbol: "XLP"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_consumer
+    name: "US consumer discretionary"
+    group: global_sector
+    region: US
+    symbol: "XLY"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_utilities
+    name: "US utilities"
+    group: global_sector
+    region: US
+    symbol: "XLU"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_realestate
+    name: "US real estate"
+    group: global_sector
+    region: US
+    symbol: "XLRE"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_materials
+    name: "US materials"
+    group: global_sector
+    region: US
+    symbol: "XLB"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_communications
+    name: "US communications"
+    group: global_sector
+    region: US
+    symbol: "XLC"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_treasury
+    name: "US long Treasury proxy"
+    group: bond
+    region: US
+    symbol: "TLT"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_credit
+    name: "US investment-grade credit proxy"
+    group: bond
+    region: US
+    symbol: "LQD"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_highyield
+    name: "US high-yield credit proxy"
+    group: bond
+    region: US
+    symbol: "HYG"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: dollar
+    name: "US dollar index"
+    group: currency
+    region: US
+    symbol: "DX-Y.NYB"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: usdinr
+    name: "USD/INR"
+    group: currency
+    region: IN
+    symbol: "INR=X"
+    currency: INR
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: eurusd
+    name: "EUR/USD"
+    group: currency
+    region: EU
+    symbol: "EURUSD=X"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: usdjpy
+    name: "USD/JPY"
+    group: currency
+    region: JP
+    symbol: "JPY=X"
+    currency: JPY
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: usdcny
+    name: "USD/CNY"
+    group: currency
+    region: CN
+    symbol: "CNY=X"
+    currency: CNY
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: gbpusd
+    name: "GBP/USD"
+    group: currency
+    region: UK
+    symbol: "GBPUSD=X"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: gold
+    name: "Gold"
+    group: metal
+    region: GLOBAL
+    symbol: "GC=F"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: silver
+    name: "Silver"
+    group: metal
+    region: GLOBAL
+    symbol: "SI=F"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: copper
+    name: "Copper"
+    group: metal
+    region: GLOBAL
+    symbol: "HG=F"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: platinum
+    name: "Platinum"
+    group: metal
+    region: GLOBAL
+    symbol: "PL=F"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: brent
+    name: "Brent crude"
+    group: energy
+    region: GLOBAL
+    symbol: "BZ=F"
+    currency: USD
+    asset_type: energy
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: wti
+    name: "WTI crude"
+    group: energy
+    region: GLOBAL
+    symbol: "CL=F"
+    currency: USD
+    asset_type: energy
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: naturalgas
+    name: "Natural gas"
+    group: energy
+    region: GLOBAL
+    symbol: "NG=F"
+    currency: USD
+    asset_type: energy
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: bitcoin
+    name: "Bitcoin"
+    group: crypto
+    region: GLOBAL
+    symbol: "BTC-USD"
+    currency: USD
+    asset_type: crypto
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: ethereum
+    name: "Ethereum"
+    group: crypto
+    region: GLOBAL
+    symbol: "ETH-USD"
+    currency: USD
+    asset_type: crypto
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: vix
+    name: "US VIX"
+    group: risk
+    region: US
+    symbol: "^VIX"
+    currency: USD
+    asset_type: risk
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: indiavix
+    name: "India VIX"
+    group: risk
+    region: IN
+    symbol: "^INDIAVIX"
+    currency: INR
+    asset_type: risk
+    source: yfinance_research_only
+    fallback: unavailable
