@@ -52,6 +52,14 @@ liquidity_sources:
   fed_fred_mirror: "https://api.db.nomics.world/v22/series/FRED"
   rbi: "not_available_verified_api"
   pboc: "not_available_verified_api"
+additional_secondary_macro_fallback:
+  publisher: "M0.com"
+  permit: "Public CSV bulk and automated reuse explicitly allowed by provider"
+  source_page: "https://m0.com/data"
+  supported_fred_series: "WALCL, WTREGEN, RRPONTSYD, M2SL"
+  denomination: "USD billions; secondary-normalized, not original FRED units"
+  trigger: "Only if official FRED CSV and DBnomics fail"
+  no_official_origin_claim: true
 macro_series:
   DGS2: "US 2-year Treasury yield"
   DGS10: "US 10-year Treasury yield"
