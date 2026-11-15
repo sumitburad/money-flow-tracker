@@ -189,7 +189,7 @@ def fetch_yfinance(asset):
 def fetch_fred(series_id, run_day):
     """Official free CSV export. Preserve exact response bytes before parsing."""
     url = "https://fred.stlouisfed.org/graph/fredgraph.csv"
-    resp = requests.get(url, params={"id": series_id}, timeout=20,
+    resp = requests.get(url, params={"id": series_id}, timeout=8,
                         headers={"User-Agent": "money-flow-monitor/1.0 (research)"})
     resp.raise_for_status()
     raw = resp.content
@@ -439,12 +439,20 @@ def main():
         universe = universe[:args.sample]
     series = read_yaml("config/sources.yaml")["macro_series"]
     macro, errors = {}, []
+    from backend.macro_fallback import fetch_dbnomics_fed_yield
     for sid in series:
         try:
             macro[sid] = fetch_fred(sid, day)
         except Exception as exc:
-            errors.append({"source": "fred:" + sid,
-                           "error": type(exc).__name__ + ": " + str(exc)[:110]})
+            primary_error = type(exc).__name__
+            try:
+                macro[sid] = fetch_dbnomics_fed_yield(sid, day, ROOT)
+                errors.append({"source": "fred:" + sid,
+                               "error": "primary_" + primary_error + "; DBnomics mirror used"})
+            except Exception as fallback_exc:
+                errors.append({"source": "macro:" + sid,
+                               "error": "FRED_" + primary_error +
+                                        "; fallback_" + type(fallback_exc).__name__})
     news, news_errors = collect_news(day)
     errors.extend(news_errors)
     today = now_ist.date()

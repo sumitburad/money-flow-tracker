@@ -56,19 +56,19 @@ assets:
     source: yfinance_research_only
     fallback: unavailable
   - id: niftymid
-    name: "Nifty Midcap 100"
+    name: "Nifty Midcap 150 ETF proxy"
     group: style
     region: IN
-    symbol: "NIFTY_MIDCAP_100.NS"
+    symbol: "MID150BEES.NS"
     currency: INR
     asset_type: equity
     source: yfinance_research_only
     fallback: unavailable
   - id: niftysmall
-    name: "Nifty Smallcap 100"
+    name: "Nifty Smallcap 250 ETF proxy"
     group: style
     region: IN
-    symbol: "NIFTY_SMLCAP_100.NS"
+    symbol: "SMALLADD.NS"
     currency: INR
     asset_type: equity
     source: yfinance_research_only
