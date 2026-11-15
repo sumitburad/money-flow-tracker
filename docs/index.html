@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Global Money-Flow Monitor | Evidence Dashboard</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#142331;background:#f4f7fa}
+*{box-sizing:border-box}
+body{margin:0}a{color:#145c90;text-decoration:none}a:hover{text-decoration:underline}
+header{background:#112e42;color:#fff;padding:26px clamp(16px,4vw,48px)}
+header h1{font-size:clamp(23px,3vw,32px);letter-spacing:-.025em;margin:0 0 6px}
+header p{color:#c9d9e4;margin:0;font-size:14px}
+main{max-width:1340px;margin:auto;padding:22px 18px 55px}
+.status{background:#fff;border:1px solid #d8e2ea;border-radius:12px;padding:15px 18px;margin-bottom:20px;font-size:14px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+nav a{background:white;color:#123247;border:1px solid #d4e0e9;padding:8px 12px;border-radius:8px;font-size:13px}
+h2{font-size:19px;margin:28px 0 14px;letter-spacing:-.018em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px}
+.card{background:white;border:1px solid #dae4e9;border-radius:11px;padding:16px;box-shadow:0 2px 4px #0b1f3106}
+.card h3{font-size:15px;margin:0 0 8px;line-height:1.45}
+.meta{font-size:12px;color:#637484;margin-bottom:11px}
+.pill{border-radius:5px;display:inline-block;font-size:11px;font-weight:700;padding:4px 7px;margin-right:6px}
+.bullish{color:#006643;background:#dff4e9}.bearish{color:#963e2c;background:#fff0e9}.mixed{color:#516275;background:#ebf0f4}
+.tag{font-size:12px;color:#637484}
+details{border-top:1px solid #ecf0f3;margin-top:13px;padding-top:10px;font-size:12px;color:#47596c}
+summary{cursor:pointer;font-weight:600;color:#1d4057}
+.family{padding:9px 0;border-bottom:1px solid #edf1f4;line-height:1.55}
+.family strong{display:block;font-size:12px;color:#1c3445;text-transform:capitalize}
+.source{font-size:11px;color:#526c7d}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
+th,td{padding:10px 12px;border-bottom:1px solid #e4edf2;text-align:left}
+th{background:#eaf1f6}section{margin-bottom:30px}
+.scroller{overflow:auto;border-radius:10px;border:1px solid #d9e3ea}
+.note{color:#526b7b;line-height:1.6;font-size:13px}
+.badge-line{margin:7px 0 12px}
+small{color:#728394}
+.warn{color:#a03a2b;font-weight:600}
+footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec;padding-top:18px}
+@media(max-width:600px){header{padding:22px 16px}main{padding:14px}th,td{padding:7px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Global Money-Flow Monitor</h1>
+  <p>Institutional research view • evidence before interpretation • no scores or rankings</p>
+</header>
+<main>
+  <div id="status" class="status" role="status">Loading source-checked observations…</div>
+  <nav aria-label="Dashboard sections">
+    <a href="#markets">Markets and sectors</a>
+    <a href="#rotation">Rotation checks</a>
+    <a href="#drivers">Policy drivers</a>
+    <a href="#liquidity">Liquidity</a>
+    <a href="#health">Data quality</a>
+  </nav>
+  <section id="markets"><h2>Asset and market flow map</h2>
+    <p class="note">A direction label requires written rule agreement. Volume participation is a proxy, not a measure of institutional net inflow. Expand each entry to inspect Data and Reading.</p>
+    <div id="grouped"></div>
+  </section>
+  <section id="rotation"><h2>Cross-market rotation checks</h2>
+    <div class="grid" id="rotations"></div>
+    <p class="note">These are label comparisons, not claims that one market funded another.</p>
+  </section>
+  <section id="drivers"><h2>Headline and policy drivers</h2>
+    <div class="grid" id="news"></div>
+    <p class="note">Headlines are observations. Market impact remains unconfirmed until independently checked against subsequent price observations.</p>
+  </section>
+  <section id="liquidity"><h2>Official macro and liquidity observations</h2>
+    <div id="macro" class="scroller"></div>
+  </section>
+  <section id="health"><h2>Data health and provenance</h2><div id="healthbox" class="status"></div></section>
+  <footer>Public research information only, not an instruction to transact. Human approval required for publication under a personal or company identity. The underlying daily data feed is versioned at <a href="feed/v1/latest.json">feed/v1/latest.json</a>.</footer>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+function add(parent, tag, txt, className){
+  const e=document.createElement(tag);
+  if(txt!==undefined && txt!==null)e.textContent=String(txt);
+  if(className)e.className=className;
+  parent.append(e);return e;
+}
+function href(parent,url,text){
+  if(typeof url!=="string" || !url.startsWith("https://"))return;
+  const a=add(parent,"a",text||"Source");
+  a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a;
+}
+function statePill(value){
+  const cls=value==="Bullish"?"bullish":value==="Bearish"?"bearish":"mixed";
+  const e=document.createElement("span");e.className="pill "+cls;e.textContent=value;return e;
+}
+function renderRecord(item,parent){
+  const card=add(parent,"article",undefined,"card");
+  add(card,"h3",item.item);
+  add(card,"div",[item.region,item.group,item.symbol].join(" · "),"meta");
+  const line=add(card,"div",undefined,"badge-line");
+  line.append(statePill(item.label));
+  add(line,"span",item.tag+" · "+item.agreement+" agreement","tag");
+  const details=add(card,"details");
+  add(details,"summary","Inspect evidence and source dates");
+  for(const [family,entry] of Object.entries(item.families||{})){
+    const row=add(details,"div",undefined,"family");
+    add(row,"strong",family.replaceAll("_"," ")+" — "+entry.state);
+    add(row,"div","Data: "+(entry.evidence||"not available"));
+    if(entry.observed_at)add(row,"small","Observed: "+entry.observed_at);
+    if(entry.source)href(row,entry.source," Open source");
+  }
+  add(details,"p","Reading: "+item.label+" by predefined rules; not a trading recommendation.");
+}
+function renderGroups(items){
+  const groups={};
+  for(const item of items){(groups[item.group]??=[]).push(item)}
+  for(const [name,entries] of Object.entries(groups)){
+    add($("grouped"),"h2",name.replaceAll("_"," "));
+    const grid=add($("grouped"),"div",undefined,"grid");
+    entries.forEach(x=>renderRecord(x,grid));
+  }
+}
+function renderRotation(items){
+  const byId=Object.fromEntries(items.map(x=>[x.id,x]));
+  const pairs=[
+    ["S&P 500 vs US Treasuries","sp500","us_treasury"],
+    ["US growth vs US value","us_growth","us_value"],
+    ["India vs United States","nifty50","sp500"],
+    ["Emerging vs developed equities","em","sp500"],
+    ["Gold vs Bitcoin","gold","bitcoin"],
+    ["Technology vs staples","us_technology","us_staples"],
+    ["US small vs large caps","russell2000","sp500"]
+  ];
+  for(const [title,a,b] of pairs){
+    const card=add($("rotations"),"article",undefined,"card");
+    add(card,"h3",title);
+    const first=byId[a],second=byId[b];
+    if(!first||!second){add(card,"p","Data unavailable");continue;}
+    add(card,"p",first.item+": "+first.label);
+    add(card,"p",second.item+": "+second.label);
+    add(card,"small","Reading: directional confirmation must be reviewed independently.");
+  }
+}
+function renderNews(drivers){
+  if(!drivers?.length){add($("news"),"p","No recent verified headline metadata available.");return}
+  for(const n of drivers.slice(0,12)){
+    const c=add($("news"),"article",undefined,"card");
+    add(c,"h3",n.title);
+    add(c,"p",n.publisher+" · "+n.event_type+" · "+n.impact,"meta");
+    href(c,n.url,"Original release");
+  }
+}
+function renderMacro(macro){
+  const table=add($("macro"),"table");
+  const head=add(table,"thead");const tr=add(head,"tr");
+  ["Official series","Latest value","Observation date","Source"].forEach(t=>add(tr,"th",t));
+  const body=add(table,"tbody");
+  for(const [id,s] of Object.entries(macro||{})){
+    const row=add(body,"tr");
+    add(row,"td",id);
+    add(row,"td",s.latest?.value ?? "Data unavailable");
+    add(row,"td",s.latest?.observation_date ?? "Data unavailable");
+    const cell=add(row,"td");href(cell,s.source,"FRED");
+  }
+  if(!Object.keys(macro||{}).length)add($("macro"),"p","Official macro data unavailable.");
+}
+async function start(){
+  try{
+    const response=await fetch("feed/v1/latest.json",{cache:"no-store"});
+    if(!response.ok)throw Error("Feed was not published yet");
+    const feed=await response.json();
+    if(feed.schema_version!=="1.0"||!Array.isArray(feed.items))throw Error("Unsupported feed schema");
+    $("status").textContent="As of "+feed.as_of_ist+" | "+feed.items.length+
+      " tracked proxies | health: "+feed.health.status+
+      " | observational data may be delayed and are not net fund flows.";
+    renderGroups(feed.items);
+    renderRotation(feed.items);
+    renderNews(feed.drivers);
+    renderMacro(feed.macro);
+    const h=await fetch("status.json",{cache:"no-store"}).then(x=>x.ok?x.json():null).catch(()=>null);
+    $("healthbox").textContent=h?
+      "Status: "+h.status+" | Current market price proxies: "+
+      h.price_proxies_current+"/"+h.items_configured+
+      " | Official macro series available: "+h.macro_series_available+
+      " | Unavailable items: "+(h.missing||[]).join(", ")+
+      " | Most recent publication: "+h.as_of_ist:
+      "Detailed health report unavailable. Last visible feed: "+feed.generated_at_utc;
+  }catch(e){
+    $("status").textContent="Data unavailable. The previous result was not replaced. Check the GitHub Actions workflow and docs/status.json.";
+    $("healthbox").textContent=String(e);
+  }
+}
+start();
+</script>
+</body>
+</html>
