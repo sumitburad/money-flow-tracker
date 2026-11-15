@@ -226,8 +226,10 @@ def annotate_macro_freshness(series_id, record, today):
     macro confirmation. The age is measured from observation day, never fetch day.
     """
     observation = record.get("latest", {}).get("observation_date")
-    monthly = series_id in ("M2SL",)
-    weekly = series_id in ("WALCL", "WTREGEN")
+    frequency = record.get("frequency")
+    monthly = frequency == "monthly" or series_id in ("M2SL", "JPNASSETS")
+    weekly = frequency == "weekly" or series_id in (
+        "WALCL", "WTREGEN", "ECBASSETSW", "ECB_ILM_TOTAL_ASSETS")
     try:
         observed_day = date.fromisoformat(str(observation)[:10])
     except (TypeError, ValueError):
@@ -248,7 +250,7 @@ def macro_family(asset, macro, today):
     if asset["asset_type"] not in ("equity", "crypto", "bond"):
         return na("Macro effect varies by asset; no verified mapping")
     sheet = macro.get("WALCL")
-    if not sheet or len(sheet.get("recent", [])) < 5:
+    if not sheet or sheet.get("freshness") != "current" or len(sheet.get("recent", [])) < 5:
         return na("Fed balance sheet series unavailable")
     series = sheet["recent"]
     day = sheet["latest"]["observation_date"]
@@ -266,7 +268,7 @@ def macro_family(asset, macro, today):
     return state_record(state, reason, sheet["source"], day, "official_macro_context")
 
 
-def assess(asset, today, macro):
+def assess(asset, today, macro, positioning=None, breadth=None):
     families = {name: na() for name in FAMILIES}
     symbol = asset["symbol"]
     result = {"id": asset["id"], "item": asset["name"], "group": asset["group"],
@@ -312,6 +314,19 @@ def assess(asset, today, macro):
     families["breadth"] = na("No independently sourced constituent breadth")
     families["positioning"] = na("No verified CFTC/positioning series mapped")
     families["news"] = na("Headline impact not confirmed by next-session prices")
+    if breadth and breadth.get("observation_date") and source_fresh(
+            breadth["observation_date"], today):
+        families["breadth"] = state_record(
+            breadth["state"], breadth["evidence"], breadth["source"],
+            breadth["observation_date"], breadth["method"])
+    if positioning and positioning.get("observation_date") and source_fresh(
+            positioning["observation_date"], today, 10):
+        families["positioning"] = state_record(
+            positioning["state"], positioning["evidence"], positioning["source"],
+            positioning["observation_date"], "cftc_asset_manager_futures_only_weekly")
+    elif positioning:
+        families["positioning"] = na("CFTC positioning report stale; last " +
+                                    str(positioning.get("observation_date")))
     label, agreement = assign_label(families)
     result.update(label=label, tag=tag, agreement=agreement, families=families)
     result["reason"] = ("Data: " + families["money_flow"]["evidence"] + "; " +
@@ -467,6 +482,7 @@ def main():
     treasury_ids = source_config.get("treasury_par_series", {})
     macro, errors = {}, []
     from backend.macro_fallback import fetch_dbnomics_fed_yield
+    from backend.advanced_sources import fetch_fred_mirror, fetch_ecb_assets
     for sid in series:
         try:
             macro[sid] = fetch_fred(sid, day)
@@ -477,9 +493,39 @@ def main():
                 errors.append({"source": "fred:" + sid,
                                "error": "primary_" + primary_error + "; DBnomics mirror used"})
             except Exception as fallback_exc:
-                errors.append({"source": "macro:" + sid,
-                               "error": "FRED_" + primary_error +
-                                        "; fallback_" + type(fallback_exc).__name__})
+                try:
+                    macro[sid] = fetch_fred_mirror(sid, ROOT, day)
+                    errors.append({"source": "fred:" + sid,
+                                   "error": "Primary and H15 fallback failed; clearly labelled DBnomics FRED mirror used"})
+                except Exception as final_exc:
+                    errors.append({"source": "macro:" + sid,
+                                   "error": "FRED_" + primary_error + "; fallbacks_" +
+                                            type(fallback_exc).__name__ + "_" +
+                                            type(final_exc).__name__})
+    # Cross-central-bank liquidity: direct ECB first, then expressly attributed
+    # FRED/DBnomics secondary; BOJ is a separate dated monthly series.
+    for bank_id, mirror_id in (("ECB_ILM_TOTAL_ASSETS", "ECBASSETSW"),
+                               ("BOJ_TOTAL_ASSETS", "JPNASSETS")):
+        try:
+            if bank_id == "ECB_ILM_TOTAL_ASSETS":
+                macro[bank_id] = fetch_ecb_assets(ROOT, day)
+            else:
+                macro[bank_id] = fetch_fred_mirror(mirror_id, ROOT, day)
+                macro[bank_id]["id"] = bank_id
+                macro[bank_id]["source_series_id"] = mirror_id
+        except Exception as exc:
+            try:
+                if bank_id == "ECB_ILM_TOTAL_ASSETS":
+                    macro[bank_id] = fetch_fred_mirror(mirror_id, ROOT, day)
+                    macro[bank_id]["id"] = bank_id
+                    macro[bank_id]["source_series_id"] = mirror_id
+                    errors.append({"source": "ecb_direct", "error":
+                                   "Failed (" + type(exc).__name__ + "), attributed FRED mirror used"})
+                else:
+                    errors.append({"source": "boj_assets", "error":type(exc).__name__})
+            except Exception as fallback_error:
+                errors.append({"source": "ecb_assets", "error":
+                               type(exc).__name__ + ";" + type(fallback_error).__name__})
     from backend.treasury_rates import fetch_us_treasury_par_curve
     try:
         treasury_rates = fetch_us_treasury_par_curve(day, ROOT)
@@ -499,12 +545,42 @@ def main():
             errors.append({"source": "macro_stale:" + sid,
                            "error": "Last observation " + str(macro[sid]["last_good_date"]) +
                                     "; permitted " + macro[sid]["allowed_age"]})
+    from backend.advanced_sources import fetch_cftc, breadth_from_equal_weight
+    from backend.institutional_flows import institutional_status
+    from backend.news_classifier import classify_headlines
+    try:
+        cftc = fetch_cftc(ROOT, day)
+    except Exception as exc:
+        cftc = {"entries": {}, "status": "unavailable",
+                "source": "https://publicreporting.cftc.gov/Commitments-of-Traders",
+                "error": type(exc).__name__}
+        errors.append({"source": "cftc_tff", "error": type(exc).__name__})
+    breadth_records = {}
+    for ident in ("sp500", "nasdaq100"):
+        if ident not in {a["id"] for a in universe}:
+            continue
+        try:
+            breadth_records[ident] = breadth_from_equal_weight(ident, day)
+        except Exception as exc:
+            errors.append({"source": "breadth:" + ident,
+                           "error": type(exc).__name__})
+    institution = institutional_status(day)
+    if institution["nse_cash_via_authorized_broker"].get("status") not in (
+            "observed_readonly_provider_not_nsdl_reconciled",):
+        errors.append({"source":"institutional_flows",
+                       "error": "Authorized NSE broker feed or final NSDL access unavailable"})
     news, news_errors = collect_news(day)
     errors.extend(news_errors)
+    news, classifier_health = classify_headlines(news, universe)
+    if classifier_health["model_classified"] == 0:
+        errors.append({"source": "news_classifier",
+                       "error": "No accepted AI responses; transparent deterministic tag fallback"})
     items = []
     for asset in universe:
         LOG.info("Checking %s", asset["id"])
-        record = assess(asset, today, macro)
+        record = assess(asset, today, macro,
+                        positioning=cftc.get("entries", {}).get(asset["id"]),
+                        breadth=breadth_records.get(asset["id"]))
         items.append(record)
         if record.get("source_error"):
             errors.append({"source": "price:" + asset["id"],
@@ -512,6 +588,25 @@ def main():
     fresh = sum(x.get("freshness") == "current" for x in items)
     macro_current = sum(v.get("freshness") == "current" for v in macro.values())
     macro_stale = sorted(k for k, v in macro.items() if v.get("freshness") != "current")
+    macro_expectations = set(series) | set(treasury_ids) | {
+        "ECB_ILM_TOTAL_ASSETS", "BOJ_TOTAL_ASSETS", "RBI_SYSTEM_LIQUIDITY", "PBOC_TOTAL_ASSETS"
+    }
+    liquidity_coverage = {}
+    for region, sid, public_url in (
+        ("US", "WALCL", "https://fred.stlouisfed.org/series/WALCL"),
+        ("EU", "ECB_ILM_TOTAL_ASSETS",
+         "https://data.ecb.europa.eu/data/datasets/ILM/ILM.W.U2.C.T000000.Z5.Z01"),
+        ("JP", "BOJ_TOTAL_ASSETS", "https://fred.stlouisfed.org/series/JPNASSETS"),
+        ("IN", "RBI_SYSTEM_LIQUIDITY", "https://data.rbi.org.in/"),
+        ("CN", "PBOC_TOTAL_ASSETS", "http://www.pbc.gov.cn/en/")):
+        observed = macro.get(sid)
+        liquidity_coverage[region] = {
+            "series_id": sid,
+            "status": observed.get("freshness", "not_available") if observed else "not_available",
+            "observation_date": observed.get("last_good_date") if observed else None,
+            "source": observed.get("source", public_url) if observed else public_url,
+            "note": "Not a complete cross-border money flow measurement",
+        }
     usable = macro_current > 0 or fresh > 0
     health = {
         "as_of_ist": now_ist.isoformat(),
@@ -520,7 +615,11 @@ def main():
         "macro_series_available": len(macro),
         "macro_series_current": macro_current,
         "macro_series_stale": macro_stale,
-        "macro_series_unavailable": sorted((set(series) | set(treasury_ids)) - set(macro)),
+        "macro_series_unavailable": sorted(macro_expectations - set(macro)),
+        "liquidity_regions": liquidity_coverage,
+        "cftc_markets_with_evidence": list(cftc.get("entries", {})),
+        "institutional_flow_status": institution["nse_cash_via_authorized_broker"].get("status"),
+        "ai_classification": classifier_health,
         "missing": [x["id"] for x in items if x["freshness"] != "current"],
         "errors": errors, "vendor_price_exported": False,
         "publication": "categorical_research_only",
@@ -537,7 +636,12 @@ def main():
         "provider_license": "Public feed excludes unofficial-vendor price tables",
         "usage": "research_only_not_order_authorization",
         "macro": macro, "items": items,
-        "drivers": news, "health": {"status": health["status"],
+        "drivers": news,
+        "institutional_flows": institution,
+        "positioning": cftc,
+        "breadth_proxies": breadth_records,
+        "liquidity_coverage": liquidity_coverage,
+        "classification_health": classifier_health, "health": {"status": health["status"],
                                     "price_proxies_current": fresh,
                                     "items_configured": len(items),
                                     "macro_series_current": macro_current,

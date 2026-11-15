@@ -37,6 +37,10 @@ jobs:
       - name: Unit and contract tests
         run: python -m pytest -q tests
       - name: Collect official data and research price proxies
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          UPSTOX_ANALYTICS_TOKEN: ${{ secrets.UPSTOX_ANALYTICS_TOKEN }}
         run: python -m backend.run_daily
       - name: Reject invalid or non-cited output
         run: python scripts/validate_feed.py data/feed/v1/latest.json

@@ -37,6 +37,21 @@ sources:
 treasury_par_series:
   UST_PAR_2Y: "US Treasury 2-year daily par yield"
   UST_PAR_10Y: "US Treasury 10-year daily par yield"
+institutional_flow_sources:
+  nse_site_automated: forbidden_without_permission
+  nsdl_final: not_available_without_authorized_structured_access
+  upstox_analytics: optional_read_only_secret_UPSTOX_ANALYTICS_TOKEN
+positioning_sources:
+  cftc_tff: "https://publicreporting.cftc.gov/resource/gpe5-46if.json"
+breadth_sources:
+  us_sp500: "Equal-weight ETF RSP vs SPY, unofficial price proxy"
+  us_nasdaq100: "Equal-weight ETF QQEW vs QQQ, unofficial price proxy"
+liquidity_sources:
+  ecb_total_assets: "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01"
+  boj_total_assets: "https://fred.stlouisfed.org/series/JPNASSETS"
+  fed_fred_mirror: "https://api.db.nomics.world/v22/series/FRED"
+  rbi: "not_available_verified_api"
+  pboc: "not_available_verified_api"
 macro_series:
   DGS2: "US 2-year Treasury yield"
   DGS10: "US 10-year Treasury yield"

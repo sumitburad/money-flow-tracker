@@ -1,5 +1,14 @@
-# Narrative generation is deterministic until explicitly configured, checked, and approved.
-mode: templates
-external_model_calls: false
-# Model integration must never determine labels or fabricate numbers.
-fallback: deterministic_evidence_templates
+mode: validated_optional_model
+external_model_calls: true
+primary:
+  provider: groq
+  credential_secret: GROQ_API_KEY
+  model: openai/gpt-oss-20b
+fallback:
+  provider: openrouter
+  credential_secret: OPENROUTER_API_KEY
+  model: openrouter/free
+max_headlines_per_daily_run: 12
+on_missing_or_invalid_response: deterministic_rules_NOT_AI
+model_never_sets_market_label: true
+human_review_required: true
