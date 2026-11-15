@@ -1,0 +1,31 @@
+verified_as_of: 2026-11-15
+sources:
+  yfinance_research_only:
+    kind: unofficial_price_proxy
+    key_required: false
+    public_redistribution: false
+    note: "Existing personal-research collector; no Yahoo OHLCV or quotes are written to the public feed. Review provider terms before use."
+    fallback: unavailable
+  fred_csv:
+    kind: official_macro
+    key_required: false
+    url: "https://fred.stlouisfed.org/graph/fredgraph.csv"
+    fallback: unavailable
+  fed_rss:
+    kind: official_headlines
+    key_required: false
+    url: "https://www.federalreserve.gov/feeds/press_all.xml"
+    fallback: ecb_rss
+  ecb_rss:
+    kind: official_headlines
+    key_required: false
+    url: "https://www.ecb.europa.eu/rss/press.html"
+    fallback: unavailable
+macro_series:
+  DGS2: "US 2-year Treasury yield"
+  DGS10: "US 10-year Treasury yield"
+  WALCL: "Federal Reserve total assets"
+  WTREGEN: "Treasury General Account"
+  RRPONTSYD: "Overnight reverse repo"
+  M2SL: "US M2 money stock"
+  DEXINUS: "USD/INR reference"

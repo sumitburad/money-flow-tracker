@@ -1,4 +1,7 @@
-pandas
-numpy
-yfinance
-pyyaml
+pandas>=2.0,<3
+numpy>=1.24,<3
+yfinance>=0.2.40,<1
+PyYAML>=6,<7
+requests>=2.31,<3
+feedparser>=6,<7
+pytest>=8,<10
