@@ -1,51 +1,28 @@
-# Daily Money Flow Tracker Report
+# Global Money-Flow Brief | 2026-11-15T13:26:35.554524+05:30
 
-Date: 2026-11-14T07:51:45.116957+00:00
+**Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
-## 1. Market Regime
+## Where money is flowing
+**Data — supportive evidence:**
+- No qualifying directional signal; data may be incomplete.
+**Data — opposing evidence:**
+- No qualifying directional signal; data may be incomplete.
 
-Regime: Mixed
+## What is driving it
+- Agencies extend comment period for proposed third-party risk management guidance — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm)
+- Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm)
+- Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027 — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm)
 
-Reason:
-- This basic version uses price, trend, RSI, and volume signals.
-- Direct institutional flow data like FII/DII, ETF flows, and 13F filings is not yet connected.
+## Liquidity check
+**Data:** Official U.S. macro series and their dates appear in the feed's macro section.
+**Reading:** Changes in central-bank balances are context, not a verified transfer into a named asset.
 
-## 2. Top Asset Class Movements
+## What it means for you
+- **CEO:** Consider only regions with independently confirmed directional evidence; other signals are mixed.
+- **CFO:** Check rates and currency observation dates before updating assumptions.
+- **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
-| Asset | 1D % | 5D % | 1M % | Trend | Score | Flow |
-|---|---:|---:|---:|---|---:|---|
-| S&P 500 | -0.4 | 2.51 | -2.36 | bearish | 50 | Neutral or mixed signal |
-| Nasdaq 100 | -1.22 | 3.53 | -6.65 | bearish | 32 | Selling pressure |
-| Nifty 50 | -0.61 | 2.48 | 10.66 | bullish | 71 | Positive flow signal |
-| Gold | 0.03 | -4.63 | -6.81 | bearish | 20 | Selling pressure |
-| Silver | -1.88 | -5.35 | -13.73 | bearish | 8 | Strong outflow / distribution signal |
-| Bitcoin | -1.84 | -10.94 | -17.08 | bearish | 7 | Strong outflow / distribution signal |
-| Ethereum | -1.81 | -11.2 | -19.66 | bearish | 7 | Strong outflow / distribution signal |
-| USD/INR | 0.22 | 0.36 | -0.3 | bearish | 35 | Selling pressure |
+## Watch next
+Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
 
-
-## 3. Where Money Appears to Be Moving
-
-Strongest signals:
-- Nifty 50: Positive flow signal with score 71
-- S&P 500: Neutral or mixed signal with score 50
-- USD/INR: Selling pressure with score 35
-
-
-Weakest signals:
-- Bitcoin: Strong outflow / distribution signal with score 7
-- Ethereum: Strong outflow / distribution signal with score 7
-- Silver: Strong outflow / distribution signal with score 8
-
-
-## 4. Data Missing or Delayed
-
-- FII/DII India data is not connected yet.
-- ETF fund flow data is not connected yet.
-- SEC 13F data is quarterly and delayed, not daily.
-- News sentiment is not connected yet.
-- Current score is based on indirect signals only.
-
-## 5. Disclaimer
-
-This is not financial advice. This is a market research tracker based on publicly available data and estimated signals.
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-15T13:26:35.554524+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

@@ -1,0 +1,52 @@
+{
+  "as_of_ist": "2026-11-15T13:26:35.554524+05:30",
+  "status": "degraded",
+  "items_configured": 50,
+  "price_proxies_current": 48,
+  "macro_series_available": 0,
+  "missing": [
+    "niftymid",
+    "niftysmall"
+  ],
+  "errors": [
+    {
+      "source": "fred:DGS2",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:DGS10",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:WALCL",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:WTREGEN",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:RRPONTSYD",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:M2SL",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "fred:DEXINUS",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "price:niftymid",
+      "error": "ValueError: fewer than two observations"
+    },
+    {
+      "source": "price:niftysmall",
+      "error": "ValueError: no historical observations"
+    }
+  ],
+  "vendor_price_exported": false,
+  "publication": "categorical_research_only",
+  "note": "No privately licensed price tables, broker data, or portfolio records published."
+}

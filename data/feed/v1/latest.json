@@ -1,0 +1,3024 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-11-15T07:56:35.554524+00:00",
+  "as_of_ist": "2026-11-15T13:26:35.554524+05:30",
+  "run_date_ist": "2026-11-15",
+  "methodology": "six-family deterministic rules, not a score",
+  "provider_license": "Public feed excludes unofficial-vendor price tables",
+  "usage": "research_only_not_order_authorization",
+  "macro": {},
+  "items": [
+    {
+      "id": "sp500",
+      "item": "S&P 500",
+      "group": "equity_market",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^GSPC",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "nasdaq100",
+      "item": "Nasdaq 100",
+      "group": "equity_market",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^NDX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "nifty50",
+      "item": "Nifty 50",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^NSEI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftybank",
+      "item": "Nifty Bank",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^NSEBANK",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftyit",
+      "item": "Nifty IT",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^CNXIT",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "nifty500",
+      "item": "Nifty 500",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^CRSLDX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftymid",
+      "item": "Nifty Midcap 100",
+      "group": "style",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "NIFTY_MIDCAP_100.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "freshness": "unavailable",
+      "observation_date": null,
+      "source_error": "ValueError: fewer than two observations",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Independent evidence unavailable",
+          "source": null
+        },
+        "price_trend": {
+          "state": "not_available",
+          "evidence": "Independent evidence unavailable",
+          "source": null
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftysmall",
+      "item": "Nifty Smallcap 100",
+      "group": "style",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "NIFTY_SMLCAP_100.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "freshness": "unavailable",
+      "observation_date": null,
+      "source_error": "ValueError: no historical observations",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Independent evidence unavailable",
+          "source": null
+        },
+        "price_trend": {
+          "state": "not_available",
+          "evidence": "Independent evidence unavailable",
+          "source": null
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Independent evidence unavailable; Independent evidence unavailable. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "china",
+      "item": "China equities proxy",
+      "group": "equity_market",
+      "region": "CN",
+      "currency": "USD",
+      "symbol": "FXI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/FXI/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FXI/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FXI/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "hongkong",
+      "item": "Hong Kong equities",
+      "group": "equity_market",
+      "region": "HK",
+      "currency": "HKD",
+      "symbol": "^HSI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "europe",
+      "item": "Euro area equities proxy",
+      "group": "equity_market",
+      "region": "EU",
+      "currency": "USD",
+      "symbol": "FEZ",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/FEZ/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FEZ/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FEZ/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "japan",
+      "item": "Japan equities",
+      "group": "equity_market",
+      "region": "JP",
+      "currency": "JPY",
+      "symbol": "^N225",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EN225/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "uk",
+      "item": "UK equities",
+      "group": "equity_market",
+      "region": "UK",
+      "currency": "GBP",
+      "symbol": "^FTSE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "em",
+      "item": "Emerging markets",
+      "group": "equity_market",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "EEM",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/EEM/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EEM/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EEM/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "russell2000",
+      "item": "US small-cap stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWM",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/IWM/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWM/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWM/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_growth",
+      "item": "US growth stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWF",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/IWF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_value",
+      "item": "US value stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWD",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/IWD/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWD/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWD/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "semis",
+      "item": "Semiconductors",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "SOXX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/SOXX/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SOXX/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SOXX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_technology",
+      "item": "US technology",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLK",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLK/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLK/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLK/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_financials",
+      "item": "US financials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLF",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_banks",
+      "item": "US banks",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "KBE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/KBE/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/KBE/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/KBE/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_healthcare",
+      "item": "US healthcare",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLV",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLV/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLV/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLV/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_energy",
+      "item": "US energy",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLE/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLE/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLE/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_industrials",
+      "item": "US industrials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLI/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLI/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLI/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_staples",
+      "item": "US consumer staples",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLP",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLP/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLP/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLP/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_consumer",
+      "item": "US consumer discretionary",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLY",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLY/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLY/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLY/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_utilities",
+      "item": "US utilities",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLU",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLU/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLU/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLU/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_realestate",
+      "item": "US real estate",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLRE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLRE/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLRE/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLRE/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_materials",
+      "item": "US materials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLB",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLB/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLB/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLB/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_communications",
+      "item": "US communications",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLC",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/XLC/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLC/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLC/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_treasury",
+      "item": "US long Treasury proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "TLT",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/TLT/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/TLT/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/TLT/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_credit",
+      "item": "US investment-grade credit proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "LQD",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/LQD/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/LQD/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/LQD/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_highyield",
+      "item": "US high-yield credit proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "HYG",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/HYG/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/HYG/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/HYG/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "dollar",
+      "item": "US dollar index",
+      "group": "currency",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "DX-Y.NYB",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdinr",
+      "item": "USD/INR",
+      "group": "currency",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "INR=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-15",
+      "price_source": "https://finance.yahoo.com/quote/INR%3DX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/INR%3DX/history/",
+          "observed_at": "2026-11-15",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "eurusd",
+      "item": "EUR/USD",
+      "group": "currency",
+      "region": "EU",
+      "currency": "USD",
+      "symbol": "EURUSD=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdjpy",
+      "item": "USD/JPY",
+      "group": "currency",
+      "region": "JP",
+      "currency": "JPY",
+      "symbol": "JPY=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdcny",
+      "item": "USD/CNY",
+      "group": "currency",
+      "region": "CN",
+      "currency": "CNY",
+      "symbol": "CNY=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-15",
+      "price_source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
+          "observed_at": "2026-11-15",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "gbpusd",
+      "item": "GBP/USD",
+      "group": "currency",
+      "region": "UK",
+      "currency": "USD",
+      "symbol": "GBPUSD=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-15",
+      "price_source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
+          "observed_at": "2026-11-15",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "gold",
+      "item": "Gold",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "GC=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "silver",
+      "item": "Silver",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "SI=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "copper",
+      "item": "Copper",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "HG=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "platinum",
+      "item": "Platinum",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "PL=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/PL%3DF/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/PL%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "brent",
+      "item": "Brent crude",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "BZ=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "wti",
+      "item": "WTI crude",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "CL=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "naturalgas",
+      "item": "Natural gas",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "NG=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "bitcoin",
+      "item": "Bitcoin",
+      "group": "crypto",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "BTC-USD",
+      "asset_type": "crypto",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-15",
+      "price_source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+          "observed_at": "2026-11-15",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+          "observed_at": "2026-11-15",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "ethereum",
+      "item": "Ethereum",
+      "group": "crypto",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "ETH-USD",
+      "asset_type": "crypto",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-15",
+      "price_source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+      "freshness": "current",
+      "volume_observed": true,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+          "observed_at": "2026-11-15",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+          "observed_at": "2026-11-15",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Fed balance sheet series unavailable",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "vix",
+      "item": "US VIX",
+      "group": "risk",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^VIX",
+      "asset_type": "risk",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EVIX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EVIX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "indiavix",
+      "item": "India VIX",
+      "group": "risk",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^INDIAVIX",
+      "asset_type": "risk",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-13",
+      "price_source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
+      "freshness": "current",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
+          "observed_at": "2026-11-13",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    }
+  ],
+  "drivers": [
+    {
+      "headline_id": "bbea3780f69cefa3",
+      "title": "Agencies extend comment period for proposed third-party risk management guidance",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "697d000e72a48d8d",
+      "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "8780e9f08f2f30f4",
+      "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "f6a5d6fe91ea2450",
+      "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "83a40e1376ed5923",
+      "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "451bf10485d71230",
+      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "68ab46e128b42907",
+      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "beacfe1806dadbf1",
+      "title": "Federal Reserve issues FOMC statement",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "3c40d7e034eb31eb",
+      "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "13bcdbfd6a06c614",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "37905465dacd3a6e",
+      "title": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261009a.htm",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "32455b1e07840b0e",
+      "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money laundering",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "bd8e513455ef0121",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "a9dd368621e5ce5b",
+      "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "bdb0be338f340e1c",
+      "title": "Federal Reserve Board announces approval of application by Fleur Capital Corporation",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261002a.htm",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "fd0775022c84a7c8",
+      "title": "Isabel Schnabel: Made in Europe",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "7c2cb421a660685d",
+      "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "8e1b1d63568ba41e",
+      "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "0477ebfc41ad1eea",
+      "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "c5cdf90c2e4d6ce8",
+      "title": "ECB publishes consolidated banking data for end-June 2026",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "1674d1a2208e7db3",
+      "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "62181200734254e6",
+      "title": "Piero Cipollone: Shaping the future of money",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105~6495a0df6f.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "ca9b3d5143b40937",
+      "title": "ECB wage tracker suggests slightly higher wage growth in first three quarters of 2027 compared with the full year of 2026",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261104~caf181d7ac.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "f4a0adedfd13d6ae",
+      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "8521f1424e9a626e",
+      "title": "Philip R. Lane: AI adoption in Europe",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "2110c34707bfbb49",
+      "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261030~e40f864093.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "3ec90a8bac1c5216",
+      "title": "Results of the ECB Survey of Professional Forecasters for the fourth quarter of 2026",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261030~e92c3c838c.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "e7e7a99f01791d12",
+      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe’s financial infrastructure",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "76f7f4f2b70005a5",
+      "title": "Christine Lagarde, Boris Vujčić: Monetary policy statement (with Q&A)",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/press_conference/monetary-policy-statement/2026/html/ecb.is261029~5c5ffe99e5.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    },
+    {
+      "headline_id": "6d9b0b8a7920f9e6",
+      "title": "Monetary policy decisions",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction"
+    }
+  ],
+  "health": {
+    "status": "degraded",
+    "price_proxies_current": 48,
+    "items_configured": 50
+  },
+  "source_manifest": "config/sources.yaml"
+}
