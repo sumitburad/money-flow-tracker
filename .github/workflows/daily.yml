@@ -37,7 +37,7 @@ jobs:
       - name: Unit and contract tests
         run: python -m pytest -q tests
       - name: Collect official data and research price proxies
-        run: python backend/run_daily.py
+        run: python -m backend.run_daily
       - name: Reject invalid or non-cited output
         run: python scripts/validate_feed.py data/feed/v1/latest.json
       - name: Synchronize Vercel and Pages static sites
