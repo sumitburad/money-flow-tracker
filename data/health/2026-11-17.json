@@ -1,0 +1,127 @@
+{
+  "as_of_ist": "2026-11-17T04:29:44.572932+05:30",
+  "status": "degraded",
+  "items_configured": 50,
+  "price_proxies_current": 50,
+  "macro_series_available": 9,
+  "macro_series_current": 6,
+  "macro_series_stale": [
+    "DGS10",
+    "DGS2",
+    "M2SL"
+  ],
+  "macro_series_unavailable": [
+    "BOJ_TOTAL_ASSETS",
+    "DEXINUS",
+    "PBOC_TOTAL_ASSETS",
+    "RBI_SYSTEM_LIQUIDITY"
+  ],
+  "liquidity_regions": {
+    "US": {
+      "series_id": "WALCL",
+      "status": "current",
+      "observation_date": "2026-11-11",
+      "source": "https://m0.com/data/fed-balance-sheet",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "EU": {
+      "series_id": "ECB_ILM_TOTAL_ASSETS",
+      "status": "current",
+      "observation_date": "2026-11-06",
+      "source": "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "JP": {
+      "series_id": "BOJ_TOTAL_ASSETS",
+      "status": "not_available",
+      "observation_date": null,
+      "source": "https://fred.stlouisfed.org/series/JPNASSETS",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "IN": {
+      "series_id": "RBI_SYSTEM_LIQUIDITY",
+      "status": "not_available",
+      "observation_date": null,
+      "source": "https://data.rbi.org.in/",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "CN": {
+      "series_id": "PBOC_TOTAL_ASSETS",
+      "status": "not_available",
+      "observation_date": null,
+      "source": "http://www.pbc.gov.cn/en/",
+      "note": "Not a complete cross-border money flow measurement"
+    }
+  },
+  "cftc_markets_with_evidence": [
+    "dollar"
+  ],
+  "institutional_flow_status": "not_configured",
+  "ai_classification": {
+    "model_configured": false,
+    "model_classified": 0,
+    "rule_fallback": 30,
+    "rejected_model_responses": 0,
+    "providers_used": [],
+    "human_tag_review_required": true,
+    "no_ai_is_not_model_inference": true
+  },
+  "missing": [],
+  "errors": [
+    {
+      "source": "fred:DGS2",
+      "error": "primary_ReadTimeout; DBnomics mirror used"
+    },
+    {
+      "source": "fred:DGS10",
+      "error": "primary_ReadTimeout; DBnomics mirror used"
+    },
+    {
+      "source": "fred:WALCL",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+    },
+    {
+      "source": "fred:WTREGEN",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+    },
+    {
+      "source": "fred:RRPONTSYD",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+    },
+    {
+      "source": "fred:M2SL",
+      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+    },
+    {
+      "source": "macro:DEXINUS",
+      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
+    },
+    {
+      "source": "boj_assets",
+      "error": "HTTPError"
+    },
+    {
+      "source": "macro_stale:DGS2",
+      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "macro_stale:DGS10",
+      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "macro_stale:M2SL",
+      "error": "Last observation 2026-09-01; permitted 45 calendar days"
+    },
+    {
+      "source": "institutional_flows",
+      "error": "Authorized NSE broker feed or final NSDL access unavailable"
+    },
+    {
+      "source": "news_classifier",
+      "error": "No accepted AI responses; transparent deterministic tag fallback"
+    }
+  ],
+  "vendor_price_exported": false,
+  "publication": "categorical_research_only",
+  "note": "No privately licensed price tables, broker data, or portfolio records published."
+}

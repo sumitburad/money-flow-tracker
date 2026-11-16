@@ -1,12 +1,12 @@
-# Global Money-Flow Brief | 2026-11-16T14:48:08.113143+05:30
+# Global Money-Flow Brief | 2026-11-17T04:29:44.572932+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Where money is flowing
 **Data — supportive evidence:**
-- US value stocks: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/IWD/history/)
-- US financials: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/XLF/history/)
-- US real estate: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/XLRE/history/)
+- Nifty 50: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ENSEI/history/)
+- Nifty Bank: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ENSEBANK/history/)
+- Nifty 500: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ECRSLDX/history/)
 **Data — opposing evidence:**
 - No qualifying directional signal; data may be incomplete.
 
@@ -27,4 +27,4 @@
 ## Watch next
 Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-16T14:48:08.113143+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-17T04:29:44.572932+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
