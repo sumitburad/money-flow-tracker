@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T09:15:27.774517+00:00",
-  "as_of_ist": "2026-11-15T14:45:27.774517+05:30",
-  "run_date_ist": "2026-11-15",
+  "generated_at_utc": "2026-11-16T09:18:08.113143+00:00",
+  "as_of_ist": "2026-11-16T14:48:08.113143+05:30",
+  "run_date_ist": "2026-11-16",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
   "usage": "research_only_not_order_authorization",
@@ -95,12 +95,12 @@
           "value": 4.56
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:15:37.447623+00:00",
+      "fetched_at_utc": "2026-11-16T09:18:17.879760+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY02_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
       "raw_sha256": "6bb7a8d6bb3bcd5f838e061d2e9cdfd6b6d0ba5482f18e5f52eb7824b6fab04a",
-      "raw_file": "data/raw/2026-11-15/DBN_DGS2.json.gz",
+      "raw_file": "data/raw/2026-11-16/DBN_DGS2.json.gz",
       "freshness": "stale",
       "last_good_date": "2026-11-09",
       "allowed_age": "2 weekday sessions (exchange holidays require review)"
@@ -193,12 +193,12 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:15:46.793932+00:00",
+      "fetched_at_utc": "2026-11-16T09:18:31.462804+00:00",
       "source": "https://api.db.nomics.world/v22/series/FED/H15/RIFLGFCY10_N.B",
       "source_provider": "Federal Reserve H.15 via DBnomics",
       "mirror": true,
       "raw_sha256": "6e491bb9ca364324984121631aa6a176b6e7182ecd1739de61b5f96e597b40c6",
-      "raw_file": "data/raw/2026-11-15/DBN_DGS10.json.gz",
+      "raw_file": "data/raw/2026-11-16/DBN_DGS10.json.gz",
       "freshness": "stale",
       "last_good_date": "2026-11-09",
       "allowed_age": "2 weekday sessions (exchange holidays require review)"
@@ -298,9 +298,9 @@
       "frequency": "weekly",
       "unit": "billions_usd",
       "not_official_primary": true,
-      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_WALCL.csv.gz",
+      "raw_file": "data/raw/2026-11-16/M0_SECONDARY_WALCL.csv.gz",
       "raw_sha256": "bbe5adb9ff8098f92e99024873be1b5403a3eeea4c3d041889b191df2d1c97a8",
-      "fetched_at_utc": "2026-11-15T09:15:55.642961+00:00",
+      "fetched_at_utc": "2026-11-16T09:18:40.337692+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-11",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -400,9 +400,9 @@
       "frequency": "weekly",
       "unit": "billions_usd",
       "not_official_primary": true,
-      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_WTREGEN.csv.gz",
-      "raw_sha256": "0ef5209d7b0284cf5fcf86a88188db8cd480607632875b4759a902128259252f",
-      "fetched_at_utc": "2026-11-15T09:16:04.469185+00:00",
+      "raw_file": "data/raw/2026-11-16/M0_SECONDARY_WTREGEN.csv.gz",
+      "raw_sha256": "b3c2adf38906ec7b536eece06fa5539d824b96483544c49800d5b0368f083114",
+      "fetched_at_utc": "2026-11-16T09:18:49.114545+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-11",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -502,9 +502,9 @@
       "frequency": "daily",
       "unit": "billions_usd",
       "not_official_primary": true,
-      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_RRPONTSYD.csv.gz",
-      "raw_sha256": "ba47fa5aa39dbba2531416d213706dd0f869139eca2647dc91109e95cc409981",
-      "fetched_at_utc": "2026-11-15T09:16:13.142829+00:00",
+      "raw_file": "data/raw/2026-11-16/M0_SECONDARY_RRPONTSYD.csv.gz",
+      "raw_sha256": "3109e66ee549ad2a5070204a52e7191a911cbfaf6ab711fd60e248ae2ed29dd0",
+      "fetched_at_utc": "2026-11-16T09:18:57.931961+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-13",
       "allowed_age": "2 weekday sessions (exchange holidays require review)"
@@ -604,9 +604,9 @@
       "frequency": "monthly",
       "unit": "billions_usd",
       "not_official_primary": true,
-      "raw_file": "data/raw/2026-11-15/M0_SECONDARY_M2SL.csv.gz",
-      "raw_sha256": "bcff35e9a7dc4e5a424457b9f6839561029ef0e67162ce52170b26c568ace88e",
-      "fetched_at_utc": "2026-11-15T09:16:21.770372+00:00",
+      "raw_file": "data/raw/2026-11-16/M0_SECONDARY_M2SL.csv.gz",
+      "raw_sha256": "97007f1e811340b8cf60fd36666705a70041c2eb800cc6fbb21e2ef3909f19f7",
+      "fetched_at_utc": "2026-11-16T09:19:06.734095+00:00",
       "freshness": "stale",
       "last_good_date": "2026-09-01",
       "allowed_age": "45 calendar days"
@@ -706,8 +706,8 @@
       "description": "Consolidated Eurosystem weekly total assets",
       "mirror": false,
       "raw_sha256": "93e0a042bf47380a717e715f6343b17a916b466441e63c1a691c98a7953e57a9",
-      "raw_file": "data/raw/2026-11-15/ECB_ILM_TOTAL_ASSETS.gz",
-      "fetched_at_utc": "2026-11-15T09:16:31.002550+00:00",
+      "raw_file": "data/raw/2026-11-16/ECB_ILM_TOTAL_ASSETS.gz",
+      "fetched_at_utc": "2026-11-16T09:19:16.623897+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-06",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -800,13 +800,13 @@
           "value": 4.88
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:16:31.685971+00:00",
+      "fetched_at_utc": "2026-11-16T09:19:17.364401+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
       "unit": "percent_per_annum",
       "raw_sha256": "7940584cb08f8aa016d786b71015d85e3226612c7a3756129c064b32fa9795da",
-      "raw_file": "data/raw/2026-11-15/US_TREASURY_PAR_2026.csv.gz",
+      "raw_file": "data/raw/2026-11-16/US_TREASURY_PAR_2026.csv.gz",
       "mirror": false,
       "freshness": "current",
       "last_good_date": "2026-11-13",
@@ -900,13 +900,13 @@
           "value": 5.15
         }
       ],
-      "fetched_at_utc": "2026-11-15T09:16:31.685971+00:00",
+      "fetched_at_utc": "2026-11-16T09:19:17.364401+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
       "unit": "percent_per_annum",
       "raw_sha256": "7940584cb08f8aa016d786b71015d85e3226612c7a3756129c064b32fa9795da",
-      "raw_file": "data/raw/2026-11-15/US_TREASURY_PAR_2026.csv.gz",
+      "raw_file": "data/raw/2026-11-16/US_TREASURY_PAR_2026.csv.gz",
       "mirror": false,
       "freshness": "current",
       "last_good_date": "2026-11-13",
@@ -1039,26 +1039,24 @@
       "symbol": "^NSEI",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
       "freshness": "current",
-      "volume_observed": true,
-      "label": "Bullish",
-      "tag": "Strengthening",
-      "agreement": "Moderate",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "supportive",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1084,7 +1082,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "niftybank",
@@ -1095,26 +1093,24 @@
       "symbol": "^NSEBANK",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
       "freshness": "current",
-      "volume_observed": true,
-      "label": "Bullish",
-      "tag": "Strengthening",
-      "agreement": "Moderate",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "supportive",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1140,7 +1136,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "niftyit",
@@ -1151,26 +1147,24 @@
       "symbol": "^CNXIT",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
       "freshness": "current",
-      "volume_observed": true,
+      "volume_observed": false,
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "neutral",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1196,7 +1190,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "nifty500",
@@ -1207,26 +1201,24 @@
       "symbol": "^CRSLDX",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
       "freshness": "current",
-      "volume_observed": true,
-      "label": "Bullish",
-      "tag": "Strengthening",
-      "agreement": "Moderate",
+      "volume_observed": false,
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "supportive",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1252,7 +1244,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bullish under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "niftymid",
@@ -1263,7 +1255,7 @@
       "symbol": "MID150BEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -1315,26 +1307,26 @@
       "symbol": "SMALLADD.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
       "freshness": "current",
       "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Strengthening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1427,26 +1419,24 @@
       "symbol": "^HSI",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5EHSI/history/",
       "freshness": "current",
-      "volume_observed": true,
+      "volume_observed": false,
       "label": "Neutral/Mixed",
-      "tag": "Weakening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "neutral",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1472,7 +1462,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "europe",
@@ -1539,26 +1529,24 @@
       "symbol": "^N225",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5EN225/history/",
       "freshness": "current",
-      "volume_observed": true,
+      "volume_observed": false,
       "label": "Neutral/Mixed",
-      "tag": "Weakening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EN225/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1584,7 +1572,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "uk",
@@ -1595,26 +1583,24 @@
       "symbol": "^FTSE",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
       "freshness": "current",
-      "volume_observed": true,
+      "volume_observed": false,
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "neutral",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
-          "observed_at": "2026-11-13",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -1640,7 +1626,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "em",
@@ -2771,7 +2757,7 @@
       "symbol": "DX-Y.NYB",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -2788,7 +2774,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -2825,7 +2811,7 @@
       "symbol": "INR=X",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-15",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/INR%3DX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -2842,7 +2828,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/INR%3DX/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -2877,7 +2863,7 @@
       "symbol": "EURUSD=X",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -2894,7 +2880,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -2929,7 +2915,7 @@
       "symbol": "JPY=X",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -2946,7 +2932,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -2981,7 +2967,7 @@
       "symbol": "CNY=X",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-15",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -2998,7 +2984,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3033,7 +3019,7 @@
       "symbol": "GBPUSD=X",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-15",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -3050,7 +3036,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3085,26 +3071,26 @@
       "symbol": "GC=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/GC%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Steady",
+      "tag": "Weakening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3139,7 +3125,7 @@
       "symbol": "SI=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/SI%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
@@ -3151,14 +3137,14 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3193,7 +3179,7 @@
       "symbol": "HG=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/HG%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
@@ -3205,14 +3191,14 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3247,7 +3233,7 @@
       "symbol": "PL=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/PL%3DF/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -3264,7 +3250,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/PL%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3299,26 +3285,26 @@
       "symbol": "BZ=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Weakening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
           "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
-          "state": "neutral",
+          "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3353,26 +3339,26 @@
       "symbol": "CL=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/CL%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Weakening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "neutral",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3407,7 +3393,7 @@
       "symbol": "NG=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/NG%3DF/history/",
       "freshness": "current",
       "volume_observed": true,
@@ -3419,14 +3405,14 @@
           "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3461,7 +3447,7 @@
       "symbol": "BTC-USD",
       "asset_type": "crypto",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-15",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/BTC-USD/history/",
       "freshness": "current",
       "volume_observed": true,
@@ -3473,14 +3459,14 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3517,26 +3503,26 @@
       "symbol": "ETH-USD",
       "asset_type": "crypto",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-15",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/ETH-USD/history/",
       "freshness": "current",
       "volume_observed": true,
       "label": "Neutral/Mixed",
-      "tag": "Steady",
+      "tag": "Weakening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "neutral",
+          "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
-          "observed_at": "2026-11-15",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3573,7 +3559,7 @@
       "symbol": "^VIX",
       "asset_type": "risk",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5EVIX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -3587,10 +3573,10 @@
           "source": null
         },
         "price_trend": {
-          "state": "neutral",
+          "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EVIX/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -3625,7 +3611,7 @@
       "symbol": "^INDIAVIX",
       "asset_type": "risk",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-16",
       "price_source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
       "freshness": "current",
       "volume_observed": false,
@@ -3642,7 +3628,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
-          "observed_at": "2026-11-13",
+          "observed_at": "2026-11-16",
           "method": "price_trend"
         },
         "breadth": {
@@ -4076,6 +4062,33 @@
       "confirmation": "too_early_or_unverified"
     },
     {
+      "headline_id": "b082065da5343683",
+      "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction",
+      "classification": {
+        "headline_id": "b082065da5343683",
+        "event_type": "other",
+        "region": [
+          "EU"
+        ],
+        "affected": [],
+        "direction": "unclear",
+        "horizon": "days",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
+        "human_review_required": true
+      },
+      "confirmation": "too_early_or_unverified"
+    },
+    {
       "headline_id": "fd0775022c84a7c8",
       "title": "Isabel Schnabel: Made in Europe",
       "publisher": "European Central Bank",
@@ -4452,33 +4465,6 @@
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
-    },
-    {
-      "headline_id": "6d9b0b8a7920f9e6",
-      "title": "Monetary policy decisions",
-      "publisher": "European Central Bank",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
-      "event_type": "rates",
-      "impact": "unconfirmed",
-      "direction": "unclear",
-      "data": "Headline only",
-      "reading": "No verified causal market reaction",
-      "classification": {
-        "headline_id": "6d9b0b8a7920f9e6",
-        "event_type": "central_bank",
-        "region": [
-          "EU"
-        ],
-        "affected": [],
-        "direction": "unclear",
-        "horizon": "days",
-        "novelty": "new",
-        "confidence": "low",
-        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-        "classifier": "deterministic_rules_NOT_AI",
-        "human_review_required": true
-      },
-      "confirmation": "too_early_or_unverified"
     }
   ],
   "institutional_flows": {
@@ -4518,9 +4504,9 @@
       }
     },
     "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
-    "fetched_at_utc": "2026-11-15T09:16:32.392444+00:00",
+    "fetched_at_utc": "2026-11-16T09:19:18.069139+00:00",
     "raw_sha256": "5c3947b7df7f4546dbb7d93feac52434bcdcf75673c259ba60936a1ded35191d",
-    "raw_file": "data/raw/2026-11-15/CFTC_TFF_FUTURES_ONLY.gz",
+    "raw_file": "data/raw/2026-11-16/CFTC_TFF_FUTURES_ONLY.gz",
     "type": "TFF_FUTURES_ONLY",
     "note": "CFTC weekly holdings, not cash investment flows"
   },
