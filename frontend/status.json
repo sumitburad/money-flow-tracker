@@ -1,5 +1,5 @@
 {
-  "as_of_ist": "2026-11-17T15:57:20.708422+05:30",
+  "as_of_ist": "2026-11-18T03:22:40.777573+05:30",
   "status": "degraded",
   "items_configured": 50,
   "price_proxies_current": 50,
@@ -27,7 +27,7 @@
     "EU": {
       "series_id": "ECB_ILM_TOTAL_ASSETS",
       "status": "current",
-      "observation_date": "2026-11-06",
+      "observation_date": "2026-11-13",
       "source": "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01",
       "note": "Not a complete cross-border money flow measurement"
     },
