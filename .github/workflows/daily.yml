@@ -1,16 +1,8 @@
 name: Global money-flow daily research
+# Paused 2026-11-18 by owner request until macro/news research is complete.
+# Manual-only workflow; no scheduled or push-triggered data/news collection.
 on:
   workflow_dispatch:
-  schedule:
-    # 07:30 and 19:00 IST, Monday–Saturday. US Friday close reaches Saturday morning.
-    - cron: "0 2 * * 1-6"
-    - cron: "30 13 * * 1-6"
-  push:
-    branches: [main]
-    paths:
-      - "backend/**"
-      - "config/**"
-      - ".github/workflows/daily.yml"
 
 permissions:
   contents: write
