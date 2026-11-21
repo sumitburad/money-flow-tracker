@@ -1,4 +1,3 @@
-nano handover/legacy-money-flow.md
 # Handover Summary
 
 ## Built
