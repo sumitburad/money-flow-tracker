@@ -27,9 +27,23 @@ def bars(drift, volume_bump=1.3):
     return frame
 
 
+NEWER_BLOCKS = ("rotation", "regime", "calendar", "market_news", "executive_summary")
+
+
+def published_feed():
+    """The real published feed's items, without the blocks that later releases added.
+
+    These tests add their own copies of those blocks, so a fresh daily refresh (which fills
+    them in with live values) can never change what a test expects."""
+    feed = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
+    for key in NEWER_BLOCKS:
+        feed.pop(key, None)
+    return feed
+
+
 def make_feed():
     """The real published feed, with flow windows added: sectors inflow, bonds outflow."""
-    feed = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
+    feed = published_feed()
     for item in feed["items"]:
         if item["group"] in ("global_sector", "india_sector"):
             frame = bars(0.004)
@@ -123,7 +137,7 @@ def test_without_any_key_the_summary_is_rule_based_and_says_so():
 
 
 def test_rule_summary_handles_a_feed_with_no_flow_data():
-    old = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
+    old = published_feed()
     summary, _ = build_executive_summary(old, env=ENV, http=FakeHttp(), now=NOW)   # no AI call is possible
     assert summary["method"] == "rules_only" and "not available" in summary["headline"]
     validate_executive_summary(summary)
@@ -369,7 +383,7 @@ def test_a_tone_with_no_data_is_left_out():
 
 
 def test_events_still_reach_the_watch_list_when_no_flow_data_exists():
-    old = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
+    old = published_feed()
     old.update(calendar=calendar_block(), regime=tone_block())
     summary, _ = build_executive_summary(old, env={}, now=NOW)
     assert "not available" in summary["headline"]
