@@ -1,6 +1,6 @@
-1/ Global money flow | 2026-11-22T15:39:55.604382+05:30. Categorical, evidence-based signals; no scores.
+1/ Global money flow | 2026-11-22T16:24:44.661568+05:30. Categorical, evidence-based signals; no scores.
 
-2/ Supportive: not confirmed; opposing: Nasdaq 100, China equities proxy.
+2/ Supportive: not confirmed; opposing: China equities proxy, Japan equities.
 
 3/ Flow rotation: Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
 
