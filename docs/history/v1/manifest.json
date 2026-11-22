@@ -1,7 +1,7 @@
 {
   "schema": "history-1.0",
   "usage": "research_only_not_order_authorization",
-  "generated_at_utc": "2026-11-22T06:29:40.303187+00:00",
+  "generated_at_utc": "2026-11-22T10:13:15.962092+00:00",
   "start_date": "2021-11-22",
   "no_price_data": true,
   "availability_basis": "available_from_estimate is a conservative publication-lag estimate, not a true vintage date. Values are the current vintage; later revisions are not tracked.",
@@ -23,7 +23,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "d3adbc02e4daa526eb03b20f8119930eab53c210c4810cf8aea66281f165f8a8",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -43,7 +43,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "44c4e10dff57620a88902b21024d3acc6c5fefe140cbf49a3d33623971788163",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -63,7 +63,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "16538a10d3e2adaf409a32f5e93bda2de467ac33fc5ab63ea5957faf3d65bb54",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -83,64 +83,348 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "74a3cb73faf87f3e6b58364ca2366a534d187f6a221772cb4127b44d5d367acc",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
+    },
+    {
+      "id": "CPI_CORE_YOY",
+      "title": "US core CPI (excluding food and energy): change from a year earlier",
+      "provider": "U.S. Bureau of Labor Statistics, via FRED; change from a year earlier calculated here",
+      "frequency": "monthly",
+      "unit": "percent",
+      "file": "fred/CPI_CORE_YOY.csv",
+      "rows": 57,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-09-01",
+      "lag_rule": {
+        "calendar_days": 48
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/CPILFENS",
+      "sha256": "a339f1a4a63f7d52c0ae95d7326ba6b27c22e293b06286fe02b896b3276a2854",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok",
+      "derived_from": "CPILFENS",
+      "method": "year_on_year_percent",
+      "formula": "(index / index 12 months earlier - 1) x 100",
+      "group": "cpi",
+      "line_name": "Core (excl. food and energy)"
+    },
+    {
+      "id": "CPI_YOY",
+      "title": "US consumer prices (CPI), all items: change from a year earlier",
+      "provider": "U.S. Bureau of Labor Statistics, via FRED; change from a year earlier calculated here",
+      "frequency": "monthly",
+      "unit": "percent",
+      "file": "fred/CPI_YOY.csv",
+      "rows": 57,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-09-01",
+      "lag_rule": {
+        "calendar_days": 48
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCNS",
+      "sha256": "7b5fdcf66c21f19fb2d0dd7bd1154f0ea9da30deb032518ac783d19f87fb1569",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok",
+      "derived_from": "CPIAUCNS",
+      "method": "year_on_year_percent",
+      "formula": "(index / index 12 months earlier - 1) x 100",
+      "group": "cpi",
+      "line_name": "All items"
     },
     {
       "id": "DEXINUS",
       "title": "India rupees per US dollar (Fed H.10)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "daily",
+      "unit": "inr_per_usd",
+      "file": "fred/DEXINUS.csv",
+      "rows": 1245,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-13",
+      "lag_rule": {
+        "calendar_days": 8
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/DEXINUS",
+      "sha256": "1b7bf33668c92ea62dfb436329afceb3a62ed2dc2c9cadc3975970d6360f09ed",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "DFF",
+      "title": "US federal funds effective rate (Fed H.15)",
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "fred/DFF.csv",
+      "rows": 1824,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-19",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/DFF",
+      "sha256": "2d1c92bd26afa402f0e8c93c365ae46f48cc187b4c90469b8ca6e8fb907d0420",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "DGS10",
       "title": "US 10-year Treasury yield (Fed H.15)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "fred/DGS10.csv",
+      "rows": 1248,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-19",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "sha256": "1ecd8d6ba50a0edb15102377d639c0df02ee23848159ae3b6190a1cad0ff7550",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "DGS2",
       "title": "US 2-year Treasury yield (Fed H.15)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "fred/DGS2.csv",
+      "rows": 1248,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-19",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/DGS2",
+      "sha256": "80b60406a73c4959bbbed7414abad0f545f53371f4b10d4b3e5fee36efef9e31",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "DTWEXBGS",
       "title": "Nominal broad US dollar index (Fed H.10)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "daily",
+      "unit": "index_jan_2006_100",
+      "file": "fred/DTWEXBGS.csv",
+      "rows": 1245,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-13",
+      "lag_rule": {
+        "calendar_days": 8
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS",
+      "sha256": "0d8d2940ccb3ba30d9f85454187a871f39c3c80827c38f360459562b08b53b99",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "ECBASSETSW",
       "title": "Eurosystem total assets (ECB weekly statement)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "European Central Bank, via FRED",
+      "frequency": "weekly",
+      "unit": "millions_eur",
+      "file": "fred/ECBASSETSW.csv",
+      "rows": 260,
+      "first_observation": "2021-11-26",
+      "last_observation": "2026-11-13",
+      "lag_rule": {
+        "calendar_days": 6
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/ECBASSETSW",
+      "sha256": "383741a913bf9289d2bd03ea3c74038b553e2a7eacbeb006ee9e5f44c287d7bd",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "JPNASSETS",
       "title": "Bank of Japan total assets",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Bank of Japan, via FRED",
+      "frequency": "monthly",
+      "unit": "hundred_million_yen",
+      "file": "fred/JPNASSETS.csv",
+      "rows": 59,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-10-01",
+      "lag_rule": {
+        "calendar_days": 75
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/JPNASSETS",
+      "sha256": "3a28f3c17d9e35a8dd3f63c770fee2e7c40879f700ace1f54fb831e477089dc4",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "M2SL",
       "title": "US M2 money stock (seasonally adjusted)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "monthly",
+      "unit": "billions_usd",
+      "file": "fred/M2SL.csv",
+      "rows": 58,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-09-01",
+      "lag_rule": {
+        "calendar_days": 65
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/M2SL",
+      "sha256": "a84c6a5fffe0f198874c4e1b65cc65f9766e00ce5488af73e607064ddfb760d7",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "PCE_CORE_YOY",
+      "title": "US core PCE price index (excluding food and energy): change from a year earlier",
+      "provider": "U.S. Bureau of Economic Analysis, via FRED; change from a year earlier calculated here",
+      "frequency": "monthly",
+      "unit": "percent",
+      "file": "fred/PCE_CORE_YOY.csv",
+      "rows": 58,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-09-01",
+      "lag_rule": {
+        "calendar_days": 65
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/PCEPILFE",
+      "sha256": "49311c1396c9c18231a7609cd9e458aed05f9d884b50196a1667c5ae468851f4",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok",
+      "derived_from": "PCEPILFE",
+      "method": "year_on_year_percent",
+      "formula": "(index / index 12 months earlier - 1) x 100",
+      "group": "pce",
+      "line_name": "Core (excl. food and energy)"
+    },
+    {
+      "id": "PCE_YOY",
+      "title": "US PCE price index, all items: change from a year earlier",
+      "provider": "U.S. Bureau of Economic Analysis, via FRED; change from a year earlier calculated here",
+      "frequency": "monthly",
+      "unit": "percent",
+      "file": "fred/PCE_YOY.csv",
+      "rows": 58,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-09-01",
+      "lag_rule": {
+        "calendar_days": 65
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/PCEPI",
+      "sha256": "f6e2870fd8f25990cc7d891f6a3ad79f9b4b9484601bfd1eb6de0553fd4c7160",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok",
+      "derived_from": "PCEPI",
+      "method": "year_on_year_percent",
+      "formula": "(index / index 12 months earlier - 1) x 100",
+      "group": "pce",
+      "line_name": "All items"
     },
     {
       "id": "RRPONTSYD",
       "title": "Overnight reverse repo operations (New York Fed)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Federal Reserve Bank of New York, via FRED",
+      "frequency": "daily",
+      "unit": "billions_usd",
+      "file": "fred/RRPONTSYD.csv",
+      "rows": 1247,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/RRPONTSYD",
+      "sha256": "02c8afb40bf6ba2445179f870362d2f837f13d8822667891e53abfc7f7280006",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "T10Y2Y",
+      "title": "US 10-year minus 2-year Treasury yield spread",
+      "provider": "Federal Reserve Bank of St. Louis, calculated from Fed H.15 yields, via FRED",
+      "frequency": "daily",
+      "unit": "percentage_points",
+      "file": "fred/T10Y2Y.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
+      "sha256": "37a689ccb552c41aaf5d97e30c697bbba4324f164512cf764c9a96efb3b09671",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "T10YIE",
+      "title": "US 10-year breakeven inflation rate",
+      "provider": "Federal Reserve Bank of St. Louis, calculated from Treasury yields, via FRED",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "fred/T10YIE.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 2
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/T10YIE",
+      "sha256": "8364c6a80d0cc945fe91f2843955c714714a44e987bae4637c2f80b10ed6888b",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "UNRATE",
+      "title": "US unemployment rate (Bureau of Labor Statistics)",
+      "provider": "U.S. Bureau of Labor Statistics, via FRED",
+      "frequency": "monthly",
+      "unit": "percent",
+      "file": "fred/UNRATE.csv",
+      "rows": 58,
+      "first_observation": "2021-12-01",
+      "last_observation": "2026-10-01",
+      "lag_rule": {
+        "calendar_days": 35
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/UNRATE",
+      "sha256": "794e02cb477b52be6f3f5b0394c487b3bea56347b050992db8701a67064fa4fb",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "UST_PAR_10Y",
@@ -159,7 +443,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "8f2c8a1a9e997a0f57844187ba2f43e673b22f2c209c37e3d2cb9d504c246146",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -179,7 +463,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "56c209c67feadd45f9df349650509e3fa1eb130db1810d0ba10a225a0e6eec32",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -199,7 +483,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "387ae0f246abda8f71002bc28aeb3a24b6afdf235e2b5e73777ac50b78dc84b7",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
@@ -219,64 +503,49 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "9e35cc2bc7f745dcb0e89387c641f61944c32029f65351dfee8f4ce411f82154",
-      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
       "status": "ok"
     },
     {
       "id": "WALCL",
       "title": "Federal Reserve total assets (H.4.1, Wednesday level)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "weekly",
+      "unit": "millions_usd",
+      "file": "fred/WALCL.csv",
+      "rows": 261,
+      "first_observation": "2021-11-24",
+      "last_observation": "2026-11-18",
+      "lag_rule": {
+        "calendar_days": 3
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/WALCL",
+      "sha256": "ea0f6820c5004116705bf4d19448e030be7f9a860dd0b9010c153f3ef53b5ebd",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     },
     {
       "id": "WTREGEN",
       "title": "US Treasury General Account (H.4.1, Wednesday level)",
-      "status": "missing",
-      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
-      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+      "provider": "Board of Governors of the Federal Reserve System, via FRED",
+      "frequency": "weekly",
+      "unit": "millions_usd",
+      "file": "fred/WTREGEN.csv",
+      "rows": 261,
+      "first_observation": "2021-11-24",
+      "last_observation": "2026-11-18",
+      "lag_rule": {
+        "calendar_days": 3
+      },
+      "transport": "fred_api",
+      "mirror": false,
+      "source_url": "https://fred.stlouisfed.org/series/WTREGEN",
+      "sha256": "67b2e385eaa09c9571126f5cd63bbc4839170637431701e7fcc6cf6bc7a9a95b",
+      "fetched_at_utc": "2026-11-22T10:13:15.962092+00:00",
+      "status": "ok"
     }
   ],
-  "problems": [
-    {
-      "series": "DGS2",
-      "error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_"
-    },
-    {
-      "series": "DGS10",
-      "error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_"
-    },
-    {
-      "series": "RRPONTSYD",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "DTWEXBGS",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "DEXINUS",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "WALCL",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "WTREGEN",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "ECBASSETSW",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "M2SL",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    },
-    {
-      "series": "JPNASSETS",
-      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
-    }
-  ]
+  "problems": []
 }

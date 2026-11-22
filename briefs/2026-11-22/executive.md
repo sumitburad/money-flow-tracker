@@ -1,6 +1,14 @@
-# Global Money-Flow Brief | 2026-11-22T11:57:02.364723+05:30
+# Global Money-Flow Brief | 2026-11-22T15:39:55.604382+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
+
+## Executive summary (rule-based, no AI used)
+Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
+
+Over the week, money appears to be moving into none and out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs). Over the month, money appears to be moving into none and out of Country and regional markets, Size and style, Metals and Crypto. Among sectors and themes this week, inflow is visible in Nifty India Consumption ETF (CONSUMBEES) and Nifty Infrastructure ETF (INFRABEES) and outflow in AI and big-data theme, US technology, Nifty IT ETF (ITBEES), US financials, US banks and US healthcare. Flow is improving in Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.
+
+## Risk tone
+Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 
 ## Where money is flowing
 **Data — supportive evidence:**
@@ -25,6 +33,9 @@
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
+- US personal income and spending (PCE inflation): 2026-11-25 (in 3 days). Date from FRED's release calendar.
+- US economic growth (GDP): 2026-11-25 (in 3 days). Date from FRED's release calendar.
+- US jobs report: 2026-12-04 (in 12 days). Date from FRED's release calendar.
+- Fed interest-rate decision (FOMC): 2026-12-09 (in 17 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T11:57:02.364723+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T15:39:55.604382+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

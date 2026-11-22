@@ -1,6 +1,10 @@
-Global money-flow monitor — 2026-11-22T11:57:02.364723+05:30
+Global money-flow monitor — 2026-11-22T15:39:55.604382+05:30
 
 Data: Supportive evidence: not independently confirmed. Opposing evidence: Nasdaq 100, China equities proxy.
+
+Flow rotation: Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
+
+Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 
 Reading: Volume patterns are not direct fund flows. Verify source freshness and the six evidence families before making financial decisions.
 

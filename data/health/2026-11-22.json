@@ -1,22 +1,20 @@
 {
-  "as_of_ist": "2026-11-22T11:57:02.364723+05:30",
+  "as_of_ist": "2026-11-22T15:39:55.604382+05:30",
   "run_slot": "manual",
-  "completed_at_utc": "2026-11-22T06:29:40.044203+00:00",
-  "needs_retry": true,
-  "official_source_problems": 7,
+  "completed_at_utc": "2026-11-22T10:12:13.940253+00:00",
+  "needs_retry": false,
+  "official_source_problems": 0,
   "status": "degraded",
-  "items_configured": 50,
-  "price_proxies_current": 50,
-  "macro_series_available": 9,
-  "macro_series_current": 6,
+  "items_configured": 73,
+  "price_proxies_current": 73,
+  "macro_series_available": 10,
+  "macro_series_current": 8,
   "macro_series_stale": [
-    "DGS10",
-    "DGS2",
+    "DEXINUS",
     "M2SL"
   ],
   "macro_series_unavailable": [
     "BOJ_TOTAL_ASSETS",
-    "DEXINUS",
     "PBOC_TOTAL_ASSETS",
     "RBI_SYSTEM_LIQUIDITY"
   ],
@@ -25,7 +23,7 @@
       "series_id": "WALCL",
       "status": "current",
       "observation_date": "2026-11-18",
-      "source": "https://m0.com/data/fed-balance-sheet",
+      "source": "https://fred.stlouisfed.org/series/WALCL",
       "note": "Not a complete cross-border money flow measurement"
     },
     "EU": {
@@ -62,70 +60,100 @@
   ],
   "institutional_flow_status": "not_configured",
   "ai_classification": {
-    "model_configured": false,
-    "model_classified": 0,
-    "rule_fallback": 30,
-    "rejected_model_responses": 0,
-    "providers_used": [],
+    "model_configured": true,
+    "model_calls": 3,
+    "model_classified": 4,
+    "rule_fallback": 26,
+    "rejected_model_responses": 3,
+    "providers_used": [
+      "openrouter"
+    ],
     "human_tag_review_required": true,
-    "no_ai_is_not_model_inference": true
+    "no_ai_is_not_model_inference": false
+  },
+  "flow_windows": {
+    "items_with_signal": 59,
+    "items_in_rotation": 61,
+    "items_without_volume": [
+      "dollar",
+      "usdinr",
+      "eurusd",
+      "usdjpy",
+      "usdcny",
+      "gbpusd",
+      "platinum"
+    ]
+  },
+  "regime": {
+    "status": "ok",
+    "label": "risk_off",
+    "short_term_label": "risk_off",
+    "checks_with_data": {
+      "week": 8,
+      "month": 8
+    },
+    "checks_total": 8
   },
   "missing": [],
   "errors": [
     {
-      "source": "fred:DGS2",
-      "error": "primary_ReadTimeout; DBnomics mirror used"
-    },
-    {
-      "source": "fred:DGS10",
-      "error": "primary_ReadTimeout; DBnomics mirror used"
-    },
-    {
-      "source": "fred:WALCL",
-      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
-    },
-    {
-      "source": "fred:WTREGEN",
-      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
-    },
-    {
-      "source": "fred:RRPONTSYD",
-      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
-    },
-    {
-      "source": "fred:M2SL",
-      "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
-    },
-    {
-      "source": "macro:DEXINUS",
-      "error": "FRED_HostCircuitOpen; fallbacks_ValueError_HTTPError_ValueError"
-    },
-    {
       "source": "boj_assets",
       "error": "HTTPError"
-    },
-    {
-      "source": "macro_stale:DGS2",
-      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
-    },
-    {
-      "source": "macro_stale:DGS10",
-      "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
     },
     {
       "source": "macro_stale:M2SL",
       "error": "Last observation 2026-09-01; permitted 45 calendar days"
     },
     {
+      "source": "macro_stale:DEXINUS",
+      "error": "Last observation 2026-11-13; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
       "source": "institutional_flows",
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     },
     {
-      "source": "news_classifier",
-      "error": "No accepted AI responses; transparent deterministic tag fallback"
+      "source": "market_news",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout="
     }
   ],
   "vendor_price_exported": false,
   "publication": "categorical_research_only",
-  "note": "No privately licensed price tables, broker data, or portfolio records published."
+  "note": "No privately licensed price tables, broker data, or portfolio records published.",
+  "calendar": {
+    "status": "ok",
+    "fred": {
+      "status": "ok",
+      "rows_seen": 1107,
+      "unmatched_releases": []
+    },
+    "events": 9,
+    "advisories": []
+  },
+  "market_news": {
+    "status": "unavailable",
+    "queries_asked": 3,
+    "queries_answered": 0,
+    "articles_seen": 0,
+    "from_listed_publishers": 0,
+    "kept": 0,
+    "company_stories": 0,
+    "errors": [
+      "ReadTimeout: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=",
+      "ReadTimeout: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=",
+      "The news index failed twice, so the remaining questions were skipped."
+    ],
+    "advisories": []
+  },
+  "executive_summary": {
+    "method": "rules_only",
+    "providers_tried": [
+      "openrouter"
+    ],
+    "rejected_answers": 1,
+    "reasons": [
+      "openrouter: AI response missing text"
+    ],
+    "ai_configured": true
+  }
 }
