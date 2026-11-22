@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-23T01:58:26.369355+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-22T20:31:15.464123+00:00",
+  "as_of_ist": "2026-11-23T03:13:18.945572+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-22T21:45:22.519839+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,19 +61,19 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 10,
-    "rule_fallback": 20,
-    "rejected_model_responses": 1,
+    "model_classified": 5,
+    "rule_fallback": 25,
+    "rejected_model_responses": 2,
     "providers_used": [
       "openrouter"
     ],
     "empty_reply_retries": 1,
     "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "particle-ai/particle-1:free"
+      "baidu/ernie-5.5-flash-preview:free"
     ],
     "failure_reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from nvidia/nemotron-3.5-lightning:free: it used all its room thinking (finish: length)",
+      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
     ],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
@@ -133,25 +133,22 @@
   },
   "market_news": {
     "status": "unavailable",
-    "queries_asked": 4,
+    "queries_asked": 3,
     "queries_answered": 0,
-    "queries_skipped": 6,
+    "queries_skipped": 7,
     "articles_seen": 0,
     "from_listed_publishers": 0,
     "kept": 0,
     "company_stories": 0,
-    "seconds": 226.2,
+    "seconds": 141.1,
     "slowest_answer_seconds": 0.0,
     "errors": [
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
-      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "The news index failed twice, so the remaining questions were skipped."
     ],
-    "advisories": [
-      "The news index did not take the publisher filter (news index did not answer with JSON: Your query was too short or too long.), so the filter was turned off for the rest of this refresh and the question was asked again without it."
-    ],
-    "publisher_filter": "switched off during this refresh",
+    "advisories": [],
+    "publisher_filter": "on",
     "dropped": {},
     "top_other_sites": []
   },
