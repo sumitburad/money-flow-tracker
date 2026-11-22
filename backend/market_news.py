@@ -44,8 +44,11 @@ def load_config(path=None):
 
 
 def default_http():
-    """The news index asks for one request every five seconds, so a retry waits longer than that."""
-    return RetryingHttp(attempts=2, backoff=6.0, max_delay=12.0, breaker_after=2)
+    """The news index asks for one request every five seconds and answers HTTP 429 ("too many
+    requests") when it is busy, which on shared servers such as GitHub's can happen at the very
+    first question. So a question is tried up to three times, waiting 10 s and then 20 s (or what
+    the index asks for, at most 30 s). After two questions that fail all three tries, the step stops."""
+    return RetryingHttp(attempts=3, backoff=10.0, max_delay=30.0, breaker_after=2)
 
 
 # ------------------------------------------------------------------ cleaning
@@ -120,13 +123,38 @@ def build_questions(cfg):
     return questions[:int(source.get("max_queries", 10))]
 
 
+def _said(response):
+    """What a refusing server said, as one plain clause such as " (it said: ...)", or "".
+
+    This tells a "too many requests" answer from a block. Markup and web addresses are removed and
+    anything that looks like a secret is redacted; at most 90 characters are kept."""
+    text = getattr(response, "text", None)
+    if not isinstance(text, str):
+        try:
+            text = bytes(getattr(response, "content", b"") or b"").decode("utf-8", errors="replace")
+        except (TypeError, ValueError):
+            text = ""
+    text = re.sub(r"https?://\S+", " ", re.sub(r"<[^>]*>", " ", text))
+    text = redact(" ".join(text.split()))[:90]
+    clauses = []
+    if text:
+        clauses.append("it said: " + text)
+    headers = getattr(response, "headers", None) or {}
+    try:
+        wait = float(headers.get("Retry-After"))
+        clauses.append("it asked for a wait of %d seconds" % round(wait))
+    except (TypeError, ValueError):
+        pass
+    return " (" + "; ".join(clauses) + ")" if clauses else ""
+
+
 def ask(http, source, query):
     response = http.get(source["url"], params={
         "query": query, "mode": "artlist", "format": "json",
         "maxrecords": int(source["max_records"]), "timespan": source["timespan"],
         "sort": source["sort"]}, timeout=tuple(source["timeout_seconds"]), headers=HEADERS)
     if response.status_code != 200:
-        raise requests.HTTPError("news index answered HTTP %s" % response.status_code)
+        raise requests.HTTPError("news index answered HTTP %s%s" % (response.status_code, _said(response)))
     raw = response.content
     if len(raw) > 3_000_000:
         raise ValueError("unexpected news index response size")
@@ -159,7 +187,7 @@ def explain_error(exc, source, http=None):
     if isinstance(exc, requests.ConnectionError):
         return "could not connect to the news index" + twice
     if isinstance(exc, (requests.HTTPError, ValueError)):
-        return redact(str(exc))[:120]            # our own plain sentences, e.g. "news index answered HTTP 429"
+        return redact(str(exc))[:200]            # our own plain sentences, e.g. "news index answered HTTP 429"
     return type(exc).__name__
 
 

@@ -16,6 +16,7 @@ import requests
 
 from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_reason,
                               reply_from, think_less_fields, unreadable)
+from backend.free_models import POOL, shape_request
 from backend.net import post_with_one_429_retry
 
 EVENT_TYPES = {
@@ -143,36 +144,40 @@ def _parse_tags(text):
 
 
 def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=requests,
-                      sleep=time.sleep, think_less=None):
+                      sleep=time.sleep, think_less=None, attempt=0):
     """One request for several headlines.
 
     Returns (the model's raw tag objects, not yet checked; the model that really answered).
-    ``think_less`` holds extra request fields that ask a "thinking" model to think less."""
+    ``think_less`` holds extra request fields that ask a "thinking" model to think less.
+    On OpenRouter's free router the request names specific free models that answer directly
+    (backend/free_models.py); ``attempt`` makes a retry start with a different one."""
     prompt = {
         "headlines": [{"headline_id": h["headline_id"],
                        "headline": h.get("title", "")[:250],
                        "publisher": h.get("publisher", "")[:90]} for h in batch],
         "allowed_affected_names": universe_names[:80],
     }
+    body = {
+        "model": model,
+        "temperature": 0,
+        # Room for a "thinking" model's thinking AND the tags (see backend/ai_reply.py).
+        "max_tokens": answer_tokens(endpoint, 1800),
+        # Groq's free plan allows few tokens a minute; a short reasoning pass keeps calls small.
+        **({"reasoning_effort": "low"} if "groq.com" in endpoint else {}),
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=True)},
+        ],
+        **(think_less or {}),
+    }
     response = post_with_one_429_retry(
         http, endpoint, sleep=sleep,
         headers={"Authorization": "Bearer " + key,
                  "Content-Type": "application/json",
                  "User-Agent": "global-money-flow-research/2.0"},
-        json={
-            "model": model,
-            "temperature": 0,
-            # Room for a "thinking" model's thinking AND the tags (see backend/ai_reply.py).
-            "max_tokens": answer_tokens(endpoint, 1800),
-            # Groq's free plan allows few tokens a minute; a short reasoning pass keeps calls small.
-            **({"reasoning_effort": "low"} if "groq.com" in endpoint else {}),
-            "response_format": {"type": "json_object"},
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": json.dumps(prompt, ensure_ascii=True)},
-            ],
-            **(think_less or {}),
-        }, timeout=AI_TIMEOUT)
+        json=shape_request(body, url=endpoint, model=model, attempt=attempt, http=http, key=key),
+        timeout=AI_TIMEOUT)
     reply = reply_from(response)
     try:
         return _parse_tags(reply.text), reply.model
@@ -223,7 +228,7 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
                 try:
                     answers, used = _call_model_batch(pending, names, endpoint=url, key=key,
                                                       model=model, http=http, sleep=sleep,
-                                                      think_less=extra)
+                                                      think_less=extra, attempt=attempt)
                 except (ValueError, TypeError, KeyError, requests.RequestException) as exc:
                     fields = think_less_fields(url)
                     if (isinstance(exc, AIReplyError) and exc.empty and fields
@@ -269,6 +274,8 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
         health["model_calls"] = calls
         health["failure_reasons"] = [text if count == 1 else "%s (x%d)" % (text, count)
                                      for text, count in problems.most_common(4)]
+        if POOL.tried:
+            health.update(POOL.summary())
     output = []
     for headline in headlines:
         found = accepted.get(headline["headline_id"])

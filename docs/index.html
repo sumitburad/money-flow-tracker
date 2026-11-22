@@ -1146,6 +1146,12 @@ function renderHealth(h,feed){
     else note("Executive summary: rule-based, because the AI answer could not be used"+
       ((es.reasons||[]).length?" ("+es.reasons.join("; ")+")":"")+".",true);
   }
+  const pool=[es,ai].find(x=>x&&x.free_pool!==undefined);
+  if(pool){
+    const names=(pool.free_pool||[]).map(m=>String(m).replace(/:free$/,""));
+    if(names.length)note("AI models: asked "+names.join(", ")+" (free models that answer directly; if one is busy, OpenRouter tries the next).");
+    else if(pool.pool_note)note(pool.pool_note,true);
+  }
 }
 
 async function start(){

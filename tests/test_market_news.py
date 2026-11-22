@@ -164,7 +164,7 @@ def test_ask_sends_the_documented_parameters_and_reads_articles():
     assert call["url"] == "https://api.gdeltproject.org/api/v2/doc/doc"
     assert call["params"] == {"query": '("Micron")', "mode": "artlist", "format": "json",
                               "maxrecords": 100, "timespan": "48h", "sort": "hybridrel"}
-    assert call["headers"] == HEADERS and call["timeout"] == (10, 60)
+    assert call["headers"] == HEADERS and call["timeout"] == (10, 45)
 
 
 @pytest.mark.parametrize("reply,expected", [
@@ -311,7 +311,7 @@ def test_a_source_that_keeps_failing_is_dropped_after_two_failures():
 
 def test_the_default_http_waits_longer_than_the_five_seconds_the_source_asks_for():
     http = default_http()
-    assert http.attempts == 2 and http.backoff >= 6.0
+    assert http.attempts == 3 and http.backoff >= 10.0 and http.max_delay >= 30.0
 
 
 def test_the_switch_turns_the_feature_off_without_calling_the_source():
@@ -424,8 +424,8 @@ def test_a_dead_news_index_costs_less_than_the_budget_and_the_refresh_goes_on():
 
 
 def test_a_timeout_is_explained_without_web_addresses_or_library_words():
-    jargon = "HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=60)"
-    for failure, expected in ((requests.ReadTimeout(jargon), "no answer from the news index within 60 seconds"),
+    jargon = "HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=45)"
+    for failure, expected in ((requests.ReadTimeout(jargon), "no answer from the news index within 45 seconds"),
                               (requests.ConnectTimeout(jargon), "could not reach the news index within 10 seconds"),
                               (requests.ConnectionError(jargon), "could not connect to the news index")):
         block, health, _ = run([failure])
@@ -438,7 +438,7 @@ def test_the_note_says_how_many_tries_were_made_when_the_http_helper_retries():
         raise requests.ReadTimeout("slow")
     http = RetryingHttp(attempts=2, backoff=0.0, jitter=False, sleep=lambda s: None, fetcher=fetcher)
     block, health = build_market_news(CFG, NOW, http=http, sleep=lambda s: None)
-    assert health["errors"][0] == "no answer from the news index within 60 seconds (2 tries)"
+    assert health["errors"][0] == "no answer from the news index within 45 seconds (2 tries)"
     assert any("failed twice" in e for e in health["errors"])
 
 
@@ -580,3 +580,111 @@ def test_a_full_default_run_makes_no_more_questions_than_the_cap_and_takes_a_bou
     questions = build_questions(CFG)
     assert len(questions) <= CFG["source"]["max_queries"]
     assert (len(questions) - 1) * CFG["source"]["pause_seconds"] < 90
+
+
+# ------------------------------------------------------------------ what the news index says when it refuses
+
+class Busy:
+    """A refusing answer with text and a Retry-After header, like the news index's own 429."""
+
+    def __init__(self, text, status=429, retry_after=None):
+        self.status_code = status
+        self.content = text.encode() if isinstance(text, str) else text
+        self.headers = {"Retry-After": retry_after} if retry_after is not None else {}
+
+
+def refusal(reply):
+    with pytest.raises(requests.HTTPError) as caught:
+        ask(Fake([reply]), CFG["source"], "x")
+    return str(caught.value)
+
+
+def test_a_busy_answer_carries_the_servers_own_words_so_a_wait_can_be_told_from_a_block():
+    text = refusal(Busy("Please limit requests to one every 5 seconds or contact kleinsteinhaus@gmail.com"))
+    assert text.startswith("news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds")
+
+
+def test_a_wait_the_server_asks_for_is_reported_in_seconds():
+    assert refusal(Busy("Slow down", retry_after="7")) == (
+        "news index answered HTTP 429 (it said: Slow down; it asked for a wait of 7 seconds)")
+    assert refusal(Busy("", retry_after="12")) == (
+        "news index answered HTTP 429 (it asked for a wait of 12 seconds)")
+
+
+def test_a_wait_written_as_a_date_is_ignored_instead_of_breaking_the_note():
+    assert refusal(Busy("", retry_after="Sun, 22 Nov 2026 13:40:00 GMT")) == "news index answered HTTP 429"
+
+
+def test_an_empty_refusal_says_only_the_status():
+    assert refusal(Busy("")) == "news index answered HTTP 429"
+    assert refusal(Busy(b"", status=503)) == "news index answered HTTP 503"
+
+
+def test_markup_and_web_addresses_are_removed_from_what_the_server_said():
+    text = refusal(Busy("<html><body><h1>Too Many Requests</h1> see https://example.org/help?x=1 now</body></html>"))
+    assert "<" not in text and "http" not in text.split("HTTP", 1)[1] and "example.org" not in text
+    assert text == "news index answered HTTP 429 (it said: Too Many Requests see now)"
+
+
+def test_what_the_server_said_is_cut_to_ninety_characters():
+    text = refusal(Busy("x" * 500))
+    said = text.split("it said: ", 1)[1].rstrip(")")
+    assert len(said) == 90
+
+
+def test_a_secret_in_what_the_server_said_is_hidden(monkeypatch):
+    monkeypatch.setenv("FRED_API_KEY", "abcd1234efgh5678")
+    text = refusal(Busy("bad request: api_key=abcd1234efgh5678 and again abcd1234efgh5678"))
+    assert "abcd1234efgh5678" not in text and "***" in text
+
+
+def test_text_that_cannot_be_read_never_breaks_the_note():
+    assert refusal(Busy(b"\xff\xfe\x00bad bytes", status=502)).startswith("news index answered HTTP 502")
+
+    class Odd:
+        status_code, headers, content = 500, None, None
+    assert refusal(Odd()) == "news index answered HTTP 500"
+
+
+def test_the_note_for_a_busy_index_reaches_the_health_record_in_plain_words():
+    block, health, _ = run([Busy("Please limit requests to one every 5 seconds.")])
+    assert health["errors"][0].startswith("news index answered HTTP 429 (it said: Please limit requests")
+    assert "gdelt" not in health["errors"][0].lower()
+
+
+def test_a_too_many_requests_answer_is_waited_out_and_then_the_question_is_answered():
+    waits, answers = [], [Busy("Please limit requests to one every 5 seconds"),
+                          ok(article("Stock market story that is long enough", "reuters.com", 2))]
+    http = RetryingHttp(attempts=3, backoff=10.0, max_delay=30.0, jitter=False, sleep=waits.append,
+                        fetcher=lambda url, **kw: answers.pop(0))
+    rows = ask(http, CFG["source"], "x")
+    assert len(rows) == 1 and waits == [10.0]               # one wait of ten seconds, then success
+
+
+def test_a_wait_the_server_asks_for_is_respected_up_to_thirty_seconds():
+    waits, calls = [], []
+
+    def fetcher(url, **kw):
+        calls.append(url)
+        return Busy("slow down", retry_after="25") if len(calls) < 3 else ok()
+    http = RetryingHttp(attempts=3, backoff=10.0, max_delay=30.0, jitter=False, sleep=waits.append, fetcher=fetcher)
+    ask(http, CFG["source"], "x")
+    assert waits == [25.0, 25.0]          # the server's 25 s beats our own 10 s and 20 s
+
+
+def test_a_long_wait_the_server_asks_for_is_capped_at_thirty_seconds():
+    waits = []
+    http = RetryingHttp(attempts=2, backoff=10.0, max_delay=30.0, jitter=False, sleep=waits.append,
+                        fetcher=lambda url, **kw: Busy("slow down", retry_after="600"))
+    with pytest.raises(requests.HTTPError, match="asked for a wait of 600 seconds"):
+        ask(http, CFG["source"], "x")
+    assert waits == [30.0]
+
+
+def test_a_real_requests_answer_is_read_the_same_way():
+    real = requests.Response()
+    real.status_code = 429
+    real._content = b"<p>Please limit requests to one every 5 seconds.</p>"
+    real.headers["Retry-After"] = "5"
+    assert refusal(real) == ("news index answered HTTP 429 "
+                             "(it said: Please limit requests to one every 5 seconds.; it asked for a wait of 5 seconds)")

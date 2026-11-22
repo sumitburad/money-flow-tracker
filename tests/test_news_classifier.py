@@ -333,3 +333,66 @@ def test_no_more_than_four_reasons_are_kept_and_a_key_the_provider_echoes_is_nev
 def test_without_a_key_there_are_no_reasons_and_no_retries():
     _, h = classify_headlines([news()], UNIVERSE, env={})
     assert h["failure_reasons"] == [] and h["empty_reply_retries"] == 0 and h["models_seen"] == []
+
+
+# ------------------------------------------------------------------- free models that answer directly
+
+GEMMA, LLAMA = "google/gemma-4-31b-it:free", "meta-llama/llama-3.3-70b-instruct:free"
+THINKER = "nvidia/nemotron-3.5-lightning:free"
+
+
+class PoolRecorder(Recorder):
+    """Recorder that can also answer OpenRouter's model-list request."""
+
+    def __init__(self, listing, *steps):
+        super().__init__(*steps)
+        self.listing, self.list_calls = listing, []
+
+    def get(self, url, headers=None, timeout=None, **kw):
+        self.list_calls.append(url)
+        if isinstance(self.listing, Exception):
+            raise self.listing
+        return self.listing
+
+
+def test_tagging_names_free_models_and_a_retry_starts_with_the_next_one(model_list):
+    rec = PoolRecorder(model_list(GEMMA, LLAMA, thinkers=[THINKER]), used_up_its_room(), valid_answer(model=LLAMA))
+    tagged, h = classify_headlines([news()], UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    first, second = rec.sent[0]["payload"], rec.sent[1]["payload"]
+    assert first["model"] == GEMMA and first["models"] == [LLAMA] and "reasoning" not in first
+    assert second["model"] == LLAMA and second["models"] == [GEMMA] and second["reasoning"] == {"effort": "low"}
+    assert THINKER not in json.dumps([first, second])
+    assert tagged[0]["classification"]["classifier"] == "validated_model_json"
+    assert h["free_pool"] == [GEMMA, LLAMA] and "pool_note" not in h and h["empty_reply_retries"] == 1
+
+
+def test_the_model_list_is_read_once_for_all_batches(model_list):
+    heads = [news(i) for i in range(10)]                    # two batches of five
+    rec = PoolRecorder(model_list(GEMMA, LLAMA), valid_answer(model=GEMMA), valid_answer(model=GEMMA))
+    _, h = classify_headlines(heads, UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    assert len(rec.sent) == 2 and len(rec.list_calls) == 1 and h["model_classified"] == 10
+    assert [s["payload"]["model"] for s in rec.sent] == [GEMMA, GEMMA]
+
+
+def test_when_the_model_list_cannot_be_read_the_free_router_is_used_and_the_reason_is_kept():
+    rec = PoolRecorder(requests.ConnectionError("down"), valid_answer())
+    _, h = classify_headlines([news()], UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    sent = rec.sent[0]["payload"]
+    assert sent["model"] == "openrouter/free" and "models" not in sent
+    assert h["free_pool"] == [] and h["pool_note"].startswith("No free model could be chosen")
+    assert h["model_classified"] == 1
+
+
+def test_a_model_named_in_the_environment_is_never_replaced_for_tagging(model_list):
+    env = {**OPENROUTER_ENV, "OPENROUTER_CLASSIFIER_MODEL": "vendor/my-pick-70b:free"}
+    rec = PoolRecorder(model_list(GEMMA), valid_answer())
+    classify_headlines([news()], UNIVERSE, env=env, http=rec)
+    sent = rec.sent[0]["payload"]
+    assert sent["model"] == "vendor/my-pick-70b:free" and "models" not in sent and rec.list_calls == []
+
+
+def test_groq_tagging_is_not_changed_and_never_reads_the_model_list(model_list):
+    rec = PoolRecorder(model_list(GEMMA), valid_answer())
+    _, h = classify_headlines([news()], UNIVERSE, env=GROQ_ENV, http=rec)
+    assert rec.sent[0]["payload"]["model"] == "openai/gpt-oss-20b" and rec.list_calls == []
+    assert "free_pool" not in h

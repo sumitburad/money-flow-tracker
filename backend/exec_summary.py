@@ -23,6 +23,7 @@ from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_r
                               reply_from, think_less_fields, unreadable)
 from backend.events_calendar import digest_events
 from backend.feed_contract import FLOW_WINDOWS
+from backend.free_models import POOL, shape_request
 from backend.market_news import digest_market_news
 from backend.regime import REGIME_WORDS, digest_regime
 
@@ -203,8 +204,15 @@ def rules_summary(digest):
         move = digest["moves"].get(window, {})
         into, out = move.get("into", []), move.get("out_of", [])
         if into or out:
-            text = "%s, money appears to be moving into %s" % (WINDOW_WORDS[window].capitalize(), _join(into))
-            parts.append(text + (" and out of %s." % _join(out) if out else "."))
+            lead = WINDOW_WORDS[window].capitalize()
+            if into and out:
+                parts.append("%s, money appears to be moving into %s and out of %s." % (
+                    lead, _join(into), _join(out)))
+            elif into:
+                parts.append("%s, money appears to be moving into %s." % (lead, _join(into)))
+            else:
+                parts.append("%s, money appears to be moving out of %s, and no asset class shows a clear "
+                             "inflow." % (lead, _join(out)))
         else:
             parts.append("%s no asset class shows a clear lead." % WINDOW_WORDS[window].capitalize())
     sectors = next((g for g in digest["groups"] if g["ref"] == "sectors"), None)
@@ -325,13 +333,17 @@ def _prompt(digest):
             {"role": "user", "content": json.dumps(digest, ensure_ascii=True)}]
 
 
-def _ask(url, key, model, extra, digest, http):
-    """One request. Returns (the answer as a dict, the model that really answered)."""
+def _ask(url, key, model, extra, digest, http, attempt=0):
+    """One request. Returns (the answer as a dict, the model that really answered).
+
+    On OpenRouter's free router the request names specific free models that answer directly
+    (backend/free_models.py); ``attempt`` makes a retry start with a different one."""
+    body = {"model": model, "temperature": 0.2, "max_tokens": answer_tokens(url, 1500),
+            "response_format": {"type": "json_object"}, "messages": _prompt(digest), **extra}
     response = http.post(
         url, headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
                       "User-Agent": "global-money-flow-research/2.0"},
-        json={"model": model, "temperature": 0.2, "max_tokens": answer_tokens(url, 1500),
-              "response_format": {"type": "json_object"}, "messages": _prompt(digest), **extra},
+        json=shape_request(body, url=url, model=model, attempt=attempt, http=http, key=key),
         timeout=AI_TIMEOUT)
     reply = reply_from(response)
     start, end = reply.text.find("{"), reply.text.rfind("}")
@@ -347,8 +359,9 @@ def _ask_with_one_retry(url, key, model, extra, digest, http, sleep, notes=None)
     """At most two requests, so a free plan's daily allowance is safe.
 
     * HTTP 429 (busy): wait the time the provider asks for (at most 30 s) and try once more.
-    * An empty or cut-off reply (a "thinking" model used its room up): try once more, asking the
-      model to think less. ``notes["empty_reply_retries"]`` counts these."""
+    * An empty or cut-off reply (a "thinking" model used its room up): try once more, starting
+      with a different model and asking it to think less. ``notes["empty_reply_retries"]``
+      counts these."""
     try:
         return _ask(url, key, model, extra, digest, http)
     except requests.HTTPError as exc:
@@ -367,7 +380,7 @@ def _ask_with_one_retry(url, key, model, extra, digest, http, sleep, notes=None)
             raise
         if notes is not None:
             notes["empty_reply_retries"] = notes.get("empty_reply_retries", 0) + 1
-        return _ask(url, key, model, {**extra, **fields}, digest, http)
+        return _ask(url, key, model, {**extra, **fields}, digest, http, attempt=1)
 
 
 def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, now=None,
@@ -402,7 +415,7 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
                 health["rejected_answers"] += 1
                 health["reasons"].append(provider + ": " + failure_reason(exc))
                 continue
-            summary = {**clean, "method": "ai_validated", "provider": provider, "model": model}
+            summary = {**clean, "method": "ai_validated", "provider": provider, "model": used or model}
             health["method"] = "ai_validated"
             break
     if summary is None:
@@ -411,4 +424,6 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
                    notice=NOTICE, human_review_required=True)
     health["reasons"] = health["reasons"][:4]
     health["models_seen"] = health["models_seen"][:4]
+    if POOL.tried:
+        health.update(POOL.summary())
     return summary, health
