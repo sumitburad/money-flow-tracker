@@ -1,0 +1,282 @@
+{
+  "schema": "history-1.0",
+  "usage": "research_only_not_order_authorization",
+  "generated_at_utc": "2026-11-22T06:29:40.303187+00:00",
+  "start_date": "2021-11-22",
+  "no_price_data": true,
+  "availability_basis": "available_from_estimate is a conservative publication-lag estimate, not a true vintage date. Values are the current vintage; later revisions are not tracked.",
+  "series": [
+    {
+      "id": "CFTC_TFF_dollar",
+      "title": "Asset-manager net futures position: US dollar index",
+      "provider": "U.S. Commodity Futures Trading Commission (Traders in Financial Futures, futures only)",
+      "frequency": "weekly",
+      "unit": "contracts",
+      "file": "cftc/dollar.csv",
+      "rows": 261,
+      "first_observation": "2021-11-23",
+      "last_observation": "2026-11-17",
+      "lag_rule": {
+        "calendar_days": 4
+      },
+      "transport": "cftc_socrata",
+      "mirror": false,
+      "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+      "sha256": "d3adbc02e4daa526eb03b20f8119930eab53c210c4810cf8aea66281f165f8a8",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "CFTC_TFF_nasdaq100",
+      "title": "Asset-manager net futures position: Nasdaq-100",
+      "provider": "U.S. Commodity Futures Trading Commission (Traders in Financial Futures, futures only)",
+      "frequency": "weekly",
+      "unit": "contracts",
+      "file": "cftc/nasdaq100.csv",
+      "rows": 533,
+      "first_observation": "2021-11-23",
+      "last_observation": "2026-11-17",
+      "lag_rule": {
+        "calendar_days": 4
+      },
+      "transport": "cftc_socrata",
+      "mirror": false,
+      "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+      "sha256": "44c4e10dff57620a88902b21024d3acc6c5fefe140cbf49a3d33623971788163",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "CFTC_TFF_sp500",
+      "title": "Asset-manager net futures position: S&P 500",
+      "provider": "U.S. Commodity Futures Trading Commission (Traders in Financial Futures, futures only)",
+      "frequency": "weekly",
+      "unit": "contracts",
+      "file": "cftc/sp500.csv",
+      "rows": 519,
+      "first_observation": "2021-11-23",
+      "last_observation": "2026-11-17",
+      "lag_rule": {
+        "calendar_days": 4
+      },
+      "transport": "cftc_socrata",
+      "mirror": false,
+      "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+      "sha256": "16538a10d3e2adaf409a32f5e93bda2de467ac33fc5ab63ea5957faf3d65bb54",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "CFTC_TFF_us_treasury",
+      "title": "Asset-manager net futures position: US 10-year Treasury note",
+      "provider": "U.S. Commodity Futures Trading Commission (Traders in Financial Futures, futures only)",
+      "frequency": "weekly",
+      "unit": "contracts",
+      "file": "cftc/us_treasury.csv",
+      "rows": 11,
+      "first_observation": "2021-11-23",
+      "last_observation": "2022-02-01",
+      "lag_rule": {
+        "calendar_days": 4
+      },
+      "transport": "cftc_socrata",
+      "mirror": false,
+      "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+      "sha256": "74a3cb73faf87f3e6b58364ca2366a534d187f6a221772cb4127b44d5d367acc",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "DEXINUS",
+      "title": "India rupees per US dollar (Fed H.10)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "DGS10",
+      "title": "US 10-year Treasury yield (Fed H.15)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "DGS2",
+      "title": "US 2-year Treasury yield (Fed H.15)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "DTWEXBGS",
+      "title": "Nominal broad US dollar index (Fed H.10)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "ECBASSETSW",
+      "title": "Eurosystem total assets (ECB weekly statement)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "JPNASSETS",
+      "title": "Bank of Japan total assets",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "M2SL",
+      "title": "US M2 money stock (seasonally adjusted)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "RRPONTSYD",
+      "title": "Overnight reverse repo operations (New York Fed)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "UST_PAR_10Y",
+      "title": "US Treasury par yield, 10 Yr",
+      "provider": "U.S. Department of the Treasury (daily par yield curve)",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "treasury/UST_PAR_10Y.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 1
+      },
+      "transport": "us_treasury_csv",
+      "mirror": false,
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
+      "sha256": "8f2c8a1a9e997a0f57844187ba2f43e673b22f2c209c37e3d2cb9d504c246146",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "UST_PAR_2Y",
+      "title": "US Treasury par yield, 2 Yr",
+      "provider": "U.S. Department of the Treasury (daily par yield curve)",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "treasury/UST_PAR_2Y.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 1
+      },
+      "transport": "us_treasury_csv",
+      "mirror": false,
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
+      "sha256": "56c209c67feadd45f9df349650509e3fa1eb130db1810d0ba10a225a0e6eec32",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "UST_PAR_30Y",
+      "title": "US Treasury par yield, 30 Yr",
+      "provider": "U.S. Department of the Treasury (daily par yield curve)",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "treasury/UST_PAR_30Y.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 1
+      },
+      "transport": "us_treasury_csv",
+      "mirror": false,
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
+      "sha256": "387ae0f246abda8f71002bc28aeb3a24b6afdf235e2b5e73777ac50b78dc84b7",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "UST_PAR_3M",
+      "title": "US Treasury par yield, 3 Mo",
+      "provider": "U.S. Department of the Treasury (daily par yield curve)",
+      "frequency": "daily",
+      "unit": "percent",
+      "file": "treasury/UST_PAR_3M.csv",
+      "rows": 1249,
+      "first_observation": "2021-11-22",
+      "last_observation": "2026-11-20",
+      "lag_rule": {
+        "business_days": 1
+      },
+      "transport": "us_treasury_csv",
+      "mirror": false,
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
+      "sha256": "9e35cc2bc7f745dcb0e89387c641f61944c32029f65351dfee8f4ce411f82154",
+      "fetched_at_utc": "2026-11-22T06:29:40.303187+00:00",
+      "status": "ok"
+    },
+    {
+      "id": "WALCL",
+      "title": "Federal Reserve total assets (H.4.1, Wednesday level)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    },
+    {
+      "id": "WTREGEN",
+      "title": "US Treasury General Account (H.4.1, Wednesday level)",
+      "status": "missing",
+      "last_error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:",
+      "last_attempt_utc": "2026-11-22T06:29:40.303187+00:00"
+    }
+  ],
+  "problems": [
+    {
+      "series": "DGS2",
+      "error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_"
+    },
+    {
+      "series": "DGS10",
+      "error": "RuntimeError: fred_csv: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40); dbnomics_"
+    },
+    {
+      "series": "RRPONTSYD",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "DTWEXBGS",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "DEXINUS",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "WALCL",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "WTREGEN",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "ECBASSETSW",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "M2SL",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    },
+    {
+      "series": "JPNASSETS",
+      "error": "RuntimeError: fred_csv: HostCircuitOpen: skipping fred.stlouisfed.org: it already failed 2 times in this run; dbnomics_mirror: RuntimeError:"
+    }
+  ]
+}

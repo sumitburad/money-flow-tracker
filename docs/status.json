@@ -1,5 +1,9 @@
 {
-  "as_of_ist": "2026-11-18T15:26:36.194280+05:30",
+  "as_of_ist": "2026-11-22T11:57:02.364723+05:30",
+  "run_slot": "manual",
+  "completed_at_utc": "2026-11-22T06:29:40.044203+00:00",
+  "needs_retry": true,
+  "official_source_problems": 7,
   "status": "degraded",
   "items_configured": 50,
   "price_proxies_current": 50,
@@ -20,7 +24,7 @@
     "US": {
       "series_id": "WALCL",
       "status": "current",
-      "observation_date": "2026-11-11",
+      "observation_date": "2026-11-18",
       "source": "https://m0.com/data/fed-balance-sheet",
       "note": "Not a complete cross-border money flow measurement"
     },
@@ -94,7 +98,7 @@
     },
     {
       "source": "macro:DEXINUS",
-      "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
+      "error": "FRED_HostCircuitOpen; fallbacks_ValueError_HTTPError_ValueError"
     },
     {
       "source": "boj_assets",

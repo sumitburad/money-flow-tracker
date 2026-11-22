@@ -1,17 +1,19 @@
-# Global Money-Flow Brief | 2026-11-18T15:26:36.194280+05:30
+# Global Money-Flow Brief | 2026-11-22T11:57:02.364723+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Where money is flowing
 **Data — supportive evidence:**
-- US real estate: Bullish (Strengthening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/XLRE/history/)
-**Data — opposing evidence:**
 - No qualifying directional signal; data may be incomplete.
+**Data — opposing evidence:**
+- Nasdaq 100: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5ENDX/history/)
+- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- Japan equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EN225/history/)
 
 ## What is driving it
-- Agencies extend comment period for proposed third-party risk management guidance — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm)
-- Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm)
-- Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027 — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm)
+- Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
+- Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm)
+- Federal Reserve Board issues enforcement action with former employee of First Security Bancorp — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm)
 
 ## Liquidity check
 **Data:** Official U.S. macro series and their dates appear in the feed's macro section.
@@ -25,4 +27,4 @@
 ## Watch next
 Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-18T15:26:36.194280+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T11:57:02.364723+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

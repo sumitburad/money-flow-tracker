@@ -1,0 +1,649 @@
+{
+  "note": "Every CFTC TFF contract name seen since the start date, with row counts. Use it to correct the market name patterns in backend/advanced_sources.py (CFTC_MARKETS).",
+  "contracts": {
+    "1-MONTH SOFR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "10 YEAR DELIVERABLE IR - CHICAGO BOARD OF TRADE": {
+      "rows": 16,
+      "last_report_date": "2022-03-08"
+    },
+    "10 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 171,
+      "last_report_date": "2026-11-17"
+    },
+    "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "1K PEPE PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 1,
+      "last_report_date": "2026-10-20"
+    },
+    "1K SHIB - COINBASE DERIVATIVES, LLC": {
+      "rows": 9,
+      "last_report_date": "2025-11-10"
+    },
+    "1K SHIB - LMX LABS LLC": {
+      "rows": 12,
+      "last_report_date": "2025-01-28"
+    },
+    "1K SHIB PERP - COINBASE DERIVATIVES, LLC": {
+      "rows": 45,
+      "last_report_date": "2026-11-17"
+    },
+    "2 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 131,
+      "last_report_date": "2026-11-17"
+    },
+    "2 YEAR ERIS SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 9,
+      "last_report_date": "2022-05-31"
+    },
+    "2-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "3 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 47,
+      "last_report_date": "2026-11-17"
+    },
+    "3-MONTH EURODOLLARS - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "3-MONTH SOFR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "30-DAY FEDERAL FUNDS - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "5 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 182,
+      "last_report_date": "2026-11-17"
+    },
+    "5 YEAR ERIS SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 5,
+      "last_report_date": "2022-03-08"
+    },
+    "5-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "7 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE": {
+      "rows": 24,
+      "last_report_date": "2026-11-17"
+    },
+    "AAVE PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 4,
+      "last_report_date": "2026-09-15"
+    },
+    "ADJUSTED INT RATE S&P 500 TOTL - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 238,
+      "last_report_date": "2026-11-17"
+    },
+    "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "AVALANCHE - COINBASE DERIVATIVES, LLC": {
+      "rows": 51,
+      "last_report_date": "2026-11-17"
+    },
+    "AVALANCHE - LMX LABS LLC": {
+      "rows": 32,
+      "last_report_date": "2025-07-15"
+    },
+    "AVALANCHE PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 48,
+      "last_report_date": "2026-11-17"
+    },
+    "BBG COMMODITY - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "BITCOIN - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "BITCOIN CASH PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 28,
+      "last_report_date": "2026-11-17"
+    },
+    "BLOOMBERG COMMODITY INDEX - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "BLOOMBERG HY CREDIT FUTURES - CHICAGO BOARD OF TRADE": {
+      "rows": 24,
+      "last_report_date": "2026-09-15"
+    },
+    "BLOOMBERG IG CREDIT FUTURES - CHICAGO BOARD OF TRADE": {
+      "rows": 29,
+      "last_report_date": "2026-11-17"
+    },
+    "BLOOMBERG IG DURATION-HEDGED  - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2026-11-17"
+    },
+    "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "BRITISH POUND - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "BRITISH POUND STERLING - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "CARDONA - COINBASE DERIVATIVES, LLC": {
+      "rows": 31,
+      "last_report_date": "2026-11-10"
+    },
+    "CARDONA - LMX LABS LLC": {
+      "rows": 8,
+      "last_report_date": "2025-07-15"
+    },
+    "CARDONA PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 48,
+      "last_report_date": "2026-11-17"
+    },
+    "CHAINLINK - COINBASE DERIVATIVES, LLC": {
+      "rows": 22,
+      "last_report_date": "2025-12-16"
+    },
+    "CHAINLINK - LMX LABS LLC": {
+      "rows": 25,
+      "last_report_date": "2025-07-15"
+    },
+    "CHAINLINK PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 47,
+      "last_report_date": "2026-11-17"
+    },
+    "CHINESE RENMINBI-HK (CNH) - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 3,
+      "last_report_date": "2022-05-10"
+    },
+    "CRYPTO HYPE PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 23,
+      "last_report_date": "2026-11-17"
+    },
+    "DJIA Consolidated - CHICAGO BOARD OF TRADE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "DJIA x $5 - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "DOGECOIN - COINBASE DERIVATIVES, LLC": {
+      "rows": 45,
+      "last_report_date": "2026-11-17"
+    },
+    "DOGECOIN - LMX LABS LLC": {
+      "rows": 28,
+      "last_report_date": "2025-07-15"
+    },
+    "DOGECOIN PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 42,
+      "last_report_date": "2026-11-17"
+    },
+    "DOW JONES INDUSTRIAL AVG- x $5 - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "DOW JONES U.S. REAL ESTATE IDX - CHICAGO BOARD OF TRADE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI RUSSELL 2000 INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "E-MINI S&P 400 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P 500 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "E-MINI S&P COMMUNICATION INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 80,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P CONSU STAPLES INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 221,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P CONSUMER DISC INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 5,
+      "last_report_date": "2026-06-02"
+    },
+    "E-MINI S&P ENERGY INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 260,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P FINANCIAL INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 257,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P HEALTH CARE INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 156,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P INDUSTRIAL INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 108,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P MATERIALS INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 58,
+      "last_report_date": "2026-11-10"
+    },
+    "E-MINI S&P REAL ESTATE INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 28,
+      "last_report_date": "2025-09-16"
+    },
+    "E-MINI S&P TECHNOLOGY INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 135,
+      "last_report_date": "2026-11-17"
+    },
+    "E-MINI S&P UTILITIES INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 255,
+      "last_report_date": "2026-11-17"
+    },
+    "EMINI RUSSELL 1000 GROWTH - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 2,
+      "last_report_date": "2025-03-18"
+    },
+    "EMINI RUSSELL 1000 VALUE INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 257,
+      "last_report_date": "2026-11-17"
+    },
+    "ETHENA PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 9,
+      "last_report_date": "2026-11-17"
+    },
+    "ETHER CASH SETTLED - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "EURO FX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "EURO FX/BRITISH POUND XRATE - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "EURO FX/JAPANESE YEN XRATE - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 124,
+      "last_report_date": "2026-11-17"
+    },
+    "EURO SHORT TERM RATE - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 180,
+      "last_report_date": "2026-11-17"
+    },
+    "EURODOLLARS-3M - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 71,
+      "last_report_date": "2023-06-13"
+    },
+    "FED FUNDS - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "HEDERA - COINBASE DERIVATIVES, LLC": {
+      "rows": 8,
+      "last_report_date": "2025-09-23"
+    },
+    "HEDERA PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 41,
+      "last_report_date": "2026-11-17"
+    },
+    "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "LITECOIN CASH - COINBASE DERIVATIVES, LLC": {
+      "rows": 20,
+      "last_report_date": "2026-01-27"
+    },
+    "LITECOIN CASH - LMX LABS LLC": {
+      "rows": 28,
+      "last_report_date": "2025-06-24"
+    },
+    "LITECOIN PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 45,
+      "last_report_date": "2026-11-17"
+    },
+    "MEXICAN PESO - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO 10 YEAR YIELD - CHICAGO BOARD OF TRADE": {
+      "rows": 170,
+      "last_report_date": "2026-10-06"
+    },
+    "MICRO BITCOIN - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO E-MINI DJIA (x$0.5) - CHICAGO BOARD OF TRADE": {
+      "rows": 89,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO E-MINI NASDAQ-100 INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO E-MINI RUSSELL 2000 INDX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 148,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO E-MINI S&P 500 INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 258,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO ETHER  - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 258,
+      "last_report_date": "2026-11-17"
+    },
+    "MICRO SOL - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 40,
+      "last_report_date": "2026-10-27"
+    },
+    "MICRO XRP - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 4,
+      "last_report_date": "2025-12-23"
+    },
+    "MINI MSCI ACWI NTR INDEX  - ICE FUTURES U.S.": {
+      "rows": 6,
+      "last_report_date": "2026-07-28"
+    },
+    "MSCI EAFE  - ICE FUTURES U.S.": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "MSCI EAFE MINI INDEX - ICE FUTURES U.S.": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "MSCI EM ASIA MINI NTR INDEX - ICE FUTURES U.S.": {
+      "rows": 2,
+      "last_report_date": "2021-11-30"
+    },
+    "MSCI EM INDEX - ICE FUTURES U.S.": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "MSCI EMERGING MKTS INDEX - ICE FUTURES U.S.": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "NANO BITCOIN PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO ETHER - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO ETHER - LMX LABS LLC": {
+      "rows": 88,
+      "last_report_date": "2025-07-15"
+    },
+    "NANO ETHER PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO SOLANA - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO SOLANA - LMX LABS LLC": {
+      "rows": 21,
+      "last_report_date": "2025-07-15"
+    },
+    "NANO SOLANA PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 66,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO STELLAR - COINBASE DERIVATIVES, LLC": {
+      "rows": 2,
+      "last_report_date": "2025-08-19"
+    },
+    "NANO STELLAR - LMX LABS LLC": {
+      "rows": 2,
+      "last_report_date": "2025-07-15"
+    },
+    "NANO XRP - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "NANO XRP - LMX LABS LLC": {
+      "rows": 12,
+      "last_report_date": "2025-07-15"
+    },
+    "NANO XRP PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 66,
+      "last_report_date": "2026-11-17"
+    },
+    "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "NASDAQ-100 STOCK INDEX (MINI) - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "NEAR PROTOCAL PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 26,
+      "last_report_date": "2026-11-17"
+    },
+    "NEW ZEALAND DOLLAR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "NIKKEI STOCK AVERAGE - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 148,
+      "last_report_date": "2026-03-03"
+    },
+    "NIKKEI STOCK AVERAGE YEN DENOM - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "NZ DOLLAR - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "Nano Bitcoin  - COINBASE DERIVATIVES, LLC": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "Nano Bitcoin  - LMX LABS LLC": {
+      "rows": 89,
+      "last_report_date": "2025-07-15"
+    },
+    "ONDO PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 33,
+      "last_report_date": "2026-11-17"
+    },
+    "PAX GOLD PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 14,
+      "last_report_date": "2026-11-17"
+    },
+    "POLKADOT - COINBASE DERIVATIVES, LLC": {
+      "rows": 11,
+      "last_report_date": "2025-12-23"
+    },
+    "POLKADOT - LMX LABS LLC": {
+      "rows": 12,
+      "last_report_date": "2025-02-25"
+    },
+    "POLKADOT PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 45,
+      "last_report_date": "2026-11-17"
+    },
+    "RUSSELL 2000 ANNUAL DIVIDEND  - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 69,
+      "last_report_date": "2026-11-17"
+    },
+    "RUSSELL E-MINI - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "RUSSIAN RUBLE - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 17,
+      "last_report_date": "2022-03-15"
+    },
+    "S&P 500 ANNUAL DIVIDEND INDEX - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "S&P 500 Consolidated - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "S&P 500 QUARTERLY DIVIDEND IND - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 150,
+      "last_report_date": "2026-11-17"
+    },
+    "SO AFRICAN RAND - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "SOFR-1M - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "SOFR-3M - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "SOFR-3M - FMX FUTURES EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2026-11-17"
+    },
+    "SOL - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 70,
+      "last_report_date": "2026-11-17"
+    },
+    "SOUTH AFRICAN RAND - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "STELLAR - LMX LABS LLC": {
+      "rows": 8,
+      "last_report_date": "2025-02-11"
+    },
+    "STELLAR PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 31,
+      "last_report_date": "2026-11-17"
+    },
+    "SUI - COINBASE DERIVATIVES, LLC": {
+      "rows": 6,
+      "last_report_date": "2026-11-17"
+    },
+    "SUI PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 46,
+      "last_report_date": "2026-11-17"
+    },
+    "SWISS FRANC - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "TECH100 INDEX PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 4,
+      "last_report_date": "2026-11-17"
+    },
+    "THREE-MONTH BLOOMBERG  ST BANK - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 5,
+      "last_report_date": "2022-09-13"
+    },
+    "U.S. DOLLAR INDEX - ICE FUTURES U.S.": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "U.S. TREASURY BONDS - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "ULTRA 10-YEAR U.S. T-NOTES - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "ULTRA U.S. TREASURY BONDS - CHICAGO BOARD OF TRADE": {
+      "rows": 11,
+      "last_report_date": "2022-02-01"
+    },
+    "ULTRA US T BOND - CHICAGO BOARD OF TRADE": {
+      "rows": 2,
+      "last_report_date": "2025-09-16"
+    },
+    "ULTRA UST 10Y - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "ULTRA UST BOND - CHICAGO BOARD OF TRADE": {
+      "rows": 248,
+      "last_report_date": "2026-11-17"
+    },
+    "USD INDEX - ICE FUTURES U.S.": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "USD/CHINESE RENMINBI-OFFSHORE  - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 2,
+      "last_report_date": "2024-04-30"
+    },
+    "UST 10Y NOTE - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "UST 2Y NOTE - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "UST 5Y NOTE - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "UST BOND - CHICAGO BOARD OF TRADE": {
+      "rows": 250,
+      "last_report_date": "2026-11-17"
+    },
+    "VIX FUTURES - CBOE FUTURES EXCHANGE": {
+      "rows": 261,
+      "last_report_date": "2026-11-17"
+    },
+    "XRP - CHICAGO MERCANTILE EXCHANGE": {
+      "rows": 67,
+      "last_report_date": "2026-11-17"
+    },
+    "XRP - COINBASE DERIVATIVES, LLC": {
+      "rows": 6,
+      "last_report_date": "2026-10-27"
+    },
+    "ZCASH PERP STYLE - COINBASE DERIVATIVES, LLC": {
+      "rows": 36,
+      "last_report_date": "2026-11-17"
+    }
+  }
+}
