@@ -30,14 +30,34 @@ def bars(drift, volume_bump=1.3):
 NEWER_BLOCKS = ("rotation", "regime", "calendar", "market_news", "executive_summary")
 
 
+def _driver(number, title, publisher, url, region):
+    return {"headline_id": "%016d" % number, "title": title, "publisher": publisher, "url": url,
+            "event_type": "rates", "impact": "unconfirmed", "direction": "unclear", "data": "Headline only",
+            "reading": "No verified causal market reaction", "confirmation": "too_early_or_unverified",
+            "classification": {"headline_id": "%016d" % number, "event_type": "central_bank", "region": [region],
+                               "affected": [], "direction": "unclear", "horizon": "days", "novelty": "new",
+                               "confidence": "low", "one_line_reason": "Policy headline with unconfirmed market effect",
+                               "classifier": "rules_fallback", "human_review_required": True}}
+
+
+# One Fed and one ECB headline, so the tests do not depend on which of the two feeds happened to
+# answer in the last live run (the Fed's feed failed once on 22 November 2026).
+FIXED_DRIVERS = [
+    _driver(1, "Federal Reserve issues FOMC statement", "Federal Reserve",
+            "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261107a.htm", "US"),
+    _driver(2, "ECB decides on interest rates", "European Central Bank",
+            "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261030.en.html", "EU")]
+
+
 def published_feed():
     """The real published feed's items, without the blocks that later releases added.
 
-    These tests add their own copies of those blocks, so a fresh daily refresh (which fills
-    them in with live values) can never change what a test expects."""
+    These tests add their own copies of those blocks and their own official headlines, so a fresh
+    daily refresh (which fills them in with live values) can never change what a test expects."""
     feed = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
     for key in NEWER_BLOCKS:
         feed.pop(key, None)
+    feed["drivers"] = copy.deepcopy(FIXED_DRIVERS)
     return feed
 
 
