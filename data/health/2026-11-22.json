@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-22T16:51:08.181181+05:30",
+  "as_of_ist": "2026-11-22T21:59:18.547420+05:30",
   "run_slot": "manual",
-  "completed_at_utc": "2026-11-22T11:24:09.350300+00:00",
+  "completed_at_utc": "2026-11-22T16:32:10.151911+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,21 +61,26 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 14,
-    "rule_fallback": 1,
+    "model_classified": 10,
+    "rule_fallback": 20,
     "rejected_model_responses": 1,
     "providers_used": [
       "openrouter"
     ],
     "empty_reply_retries": 1,
     "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "recursive/flint-v1.0:free",
-      "particle-ai/particle-1:free"
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "google/gemma-4-26b-a4b-it:free"
     ],
     "failure_reasons": [
-      "openrouter: the model left a headline out"
+      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
     ],
+    "free_pool": [],
+    "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
+    "pool_counts": {
+      "free models that think (skipped on purpose)": 11,
+      "free models seen": 11
+    },
     "human_tag_review_required": true,
     "no_ai_is_not_model_inference": false
   },
@@ -109,8 +114,8 @@
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     },
     {
-      "source": "Federal Reserve",
-      "error": "HTTPError"
+      "source": "market_news",
+      "error": "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@"
     }
   ],
   "vendor_price_exported": false,
@@ -127,35 +132,45 @@
     "advisories": []
   },
   "market_news": {
-    "status": "partial",
-    "queries_asked": 6,
-    "queries_answered": 2,
-    "queries_skipped": 0,
-    "articles_seen": 200,
-    "from_listed_publishers": 1,
-    "kept": 1,
+    "status": "unavailable",
+    "queries_asked": 3,
+    "queries_answered": 0,
+    "queries_skipped": 7,
+    "articles_seen": 0,
+    "from_listed_publishers": 0,
+    "kept": 0,
     "company_stories": 0,
-    "seconds": 158.6,
-    "slowest_answer_seconds": 38.4,
+    "seconds": 158.9,
+    "slowest_answer_seconds": 0.0,
     "errors": [
-      "news index answered HTTP 429",
-      "news index answered HTTP 429",
-      "news index answered HTTP 429",
+      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
+      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "The news index failed twice, so the remaining questions were skipped."
     ],
-    "advisories": []
+    "advisories": [
+      "The news index did not take the publisher filter (news index did not answer with JSON: Your query was too short or too long.), so the filter was turned off for the rest of this refresh and the question was asked again without it."
+    ],
+    "publisher_filter": "switched off during this refresh",
+    "dropped": {},
+    "top_other_sites": []
   },
   "executive_summary": {
-    "method": "rules_only",
+    "method": "ai_validated",
     "providers_tried": [
       "openrouter"
     ],
-    "rejected_answers": 1,
-    "reasons": [
-      "openrouter: empty reply from baidu/ernie-5.5-flash-preview:free: it used all its room thinking (finish: length)"
-    ],
+    "rejected_answers": 0,
+    "reasons": [],
     "ai_configured": true,
     "empty_reply_retries": 1,
-    "models_seen": []
+    "models_seen": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
+    ],
+    "free_pool": [],
+    "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
+    "pool_counts": {
+      "free models that think (skipped on purpose)": 11,
+      "free models seen": 11
+    }
   }
 }

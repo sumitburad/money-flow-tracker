@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-22T16:51:08.181181+05:30
+# Global Money-Flow Brief | 2026-11-22T21:59:18.547420+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
-## Executive summary (rule-based, no AI used)
-Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
+## Executive summary (AI-written, rule-checked)
+Broad outflows persist across equities, metals and crypto; risk tone remains defensive
 
-Over the week, money appears to be moving into none and out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs). Over the month, money appears to be moving into none and out of Country and regional markets, Size and style, Metals and Crypto. Among sectors and themes this week, inflow is visible in Nifty India Consumption ETF (CONSUMBEES) and Nifty Infrastructure ETF (INFRABEES) and outflow in AI and big-data theme, US technology, Nifty IT ETF (ITBEES), US financials, US banks and US healthcare. Flow is improving in Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.
+Money appears to be leaving most major equity markets, sectors, size styles, metals and real estate across day, week and month. Bonds show mixed signals with inflows into long Treasuries and investment grade but outflows from high yield. Crypto sees outflows weekly and monthly. Risk tone is risk‑off for both month and week with no shift.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -19,9 +19,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
-- Christine Lagarde: Acting in time — unconfirmed; [source](https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html)
-- Boris Vujčić: Financial Stability Review - November 2026 — unconfirmed; [source](https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf)
-- Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook — unconfirmed; [source](https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html)
+- Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
+- Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm)
+- Federal Reserve Board issues enforcement action with former employee of First Security Bancorp — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm)
 
 ## Liquidity check
 **Data:** Official U.S. macro series and their dates appear in the feed's macro section.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 12 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 17 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T16:51:08.181181+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T21:59:18.547420+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
