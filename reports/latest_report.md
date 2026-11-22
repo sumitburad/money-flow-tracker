@@ -1,4 +1,4 @@
-# Global Money-Flow Brief | 2026-11-22T16:24:44.661568+05:30
+# Global Money-Flow Brief | 2026-11-22T16:51:08.181181+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
@@ -19,9 +19,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
-- Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
-- Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm)
-- Federal Reserve Board issues enforcement action with former employee of First Security Bancorp — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm)
+- Christine Lagarde: Acting in time — unconfirmed; [source](https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html)
+- Boris Vujčić: Financial Stability Review - November 2026 — unconfirmed; [source](https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf)
+- Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook — unconfirmed; [source](https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html)
 
 ## Liquidity check
 **Data:** Official U.S. macro series and their dates appear in the feed's macro section.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 12 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 17 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T16:24:44.661568+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T16:51:08.181181+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

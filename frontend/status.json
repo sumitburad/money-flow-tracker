@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-22T16:24:44.661568+05:30",
+  "as_of_ist": "2026-11-22T16:51:08.181181+05:30",
   "run_slot": "manual",
-  "completed_at_utc": "2026-11-22T10:58:21.423353+00:00",
+  "completed_at_utc": "2026-11-22T11:24:09.350300+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,16 +61,20 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 0,
-    "rule_fallback": 30,
-    "rejected_model_responses": 3,
-    "providers_used": [],
+    "model_classified": 14,
+    "rule_fallback": 1,
+    "rejected_model_responses": 1,
+    "providers_used": [
+      "openrouter"
+    ],
     "empty_reply_retries": 1,
-    "models_seen": [],
+    "models_seen": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "recursive/flint-v1.0:free",
+      "particle-ai/particle-1:free"
+    ],
     "failure_reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3.5-lightning:free: it used all its room thinking (finish: length)",
-      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)",
-      "openrouter: empty reply from recursive/flint-v1.0:free: it used all its room thinking (finish: length)"
+      "openrouter: the model left a headline out"
     ],
     "human_tag_review_required": true,
     "no_ai_is_not_model_inference": false
@@ -105,12 +109,8 @@
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     },
     {
-      "source": "news_classifier",
-      "error": "No accepted AI responses; transparent deterministic tag fallback"
-    },
-    {
-      "source": "market_news",
-      "error": "news index answered HTTP 429"
+      "source": "Federal Reserve",
+      "error": "HTTPError"
     }
   ],
   "vendor_price_exported": false,
@@ -127,17 +127,18 @@
     "advisories": []
   },
   "market_news": {
-    "status": "unavailable",
-    "queries_asked": 3,
-    "queries_answered": 0,
+    "status": "partial",
+    "queries_asked": 6,
+    "queries_answered": 2,
     "queries_skipped": 0,
-    "articles_seen": 0,
-    "from_listed_publishers": 0,
-    "kept": 0,
+    "articles_seen": 200,
+    "from_listed_publishers": 1,
+    "kept": 1,
     "company_stories": 0,
-    "seconds": 59.2,
-    "slowest_answer_seconds": 0.0,
+    "seconds": 158.6,
+    "slowest_answer_seconds": 38.4,
     "errors": [
+      "news index answered HTTP 429",
       "news index answered HTTP 429",
       "news index answered HTTP 429",
       "The news index failed twice, so the remaining questions were skipped."
@@ -151,7 +152,7 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from baidu/ernie-5.5-flash-preview:free: it used all its room thinking (finish: length)"
     ],
     "ai_configured": true,
     "empty_reply_retries": 1,
