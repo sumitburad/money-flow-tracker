@@ -34,11 +34,18 @@ FRED_MIRRORS = {
     "ECBASSETSW": ("weekly", "millions_eur", "Eurosystem total assets (FRED mirror)"),
     "JPNASSETS": ("monthly", "hundred_million_yen", "BOJ total assets (FRED mirror)"),
 }
+# One futures contract per market. A pattern must match from the START of the contract name,
+# so a Micro, Ultra, sector, dividend or "Consolidated" contract with a similar name is never
+# mixed in (two contracts on the same day would make that week unusable). The exchanges renamed
+# these contracts in February 2022, so each market lists the old and the new name; a week never
+# has both. If a market ever goes quiet, data/history/v1/cftc/contracts_seen.json lists every
+# real name and the daily health note "cftc_market:<id>" says which market found no contract.
+_CFTC_NAME_END = r"( - |$)"
 CFTC_MARKETS = {
-    "sp500": (r"E-MINI S&P 500|S&P 500 STOCK INDEX",),
-    "nasdaq100": (r"NASDAQ.100|NASDAQ 100",),
-    "us_treasury": (r"10.YEAR U.S. TREASURY|10 YEAR U.S. TREASURY",),
-    "dollar": (r"U.S. DOLLAR INDEX|USD INDEX",),
+    "sp500": (r"^E-MINI S&P 500( STOCK INDEX)?" + _CFTC_NAME_END,),
+    "nasdaq100": (r"^(NASDAQ MINI|NASDAQ-100 STOCK INDEX \(MINI\))" + _CFTC_NAME_END,),
+    "us_treasury": (r"^(UST 10Y NOTE|10-YEAR U\.S\. TREASURY NOTES)" + _CFTC_NAME_END,),
+    "dollar": (r"^(USD INDEX|U\.S\. DOLLAR INDEX)" + _CFTC_NAME_END,),
 }
 MAX_PUBLIC_BYTES = 4_000_000
 
@@ -256,6 +263,15 @@ def fetch_cftc(root, run_day, *, http=HTTP):
             "fetched_at_utc": datetime.now(timezone.utc).isoformat(),
             "raw_sha256": digest, "raw_file": rawfile, "type": "TFF_FUTURES_ONLY",
             "note": "CFTC weekly holdings, not cash investment flows"}
+
+
+def cftc_gaps(entries, universe_ids):
+    """Tracked markets shown on the dashboard that have no usable weekly positioning this run.
+
+    A market that silently stops matching (the exchange renames a contract) must not go
+    unnoticed, so the daily run turns each one into a health note."""
+    return [market for market in CFTC_MARKETS
+            if market in universe_ids and market not in (entries or {})]
 
 
 def breadth_from_equal_weight(asset_id, run_day, *, download=None):

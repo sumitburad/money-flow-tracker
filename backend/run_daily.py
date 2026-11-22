@@ -677,7 +677,7 @@ def main():
             errors.append({"source": "macro_stale:" + sid,
                            "error": "Last observation " + str(macro[sid]["last_good_date"]) +
                                     "; permitted " + macro[sid]["allowed_age"]})
-    from backend.advanced_sources import fetch_cftc, breadth_from_equal_weight
+    from backend.advanced_sources import fetch_cftc, cftc_gaps, breadth_from_equal_weight
     from backend.institutional_flows import institutional_status
     from backend.news_classifier import classify_headlines
     try:
@@ -687,6 +687,12 @@ def main():
                 "source": "https://publicreporting.cftc.gov/Commitments-of-Traders",
                 "error": type(exc).__name__}
         errors.append({"source": "cftc_tff", "error": type(exc).__name__})
+    else:
+        # Not an "official source problem" (no retry): the site answered, a market just did not match.
+        for gap in cftc_gaps(cftc.get("entries"), {a["id"] for a in universe}):
+            errors.append({"source": "cftc_market:" + gap, "error":
+                           "No single matching futures contract with two recent weekly reports "
+                           "(the exchange may have renamed it)"})
     breadth_records = {}
     for ident in ("sp500", "nasdaq100"):
         if ident not in {a["id"] for a in universe}:
