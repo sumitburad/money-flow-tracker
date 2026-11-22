@@ -87,7 +87,7 @@ class FakeHttp:
         self.calls = []
 
     def post(self, url, headers=None, json=None, timeout=None):
-        self.calls.append({"url": url, "headers": headers, "payload": json})
+        self.calls.append({"url": url, "headers": headers, "payload": json, "timeout": timeout})
         reply = self.replies.pop(0)
         if isinstance(reply, Exception):
             raise reply
@@ -247,6 +247,120 @@ def test_secrets_never_appear_in_the_published_summary_or_health():
         make_feed(), http=FakeHttp(requests.ConnectionError("down"), ai(GOOD)), env=ENV, now=NOW)
     text = json.dumps([summary, health])
     assert ENV["GROQ_API_KEY"] not in text and ENV["OPENROUTER_API_KEY"] not in text
+
+
+# ------------------------------------------- empty replies from "thinking" models
+
+OPENROUTER_ONLY = {"OPENROUTER_API_KEY": ENV["OPENROUTER_API_KEY"]}
+GROQ_ONLY = {"GROQ_API_KEY": ENV["GROQ_API_KEY"]}
+
+
+def said(content, *, finish="stop", model="vendor/thinking-model:free"):
+    """A reply that names the model that really answered and why it stopped."""
+    reply = Reply(content)
+    reply._body = {"model": model, "choices": [{"finish_reason": finish,
+                                                "message": {"content": content, "reasoning": "thoughts"}}]}
+    return reply
+
+
+def used_up_its_room():
+    """What a free thinking model sends when the thinking used the whole limit: no text, finish length."""
+    return said(None, finish="length")
+
+
+def test_openrouter_gets_room_to_think_and_time_to_answer_and_groq_keeps_its_small_limit():
+    http = FakeHttp(ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    sent = http.calls[0]
+    assert sent["url"].startswith("https://openrouter.ai/") and sent["payload"]["max_tokens"] == 3500
+    assert "reasoning" not in sent["payload"]            # the first try does not depend on this being accepted
+    assert sent["timeout"] == (10, 75)
+    http = FakeHttp(ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env=GROQ_ONLY, now=NOW)
+    assert http.calls[0]["payload"]["max_tokens"] == 1500
+    assert http.calls[0]["payload"]["reasoning_effort"] == "low"
+
+
+def test_an_empty_reply_is_tried_once_more_asking_the_model_to_think_less():
+    http = FakeHttp(used_up_its_room(), said(json.dumps(GOOD), model="vendor/other-model:free"))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "ai_validated" and summary["provider"] == "openrouter"
+    assert len(http.calls) == 2
+    assert "reasoning" not in http.calls[0]["payload"]
+    assert http.calls[1]["payload"]["reasoning"] == {"effort": "low"}
+    assert http.calls[1]["payload"]["max_tokens"] == 3500
+    assert health["empty_reply_retries"] == 1 and health["rejected_answers"] == 0
+    assert health["models_seen"] == ["vendor/other-model:free"] and health["reasons"] == []
+
+
+def test_a_reply_cut_off_in_the_middle_of_the_json_is_also_tried_once_more():
+    cut = said('{"headline": "Flow is inflow-led in equity sec', finish="length")
+    http = FakeHttp(cut, ai(GOOD))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "ai_validated" and len(http.calls) == 2
+    assert health["empty_reply_retries"] == 1
+
+
+def test_two_empty_replies_end_in_the_rule_summary_with_the_reason_in_plain_words():
+    http = FakeHttp(used_up_its_room(), used_up_its_room())
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "rules_only" and len(http.calls) == 2      # never a third request
+    assert health["rejected_answers"] == 1 and health["empty_reply_retries"] == 1
+    reason = health["reasons"][0]
+    assert reason.startswith("openrouter: empty reply from vendor/thinking-model:free")
+    assert "finish: length" in reason
+    validate_executive_summary(summary)
+
+
+def test_groq_is_not_retried_after_an_empty_reply_because_it_already_runs_at_its_lowest_effort():
+    http = FakeHttp(used_up_its_room())
+    summary, health = build_executive_summary(make_feed(), http=http, env=GROQ_ONLY, now=NOW)
+    assert summary["method"] == "rules_only" and len(http.calls) == 1
+    assert health["empty_reply_retries"] == 0 and "empty reply" in health["reasons"][0]
+
+
+def test_an_answer_that_is_simply_not_json_is_not_retried():
+    http = FakeHttp(said("Sorry, I cannot do that."), ai(GOOD))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "rules_only" and len(http.calls) == 1
+    assert "not valid JSON" in health["reasons"][0] and health["empty_reply_retries"] == 0
+
+
+def test_a_busy_reply_and_an_empty_reply_never_add_up_to_more_than_two_requests():
+    http = FakeHttp(Reply(status=429), used_up_its_room(), ai(GOOD))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW,
+                                              sleep=lambda s: None)
+    assert summary["method"] == "rules_only" and len(http.calls) == 2
+
+
+def failing(status, message=None):
+    reply = Reply(status=status)
+    reply._body = {"error": {"message": message}} if message else {}
+    return reply
+
+
+def test_http_failures_are_explained_with_the_status_and_the_providers_own_words():
+    http = FakeHttp(failing(402, "Insufficient credits"))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "rules_only"
+    assert health["reasons"][0] == "openrouter: HTTP 402 (no credit left): Insufficient credits"
+    http = FakeHttp(requests.ReadTimeout("slow"))
+    _, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert health["reasons"][0] == "openrouter: no answer within 75 seconds"
+
+
+def test_a_key_that_a_provider_echoes_back_never_reaches_the_published_reasons(monkeypatch):
+    monkeypatch.setenv("OPENROUTER_API_KEY", ENV["OPENROUTER_API_KEY"])
+    http = FakeHttp(failing(400, "bad request for " + ENV["OPENROUTER_API_KEY"]))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert ENV["OPENROUTER_API_KEY"] not in json.dumps([summary, health])
+    assert "***" in health["reasons"][0]
+
+
+def test_the_reason_a_summary_was_refused_is_kept_longer_than_before():
+    bad = {**GOOD, "rotation_view": "Money moved around quietly this week and nothing else happened at all."}
+    _, health = build_executive_summary(make_feed(), http=FakeHttp(ai(bad)), env=OPENROUTER_ONLY, now=NOW)
+    assert health["rejected_answers"] == 1 and "names no tracked" in health["reasons"][0]
 
 
 # ------------------------------------------------------------- feed contract
