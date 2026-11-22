@@ -1,0 +1,328 @@
+{
+  "schema_version": "1.0",
+  "run_day": "2026-11-22",
+  "coverage_start": "2026-11-16",
+  "coverage_end": "2026-11-22",
+  "label_days_found": 4,
+  "health_days_found": 4,
+  "last_label_day": "2026-11-22",
+  "latest_label_counts": {
+    "Bullish": 0,
+    "Neutral/Mixed": 55,
+    "Bearish": 18
+  },
+  "unstable_label_ids": {},
+  "health": [
+    {
+      "date": "2026-11-16",
+      "status": "degraded",
+      "current": 50,
+      "total": 50,
+      "missing": [],
+      "errors": [
+        {
+          "source": "fred:DGS2",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:DGS10",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:WALCL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:WTREGEN",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:RRPONTSYD",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:M2SL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "macro:DEXINUS",
+          "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
+        },
+        {
+          "source": "boj_assets",
+          "error": "HTTPError"
+        },
+        {
+          "source": "macro_stale:DGS2",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:DGS10",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:M2SL",
+          "error": "Last observation 2026-09-01; permitted 45 calendar days"
+        },
+        {
+          "source": "institutional_flows",
+          "error": "Authorized NSE broker feed or final NSDL access unavailable"
+        },
+        {
+          "source": "news_classifier",
+          "error": "No accepted AI responses; transparent deterministic tag fallback"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "status": "degraded",
+      "current": 50,
+      "total": 50,
+      "missing": [],
+      "errors": [
+        {
+          "source": "fred:DGS2",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:DGS10",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:WALCL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:WTREGEN",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:RRPONTSYD",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:M2SL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "macro:DEXINUS",
+          "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
+        },
+        {
+          "source": "boj_assets",
+          "error": "HTTPError"
+        },
+        {
+          "source": "macro_stale:DGS2",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:DGS10",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:M2SL",
+          "error": "Last observation 2026-09-01; permitted 45 calendar days"
+        },
+        {
+          "source": "institutional_flows",
+          "error": "Authorized NSE broker feed or final NSDL access unavailable"
+        },
+        {
+          "source": "news_classifier",
+          "error": "No accepted AI responses; transparent deterministic tag fallback"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "status": "degraded",
+      "current": 50,
+      "total": 50,
+      "missing": [],
+      "errors": [
+        {
+          "source": "fred:DGS2",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:DGS10",
+          "error": "primary_ReadTimeout; DBnomics mirror used"
+        },
+        {
+          "source": "fred:WALCL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:WTREGEN",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:RRPONTSYD",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "fred:M2SL",
+          "error": "Official and DBnomics unavailable; attributed M0.com public secondary CSV used"
+        },
+        {
+          "source": "macro:DEXINUS",
+          "error": "FRED_ReadTimeout; fallbacks_ValueError_HTTPError_ValueError"
+        },
+        {
+          "source": "boj_assets",
+          "error": "HTTPError"
+        },
+        {
+          "source": "macro_stale:DGS2",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:DGS10",
+          "error": "Last observation 2026-11-09; permitted 2 weekday sessions (exchange holidays require review)"
+        },
+        {
+          "source": "macro_stale:M2SL",
+          "error": "Last observation 2026-09-01; permitted 45 calendar days"
+        },
+        {
+          "source": "institutional_flows",
+          "error": "Authorized NSE broker feed or final NSDL access unavailable"
+        },
+        {
+          "source": "news_classifier",
+          "error": "No accepted AI responses; transparent deterministic tag fallback"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "status": "degraded",
+      "current": 73,
+      "total": 73,
+      "missing": [],
+      "errors": [
+        {
+          "source": "institutional_flows",
+          "error": "Authorized NSE broker feed or final NSDL access unavailable"
+        },
+        {
+          "source": "Federal Reserve",
+          "error": "HTTPError"
+        }
+      ]
+    }
+  ],
+  "warnings": [],
+  "research_only": true,
+  "sample_news_for_human_review": [
+    {
+      "headline_id": "791a2599c3216027",
+      "title": "Christine Lagarde: Acting in time",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "2825673f31efff32",
+      "title": "Boris Vuj\u010di\u0107: Financial Stability Review - November 2026",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "2b5ca3a2f0c9a4fe",
+      "title": "Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook",
+      "source": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "d29361839763aac7",
+      "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "c4768f7f969a2ed9",
+      "title": "Frank Elderson: Smart supervision for small banks",
+      "source": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "b082065da5343683",
+      "title": "Boris Vuj\u010di\u0107: Risks and resilience in the euro area financial system",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "fd0775022c84a7c8",
+      "title": "Isabel Schnabel: Made in Europe",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "7c2cb421a660685d",
+      "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "8e1b1d63568ba41e",
+      "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "0477ebfc41ad1eea",
+      "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
+      "source": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "c5cdf90c2e4d6ce8",
+      "title": "ECB publishes consolidated banking data for end-June 2026",
+      "source": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "1674d1a2208e7db3",
+      "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "62181200734254e6",
+      "title": "Piero Cipollone: Shaping the future of money",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105~6495a0df6f.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "ca9b3d5143b40937",
+      "title": "ECB wage tracker suggests slightly higher wage growth in first three quarters of 2027 compared with the full year of 2026",
+      "source": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261104~caf181d7ac.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    },
+    {
+      "headline_id": "f4a0adedfd13d6ae",
+      "title": "Boris Vuj\u010di\u0107: Integrated, open and resilient: Europe\u2019s strengths in a fragmenting world",
+      "source": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
+      "classifier": "validated_model_json",
+      "human_review_status": "pending"
+    }
+  ],
+  "news_review_completed": false,
+  "no_predictive_claim": true
+}
