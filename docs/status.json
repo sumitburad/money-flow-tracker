@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-22T21:59:18.547420+05:30",
-  "run_slot": "manual",
-  "completed_at_utc": "2026-11-22T16:32:10.151911+00:00",
+  "as_of_ist": "2026-11-23T01:58:26.369355+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-22T20:31:15.464123+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -69,11 +69,11 @@
     ],
     "empty_reply_retries": 1,
     "models_seen": [
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "google/gemma-4-26b-a4b-it:free"
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "particle-ai/particle-1:free"
     ],
     "failure_reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
     ],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
@@ -125,7 +125,7 @@
     "status": "ok",
     "fred": {
       "status": "ok",
-      "rows_seen": 1107,
+      "rows_seen": 1108,
       "unmatched_releases": []
     },
     "events": 9,
@@ -133,16 +133,17 @@
   },
   "market_news": {
     "status": "unavailable",
-    "queries_asked": 3,
+    "queries_asked": 4,
     "queries_answered": 0,
-    "queries_skipped": 7,
+    "queries_skipped": 6,
     "articles_seen": 0,
     "from_listed_publishers": 0,
     "kept": 0,
     "company_stories": 0,
-    "seconds": 158.9,
+    "seconds": 226.2,
     "slowest_answer_seconds": 0.0,
     "errors": [
+      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "The news index failed twice, so the remaining questions were skipped."
@@ -155,17 +156,17 @@
     "top_other_sites": []
   },
   "executive_summary": {
-    "method": "ai_validated",
+    "method": "rules_only",
     "providers_tried": [
       "openrouter"
     ],
-    "rejected_answers": 0,
-    "reasons": [],
+    "rejected_answers": 1,
+    "reasons": [
+      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
+    ],
     "ai_configured": true,
     "empty_reply_retries": 1,
-    "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free"
-    ],
+    "models_seen": [],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
     "pool_counts": {

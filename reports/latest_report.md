@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-22T21:59:18.547420+05:30
+# Global Money-Flow Brief | 2026-11-23T01:58:26.369355+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
-## Executive summary (AI-written, rule-checked)
-Broad outflows persist across equities, metals and crypto; risk tone remains defensive
+## Executive summary (rule-based, no AI used)
+Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
 
-Money appears to be leaving most major equity markets, sectors, size styles, metals and real estate across day, week and month. Bonds show mixed signals with inflows into long Treasuries and investment grade but outflows from high yield. Crypto sees outflows weekly and monthly. Risk tone is risk‑off for both month and week with no shift.
+Over the week, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs), and no asset class shows a clear inflow. Over the month, money appears to be moving out of Country and regional markets, Size and style, Metals and Crypto, and no asset class shows a clear inflow. Among sectors and themes this week, inflow is visible in Nifty India Consumption ETF (CONSUMBEES) and Nifty Infrastructure ETF (INFRABEES) and outflow in AI and big-data theme, US technology, Nifty IT ETF (ITBEES), US financials, US banks and US healthcare. Flow is improving in Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -33,9 +33,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-- US personal income and spending (PCE inflation): 2026-11-25 (in 3 days). Date from FRED's release calendar.
-- US economic growth (GDP): 2026-11-25 (in 3 days). Date from FRED's release calendar.
-- US jobs report: 2026-12-04 (in 12 days). Date from FRED's release calendar.
-- Fed interest-rate decision (FOMC): 2026-12-09 (in 17 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
+- US personal income and spending (PCE inflation): 2026-11-25 (in 2 days). Date from FRED's release calendar.
+- US economic growth (GDP): 2026-11-25 (in 2 days). Date from FRED's release calendar.
+- US jobs report: 2026-12-04 (in 11 days). Date from FRED's release calendar.
+- Fed interest-rate decision (FOMC): 2026-12-09 (in 16 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-22T21:59:18.547420+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-23T01:58:26.369355+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
