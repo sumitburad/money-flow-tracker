@@ -19,6 +19,10 @@ source:
   max_records: 100          # headlines asked for per question (GDELT allows up to 250)
   sort: "hybridrel"         # most relevant first; use "datedesc" for newest first
   query_suffix: ""          # optional extra words added to every question, e.g. "sourcelang:english"
+  publisher_filter: true    # ask only for the publishers listed below (adds domain:... to every question).
+                            # Without it the index returns its 100 most relevant headlines from anywhere:
+                            # on 22 Nov 2026 only 1 of 200 came from a listed publisher. If the index
+                            # refuses the filter, the program turns it off for that run and says so.
   pause_seconds: 5.5        # GDELT asks for at most one request every 5 seconds
   max_queries: 10           # hard cap on questions per refresh
   timeout_seconds: [10, 45] # connect, read. The news index is often slow: 25 seconds was too short

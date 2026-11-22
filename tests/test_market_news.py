@@ -8,12 +8,14 @@ import pytest
 import requests
 
 from backend.feed_contract import NEWS_MAX_STORIES, validate_feed, validate_market_news
-from backend.market_news import (HEADERS, ask, build_market_news, build_questions, clean_title,
-                                 companies_in, default_http, digest_market_news, load_config,
-                                 parse_seen, publisher_for)
+from backend.market_news import (HEADERS, _plain, _site_of, ask, build_market_news, build_questions,
+                                 clean_title, companies_in, default_http, digest_market_news,
+                                 load_config, parse_seen, publisher_for, publisher_group)
 from backend.net import RetryingHttp
 
-CFG = load_config()
+REAL = load_config()                     # the settings file as shipped (publisher filter on)
+CFG = copy.deepcopy(REAL)
+CFG["source"]["publisher_filter"] = False   # most tests exercise the plain questions; the filter has its own section
 NOW = datetime(2026, 11, 22, 13, 37, tzinfo=timezone.utc)
 FORBIDDEN_STORY_KEYS = {"text", "body", "content", "summary", "image", "socialimage", "score", "rank"}
 
@@ -305,6 +307,8 @@ def test_a_source_that_keeps_failing_is_dropped_after_two_failures():
     block, health = build_market_news(CFG, NOW, http=http, sleep=lambda s: None)
     assert len(calls) == 4                         # two questions, two tries each; then it gives up
     assert health["queries_asked"] == 3 and health["queries_answered"] == 0
+    assert health["queries_skipped"] == len(build_questions(CFG)) - 3          # the rest were never sent
+    assert health["queries_asked"] + health["queries_skipped"] == len(build_questions(CFG))
     assert any("failed twice" in e for e in health["errors"])
     assert block["status"] == "unavailable"
 
@@ -549,7 +553,7 @@ def test_long_headlines_are_shortened_for_the_summary():
 # ------------------------------------------------------------------ the settings file
 
 def test_settings_are_consistent():
-    source, limits = CFG["source"], CFG["limits"]
+    source, limits = REAL["source"], REAL["limits"]
     assert source["url"].startswith("https://") and source["home_page"].startswith("https://")
     assert float(source["pause_seconds"]) >= 5.0
     assert 1 <= source["max_records"] <= 250
@@ -577,9 +581,9 @@ def test_settings_are_consistent():
 
 
 def test_a_full_default_run_makes_no_more_questions_than_the_cap_and_takes_a_bounded_time():
-    questions = build_questions(CFG)
-    assert len(questions) <= CFG["source"]["max_queries"]
-    assert (len(questions) - 1) * CFG["source"]["pause_seconds"] < 90
+    questions = build_questions(REAL)
+    assert len(questions) <= REAL["source"]["max_queries"]
+    assert (len(questions) - 1) * REAL["source"]["pause_seconds"] < 90
 
 
 # ------------------------------------------------------------------ what the news index says when it refuses
@@ -688,3 +692,188 @@ def test_a_real_requests_answer_is_read_the_same_way():
     real.headers["Retry-After"] = "5"
     assert refusal(real) == ("news index answered HTTP 429 "
                              "(it said: Please limit requests to one every 5 seconds.; it asked for a wait of 5 seconds)")
+
+
+# ------------------------------------------------------------------ asking only for the listed publishers
+
+STORY = "Stock market story that is long enough"
+
+
+def run_with(replies, cfg=REAL):
+    """Like run(), but also hands back the fake index so the questions it was sent can be read."""
+    fake, pauses = Fake(replies), []
+    block, health = build_market_news(cfg, NOW, http=fake, sleep=pauses.append)
+    return block, health, pauses, fake
+
+
+def queries_of(fake):
+    return [c["params"]["query"] for c in fake.calls]
+
+
+def test_the_shipped_settings_ask_only_for_the_listed_publishers():
+    assert REAL["source"]["publisher_filter"] is True
+    group = publisher_group(REAL)
+    domains = [p["domain"] for p in REAL["publishers"]]
+    assert group == "(" + " OR ".join("domain:" + d for d in domains) + ")"
+    questions = build_questions(REAL)
+    assert len(questions) == len(build_questions(REAL, filtered=False))
+    for (_id, _name, query), (_i, _n, bare) in zip(questions, build_questions(REAL, filtered=False)):
+        assert query == bare + " " + group           # the theme or company question, then the filter
+        assert all(("domain:" + d) in query for d in domains)
+        assert len(query) < 1500 and "&" not in query and "\n" not in query
+
+
+def test_with_the_filter_off_or_no_publishers_the_questions_have_no_filter():
+    assert not any("domain:" in q for _, _, q in build_questions(CFG))
+    bare = copy.deepcopy(REAL)
+    bare["publishers"] = []
+    assert publisher_group(bare) == ""
+    assert not any("domain:" in q or "()" in q for _, _, q in build_questions(bare, filtered=True))
+
+
+def test_the_extra_words_and_the_filter_are_both_added():
+    cfg = copy.deepcopy(REAL)
+    cfg["source"]["query_suffix"] = "sourcelang:english"
+    for _id, _name, query in build_questions(cfg):
+        assert query.endswith("sourcelang:english " + publisher_group(cfg))
+
+
+def test_every_question_of_a_run_carries_the_filter():
+    block, health, _, fake = run_with([ok(article(STORY, "reuters.com", 2))] * 20)
+    assert len(fake.calls) == 10 and all("domain:reuters.com" in q for q in queries_of(fake))
+    assert health["publisher_filter"] == "on" and health["advisories"] == [] and health["status"] == "ok"
+    validate_market_news(block)
+
+
+def test_an_index_that_rejects_the_filter_is_asked_again_without_it_and_the_filter_stays_off():
+    block, health, pauses, fake = run_with([Reply(raw=b"The specified query is not supported."),
+                                            ok(article(STORY, "reuters.com", 2))] * 1 + [ok(article(STORY, "cnbc.com", 3))] * 20)
+    queries = queries_of(fake)
+    assert len(queries) == 11                                  # 10 questions, the first one asked twice
+    assert "domain:" in queries[0] and not any("domain:" in q for q in queries[1:])
+    assert queries[1] == build_questions(REAL, filtered=False)[0][2]
+    assert health["queries_asked"] == 10 and health["queries_answered"] == 10 and health["status"] == "ok"
+    [note] = health["advisories"]
+    assert note.startswith("The news index did not take the publisher filter (news index did not answer with JSON: "
+                           "The specified query is not supported") and "turned off for the rest of this refresh" in note
+    assert health["publisher_filter"] == "switched off during this refresh"
+    assert pauses.count(5.5) == 10                              # nine between questions and one before the second try
+    assert health["errors"] == [] and len(block["stories"]) >= 1
+
+
+def test_an_empty_answer_to_the_first_broad_question_also_turns_the_filter_off():
+    block, health, _, fake = run_with([Reply({}), ok(article(STORY, "reuters.com", 2))] + [ok(article(STORY, "cnbc.com", 3))] * 20)
+    queries = queries_of(fake)
+    assert "domain:" in queries[0] and not any("domain:" in q for q in queries[1:]) and len(queries) == 11
+    assert "with no headlines at all" in health["advisories"][0]
+    assert health["publisher_filter"] == "switched off during this refresh" and health["queries_asked"] == 10
+
+
+def test_an_empty_answer_to_a_later_question_is_normal_and_keeps_the_filter():
+    _, health, _, fake = run_with([ok(article(STORY, "reuters.com", 2)), Reply({})] * 1 + [Reply({})] * 20)
+    assert len(fake.calls) == 10 and all("domain:" in q for q in queries_of(fake))
+    assert health["publisher_filter"] == "on"
+    assert not any("did not take the publisher filter" in a for a in health["advisories"])
+
+
+def test_a_busy_or_slow_index_says_nothing_about_the_filter():
+    for failure in (Reply(status=429, raw=b"Please limit requests"), requests.ReadTimeout("slow")):
+        _, health, _, fake = run_with([failure, ok(article(STORY, "reuters.com", 2))] + [Reply({})] * 20)
+        assert len(fake.calls) == 10 and all("domain:" in q for q in queries_of(fake))
+        assert health["publisher_filter"] == "on" and len(health["errors"]) == 1
+
+
+def test_the_filter_is_given_up_once_and_a_second_bad_answer_is_just_an_error():
+    _, health, _, fake = run_with([Reply(raw=b"Query rejected"), Reply(raw=b"Query rejected")] + [ok(article(STORY, "reuters.com", 2))] * 20)
+    queries = queries_of(fake)
+    assert len(queries) == 11 and "domain:" in queries[0] and not any("domain:" in q for q in queries[1:])
+    assert len(health["errors"]) == 1 and health["errors"][0].startswith("news index did not answer with JSON: Query rejected")
+    assert health["queries_asked"] == 10 and health["queries_answered"] == 9
+
+
+def test_a_failing_index_with_the_breaker_open_is_not_asked_again_without_the_filter():
+    from backend.net import HostCircuitOpen
+    _, health, _, fake = run_with([HostCircuitOpen("skipping")])
+    assert len(fake.calls) == 1 and health["errors"] == ["The news index failed twice, so the remaining questions were skipped."]
+    assert (health["queries_asked"], health["queries_skipped"], health["status"]) == (1, 9, "unavailable")
+
+
+def test_a_breaker_that_opens_after_some_answers_leaves_a_partial_run_with_the_rest_counted_as_skipped():
+    from backend.net import HostCircuitOpen
+    _, health, _, fake = run_with([ok(article(STORY, "reuters.com", 2)), ok(article(STORY, "cnbc.com", 3)),
+                                   HostCircuitOpen("skipping")])
+    assert len(fake.calls) == 3 and health["status"] == "partial"
+    assert (health["queries_asked"], health["queries_answered"], health["queries_skipped"]) == (3, 2, 7)
+
+
+def test_the_filter_can_be_switched_off_in_the_settings():
+    cfg = copy.deepcopy(REAL)
+    cfg["source"]["publisher_filter"] = False
+    _, health, _, fake = run_with([ok(article(STORY, "reuters.com", 2))] * 20, cfg)
+    assert not any("domain:" in q for q in queries_of(fake)) and health["publisher_filter"] == "off"
+
+
+# ------------------------------------------------------------------ why headlines were not kept
+
+def test_dropped_headlines_are_counted_by_reason_and_the_other_sites_are_named():
+    mixed = ok(
+        article("Deutsche Börse schließt höher am Montag", "reuters.com", 2, language="German"),
+        *[article("Yahoo story number %d about markets" % i, "yahoo.com", 2) for i in range(3)],
+        *[article("Benzinga story number %d about markets" % i, "benzinga.com", 2) for i in range(2)],
+        article("Seeking Alpha story about the markets", "seekingalpha.com", 2),
+        article("Reuters story on a plain http link", "reuters.com", 2, url="http://www.reuters.com/markets/plain-http"),
+        article("Short", "reuters.com", 2),
+        article("Reuters story that is far too old to keep", "reuters.com", 200),
+        article("Reuters story that will be kept in full", "reuters.com", 2),
+        article("Reuters story that will be kept in full", "cnbc.com", 2),
+        {"url": "https://www.yahoo.com/x", "title": "Story with a hostile domain field", "seendate": stamp(2),
+         "domain": "evil.com<script>", "language": "English"})
+    _, health, _, _ = run_with([mixed] + [Reply({})] * 20)
+    assert health["articles_seen"] == 13
+    assert health["dropped"] == {"listed_publisher_but_link_not_plain_https": 1, "not_a_listed_publisher": 7,
+                                 "not_english": 1, "same_headline_again": 1, "unusable_headline_or_time": 2}
+    # passed the publisher check: too short, too old, the kept one and its repeat on cnbc.com
+    # (the German headline fails on language first; the http link is counted under its own reason)
+    assert health["from_listed_publishers"] == 4 and health["kept"] == 1
+    assert health["top_other_sites"] == [{"site": "yahoo.com", "headlines": 4},
+                                         {"site": "benzinga.com", "headlines": 2},
+                                         {"site": "seekingalpha.com", "headlines": 1}]
+    assert any("skipped because their link was not a plain https link" in a for a in health["advisories"])
+
+
+def test_a_company_question_counts_listed_headlines_that_do_not_name_the_company():
+    answers = [Reply({})] * 6 + [ok(article("Reuters says markets were calm today", "reuters.com", 2),
+                                    article("Micron results beat forecasts on AI memory demand", "reuters.com", 3))] + [Reply({})] * 20
+    _, health, _, _ = run_with(answers, CFG)
+    assert health["dropped"] == {"company_not_named_in_headline": 1} and health["kept"] == 1
+
+
+def test_a_poor_yield_is_explained_in_plain_words():
+    many = ok(*[article("Yahoo story number %d about markets" % i, "yahoo.com", 2) for i in range(25)],
+              article("Reuters story that will be kept in full", "reuters.com", 2))
+    _, health, _, _ = run_with([many] + [Reply({})] * 20, CFG)
+    assert health["advisories"] == ["Only 1 of 26 headlines came from the listed publishers; "
+                                    "most of the others came from yahoo.com (25)."]
+
+
+def test_a_good_yield_and_a_zero_yield_each_give_one_advisory_at_most():
+    good = ok(*[article("Reuters story number %d on the markets" % i, "reuters.com", 2) for i in range(30)])
+    assert run_with([good] + [Reply({})] * 20, CFG)[1]["advisories"] == []
+    none = ok(*[article("Yahoo story number %d about markets" % i, "yahoo.com", 2) for i in range(30)])
+    [note] = run_with([none] + [Reply({})] * 20, CFG)[1]["advisories"]
+    assert note.startswith("The news index answered, but no headline came from a listed publisher")
+
+
+def test_site_names_are_made_safe_before_they_are_recorded():
+    assert _site_of({"domain": "Yahoo.com", "url": "https://x.example/a"}) == "yahoo.com"
+    assert _site_of({"domain": "evil.com<script>", "url": "https://www.yahoo.com/x"}) == "yahoo.com"
+    assert _site_of({"domain": "WWW.Yahoo.com"}) == "yahoo.com" and _site_of({"domain": "www."}) == ""
+    assert _site_of({"domain": "", "url": "https://user:pw@Example.org:8443/a"}) == "example.org"
+    assert _site_of({"domain": "x" * 200, "url": "not a url"}) == ""
+    assert _site_of({}) == ""
+
+
+def test_text_from_the_server_is_made_plain_and_short():
+    assert _plain("<p>Too   many\nrequests</p> see https://example.org/help?x=1 now") == "Too many requests see now"
+    assert len(_plain("y" * 500)) == 90 and len(_plain("y" * 500, 60)) == 60
+    assert _plain(None) == ""

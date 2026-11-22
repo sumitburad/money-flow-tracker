@@ -63,6 +63,32 @@ def test_partial_news_says_some_questions_failed():
     assert "9 headlines kept (2 about companies); 7 of 10 questions answered (some failed)" in text
 
 
+def test_the_news_line_says_how_many_headlines_came_back_and_how_many_were_from_listed_publishers():
+    status = good_status()
+    status["market_news"] = {"status": "partial", "queries_asked": 6, "queries_answered": 2, "queries_skipped": 4,
+                             "kept": 1, "company_stories": 0, "articles_seen": 200, "from_listed_publishers": 1,
+                             "publisher_filter": "on"}
+    line = [l for l in summarize_run.build(status, {}).splitlines() if "Market news" in l][0]
+    assert line == ("- **Market news:** 1 headlines kept (0 about companies); 2 of 6 questions answered (some failed); "
+                    "4 more not asked; the news index sent 200 headlines, 1 from the listed publishers")
+
+
+def test_a_refused_publisher_filter_is_said_plainly():
+    status = good_status()
+    status["market_news"]["publisher_filter"] = "switched off during this refresh"
+    line = [l for l in summarize_run.build(status, {}).splitlines() if "Market news" in l][0]
+    assert line.endswith("the index refused the publisher filter, so it was turned off for this run")
+    status["market_news"]["publisher_filter"] = "on"
+    assert "refused" not in summarize_run.build(status, {})
+
+
+def test_odd_values_inside_the_news_block_never_crash_the_summary():
+    status = good_status()
+    status["market_news"] = {"status": "partial", "kept": None, "queries_skipped": "x", "articles_seen": {"a": 1},
+                             "from_listed_publishers": [], "publisher_filter": 7}
+    assert "Market news" in summarize_run.build(status, {})
+
+
 def test_odd_values_never_crash_the_summary():
     status = {"status": "ok", "regime": "oops", "calendar": ["x"], "market_news": 3}
     assert "Money-flow refresh result" in summarize_run.build(status, {})

@@ -63,9 +63,17 @@ def new_feature_lines(status):
         elif state == "unavailable":
             lines.append("- **Market news:** the free news index could not be reached; the page says so")
         else:
-            lines.append("- **Market news:** %s headlines kept (%s about companies); %s of %s questions answered%s" % (
+            text = "%s headlines kept (%s about companies); %s of %s questions answered%s" % (
                 news.get("kept", 0), news.get("company_stories", 0), news.get("queries_answered", "?"),
-                news.get("queries_asked", "?"), "" if state == "ok" else " (some failed)"))
+                news.get("queries_asked", "?"), "" if state == "ok" else " (some failed)")
+            if news.get("queries_skipped"):
+                text += "; %s more not asked" % news["queries_skipped"]
+            if "articles_seen" in news and "from_listed_publishers" in news:
+                text += "; the news index sent %s headlines, %s from the listed publishers" % (
+                    news["articles_seen"], news["from_listed_publishers"])
+            if news.get("publisher_filter") == "switched off during this refresh":
+                text += "; the index refused the publisher filter, so it was turned off for this run"
+            lines.append("- **Market news:** " + text)
     return lines
 
 
