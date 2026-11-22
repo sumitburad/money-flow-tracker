@@ -31,7 +31,7 @@ Conflicts with the current design: README says "No ranking, composite conviction
 - Sheet Plan tab: appended one status row (Plan!A47). Existing rows untouched.
 
 ## Update — 2026-11-22 (second pass): daily automation, history loader, dashboard
-Sumit asked for a daily refresh that runs without fail or in one click, free-tier options for missing sources, and plain-language instructions. Branch `research/reliable-daily-refresh`, not merged yet.
+Sumit asked for a daily refresh that runs without fail or in one click, free-tier options for missing sources, and plain-language instructions. Delivered from branch `research/reliable-daily-refresh` as a pull request. Sumit approved the push and the merge on 2026-11-22.
 
 Built
 - `backend/net.py`: one shared web client (3 tries, growing waits, `Retry-After`, per-host breaker). Secrets are redacted from errors and scrubbed from every JSON file written.
@@ -48,8 +48,8 @@ Tested
 - The dashboard was checked in headless Chrome (25 checks, desktop and phone, all banner states, no-history state) against synthetic history made in /tmp. The synthetic data was not committed.
 - Found and fixed while testing: a series that never loaded was labelled `kept_previous` on the second failed run, and a partial `--only` run dropped the other groups from the manifest.
 
-Not tested
-- Any live network call. The sandbox proxy blocks FRED, Treasury, CFTC and DBnomics. The first GitHub run is the real test. R-1 data is therefore not loaded yet; run "Load official history" after the merge.
+Not tested when this was written (before the first GitHub run)
+- Any live network call. The sandbox proxy blocks FRED, Treasury, CFTC and DBnomics. The first GitHub run is the real test. R-1 data was not loaded at that point; run "Load official history" if the dashboard's Official history section is empty.
 
 Open items
 1. CFTC name patterns probably miss Nasdaq-100 and the 10-year note (now named like "UST 10Y NOTE"). After the first history run, read `data/history/v1/cftc/contracts_seen.json` and fix `CFTC_MARKETS`. The dashboard shows these as "name did not match" until then.

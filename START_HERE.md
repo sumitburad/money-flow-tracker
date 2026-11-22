@@ -12,14 +12,11 @@ You do not need to read or write any code. This page lists every step that needs
 
 ## One-time setup (about 10 minutes)
 
-### Step 1 — Switch the update on (2 minutes)
+### Step 1 — Check that the daily schedule is on (1 minute)
 
-1. Open the update that Claude prepared for you. GitHub calls it a **pull request**. The link is in Claude's message.
-2. Click the green **Merge pull request** button, then **Confirm merge**.
+The update has been merged, so the automatic schedule is on. To see it working, open https://github.com/sumitburad/money-flow-tracker/actions and look for runs called **Daily money-flow refresh**. A green tick means a run worked.
 
-The automatic schedule starts after this step. The schedule had been paused on 18 November, so merging switches it back on. The **Run workflow** buttons below only appear after this step.
-
-To pause it again later: open https://github.com/sumitburad/money-flow-tracker/actions/workflows/daily.yml, click the **⋯** menu at the top right, then **Disable workflow**.
+To pause it later: open https://github.com/sumitburad/money-flow-tracker/actions/workflows/daily.yml, click the **⋯** menu at the top right, then **Disable workflow**. To switch it back on, use the same menu and click **Enable workflow**.
 
 ### Step 2 — Get the free FRED key (optional but recommended, 5 minutes)
 
@@ -34,6 +31,8 @@ FRED is the data library of the US Federal Reserve Bank of St. Louis. Its public
 Keep the key private. Do not paste it in chat, email or any file. GitHub hides it after you save it, and the system never prints it.
 
 ### Step 3 — Load the five-year history (one click, 5 minutes)
+
+If the **Official history** section on the dashboard already shows charts, skip this step.
 
 1. Open https://github.com/sumitburad/money-flow-tracker/actions/workflows/history.yml
 2. Click **Run workflow** (a grey button on the right), then the green **Run workflow** button inside the small box.
