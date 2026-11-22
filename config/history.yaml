@@ -92,6 +92,51 @@ fred:
     unit: hundred_million_yen
     lag: {calendar_days: 75}
 
+# Inflation, as "change from a year earlier". Calculated here from a FRED price index:
+#     (index this month / index 12 months earlier - 1) x 100
+# The index itself is not saved; each row's date is the month the index describes.
+# CPI is the not-seasonally-adjusted index (that is how the agency quotes its 12-month
+# change); PCE is the seasonally adjusted chain price index. "lag" is the base index's
+# publication lag, padded: CPI comes out about 6 weeks after the month, PCE about 8.
+# The base index is fetched one year before start_date so the first row can be calculated.
+fred_yoy:
+  CPI_YOY:
+    base: CPIAUCNS
+    title: "US consumer prices (CPI), all items: change from a year earlier"
+    provider: "U.S. Bureau of Labor Statistics, via FRED; change from a year earlier calculated here"
+    frequency: monthly
+    unit: percent
+    lag: {calendar_days: 48}
+    group: cpi
+    line_name: "All items"
+  CPI_CORE_YOY:
+    base: CPILFENS
+    title: "US core CPI (excluding food and energy): change from a year earlier"
+    provider: "U.S. Bureau of Labor Statistics, via FRED; change from a year earlier calculated here"
+    frequency: monthly
+    unit: percent
+    lag: {calendar_days: 48}
+    group: cpi
+    line_name: "Core (excl. food and energy)"
+  PCE_YOY:
+    base: PCEPI
+    title: "US PCE price index, all items: change from a year earlier"
+    provider: "U.S. Bureau of Economic Analysis, via FRED; change from a year earlier calculated here"
+    frequency: monthly
+    unit: percent
+    lag: {calendar_days: 65}
+    group: pce
+    line_name: "All items"
+  PCE_CORE_YOY:
+    base: PCEPILFE
+    title: "US core PCE price index (excluding food and energy): change from a year earlier"
+    provider: "U.S. Bureau of Economic Analysis, via FRED; change from a year earlier calculated here"
+    frequency: monthly
+    unit: percent
+    lag: {calendar_days: 65}
+    group: pce
+    line_name: "Core (excl. food and energy)"
+
 treasury_par:
   provider: "U.S. Department of the Treasury (daily par yield curve)"
   unit: percent

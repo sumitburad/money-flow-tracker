@@ -122,3 +122,43 @@ def test_raised_errors_carry_no_key(monkeypatch):
     with pytest.raises(requests.ConnectionError) as info:
         client.get("https://api.example/x", params={"api_key": "k3y-k3y-k3y-k3y"})
     assert "k3y-k3y-k3y-k3y" not in str(info.value)
+
+
+def test_retry_after_is_kept_between_one_and_thirty_seconds():
+    from backend.net import retry_after_seconds
+
+    class Busy:
+        def __init__(self, headers):
+            self.headers = headers
+    assert retry_after_seconds(Busy({"Retry-After": "7"})) == 7.0
+    assert retry_after_seconds(Busy({"retry-after": "0"})) == 1.0
+    assert retry_after_seconds(Busy({"Retry-After": "900"})) == 30.0
+    assert retry_after_seconds(Busy({"Retry-After": "soon"})) == 15.0      # not a number: default
+    assert retry_after_seconds(Busy({})) == 15.0
+    assert retry_after_seconds(object()) == 15.0
+
+
+def test_post_is_repeated_once_after_a_busy_answer_and_never_twice():
+    from backend.net import post_with_one_429_retry
+
+    class Answer:
+        def __init__(self, code):
+            self.status_code, self.headers = code, {"Retry-After": "3"}
+
+    class Http:
+        def __init__(self, codes):
+            self.codes, self.posts = list(codes), 0
+
+        def post(self, url, **kwargs):
+            self.posts += 1
+            return Answer(self.codes.pop(0))
+    waits = []
+    http = Http([429, 200])
+    assert post_with_one_429_retry(http, "https://x.example", sleep=waits.append).status_code == 200
+    assert http.posts == 2 and waits == [3.0]
+    http = Http([429, 429, 200])
+    assert post_with_one_429_retry(http, "https://x.example", sleep=waits.append).status_code == 429
+    assert http.posts == 2                                  # gave up after the one retry
+    http = Http([200])
+    post_with_one_429_retry(http, "https://x.example", sleep=waits.append)
+    assert http.posts == 1

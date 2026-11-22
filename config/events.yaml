@@ -1,0 +1,75 @@
+version: 1
+# Calendar of coming events (CPI, PCE, jobs, GDP, Fed meetings).
+#
+# Release dates are read from FRED's release calendar (needs the FRED_API_KEY secret).
+# The names below must match FRED's own release names. If one stops matching, the
+# dashboard's "Data quality" box lists it, and the fix is to correct the name here.
+# Fed meeting dates are a built-in list (below) because the Fed publishes them only
+# as a web page. That list is NOT yet checked against federalreserve.gov (the page
+# could not be opened when it was written), so it says so on the dashboard.
+
+horizon_days: 45          # how far ahead to look
+max_events: 24            # most events shown
+
+fred:
+  url: "https://api.stlouisfed.org/fred/releases/dates"
+  calendar_page: "https://fred.stlouisfed.org/releases/calendar"
+  page_size: 1000         # FRED's largest page
+  max_pages: 4
+
+releases:
+  - id: cpi
+    name: "US consumer price inflation (CPI)"
+    fred_release: "Consumer Price Index"
+    category: inflation
+    importance: high
+    why: "Shows how fast consumer prices are rising. It shapes expectations for interest rates."
+  - id: pce
+    name: "US personal income and spending (PCE inflation)"
+    fred_release: "Personal Income and Outlays"
+    category: inflation
+    importance: high
+    why: "Carries the PCE price index, the inflation gauge the Fed targets."
+  - id: ppi
+    name: "US producer prices (PPI)"
+    fred_release: "Producer Price Index"
+    category: inflation
+    importance: medium
+    why: "Prices at the factory gate; an early hint for consumer prices."
+  - id: jobs
+    name: "US jobs report"
+    fred_release: "Employment Situation"
+    category: growth
+    importance: high
+    why: "Jobs added and the unemployment rate. A key read on the strength of the economy."
+  - id: gdp
+    name: "US economic growth (GDP)"
+    fred_release: "Gross Domestic Product"
+    category: growth
+    importance: medium
+    why: "The size and growth of the US economy for the latest quarter."
+  - id: retail
+    name: "US retail sales"
+    fred_release: "Advance Monthly Sales for Retail and Food Services"
+    category: growth
+    importance: medium
+    why: "How much US shoppers spent last month."
+
+built_in:
+  - id: fomc
+    name: "Fed interest-rate decision (FOMC)"
+    category: central_bank
+    importance: high
+    why: "The Fed announces whether it changes interest rates. This is the second day of its two-day meeting."
+    source_url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    checked_against_official_site: false
+    covers_through: "2026-12-31"   # the list has no dates after this; add the next year's calendar
+    dates:
+      - "2026-01-28"
+      - "2026-03-18"
+      - "2026-04-29"
+      - "2026-06-17"
+      - "2026-07-29"
+      - "2026-09-16"
+      - "2026-10-28"
+      - "2026-12-09"

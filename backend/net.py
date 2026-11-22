@@ -131,4 +131,28 @@ class RetryingHttp:
         raise self._clean(last_error)
 
 
+def retry_after_seconds(response, default=15.0, cap=30.0):
+    """How long a busy server asked us to wait (HTTP Retry-After), kept between 1 s and ``cap``."""
+    headers = getattr(response, "headers", None) or {}
+    value = headers.get("Retry-After", headers.get("retry-after", default))
+    try:
+        wait = float(value)
+    except (TypeError, ValueError):
+        wait = float(default)
+    return min(max(wait, 1.0), float(cap))
+
+
+def post_with_one_429_retry(http, url, *, sleep=time.sleep, **kwargs):
+    """POST once; if a free plan answers HTTP 429 (busy), wait as asked and try one more time.
+
+    Returns the last response, so callers still use ``raise_for_status()``. At most two
+    requests are ever made, which keeps a free daily request allowance safe.
+    """
+    response = http.post(url, **kwargs)
+    if getattr(response, "status_code", None) == 429:
+        sleep(retry_after_seconds(response))
+        response = http.post(url, **kwargs)
+    return response
+
+
 HTTP = RetryingHttp()

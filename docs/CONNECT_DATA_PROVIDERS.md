@@ -1,18 +1,19 @@
 # Connect the free data and AI providers — a plain guide
 
-Written 22 November 2026. You do not need to read or write code. Each step lists exactly what to click.
-Only Step 1 is time-sensitive. The dashboard keeps working without the keys; the keys only make it more reliable or smarter.
+Written 22 November 2026 and updated later the same day. You do not need to read or write code. Each step lists exactly what to click.
+The dashboard keeps working without the keys; the keys only make it more reliable or smarter. Steps 1, 2 and 4 are already done on your side. Step 3 (Groq) is skipped because its sign-up page did not work for you.
 
 ## What to do, in order
 
 | Step | What it gives you | Cost | Time |
 |---|---|---|---|
-| 1. Keep GitHub free (make the repository public) | The daily refresh keeps running | Free | 3 minutes |
-| 2. FRED key | A more reliable way to read official US data | Free | 5 minutes |
-| 3. Groq key | The AI executive summary and AI news tags | Free, no card | 5 minutes |
-| 4. OpenRouter key | A second AI in case Groq is busy | Free, no card | 5 minutes |
+| 1. Keep GitHub free (make the repository public) | The daily refresh keeps running | Free | Done |
+| 2. FRED key | A more reliable way to read official US data, and the calendar of coming release dates | Free | Done |
+| 3. Groq key | A faster AI for the executive summary and news tags | Free, no card | Skipped: sign-up did not work for you. Not needed |
+| 4. OpenRouter key | The AI that writes the executive summary and tags headlines | Free, no card | Done |
 | 5. INDstocks daily data | India prices and volume for the money-flow signals | Free with your existing account | Handled inside your private trading project |
 | 6. Optional extras | Backup price sources, only if ever needed | Free tiers | Not needed now |
+| 7. New feeds (calendar, news) | Coming events, market and company news | Free, no extra key | Nothing to do. Read it so you know where the data comes from |
 
 ## How to save any key in GitHub (the same five clicks every time)
 
@@ -65,35 +66,42 @@ FRED is the data library of the US Federal Reserve Bank of St. Louis. It supplie
 3. Save it in GitHub with the five clicks above. Name: `FRED_API_KEY`.
 
 Without it the system falls back to FRED's public download page, which timed out in earlier runs, and then to a backup copy of the two main US Treasury yields.
-The same key can later feed a calendar of release dates (jobs, inflation and so on). That is not wired in yet.
+The same key also reads FRED's calendar of coming release dates (inflation, jobs, growth). That is wired in; see Step 7. Without the key the calendar shows only the Fed meetings.
 
-## Step 3 — Groq key (the AI that writes the executive summary)
+## Step 3 — Groq key (optional; skipped because its sign-up page did not work for you)
 
-Groq is the free AI service I recommend. It is already wired in. With one key it does two jobs: it tags the official headlines, and it writes the **Executive summary** at the top of the dashboard.
+On 22 November 2026 the Groq sign-up did not work for you, so skip this step. Nothing depends on it: OpenRouter (Step 4) does the same two jobs. If Groq's sign-up starts working later and you want a faster AI, follow the steps below. The system would then try Groq first and OpenRouter second.
+
+Groq is a free AI service. It is already wired in. With one key it does two jobs: it tags the official headlines, and it writes the **Executive summary** on the dashboard.
 
 1. Open https://console.groq.com and sign up (a Google sign-in works). No card is asked on the free plan.
 2. Open https://console.groq.com/keys and click **Create API Key**. Give it any name. Copy the key now, because Groq shows it only once.
 3. Save it in GitHub with the five clicks above. Name: `GROQ_API_KEY`.
 
-**How much it uses.** Each refresh makes up to 13 small AI requests: up to 12 headline tags and 1 summary. On 22 November 2026, Groq's free plan allowed 30 requests a minute, 1,000 requests a day, 8,000 tokens a minute and 200,000 tokens a day. The system spaces its requests to stay inside that. Limits can change, so look at https://console.groq.com/docs/rate-limits if a run ever reports that the AI was busy.
+**How much it uses.** Each refresh makes about 4 small AI requests: up to 3 for headline tags (five headlines in each request) and 1 for the summary. On 22 November 2026, Groq's free plan allowed 30 requests a minute, 1,000 requests a day, 8,000 tokens a minute and 200,000 tokens a day. The system spaces its requests to stay inside that. Limits can change, so look at https://console.groq.com/docs/rate-limits if a run ever reports that the AI was busy.
 
 **What the AI is allowed to do.** It sees only categories and names (for example "inflow-led" or "improving"), never prices. Its answer is thrown away unless it has no numbers, no buy or sell or advice wording, no links, and only names that exist on the dashboard. If it fails, a plain rule-written summary is shown and the badge says "Rule-based summary · no AI was used in this refresh", so the two can never be mistaken for each other.
 
-## Step 4 — OpenRouter key (second AI, optional)
+## Step 4 — OpenRouter key (the AI in use; done)
 
-OpenRouter is a switchboard to many AI models, including free ones. The system tries it only if Groq fails.
+OpenRouter is a switchboard to many AI models, including free ones. With no Groq key, it is the only AI the system uses. You saved `OPENROUTER_API_KEY` on 22 November 2026. The steps stay here in case the key ever has to be replaced.
 
 1. Open https://openrouter.ai and sign in.
 2. Open https://openrouter.ai/keys and create a key. Do not add money or a card; the free models need neither.
 3. Save it in GitHub. Name: `OPENROUTER_API_KEY`.
 
-Free models have their own daily limits. If you skip this step nothing breaks.
+**What it does.** It tags headlines and writes the **Executive summary**, in at most 4 small requests per refresh (up to 3 for headline tags, 5 headlines each, and 1 for the summary). The model name is `openrouter/free`, which means OpenRouter picks one of its free models for each request. Different days can therefore use different models. The summary is checked by code every time, so a weaker model only means the rule-written summary is shown that day.
+
+**Limits (not confirmed).** I could not open OpenRouter's limits page, so I cannot quote the limits. From memory, free models allow about 20 requests a minute and about 50 requests a day on an account that has never added credit. Four requests per refresh and two or three refreshes a day stays well inside that. Do a few manual **Run workflow** clicks in one day only if you need to. Please check OpenRouter's own documentation (https://openrouter.ai/docs, under limits) before relying on my numbers. If the limit is hit, the system waits once and tries again. If that fails, the rule-written summary is shown and the badge says so. Nothing breaks.
+
+**Privacy.** Free models may keep what they are sent. The system sends only category words, names and public business headlines. No price, no account, no key and nothing private leaves the repository.
 
 ## "Grok or any other free AI?"
 
 | AI | Free for automatic use? | Verdict |
 |---|---|---|
-| **Groq** (spelled differently from Grok) | Yes, a free plan with limits and no card | **Use this** |
+| **OpenRouter free models** | Yes, free models with limits and no card | **In use** (Step 4) |
+| **Groq** (spelled differently from Grok) | Yes, a free plan with limits and no card | Good, but its sign-up did not work for you, so it is skipped |
 | Grok by xAI (https://console.x.ai) | As far as I could check, its API is pay as you go with no dependable free plan | Not recommended unless you decide to pay |
 | Google Gemini (https://aistudio.google.com/app/apikey) | A free tier exists, but I could not open Google's limits page, so I cannot quote the limits | Possible later; tell Claude and we add it after checking |
 | ChatGPT or Claude chat windows | They need a person to type; the daily job cannot call them | Not suitable for automatic updates |
@@ -125,11 +133,28 @@ None of these is wired in. They are listed so you know what exists. Sign up only
 
 A price backup would be used in memory to make categories, exactly like Yahoo today. Nothing would be saved or shown as a price table.
 
+## Step 7 — The new feeds added on 22 November 2026 (nothing to sign up for)
+
+These parts of the dashboard use data from places you have not met yet. None needs a new key.
+
+| Part of the dashboard | Where the data comes from | Key | What to know |
+|---|---|---|---|
+| Coming events: inflation (CPI, PCE, producer prices), jobs, growth | FRED's release calendar (https://fred.stlouisfed.org/releases/calendar) | Your `FRED_API_KEY` | Dates only, never a forecast. If FRED changes a release name, the Data quality box says which one no longer matches |
+| Coming events: Fed meetings | A list typed into the system, taken from the Fed's meeting calendar (https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm) | None | I could not open the Fed's page to check the list, so each card says **Confirm the date on the official site**. The list ends on 31 December 2026, and the Data quality box warns when it is running out |
+| Market and company news | GDELT, a free public news index (https://www.gdeltproject.org/) | None | See the paragraph below |
+| Risk-on or risk-off banner | The same daily prices already used for money flow | None | Nothing new is downloaded |
+| Inflation charts (CPI, PCE) | FRED price indexes; the change from a year earlier is worked out here | Your `FRED_API_KEY` | Appear after the one-click history load (Step 3 of START_HERE) |
+
+**About the news.** GDELT asks programs to make at most one request every five seconds, so the system asks ten questions about 5.5 seconds apart, which takes about a minute. It keeps only the headline, the publisher's name, the time and a link, and only from 14 well-known business publishers (Reuters, Associated Press, CNBC, Bloomberg, The Wall Street Journal, Financial Times, MarketWatch, Barron's, The Economic Times, Mint, Moneycontrol, Business Standard, BusinessLine and The Financial Express). Each headline is shown as the publisher wrote it and links to the publisher's page. No article text is copied. I could not open GDELT's terms of use, so I have not confirmed the licence. If you want the news off until that is checked, tell Claude; it is one switch.
+
+**What I could not check from here.** My workspace cannot reach FRED, GDELT or the Fed's site, so these are untested against the real services: the exact release names FRED uses, GDELT's exact answer format, and whether GDELT answers every request from GitHub's computers. The first live run is the real test. Read the **Data quality** box after it, as START_HERE explains.
+
 ## How to check that a key works
 
 1. Open https://github.com/sumitburad/money-flow-tracker/actions and click the newest **Daily money-flow refresh** run.
 2. The box at the top says in plain words what happened. Find the line **Executive summary**. It ends with either "written by AI and rule-checked" or "rule-based (no AI answer was used)". The second is safe, but check that the key name is spelled exactly and that you saved it as a **repository secret**.
-3. On the dashboard, the badge above the summary reads "✓ AI-written" with the provider and model, or "Rule-based summary".
+3. In the same box, the lines **Risk tone**, **Coming events** and **Market news** say whether each new part worked. For example "10 of 10 questions answered" means the news index replied every time.
+4. On the dashboard, the badge above the summary reads "✓ AI-written" with the provider and model, or "Rule-based summary".
 
 ## If a key leaks
 

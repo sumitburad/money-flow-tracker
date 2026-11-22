@@ -21,6 +21,54 @@ def load(path):
         return {}
 
 
+TONE_WORDS = {"risk_on": "risk-on", "risk_off": "risk-off", "mixed": "mixed",
+              "not_enough_data": "not enough data"}
+
+
+def new_feature_lines(status):
+    """Plain-language lines for the risk banner, the events calendar and the market news.
+
+    Each block is optional, so a status file from an older run simply adds no line.
+    """
+    lines = []
+    regime = status.get("regime")
+    if isinstance(regime, dict):
+        if regime.get("status") == "ok":
+            with_data = regime.get("checks_with_data") or {}
+            lines.append("- **Risk tone:** %s this month, %s this week (%s of %s checks had prices)" % (
+                TONE_WORDS.get(regime.get("label"), "unknown"),
+                TONE_WORDS.get(regime.get("short_term_label"), "unknown"),
+                with_data.get("month", "?"), regime.get("checks_total", "?")))
+        else:
+            lines.append("- **Risk tone:** could not be worked out this run")
+    calendar = status.get("calendar")
+    if isinstance(calendar, dict) and calendar.get("status") != "not_available":
+        fred = (calendar.get("fred") or {}).get("status")
+        found = calendar.get("events", 0)
+        dates = "%s coming %s" % (found, "date" if found == 1 else "dates")
+        if fred == "ok":
+            text = dates + " found (FRED calendar read live)"
+        elif fred == "not_configured":
+            text = dates + " (Fed meetings only, because no FRED key is saved)"
+        else:
+            text = dates + " (FRED's calendar could not be read, so only Fed meetings are shown)"
+        notes = len(calendar.get("advisories") or [])
+        lines.append("- **Coming events:** " + text + (
+            "; %d note%s in the Data quality box" % (notes, "" if notes == 1 else "s") if notes else ""))
+    news = status.get("market_news")
+    if isinstance(news, dict) and news.get("status") != "not_available":
+        state = news.get("status")
+        if state == "disabled":
+            lines.append("- **Market news:** switched off in the settings")
+        elif state == "unavailable":
+            lines.append("- **Market news:** the free news index could not be reached; the page says so")
+        else:
+            lines.append("- **Market news:** %s headlines kept (%s about companies); %s of %s questions answered%s" % (
+                news.get("kept", 0), news.get("company_stories", 0), news.get("queries_answered", "?"),
+                news.get("queries_asked", "?"), "" if state == "ok" else " (some failed)"))
+    return lines
+
+
 def build(status, feed):
     macro = (feed or {}).get("macro") or {}
     paths = Counter(v.get("fetch_path", "other") for v in macro.values())
@@ -46,6 +94,7 @@ def build(status, feed):
         lines.append("- **Executive summary:** " + {
             "ai_validated": "written by AI and rule-checked",
             "rules_only": "rule-based (no AI answer was used)"}.get(summary, summary))
+    lines.extend(new_feature_lines(status))
     problems = status.get("official_source_problems", 0)
     if problems:
         lines.append("- **Official-source problems this run:** %d (a backup run tries again later)" % problems)

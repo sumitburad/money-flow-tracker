@@ -41,7 +41,7 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 @media(max-width:600px){header{padding:22px 16px}main{padding:14px}th,td{padding:7px}}
 /* --- freshness banner (status colour always comes with an icon and a word) --- */
 :root{--surface-1:#fff;--ink:#142331;--ink-2:#47596c;--ink-muted:#637484;--grid:#e1e0d9;--axis:#c3c2b7;
- --series-1:#2a78d6;--good:#0ca30c;--warn:#fab219;--crit:#d03b3b}
+ --series-1:#2a78d6;--series-2:#eb6834;--good:#0ca30c;--warn:#fab219;--crit:#d03b3b}
 .fresh{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;background:#fff;border:1px solid #d8e2ea;border-left:6px solid var(--ink-muted);border-radius:12px;padding:13px 16px;margin-bottom:14px;font-size:14px}
 .fresh.ok{border-left-color:var(--good)}.fresh.late{border-left-color:var(--warn)}.fresh.stale{border-left-color:var(--crit)}
 .fresh .icon{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;background:var(--ink-muted);flex:none}
@@ -76,6 +76,19 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 .tview{border-top:1px solid #ecf0f3;margin-top:10px;padding-top:8px}
 .tview table{font-size:12px}.tview th,.tview td{padding:5px 8px}
 .tview .scroller{max-height:240px;margin:8px 0}
+.hgrid.two{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.lkeys{display:flex;flex-wrap:wrap;gap:6px 22px;margin:8px 0 2px}
+.lkey{display:inline-flex;align-items:baseline;gap:7px;font-size:12px;color:var(--ink-2)}
+.lkey i{display:inline-block;width:16px;height:3px;border-radius:2px;align-self:center}
+.lkey b{font-size:21px;font-weight:650;color:var(--ink);letter-spacing:-.015em}
+.chart .mline{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .ref{stroke:var(--axis);stroke-width:1}
+.chart .reflabel{font-size:10px;fill:var(--ink-muted)}
+.chart .dot2{stroke:var(--surface-1);stroke-width:2}
+.tip .row{display:flex;align-items:baseline;gap:7px;margin-top:2px}
+.tip .row i{display:inline-block;width:12px;height:3px;border-radius:2px;align-self:center}
+.tip .row b{font-size:14px;color:var(--ink)}
+.tip .row em{font-style:normal;color:var(--ink-muted)}
 .hnote{font-size:12px;color:var(--ink-2);margin-top:6px}
 .hnote.warn{color:#a03a2b}
 /* --- executive summary and money-flow windows (every colour also has a symbol and a word) --- */
@@ -102,6 +115,41 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 .legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin:10px 0 14px;align-items:center;font-size:12px;color:var(--ink-2)}
 .mini{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px;align-items:center}
 .members details{background:#fff;border:1px solid #dae4e9;border-radius:10px;padding:10px 14px;margin:8px 0}
+/* --- risk-on / risk-off banner and coming events (every colour also has a symbol and a word) --- */
+.regime{background:#fff;border:1px solid #d8e2ea;border-left:6px solid var(--ink-muted);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:14px}
+.regime.risk_on{border-left-color:#0b6b3f}.regime.risk_off{border-left-color:#a03a2b}
+.regime.mixed{border-left-color:#516275}.regime.not_enough_data{border-left-color:#c3ccd4}
+.regime .rhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.regime .rtitle{font-size:15px;font-weight:700;color:var(--ink)}
+.regime .rpair{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.regime .sig{font-size:13px;padding:4px 10px}
+.regime p{margin:9px 0 0;line-height:1.6;color:#25384a}
+.regime .rfoot{font-size:12px;color:var(--ink-muted);margin-top:9px;line-height:1.55}
+.regime details{margin-top:10px}
+.rtable td,.rtable th{vertical-align:top}
+.rtable small{display:block;margin-top:3px;font-size:11px;color:var(--ink-muted);line-height:1.45;white-space:normal}
+.rtable .reading{display:block;margin-top:5px;font-size:12px;color:var(--ink-2);white-space:normal;line-height:1.45}
+.evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.event{background:#fff;border:1px solid #dae4e9;border-radius:11px;padding:13px 15px;min-width:0}
+.event.soon{border-left:5px solid #145c90}
+.event .when{font-size:12px;color:var(--ink-muted)}
+.event .day{font-size:17px;font-weight:650;letter-spacing:-.01em;margin:2px 0 4px;color:var(--ink)}
+.event h3{font-size:14px;margin:0 0 6px;line-height:1.4}
+.event p{font-size:12.5px;line-height:1.55;color:var(--ink-2);margin:6px 0 0}
+.event .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.event .srcnote{margin-top:8px}
+.srcnote{font-size:12px;color:var(--ink-2);margin:5px 0;line-height:1.5}
+.srcnote.warn{color:#a03a2b}
+.nlist{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.nitem{background:#fff;border:1px solid #dae4e9;border-radius:11px;padding:12px 14px;min-width:0}
+.nitem .nlink{display:block;font-size:14px;font-weight:600;line-height:1.45;color:#123247;overflow-wrap:anywhere}
+.nitem .nlink:hover{color:#145c90}
+.nitem .nmeta{font-size:12px;color:var(--ink-muted);margin-top:6px}
+.nitem .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ngroup{margin:18px 0 8px;font-size:15px;color:#1c3445}
+.cobar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:2px 0 6px;font-size:13px;color:var(--ink-2)}
+.hnotes{margin:10px 0 0 18px;padding:0;font-size:13px;line-height:1.65;color:var(--ink-2)}
+.hnotes .warn{font-weight:500}
 </style>
 </head>
 <body>
@@ -111,13 +159,16 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 </header>
 <main>
   <div id="freshness" class="fresh" role="status" aria-live="polite">Checking when the data was last refreshed…</div>
+  <div id="regime" class="regime" role="region" aria-label="Risk tone: risk-on or risk-off" hidden></div>
   <div id="status" class="status" role="status">Loading source-checked observations…</div>
   <nav aria-label="Dashboard sections">
     <a href="#summary">Executive summary</a>
+    <a href="#events">Coming events</a>
     <a href="#flow">Money-flow windows</a>
     <a href="#markets">Markets and sectors</a>
     <a href="#rotation">Rotation checks</a>
     <a href="#drivers">Policy drivers</a>
+    <a href="#marketnews">Market news</a>
     <a href="#liquidity">Liquidity</a>
     <a href="#institutions">Institutional flows</a>
     <a href="#positioning">CFTC positioning</a>
@@ -127,6 +178,11 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   </nav>
   <section id="summary"><h2>Executive summary</h2>
     <div id="summary-box" class="summary">Loading the summary…</div>
+  </section>
+  <section id="events"><h2>Coming events</h2>
+    <p class="note">Dates of releases and meetings that often move markets (inflation data, the Fed). Only dates are shown, never a forecast of the result. Dates can change, so confirm on the official site before relying on one.</p>
+    <div id="events-body" class="evgrid">Loading the calendar…</div>
+    <div id="events-notes"></div>
   </section>
   <section id="flow"><h2>Money-flow windows and rotation</h2>
     <p class="note">The rule: <strong>price up on rising volume = inflow</strong> (money appears to be coming in); price down on rising volume = outflow. A move on thinning volume is marked “fading”. Each item is checked for the latest day, the week (5 sessions against the 5 before) and the month (20 against the 20 before), then rolled up by asset class and sector to show where money is rotating. Volume is a trading-activity proxy, not a measured fund flow. Only categories are shown, because the free price source cannot be republished.</p>
@@ -143,6 +199,11 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   <section id="drivers"><h2>Headline and policy drivers</h2>
     <div class="grid" id="news"></div>
     <p class="note">Headlines are observations. Market impact remains unconfirmed until independently checked against subsequent price observations.</p>
+  </section>
+  <section id="marketnews"><h2>Market and company news</h2>
+    <p class="note">Headlines from major business publishers, shown as published with a link to the publisher. They explain what is in the news, such as a company's results. A headline is not proof that it moved a price, and nothing here is advice.</p>
+    <div id="mnews-body">Loading headlines…</div>
+    <div id="mnews-notes"></div>
   </section>
   <section id="liquidity"><h2>Official macro and liquidity observations</h2>
     <div id="macro" class="scroller"></div>
@@ -464,9 +525,10 @@ function fmtIst(date){
     year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}).format(date);
 }
 function ago(hours){
-  if(hours<1)return Math.max(1,Math.round(hours*60))+" minutes ago";
-  if(hours<48)return Math.round(hours)+" hours ago";
-  return Math.round(hours/24)+" days ago";
+  const unit=(n,word)=>n+" "+word+(n===1?"":"s")+" ago";
+  if(hours<1)return unit(Math.max(1,Math.round(hours*60)),"minute");
+  if(hours<48)return unit(Math.round(hours),"hour");
+  return unit(Math.round(hours/24),"day");
 }
 function renderFreshness(iso){
   const box=$("freshness");box.textContent="";
@@ -486,6 +548,155 @@ function renderFreshness(iso){
       "The next refresh starts by itself.":"A scheduled refresh was missed. Press Refresh now."));
   }
   const a=href(box,RUN_NOW_URL,"Refresh now");if(a)a.className="btn";
+}
+
+/* ---------- risk-on / risk-off banner ---------- */
+const REGIME_LABEL={risk_on:["▲","Risk-on","sig-in"],risk_off:["▼","Risk-off","sig-out"],
+  mixed:["◆","Mixed","sig-flat"],not_enough_data:["–","Not enough data","sig-na"]};
+const REGIME_VOTE={risk_on:["▲","Risk-on","sig-in"],risk_off:["▼","Risk-off","sig-out"],
+  neutral:["◇","Neutral","sig-flat"],not_available:["–","No data","sig-na"]};
+const REGIME_MEANING={
+  risk_on:"investors look comfortable owning riskier things such as shares and crypto",
+  risk_off:"investors look defensive and are favouring safer things such as government bonds, gold and the US dollar",
+  mixed:"the checks point in different directions, so there is no clear mood",
+  not_enough_data:"too few checks had data to read the mood"};
+function fmtDay(iso,withWeekday){
+  const d=new Date(String(iso)+"T00:00:00Z");
+  if(isNaN(d.getTime()))return String(iso);
+  const o={day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"};
+  if(withWeekday)o.weekday="short";
+  return d.toLocaleDateString("en-GB",o);
+}
+function votesText(t,total){
+  if(t.risk_on+t.risk_off+t.neutral===0)return "no check had data";
+  const parts=[t.risk_on+" of "+total+" checks lean risk-on",t.risk_off+" lean risk-off"];
+  if(t.neutral)parts.push(t.neutral+" "+(t.neutral===1?"is":"are")+" neutral");
+  if(t.not_available)parts.push(t.not_available+" had no data");
+  return parts.join(", ");
+}
+function renderRegime(feed){
+  const box=$("regime");box.textContent="";
+  const r=feed.regime;
+  if(!r||!r.windows||!r.windows.week||!r.windows.month||!Array.isArray(r.checks)){box.hidden=true;return}
+  box.hidden=false;box.className="regime "+(REGIME_LABEL[r.label]?r.label:"not_enough_data");
+  const head=add(box,"div",undefined,"rhead");
+  add(head,"span","Risk tone","rtitle");
+  const month=add(head,"span",undefined,"rpair");
+  add(month,"span","This month");chip(REGIME_LABEL,r.label,month,"Reading over the last 20 sessions");
+  const week=add(head,"span",undefined,"rpair");
+  add(week,"span","This week");chip(REGIME_LABEL,r.short_term_label,week,"Reading over the last 5 sessions");
+  if(["improving","weakening","steady"].includes(r.shift)){
+    const shift=add(head,"span",undefined,"rpair");
+    add(shift,"span","Last week versus the month");
+    const m=TREND[r.shift];add(shift,"span",m[0]+" "+m[1],"trend "+m[2]);
+  }
+  const p=add(box,"p");
+  p.append("Over the last month, "+votesText(r.windows.month.tally,r.checks.length)+". Over the last week, "+
+    votesText(r.windows.week.tally,r.checks.length)+". The month reading means "+(REGIME_MEANING[r.label]||REGIME_MEANING.not_enough_data)+
+    ". Risk-on is not a signal to buy and risk-off is not a signal to sell; it only describes how markets behaved.");
+  const details=add(box,"details");
+  add(details,"summary","See the "+r.checks.length+" checks behind this");
+  const wrap=add(details,"div",undefined,"scroller");
+  const table=add(wrap,"table",undefined,"rtable");
+  const hr=add(add(table,"thead"),"tr");
+  ["Check","This week","This month"].forEach(h=>add(hr,"th",h));
+  const tb=add(table,"tbody");
+  r.checks.forEach(c=>{
+    const tr=add(tb,"tr");
+    const first=add(tr,"td");add(first,"strong",c.name);add(first,"small",c.question);
+    ["week","month"].forEach(w=>{
+      const cell=add(tr,"td");const v=(c.windows||{})[w]||{};
+      chip(REGIME_VOTE,v.vote,cell);add(cell,"span",v.reading||"","reading");
+    });
+  });
+  const foot=add(box,"div",undefined,"rfoot");
+  foot.append((r.as_of?"Latest market session used: "+fmtDay(r.as_of)+". ":"")+(r.method||"")+" "+(r.notice||""));
+}
+
+/* ---------- coming events ---------- */
+const EVENT_CATEGORY={inflation:"Inflation",growth:"Growth and jobs",central_bank:"Central bank"};
+const SOURCE_NAME={fred_release_calendar:"FRED release calendar",built_in_fomc_list:"Built-in Fed meeting list"};
+function istToday(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata"}).format(new Date())}
+function daysUntil(iso){
+  return Math.round((Date.parse(String(iso)+"T00:00:00Z")-Date.parse(istToday()+"T00:00:00Z"))/864e5);
+}
+function whenText(d){return d===0?"Today":d===1?"Tomorrow":"In "+d+" days"}
+function renderEvents(feed){
+  const body=$("events-body"),notes=$("events-notes");body.textContent="";notes.textContent="";
+  const c=feed.calendar;
+  if(!c||!Array.isArray(c.events)){
+    body.className="";add(body,"p","The calendar appears after the next refresh.","note");return;
+  }
+  const sources=Array.isArray(c.sources)?c.sources:[];
+  const unchecked=sources.some(s=>s.checked_against_official_site===false);
+  const upcoming=c.events.map(e=>({e,d:daysUntil(e.date)})).filter(x=>x.d>=0);
+  if(!upcoming.length){
+    body.className="";
+    add(body,"p","No listed releases or meetings in the next "+c.horizon_days+" days.","note");
+  }else{
+    body.className="evgrid";
+    upcoming.forEach(({e,d})=>{
+      const card=add(body,"div",undefined,"event"+(d<=7?" soon":""));
+      add(card,"div",whenText(d),"when");
+      add(card,"div",fmtDay(e.date,true),"day");
+      add(card,"h3",e.name);
+      add(card,"p",e.why);
+      const chips=add(card,"div",undefined,"chips");
+      add(chips,"span",EVENT_CATEGORY[e.category]||e.category,"sig sig-flat");
+      add(chips,"span",e.importance==="high"?"● High importance":"○ Medium importance","sig sig-na");
+      if(e.basis==="built_in_list"&&unchecked)add(chips,"span","! Confirm the date on the official site","sig sig-out2");
+      const src=add(card,"div",undefined,"srcnote");
+      href(src,e.source_url,"Source: "+(e.basis==="fred_release_calendar"?"FRED release calendar":"official calendar page"));
+    });
+  }
+  sources.forEach(s=>{
+    const bad=s.status!=="ok"||s.checked_against_official_site===false;
+    add(notes,"div",(SOURCE_NAME[s.id]||s.id)+": "+(s.note||s.status),"srcnote"+(bad?" warn":""));
+  });
+  if(c.notice)add(notes,"div",c.notice,"srcnote");
+}
+
+/* ---------- market and company news ---------- */
+function renderMarketNews(feed){
+  const body=$("mnews-body"),notes=$("mnews-notes");body.textContent="";notes.textContent="";
+  const m=feed.market_news;
+  if(!m||!Array.isArray(m.stories)){add(body,"p","Market and company news appears after the next refresh.","note");return}
+  if(m.status==="disabled"){add(body,"p","Market and company news is switched off in config/market_news.yaml.","note");return}
+  if(m.status==="unavailable"){
+    add(body,"p","The news source could not be reached in this refresh, so no market headlines are shown. The Fed and ECB headlines above are not affected.","note warn");
+    return;
+  }
+  if(!m.stories.length){add(body,"p","No headlines from the listed publishers in this refresh.","note");return}
+  const topicName={};(Array.isArray(m.themes)?m.themes:[]).forEach(t=>{topicName[t.id]=t.name});
+  const counts={};
+  m.stories.forEach(s=>(s.companies||[]).forEach(c=>{counts[c]=(counts[c]||0)+1}));
+  const names=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]||a.localeCompare(b));
+  if(names.length){
+    const bar=add(body,"div",undefined,"cobar");add(bar,"strong","Companies in the news");
+    names.forEach(n=>add(bar,"span",n+" · "+counts[n],"sig sig-flat"));
+  }
+  [["Company stories",m.stories.filter(s=>(s.companies||[]).length)],
+   ["Market stories",m.stories.filter(s=>!(s.companies||[]).length)]].forEach(([title,list])=>{
+    if(!list.length)return;
+    add(body,"h3",title,"ngroup");
+    const grid=add(body,"div",undefined,"nlist");
+    list.forEach(s=>{
+      const item=add(grid,"div",undefined,"nitem");
+      const link=href(item,s.url,s.title);
+      if(link)link.className="nlink";else add(item,"div",s.title,"nlink");
+      const when=new Date(s.seen_at_utc),hours=(Date.now()-when.getTime())/36e5;
+      const meta=add(item,"div",s.publisher+(isNaN(hours)?"":" · "+ago(Math.max(0,hours))),"nmeta");
+      if(!isNaN(when.getTime()))meta.title=fmtIst(when)+" IST";
+      const chips=add(item,"div",undefined,"chips");
+      (s.companies||[]).forEach(c=>add(chips,"span",c,"sig sig-flat"));
+      (s.topics||[]).filter(x=>x!=="companies").forEach(x=>add(chips,"span",topicName[x]||x,"sig sig-na"));
+    });
+  });
+  const line=add(notes,"div",undefined,"srcnote");
+  line.append("Source: ");
+  if(m.source&&!href(line,m.source.url,m.source.name))line.append((m.source||{}).name||"news index");
+  line.append(". "+(m.notice||""));
+  if(m.status==="partial")add(notes,"div","Some news questions failed in this refresh, so the list may be incomplete.","srcnote warn");
 }
 
 /* ---------- official history: one small chart per series, each with its own scale ---------- */
@@ -647,6 +858,135 @@ function drawChart(host,points,unit,label){
     if(k){e.preventDefault();show(current+k*(e.shiftKey?10:1))}
   });
 }
+const SERIES_VARS=["--series-1","--series-2"];
+const INFLATION_TITLES={cpi:"Consumer prices (CPI)",pce:"PCE price index (the Fed’s inflation gauge)"};
+const REFERENCE={value:2,label:"2% reference"};
+function drawLines(host,list,unit,label,ref){
+  const W=560,HT=230,L=46,R=46,T=12,B=26;
+  let x0=Infinity,x1=-Infinity,lo=Infinity,hi=-Infinity;
+  for(const s of list)for(const p of s.points){
+    if(p.t<x0)x0=p.t;if(p.t>x1)x1=p.t;if(p.v<lo)lo=p.v;if(p.v>hi)hi=p.v;
+  }
+  if(ref){lo=Math.min(lo,ref.value);hi=Math.max(hi,ref.value)}
+  if(lo===hi){lo-=1;hi+=1}
+  const{ticks,step}=niceTicks(lo,hi,4);
+  const yMin=Math.min(lo,ticks[0]),yMax=Math.max(hi,ticks[ticks.length-1]),dec=Math.min(2,decimalsFor(step));
+  const X=t=>L+(W-L-R)*((t-x0)/((x1-x0)||1)),Y=v=>T+(HT-T-B)*(1-(v-yMin)/((yMax-yMin)||1));
+  const ends=list.map(s=>s.points[s.points.length-1]);
+  const s=svg(host,"svg",{viewBox:"0 0 "+W+" "+HT,role:"img",tabindex:"0","aria-label":label+", line chart from "+
+    fmtMonth(x0)+" to "+fmtMonth(x1)+". "+list.map((q,i)=>q.name+" latest "+fmtValue(ends[i].v,unit,1)).join(", ")+
+    ". Use the left and right arrow keys to read values."});
+  for(const t of ticks){
+    const y=Y(t);
+    svg(s,"line",{x1:L,x2:W-R,y1:y,y2:y,class:"grid"});
+    svg(s,"text",{x:L-6,y:y+3.5,"text-anchor":"end",class:"ax"}).textContent=fmtValue(t,unit,dec);
+  }
+  const years=[],y0=new Date(x0).getUTCFullYear(),y1=new Date(x1).getUTCFullYear();
+  if(x1-x0>2*365*DAY){for(let y=y0+1;y<=y1;y++){const t=Date.UTC(y,0,1);if(t>x0&&t<x1)years.push([t,String(y)])}}
+  else years.push([x0,fmtMonth(x0)],[x1,fmtMonth(x1)]);
+  years.forEach(([t,text],i)=>svg(s,"text",{x:X(t),y:HT-6,"text-anchor":years.length===2&&i===0?"start":years.length===2?"end":"middle",class:"ax"}).textContent=text);
+  if(ref){
+    svg(s,"line",{x1:L,x2:W-R,y1:Y(ref.value),y2:Y(ref.value),class:"ref"});
+    svg(s,"text",{x:L+4,y:Y(ref.value)-4,class:"reflabel"}).textContent=ref.label;
+  }
+  list.forEach((q,i)=>{
+    const d=q.points.map((p,k)=>(k?"L":"M")+X(p.t).toFixed(1)+" "+Y(p.v).toFixed(1)).join("");
+    svg(s,"path",{d:d,class:"mline",style:"stroke:var("+SERIES_VARS[i]+")"});
+  });
+  list.forEach((q,i)=>svg(s,"circle",{cx:X(ends[i].t).toFixed(1),cy:Y(ends[i].v).toFixed(1),r:4,class:"dot2",style:"fill:var("+SERIES_VARS[i]+")"}));
+  // Direct end labels only where they do not collide; the legend above always carries the values.
+  const ys=ends.map(p=>Y(p.v));
+  if(list.length<2||Math.min(...ys.map((y,i)=>i?Math.abs(y-ys[i-1]):99))>=13)
+    ends.forEach((p,i)=>svg(s,"text",{x:X(p.t)+9,y:Y(p.v)+4,class:"ax",style:"fill:var(--ink)"}).textContent=fmtValue(p.v,unit,1));
+  const times=[...new Set(list.flatMap(q=>q.points.map(p=>p.t)))].sort((a,b)=>a-b);
+  const maps=list.map(q=>new Map(q.points.map(p=>[p.t,p.v])));
+  const cross=svg(s,"g",{visibility:"hidden"});
+  const vline=svg(cross,"line",{y1:T,y2:HT-B,class:"cross"});
+  const vdots=list.map((q,i)=>svg(cross,"circle",{r:4,class:"dot2",style:"fill:var("+SERIES_VARS[i]+")"}));
+  const tip=add(host,"div",undefined,"tip");tip.hidden=true;
+  let current=times.length-1;
+  function show(i){
+    current=Math.max(0,Math.min(times.length-1,i));
+    const t=times[current],px=X(t);let top=Infinity;
+    cross.setAttribute("visibility","visible");
+    vline.setAttribute("x1",px);vline.setAttribute("x2",px);
+    tip.hidden=false;tip.textContent="";
+    add(tip,"span",fmtMonth(t));
+    list.forEach((q,k)=>{
+      const v=maps[k].get(t);
+      if(v===undefined){vdots[k].setAttribute("visibility","hidden");return}
+      const py=Y(v);top=Math.min(top,py);
+      vdots[k].setAttribute("visibility","visible");vdots[k].setAttribute("cx",px);vdots[k].setAttribute("cy",py);
+      const row=add(tip,"div",undefined,"row"),key=add(row,"i");key.style.background="var("+SERIES_VARS[k]+")";
+      add(row,"b",fmtValue(v,unit,2));add(row,"em",q.name);
+    });
+    const r=s.getBoundingClientRect();
+    tip.style.left=Math.min(Math.max(px/W*r.width,84),Math.max(84,host.clientWidth-84))+"px";
+    tip.style.top=((isFinite(top)?top:HT/2)/HT*r.height)+"px";
+  }
+  function hide(){cross.setAttribute("visibility","hidden");tip.hidden=true}
+  s.addEventListener("pointermove",e=>{
+    const r=s.getBoundingClientRect(),t=x0+((e.clientX-r.left)/r.width*W-L)/(W-L-R)*(x1-x0);
+    let a=0,b=times.length-1;
+    while(b-a>1){const m=(a+b)>>1;if(times[m]<t)a=m;else b=m}
+    show(Math.abs(times[a]-t)<=Math.abs(times[b]-t)?a:b);
+  });
+  s.addEventListener("pointerleave",hide);
+  s.addEventListener("blur",hide);
+  s.addEventListener("focus",()=>show(current));
+  s.addEventListener("keydown",e=>{
+    const k=e.key==="ArrowLeft"?-1:e.key==="ArrowRight"?1:0;
+    if(k){e.preventDefault();show(current+k*(e.shiftKey?6:1))}
+  });
+}
+function inflationCard(grid,group,metas,days){
+  const card=add(grid,"article",undefined,"hcard");
+  add(card,"h4",(INFLATION_TITLES[group]||group)+": change from a year earlier");
+  const list=[],missing=[];
+  for(const meta of metas.slice().sort((a,b)=>/CORE/.test(a.id)-/CORE/.test(b.id))){
+    const rec=H.data[meta.id];
+    if(rec&&rec.points.length>=2)list.push({meta,name:meta.line_name||meta.title||meta.id,points:rec.points});
+    else missing.push(meta);
+  }
+  add(card,"div","monthly · percent · "+(metas[0]&&metas[0].provider||""),"meta");
+  if(!list.length){
+    problemNote(card,"This inflation series could not be downloaded yet. It is tried again at every refresh.",
+      (metas[0]&&metas[0].last_error)||undefined);
+    return;
+  }
+  const lastT=Math.max(...list.map(q=>q.points[q.points.length-1].t));
+  const cut=days?lastT-days*DAY:-Infinity;
+  list.forEach(q=>{const f=q.points.filter(p=>p.t>=cut);q.points=f.length>=2?f:q.points.slice(-2)});
+  const keys=add(card,"div",undefined,"lkeys");
+  list.forEach((q,i)=>{
+    const last=q.points[q.points.length-1],k=add(keys,"span",undefined,"lkey");
+    add(k,"i").style.background="var("+SERIES_VARS[i]+")";
+    add(k,"b",fmtValue(last.v,"percent",1));add(k,"span",q.name+" · "+fmtMonth(last.t));
+  });
+  drawLines(add(card,"div",undefined,"chart"),list,"percent",(INFLATION_TITLES[group]||group)+" change from a year earlier",REFERENCE);
+  add(card,"p","Grey line: a 2% reference. The Fed’s own 2% goal is measured on the PCE price index.","hnote");
+  for(const meta of missing)problemNote(card,(meta.line_name||meta.id)+" could not be downloaded yet; it is tried again at every refresh.",meta.last_error);
+  for(const meta of list.map(q=>q.meta))if(meta.status==="kept_previous")
+    problemNote(card,"Today’s download of “"+(meta.line_name||meta.id)+"” failed, so this shows the last good data.",meta.last_error);
+  const det=add(card,"details",undefined,"tview");
+  add(det,"summary","Table view and download");
+  const table=add(add(det,"div",undefined,"scroller"),"table");
+  const tr=add(add(table,"thead"),"tr");
+  ["Month",...list.map(q=>q.name),"Public from (est.)"].forEach(x=>add(tr,"th",x));
+  const body=add(table,"tbody");
+  const maps=list.map(q=>new Map(q.points.map(p=>[p.t,p])));
+  const months=[...new Set(list.flatMap(q=>q.points.map(p=>p.t)))].sort((a,b)=>b-a).slice(0,12);
+  for(const t of months){
+    const row=add(body,"tr");add(row,"td",fmtMonth(t));
+    maps.forEach(m=>add(row,"td",m.has(t)?fmtValue(m.get(t).v,"percent",2):"—"));
+    const first=maps.find(m=>m.has(t));add(row,"td",(first&&first.get(t).avail)||"—");
+  }
+  list.forEach(q=>{
+    const a=add(det,"a","Download the full CSV: "+q.name+" ("+q.meta.rows+" rows)");
+    a.href="history/v1/"+q.meta.file;a.setAttribute("download","");a.style.display="block";
+  });
+  add(det,"p","Calculated here as the index divided by its level a year earlier, minus one, from FRED. Not seasonally adjusted for CPI; seasonally adjusted for PCE. Each value also has an estimated “public from” date.","hnote");
+}
 function tableView(card,meta,pts){
   const det=add(card,"details",undefined,"tview");
   add(det,"summary","Table view and download");
@@ -694,6 +1034,14 @@ function historyCard(grid,meta,days){
 function renderHistory(){
   const body=$("history-body");body.textContent="";
   const days=(RANGES.find(r=>r[0]===H.range)||RANGES[2])[2],placed=new Set();
+  const inflation=H.manifest.series.filter(s=>s.method==="year_on_year_percent");
+  if(inflation.length){
+    inflation.forEach(s=>placed.add(s.id));
+    add(body,"h3","Inflation: change from a year earlier (CPI and PCE)","hgroup");
+    const grid=add(body,"div",undefined,"hgrid two"),groups={};
+    inflation.forEach(s=>(groups[s.group||s.id]??=[]).push(s));
+    for(const[g,metas] of Object.entries(groups))inflationCard(grid,g,metas,days);
+  }
   for(const[title,test] of HG){
     const entries=H.manifest.series.filter(s=>test(s.id));
     if(!entries.length)continue;
@@ -738,7 +1086,7 @@ async function loadHistory(){
         H.data[s.id]=pointsFrom(parseCsv(await r.text()),s.id.startsWith("CFTC_TFF_")?"cftc":"plain");
       }catch(e){H.data[s.id]={points:[],error:String(e)}}
     }));
-    note.textContent="Official data only (FRED, US Treasury, CFTC) from "+fmtDate(Date.parse(manifest.start_date+"T00:00:00Z"))+
+    note.textContent="Official data only (FRED, US Treasury, CFTC; inflation changes are calculated here from FRED price indexes) from "+fmtDate(Date.parse(manifest.start_date+"T00:00:00Z"))+
       ". No price data. History updated "+fmtIst(new Date(manifest.generated_at_utc))+" IST. Every value also has an estimated “public from” date, so a backtest never uses a number before it was known. Values are the current vintage; later revisions are not tracked.";
     renderFilters();renderHistory();
   }catch(e){
@@ -746,6 +1094,56 @@ async function loadHistory(){
     add(note,"span","History has not been loaded yet. Open ");
     href(note,LOAD_HISTORY_URL,"Load official history");
     add(note,"span"," on GitHub, press Run workflow, wait a few minutes, then reload this page.");
+  }
+}
+
+const FRED_WORDS={ok:"read live",unavailable:"could not be read this refresh",not_configured:"not connected (no FRED key)"};
+function renderHealth(h,feed){
+  const box=$("healthbox");box.textContent="";
+  if(!h){box.textContent="Detailed health report unavailable. Last visible feed: "+feed.generated_at_utc;return}
+  add(box,"div","Status: "+h.status+" | Current market price proxies: "+
+    h.price_proxies_current+"/"+h.items_configured+
+    " | Official macro series: "+(h.macro_series_current ?? "unknown")+" current / "+h.macro_series_available+" available"+
+    " | Unavailable items: "+(h.missing||[]).join(", ")+
+    " | Most recent publication: "+h.as_of_ist+
+    (h.run_slot?" | Run type: "+h.run_slot:"")+
+    (h.official_source_problems?" | Official-source problems this run: "+h.official_source_problems:""));
+  const list=add(box,"ul",undefined,"hnotes");
+  const note=(text,warn)=>add(list,"li",text,warn?"warn":"");
+  const rg=h.regime;
+  if(rg&&rg.status==="ok")note("Risk-on / risk-off banner: "+rg.checks_with_data.week+" of "+rg.checks_total+
+    " checks had data for the week and "+rg.checks_with_data.month+" for the month.");
+  else if(rg&&rg.status==="not_enough_data")note("Risk-on / risk-off banner: too few checks had data to read the mood.",true);
+  else note("Risk-on / risk-off banner: not calculated in this refresh.",true);
+  const cal=h.calendar;
+  if(cal&&cal.status&&cal.status!=="not_available"){
+    const fred=(cal.fred||{}).status;
+    note("Calendar: "+cal.events+" upcoming dates listed. FRED release calendar: "+(FRED_WORDS[fred]||fred||"unknown")+".",fred!=="ok");
+    (cal.advisories||[]).forEach(a=>note(a,true));
+  }else note("Calendar: not built in this refresh.",true);
+  const mn=h.market_news;
+  if(mn&&mn.status==="ok")note("Market news: "+mn.kept+" headlines kept ("+mn.company_stories+" about watchlist companies); "+
+    mn.queries_answered+" of "+mn.queries_asked+" news questions answered.");
+  else if(mn&&mn.status==="partial")note("Market news: "+mn.kept+" headlines kept, but only "+mn.queries_answered+" of "+
+    mn.queries_asked+" news questions were answered.",true);
+  else if(mn&&mn.status==="unavailable")note("Market news: the news source could not be reached in this refresh"+
+    ((mn.errors||[]).length?" ("+mn.errors[0]+")":"")+".",true);
+  else if(mn&&mn.status==="disabled")note("Market news: switched off in config/market_news.yaml.");
+  else note("Market news: not built in this refresh.",true);
+  if(mn)(mn.advisories||[]).forEach(a=>note(a,true));
+  if(mn&&mn.status==="partial")(mn.errors||[]).slice(0,2).forEach(e=>note("News question problem: "+e,true));
+  const ai=h.ai_classification;
+  if(ai){
+    if(!ai.model_configured)note("Headline tagging: no AI key is connected, so simple rules were used.",true);
+    else note("Headline tagging: "+ai.model_classified+" headlines tagged by AI ("+((ai.providers_used||[]).join(", ")||"none")+
+      "), "+ai.rule_fallback+" by simple rules.",ai.model_classified===0);
+  }
+  const es=h.executive_summary;
+  if(es){
+    if(es.method==="ai_validated")note("Executive summary: written by AI and it passed the safety checks.");
+    else if(!es.ai_configured)note("Executive summary: rule-based, because no AI key is connected.",true);
+    else note("Executive summary: rule-based, because the AI answer could not be used"+
+      ((es.reasons||[]).length?" ("+es.reasons.join("; ")+")":"")+".",true);
   }
 }
 
@@ -760,23 +1158,18 @@ async function start(){
     $("status").textContent="As of "+feed.as_of_ist+" | "+feed.items.length+
       " tracked proxies | health: "+feed.health.status+
       " | observational data may be delayed and are not net fund flows.";
+    renderRegime(feed);
     renderSummary(feed);
+    renderEvents(feed);
     renderFlow(feed);
     renderGroups(feed.items);
     renderRotation(feed.items);
     renderNews(feed.drivers);
+    renderMarketNews(feed);
     renderMacro(feed.macro);
     renderAdvanced(feed);
     const h=await fetch("status.json",{cache:"no-store"}).then(x=>x.ok?x.json():null).catch(()=>null);
-    $("healthbox").textContent=h?
-      "Status: "+h.status+" | Current market price proxies: "+
-      h.price_proxies_current+"/"+h.items_configured+
-      " | Official macro series: "+(h.macro_series_current ?? "unknown")+" current / "+h.macro_series_available+" available"+
-      " | Unavailable items: "+(h.missing||[]).join(", ")+
-      " | Most recent publication: "+h.as_of_ist+
-      (h.run_slot?" | Run type: "+h.run_slot:"")+
-      (h.official_source_problems?" | Official-source problems this run: "+h.official_source_problems:""):
-      "Detailed health report unavailable. Last visible feed: "+feed.generated_at_utc;
+    renderHealth(h,feed);
     loadHistory();
   }catch(e){
     if(!bannerShown)renderFreshness(null);

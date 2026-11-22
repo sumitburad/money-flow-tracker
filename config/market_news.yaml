@@ -1,0 +1,95 @@
+version: 1
+# Market and company news (headlines beyond the Fed and ECB).
+#
+# Why: so the executive summary can explain stories such as a chip company's results.
+# Where from: GDELT, a free public news index (no key needed). Only the headline, the
+# publisher's name, a link and the time are kept. No article text is stored or shown.
+# Only the publishers listed below are used; everything else is dropped.
+# Nothing here can stop the daily refresh: if the news source is down the dashboard says so.
+# Set "enabled" to false to switch the whole feature off.
+
+enabled: true
+
+source:
+  id: gdelt_doc_2
+  name: "GDELT news index"
+  url: "https://api.gdeltproject.org/api/v2/doc/doc"      # what the program calls
+  home_page: "https://www.gdeltproject.org/"               # what people can open
+  timespan: "48h"           # how far back to look
+  max_records: 100          # headlines asked for per question (GDELT allows up to 250)
+  sort: "hybridrel"         # most relevant first; use "datedesc" for newest first
+  query_suffix: ""          # optional extra words added to every question, e.g. "sourcelang:english"
+  pause_seconds: 5.5        # GDELT asks for at most one request every 5 seconds
+  max_queries: 10           # hard cap on questions per refresh
+  timeout_seconds: [6, 25]  # connect, read
+
+limits:
+  max_stories: 36           # headlines kept in total
+  max_company_stories: 14   # of which at most this many are about a watchlist company
+  max_per_publisher: 6      # so one publisher cannot fill the page
+  max_age_hours: 72         # older headlines are dropped
+  max_title_chars: 220
+
+# Only these publishers are used. A link must point to one of these websites.
+publishers:
+  - {domain: reuters.com, name: "Reuters"}
+  - {domain: apnews.com, name: "Associated Press"}
+  - {domain: cnbc.com, name: "CNBC"}
+  - {domain: bloomberg.com, name: "Bloomberg"}
+  - {domain: wsj.com, name: "The Wall Street Journal"}
+  - {domain: ft.com, name: "Financial Times"}
+  - {domain: marketwatch.com, name: "MarketWatch"}
+  - {domain: barrons.com, name: "Barron's"}
+  - {domain: economictimes.indiatimes.com, name: "The Economic Times"}
+  - {domain: livemint.com, name: "Mint"}
+  - {domain: moneycontrol.com, name: "Moneycontrol"}
+  - {domain: business-standard.com, name: "Business Standard"}
+  - {domain: thehindubusinessline.com, name: "BusinessLine"}
+  - {domain: financialexpress.com, name: "The Financial Express"}
+
+# Each theme is one question to the news index. Use plain words, "quoted phrases" and
+# (a OR b) groups. Avoid words shorter than three letters.
+themes:
+  - id: us_markets
+    name: "US markets"
+    query: '("stock market" OR "Wall Street" OR Nasdaq OR "Dow Jones")'
+  - id: india_markets
+    name: "India markets"
+    query: '(Sensex OR Nifty OR "Dalal Street" OR "Indian stocks")'
+  - id: rates_inflation
+    name: "Rates and inflation"
+    query: '("Federal Reserve" OR "Treasury yields" OR "interest rates" OR inflation)'
+  - id: ai_chips
+    name: "AI and chips"
+    query: '(Nvidia OR semiconductor OR "chip stocks" OR "artificial intelligence")'
+  - id: commodities_fx
+    name: "Commodities and currencies"
+    query: '("oil prices" OR "gold prices" OR "copper prices" OR "US dollar")'
+  - id: crypto
+    name: "Crypto"
+    query: '(bitcoin OR ethereum OR cryptocurrency)'
+
+# Companies whose results and news can move a market. A headline counts as a company
+# story only when the company's name appears in the headline itself.
+company_query_size: 8       # names asked about per question
+companies:
+  - {name: "Micron", aliases: ["Micron Technology"]}
+  - {name: "Nvidia"}
+  - {name: "AMD", aliases: ["Advanced Micro Devices"]}
+  - {name: "Intel"}
+  - {name: "TSMC", aliases: ["Taiwan Semiconductor"]}
+  - {name: "Broadcom"}
+  - {name: "Apple"}
+  - {name: "Microsoft"}
+  - {name: "Alphabet", aliases: ["Google"]}
+  - {name: "Amazon"}
+  - {name: "Meta", aliases: ["Meta Platforms", "Facebook"]}
+  - {name: "Tesla"}
+  - {name: "Oracle"}
+  - {name: "JPMorgan", aliases: ["JPMorgan Chase"]}
+  - {name: "Goldman Sachs"}
+  - {name: "Reliance", aliases: ["Reliance Industries"]}
+  - {name: "TCS", aliases: ["Tata Consultancy Services"]}
+  - {name: "Infosys"}
+  - {name: "HDFC Bank"}
+  - {name: "ICICI Bank"}
