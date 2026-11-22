@@ -50,3 +50,20 @@ def test_valid_model_is_accepted_but_direction_remains_unconfirmed():
     assert tagged[0]["classification"]["classifier"]=="validated_model_json"
     assert h["model_classified"]==1
     assert "sample-secret" not in str(tagged)
+
+
+def test_model_calls_are_spaced_out_for_the_free_token_limit():
+    class R:
+        content=b"{}"
+        def raise_for_status(self): pass
+        def json(self): return {"choices":[{"message":{"content":"not json"}}]}
+    class H:
+        def post(self,*a,**k): return R()
+    waits=[]
+    heads=[{**news(),"headline_id":"h%d"%i} for i in range(3)]
+    classify_headlines(heads,[{"name":"S&P 500"}],http=H(),env={"GROQ_API_KEY":"k"*12},
+                       pace_seconds=8,sleep=waits.append)
+    assert waits==[8,8]                      # nothing before the first call
+    waits.clear()
+    classify_headlines(heads,[{"name":"S&P 500"}],http=H(),env={"GROQ_API_KEY":"k"*12},sleep=waits.append)
+    assert waits==[]                         # a stand-in connection is never slowed down

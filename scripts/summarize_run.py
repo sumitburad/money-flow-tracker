@@ -37,6 +37,15 @@ def build(status, feed):
         lines.append("- **Behind on dates:** " + ", ".join(status["macro_series_stale"]))
     lines.append("- **FRED connection:** %d via your free key, %d via the public page" % (
         paths.get("fred_api", 0), paths.get("fred_csv", 0)))
+    flow = status.get("flow_windows") or {}
+    if flow.get("items_with_signal") is not None:
+        lines.append("- **Day/week/month money-flow signals:** %s of %s items have a volume signal" % (
+            flow.get("items_with_signal"), flow.get("items_in_rotation")))
+    summary = (status.get("executive_summary") or {}).get("method")
+    if summary:
+        lines.append("- **Executive summary:** " + {
+            "ai_validated": "written by AI and rule-checked",
+            "rules_only": "rule-based (no AI answer was used)"}.get(summary, summary))
     problems = status.get("official_source_problems", 0)
     if problems:
         lines.append("- **Official-source problems this run:** %d (a backup run tries again later)" % problems)

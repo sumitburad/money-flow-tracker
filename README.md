@@ -28,13 +28,23 @@ Each instrument contains a stable \`id\`, \`symbol\`, \`group\`, \`region\`, \`c
 
 ## Official history (R-1)
 
-`data/history/v1/` holds official-source history from **2021-11-22** (approved by the owner): FRED series (US 2Y and 10Y yields, overnight reverse repo, broad dollar index, INR per USD, Fed, ECB and BOJ balance sheets, US M2, Treasury General Account), the US Treasury par yield curve (3M, 2Y, 10Y, 30Y) and CFTC asset-manager futures positions. **No price data of any kind** (no OHLCV, no quotes) is fetched or written; the Build side owns prices.
+`data/history/v1/` holds official-source history from **2021-11-22** (approved by the owner): FRED series (US 2Y and 10Y yields, overnight reverse repo, broad dollar index, INR per USD, Fed, ECB and BOJ balance sheets, US M2, Treasury General Account, effective federal funds rate, 10-year minus 2-year yield-curve slope, 10-year breakeven inflation and the unemployment rate; run **Load official history** once to pick up the four added on 2026-11-22), the US Treasury par yield curve (3M, 2Y, 10Y, 30Y) and CFTC asset-manager futures positions. **No price data of any kind** (no OHLCV, no quotes) is fetched or written; the Build side owns prices.
 
 - Files are plain CSV: `observation_date,value,available_from_estimate`. CFTC files use `report_date,contract,asset_mgr_long,asset_mgr_short,asset_mgr_net,open_interest,available_from_estimate`. `manifest.json` lists every series with source, row count, first and last date, how it was fetched and its status (`ok`, `kept_previous`, `missing`, `no_matching_contract`).
 - `available_from_estimate` is a conservative publication-lag guess, not a true vintage date. Values are the **current vintage**; later revisions are not tracked. A backtest must filter on this column and never on the observation date.
 - Built by `scripts/backfill_official.py`, loaded in one click by the **Load official history** workflow, and topped up by the daily refresh (`--mode update`). A failed series keeps its previous good file. `config/history.yaml` sets the start date, the series and the lag rules.
 - `cftc/contracts_seen.json` lists every contract name CFTC returned. If a market shows `no_matching_contract`, correct `CFTC_MARKETS` in `backend/advanced_sources.py` using that list.
 - Copies are mirrored to `docs/history/v1` and `frontend/history/v1` for the dashboard.
+
+## Money-flow windows, rotation and executive summary (2026-11-22)
+
+Everything here is additive: the feed schema stays `1.0`, the six-family labels are unchanged, and only categories are published (no price, volume or percentage).
+
+- **Per-item flow windows** (`flow_windows` on every item): a day, week and month signal from the rule *price up and volume up = inflow; price down and volume up = outflow; price up and volume down = inflow_fading; price down and volume down = outflow_fading; flat = unclear; no volume = not_available*, plus a `trend` (improving, weakening, steady, mixed) read from month to week to day. The windows compare the latest 1, 5 and 20 sessions with the equal period before. Settings: `config/flow_windows.yaml`. Code: `backend/flow_windows.py`. Rules: `config/label_rules.md`.
+- **Rotation** (top-level `rotation`): the tracked items grouped into buckets (markets, sectors, size and style, bonds, currencies, metals, energy, crypto, real estate). Each bucket gets a verdict per window (inflow_led, outflow_led, mixed, not_enough_data), a trend, and the items moving into or out of it. Currencies show no verdict because spot currency data has no volume.
+- **Executive summary** (top-level `executive_summary`): a short dashboard text written by a free-tier model (Groq, then OpenRouter) from a digest of categories and names only, validated by code, or written by rules if no model answer passes. It is labelled `ai_validated` or `rules_only`, is always marked for human review, and never sets a market label (`backend/exec_summary.py`).
+- Volume is a participation proxy, not a measured fund flow. The 23 research proxies added on 2026-11-22 (more country, sector, bond, currency, gold and silver ETFs, and eight NSE ETFs) need live checks; the dashboard's Data quality box lists any that return nothing.
+- Links and steps for every free provider and key: `docs/CONNECT_DATA_PROVIDERS.md`.
 
 ## Reliability
 
@@ -49,9 +59,9 @@ Each instrument contains a stable \`id\`, \`symbol\`, \`group\`, \`region\`, \`c
 - Research-only, existing unofficial price interface: yfinance. Data availability is best effort, provider terms may restrict collection and redistribution, and published output excludes quotes. Unsupported/stale symbols stay present and receive \`not_available\` evidence.
 - Official macro: the FRED API when the optional `FRED_API_KEY` secret is set (a free key), otherwise the keyless FRED CSV; either way individual time series and raw response SHA-256. For 2Y/10Y U.S. Treasury yields only, a keyless DBnomics mirror of official Federal Reserve H.15 series is attempted on direct FRED failure. Macro collection continues when individual series fail. Source note: the original seven FRED CSV requests timed out in the first production run. For DGS2/DGS10 only, the source-coded keyless DBnomics Federal Reserve H.15 mirror is a traceable fallback; other fields remain unavailable rather than being silently imputed. Missing Indian mid/small-cap index-provider symbols were replaced with explicitly named, listed ETF proxies (MID150BEES.NS and SMALLADD.NS), not mislabeled as the original indices.
 - News: Fed and ECB official RSS headlines with source links. Headline direction remains unconfirmed until independently validated by actual market reactions.
-- \`config/universe.yaml\`: stable ID, region, group, symbol, currency, primary and fallback for 50 cross-asset research proxies. Symbols are candidates and need live provider checks.
+- \`config/universe.yaml\`: stable ID, region, group, symbol, currency, primary and fallback for 73 cross-asset research proxies (50 at launch, 23 added on 2026-11-22). Symbols are candidates and need live provider checks.
 - \`config/sources.yaml\`: source provenance and fallback declarations.
-- \`config/models.yaml\`: **template mode** initially. Optional model-based explanations are **not configured**; deterministic code always owns labels and numerical observations.
+- \`config/models.yaml\`: documents the optional free-tier AI helpers: news tagging (Groq, then OpenRouter) and the executive summary. Without keys they are off and rule-written text is shown, clearly labelled. Deterministic code always owns labels and numerical observations; a model never sets a label.
 
 The manual's wider source coverage (NSE/NSDL actual FPI-DII, CFTC positioning, sector constituent breadth, ECB/RBI/BOJ/PBOC monetary aggregates, verified release calendars) is tracked as outstanding, not silently synthesized. A volume participation proxy must **never** be interpreted as net investor fund flows.
 

@@ -1,0 +1,96 @@
+version: 1
+# Day / week / month money-flow check.
+#   "Inflow" = the price went UP while trading volume went UP (your rule).
+#   The mirror image is "outflow": price DOWN while volume went UP.
+# Only categories are published. No price or volume numbers leave the engine,
+# because the free price source (Yahoo) may not be redistributed.
+# Change a number here and the next refresh uses it; no code change is needed.
+
+windows:
+  day:
+    sessions: 1
+    label: "Day over day"
+    basis: "latest completed session compared with the one before"
+  week:
+    sessions: 5
+    label: "Week over week"
+    basis: "latest 5 sessions compared with the 5 before"
+  month:
+    sessions: 20
+    label: "Month over month"
+    basis: "latest 20 sessions compared with the 20 before"
+
+# Price: a move smaller than this share of the item's own usual move (its typical
+# daily swing over the lookback, scaled to the window) is treated as "flat".
+price_flat_band:
+  lookback_sessions: 60
+  fraction_of_typical_move: 0.25
+
+# Volume: the average volume of the latest window versus the window before.
+# A change smaller than this many percent is "flat" (not a real increase or decrease).
+volume_flat_band_pct:
+  day: 10
+  week: 5
+  month: 5
+
+# Instruments that are not investable money-flow candidates (no signal produced).
+excluded_asset_types: [risk]
+
+# A daily bar is used only once its session has finished (UTC time after which the
+# day's volume is complete). 24H markets never finish, so today's bar is skipped.
+# An item can override its market with a "session_market" key in universe.yaml.
+session_complete_after_utc:
+  US: "22:30"
+  IN: "10:30"
+  JP: "07:00"
+  HK: "08:30"
+  UK: "17:00"
+region_session_market:
+  IN: IN
+  JP: JP
+  HK: HK
+  CN: HK
+  UK: UK
+asset_type_session_market:
+  crypto: 24H
+default_session_market: US
+# How many weekdays older than today the newest usable bar may be.
+max_age_weekdays: 3
+
+# Group verdict: "inflow-led" when inflow beats outflow and at least this share of the
+# items that have a signal show inflow (same for outflow-led); otherwise "mixed".
+rotation:
+  min_assessed_members: 2
+  lead_share: 0.4
+
+# The rotation map. Each item appears in one bucket only. Order is display order.
+buckets:
+  - id: markets
+    name: "Country and regional markets"
+    members: [sp500, nasdaq100, nifty50, niftybees, nifty500, india_etf, japan, china, hongkong, taiwan, korea, europe, uk, brazil, em]
+  - id: sectors
+    name: "Equity sectors and themes"
+    members: [semis, ai_theme, us_technology, itbees, niftyit, us_financials, us_banks, bankbees, niftybank, psubnkbees, us_healthcare, pharmabees, us_energy, us_industrials, us_staples, us_consumer, us_utilities, us_materials, us_communications, consumbees, infrabees]
+  - id: size_style
+    name: "Size and style"
+    members: [niftymid, niftysmall, russell2000, us_growth, us_value]
+  - id: bonds
+    name: "Bonds and credit"
+    members: [us_treasury, us_short_treasury, us_tips, us_credit, us_highyield, em_bonds]
+  - id: currencies
+    name: "Currencies"
+    verdict: false
+    note: "One currency's inflow is another's outflow, so read each currency on its own; there is no single verdict. Spot pairs carry no volume, so the ETF versions give the signal."
+    members: [dollar_etf, euro_etf, yen_etf, pound_etf, dollar, usdinr, eurusd, usdjpy, usdcny, gbpusd]
+  - id: metals
+    name: "Metals"
+    members: [gold, gold_etf, goldbees, silver, silver_etf, copper, platinum]
+  - id: energy
+    name: "Energy commodities"
+    members: [brent, wti, naturalgas]
+  - id: crypto
+    name: "Crypto"
+    members: [bitcoin, ethereum]
+  - id: real_estate
+    name: "Real estate (REITs)"
+    members: [us_realestate, global_reit]
