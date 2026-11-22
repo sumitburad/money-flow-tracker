@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <meta name="color-scheme" content="light">
 <title>Global Money-Flow Monitor | Evidence Dashboard</title>
 <style>
@@ -38,6 +39,45 @@ small{color:#728394}
 .warn{color:#a03a2b;font-weight:600}
 footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec;padding-top:18px}
 @media(max-width:600px){header{padding:22px 16px}main{padding:14px}th,td{padding:7px}}
+/* --- freshness banner (status colour always comes with an icon and a word) --- */
+:root{--surface-1:#fff;--ink:#142331;--ink-2:#47596c;--ink-muted:#637484;--grid:#e1e0d9;--axis:#c3c2b7;
+ --series-1:#2a78d6;--good:#0ca30c;--warn:#fab219;--crit:#d03b3b}
+.fresh{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;background:#fff;border:1px solid #d8e2ea;border-left:6px solid var(--ink-muted);border-radius:12px;padding:13px 16px;margin-bottom:14px;font-size:14px}
+.fresh.ok{border-left-color:var(--good)}.fresh.late{border-left-color:var(--warn)}.fresh.stale{border-left-color:var(--crit)}
+.fresh .icon{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;background:var(--ink-muted);flex:none}
+.fresh.ok .icon{background:var(--good)}.fresh.late .icon{background:var(--warn);color:#0b0b0b}.fresh.stale .icon{background:var(--crit)}
+.fresh .msg{flex:1 1 260px}.fresh .msg strong{display:block;font-size:15px}.fresh .msg span{color:var(--ink-2);font-size:13px}
+.btn{display:inline-block;border:1px solid #145c90;border-radius:8px;padding:7px 13px;font-size:13px;font-weight:600;background:#fff;color:#145c90;cursor:pointer;font-family:inherit}
+.btn:hover{background:#eef5fa;text-decoration:none}
+/* --- official history (small multiples: one chart and one scale per series) --- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 18px}
+.filters .label{font-size:13px;color:var(--ink-2);margin-right:2px}
+.filters button{border:1px solid #d4e0e9;background:#fff;color:#123247;border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;font-family:inherit}
+.filters button[aria-pressed="true"]{background:#112e42;border-color:#112e42;color:#fff}
+.filters button:focus-visible,.btn:focus-visible,summary:focus-visible,svg:focus-visible{outline:2px solid #145c90;outline-offset:2px}
+.hgroup{margin:22px 0 10px;font-size:15px;color:#1c3445}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.hcard{background:var(--surface-1);border:1px solid #dae4e9;border-radius:11px;padding:14px 14px 10px;min-width:0}
+.hcard h4{font-size:14px;margin:0 0 2px;line-height:1.35}
+.hcard .meta{margin-bottom:4px}
+.hval{font-size:27px;font-weight:650;letter-spacing:-.02em;line-height:1.15;margin-top:4px}
+.hdelta{font-size:12px;color:var(--ink-2);margin-top:2px}
+.chart{position:relative;margin-top:8px}
+.chart svg{width:100%;height:auto;display:block;touch-action:pan-y;overflow:visible}
+.chart .grid{stroke:var(--grid);stroke-width:1}
+.chart .ax{font-size:10px;fill:var(--ink-muted)}
+.chart .line{fill:none;stroke:var(--series-1);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .area{fill:var(--series-1);fill-opacity:.1;stroke:none}
+.chart .dot{fill:var(--series-1);stroke:var(--surface-1);stroke-width:2}
+.chart .cross{stroke:var(--axis);stroke-width:1}
+.tip{position:absolute;pointer-events:none;background:#fff;border:1px solid #d4e0e9;border-radius:8px;padding:6px 9px;font-size:12px;box-shadow:0 4px 14px #0b1f3120;white-space:nowrap;transform:translate(-50%,calc(-100% - 12px));z-index:2}
+.tip strong{display:block;font-size:14px;color:var(--ink)}
+.tip span{color:var(--ink-muted);display:block}
+.tview{border-top:1px solid #ecf0f3;margin-top:10px;padding-top:8px}
+.tview table{font-size:12px}.tview th,.tview td{padding:5px 8px}
+.tview .scroller{max-height:240px;margin:8px 0}
+.hnote{font-size:12px;color:var(--ink-2);margin-top:6px}
+.hnote.warn{color:#a03a2b}
 </style>
 </head>
 <body>
@@ -46,6 +86,7 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   <p>Institutional research view • evidence before interpretation • no scores or rankings</p>
 </header>
 <main>
+  <div id="freshness" class="fresh" role="status" aria-live="polite">Checking when the data was last refreshed…</div>
   <div id="status" class="status" role="status">Loading source-checked observations…</div>
   <nav aria-label="Dashboard sections">
     <a href="#markets">Markets and sectors</a>
@@ -55,6 +96,7 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
     <a href="#institutions">Institutional flows</a>
     <a href="#positioning">CFTC positioning</a>
     <a href="#breadth">Breadth</a>
+    <a href="#history">Official history</a>
     <a href="#health">Data quality</a>
   </nav>
   <section id="markets"><h2>Asset and market flow map</h2>
@@ -83,6 +125,11 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   <section id="breadth"><h2>Market breadth proxies</h2>
     <p class="note">Relative equal-weight ETF performance is not the share of individual constituents advancing.</p>
     <div id="breadth-records" class="grid"></div>
+  </section>
+  <section id="history"><h2>Official history</h2>
+    <p class="note" id="history-note">Loading official history…</p>
+    <div class="filters" id="history-filters" hidden></div>
+    <div id="history-body"></div>
   </section>
   <section id="health"><h2>Data health and provenance</h2><div id="healthbox" class="status"></div></section>
   <footer>Public research information only, not an instruction to transact. Human approval required for publication under a personal or company identity. The underlying daily data feed is versioned at <a href="feed/v1/latest.json">feed/v1/latest.json</a>.</footer>
@@ -229,12 +276,306 @@ function renderAdvanced(feed){
     " explicit non-AI fallbacks. All impacts remain unconfirmed until verified. Human review required.";
 }
 
+/* ---------- freshness banner ---------- */
+const REPO="https://github.com/sumitburad/money-flow-tracker";
+const RUN_NOW_URL=REPO+"/actions/workflows/daily.yml";
+const LOAD_HISTORY_URL=REPO+"/actions/workflows/history.yml";
+function fmtIst(date){
+  return new Intl.DateTimeFormat("en-IN",{timeZone:"Asia/Kolkata",day:"2-digit",month:"short",
+    year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}).format(date);
+}
+function ago(hours){
+  if(hours<1)return Math.max(1,Math.round(hours*60))+" minutes ago";
+  if(hours<48)return Math.round(hours)+" hours ago";
+  return Math.round(hours/24)+" days ago";
+}
+function renderFreshness(iso){
+  const box=$("freshness");box.textContent="";
+  const when=iso?new Date(iso):null;
+  const known=when!==null&&!isNaN(when.getTime());
+  const hours=known?(Date.now()-when.getTime())/36e5:Infinity;
+  const level=!known?"stale":hours<=20?"ok":hours<=48?"late":"stale";
+  box.className="fresh "+level;
+  add(box,"span",{ok:"✓",late:"!",stale:"✕"}[level],"icon");
+  const msg=add(box,"div",undefined,"msg");
+  if(!known){
+    add(msg,"strong","Could not read the last refresh time");
+    add(msg,"span","The data file did not load. Press Refresh now, then reload this page in a few minutes.");
+  }else{
+    add(msg,"strong",{ok:"Fresh",late:"Late",stale:"Stale"}[level]+" — updated "+ago(hours));
+    add(msg,"span","Collected "+fmtIst(when)+" IST. "+(level==="ok"?
+      "The next refresh starts by itself.":"A scheduled refresh was missed. Press Refresh now."));
+  }
+  const a=href(box,RUN_NOW_URL,"Refresh now");if(a)a.className="btn";
+}
+
+/* ---------- official history: one small chart per series, each with its own scale ---------- */
+const HG=[
+  ["US interest rates (daily)",id=>/^(DGS|UST_PAR)/.test(id)],
+  ["Dollar and rupee (Federal Reserve H.10)",id=>["DTWEXBGS","DEXINUS"].includes(id)],
+  ["Central bank and money liquidity",id=>["WALCL","WTREGEN","RRPONTSYD","ECBASSETSW","JPNASSETS","M2SL"].includes(id)],
+  ["CFTC futures positioning (weekly)",id=>id.startsWith("CFTC_TFF_")]
+];
+const RANGES=[["1y","1 year",365],["3y","3 years",1095],["all","Since start",null]];
+const H={manifest:null,data:{},range:"all"};
+const DAY=864e5,NS="http://www.w3.org/2000/svg";
+function svg(parent,tag,attrs){
+  const e=document.createElementNS(NS,tag);
+  for(const [k,v] of Object.entries(attrs||{}))e.setAttribute(k,v);
+  parent.append(e);return e;
+}
+function parseCsv(text){
+  const rows=[];let row=[],cell="",quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(quoted){
+      if(c==='"'){if(text[i+1]==='"'){cell+='"';i++}else quoted=false}else cell+=c;
+    }else if(c==='"')quoted=true;
+    else if(c===","){row.push(cell);cell=""}
+    else if(c==="\n"){row.push(cell);rows.push(row);row=[];cell=""}
+    else if(c!=="\r")cell+=c;
+  }
+  if(cell!==""||row.length){row.push(cell);rows.push(row)}
+  return rows;
+}
+function pointsFrom(rows,kind){
+  const head=rows[0]||[],body=rows.slice(1).filter(r=>r.length>=2);
+  const make=(r,di,vi,ai)=>({t:Date.parse(r[di]+"T00:00:00Z"),v:r[vi]===""?NaN:Number(r[vi]),avail:r[ai]||""});
+  const clean=list=>list.filter(p=>isFinite(p.t)&&isFinite(p.v));
+  if(kind==="cftc"){
+    const ci=head.indexOf("contract"),vi=head.indexOf("asset_mgr_net"),di=head.indexOf("report_date"),ai=head.indexOf("available_from_estimate");
+    if(ci<0||vi<0||di<0)return{points:[],contract:null};
+    const by={};
+    for(const r of body)(by[r[ci]]??=[]).push(r);
+    let best=null;
+    for(const [name,list] of Object.entries(by))if(!best||list.length>best[1].length)best=[name,list];
+    return best?{contract:best[0],points:clean(best[1].map(r=>make(r,di,vi,ai)))}:{points:[],contract:null};
+  }
+  const di=head.indexOf("observation_date"),vi=head.indexOf("value"),ai=head.indexOf("available_from_estimate");
+  return{contract:null,points:di<0||vi<0?[]:clean(body.map(r=>make(r,di,vi,ai)))};
+}
+const MONEY={billions_usd:["$",1e9],millions_usd:["$",1e6],millions_eur:["€",1e6],hundred_million_yen:["¥",1e8]};
+const SCALES=[[1e12," tn"],[1e9," bn"],[1e6," mn"],[1,""]];
+function money(x,symbol,digits,fixed){
+  const a=Math.abs(x),pick=fixed||SCALES.find(s=>a>=s[0])||SCALES[3];
+  const body=pick[0]===1?Math.round(a).toLocaleString("en-US"):(a/pick[0]).toFixed(digits)+pick[1];
+  return (x<0?"-":"")+symbol+body;
+}
+function fmtValue(v,unit,digits,fixed){
+  const m=MONEY[unit];
+  if(m)return money(v*m[1],m[0],digits,fixed);
+  switch(unit){
+    case"percent":return v.toFixed(digits)+"%";
+    case"inr_per_usd":return"₹"+v.toFixed(digits);
+    case"contracts":return Math.round(v).toLocaleString("en-US");
+    default:return v.toFixed(digits);
+  }
+}
+function fmtDate(t){return new Date(t).toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"})}
+function fmtMonth(t){return new Date(t).toLocaleDateString("en-GB",{month:"short",year:"numeric",timeZone:"UTC"})}
+function deltaText(first,last,unit){
+  const d=last.v-first.v,arrow=d>0?"▲":d<0?"▼":"■",sign=d>0?"+":"";
+  if(unit==="percent")return arrow+" "+sign+d.toFixed(2)+" pp";
+  if(unit==="contracts")return arrow+" "+sign+Math.round(d).toLocaleString("en-US")+" contracts";
+  if(first.v===0)return arrow;
+  const pct=d/Math.abs(first.v)*100;
+  return arrow+" "+(pct>0?"+":"")+pct.toFixed(1)+"%";
+}
+function inRange(points,days){
+  if(!days)return points;
+  const cut=points[points.length-1].t-days*DAY,out=points.filter(p=>p.t>=cut);
+  return out.length>=2?out:points.slice(-2);
+}
+function decimalsFor(step){
+  for(let d=0;d<4;d++){const x=step*Math.pow(10,d);if(Math.abs(x-Math.round(x))<1e-6)return d}
+  return 3;
+}
+function niceTicks(lo,hi,n){
+  const span=(hi-lo)||1,raw=span/n,mag=Math.pow(10,Math.floor(Math.log10(raw)));
+  for(const most of [4,6]){
+    for(const m of [0.5,1,2,2.5,5,10]){
+      const step=m*mag;
+      if(step<raw*0.6)continue;
+      const ticks=[];
+      for(let v=Math.ceil(lo/step-1e-9)*step;v<=hi+step*1e-9;v+=step)ticks.push(Math.round(v/step)*step);
+      if(ticks.length>=2&&ticks.length<=most)return{ticks,step};
+    }
+  }
+  return{ticks:[lo,hi],step:span};
+}
+function drawChart(host,points,unit,label){
+  const W=320,HT=150,L=52,R=12,T=10,B=22;
+  const x0=points[0].t,x1=points[points.length-1].t,last=points[points.length-1];
+  let lo=Infinity,hi=-Infinity;
+  for(const p of points){if(p.v<lo)lo=p.v;if(p.v>hi)hi=p.v}
+  if(lo===hi){lo-=1;hi+=1}
+  const{ticks,step}=niceTicks(lo,hi,3);
+  const yMin=Math.min(lo,ticks[0]),yMax=Math.max(hi,ticks[ticks.length-1]);
+  const X=t=>L+(W-L-R)*((t-x0)/((x1-x0)||1)),Y=v=>T+(HT-T-B)*(1-(v-yMin)/((yMax-yMin)||1));
+  const m=MONEY[unit];
+  let fixed=null,dec=Math.min(2,decimalsFor(step));
+  if(m){
+    fixed=SCALES.find(s=>Math.max(Math.abs(lo),Math.abs(hi))*m[1]>=s[0])||SCALES[3];
+    dec=Math.min(3,decimalsFor(step*m[1]/fixed[0]));
+  }
+  const s=svg(host,"svg",{viewBox:"0 0 "+W+" "+HT,role:"img",tabindex:"0",
+    "aria-label":label+", line chart from "+fmtDate(x0)+" to "+fmtDate(x1)+". Latest "+
+      fmtValue(last.v,unit,2)+". Use the left and right arrow keys to read values."});
+  for(const t of ticks){
+    const y=Y(t);
+    svg(s,"line",{x1:L,x2:W-R,y1:y,y2:y,class:"grid"});
+    svg(s,"text",{x:L-6,y:y+3.5,"text-anchor":"end",class:"ax"}).textContent=fmtValue(t,unit,dec,fixed);
+  }
+  svg(s,"text",{x:L,y:HT-5,"text-anchor":"start",class:"ax"}).textContent=fmtMonth(x0);
+  svg(s,"text",{x:W-R,y:HT-5,"text-anchor":"end",class:"ax"}).textContent=fmtMonth(x1);
+  const d=points.map((p,i)=>(i?"L":"M")+X(p.t).toFixed(1)+" "+Y(p.v).toFixed(1)).join("");
+  svg(s,"path",{d:d+"L"+X(x1).toFixed(1)+" "+(HT-B)+"L"+X(x0).toFixed(1)+" "+(HT-B)+"Z",class:"area"});
+  svg(s,"path",{d:d,class:"line"});
+  svg(s,"circle",{cx:X(last.t).toFixed(1),cy:Y(last.v).toFixed(1),r:4,class:"dot"});
+  const cross=svg(s,"g",{visibility:"hidden"});
+  const vline=svg(cross,"line",{y1:T,y2:HT-B,class:"cross"});
+  const vdot=svg(cross,"circle",{r:4,class:"dot"});
+  const tip=add(host,"div",undefined,"tip");tip.hidden=true;
+  let current=points.length-1;
+  function show(i){
+    current=Math.max(0,Math.min(points.length-1,i));
+    const p=points[current],px=X(p.t),py=Y(p.v);
+    cross.setAttribute("visibility","visible");
+    vline.setAttribute("x1",px);vline.setAttribute("x2",px);
+    vdot.setAttribute("cx",px);vdot.setAttribute("cy",py);
+    tip.hidden=false;tip.textContent="";
+    add(tip,"strong",fmtValue(p.v,unit,2));
+    add(tip,"span",fmtDate(p.t));
+    if(p.avail)add(tip,"span","public from ≈ "+p.avail);
+    const r=s.getBoundingClientRect();
+    tip.style.left=Math.min(Math.max(px/W*r.width,72),Math.max(72,host.clientWidth-72))+"px";
+    tip.style.top=(py/HT*r.height)+"px";
+  }
+  function hide(){cross.setAttribute("visibility","hidden");tip.hidden=true}
+  s.addEventListener("pointermove",e=>{
+    const r=s.getBoundingClientRect(),t=x0+((e.clientX-r.left)/r.width*W-L)/(W-L-R)*(x1-x0);
+    let a=0,b=points.length-1;
+    while(b-a>1){const m=(a+b)>>1;if(points[m].t<t)a=m;else b=m}
+    show(Math.abs(points[a].t-t)<=Math.abs(points[b].t-t)?a:b);
+  });
+  s.addEventListener("pointerleave",hide);
+  s.addEventListener("blur",hide);
+  s.addEventListener("focus",()=>show(current));
+  s.addEventListener("keydown",e=>{
+    const k=e.key==="ArrowLeft"?-1:e.key==="ArrowRight"?1:0;
+    if(k){e.preventDefault();show(current+k*(e.shiftKey?10:1))}
+  });
+}
+function tableView(card,meta,pts){
+  const det=add(card,"details",undefined,"tview");
+  add(det,"summary","Table view and download");
+  const table=add(add(det,"div",undefined,"scroller"),"table");
+  const tr=add(add(table,"thead"),"tr");
+  ["Date","Value","Public from (est.)"].forEach(t=>add(tr,"th",t));
+  const body=add(table,"tbody");
+  for(const p of pts.slice(-12).reverse()){
+    const row=add(body,"tr");
+    add(row,"td",fmtDate(p.t));add(row,"td",fmtValue(p.v,meta.unit,2));add(row,"td",p.avail||"—");
+  }
+  const a=add(det,"a","Download the full CSV ("+meta.rows+" rows)");
+  a.href="history/v1/"+meta.file;a.setAttribute("download","");
+}
+function problemNote(card,text,detail){
+  add(card,"p","⚠ "+text,"hnote warn");
+  if(detail){
+    const d=add(card,"details",undefined,"tview");
+    add(d,"summary","Technical detail");
+    add(d,"p",detail,"hnote");
+  }
+}
+function historyCard(grid,meta,days){
+  const card=add(grid,"article",undefined,"hcard"),rec=H.data[meta.id];
+  add(card,"h4",meta.title||meta.id);
+  const bits=[meta.provider,meta.frequency,meta.unit&&meta.unit.replaceAll("_"," ")].filter(Boolean);
+  if(rec&&rec.contract)bits.push(rec.contract);
+  add(card,"div",bits.join(" · "),"meta");
+  if(!rec||rec.points.length<2){
+    const why={
+      no_matching_contract:"The CFTC data was downloaded, but this market’s name did not match the CFTC list, so nothing is shown yet. The real names are saved with the history files, so this is a small fix.",
+      missing:"This series could not be downloaded yet. It is tried again at every refresh."
+    }[meta.status]||"No data is available for this series yet.";
+    problemNote(card,why,meta.last_error||(rec&&rec.error)||meta.note);
+    return;
+  }
+  const pts=inRange(rec.points,days),first=pts[0],last=pts[pts.length-1];
+  add(card,"div",fmtValue(last.v,meta.unit,2),"hval");
+  add(card,"div",deltaText(first,last,meta.unit)+" since "+fmtDate(first.t)+" · latest "+fmtDate(last.t),"hdelta");
+  drawChart(add(card,"div",undefined,"chart"),pts,meta.unit,meta.title||meta.id);
+  if(meta.status==="kept_previous")
+    problemNote(card,"Today’s download failed, so this shows the last good data. It is tried again at every refresh.",meta.last_error);
+  tableView(card,meta,pts);
+}
+function renderHistory(){
+  const body=$("history-body");body.textContent="";
+  const days=(RANGES.find(r=>r[0]===H.range)||RANGES[2])[2],placed=new Set();
+  for(const[title,test] of HG){
+    const entries=H.manifest.series.filter(s=>test(s.id));
+    if(!entries.length)continue;
+    entries.forEach(s=>placed.add(s.id));
+    add(body,"h3",title,"hgroup");
+    const grid=add(body,"div",undefined,"hgrid");
+    entries.forEach(s=>historyCard(grid,s,days));
+  }
+  const rest=H.manifest.series.filter(s=>!placed.has(s.id));
+  if(rest.length){
+    add(body,"h3","Other official series","hgroup");
+    const grid=add(body,"div",undefined,"hgrid");
+    rest.forEach(s=>historyCard(grid,s,days));
+  }
+}
+function renderFilters(){
+  const box=$("history-filters");box.hidden=false;box.textContent="";
+  add(box,"span","Date range","label");
+  const buttons=RANGES.map(([key,text])=>{
+    const b=add(box,"button",text);b.type="button";b.dataset.range=key;
+    b.addEventListener("click",()=>{
+      H.range=key;
+      buttons.forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.range===key)));
+      renderHistory();
+    });
+    return b;
+  });
+  buttons.forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.range===H.range)));
+}
+async function loadHistory(){
+  const note=$("history-note");
+  try{
+    const res=await fetch("history/v1/manifest.json",{cache:"no-store"});
+    if(!res.ok)throw Error("history not loaded");
+    const manifest=await res.json();
+    if(manifest.schema!=="history-1.0"||!Array.isArray(manifest.series))throw Error("unsupported history file");
+    H.manifest=manifest;
+    await Promise.all(manifest.series.filter(s=>s.file&&(s.status==="ok"||s.status==="kept_previous")).map(async s=>{
+      try{
+        const r=await fetch("history/v1/"+s.file,{cache:"no-store"});
+        if(!r.ok)throw Error("HTTP "+r.status);
+        H.data[s.id]=pointsFrom(parseCsv(await r.text()),s.id.startsWith("CFTC_TFF_")?"cftc":"plain");
+      }catch(e){H.data[s.id]={points:[],error:String(e)}}
+    }));
+    note.textContent="Official data only (FRED, US Treasury, CFTC) from "+fmtDate(Date.parse(manifest.start_date+"T00:00:00Z"))+
+      ". No price data. History updated "+fmtIst(new Date(manifest.generated_at_utc))+" IST. Every value also has an estimated “public from” date, so a backtest never uses a number before it was known. Values are the current vintage; later revisions are not tracked.";
+    renderFilters();renderHistory();
+  }catch(e){
+    note.textContent="";
+    add(note,"span","History has not been loaded yet. Open ");
+    href(note,LOAD_HISTORY_URL,"Load official history");
+    add(note,"span"," on GitHub, press Run workflow, wait a few minutes, then reload this page.");
+  }
+}
+
 async function start(){
+  let bannerShown=false;
   try{
     const response=await fetch("feed/v1/latest.json",{cache:"no-store"});
     if(!response.ok)throw Error("Feed was not published yet");
     const feed=await response.json();
     if(feed.schema_version!=="1.0"||!Array.isArray(feed.items))throw Error("Unsupported feed schema");
+    renderFreshness(feed.generated_at_utc);bannerShown=true;
     $("status").textContent="As of "+feed.as_of_ist+" | "+feed.items.length+
       " tracked proxies | health: "+feed.health.status+
       " | observational data may be delayed and are not net fund flows.";
@@ -249,9 +590,14 @@ async function start(){
       h.price_proxies_current+"/"+h.items_configured+
       " | Official macro series: "+(h.macro_series_current ?? "unknown")+" current / "+h.macro_series_available+" available"+
       " | Unavailable items: "+(h.missing||[]).join(", ")+
-      " | Most recent publication: "+h.as_of_ist:
+      " | Most recent publication: "+h.as_of_ist+
+      (h.run_slot?" | Run type: "+h.run_slot:"")+
+      (h.official_source_problems?" | Official-source problems this run: "+h.official_source_problems:""):
       "Detailed health report unavailable. Last visible feed: "+feed.generated_at_utc;
+    loadHistory();
   }catch(e){
+    if(!bannerShown)renderFreshness(null);
+    loadHistory();
     $("status").textContent="Data unavailable. The previous result was not replaced. Check the GitHub Actions workflow and docs/status.json.";
     $("healthbox").textContent=String(e);
   }

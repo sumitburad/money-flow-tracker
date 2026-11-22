@@ -2,12 +2,15 @@
 
 A free-tier, scheduled, **read-only** public-market research monitor driven by the owner's 15 November 2026 build manual. This replaces the earlier score-based experiment. No ranking, composite conviction, portfolio recommendations or order execution is supported.
 
+**New here? Read `START_HERE.md`** (plain-language steps for the owner). Technical operation is in `docs/RUNBOOK.md`.
+
 ## Connected deployment
 
 - GitHub account: repository \`sumitburad/money-flow-tracker\`.
 - Automated checks: \`.github/workflows/tests.yml\` on PRs.
-- Research: \`.github/workflows/daily.yml\`, about **07:30 IST** and **19:00 IST** Monday–Saturday; \`workflow_dispatch\` is also available. GitHub schedules may be delayed. Merge or push to \`main\` automatically starts a bootstrap run.
-- Static dashboard: \`docs/index.html\` with \`docs/feed/v1/latest.json\`. For public hosted access, configure GitHub Pages to serve the **docs/** folder once. The GitHub connector cannot change repository Pages settings.
+- Research: `.github/workflows/daily.yml` runs at about **07:37 IST** and **19:07 IST** every day, with backup slots at **10:07 IST** and **21:37 IST** that only do work when the main run did not leave a complete snapshot. Each source is tried three times and the whole collection up to three times. `workflow_dispatch` (the **Run workflow** button) starts a run in one click. GitHub schedules may be delayed. A push or merge to `main` does not start a run.
+- History: `.github/workflows/history.yml` (**Load official history**, one click) loads `data/history/v1/`. See the section below.
+- Dashboard: `docs/index.html` with `docs/feed/v1/latest.json`. `scripts/sync_site.py` copies the page, feed, status and history files into `frontend/`, and Vercel deploys `main` automatically (the Vercel site requires Vercel sign-in). GitHub Pages is not used. The page shows a Fresh / Late / Stale banner from the feed's own collection time.
 - Executive text: \`briefs/YYYY-MM-DD/executive.md\` and \`reports/latest_report.md\`.
 - Review-only social drafts: \`briefs/YYYY-MM-DD/linkedin.txt\` and \`x_thread.txt\`.
 - Immutable date snapshots: \`data/labels/YYYY-MM-DD.json\`, \`data/news/YYYY-MM-DD.json\` and \`data/feed/v1/daily/YYYY-MM-DD.json\`.
@@ -17,14 +20,34 @@ A free-tier, scheduled, **read-only** public-market research monitor driven by t
 
 \`data/feed/v1/latest.json\` is a versioned, machine-readable research feed. A duplicate is copied to \`docs/feed/v1/latest.json\`. The contract lives in \`backend/feed_contract.py\`; downstream clients must call \`load_feed(path, max_age_hours=...)\` and reject stale, malformed or uncited signals.
 
+Each item also carries an optional `collected_at_utc` (when this system collected it), added 2026-11-22. The field is additive and the schema stays `1.0`; the `docs/status.json` health file additionally carries `run_slot`, `completed_at_utc`, `needs_retry` and `official_source_problems`.
+
 Each instrument contains a stable \`id\`, \`symbol\`, \`group\`, \`region\`, \`currency\`, \`label\`, \`tag\`, \`agreement\`, freshness and the full six-family cited evidence object. Official FRED values have a separate \`macro\` area with observation dates, fetch times, source links and raw-file hashes. Source publication dates and collection times are distinct.
 
 **The feed does not authorize paper or real orders.** It contains no broker account, INDmoney raw data, positions, credentials or raw unofficial-market OHLCV data. Trading backtests must continue to use independently licensed/authorized timestamped market histories, and guard against look-ahead bias. If a downstream system imports this feed, it should use **only records that were published and available by the simulated decision time**.
 
+## Official history (R-1)
+
+`data/history/v1/` holds official-source history from **2021-11-22** (approved by the owner): FRED series (US 2Y and 10Y yields, overnight reverse repo, broad dollar index, INR per USD, Fed, ECB and BOJ balance sheets, US M2, Treasury General Account), the US Treasury par yield curve (3M, 2Y, 10Y, 30Y) and CFTC asset-manager futures positions. **No price data of any kind** (no OHLCV, no quotes) is fetched or written; the Build side owns prices.
+
+- Files are plain CSV: `observation_date,value,available_from_estimate`. CFTC files use `report_date,contract,asset_mgr_long,asset_mgr_short,asset_mgr_net,open_interest,available_from_estimate`. `manifest.json` lists every series with source, row count, first and last date, how it was fetched and its status (`ok`, `kept_previous`, `missing`, `no_matching_contract`).
+- `available_from_estimate` is a conservative publication-lag guess, not a true vintage date. Values are the **current vintage**; later revisions are not tracked. A backtest must filter on this column and never on the observation date.
+- Built by `scripts/backfill_official.py`, loaded in one click by the **Load official history** workflow, and topped up by the daily refresh (`--mode update`). A failed series keeps its previous good file. `config/history.yaml` sets the start date, the series and the lag rules.
+- `cftc/contracts_seen.json` lists every contract name CFTC returned. If a market shows `no_matching_contract`, correct `CFTC_MARKETS` in `backend/advanced_sources.py` using that list.
+- Copies are mirrored to `docs/history/v1` and `frontend/history/v1` for the dashboard.
+
+## Reliability
+
+- Every web request goes through one shared client (`backend/net.py`): three tries with growing waits, `Retry-After` honoured, and a host is skipped for the rest of the run after two fully failed calls.
+- The workflow retries the whole collection up to three times, then validates the feed, tops up history, syncs the dashboard and pushes with its own retries.
+- Backup schedules run only if `docs/status.json` does not show a complete snapshot for that session (`scripts/should_run.py`).
+- Every run writes a plain-language summary to its run page (`scripts/summarize_run.py`).
+- Secrets live only in GitHub Actions secrets. They are redacted from error text and scrubbed from every JSON file written.
+
 ## Inputs, limits and alternatives
 
 - Research-only, existing unofficial price interface: yfinance. Data availability is best effort, provider terms may restrict collection and redistribution, and published output excludes quotes. Unsupported/stale symbols stay present and receive \`not_available\` evidence.
-- Official macro: keyless FRED CSV, individual time series and raw response SHA-256. For 2Y/10Y U.S. Treasury yields only, a keyless DBnomics mirror of official Federal Reserve H.15 series is attempted on direct FRED failure. Macro collection continues when individual series fail. Source note: the original seven FRED CSV requests timed out in the first production run. For DGS2/DGS10 only, the source-coded keyless DBnomics Federal Reserve H.15 mirror is a traceable fallback; other fields remain unavailable rather than being silently imputed. Missing Indian mid/small-cap index-provider symbols were replaced with explicitly named, listed ETF proxies (MID150BEES.NS and SMALLADD.NS), not mislabeled as the original indices.
+- Official macro: the FRED API when the optional `FRED_API_KEY` secret is set (a free key), otherwise the keyless FRED CSV; either way individual time series and raw response SHA-256. For 2Y/10Y U.S. Treasury yields only, a keyless DBnomics mirror of official Federal Reserve H.15 series is attempted on direct FRED failure. Macro collection continues when individual series fail. Source note: the original seven FRED CSV requests timed out in the first production run. For DGS2/DGS10 only, the source-coded keyless DBnomics Federal Reserve H.15 mirror is a traceable fallback; other fields remain unavailable rather than being silently imputed. Missing Indian mid/small-cap index-provider symbols were replaced with explicitly named, listed ETF proxies (MID150BEES.NS and SMALLADD.NS), not mislabeled as the original indices.
 - News: Fed and ECB official RSS headlines with source links. Headline direction remains unconfirmed until independently validated by actual market reactions.
 - \`config/universe.yaml\`: stable ID, region, group, symbol, currency, primary and fallback for 50 cross-asset research proxies. Symbols are candidates and need live provider checks.
 - \`config/sources.yaml\`: source provenance and fallback declarations.
@@ -39,6 +62,7 @@ python -m pip install -r backend/requirements.txt
 python -m pytest -q tests
 python -m backend.run_daily --sample 4
 python scripts/validate_feed.py data/feed/v1/latest.json
+python scripts/backfill_official.py --dry-run --out /tmp/history_preview   # history loader; writes nothing
 \`\`\`
 
 \`--sample\` is for a bounded smoke run; the scheduled job always covers the full configured universe. Current publishing requires at least one usable market proxy or official macro series. If all fail, the previous feed remains intact, a failure status is written and the workflow fails.

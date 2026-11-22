@@ -13,7 +13,9 @@ import gzip
 import re
 from datetime import date, datetime, timezone
 from pathlib import Path
-import requests
+import requests  # noqa: F401
+
+from backend.net import HTTP
 
 SERIES = {
     "WALCL": ("fed-balance-sheet", "weekly"),
@@ -65,7 +67,7 @@ def parse_m0_csv(raw, series_id, run_day):
     return [{"observation_date": d, "value": n} for d,n in sorted(rows.items())[-20:]]
 
 
-def fetch_m0_fred_series(series_id,root,run_day,*,http=requests):
+def fetch_m0_fred_series(series_id,root,run_day,*,http=HTTP):
     if series_id not in SERIES:
         raise ValueError("unmapped FRED series")
     slug,frequency=SERIES[series_id]

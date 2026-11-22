@@ -1,0 +1,90 @@
+# Official-source history loaded by scripts/backfill_official.py
+# - Official or official-origin data only. NO market price data (no OHLCV, no quotes).
+# - start_date was approved by Sumit for R-1.
+# - "lag" is a conservative ESTIMATE of how long after the observation date the value
+#   became public. It is not a true vintage date; values are the current vintage
+#   (later revisions are not tracked). Downstream tests must use the available_from column.
+start_date: "2021-11-22"
+
+fred:
+  DGS2:
+    title: "US 2-year Treasury yield (Fed H.15)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: daily
+    unit: percent
+    lag: {business_days: 2}
+  DGS10:
+    title: "US 10-year Treasury yield (Fed H.15)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: daily
+    unit: percent
+    lag: {business_days: 2}
+  RRPONTSYD:
+    title: "Overnight reverse repo operations (New York Fed)"
+    provider: "Federal Reserve Bank of New York, via FRED"
+    frequency: daily
+    unit: billions_usd
+    lag: {business_days: 2}
+  DTWEXBGS:
+    title: "Nominal broad US dollar index (Fed H.10)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: daily
+    unit: index_jan_2006_100
+    lag: {calendar_days: 8}
+  DEXINUS:
+    title: "India rupees per US dollar (Fed H.10)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: daily
+    unit: inr_per_usd
+    lag: {calendar_days: 8}
+  WALCL:
+    title: "Federal Reserve total assets (H.4.1, Wednesday level)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: weekly
+    unit: millions_usd
+    lag: {calendar_days: 3}
+  WTREGEN:
+    title: "US Treasury General Account (H.4.1, Wednesday level)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: weekly
+    unit: millions_usd
+    lag: {calendar_days: 3}
+  ECBASSETSW:
+    title: "Eurosystem total assets (ECB weekly statement)"
+    provider: "European Central Bank, via FRED"
+    frequency: weekly
+    unit: millions_eur
+    lag: {calendar_days: 6}
+  M2SL:
+    title: "US M2 money stock (seasonally adjusted)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: monthly
+    unit: billions_usd
+    lag: {calendar_days: 65}
+  JPNASSETS:
+    title: "Bank of Japan total assets"
+    provider: "Bank of Japan, via FRED"
+    frequency: monthly
+    unit: hundred_million_yen
+    lag: {calendar_days: 75}
+
+treasury_par:
+  provider: "U.S. Department of the Treasury (daily par yield curve)"
+  unit: percent
+  frequency: daily
+  lag: {business_days: 1}
+  columns:
+    "3 Mo": UST_PAR_3M
+    "2 Yr": UST_PAR_2Y
+    "10 Yr": UST_PAR_10Y
+    "30 Yr": UST_PAR_30Y
+
+cftc:
+  provider: "U.S. Commodity Futures Trading Commission (Traders in Financial Futures, futures only)"
+  frequency: weekly
+  lag: {calendar_days: 4}   # Tuesday positions are released the following Friday
+  names:                    # plain names shown on the dashboard
+    sp500: "S&P 500"
+    nasdaq100: "Nasdaq-100"
+    us_treasury: "US 10-year Treasury note"
+    dollar: "US dollar index"
