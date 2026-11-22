@@ -3,6 +3,9 @@
 # Deployment note (22 Nov 2026): Groq sign-up did not work for the owner, so only
 # OPENROUTER_API_KEY is saved. The "primary" entries below are skipped when their key is
 # missing, and openrouter/free does all the work.
+# Update (seventh pass): for OpenRouter's default openrouter/free, backend/free_models.py swaps in
+# named free models that answer directly, read once per run from OpenRouter's own model list
+# (settings: config/ai_models.yaml). If that fails, the request goes to openrouter/free as below.
 mode: validated_optional_model
 external_model_calls: true
 # News tagging: headlines are tagged in batches of 5, at most 3 requests per run (15 headlines),
