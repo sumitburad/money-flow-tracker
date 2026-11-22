@@ -1,5 +1,8 @@
+# Documentation of the optional free-tier AI helpers. The code holds the same defaults
+# (backend/news_classifier.py and backend/exec_summary.py); this file is not read at run time.
 mode: validated_optional_model
 external_model_calls: true
+# News tagging: one small request per headline.
 primary:
   provider: groq
   credential_secret: GROQ_API_KEY
@@ -12,3 +15,18 @@ max_headlines_per_daily_run: 12
 on_missing_or_invalid_response: deterministic_rules_NOT_AI
 model_never_sets_market_label: true
 human_review_required: true
+# Executive summary (added 2026-11-22): one request per run, plus one retry after a 429 answer.
+summary:
+  primary:
+    provider: groq
+    credential_secret: GROQ_API_KEY
+    model: openai/gpt-oss-120b
+    reasoning_effort: low
+  fallback:
+    provider: openrouter
+    credential_secret: OPENROUTER_API_KEY
+    model: openrouter/free
+  input: categories_and_names_only
+  on_missing_or_invalid_response: rule_written_summary_labelled_rules_only
+  model_never_sets_market_label: true
+  human_review_required: true

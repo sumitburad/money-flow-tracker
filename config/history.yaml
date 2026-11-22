@@ -19,6 +19,30 @@ fred:
     frequency: daily
     unit: percent
     lag: {business_days: 2}
+  DFF:
+    title: "US federal funds effective rate (Fed H.15)"
+    provider: "Board of Governors of the Federal Reserve System, via FRED"
+    frequency: daily
+    unit: percent
+    lag: {business_days: 2}
+  T10Y2Y:
+    title: "US 10-year minus 2-year Treasury yield spread"
+    provider: "Federal Reserve Bank of St. Louis, calculated from Fed H.15 yields, via FRED"
+    frequency: daily
+    unit: percentage_points
+    lag: {business_days: 2}
+  T10YIE:
+    title: "US 10-year breakeven inflation rate"
+    provider: "Federal Reserve Bank of St. Louis, calculated from Treasury yields, via FRED"
+    frequency: daily
+    unit: percent
+    lag: {business_days: 2}
+  UNRATE:
+    title: "US unemployment rate (Bureau of Labor Statistics)"
+    provider: "U.S. Bureau of Labor Statistics, via FRED"
+    frequency: monthly
+    unit: percent
+    lag: {calendar_days: 35}
   RRPONTSYD:
     title: "Overnight reverse repo operations (New York Fed)"
     provider: "Federal Reserve Bank of New York, via FRED"

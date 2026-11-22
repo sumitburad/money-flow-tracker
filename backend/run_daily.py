@@ -26,6 +26,8 @@ import pandas as pd
 import requests
 import yaml
 
+from backend.flow_windows import (build_rotation, compute_flow_windows,
+                                  not_available as flow_not_available)
 from backend.net import HTTP, scrub_secrets
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -336,7 +338,7 @@ def macro_family(asset, macro, today):
     return state_record(state, reason, sheet["source"], day, "official_macro_context")
 
 
-def assess(asset, today, macro, positioning=None, breadth=None):
+def assess(asset, today, macro, positioning=None, breadth=None, flow_cfg=None, now=None):
     families = {name: na() for name in FAMILIES}
     symbol = asset["symbol"]
     result = {"id": asset["id"], "item": asset["name"], "group": asset["group"],
@@ -352,6 +354,8 @@ def assess(asset, today, macro, positioning=None, breadth=None):
             families["money_flow"] = na("Price/volume proxy stale; last session " + observation_date)
             tag = "Steady"
             result["freshness"] = "stale"
+            result["flow_windows"] = flow_not_available(
+                "Price history stale; last session " + observation_date)
         else:
             state = calculate_trend(bars["Close"])
             flow = calculate_volume_flow(bars["Close"],
@@ -371,6 +375,15 @@ def assess(asset, today, macro, positioning=None, breadth=None):
             tag = momentum_tag(bars["Close"],
                                bars["Volume"] if "Volume" in bars else [])
             result["freshness"] = "current"
+            if flow_cfg is not None:
+                # Day / week / month "price up on rising volume" check. Categories only;
+                # a failure here must never stop the rest of the item from being published.
+                try:
+                    result["flow_windows"] = compute_flow_windows(
+                        bars, asset, now or now_utc(), flow_cfg)
+                except Exception as exc:
+                    result["flow_windows"] = flow_not_available(
+                        "Flow windows could not be calculated (" + type(exc).__name__ + ")")
         result["volume_observed"] = families["money_flow"]["state"] != "not_available"
     except Exception as exc:
         tag = "Steady"
@@ -378,6 +391,7 @@ def assess(asset, today, macro, positioning=None, breadth=None):
         result["observation_date"] = None
         result["source_error"] = type(exc).__name__ + ": " + str(exc)[:140]
         result["volume_observed"] = False
+        result["flow_windows"] = flow_not_available("Price history unavailable this run")
     # When this item's own market evidence was gathered (observation dates stay
     # separate). Lets a downstream reader prove it only used what was known by then.
     result["collected_at_utc"] = now_utc().isoformat()
@@ -462,13 +476,20 @@ def context_brief(feed, news):
                                          "https://fred.stlouisfed.org/") + ")"
                          for a in rows[:3]) or "- No qualifying directional signal; data may be incomplete."
     date_string = feed["as_of_ist"]
+    summary = feed.get("executive_summary")
+    summary_block = ""
+    if summary:
+        how = ("AI-written, rule-checked" if summary.get("method") == "ai_validated"
+               else "rule-based, no AI used")
+        summary_block = ("\n## Executive summary (" + how + ")\n" + summary["headline"] +
+                         "\n\n" + summary["rotation_view"] + "\n")
     top = news[:3]
     drivers = "\n".join("- " + x["title"] + " — unconfirmed; [source](" +
                         x["url"] + ")" for x in top) or "- No validated new catalysts."
     return f"""# Global Money-Flow Brief | {date_string}
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
-
+{summary_block}
 ## Where money is flowing
 **Data — supportive evidence:**\n{lines(pos)}
 **Data — opposing evidence:**\n{lines(neg)}
@@ -511,23 +532,28 @@ def publish(feed, news, health):
     p.mkdir(parents=True, exist_ok=True)
     (p / "executive.md").write_text(brief, encoding="utf-8")
     (ROOT / "reports" / "latest_report.md").write_text(brief, encoding="utf-8")
+    flow_headline = (feed.get("executive_summary") or {}).get("headline", "")
     into = [x["item"] for x in feed["items"] if x["label"] == "Bullish"][:2]
     out = [x["item"] for x in feed["items"] if x["label"] == "Bearish"][:2]
     (p / "linkedin.txt").write_text(
         "Global money-flow monitor — " + feed["as_of_ist"] +
         "\n\nData: Supportive evidence: " + (", ".join(into) or "not independently confirmed") +
         ". Opposing evidence: " + (", ".join(out) or "not independently confirmed") +
-        ".\n\nReading: Volume patterns are not direct fund flows. Verify source freshness and the six evidence families before making financial decisions." +
+        ".\n\n" + (("Flow rotation: " + flow_headline + "\n\n") if flow_headline else "") +
+        "Reading: Volume patterns are not direct fund flows. Verify source freshness and the six evidence families before making financial decisions." +
         "\n\nFor CEO, CFO and Treasury readers, watch monetary conditions, liquidity and cross-market confirmation." +
         "\n\nSources and observation dates: see the evidence dashboard. Informational only, not advice.\n",
         encoding="utf-8")
+    thread = ["Global money flow | " + feed["as_of_ist"] + ". Categorical, evidence-based signals; no scores.",
+              "Supportive: " + (", ".join(into) or "not confirmed") + "; opposing: " +
+              (", ".join(out) or "not confirmed") + "."]
+    if flow_headline:
+        thread.append("Flow rotation: " + flow_headline)
+    thread += ["Drivers require next-session confirmation; headlines alone do not establish a directional move.",
+               "Finance leaders: treat Fed liquidity as context, not measured allocation into assets.",
+               "Observe freshness and full source citations on the dashboard. Informational only; human approval required."]
     (p / "x_thread.txt").write_text(
-        "1/ Global money flow | " + feed["as_of_ist"] + ". Categorical, evidence-based signals; no scores.\n\n" +
-        "2/ Supportive: " + (", ".join(into) or "not confirmed") + "; opposing: " +
-        (", ".join(out) or "not confirmed") + ".\n\n" +
-        "3/ Drivers require next-session confirmation; headlines alone do not establish a directional move.\n\n" +
-        "4/ Finance leaders: treat Fed liquidity as context, not measured allocation into assets.\n\n" +
-        "5/ Observe freshness and full source citations on the dashboard. Informational only; human approval required.\n",
+        "\n\n".join("%d/ %s" % (number, text) for number, text in enumerate(thread, 1)) + "\n",
         encoding="utf-8")
     # Retire the legacy, permanently generated HTML score table.
     (ROOT / "frontend" / "index.html").write_text(
@@ -657,16 +683,29 @@ def main():
     if classifier_health["model_classified"] == 0:
         errors.append({"source": "news_classifier",
                        "error": "No accepted AI responses; transparent deterministic tag fallback"})
+    try:
+        flow_cfg = read_yaml("config/flow_windows.yaml")
+    except Exception as exc:
+        flow_cfg = None
+        errors.append({"source": "flow_windows_config", "error": type(exc).__name__})
     items = []
     for asset in universe:
         LOG.info("Checking %s", asset["id"])
         record = assess(asset, today, macro,
                         positioning=cftc.get("entries", {}).get(asset["id"]),
-                        breadth=breadth_records.get(asset["id"]))
+                        breadth=breadth_records.get(asset["id"]),
+                        flow_cfg=flow_cfg, now=current)
         items.append(record)
         if record.get("source_error"):
             errors.append({"source": "price:" + asset["id"],
                            "error": record["source_error"]})
+    rotation = None
+    if flow_cfg is not None:
+        try:
+            rotation = build_rotation(items, flow_cfg)
+        except Exception as exc:
+            errors.append({"source": "flow_rotation",
+                           "error": type(exc).__name__ + ": " + str(exc)[:110]})
     fresh = sum(x.get("freshness") == "current" for x in items)
     macro_current = sum(v.get("freshness") == "current" for v in macro.values())
     macro_stale = sorted(k for k, v in macro.items() if v.get("freshness") != "current")
@@ -709,6 +748,7 @@ def main():
         "cftc_markets_with_evidence": list(cftc.get("entries", {})),
         "institutional_flow_status": institution["nse_cash_via_authorized_broker"].get("status"),
         "ai_classification": classifier_health,
+        "flow_windows": (rotation or {}).get("coverage", {"status": "not_available"}),
         "missing": [x["id"] for x in items if x["freshness"] != "current"],
         "errors": errors, "vendor_price_exported": False,
         "publication": "categorical_research_only",
@@ -737,6 +777,16 @@ def main():
                                     "macro_series_stale": macro_stale},
         "source_manifest": "config/sources.yaml"
     }
+    if rotation is not None:
+        feed["rotation"] = rotation
+    from backend.exec_summary import build_executive_summary
+    try:
+        feed["executive_summary"], health["executive_summary"] = build_executive_summary(
+            feed, macro_names={**source_config.get("macro_series", {}),
+                               **source_config.get("treasury_par_series", {})},
+            now=current)
+    except Exception as exc:     # the summary is a bonus: it must never stop the refresh
+        health["executive_summary"] = {"method": "failed", "reasons": [type(exc).__name__]}
     publish(feed, news, health)
     LOG.info("Published %s of %s current proxies, %s macro series",
              fresh, len(items), len(macro))

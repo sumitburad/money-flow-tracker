@@ -82,6 +82,7 @@ assets:
     asset_type: equity
     source: yfinance_research_only
     fallback: unavailable
+    session_market: US
   - id: hongkong
     name: "Hong Kong equities"
     group: equity_market
@@ -307,6 +308,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: usdinr
     name: "USD/INR"
     group: currency
@@ -316,6 +318,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: eurusd
     name: "EUR/USD"
     group: currency
@@ -325,6 +328,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: usdjpy
     name: "USD/JPY"
     group: currency
@@ -334,6 +338,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: usdcny
     name: "USD/CNY"
     group: currency
@@ -343,6 +348,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: gbpusd
     name: "GBP/USD"
     group: currency
@@ -352,6 +358,7 @@ assets:
     asset_type: currency
     source: yfinance_research_only
     fallback: unavailable
+    session_market: 24H
   - id: gold
     name: "Gold"
     group: metal
@@ -449,5 +456,218 @@ assets:
     symbol: "^INDIAVIX"
     currency: INR
     asset_type: risk
+    source: yfinance_research_only
+    fallback: unavailable
+  # Added 22 Nov 2026: liquid US-listed proxies that carry real trading volume, so the
+  # day/week/month money-flow check also covers Taiwan, Korea, Brazil, AI, REITs, more
+  # bonds, currencies and metals. Spot currencies and the dollar index have no volume.
+  - id: taiwan
+    name: "Taiwan equities (ETF proxy)"
+    group: equity_market
+    region: TW
+    symbol: "EWT"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: korea
+    name: "South Korea equities (ETF proxy)"
+    group: equity_market
+    region: KR
+    symbol: "EWY"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: brazil
+    name: "Brazil equities (ETF proxy)"
+    group: equity_market
+    region: BR
+    symbol: "EWZ"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: india_etf
+    name: "India equities (US-listed ETF)"
+    group: equity_market
+    region: IN
+    symbol: "INDA"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+    session_market: US
+  - id: ai_theme
+    name: "AI and big-data theme"
+    group: global_sector
+    region: GLOBAL
+    symbol: "AIQ"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: global_reit
+    name: "Global ex-US real estate (REITs)"
+    group: global_sector
+    region: GLOBAL
+    symbol: "VNQI"
+    currency: USD
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_short_treasury
+    name: "US short-term Treasuries"
+    group: bond
+    region: US
+    symbol: "SHY"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: us_tips
+    name: "US inflation-protected bonds (TIPS)"
+    group: bond
+    region: US
+    symbol: "TIP"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: em_bonds
+    name: "Emerging-market USD bonds"
+    group: bond
+    region: GLOBAL
+    symbol: "EMB"
+    currency: USD
+    asset_type: bond
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: dollar_etf
+    name: "US dollar (ETF proxy)"
+    group: currency
+    region: US
+    symbol: "UUP"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: euro_etf
+    name: "Euro (ETF proxy)"
+    group: currency
+    region: EU
+    symbol: "FXE"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: yen_etf
+    name: "Japanese yen (ETF proxy)"
+    group: currency
+    region: JP
+    symbol: "FXY"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: pound_etf
+    name: "British pound (ETF proxy)"
+    group: currency
+    region: UK
+    symbol: "FXB"
+    currency: USD
+    asset_type: currency
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: gold_etf
+    name: "Gold (ETF proxy)"
+    group: metal
+    region: GLOBAL
+    symbol: "GLD"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: silver_etf
+    name: "Silver (ETF proxy)"
+    group: metal
+    region: GLOBAL
+    symbol: "SLV"
+    currency: USD
+    asset_type: metal
+    source: yfinance_research_only
+    fallback: unavailable
+  # Added 22 Nov 2026: NSE-listed ETFs. The Nifty sector INDICES report no volume, these ETFs do.
+  # Not live-tested from the build sandbox: a wrong symbol simply shows as unavailable.
+  - id: niftybees
+    name: "Nifty 50 ETF (NIFTYBEES)"
+    group: equity_market
+    region: IN
+    symbol: "NIFTYBEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: bankbees
+    name: "Nifty Bank ETF (BANKBEES)"
+    group: india_sector
+    region: IN
+    symbol: "BANKBEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: itbees
+    name: "Nifty IT ETF (ITBEES)"
+    group: india_sector
+    region: IN
+    symbol: "ITBEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: pharmabees
+    name: "Nifty Pharma ETF (PHARMABEES)"
+    group: india_sector
+    region: IN
+    symbol: "PHARMABEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: consumbees
+    name: "Nifty India Consumption ETF (CONSUMBEES)"
+    group: india_sector
+    region: IN
+    symbol: "CONSUMBEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: psubnkbees
+    name: "PSU Bank ETF (PSUBNKBEES)"
+    group: india_sector
+    region: IN
+    symbol: "PSUBNKBEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: infrabees
+    name: "Nifty Infrastructure ETF (INFRABEES)"
+    group: india_sector
+    region: IN
+    symbol: "INFRABEES.NS"
+    currency: INR
+    asset_type: equity
+    source: yfinance_research_only
+    fallback: unavailable
+  - id: goldbees
+    name: "Gold ETF in rupees (GOLDBEES)"
+    group: metal
+    region: IN
+    symbol: "GOLDBEES.NS"
+    currency: INR
+    asset_type: metal
     source: yfinance_research_only
     fallback: unavailable

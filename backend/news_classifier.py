@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from collections import Counter
 from datetime import datetime, timezone
 
@@ -112,6 +113,8 @@ def _call_model(headline, universe_names, *, endpoint, key, model, http=requests
           "model": model,
           "temperature": 0,
           "max_tokens": 350,
+          # Groq's free plan allows few tokens a minute; a short reasoning pass keeps calls small.
+          **({"reasoning_effort": "low"} if "groq.com" in endpoint else {}),
           "response_format": {"type":"json_object"},
           "messages": [
               {"role":"system","content":
@@ -145,7 +148,10 @@ def _call_model(headline, universe_names, *, endpoint, key, model, http=requests
     return json.loads(text)
 
 
-def classify_headlines(headlines, universe, *, http=requests, env=None, max_calls=12):
+def classify_headlines(headlines, universe, *, http=requests, env=None, max_calls=12,
+                       pace_seconds=None, sleep=time.sleep):
+    # The free Groq plan allows about 8,000 tokens a minute, so real calls are spaced out.
+    pace = (8.0 if http is requests else 0.0) if pace_seconds is None else pace_seconds
     env = os.environ if env is None else env
     names = [a["name"] for a in universe]
     config=[]
@@ -156,10 +162,14 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
     output=[]; health={"model_configured":bool(config),
                        "model_classified":0,"rule_fallback":0,
                        "rejected_model_responses":0,"providers_used":[]}
+    calls_made=0
     for number,headline in enumerate(headlines):
         classification=None; model_used=None
         if number<max_calls:
             for provider,url,key,model in config:
+                if pace and calls_made:
+                    sleep(pace)
+                calls_made+=1
                 try:
                     answer=_call_model(headline,names,
                                        endpoint=url,key=key,model=model,http=http)

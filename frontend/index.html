@@ -78,6 +78,30 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 .tview .scroller{max-height:240px;margin:8px 0}
 .hnote{font-size:12px;color:var(--ink-2);margin-top:6px}
 .hnote.warn{color:#a03a2b}
+/* --- executive summary and money-flow windows (every colour also has a symbol and a word) --- */
+.summary{background:#fff;border:1px solid #d8e2ea;border-left:6px solid #145c90;border-radius:12px;padding:16px 18px}
+.summary .top{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:6px}
+.summary h3{font-size:17px;line-height:1.45;margin:6px 0 8px;letter-spacing:-.01em}
+.summary p{margin:8px 0;line-height:1.65;font-size:14px;color:#25384a}
+.summary ul{margin:6px 0 4px 18px;padding:0;font-size:13px;color:#25384a;line-height:1.6}
+.summary .foot{font-size:12px;color:var(--ink-muted);margin-top:10px;border-top:1px solid #ecf0f3;padding-top:8px}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;font-size:12px;font-weight:700;padding:4px 10px}
+.badge.ai{background:#e3f1fb;color:#0d4a75}.badge.rules{background:#edf0f3;color:#3b4d5e}
+.sig{display:inline-flex;align-items:center;gap:4px;border-radius:6px;font-size:11.5px;font-weight:650;padding:3px 7px;white-space:nowrap;border:1px solid transparent}
+.sig.sm{padding:2px 5px;font-size:11px}
+.sig-in{background:#dff4e9;color:#0b4d2f;border-color:#b9e3cd}.sig-in2{background:#f2faf6;color:#1d5b3d;border-color:#b9e3cd}
+.sig-out{background:#ffe6dc;color:#7e2a17;border-color:#f3c0ae}.sig-out2{background:#fff6f1;color:#8a3a26;border-color:#f3c0ae}
+.sig-flat{background:#edf0f3;color:#3b4d5e;border-color:#d5dce2}.sig-na{background:#fff;color:#637484;border:1px dashed #c3ccd4}
+.trend{font-size:12px;font-weight:650;white-space:nowrap}.t-up{color:#0b6b3f}.t-down{color:#a03a2b}.t-flat,.t-na{color:#516275}
+.flowhead,.moves{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:12px 0 16px}
+.flowhead .card,.moves .card{padding:13px 15px}
+.flowhead .k{font-size:12px;color:var(--ink-muted);margin-bottom:7px}
+.fgrid td,.fgrid th{vertical-align:top}
+.fgrid td small,.flowhead small{display:block;margin-top:4px;color:var(--ink-muted);font-size:11px;white-space:normal;line-height:1.45}
+.fgrid .names{font-size:12px;color:#25384a;min-width:150px;white-space:normal;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin:10px 0 14px;align-items:center;font-size:12px;color:var(--ink-2)}
+.mini{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px;align-items:center}
+.members details{background:#fff;border:1px solid #dae4e9;border-radius:10px;padding:10px 14px;margin:8px 0}
 </style>
 </head>
 <body>
@@ -89,6 +113,8 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
   <div id="freshness" class="fresh" role="status" aria-live="polite">Checking when the data was last refreshed…</div>
   <div id="status" class="status" role="status">Loading source-checked observations…</div>
   <nav aria-label="Dashboard sections">
+    <a href="#summary">Executive summary</a>
+    <a href="#flow">Money-flow windows</a>
     <a href="#markets">Markets and sectors</a>
     <a href="#rotation">Rotation checks</a>
     <a href="#drivers">Policy drivers</a>
@@ -99,6 +125,13 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
     <a href="#history">Official history</a>
     <a href="#health">Data quality</a>
   </nav>
+  <section id="summary"><h2>Executive summary</h2>
+    <div id="summary-box" class="summary">Loading the summary…</div>
+  </section>
+  <section id="flow"><h2>Money-flow windows and rotation</h2>
+    <p class="note">The rule: <strong>price up on rising volume = inflow</strong> (money appears to be coming in); price down on rising volume = outflow. A move on thinning volume is marked “fading”. Each item is checked for the latest day, the week (5 sessions against the 5 before) and the month (20 against the 20 before), then rolled up by asset class and sector to show where money is rotating. Volume is a trading-activity proxy, not a measured fund flow. Only categories are shown, because the free price source cannot be republished.</p>
+    <div id="flow-body">Loading flow windows…</div>
+  </section>
   <section id="markets"><h2>Asset and market flow map</h2>
     <p class="note">A direction label requires written rule agreement. Volume participation is a proxy, not a measure of institutional net inflow. Expand each entry to inspect Data and Reading.</p>
     <div id="grouped"></div>
@@ -159,6 +192,7 @@ function renderRecord(item,parent){
   const line=add(card,"div",undefined,"badge-line");
   line.append(statePill(item.label));
   add(line,"span",item.tag+" · "+item.agreement+" agreement","tag");
+  flowMini(item,card);
   const details=add(card,"details");
   add(details,"summary","Inspect evidence and source dates");
   for(const [family,entry] of Object.entries(item.families||{})){
@@ -276,6 +310,151 @@ function renderAdvanced(feed){
     " explicit non-AI fallbacks. All impacts remain unconfirmed until verified. Human review required.";
 }
 
+
+/* ---------- executive summary and money-flow windows ---------- */
+const SIG={inflow:["▲","Inflow","sig-in"],inflow_fading:["△","Inflow fading","sig-in2"],
+  outflow:["▼","Outflow","sig-out"],outflow_fading:["▽","Outflow fading","sig-out2"],
+  unclear:["◇","Unclear","sig-flat"],not_available:["–","No volume","sig-na"]};
+const VERDICT={inflow_led:["▲","Inflow-led","sig-in"],outflow_led:["▼","Outflow-led","sig-out"],
+  mixed:["◆","Mixed","sig-flat"],not_enough_data:["–","Not enough data","sig-na"],
+  not_applicable:["•","Read each member","sig-na"]};
+const TREND={improving:["↗","Improving","t-up"],weakening:["↘","Weakening","t-down"],
+  steady:["→","Steady","t-flat"],mixed:["↔","Mixed","t-flat"],not_available:["–","Not measurable","t-na"]};
+const WINDOWS=["day","week","month"];
+const PRICE_ARROW={up:"↑",down:"↓",flat:"→",not_available:""};
+function chip(map,key,parent,title,base){
+  const m=map[key]||["?",String(key),"sig-na"];
+  const e=add(parent,"span",m[0]+" "+m[1],(base||"sig")+" "+m[2]);
+  if(title)e.title=title;
+  return e;
+}
+function tally(c){
+  const assessed=Object.entries(c).filter(([k])=>k!=="not_available").reduce((n,[,v])=>n+v,0);
+  return c.inflow+" inflow, "+c.outflow+" outflow, "+(assessed-c.inflow-c.outflow)+
+    " fading or unclear, out of "+assessed+" with a volume signal";
+}
+function listNames(ids,names){return ids.map(i=>names[i]||i).join(", ")||"none"}
+function renderSummary(feed){
+  const box=$("summary-box");box.textContent="";
+  const s=feed.executive_summary;
+  if(!s){
+    add(box,"p","The executive summary appears after the next refresh. Use Refresh now at the top if it has not arrived.","note");
+    return;
+  }
+  const top=add(box,"div",undefined,"top");
+  if(s.method==="ai_validated")add(top,"span","✓ AI-written · "+s.provider+" · "+s.model+" · rule-checked","badge ai");
+  else add(top,"span","• Rule-based summary · no AI was used in this refresh","badge rules");
+  const when=s.generated_at_utc?new Date(s.generated_at_utc):null;
+  if(when&&!isNaN(when.getTime()))add(top,"small","Written "+fmtIst(when)+" IST");
+  add(box,"h3",s.headline);
+  add(box,"p",s.rotation_view);
+  add(box,"p",s.drivers_view);
+  if(Array.isArray(s.watch)&&s.watch.length){
+    add(box,"strong","Watch next");
+    const list=add(box,"ul");s.watch.forEach(w=>add(list,"li",w));
+  }
+  add(box,"div",(s.notice||"")+" Human review is required before sharing.","foot");
+}
+function renderFlow(feed){
+  const body=$("flow-body");body.textContent="";
+  const r=feed.rotation;
+  if(!r){
+    add(body,"p","Day, week and month flow signals appear after the next refresh, which needs the updated engine to run once.","note");
+    return;
+  }
+  const names=Object.fromEntries(feed.items.map(x=>[x.id,x.item]));
+  const byId=Object.fromEntries(feed.items.map(x=>[x.id,x]));
+  const bucketName=Object.fromEntries(r.buckets.map(b=>[b.id,b.name]));
+  const label=w=>(r.windows&&r.windows[w]&&r.windows[w].label)||w;
+  const basis=w=>(r.windows&&r.windows[w]&&r.windows[w].basis)||"";
+
+  const legend=add(body,"div",undefined,"legend");
+  add(legend,"strong","How to read:");
+  [["inflow","price up, volume up"],["inflow_fading","price up, volume down"],["outflow","price down, volume up"],
+   ["outflow_fading","price down, volume down"],["unclear","flat price or flat volume"],["not_available","no volume reported"]]
+   .forEach(([key,text])=>{const g=add(legend,"span");chip(SIG,key,g);add(g,"small"," "+text)});
+
+  const head=add(body,"div",undefined,"flowhead");
+  for(const w of WINDOWS){
+    const card=add(head,"div",undefined,"card");
+    add(card,"div",label(w)+" · all tracked groups","k");
+    chip(VERDICT,r.overall.windows[w].verdict,card,tally(r.overall.windows[w].counts));
+    add(card,"small",tally(r.overall.windows[w].counts));
+  }
+  const tcard=add(head,"div",undefined,"card");
+  add(tcard,"div","Is flow increasing or decreasing?","k");
+  chip(TREND,r.overall.trend,tcard,"Compares the month, then the week, then the latest day","trend");
+  add(tcard,"small","Read from month to week to latest day. “Improving” means the newer windows show more inflow than the older ones.");
+
+  const wrap=add(body,"div",undefined,"scroller");
+  const table=add(wrap,"table",undefined,"fgrid");
+  const tr0=add(add(table,"thead"),"tr");
+  ["Asset class or sector group",...WINDOWS.map(label),"Flow trend","Inflow this week","Outflow this week"].forEach(t=>add(tr0,"th",t));
+  const tbody=add(table,"tbody");
+  for(const b of r.buckets){
+    const tr=add(tbody,"tr");
+    const first=add(tr,"td");add(first,"strong",b.name);
+    if(b.note)add(first,"small",b.note);
+    for(const w of WINDOWS){
+      const td=add(tr,"td"),win=b.windows[w];
+      chip(VERDICT,win.verdict,td,tally(win.counts));
+      if(win.verdict!=="not_applicable")add(td,"small",win.counts.inflow+" in · "+win.counts.outflow+" out");
+    }
+    chip(TREND,b.trend,add(tr,"td"),"Compares the month, then the week, then the latest day","trend");
+    add(tr,"td",listNames(b.windows.week.inflow,names),"names");
+    add(tr,"td",listNames(b.windows.week.outflow,names),"names");
+  }
+
+  add(body,"h3","Where money is moving");
+  const moves=add(body,"div",undefined,"moves");
+  for(const w of WINDOWS){
+    const card=add(moves,"div",undefined,"card");
+    add(card,"h3",label(w));
+    const m=r.moves[w];
+    add(card,"p","Into: "+(m.into.map(i=>bucketName[i]).join(", ")||"no group leads"));
+    add(card,"p","Out of: "+(m.out_of.map(i=>bucketName[i]).join(", ")||"no group leads"));
+    add(card,"small",basis(w));
+  }
+  const cover=r.coverage||{};
+  if((cover.items_without_volume||[]).length)
+    add(body,"p","No volume is reported for "+cover.items_without_volume.map(i=>names[i]||i).join(", ")+
+      ", so they carry no flow signal; their ETF versions above do.","note");
+
+  add(body,"h3","Inside each group");
+  const members=add(body,"div",undefined,"members");
+  for(const b of r.buckets){
+    const d=add(members,"details");add(d,"summary",b.name+" — every member");
+    const sc=add(d,"div",undefined,"scroller");const t=add(sc,"table");
+    const h=add(add(t,"thead"),"tr");["Item",...WINDOWS.map(label),"Flow trend"].forEach(x=>add(h,"th",x));
+    const tb=add(t,"tbody");
+    for(const id of b.members){
+      const it=byId[id];if(!it)continue;
+      const fw=it.flow_windows,row=add(tb,"tr");
+      add(row,"td",it.item);
+      if(!fw||fw.status!=="ok"){const td=add(row,"td",(fw&&fw.reason)||"No flow data","note");td.colSpan=4;continue}
+      for(const w of WINDOWS){
+        const td=add(row,"td"),cell=fw[w];
+        chip(SIG,cell.signal,td);
+        if(cell.signal==="not_available"&&PRICE_ARROW[cell.price])add(td,"small","price "+PRICE_ARROW[cell.price]);
+      }
+      chip(TREND,fw.trend,add(row,"td"),undefined,"trend");
+    }
+  }
+  add(body,"p","Day-over-day comparisons use only two sessions and are the noisiest; give the week and month more weight. The newest session is used only after its market has closed. As of the latest completed sessions, not live.","note");
+}
+function flowMini(item,card){
+  const fw=item.flow_windows;
+  if(!fw||fw.status!=="ok")return;
+  const row=add(card,"div",undefined,"mini");
+  for(const w of WINDOWS){
+    const m=SIG[fw[w].signal]||SIG.not_available;
+    const e=add(row,"span",w[0].toUpperCase()+" "+m[0],"sig sm "+m[2]);
+    e.title=w+": "+m[1];e.setAttribute("aria-label",w+": "+m[1]);
+  }
+  const t=TREND[fw.trend]||TREND.not_available;
+  const e=add(row,"span",t[0]+" "+t[1],"trend "+t[2]);e.title="Flow trend from month to week to day";
+}
+
 /* ---------- freshness banner ---------- */
 const REPO="https://github.com/sumitburad/money-flow-tracker";
 const RUN_NOW_URL=REPO+"/actions/workflows/daily.yml";
@@ -312,6 +491,7 @@ function renderFreshness(iso){
 /* ---------- official history: one small chart per series, each with its own scale ---------- */
 const HG=[
   ["US interest rates (daily)",id=>/^(DGS|UST_PAR)/.test(id)],
+  ["Policy rate, curve slope, inflation expectations and jobs",id=>["DFF","T10Y2Y","T10YIE","UNRATE"].includes(id)],
   ["Dollar and rupee (Federal Reserve H.10)",id=>["DTWEXBGS","DEXINUS"].includes(id)],
   ["Central bank and money liquidity",id=>["WALCL","WTREGEN","RRPONTSYD","ECBASSETSW","JPNASSETS","M2SL"].includes(id)],
   ["CFTC futures positioning (weekly)",id=>id.startsWith("CFTC_TFF_")]
@@ -366,6 +546,7 @@ function fmtValue(v,unit,digits,fixed){
   if(m)return money(v*m[1],m[0],digits,fixed);
   switch(unit){
     case"percent":return v.toFixed(digits)+"%";
+    case"percentage_points":return v.toFixed(digits)+" pp";
     case"inr_per_usd":return"₹"+v.toFixed(digits);
     case"contracts":return Math.round(v).toLocaleString("en-US");
     default:return v.toFixed(digits);
@@ -375,7 +556,7 @@ function fmtDate(t){return new Date(t).toLocaleDateString("en-GB",{day:"2-digit"
 function fmtMonth(t){return new Date(t).toLocaleDateString("en-GB",{month:"short",year:"numeric",timeZone:"UTC"})}
 function deltaText(first,last,unit){
   const d=last.v-first.v,arrow=d>0?"▲":d<0?"▼":"■",sign=d>0?"+":"";
-  if(unit==="percent")return arrow+" "+sign+d.toFixed(2)+" pp";
+  if(unit==="percent"||unit==="percentage_points")return arrow+" "+sign+d.toFixed(2)+" pp";
   if(unit==="contracts")return arrow+" "+sign+Math.round(d).toLocaleString("en-US")+" contracts";
   if(first.v===0)return arrow;
   const pct=d/Math.abs(first.v)*100;
@@ -579,6 +760,8 @@ async function start(){
     $("status").textContent="As of "+feed.as_of_ist+" | "+feed.items.length+
       " tracked proxies | health: "+feed.health.status+
       " | observational data may be delayed and are not net fund flows.";
+    renderSummary(feed);
+    renderFlow(feed);
     renderGroups(feed.items);
     renderRotation(feed.items);
     renderNews(feed.drivers);
