@@ -164,7 +164,7 @@ def test_ask_sends_the_documented_parameters_and_reads_articles():
     assert call["url"] == "https://api.gdeltproject.org/api/v2/doc/doc"
     assert call["params"] == {"query": '("Micron")', "mode": "artlist", "format": "json",
                               "maxrecords": 100, "timespan": "48h", "sort": "hybridrel"}
-    assert call["headers"] == HEADERS and call["timeout"] == (6, 25)
+    assert call["headers"] == HEADERS and call["timeout"] == (10, 60)
 
 
 @pytest.mark.parametrize("reply,expected", [
@@ -357,6 +357,97 @@ def test_a_key_or_secret_never_appears_in_the_block_or_the_notes(monkeypatch):
     assert "sk-or-secret-value-123456" not in json.dumps(block) + json.dumps(health)
 
 
+# ------------------------------------------------------------------ patience and the time budget
+
+class Clock:
+    """A pretend clock: time only moves when the program sleeps or the news index takes its time."""
+
+    def __init__(self):
+        self.now = 0.0
+
+    def __call__(self):
+        return self.now
+
+    def sleep(self, seconds):
+        self.now += seconds
+
+
+class SlowFake(Fake):
+    """Answers like Fake, but each answer (or failure) takes ``takes`` seconds on the pretend clock."""
+
+    def __init__(self, replies, clock, takes):
+        super().__init__(replies)
+        self.clock, self.takes = clock, takes
+
+    def get(self, url, **kw):
+        self.clock.now += self.takes
+        return super().get(url, **kw)
+
+
+def timed(replies, takes, cfg=CFG):
+    clock = Clock()
+    block, health = build_market_news(cfg, NOW, http=SlowFake(replies, clock, takes),
+                                      sleep=clock.sleep, clock=clock)
+    return block, health, clock
+
+
+def test_a_slow_but_working_news_index_is_waited_for_and_the_real_times_are_recorded():
+    story = ok(article("Stock market story that is long enough", "reuters.com", 2))
+    block, health, clock = timed([story] + [Reply({})] * 20, takes=20.0)
+    assert health["status"] == "ok" and health["queries_skipped"] == 0
+    assert health["slowest_answer_seconds"] == 20.0
+    questions = len(build_questions(CFG))
+    assert health["seconds"] == round(questions * 20.0 + (questions - 1) * CFG["source"]["pause_seconds"], 1)
+    assert health["seconds"] < CFG["source"]["total_seconds"]          # a normal run fits the budget
+    assert len(block["stories"]) == 1
+
+
+def test_the_time_budget_stops_new_questions_and_says_so_in_plain_words():
+    cfg = copy.deepcopy(CFG)
+    cfg["source"]["total_seconds"] = 100
+    block, health, clock = timed([Reply({})] * 20, takes=30.0, cfg=cfg)
+    # 30 s, pause, 30 s, pause, 30 s = 101 s: no time is left for a fourth question
+    assert health["queries_asked"] == 3 and health["queries_answered"] == 3
+    assert health["queries_skipped"] == len(build_questions(cfg)) - 3
+    assert health["status"] == "partial" and block["status"] == "partial"
+    [note] = health["errors"]
+    assert note.startswith("The news step stopped after 101 seconds") and "were not asked" in note
+    validate_market_news(block)
+
+
+def test_a_dead_news_index_costs_less_than_the_budget_and_the_refresh_goes_on():
+    source = CFG["source"]
+    connect, read = source["timeout_seconds"]
+    default = default_http()
+    worst = default.breaker_after * (default.attempts * read + default.backoff * (default.attempts - 1))
+    assert worst <= source["total_seconds"] <= 600      # well inside the 25 minutes the job is given
+
+
+def test_a_timeout_is_explained_without_web_addresses_or_library_words():
+    jargon = "HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=60)"
+    for failure, expected in ((requests.ReadTimeout(jargon), "no answer from the news index within 60 seconds"),
+                              (requests.ConnectTimeout(jargon), "could not reach the news index within 10 seconds"),
+                              (requests.ConnectionError(jargon), "could not connect to the news index")):
+        block, health, _ = run([failure])
+        assert health["errors"][0] == expected, failure
+        assert "gdelt" not in health["errors"][0].lower() and "Pool" not in health["errors"][0]
+
+
+def test_the_note_says_how_many_tries_were_made_when_the_http_helper_retries():
+    def fetcher(url, **kw):
+        raise requests.ReadTimeout("slow")
+    http = RetryingHttp(attempts=2, backoff=0.0, jitter=False, sleep=lambda s: None, fetcher=fetcher)
+    block, health = build_market_news(CFG, NOW, http=http, sleep=lambda s: None)
+    assert health["errors"][0] == "no answer from the news index within 60 seconds (2 tries)"
+    assert any("failed twice" in e for e in health["errors"])
+
+
+def test_the_answers_the_program_writes_itself_are_kept_as_they_are():
+    block, health, _ = run([Reply(status=429, raw=b""), Reply(raw=b"Your query was too short.")] + [Reply({})] * 20)
+    assert health["errors"][0] == "news index answered HTTP 429"
+    assert health["errors"][1].startswith("news index did not answer with JSON: Your query was too short")
+
+
 # ------------------------------------------------------------------ the contract
 
 def good_block():
@@ -465,6 +556,8 @@ def test_settings_are_consistent():
     assert source["sort"] in {"hybridrel", "datedesc", "dateasc", "toneasc", "tonedesc"}
     assert re.fullmatch(r"\d+(min|h|d|w)", source["timespan"])
     assert len(source["timeout_seconds"]) == 2
+    connect, read = source["timeout_seconds"]
+    assert connect >= 5 and read >= 45                  # the news index is often slow; 25 seconds was too short
     assert limits["max_stories"] <= NEWS_MAX_STORIES
     assert 0 < limits["max_company_stories"] <= limits["max_stories"]
     assert limits["max_per_publisher"] >= 1 and limits["max_age_hours"] > 0
