@@ -48,6 +48,8 @@ You turned on a strict safety rule, which is a good choice: every small helper p
 
 If the box was already ticked, there is nothing to do. If a run ever shows **Startup failure**, this is the first place to look.
 
+**Done and proven (22 November 2026).** The first runs failed to start. After you updated the setting and saved it, a run started and finished normally, so this step is complete.
+
 ### Step 2 — Get the free FRED key (done on 22 November 2026)
 
 You have already saved `FRED_API_KEY`, so you can skip this step. The steps stay here in case the key ever has to be replaced. FRED is the data library of the US Federal Reserve Bank of St. Louis. Its public download page timed out in earlier runs, and the key uses a more reliable door. The same key now also reads the calendar of coming release dates. Without the key everything else still works, but it may be slower or fail more often, and the calendar shows only the Fed meetings.
@@ -73,6 +75,17 @@ This loads official data from 22 November 2021 onwards. You only need to do it o
 
 If you see a red cross, click the run and read the box called **Official history load**. It says in plain words which series failed. Run it again after an hour. Series that worked are kept.
 
+## What the first real run showed (22 November 2026), and what this update fixes
+
+The first run on GitHub's computers worked from start to finish in about 4 minutes. Five years of official history loaded, the coming-events calendar filled in and the risk banner worked. Four things did not, and each has a fix in this update:
+
+1. **Futures positions showed only the dollar.** The exchanges renamed three contracts in 2022 and the system was still looking for the old names. It now knows both names, and it raises a note if a market ever goes quiet again.
+2. **Japan's central-bank balance sheet was missing, and two numbers were wrongly marked "behind on dates"** (the rupee rate and the US money supply). Those numbers are published in batches, so a gap of a week or two is normal. Each now has an allowed gap that matches how often it really appears, and Japan's figure is read from FRED directly.
+3. **The AI summary came out blank.** The free AI spends part of its allowed length "thinking" before it writes, and it ran out of room. It now gets much more room, one automatic second try, and if it still fails the dashboard says exactly why, in plain words, in the Data quality box.
+4. **The news step gave up after two slow answers.** The news index was reachable but slow. The system now waits up to a minute for each answer, stops after five minutes in total so the refresh is never held up, and explains any problem in plain words.
+
+These are only confirmed after the next real run, so read the Data quality box then, as the next section explains.
+
 ## After the first refresh with the new features (2 minutes, once)
 
 Open the dashboard and find the **Data quality** box (the last section). Look at these five things and copy anything odd to Claude, which will fix it:
@@ -80,7 +93,7 @@ Open the dashboard and find the **Data quality** box (the last section). Look at
 1. **Unavailable items**: a few of the 23 new items may be listed. That is expected for any ticker the free price source does not return.
 2. **Coming events**: a note such as "No upcoming FRED date was found for…" means one release name needs correcting. Fix it by telling Claude. The Fed list note about 31 December 2026 is expected.
 3. **Market news**: a note that a question failed, or that no headline came from a listed publisher, means the free news index answered oddly. The page then shows what it has. Nothing else is affected.
-4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe.
+4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe. When it is rule-based, the Data quality box now gives the reason in plain words (for example "empty reply from a model: it used all its room thinking", or "HTTP 429: the daily free limit is used up"). The line **Headline tagging** does the same for the news tags.
 5. The **Risk tone** banner at the top should show a month reading and a week reading. **Not enough data** means fewer than five of the eight checks had prices that day.
 
 None of these new parts can stop the daily refresh. If any of them fails, the page says so and keeps going.
@@ -101,7 +114,7 @@ Open the dashboard. The banner at the top tells you how fresh the data is:
 2. Click **Run workflow**, then the green **Run workflow** button.
 3. Wait 5 to 10 minutes. The banner turns green 1 to 2 minutes after the run finishes, once the dashboard site has updated.
 
-Good to know: the free AI that writes the summary allows 50 requests a day, and each refresh uses about 4. Two refreshes a day happen by themselves, so you have room for about eight extra clicks a day. If you press it more often, nothing breaks. The summary just switches to the rule-written version until the allowance resets the next day.
+Good to know: the free AI that writes the summary allows 50 requests a day, and each refresh uses about 4 (a bad day, when the AI is slow or busy and every step is retried once, can use up to 10). Two refreshes a day happen by themselves, so you have room for about eight extra clicks a day. If you press it more often, nothing breaks. The summary just switches to the rule-written version until the allowance resets the next day.
 
 ## If something looks wrong
 
