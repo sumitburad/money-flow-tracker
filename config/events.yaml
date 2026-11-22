@@ -5,8 +5,11 @@ version: 1
 # The names below must match FRED's own release names. If one stops matching, the
 # dashboard's "Data quality" box lists it, and the fix is to correct the name here.
 # Fed meeting dates are a built-in list (below) because the Fed publishes them only
-# as a web page. That list is NOT yet checked against federalreserve.gov (the page
-# could not be opened when it was written), so it says so on the dashboard.
+# as a web page. The list was compared with the Fed's own pages on 2026-11-22 (see the
+# comment on the list). If you change it, set checked_on to the day you re-checked it,
+# or set checked_against_official_site to false so the dashboard says it is unchecked.
+# FRED release names below were seen on FRED's own release calendar pages and API guide
+# on 2026-11-22; the live API call itself still has to prove itself on the first run.
 
 horizon_days: 45          # how far ahead to look
 max_events: 24            # most events shown
@@ -62,9 +65,15 @@ built_in:
     importance: high
     why: "The Fed announces whether it changes interest rates. This is the second day of its two-day meeting."
     source_url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    checked_against_official_site: false
-    covers_through: "2026-12-31"   # the list has no dates after this; add the next year's calendar
+    # Compared on 2026-11-22 with the Fed's own pages: its meeting-calendar page, its monthly
+    # calendar pages and its press releases of 2024-08-09 and 2026-11-12. The Fed calls the
+    # 2027 schedule "tentative" and revised it on 2026-11-12, so re-check this list whenever
+    # the Fed announces a change.
+    checked_against_official_site: true
+    checked_on: "2026-11-22"
+    covers_through: "2027-11-30"   # the list has no dates after this; add the next year's calendar
     dates:
+      # 2026 (second day of each two-day meeting)
       - "2026-01-28"
       - "2026-03-18"
       - "2026-04-29"
@@ -73,3 +82,12 @@ built_in:
       - "2026-09-16"
       - "2026-10-28"
       - "2026-12-09"
+      # 2027. The 26-27 October 2027 meeting is left out on purpose: the Fed says it is a
+      # policy-strategy meeting, with no rate decision announced on its second day.
+      - "2027-01-27"
+      - "2027-03-17"
+      - "2027-04-28"
+      - "2027-06-09"
+      - "2027-07-28"
+      - "2027-09-15"
+      - "2027-11-17"

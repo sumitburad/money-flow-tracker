@@ -21,7 +21,7 @@ You do not need to read or write any code. This page lists every step that needs
 **Added later on 22 November 2026**
 
 - **Risk-on or risk-off banner** (at the very top): the mood of the markets in plain words, for this month and for this week. It runs eight simple checks: are most stock markets rising, are the fear gauges falling, is the dollar weakening, are Bitcoin and Ether rising, are riskier bonds beating safe bonds, are growth sectors beating steady ones, are small companies beating large ones, and is copper beating gold. **Risk-on** means most checks show investors comfortable owning riskier things. **Risk-off** means most show them defensive. **Mixed** means no clear lean. It describes what already happened. It is never a signal to buy or sell. Open **See the 8 checks behind this** to see every vote.
-- **Coming events**: cards for the next US inflation (CPI), PCE inflation, producer prices, jobs and economic growth releases, and Fed meetings. Dates only, never a forecast of the result. The release dates come from FRED's own calendar (your FRED key is used). The Fed meeting dates are a list typed into the system and have not been checked against the Fed's website yet, so each Fed card says **Confirm the date on the official site**. That list ends on 31 December 2026 and needs next year's dates added then.
+- **Coming events**: cards for the next US inflation (CPI), PCE inflation, producer prices, jobs and economic growth releases, and Fed meetings. Dates only, never a forecast of the result. The release dates come from FRED's own calendar (your FRED key is used). The Fed meeting dates are a list typed into the system. On 22 November 2026 I compared it with the Fed's own website: all 2026 dates and the 2027 dates the Fed has published (it calls the 2027 dates tentative, so they can still move). The list runs to 30 November 2027, and the Data quality box warns before it runs out.
 - **Inflation charts**: CPI and PCE, all items and core, shown as the change from a year earlier, inside **Official history**. They appear after the one-click history load in Step 3.
 - **Market and company news**: headlines from major business publishers about US and India markets, interest rates and inflation, AI and chips, commodities and currencies, crypto, and about 20 big companies (for example Micron, Nvidia and Reliance). Only the headline, the publisher's name, the time and a link to the publisher are kept. The executive summary uses them to explain stories such as a company's results. A headline is not proof that a price moved because of it. The news comes from GDELT, a free public news index that needs no key.
 
@@ -100,6 +100,8 @@ Open the dashboard. The banner at the top tells you how fresh the data is:
 1. Press **Refresh now** on the dashboard banner. It opens https://github.com/sumitburad/money-flow-tracker/actions/workflows/daily.yml
 2. Click **Run workflow**, then the green **Run workflow** button.
 3. Wait 5 to 10 minutes. The banner turns green 1 to 2 minutes after the run finishes, once the dashboard site has updated.
+
+Good to know: the free AI that writes the summary allows 50 requests a day, and each refresh uses about 4. Two refreshes a day happen by themselves, so you have room for about eight extra clicks a day. If you press it more often, nothing breaks. The summary just switches to the rule-written version until the allowance resets the next day.
 
 ## If something looks wrong
 
