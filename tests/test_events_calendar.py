@@ -12,6 +12,15 @@ from backend.feed_contract import validate_calendar
 TODAY = date(2026, 11, 22)
 SECRET = "supersecretfredkey1234"
 
+# The Fed's own decision days (the second day of each two-day meeting), compared on 2026-11-22 with
+# https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm, its monthly calendar pages and its
+# press releases of 2024-08-09 and 2026-11-12. The 26-27 Oct 2027 meeting is a strategy meeting with
+# no rate decision, so it is not a decision day. The Fed calls the 2027 schedule tentative.
+FED_2026 = ["2026-01-28", "2026-03-18", "2026-04-29", "2026-06-17", "2026-07-29", "2026-09-16",
+            "2026-10-28", "2026-12-09"]
+FED_2027 = ["2027-01-27", "2027-03-17", "2027-04-28", "2027-06-09", "2027-07-28", "2027-09-15",
+            "2027-11-17"]
+
 
 class Answer:
     def __init__(self, rows=None, status=200, raw=None):
@@ -52,7 +61,10 @@ def test_the_real_config_is_sound():
     assert days == sorted(days) and len(set(days)) == len(days)
     assert all(d.weekday() == 2 for d in days)          # a decision is announced on a Wednesday
     assert max(days) <= date.fromisoformat(fomc["covers_through"])
-    assert fomc["checked_against_official_site"] is False  # flip only after a person checks the page
+    assert fomc["dates"] == FED_2026 + FED_2027            # pinned to what the Fed published
+    assert "2027-10-27" not in fomc["dates"]               # strategy meeting: no rate decision
+    # change the flag only after a person re-checks the Fed's page, and move checked_on with it
+    assert fomc["checked_against_official_site"] is True and fomc["checked_on"] == "2026-11-22"
 
 
 def test_matching_filtering_sorting_and_days_away():
@@ -112,19 +124,51 @@ def test_a_failing_fred_never_raises_and_never_leaks_the_key():
         validate_calendar(block)
 
 
-def test_the_fed_list_warns_when_it_runs_out_and_says_it_is_unchecked():
+def _fomc_state(block):
+    return next(s for s in block["sources"] if s["id"] == "built_in_fomc_list")
+
+
+def _fomc_dates(block):
+    return [e["date"] for e in block["events"] if e["id"] == "fomc"]
+
+
+def test_the_fed_list_says_when_it_was_checked_and_warns_when_it_runs_out():
     cfg = config()
     block, health = build_calendar(cfg, TODAY, http=FredFake([Answer([])]), api_key=SECRET)
-    fomc = next(s for s in block["sources"] if s["id"] == "built_in_fomc_list")
-    # 22 Nov plus 45 days reaches into 2027, past the end of the list
-    assert fomc["status"] == "needs_update" and fomc["checked_against_official_site"] is False
-    assert any("FOMC list ends 2026-12-31" in a for a in health["advisories"])
+    # 22 Nov 2026 plus 45 days is 6 Jan 2027: still inside the list, so no warning
+    assert _fomc_state(block)["status"] == "ok"
+    assert _fomc_state(block)["checked_against_official_site"] is True
+    assert _fomc_state(block)["note"] == "Checked against the official site on 2026-11-22."
+    assert _fomc_dates(block) == ["2026-12-09"]
+    assert not any("FOMC" in a for a in health["advisories"])
+    validate_calendar(block)
+    # 20 Dec 2026: the window reaches over the new year and shows the first 2027 meeting
+    block, _ = build_calendar(cfg, date(2026, 12, 20), http=FredFake([Answer([])]), api_key=SECRET)
+    assert _fomc_dates(block) == ["2027-01-27"]
+    assert [e["days_away"] for e in block["events"] if e["id"] == "fomc"] == [38]
+    # 20 Oct 2027 plus 45 days is 4 Dec 2027: past the end of the list, so it must warn
+    block, health = build_calendar(cfg, date(2027, 10, 20), http=FredFake([Answer([])]), api_key=SECRET)
+    assert _fomc_state(block)["status"] == "needs_update"
+    assert any("FOMC list ends 2027-11-30" in a for a in health["advisories"])
+    assert _fomc_dates(block) == ["2027-11-17"]                 # 27 Oct 2027 has no rate decision
     early = date(2026, 9, 1)                                             # window ends 16 Oct: covered
     block, health = build_calendar(cfg, early, http=FredFake([Answer([])]), api_key=SECRET)
-    fomc = next(s for s in block["sources"] if s["id"] == "built_in_fomc_list")
-    assert fomc["status"] == "ok"
-    assert [e["date"] for e in block["events"] if e["id"] == "fomc"] == ["2026-09-16"]   # 28 Oct is past 16 Oct
+    assert _fomc_state(block)["status"] == "ok"
+    assert _fomc_dates(block) == ["2026-09-16"]                 # 28 Oct is past 16 Oct
     assert not any("FOMC" in a for a in health["advisories"])
+
+
+def test_an_unchecked_fed_list_is_labelled_and_a_garbled_check_date_is_never_shown():
+    cfg = config()
+    fomc = next(b for b in cfg["built_in"] if b["id"] == "fomc")
+    fomc["checked_against_official_site"] = False
+    block, _ = build_calendar(cfg, TODAY, http=FredFake([Answer([])]), api_key=SECRET)
+    assert _fomc_state(block)["checked_against_official_site"] is False
+    assert _fomc_state(block)["note"].startswith("Not yet checked against the official site")
+    fomc.update(checked_against_official_site=True, checked_on="yesterday <b>hi</b>")
+    block, _ = build_calendar(cfg, TODAY, http=FredFake([Answer([])]), api_key=SECRET)
+    assert _fomc_state(block)["note"] == "Checked against the official site."
+    validate_calendar(block)
 
 
 def test_most_events_are_capped_and_a_meeting_today_counts_as_zero_days():

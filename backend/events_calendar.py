@@ -6,8 +6,9 @@ shows when the next ones are due. It publishes dates only, never a forecast of t
 Where the dates come from
   * FRED's release calendar (needs the free FRED_API_KEY). The names in config/events.yaml
     must match FRED's release names; unmatched ones are reported, not guessed.
-  * A built-in Fed meeting list in the same config file. It is flagged as "not yet checked
-    against federalreserve.gov" until a person checks it, and it warns when it runs out.
+  * A built-in Fed meeting list in the same config file. It carries a flag saying whether a
+    person has checked it against federalreserve.gov (and on which day), and it warns when
+    it runs out.
 
 Nothing here can stop the daily refresh: every failure becomes a note in the health report.
 """
@@ -131,6 +132,9 @@ def build_calendar(cfg, today, *, http=HTTP, api_key=""):
     for item in cfg.get("built_in", []):
         covers = date.fromisoformat(str(item["covers_through"]))
         checked = bool(item.get("checked_against_official_site"))
+        checked_on = str(item.get("checked_on") or "").strip()
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked_on):
+            checked_on = ""                          # only a plain date is ever shown
         for text in item["dates"]:
             day = date.fromisoformat(str(text))
             if today <= day <= end:
@@ -138,7 +142,8 @@ def build_calendar(cfg, today, *, http=HTTP, api_key=""):
         state = {"id": "built_in_" + item["id"] + "_list", "url": item["source_url"],
                  "status": "ok", "checked_against_official_site": checked,
                  "covers_through": covers.isoformat(),
-                 "note": ("Checked against the official site." if checked else
+                 "note": (("Checked against the official site" +
+                           (" on %s" % checked_on if checked_on else "") + ".") if checked else
                           "Not yet checked against the official site, so confirm each date there.")}
         if end > covers:
             state["status"] = "needs_update"
