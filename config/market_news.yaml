@@ -21,7 +21,8 @@ source:
   query_suffix: ""          # optional extra words added to every question, e.g. "sourcelang:english"
   pause_seconds: 5.5        # GDELT asks for at most one request every 5 seconds
   max_queries: 10           # hard cap on questions per refresh
-  timeout_seconds: [6, 25]  # connect, read
+  timeout_seconds: [10, 60] # connect, read. The news index is often slow: 25 seconds was too short
+  total_seconds: 300        # the whole news step stops asking after this long, to keep the refresh on time
 
 limits:
   max_stories: 36           # headlines kept in total

@@ -1136,7 +1136,8 @@ function renderHealth(h,feed){
   if(ai){
     if(!ai.model_configured)note("Headline tagging: no AI key is connected, so simple rules were used.",true);
     else note("Headline tagging: "+ai.model_classified+" headlines tagged by AI ("+((ai.providers_used||[]).join(", ")||"none")+
-      "), "+ai.rule_fallback+" by simple rules.",ai.model_classified===0);
+      "), "+ai.rule_fallback+" by simple rules"+
+      ((ai.failure_reasons||[]).length?". What went wrong: "+ai.failure_reasons.join("; "):"")+".",ai.model_classified===0);
   }
   const es=h.executive_summary;
   if(es){

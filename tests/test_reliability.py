@@ -97,7 +97,7 @@ def test_official_source_problem_pattern():
                    "us_treasury:UST_PAR_2Y", "cftc_tff"):
         assert match(source), source
     for source in ("macro_stale:DGS2", "price:sp500", "boj_assets", "news_classifier",
-                   "institutional_flows", "breadth:sp500"):
+                   "institutional_flows", "breadth:sp500", "cftc_market:sp500"):
         assert not match(source), source
 
 

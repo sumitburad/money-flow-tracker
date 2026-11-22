@@ -14,6 +14,8 @@ from datetime import datetime, timezone
 
 import requests
 
+from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_reason,
+                              reply_from, think_less_fields, unreadable)
 from backend.net import post_with_one_429_retry
 
 EVENT_TYPES = {
@@ -141,8 +143,11 @@ def _parse_tags(text):
 
 
 def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=requests,
-                      sleep=time.sleep):
-    """One request for several headlines. Returns the model's raw tag objects (not yet checked)."""
+                      sleep=time.sleep, think_less=None):
+    """One request for several headlines.
+
+    Returns (the model's raw tag objects, not yet checked; the model that really answered).
+    ``think_less`` holds extra request fields that ask a "thinking" model to think less."""
     prompt = {
         "headlines": [{"headline_id": h["headline_id"],
                        "headline": h.get("title", "")[:250],
@@ -157,7 +162,8 @@ def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=reque
         json={
             "model": model,
             "temperature": 0,
-            "max_tokens": 1800,
+            # Room for a "thinking" model's thinking AND the tags (see backend/ai_reply.py).
+            "max_tokens": answer_tokens(endpoint, 1800),
             # Groq's free plan allows few tokens a minute; a short reasoning pass keeps calls small.
             **({"reasoning_effort": "low"} if "groq.com" in endpoint else {}),
             "response_format": {"type": "json_object"},
@@ -165,17 +171,14 @@ def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=reque
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": json.dumps(prompt, ensure_ascii=True)},
             ],
-        }, timeout=45)
-    response.raise_for_status()
-    if len(response.content) > 200_000:
-        raise ValueError("AI response oversized")
-    choices = response.json().get("choices")
-    if not isinstance(choices, list) or not choices:
-        raise ValueError("AI provider returned no completion")
-    text = (choices[0].get("message") or {}).get("content")
-    if not isinstance(text, str):
-        raise ValueError("AI response missing text")
-    return _parse_tags(text)
+            **(think_less or {}),
+        }, timeout=AI_TIMEOUT)
+    reply = reply_from(response)
+    try:
+        return _parse_tags(reply.text), reply.model
+    except ValueError as exc:
+        raise unreadable(reply, "has no tag list" if "tag list" in str(exc)
+                         else "is not valid JSON") from None
 
 
 def classify_headlines(headlines, universe, *, http=requests, env=None, max_calls=MAX_CALLS,
@@ -197,25 +200,53 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
             config.append((provider, url, key, env.get(model_name, default_model)))
     health = {"model_configured": bool(config), "model_calls": 0,
               "model_classified": 0, "rule_fallback": 0,
-              "rejected_model_responses": 0, "providers_used": []}
+              "rejected_model_responses": 0, "providers_used": [],
+              "empty_reply_retries": 0, "models_seen": [], "failure_reasons": []}
     accepted = {}
+    problems = Counter()          # plain reason -> how many times it happened in this run
     if config:
         size = max(1, int(batch_size))
         batches = [headlines[i:i + size] for i in range(0, len(headlines), size)][:max(0, max_calls)]
         calls = 0
+        retries_left = 1          # one "think less" retry per run: a free plan has few requests a day
+
+        def ask(provider, url, key, model, pending):
+            """One request for these headlines, plus at most one more after an empty reply.
+
+            Returns the model's raw answers, or None (the reason is counted in ``problems``)."""
+            nonlocal calls, retries_left
+            extra = None
+            for attempt in (0, 1):
+                if pace and calls:
+                    sleep(pace)
+                calls += 1
+                try:
+                    answers, used = _call_model_batch(pending, names, endpoint=url, key=key,
+                                                      model=model, http=http, sleep=sleep,
+                                                      think_less=extra)
+                except (ValueError, TypeError, KeyError, requests.RequestException) as exc:
+                    fields = think_less_fields(url)
+                    if (isinstance(exc, AIReplyError) and exc.empty and fields
+                            and retries_left and attempt == 0):
+                        retries_left -= 1
+                        health["empty_reply_retries"] += 1
+                        extra = fields
+                        continue
+                    health["rejected_model_responses"] += 1
+                    problems[provider + ": " + failure_reason(exc)] += 1
+                    return None
+                if used and used not in health["models_seen"] and len(health["models_seen"]) < 4:
+                    health["models_seen"].append(used)
+                return answers
+            return None
+
         for batch in batches:
             pending = list(batch)
             for provider, url, key, model in config:
                 if not pending:
                     break
-                if pace and calls:
-                    sleep(pace)
-                calls += 1
-                try:
-                    answers = _call_model_batch(pending, names, endpoint=url, key=key,
-                                                model=model, http=http, sleep=sleep)
-                except (ValueError, TypeError, KeyError, requests.RequestException):
-                    health["rejected_model_responses"] += 1
+                answers = ask(provider, url, key, model, pending)
+                if answers is None:
                     continue
                 by_id = {a.get("headline_id"): a for a in answers if isinstance(a, dict)}
                 still = []
@@ -223,8 +254,11 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
                     tag = by_id.get(headline["headline_id"])
                     try:
                         check_tag(tag, headline, names)
-                    except (ValueError, TypeError, KeyError):
+                    except (ValueError, TypeError, KeyError) as exc:
                         health["rejected_model_responses"] += 1
+                        problems[provider + ": " + (
+                            "the model left a headline out" if tag is None
+                            else "a tag failed the checks (" + failure_reason(exc, 60) + ")")] += 1
                         still.append(headline)
                         continue
                     if tag["direction"] not in ("unclear", "mixed"):
@@ -233,6 +267,8 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
                     accepted[headline["headline_id"]] = (tag, provider, model)
                 pending = still
         health["model_calls"] = calls
+        health["failure_reasons"] = [text if count == 1 else "%s (x%d)" % (text, count)
+                                     for text, count in problems.most_common(4)]
     output = []
     for headline in headlines:
         found = accepted.get(headline["headline_id"])

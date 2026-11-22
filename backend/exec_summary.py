@@ -19,6 +19,8 @@ from datetime import datetime, timezone
 
 import requests
 
+from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_reason,
+                              reply_from, think_less_fields, unreadable)
 from backend.events_calendar import digest_events
 from backend.feed_contract import FLOW_WINDOWS
 from backend.market_news import digest_market_news
@@ -324,29 +326,29 @@ def _prompt(digest):
 
 
 def _ask(url, key, model, extra, digest, http):
+    """One request. Returns (the answer as a dict, the model that really answered)."""
     response = http.post(
         url, headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
                       "User-Agent": "global-money-flow-research/2.0"},
-        json={"model": model, "temperature": 0.2, "max_tokens": 1500,
+        json={"model": model, "temperature": 0.2, "max_tokens": answer_tokens(url, 1500),
               "response_format": {"type": "json_object"}, "messages": _prompt(digest), **extra},
-        timeout=45)
-    response.raise_for_status()
-    if len(response.content) > 200_000:
-        raise ValueError("AI response oversized")
-    choices = response.json().get("choices")
-    if not isinstance(choices, list) or not choices:
-        raise ValueError("AI provider returned no completion")
-    text = (choices[0].get("message") or {}).get("content")
-    if not isinstance(text, str):
-        raise ValueError("AI response missing text")
-    start, end = text.find("{"), text.rfind("}")
-    if start < 0 or end <= start:
-        raise ValueError("AI response is not JSON")
-    return json.loads(text[start:end + 1])
+        timeout=AI_TIMEOUT)
+    reply = reply_from(response)
+    start, end = reply.text.find("{"), reply.text.rfind("}")
+    try:
+        if start < 0 or end <= start:
+            raise ValueError("no JSON object")
+        return json.loads(reply.text[start:end + 1]), reply.model
+    except ValueError:
+        raise unreadable(reply) from None
 
 
-def _ask_with_one_retry(url, key, model, extra, digest, http, sleep):
-    """A free plan answers 429 when it is busy; wait the time it asks for (at most 30 s) and try once more."""
+def _ask_with_one_retry(url, key, model, extra, digest, http, sleep, notes=None):
+    """At most two requests, so a free plan's daily allowance is safe.
+
+    * HTTP 429 (busy): wait the time the provider asks for (at most 30 s) and try once more.
+    * An empty or cut-off reply (a "thinking" model used its room up): try once more, asking the
+      model to think less. ``notes["empty_reply_retries"]`` counts these."""
     try:
         return _ask(url, key, model, extra, digest, http)
     except requests.HTTPError as exc:
@@ -359,6 +361,13 @@ def _ask_with_one_retry(url, key, model, extra, digest, http, sleep):
             wait = 15.0
         sleep(min(max(wait, 1.0), 30.0))
         return _ask(url, key, model, extra, digest, http)
+    except AIReplyError as exc:
+        fields = think_less_fields(url)
+        if not exc.empty or fields is None:
+            raise
+        if notes is not None:
+            notes["empty_reply_retries"] = notes.get("empty_reply_retries", 0) + 1
+        return _ask(url, key, model, {**extra, **fields}, digest, http)
 
 
 def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, now=None,
@@ -367,7 +376,7 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
     env = os.environ if env is None else env
     now = now or datetime.now(timezone.utc)
     health = {"method": "rules_only", "providers_tried": [], "rejected_answers": 0,
-              "reasons": [], "ai_configured": False}
+              "reasons": [], "ai_configured": False, "empty_reply_retries": 0, "models_seen": []}
     try:
         digest = build_digest(feed, macro_names)
     except Exception as exc:
@@ -385,12 +394,13 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
             model = env.get(model_var, "").strip() or default_model
             health["providers_tried"].append(provider)
             try:
-                clean = check_summary(
-                    _ask_with_one_retry(url, key, model, extra, digest, http, sleep), digest)
+                answer, used = _ask_with_one_retry(url, key, model, extra, digest, http, sleep, health)
+                if used and used not in health["models_seen"]:
+                    health["models_seen"].append(used)
+                clean = check_summary(answer, digest)
             except (ValueError, TypeError, KeyError, requests.RequestException) as exc:
                 health["rejected_answers"] += 1
-                health["reasons"].append(provider + ": " + (
-                    str(exc)[:80] if isinstance(exc, ValueError) else type(exc).__name__))
+                health["reasons"].append(provider + ": " + failure_reason(exc))
                 continue
             summary = {**clean, "method": "ai_validated", "provider": provider, "model": model}
             health["method"] = "ai_validated"
@@ -400,4 +410,5 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
     summary.update(generated_at_utc=now.isoformat(), as_of_ist=feed.get("as_of_ist"),
                    notice=NOTICE, human_review_required=True)
     health["reasons"] = health["reasons"][:4]
+    health["models_seen"] = health["models_seen"][:4]
     return summary, health

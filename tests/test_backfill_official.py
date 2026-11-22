@@ -160,9 +160,33 @@ def test_cftc_net_positions_and_unmatched_markets(tmp_path):
     assert lines[1].split(",")[4] == "200.0"            # 300 - 100
     assert lines[1].split(",")[6] == "2026-11-14"       # Tuesday + 4 days, conservative
     by_id = {e["id"]: e for e in result["manifest"]["series"]}
-    assert by_id["CFTC_TFF_us_treasury"]["status"] == "no_matching_contract"
+    # the sample has no Nasdaq-100 row, so that market is reported as unmatched, never guessed
+    assert by_id["CFTC_TFF_nasdaq100"]["status"] == "no_matching_contract"
+    # "UST 10Y NOTE" is the exchange's current name for the 10-year note contract
+    assert by_id["CFTC_TFF_us_treasury"]["status"] != "no_matching_contract"
+    treasury = (tmp_path / "cftc" / "us_treasury.csv").read_text().splitlines()
+    assert treasury[1].split(",")[0:2] == ["2026-11-17", "UST 10Y NOTE - CHICAGO BOARD OF TRADE"]
     seen = json.loads((tmp_path / "cftc" / "contracts_seen.json").read_text())["contracts"]
     assert "UST 10Y NOTE - CHICAGO BOARD OF TRADE" in seen
+
+
+def test_cftc_history_runs_straight_through_the_february_2022_rename():
+    def row(name, day):
+        return {"market_and_exchange_names": name, "report_date_as_yyyy_mm_dd": day + "T00:00:00.000",
+                "asset_mgr_positions_long": "300", "asset_mgr_positions_short": "100",
+                "open_interest_all": "1000"}
+    payload = [row("10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE", "2022-01-25"),
+               row("10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE", "2022-02-01"),
+               row("UST 10Y NOTE - CHICAGO BOARD OF TRADE", "2022-02-08"),
+               row("UST 10Y NOTE - CHICAGO BOARD OF TRADE", "2022-02-15"),
+               row("ULTRA UST 10Y - CHICAGO BOARD OF TRADE", "2022-02-15"),
+               row("E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE", "2022-02-15"),
+               row("MICRO E-MINI S&P 500 INDEX - CHICAGO MERCANTILE EXCHANGE", "2022-02-15")]
+    matched, names = backfill.parse_cftc_rows(payload, date(2021, 11, 22), date(2022, 3, 1))
+    assert [r[0].isoformat() for r in sorted(matched["us_treasury"])] == [
+        "2022-01-25", "2022-02-01", "2022-02-08", "2022-02-15"]       # one contract a week, no gap
+    assert [r[1] for r in matched["sp500"]] == ["E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE"]  # not the Micro
+    assert len(names) == 5                                            # every name is still listed
 
 
 def test_cftc_cards_use_plain_market_names(tmp_path):

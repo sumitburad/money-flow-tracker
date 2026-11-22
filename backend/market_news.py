@@ -147,6 +147,22 @@ def ask(http, source, query):
     return articles
 
 
+def explain_error(exc, source, http=None):
+    """One plain sentence for a failed question: no web addresses and no library jargon."""
+    connect, read = (list(source.get("timeout_seconds") or [10, 60]) + [60, 60])[:2]
+    tries = getattr(http, "attempts", 1)
+    twice = " (%d tries)" % tries if isinstance(tries, int) and tries > 1 else ""
+    if isinstance(exc, requests.ReadTimeout):
+        return "no answer from the news index within %d seconds%s" % (read, twice)
+    if isinstance(exc, requests.ConnectTimeout):
+        return "could not reach the news index within %d seconds%s" % (connect, twice)
+    if isinstance(exc, requests.ConnectionError):
+        return "could not connect to the news index" + twice
+    if isinstance(exc, (requests.HTTPError, ValueError)):
+        return redact(str(exc))[:120]            # our own plain sentences, e.g. "news index answered HTTP 429"
+    return type(exc).__name__
+
+
 # ------------------------------------------------------------------ the build
 
 def _select(stories, limits):
@@ -182,11 +198,16 @@ def _block(cfg, status, now, asked, answered, stories):
             "stories": stories, "notice": NOTICE}
 
 
-def build_market_news(cfg, now, *, http=None, sleep=time.sleep):
-    """Returns (block for the feed, health notes). Never raises."""
-    health = {"status": "ok", "queries_asked": 0, "queries_answered": 0, "articles_seen": 0,
-              "from_listed_publishers": 0, "kept": 0, "company_stories": 0,
-              "errors": [], "advisories": []}
+def build_market_news(cfg, now, *, http=None, sleep=time.sleep, clock=time.monotonic):
+    """Returns (block for the feed, health notes). Never raises.
+
+    The whole step stops asking new questions after ``source.total_seconds`` so a slow news index
+    can never hold the refresh up. ``health["seconds"]`` and ``health["slowest_answer_seconds"]``
+    show how long it really took, so the waiting times can be tuned from facts."""
+    health = {"status": "ok", "queries_asked": 0, "queries_answered": 0, "queries_skipped": 0,
+              "articles_seen": 0, "from_listed_publishers": 0, "kept": 0, "company_stories": 0,
+              "seconds": 0.0, "slowest_answer_seconds": 0.0, "errors": [], "advisories": []}
+    started = clock()
     try:
         if not cfg.get("enabled", True):
             health["status"] = "disabled"
@@ -196,18 +217,30 @@ def build_market_news(cfg, now, *, http=None, sleep=time.sleep):
         oldest = now - timedelta(hours=float(limits["max_age_hours"]))
         newest = now + timedelta(hours=1)
         found = {}
-        for number, (theme_id, _name, query) in enumerate(build_questions(cfg)):
+        questions = build_questions(cfg)
+        budget = float(source.get("total_seconds", 300))
+        for number, (theme_id, _name, query) in enumerate(questions):
             if number:
+                if clock() - started + float(source["pause_seconds"]) >= budget:
+                    health["queries_skipped"] = len(questions) - number
+                    health["errors"].append(
+                        "The news step stopped after %d seconds to keep the refresh on time; "
+                        "%d of %d questions were not asked." % (round(clock() - started),
+                                                                health["queries_skipped"], len(questions)))
+                    break
                 sleep(float(source["pause_seconds"]))
             health["queries_asked"] += 1
+            asked_at = clock()
             try:
                 articles = ask(http, source, query)
             except HostCircuitOpen:
                 health["errors"].append("The news index failed twice, so the remaining questions were skipped.")
                 break
             except Exception as exc:
-                health["errors"].append(type(exc).__name__ + ": " + redact(str(exc))[:90])
+                health["errors"].append(explain_error(exc, source, http))
                 continue
+            health["slowest_answer_seconds"] = max(health["slowest_answer_seconds"],
+                                                   round(clock() - asked_at, 1))
             health["queries_answered"] += 1
             for article in articles:
                 if not isinstance(article, dict):
@@ -241,7 +274,9 @@ def build_market_news(cfg, now, *, http=None, sleep=time.sleep):
         for story in stories:
             story["topics"] = sorted(story["topics"])
         asked, answered = health["queries_asked"], health["queries_answered"]
-        status = "unavailable" if answered == 0 else ("ok" if answered == asked else "partial")
+        status = "unavailable" if answered == 0 else (
+            "ok" if answered == asked and not health["queries_skipped"] else "partial")
+        health["seconds"] = round(clock() - started, 1)
         health.update(status=status, kept=len(stories),
                       company_stories=sum(1 for s in stories if s["companies"]))
         if answered and health["articles_seen"] and not health["from_listed_publishers"]:
@@ -253,6 +288,7 @@ def build_market_news(cfg, now, *, http=None, sleep=time.sleep):
         return _block(cfg, status, now, asked, answered, stories if answered else []), health
     except Exception as exc:                       # never stop the daily refresh
         health["status"] = "unavailable"
+        health["seconds"] = round(clock() - started, 1)
         health["errors"].append(type(exc).__name__ + ": " + redact(str(exc))[:90])
         try:
             return _block(cfg, "unavailable", now, health["queries_asked"],

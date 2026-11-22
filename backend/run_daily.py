@@ -295,6 +295,17 @@ def fetch_fred_csv(series_id, run_day):
             "fetch_path": "fred_csv"}
 
 
+# Series that the source publishes in a batch, so being days or weeks behind is normal and
+# not a failure: how many calendar days old a value may be and still count as current. Each
+# limit is the longest normal gap between releases plus a few days of slack for holidays.
+CALENDAR_DAY_LIMITS = {
+    "DEXINUS": 12,            # the Fed's H.10 table comes out weekly (Mondays) for the week before
+    "M2SL": 90,               # monthly, dated the 1st; the next value comes out in the 4th week
+    "JPNASSETS": 80,          # Bank of Japan total assets, monthly
+    "BOJ_TOTAL_ASSETS": 80,   # the same series under the dashboard's own name
+}
+
+
 def annotate_macro_freshness(series_id, record, today):
     """Mark source age according to the observed series' actual reporting frequency.
 
@@ -310,9 +321,10 @@ def annotate_macro_freshness(series_id, record, today):
         observed_day = date.fromisoformat(str(observation)[:10])
     except (TypeError, ValueError):
         observed_day = None
-    if monthly:
-        allowed = "45 calendar days"
-        current = observed_day is not None and (today - observed_day).days <= 45 and observed_day <= today
+    if series_id in CALENDAR_DAY_LIMITS or monthly:
+        limit = CALENDAR_DAY_LIMITS.get(series_id, 45)
+        allowed = "%d calendar days" % limit
+        current = observed_day is not None and (today - observed_day).days <= limit and observed_day <= today
     else:
         days = 10 if weekly else 2
         allowed = str(days) + " weekday sessions (exchange holidays require review)"
@@ -320,6 +332,22 @@ def annotate_macro_freshness(series_id, record, today):
     return {**record, "freshness": "current" if current else "stale",
             "last_good_date": observation,
             "allowed_age": allowed}
+
+
+def fetch_boj_total_assets(run_day):
+    """Bank of Japan total assets (monthly), from FRED itself.
+
+    FRED (free key, then its public CSV) comes first. The DBnomics copy of the same series is only
+    the fallback, because it was the one that failed from GitHub's computers (HTTP error); it is
+    clearly marked as a mirror when it is used."""
+    try:
+        record = fetch_fred("JPNASSETS", run_day)
+    except Exception:
+        from backend.advanced_sources import fetch_fred_mirror
+        record = fetch_fred_mirror("JPNASSETS", ROOT, run_day)
+    return {**record, "id": "BOJ_TOTAL_ASSETS", "source_series_id": "JPNASSETS",
+            "frequency": "monthly", "unit": "hundred_million_yen",
+            "description": "Bank of Japan total assets (monthly, via FRED)"}
 
 
 def macro_family(asset, macro, today):
@@ -642,9 +670,7 @@ def main():
             if bank_id == "ECB_ILM_TOTAL_ASSETS":
                 macro[bank_id] = fetch_ecb_assets(ROOT, day)
             else:
-                macro[bank_id] = fetch_fred_mirror(mirror_id, ROOT, day)
-                macro[bank_id]["id"] = bank_id
-                macro[bank_id]["source_series_id"] = mirror_id
+                macro[bank_id] = fetch_boj_total_assets(day)
         except Exception as exc:
             try:
                 if bank_id == "ECB_ILM_TOTAL_ASSETS":
@@ -677,7 +703,7 @@ def main():
             errors.append({"source": "macro_stale:" + sid,
                            "error": "Last observation " + str(macro[sid]["last_good_date"]) +
                                     "; permitted " + macro[sid]["allowed_age"]})
-    from backend.advanced_sources import fetch_cftc, breadth_from_equal_weight
+    from backend.advanced_sources import fetch_cftc, cftc_gaps, breadth_from_equal_weight
     from backend.institutional_flows import institutional_status
     from backend.news_classifier import classify_headlines
     try:
@@ -687,6 +713,12 @@ def main():
                 "source": "https://publicreporting.cftc.gov/Commitments-of-Traders",
                 "error": type(exc).__name__}
         errors.append({"source": "cftc_tff", "error": type(exc).__name__})
+    else:
+        # Not an "official source problem" (no retry): the site answered, a market just did not match.
+        for gap in cftc_gaps(cftc.get("entries"), {a["id"] for a in universe}):
+            errors.append({"source": "cftc_market:" + gap, "error":
+                           "No single matching futures contract with two recent weekly reports "
+                           "(the exchange may have renamed it)"})
     breadth_records = {}
     for ident in ("sp500", "nasdaq100"):
         if ident not in {a["id"] for a in universe}:
