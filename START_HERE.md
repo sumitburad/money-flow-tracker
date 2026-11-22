@@ -86,14 +86,23 @@ The first run on GitHub's computers worked from start to finish in about 4 minut
 
 These are only confirmed after the next real run, so read the Data quality box then, as the next section explains.
 
+## What the second and third real runs showed (22 November 2026), and what the next update changes
+
+Both runs proved that the futures positions, Japan's balance sheet and the false "behind on dates" warnings are fixed, and that all 73 prices are current. Two things were still wrong:
+
+1. **The AI summary was blank again.** The free AI picks one free model at random each time, and it kept landing on models that spend all their allowed length thinking. (The headline tags worked in the third run only because the random pick happened to be lucky.) The next update names free models that answer directly, chosen from OpenRouter's own list, with backups. If that list cannot be read, it goes back to the random pick, and the Data quality box says why.
+2. **The news was thin.** The news index sometimes answers "too many requests", so only 2 of 6 questions were answered in the third run. And of the 200 headlines it sent, only 1 came from the business publishers we use, because we were not asking for them by name. The next update waits and tries again, asks for the listed publishers by name, and says in plain words what the index replied. If the index will not take that request, the program asks again without it and tells you so.
+
+These are only confirmed after the next real run.
+
 ## After the first refresh with the new features (2 minutes, once)
 
 Open the dashboard and find the **Data quality** box (the last section). Look at these five things and copy anything odd to Claude, which will fix it:
 
 1. **Unavailable items**: a few of the 23 new items may be listed. That is expected for any ticker the free price source does not return.
 2. **Coming events**: a note such as "No upcoming FRED date was found for…" means one release name needs correcting. Fix it by telling Claude. The Fed list note about 31 December 2026 is expected.
-3. **Market news**: a note that a question failed, or that no headline came from a listed publisher, means the free news index answered oddly. The page then shows what it has. Nothing else is affected.
-4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe. When it is rule-based, the Data quality box now gives the reason in plain words (for example "empty reply from a model: it used all its room thinking", or "HTTP 429: the daily free limit is used up"). The line **Headline tagging** does the same for the news tags.
+3. **Market news**: a note that a question failed, or that no headline came from a listed publisher, means the free news index answered oddly. The page then shows what it has. Nothing else is affected. The line **News detail** says how many headlines came back, how many were from the listed publishers and how many were kept. A note that the publisher filter was turned off means the index would not take the request to send only the listed publishers, so the program asked again without it; expect fewer usable headlines until that is looked at.
+4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe. When it is rule-based, the Data quality box now gives the reason in plain words (for example "empty reply from a model: it used all its room thinking", or "HTTP 429: the daily free limit is used up"). The line **Headline tagging** does the same for the news tags. A line starting **AI models:** names the free models the program asked, or, in a warning, says why none could be chosen (then it used OpenRouter's random pick, as before). If you see "No free model could be chosen", tell Claude: it may be a setting in your OpenRouter account.
 5. The **Risk tone** banner at the top should show a month reading and a week reading. **Not enough data** means fewer than five of the eight checks had prices that day.
 
 None of these new parts can stop the daily refresh. If any of them fails, the page says so and keeps going.

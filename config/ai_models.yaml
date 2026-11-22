@@ -1,0 +1,49 @@
+version: 1
+# Which free AI models the program asks for on OpenRouter.
+#
+# Why this file exists: OpenRouter's "free router" (openrouter/free) picks a free model at
+# random. In the first live runs (22 Nov 2026) it kept picking "thinking" models. They spend
+# their whole answer allowance thinking and send back a blank reply, so the AI summary and the
+# headline tags could not be used. So, once per run, the program reads the list of models your
+# OpenRouter account may use, keeps the free ones that answer directly (no hidden thinking), and
+# names up to three of them in the request: the first is asked, the others are automatic backups.
+#
+# Nothing here can stop the daily refresh. If the list cannot be read, or no model qualifies,
+# the program goes back to the free router, exactly as before, and the dashboard says why.
+# You never need to edit this file for the system to work. Edit it only to steer the choice.
+
+openrouter:
+  enabled: true                  # false = always use the free router
+  max_models: 3                  # the first is asked, the rest are automatic backups (keep at 3 or less)
+  min_context_tokens: 32000      # models that read less than this at once are skipped
+  min_answer_tokens: 3500        # models that cannot send an answer this long are skipped
+  min_billions: 20               # a model whose name states a smaller size is skipped (small models fail our checks)
+
+  # Words looked for in the model's name, in order of preference. A model that matches an earlier
+  # word is tried first. Models that match none can still be used if their name states a size of
+  # at least min_billions. A model that "thinks" (OpenRouter lists a "reasoning" setting for it)
+  # is never used here, whatever its name.
+  prefer:
+    - gemma-4
+    - gemma-3-27b
+    - llama-3.3-70b
+    - llama-4
+    - mistral-small
+    - mistral-medium
+    - qwen3-next
+    - qwen3-235b
+    - qwen3.5
+    - ling-
+
+  # Models whose name contains one of these words are never used (they are not chat models).
+  avoid:
+    - guard
+    - safety
+    - rerank
+    - embed
+    - moderat
+    - whisper
+    - tts
+    - ocr
+    - image
+    - diffusion

@@ -502,7 +502,9 @@ def collect_news(run_day):
                                 "direction": "unclear", "data": "Headline only",
                                 "reading": "No verified causal market reaction"})
         except Exception as exc:
-            errors.append({"source": publisher, "error": type(exc).__name__})
+            code = getattr(getattr(exc, "response", None), "status_code", None)
+            errors.append({"source": publisher, "error": type(exc).__name__ + (
+                " (HTTP %d)" % code if isinstance(code, int) and not isinstance(code, bool) else "")})
     return entries[:30], errors
 
 

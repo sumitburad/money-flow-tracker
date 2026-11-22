@@ -1122,14 +1122,20 @@ function renderHealth(h,feed){
     (cal.advisories||[]).forEach(a=>note(a,true));
   }else note("Calendar: not built in this refresh.",true);
   const mn=h.market_news;
-  if(mn&&mn.status==="ok")note("Market news: "+mn.kept+" headlines kept ("+mn.company_stories+" about watchlist companies); "+
+  const heads=n=>n+(n===1?" headline":" headlines");
+  if(mn&&mn.status==="ok")note("Market news: "+heads(mn.kept)+" kept ("+mn.company_stories+" about watchlist companies); "+
     mn.queries_answered+" of "+mn.queries_asked+" news questions answered.");
-  else if(mn&&mn.status==="partial")note("Market news: "+mn.kept+" headlines kept, but only "+mn.queries_answered+" of "+
-    mn.queries_asked+" news questions were answered.",true);
+  else if(mn&&mn.status==="partial")note("Market news: "+heads(mn.kept)+" kept, but only "+mn.queries_answered+" of "+
+    mn.queries_asked+" news questions were answered"+(mn.queries_skipped?" ("+mn.queries_skipped+" more were not asked)":"")+".",true);
   else if(mn&&mn.status==="unavailable")note("Market news: the news source could not be reached in this refresh"+
     ((mn.errors||[]).length?" ("+mn.errors[0]+")":"")+".",true);
   else if(mn&&mn.status==="disabled")note("Market news: switched off in config/market_news.yaml.");
   else note("Market news: not built in this refresh.",true);
+  if(mn&&mn.articles_seen!==undefined&&mn.status!=="disabled"){
+    const f=mn.publisher_filter;
+    note("News detail: "+mn.articles_seen+" headlines came back, "+mn.from_listed_publishers+" from the listed publishers, "+mn.kept+" kept"+
+      (f==="on"?" (the news index was asked for the listed publishers only)":f?" (publisher filter: "+f+")":"")+".");
+  }
   if(mn)(mn.advisories||[]).forEach(a=>note(a,true));
   if(mn&&mn.status==="partial")(mn.errors||[]).slice(0,2).forEach(e=>note("News question problem: "+e,true));
   const ai=h.ai_classification;
@@ -1145,6 +1151,12 @@ function renderHealth(h,feed){
     else if(!es.ai_configured)note("Executive summary: rule-based, because no AI key is connected.",true);
     else note("Executive summary: rule-based, because the AI answer could not be used"+
       ((es.reasons||[]).length?" ("+es.reasons.join("; ")+")":"")+".",true);
+  }
+  const pool=[es,ai].find(x=>x&&x.free_pool!==undefined);
+  if(pool){
+    const names=(pool.free_pool||[]).map(m=>String(m).replace(/:free$/,""));
+    if(names.length)note("AI models: asked "+names.join(", ")+" (free models that answer directly; if one is busy, OpenRouter tries the next).");
+    else if(pool.pool_note)note(pool.pool_note,true);
   }
 }
 

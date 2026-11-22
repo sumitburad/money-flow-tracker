@@ -30,14 +30,34 @@ def bars(drift, volume_bump=1.3):
 NEWER_BLOCKS = ("rotation", "regime", "calendar", "market_news", "executive_summary")
 
 
+def _driver(number, title, publisher, url, region):
+    return {"headline_id": "%016d" % number, "title": title, "publisher": publisher, "url": url,
+            "event_type": "rates", "impact": "unconfirmed", "direction": "unclear", "data": "Headline only",
+            "reading": "No verified causal market reaction", "confirmation": "too_early_or_unverified",
+            "classification": {"headline_id": "%016d" % number, "event_type": "central_bank", "region": [region],
+                               "affected": [], "direction": "unclear", "horizon": "days", "novelty": "new",
+                               "confidence": "low", "one_line_reason": "Policy headline with unconfirmed market effect",
+                               "classifier": "rules_fallback", "human_review_required": True}}
+
+
+# One Fed and one ECB headline, so the tests do not depend on which of the two feeds happened to
+# answer in the last live run (the Fed's feed failed once on 22 November 2026).
+FIXED_DRIVERS = [
+    _driver(1, "Federal Reserve issues FOMC statement", "Federal Reserve",
+            "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261107a.htm", "US"),
+    _driver(2, "ECB decides on interest rates", "European Central Bank",
+            "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261030.en.html", "EU")]
+
+
 def published_feed():
     """The real published feed's items, without the blocks that later releases added.
 
-    These tests add their own copies of those blocks, so a fresh daily refresh (which fills
-    them in with live values) can never change what a test expects."""
+    These tests add their own copies of those blocks and their own official headlines, so a fresh
+    daily refresh (which fills them in with live values) can never change what a test expects."""
     feed = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
     for key in NEWER_BLOCKS:
         feed.pop(key, None)
+    feed["drivers"] = copy.deepcopy(FIXED_DRIVERS)
     return feed
 
 
@@ -542,3 +562,110 @@ def test_a_good_ai_answer_about_a_company_story_is_accepted():
     summary, health = build_executive_summary(richer_feed(), http=FakeHttp(ai(answer)), env=ENV, now=NOW)
     assert summary["method"] == "ai_validated" and "Micron" in summary["drivers_view"]
     validate_executive_summary(summary)
+
+
+# ------------------------------------------------------------------- free models that answer directly
+
+GEMMA, LLAMA = "google/gemma-4-31b-it:free", "meta-llama/llama-3.3-70b-instruct:free"
+THINKER = "nvidia/nemotron-3.5-lightning:free"
+ACCOUNT_LIST = "https://openrouter.ai/api/v1/models/user"
+
+
+class PoolHttp(FakeHttp):
+    """FakeHttp that can also answer OpenRouter's model-list request."""
+
+    def __init__(self, listing, *replies):
+        super().__init__(*replies)
+        self.listing, self.list_calls = listing, []
+
+    def get(self, url, headers=None, timeout=None, **kw):
+        self.list_calls.append(url)
+        if isinstance(self.listing, Exception):
+            raise self.listing
+        return self.listing
+
+
+def test_the_request_names_free_models_that_answer_directly_instead_of_the_random_router(model_list):
+    http = PoolHttp(model_list(GEMMA, LLAMA, thinkers=[THINKER]), said(json.dumps(GOOD), model=GEMMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == GEMMA and sent["models"] == [LLAMA]
+    assert "openrouter/free" not in json.dumps(sent) and THINKER not in json.dumps(sent)
+    assert summary["method"] == "ai_validated" and summary["model"] == GEMMA     # the model that really answered
+    assert health["free_pool"] == [GEMMA, LLAMA] and "pool_note" not in health
+    assert health["pool_counts"]["free models that think (skipped on purpose)"] == 1
+    assert http.list_calls == [ACCOUNT_LIST]
+    validate_executive_summary(summary)
+
+
+def test_a_retry_after_an_empty_reply_starts_with_the_next_model(model_list):
+    http = PoolHttp(model_list(GEMMA, LLAMA), used_up_its_room(), said(json.dumps(GOOD), model=LLAMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    first, second = http.calls[0]["payload"], http.calls[1]["payload"]
+    assert first["model"] == GEMMA and first["models"] == [LLAMA]
+    assert second["model"] == LLAMA and second["models"] == [GEMMA]
+    assert second["reasoning"] == {"effort": "low"} and "reasoning" not in first
+    assert len(http.list_calls) == 1                      # the list is read once, not once per request
+    assert summary["model"] == LLAMA and health["empty_reply_retries"] == 1
+
+
+def test_a_busy_reply_is_retried_with_the_same_models(model_list):
+    http = PoolHttp(model_list(GEMMA, LLAMA), Reply(status=429), said(json.dumps(GOOD), model=GEMMA))
+    summary, _ = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW, sleep=lambda s: None)
+    assert [c["payload"]["model"] for c in http.calls] == [GEMMA, GEMMA] and summary["method"] == "ai_validated"
+
+
+def test_when_the_model_list_cannot_be_read_the_free_router_is_used_and_the_reason_is_kept():
+    http = PoolHttp(requests.ConnectionError("down"), ai(GOOD))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == "openrouter/free" and "models" not in sent
+    assert health["free_pool"] == []
+    assert health["pool_note"].startswith("No free model could be chosen, so the free router was used:")
+    assert summary["method"] == "ai_validated" and summary["model"] == "openrouter/free"
+
+
+def test_a_model_named_in_the_environment_is_never_replaced(model_list):
+    env = {**OPENROUTER_ONLY, "OPENROUTER_SUMMARY_MODEL": "vendor/my-pick-70b:free"}
+    http = PoolHttp(model_list(GEMMA), ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env=env, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == "vendor/my-pick-70b:free" and "models" not in sent and http.list_calls == []
+
+
+def test_groq_requests_are_not_changed_and_never_read_the_model_list(model_list):
+    http = PoolHttp(model_list(GEMMA), ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env=GROQ_ONLY, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == "openai/gpt-oss-120b" and "models" not in sent and http.list_calls == []
+
+
+def test_without_a_key_nothing_asks_for_the_model_list(model_list):
+    http = PoolHttp(model_list(GEMMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env={}, now=NOW)
+    assert summary["method"] == "rules_only" and http.list_calls == [] and "free_pool" not in health
+
+
+# ------------------------------------------------------------------- the rule-written sentence
+
+def moves_digest(week, month):
+    digest = build_digest(make_feed(), None)
+    digest["moves"] = {"week": week, "month": month}
+    return digest
+
+
+def test_the_rule_sentence_never_says_money_moves_into_none():
+    digest = moves_digest({"into": [], "out_of": ["Bonds", "Metals"]},
+                          {"into": ["Equity sectors and themes"], "out_of": []})
+    text = rules_summary(digest)["rotation_view"]
+    assert "into none" not in text and "None" not in text
+    assert ("Over the week, money appears to be moving out of Bonds and Metals, "
+            "and no asset class shows a clear inflow.") in text
+    assert "Over the month, money appears to be moving into Equity sectors and themes." in text
+
+
+def test_the_rule_sentence_names_both_directions_when_both_exist():
+    digest = moves_digest({"into": ["Equity sectors and themes"], "out_of": ["Bonds"]}, {"into": [], "out_of": []})
+    text = rules_summary(digest)["rotation_view"]
+    assert "Over the week, money appears to be moving into Equity sectors and themes and out of Bonds." in text
+    assert "Over the month no asset class shows a clear lead." in text
