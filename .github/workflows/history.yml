@@ -1,0 +1,55 @@
+name: Load official history
+
+# ONE CLICK: Actions tab -> "Load official history" -> "Run workflow" (green button).
+# Downloads official FRED, US Treasury and CFTC history from 22 Nov 2021 and saves it in
+# the repository as CSV files. No price data. Safe to run again any time.
+# (The daily refresh also keeps these files up to date by itself.)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Shares the lock with the daily refresh so the two never save at the same time.
+concurrency:
+  group: money-flow-scheduled
+  cancel-in-progress: false
+
+jobs:
+  history:
+    name: Download and save history
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install tools
+        run: python -m pip install -r backend/requirements.txt
+
+      - name: Download official history
+        id: history
+        continue-on-error: true
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/backfill_official.py
+
+      - name: Copy files to the website folder
+        run: python scripts/sync_site.py
+
+      - name: Save to the repository
+        run: |
+          bash scripts/commit_and_push.sh "research: load official history (FRED, Treasury, CFTC)"
+
+      - name: Flag it if anything was missing
+        if: steps.history.outcome != 'success'
+        run: |
+          echo "Some series could not be downloaded. The table above shows which ones; everything that worked was saved."
+          exit 1

@@ -15,7 +15,9 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
-import requests
+import requests  # noqa: F401  (kept for callers that inject a requests-like session)
+
+from backend.net import HTTP
 
 SERIES = {"UST_PAR_2Y": "2 Yr", "UST_PAR_10Y": "10 Yr"}
 BASE = ("https://home.treasury.gov/resource-center/data-chart-center/"
@@ -23,7 +25,7 @@ BASE = ("https://home.treasury.gov/resource-center/data-chart-center/"
 
 
 def fetch_us_treasury_par_curve(run_day: str, root: Path, *,
-                               session=requests, clock=None):
+                               session=HTTP, clock=None):
     year = date.fromisoformat(run_day).year
     url = f"{BASE}/{year}/all"
     response = session.get(url, params={

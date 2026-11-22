@@ -13,7 +13,9 @@ import math
 from datetime import date, datetime, timezone
 from pathlib import Path
 
-import requests
+import requests  # noqa: F401  (kept for callers that inject a requests-like session)
+
+from backend.net import HTTP
 
 SERIES = {
     "DGS2": ("FED", "H15", "RIFLGFCY02_N.B"),
@@ -23,7 +25,7 @@ BASE = "https://api.db.nomics.world/v22/series"
 
 
 def fetch_dbnomics_fed_yield(series_id: str, run_day: str, root: Path,
-                              session=requests, clock=None) -> dict:
+                              session=HTTP, clock=None) -> dict:
     if series_id not in SERIES:
         raise ValueError("No verified like-for-like DBnomics mapping: " + series_id)
     provider, dataset, code = SERIES[series_id]

@@ -29,6 +29,15 @@ def validate_feed(feed):
         if item["id"] in ids:
             raise ValueError("duplicate instrument id")
         ids.add(item["id"])
+        # Optional, additive (older snapshots do not have it): when this item's
+        # evidence was collected. Must be a timestamp that states its timezone.
+        if "collected_at_utc" in item:
+            try:
+                stamp = datetime.fromisoformat(str(item["collected_at_utc"]))
+            except ValueError:
+                raise ValueError("invalid collected_at_utc")
+            if stamp.tzinfo is None:
+                raise ValueError("collected_at_utc must include a timezone")
         if item["label"] not in LABELS:
             raise ValueError("invalid label")
         if item["agreement"] not in ("Strong", "Moderate", "Weak"):

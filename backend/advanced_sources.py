@@ -20,6 +20,8 @@ from pathlib import Path
 
 import requests
 
+from backend.net import HTTP
+
 CFTC_URL = "https://publicreporting.cftc.gov/resource/gpe5-46if.json"
 ECB_URL = "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01"
 DBN_BASE = "https://api.db.nomics.world/v22/series/FRED"
@@ -70,7 +72,7 @@ def _iso_day(s):
     return date.fromisoformat(str(s)[:10]).isoformat()
 
 
-def fetch_fred_mirror(series_id, root, run_day, *, http=requests):
+def fetch_fred_mirror(series_id, root, run_day, *, http=HTTP):
     """One known FRED series only, no guessed mappings or synthetic observations."""
     if series_id not in FRED_MIRRORS:
         raise ValueError("unverified FRED mirror series")
@@ -151,7 +153,7 @@ def parse_ecb_ilm(raw, run_day):
             for day, v in sorted(observations.items())[-20:]]
 
 
-def fetch_ecb_assets(root, run_day, *, http=requests):
+def fetch_ecb_assets(root, run_day, *, http=HTTP):
     resp = http.get(ECB_URL, params={"format": "csvdata", "lastNObservations": "20"},
                     headers={"Accept": "text/csv",
                              "User-Agent": "global-money-flow-research/2.0"},
@@ -237,7 +239,7 @@ def parse_cftc_tff(raw, run_day):
     return result
 
 
-def fetch_cftc(root, run_day, *, http=requests):
+def fetch_cftc(root, run_day, *, http=HTTP):
     cutoff = date.fromisoformat(run_day)
     from_date = (cutoff - timedelta(days=60)).isoformat()
     resp = http.get(CFTC_URL, params={

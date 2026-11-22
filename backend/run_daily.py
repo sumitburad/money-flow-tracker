@@ -13,7 +13,9 @@ import hashlib
 import io
 import json
 import logging
+import math
 import os
+import re
 from datetime import datetime, timedelta, timezone, date
 from pathlib import Path
 from urllib.parse import quote
@@ -24,12 +26,17 @@ import pandas as pd
 import requests
 import yaml
 
+from backend.net import HTTP, scrub_secrets
+
 ROOT = Path(__file__).resolve().parent.parent
 FAMILIES = ("money_flow", "price_trend", "breadth", "positioning",
             "macro_liquidity", "news")
 VALID_STATES = {"supportive", "neutral", "opposing", "not_available"}
 IST = timezone(timedelta(hours=5, minutes=30))
 LOG = logging.getLogger("moneyflow")
+# Error sources that mean "a primary official data source failed this run".
+# (Stale-but-fetched series, "macro_stale:...", are deliberately not included.)
+OFFICIAL_SOURCE_PROBLEM = re.compile(r"^(fred:|fred_api|macro:|us_treasury|cftc_tff)")
 
 
 def now_utc():
@@ -39,7 +46,9 @@ def now_utc():
 def save_json(path, obj):
     path = ROOT / path
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+    text = json.dumps(obj, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
+    # Safety net: a configured API key or token can never be written to a file.
+    path.write_text(scrub_secrets(text), encoding="utf-8")
 
 
 def read_yaml(path):
@@ -186,19 +195,77 @@ def fetch_yfinance(asset):
     return frame, observation_date, source
 
 
+FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+FRED_API_URL = "https://api.stlouisfed.org/fred/series/observations"
+FETCH_HEADERS = {"User-Agent": "money-flow-monitor/1.0 (research)"}
+FETCH_TIMEOUT = (6, 20)  # seconds to connect, seconds to read
+
+
+def _archive_raw(run_day, name, raw):
+    raw_path = ROOT / "data" / "raw" / run_day / name
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(raw_path, "wb") as handle:
+        handle.write(raw)
+    return raw_path
+
+
 def fetch_fred(series_id, run_day):
+    """Official FRED data. Uses the free API key when FRED_API_KEY is set, else the
+    public CSV export. If the key path fails for any reason, the CSV path is tried."""
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    if key:
+        try:
+            return fetch_fred_api(series_id, run_day, key)
+        except Exception as exc:  # key rejected, host down, odd payload: use the CSV
+            LOG.warning("FRED API unusable for %s (%s); trying public CSV",
+                        series_id, type(exc).__name__)
+    return fetch_fred_csv(series_id, run_day)
+
+
+def fetch_fred_api(series_id, run_day, api_key):
+    """FRED JSON API (free key). Never puts the key in an error message or a file."""
+    resp = HTTP.get(FRED_API_URL, params={
+        "series_id": series_id, "api_key": api_key, "file_type": "json",
+        "sort_order": "desc", "limit": 60, "observation_end": run_day},
+        timeout=FETCH_TIMEOUT, headers=FETCH_HEADERS)
+    if resp.status_code != 200:
+        raise requests.HTTPError("FRED API answered HTTP %s" % resp.status_code)
+    raw = resp.content
+    if len(raw) > 2_000_000 or len(raw) < 20:
+        raise ValueError("unexpected FRED API payload size")
+    rows = json.loads(raw).get("observations")
+    if not isinstance(rows, list):
+        raise ValueError("unexpected FRED API payload shape")
+    values = []
+    for row in rows:
+        try:
+            observed = date.fromisoformat(str(row["date"])[:10])
+            number = float(row["value"])  # FRED writes "." for a missing value
+        except (KeyError, TypeError, ValueError):
+            continue
+        if math.isfinite(number):
+            values.append({"observation_date": observed.isoformat(), "value": number})
+    values = sorted(values, key=lambda r: r["observation_date"])[-20:]
+    if not values:
+        raise ValueError("no numeric FRED API observations")
+    raw_path = _archive_raw(run_day, series_id + ".api.json.gz", raw)
+    return {"id": series_id, "latest": values[-1], "recent": values,
+            "fetched_at_utc": now_utc().isoformat(),
+            "source": "https://fred.stlouisfed.org/series/" + series_id,
+            "raw_sha256": hashlib.sha256(raw).hexdigest(),
+            "raw_file": str(raw_path.relative_to(ROOT)),
+            "fetch_path": "fred_api"}
+
+
+def fetch_fred_csv(series_id, run_day):
     """Official free CSV export. Preserve exact response bytes before parsing."""
-    url = "https://fred.stlouisfed.org/graph/fredgraph.csv"
-    resp = requests.get(url, params={"id": series_id}, timeout=8,
-                        headers={"User-Agent": "money-flow-monitor/1.0 (research)"})
+    resp = HTTP.get(FRED_CSV_URL, params={"id": series_id},
+                    timeout=FETCH_TIMEOUT, headers=FETCH_HEADERS)
     resp.raise_for_status()
     raw = resp.content
     if len(raw) > 4_000_000 or len(raw) < 12:
         raise ValueError("unexpected FRED payload size")
-    raw_path = ROOT / "data" / "raw" / run_day / (series_id + ".csv.gz")
-    raw_path.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(raw_path, "wb") as handle:
-        handle.write(raw)
+    raw_path = _archive_raw(run_day, series_id + ".csv.gz", raw)
     table = pd.read_csv(io.BytesIO(raw))
     date_col = "observation_date" if "observation_date" in table else "DATE"
     if date_col not in table or series_id not in table:
@@ -216,7 +283,8 @@ def fetch_fred(series_id, run_day):
             "recent": values, "fetched_at_utc": now_utc().isoformat(),
             "source": "https://fred.stlouisfed.org/series/" + series_id,
             "raw_sha256": hashlib.sha256(raw).hexdigest(),
-            "raw_file": str(raw_path.relative_to(ROOT))}
+            "raw_file": str(raw_path.relative_to(ROOT)),
+            "fetch_path": "fred_csv"}
 
 
 def annotate_macro_freshness(series_id, record, today):
@@ -310,6 +378,9 @@ def assess(asset, today, macro, positioning=None, breadth=None):
         result["observation_date"] = None
         result["source_error"] = type(exc).__name__ + ": " + str(exc)[:140]
         result["volume_observed"] = False
+    # When this item's own market evidence was gathered (observation dates stay
+    # separate). Lets a downstream reader prove it only used what was known by then.
+    result["collected_at_utc"] = now_utc().isoformat()
     families["macro_liquidity"] = macro_family(asset, macro, today)
     families["breadth"] = na("No independently sourced constituent breadth")
     families["positioning"] = na("No verified CFTC/positioning series mapped")
@@ -343,8 +414,8 @@ def collect_news(run_day):
     seen, entries, errors = set(), [], []
     for publisher, url in urls:
         try:
-            response = requests.get(url, timeout=15,
-                                    headers={"User-Agent": "money-flow-monitor/1.0"})
+            response = HTTP.get(url, timeout=FETCH_TIMEOUT,
+                                headers={"User-Agent": "money-flow-monitor/1.0"})
             response.raise_for_status()
             if len(response.content) > 2_000_000:
                 raise ValueError("news response too large")
@@ -509,6 +580,10 @@ def main():
                                                 type(fallback_exc).__name__ + "_" +
                                                 type(final_exc).__name__ + "_" +
                                                 type(third_exc).__name__})
+    if os.environ.get("FRED_API_KEY", "").strip() and not any(
+            v.get("fetch_path") == "fred_api" for v in macro.values()):
+        errors.append({"source": "fred_api",
+                       "error": "FRED_API_KEY is set but the FRED API gave no data; public CSV used"})
     # Cross-central-bank liquidity: direct ECB first, then expressly attributed
     # FRED/DBnomics secondary; BOJ is a separate dated monthly series.
     for bank_id, mirror_id in (("ECB_ILM_TOTAL_ASSETS", "ECBASSETSW"),
@@ -615,8 +690,15 @@ def main():
             "note": "Not a complete cross-border money flow measurement",
         }
     usable = macro_current > 0 or fresh > 0
+    official_problems = [e for e in errors if OFFICIAL_SOURCE_PROBLEM.match(e["source"])]
     health = {
         "as_of_ist": now_ist.isoformat(),
+        "run_slot": os.environ.get("RUN_SLOT", "manual"),
+        "completed_at_utc": now_utc().isoformat(),
+        # True when a primary official source (FRED, Treasury, CFTC) failed and a
+        # fallback or nothing was used: the backup schedule slot then tries again.
+        "needs_retry": bool(official_problems),
+        "official_source_problems": len(official_problems),
         "status": "degraded" if errors or fresh < len(items) else "ok",
         "items_configured": len(items), "price_proxies_current": fresh,
         "macro_series_available": len(macro),

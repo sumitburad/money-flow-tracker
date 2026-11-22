@@ -1,56 +1,104 @@
-name: Global money-flow daily research
-# Paused 2026-11-18 by owner request until macro/news research is complete.
-# Manual-only workflow; no scheduled or push-triggered data/news collection.
+name: Daily money-flow refresh
+
+# Runs by itself every day (times below are IST), or when you press "Run workflow".
+#   07:37 morning refresh (after the US market close)
+#   10:07 morning backup  - only runs if the morning refresh is missing or needed a retry
+#   19:07 evening refresh
+#   21:37 evening backup  - same rule
+# The cron lines are in UTC, which is IST minus 5 h 30 min.
 on:
+  schedule:
+    - cron: "7 2 * * *"
+    - cron: "37 4 * * *"
+    - cron: "37 13 * * *"
+    - cron: "7 16 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# One run at a time, so two updates never collide. A waiting run is not cancelled.
 concurrency:
   group: money-flow-scheduled
   cancel-in-progress: false
 
 jobs:
-  research:
+  refresh:
+    name: Collect data and publish
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true
+
+      - name: Is this run needed?
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: python3 scripts/should_run.py --event "$EVENT" --schedule "$SCHEDULE"
+
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
         with:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: backend/requirements.txt
-      - run: python -m pip install -r backend/requirements.txt
-      - name: Unit and contract tests
-        run: python -m pytest -q tests
-      - name: Collect official data and research price proxies
+
+      - name: Install tools
+        if: steps.gate.outputs.run == 'true'
+        run: python -m pip install -r backend/requirements.txt
+
+      - name: Collect official data (tries up to 3 times by itself)
+        if: steps.gate.outputs.run == 'true'
         env:
+          RUN_SLOT: ${{ steps.gate.outputs.slot }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           UPSTOX_ANALYTICS_TOKEN: ${{ secrets.UPSTOX_ANALYTICS_TOKEN }}
-        run: python -m backend.run_daily
-      - name: Reject invalid or non-cited output
-        run: python scripts/validate_feed.py data/feed/v1/latest.json
-      - name: Synchronize Vercel and Pages static sites
-        run: python scripts/sync_site.py
-      - name: Commit immutable daily labels and public research feed
         run: |
-          git config user.name "money-flow-bot"
-          git config user.email "money-flow-bot@users.noreply.github.com"
-          git add data docs briefs reports frontend
-          if git diff --cached --quiet; then
-            echo "No change to commit"
-          else
-            git commit -m "research: publish sourced money-flow snapshot"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
-      - name: Upload run health and logs on failure
+          for attempt in 1 2 3; do
+            echo "::group::Attempt ${attempt} of 3"
+            if python -m backend.run_daily; then
+              echo "::endgroup::"
+              exit 0
+            fi
+            echo "::endgroup::"
+            echo "Attempt ${attempt} failed."
+            if [ "${attempt}" -lt 3 ]; then
+              sleep $((attempt * 60))
+            fi
+          done
+          echo "All 3 attempts failed. The previous data stays on the dashboard." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
+
+      - name: Check the new data is well formed
+        if: steps.gate.outputs.run == 'true'
+        run: python scripts/validate_feed.py data/feed/v1/latest.json
+
+      - name: Update the history files (never stops the refresh)
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/backfill_official.py --mode update
+
+      - name: Copy files to the website folder
+        if: steps.gate.outputs.run == 'true'
+        run: python scripts/sync_site.py
+
+      - name: Publish (commit and push, retries if needed)
+        if: steps.gate.outputs.run == 'true'
+        run: bash scripts/commit_and_push.sh
+
+      - name: Short result for this run
+        if: always() && steps.gate.outputs.run == 'true'
+        run: python scripts/summarize_run.py
+
+      - name: Keep logs if something failed
         if: failure()
         uses: actions/upload-artifact@v4
         with:
