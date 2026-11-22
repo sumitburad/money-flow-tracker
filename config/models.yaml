@@ -1,8 +1,12 @@
 # Documentation of the optional free-tier AI helpers. The code holds the same defaults
 # (backend/news_classifier.py and backend/exec_summary.py); this file is not read at run time.
+# Deployment note (22 Nov 2026): Groq sign-up did not work for the owner, so only
+# OPENROUTER_API_KEY is saved. The "primary" entries below are skipped when their key is
+# missing, and openrouter/free does all the work.
 mode: validated_optional_model
 external_model_calls: true
-# News tagging: one small request per headline.
+# News tagging: headlines are tagged in batches of 5, at most 3 requests per run (15 headlines),
+# 8 seconds apart. A rejected answer gets the plain keyword rule tag, labelled as not AI.
 primary:
   provider: groq
   credential_secret: GROQ_API_KEY
@@ -11,11 +15,16 @@ fallback:
   provider: openrouter
   credential_secret: OPENROUTER_API_KEY
   model: openrouter/free
-max_headlines_per_daily_run: 12
+max_headlines_per_daily_run: 15
+max_requests_for_tagging_per_run: 3
+headlines_per_request: 5
 on_missing_or_invalid_response: deterministic_rules_NOT_AI
 model_never_sets_market_label: true
 human_review_required: true
 # Executive summary (added 2026-11-22): one request per run, plus one retry after a 429 answer.
+# Since the second pass its input also holds the risk tone, coming-event names with plain timing
+# words, and market headlines (marked untrusted). The answer is validated exactly as before:
+# no digits, links or advice words, known fields only, and a model never sets a market label.
 summary:
   primary:
     provider: groq

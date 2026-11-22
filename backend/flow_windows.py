@@ -87,14 +87,41 @@ def _direction(change, band):
     return "up" if change > 0 else "down"
 
 
-def _one_window(close, volume, sessions, sigma, cfg, name):
-    price = "not_available"
+def typical_move(close, cfg):
+    """The item's usual daily move (standard deviation of its daily returns), or 0 if unknown."""
+    returns = close.pct_change().dropna().tail(cfg["price_flat_band"]["lookback_sessions"])
+    sigma = float(returns.std(ddof=1)) if len(returns) >= 20 else 0.0
+    return sigma if math.isfinite(sigma) else 0.0
+
+
+def price_direction(close, sessions, sigma, cfg):
+    """up / down / flat over the last ``sessions`` sessions; flat when the move is within the band."""
     if len(close) >= sessions + 1:
         base = float(close.iloc[-1 - sessions])
         if base > 0:
             change = float(close.iloc[-1]) / base - 1.0
             band = cfg["price_flat_band"]["fraction_of_typical_move"] * sigma * math.sqrt(sessions)
-            price = _direction(change, band)
+            return _direction(change, band)
+    return "not_available"
+
+
+def completed_closes(bars, asset, now, cfg):
+    """Daily closes with a still-running last session removed (same rule as the flow check).
+
+    Returns None when the bars cannot be read. Used by the risk-tone check, which only
+    needs closes; nothing from here is published as a number.
+    """
+    try:
+        close = bars.dropna(subset=["Close"]).sort_index()["Close"].astype(float)
+    except Exception:
+        return None
+    if len(close) and not bar_is_complete(close.index[-1].date(), asset, now, cfg):
+        close = close.iloc[:-1]
+    return close
+
+
+def _one_window(close, volume, sessions, sigma, cfg, name):
+    price = price_direction(close, sessions, sigma, cfg)
     flow = "not_available"
     if volume is not None and len(volume) >= 2 * sessions:
         recent = volume.iloc[-sessions:]
@@ -144,10 +171,7 @@ def compute_flow_windows(bars, asset, now, cfg):
     age = max(0, int(np.busday_count(as_of, now.date())))
     if age > cfg["max_age_weekdays"]:
         return not_available("Last completed session " + as_of.isoformat() + " is too old")
-    returns = close.pct_change().dropna().tail(cfg["price_flat_band"]["lookback_sessions"])
-    sigma = float(returns.std(ddof=1)) if len(returns) >= 20 else 0.0
-    if not math.isfinite(sigma):
-        sigma = 0.0
+    sigma = typical_move(close, cfg)
     result = {"status": "ok", "as_of": as_of.isoformat()}
     for name in FLOW_WINDOWS:
         result[name] = _one_window(close, volume, cfg["windows"][name]["sessions"],

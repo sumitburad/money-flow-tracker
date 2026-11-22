@@ -86,6 +86,28 @@ def get_bytes(http, url, params=None):
     return raw
 
 
+def year_on_year(rows, start):
+    """Percent change from the same month one year earlier, for each month on or after ``start``.
+
+    ``rows`` are the monthly (date, index level) pairs, oldest first or not. A month whose
+    year-earlier level is missing is skipped rather than guessed.
+    """
+    by_day = dict(rows)
+    out = []
+    for day in sorted(by_day):
+        if day < start:
+            continue
+        try:
+            earlier = by_day.get(day.replace(year=day.year - 1))
+        except ValueError:            # 29 February has no twin a year earlier
+            earlier = None
+        value = by_day[day]
+        if earlier is None or earlier <= 0 or value <= 0:
+            continue
+        out.append((day, round((value / earlier - 1.0) * 100.0, 4)))
+    return out
+
+
 def csv_text(header, rows):
     out = io.StringIO()
     writer = csv.writer(out, lineterminator="\n")
@@ -320,7 +342,7 @@ def run(config, out_dir, http, today, api_key="", only=None, dry_run=False, now=
     entries, problems = {}, []
 
     def group_of(sid):
-        if sid in config["fred"]:
+        if sid in config["fred"] or sid in (config.get("fred_yoy") or {}):
             return "fred"
         if sid in config["treasury_par"]["columns"].values():
             return "treasury"
@@ -356,6 +378,25 @@ def run(config, out_dir, http, today, api_key="", only=None, dry_run=False, now=
                     sid, meta["title"], meta["provider"], meta["frequency"], meta["unit"],
                     meta["lag"], rows, transport,
                     "https://fred.stlouisfed.org/series/" + sid, relative, digest, now)
+            except Exception as exc:
+                fail(sid, meta["title"], short_error(exc))
+        for sid, meta in (config.get("fred_yoy") or {}).items():
+            try:
+                # One extra year of the base index, only so the first month can be calculated.
+                rows, transport = fetch_fred_history(
+                    http, meta["base"], start - timedelta(days=400), today, api_key)
+                changes = year_on_year(rows, start)
+                if not changes:
+                    raise ValueError("not enough %s history to calculate a yearly change" % meta["base"])
+                relative, digest = write_series(writer, "fred", sid, changes, meta["lag"])
+                entry = series_entry(
+                    sid, meta["title"], meta["provider"], meta["frequency"], meta["unit"],
+                    meta["lag"], changes, transport,
+                    "https://fred.stlouisfed.org/series/" + meta["base"], relative, digest, now)
+                entry.update(derived_from=meta["base"], method="year_on_year_percent",
+                             formula="(index / index 12 months earlier - 1) x 100",
+                             group=meta.get("group"), line_name=meta.get("line_name"))
+                entries[sid] = entry
             except Exception as exc:
                 fail(sid, meta["title"], short_error(exc))
 

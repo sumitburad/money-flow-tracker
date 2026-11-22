@@ -10,8 +10,9 @@ import yaml
 
 from backend.feed_contract import (FLOW_SIGNALS, expected_flow_signal, validate_feed,
                                    validate_flow_windows, validate_rotation)
-from backend.flow_windows import (bar_is_complete, build_rotation, compute_flow_windows,
-                                  group_verdict, levels_trend, load_config)
+from backend.flow_windows import (bar_is_complete, build_rotation, completed_closes,
+                                  compute_flow_windows, group_verdict, levels_trend,
+                                  load_config, price_direction, typical_move)
 
 ROOT = Path(__file__).resolve().parent.parent
 CFG = load_config()
@@ -247,3 +248,41 @@ def test_feed_contract_accepts_the_new_blocks_and_rejects_inconsistent_ones():
         validate_flow_windows({"status": "ok", "as_of": "2026-11-20"})
     old = json.loads((ROOT / "data" / "feed" / "v1" / "latest.json").read_text(encoding="utf-8"))
     assert validate_feed(old)       # an older snapshot without the new blocks still passes
+
+
+# ------------------------------------------------- helpers shared with the risk-tone banner
+
+def test_completed_closes_drops_a_session_that_is_still_running():
+    bars = make_bars(end="2026-11-20")
+    during = datetime(2026, 11, 20, 15, 0, tzinfo=timezone.utc)      # US market still trading
+    after = datetime(2026, 11, 20, 23, 0, tzinfo=timezone.utc)
+    assert completed_closes(bars, ASSET, during, CFG).index[-1].date().isoformat() == "2026-11-19"
+    assert completed_closes(bars, ASSET, after, CFG).index[-1].date().isoformat() == "2026-11-20"
+    assert completed_closes(bars, ASSET, SUNDAY_PM, CFG).index[-1].date().isoformat() == "2026-11-20"
+
+
+def test_completed_closes_ignores_gaps_and_unreadable_frames():
+    bars = make_bars()
+    bars.iloc[10, bars.columns.get_loc("Close")] = np.nan
+    assert completed_closes(bars, ASSET, SUNDAY_PM, CFG).notna().all()
+    assert len(completed_closes(bars, ASSET, SUNDAY_PM, CFG)) == len(bars) - 1
+    assert completed_closes(pd.DataFrame({"Open": [1.0]}), ASSET, SUNDAY_PM, CFG) is None
+    assert completed_closes(None, ASSET, SUNDAY_PM, CFG) is None
+
+
+def test_price_direction_matches_the_flow_check():
+    close = make_bars(drift=0.004)["Close"]
+    sigma = typical_move(close, CFG)
+    assert price_direction(close, 5, sigma, CFG) == "up"
+    assert price_direction(make_bars(drift=-0.004)["Close"], 20, sigma, CFG) == "down"
+    block = compute_flow_windows(make_bars(drift=0.004), ASSET, SUNDAY_PM, CFG)
+    assert block["week"]["price"] == price_direction(close, 5, sigma, CFG)
+    assert price_direction(close.iloc[:4], 5, sigma, CFG) == "not_available"
+
+
+def test_typical_move_is_zero_when_history_is_too_short_or_constant():
+    assert typical_move(make_bars(n=15)["Close"], CFG) == 0.0
+    constant = pd.Series([100.0] * 60, index=pd.bdate_range(end="2026-11-20", periods=60))
+    assert typical_move(constant, CFG) == 0.0
+    assert price_direction(constant, 5, 0.0, CFG) == "flat"
+

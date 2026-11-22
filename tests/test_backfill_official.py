@@ -27,6 +27,20 @@ def fred_csv(series_id):
             "2021-11-24,.\n2026-11-12,4.1\n2026-11-30,7.7\n" % series_id).encode()
 
 
+INDEX_SERIES = ("CPIAUCNS", "CPILFENS", "PCEPI", "PCEPILFE")
+
+
+def index_rows(count=73):
+    """Monthly price-index levels from Oct 2020 that rise 0.3% a month (3.66% a year)."""
+    year, month, rows = 2020, 10, []
+    for k in range(count):
+        rows.append((date(year, month, 1), round(100 * 1.003 ** k, 6)))
+        month += 1
+        if month == 13:
+            year, month = year + 1, 1
+    return rows
+
+
 TREASURY_ROWS = "Date,1 Mo,3 Mo,2 Yr,10 Yr,30 Yr\n%s\n"
 CFTC_ROWS = [
     {"market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
@@ -47,8 +61,9 @@ CFTC_ROWS = [
 class Router:
     """Plays the part of every public website. ``fail`` lists hosts that must break."""
 
-    def __init__(self, fail=(), dbnomics=None):
+    def __init__(self, fail=(), dbnomics=None, index_months=73):
         self.fail, self.calls, self.dbnomics = set(fail), [], dbnomics
+        self.index = index_rows(index_months)
 
     def get(self, url, params=None, timeout=None, headers=None, **kw):
         params = params or {}
@@ -56,6 +71,18 @@ class Router:
         for host in self.fail:
             if host in url and not (host == "fred.stlouisfed.org" and "api.stlouisfed" in url):
                 return Resp(503, b"")
+        if url == backfill.FRED_API_URL and params.get("series_id") in INDEX_SERIES:
+            return Resp(200, json.dumps({"observations": [
+                {"date": d.isoformat(), "value": str(v)} for d, v in self.index]}).encode())
+        if url == backfill.FRED_CSV_URL and params.get("id") in INDEX_SERIES:
+            body = "observation_date,%s\n" % params["id"] + "".join(
+                "%s,%s\n" % (d.isoformat(), v) for d, v in self.index)
+            return Resp(200, body.encode())
+        if url.startswith(backfill.DBNOMICS_URL) and url.rsplit("/", 1)[1] in INDEX_SERIES:
+            return Resp(200, json.dumps({"series": {"docs": [{
+                "series_code": url.rsplit("/", 1)[1],
+                "period_start_day": [d.isoformat() for d, _ in self.index],
+                "value": [v for _, v in self.index]}]}}).encode())
         if url == backfill.FRED_API_URL:
             body = json.dumps({"observations": [
                 {"date": "2021-11-22", "value": "1.5"}, {"date": "2026-11-12", "value": "4.1"}]})
@@ -231,3 +258,84 @@ def test_outputs_have_no_price_columns(tmp_path):
 def test_summary_text_is_readable(tmp_path):
     text = backfill.summary_markdown(go(tmp_path))
     assert "Series loaded" in text and "| DGS10 |" in text
+
+
+# ------------------------------------------------ inflation: change from a year earlier
+def test_year_on_year_math_and_edges():
+    rows = [(date(2020, 12, 1), 100.0), (date(2021, 11, 1), 106.0), (date(2021, 12, 1), 107.0),
+            (date(2022, 1, 1), 108.0), (date(2022, 12, 1), 110.0)]
+    got = backfill.year_on_year(rows, date(2021, 11, 22))
+    # 2021-11-01 is before the start; 2022-01-01 has no January 2021 to compare with
+    assert got == [(date(2021, 12, 1), 7.0), (date(2022, 12, 1), round((110 / 107 - 1) * 100, 4))]
+    assert backfill.year_on_year([], date(2021, 11, 22)) == []
+    assert backfill.year_on_year([(date(2020, 12, 1), 0.0), (date(2021, 12, 1), 5.0)],
+                                 date(2021, 1, 1)) == []                     # a zero index is not usable
+    assert backfill.year_on_year([(date(2020, 2, 29), 100.0), (date(2024, 2, 29), 110.0)],
+                                 date(2021, 1, 1)) == []                     # no 29 February a year before
+
+
+def test_config_lists_the_four_inflation_series():
+    yoy = CONFIG["fred_yoy"]
+    assert list(yoy) == ["CPI_YOY", "CPI_CORE_YOY", "PCE_YOY", "PCE_CORE_YOY"]
+    assert {m["base"] for m in yoy.values()} == set(INDEX_SERIES)
+    assert {m["group"] for m in yoy.values()} == {"cpi", "pce"}
+    for meta in yoy.values():
+        assert meta["unit"] == "percent" and meta["frequency"] == "monthly"
+        assert meta["lag"]["calendar_days"] >= 45          # a price index is never public sooner
+
+
+def test_yearly_change_files_and_manifest(tmp_path):
+    router = Router()
+    result = go(tmp_path, http=router, key="abcdefghijklmnop1234567890abcdef", only=["fred"])
+    assert result["problems"] == []
+    lines = (tmp_path / "fred" / "CPI_YOY.csv").read_text().splitlines()
+    assert lines[0] == "observation_date,value,available_from_estimate"
+    first = lines[1].split(",")
+    assert first[0] == "2021-12-01"                         # the first month on or after the start date
+    assert abs(float(first[1]) - (1.003 ** 12 - 1) * 100) < 1e-3
+    assert first[2] == "2022-01-18"                         # 1 Dec plus the 48-day publication lag
+    assert lines[-1].split(",")[0] == "2026-10-01"
+    by_id = {e["id"]: e for e in result["manifest"]["series"]}
+    cpi = by_id["CPI_YOY"]
+    assert cpi["derived_from"] == "CPIAUCNS" and cpi["method"] == "year_on_year_percent"
+    assert cpi["unit"] == "percent" and cpi["group"] == "cpi" and cpi["line_name"] == "All items"
+    assert cpi["source_url"] == "https://fred.stlouisfed.org/series/CPIAUCNS"
+    assert by_id["PCE_CORE_YOY"]["group"] == "pce"
+    # the price index itself is only a stepping stone and is not saved
+    assert not (tmp_path / "fred" / "CPIAUCNS.csv").exists()
+    # it was fetched from a year before the start date so the first month could be calculated
+    asked = [c[1]["observation_start"] for c in router.calls
+             if c[0] == backfill.FRED_API_URL and c[1].get("series_id") == "CPIAUCNS"]
+    assert asked == ["2020-10-18"]
+
+
+def test_yearly_change_works_through_the_public_csv_and_the_mirror(tmp_path):
+    result = go(tmp_path, only=["fred"])                    # no key: public CSV
+    assert {e["id"]: e["transport"] for e in result["manifest"]["series"]}["PCE_YOY"] == "fred_csv"
+    result = go(tmp_path / "m", http=Router(fail=["fred.stlouisfed.org"]), only=["fred"])
+    by_id = {e["id"]: e for e in result["manifest"]["series"]}
+    assert by_id["CPI_YOY"]["transport"] == "dbnomics_mirror" and by_id["CPI_YOY"]["mirror"] is True
+
+
+def test_yearly_change_needs_more_than_a_year_of_index(tmp_path):
+    result = go(tmp_path, http=Router(index_months=8), only=["fred"])
+    by_id = {e["id"]: e for e in result["manifest"]["series"]}
+    assert by_id["CPI_YOY"]["status"] == "missing" and "not enough" in by_id["CPI_YOY"]["last_error"]
+    assert not (tmp_path / "fred" / "CPI_YOY.csv").exists()
+    assert by_id["DGS10"]["status"] == "ok"                  # the other series are not held back
+
+
+def test_a_failed_yearly_change_keeps_the_last_good_file(tmp_path):
+    go(tmp_path, only=["fred"])
+    before = (tmp_path / "fred" / "PCE_YOY.csv").read_text()
+    result = go(tmp_path, http=Router(fail=["stlouisfed.org", "db.nomics.world"]), only=["fred"])
+    by_id = {e["id"]: e for e in result["manifest"]["series"]}
+    assert by_id["PCE_YOY"]["status"] == "kept_previous"
+    assert (tmp_path / "fred" / "PCE_YOY.csv").read_text() == before
+
+
+def test_other_groups_do_not_drop_the_yearly_change_series(tmp_path):
+    go(tmp_path)
+    result = go(tmp_path, only=["treasury"])                # a partial run keeps what it did not touch
+    ids = {e["id"] for e in result["manifest"]["series"]}
+    assert {"CPI_YOY", "CPI_CORE_YOY", "PCE_YOY", "PCE_CORE_YOY"} <= ids

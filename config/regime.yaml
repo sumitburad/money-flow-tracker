@@ -1,0 +1,104 @@
+version: 1
+# Risk-on / risk-off banner.
+#
+# A plain checklist, NOT a score and NOT a forecast. Each check looks at a group of
+# markets over the last week and the last month and votes:
+#   risk_on  = investors look comfortable owning riskier things
+#   risk_off = investors look defensive
+#   neutral  = no clear lean
+# The banner says "risk-on" or "risk-off" only when most checks agree and almost none
+# disagree. Otherwise it says "mixed". A model never picks this label; only these rules do.
+# Only words and counts of checks are published, never prices.
+# Change a word or a number here and the next refresh uses it. No code change is needed.
+
+windows:
+  week:
+    sessions: 5
+    label: "This week"
+    # For "A versus B" checks: the two sides must differ by at least this many
+    # percentage points, otherwise the check votes neutral.
+    min_gap_pct: 0.75
+  month:
+    sessions: 20
+    label: "This month"
+    min_gap_pct: 1.5
+
+# How the checks are turned into the banner.
+rule:
+  min_assessed_checks: 5    # fewer checks with data than this -> "not enough data"
+  agree_share: 0.6          # at least this share of the checks must lean the same way
+  max_opposing: 1           # and no more than this many may lean the other way
+
+# "trend" checks ask whether most of a group moved up or down. A strict majority is needed
+# (more than half of the members that have data); a move smaller than the item's own usual
+# daily swing counts as flat, using the same rule as the money-flow check.
+# "relative" checks compare two groups: side A is the group that does better when investors
+# feel confident, side B the group that does better when they feel cautious.
+checks:
+  - id: stocks
+    name: "Stock markets"
+    kind: trend
+    question: "Are most of the big stock markets rising?"
+    members: [sp500, nasdaq100, nifty50, europe, japan, em]
+    risk_on_when: up
+    noun: "stock markets"
+    min_members: 4
+
+  - id: fear
+    name: "Fear gauges"
+    kind: trend
+    question: "Are the market fear gauges (VIX) falling? They rise when investors get nervous."
+    members: [vix, indiavix]
+    risk_on_when: down
+    noun: "fear gauges"
+    min_members: 1
+
+  - id: dollar
+    name: "US dollar"
+    kind: trend
+    question: "Is the US dollar weakening? Investors tend to buy dollars when they feel unsafe."
+    members: [dollar, dollar_etf]
+    risk_on_when: down
+    noun: "dollar measures"
+    min_members: 1
+
+  - id: crypto
+    name: "Crypto"
+    kind: trend
+    question: "Are Bitcoin and Ethereum rising?"
+    members: [bitcoin, ethereum]
+    risk_on_when: up
+    noun: "coins"
+    min_members: 1
+
+  - id: credit
+    name: "Junk bonds versus government bonds"
+    kind: relative
+    question: "Are riskier company bonds doing better than safe government bonds?"
+    a: {name: "Junk bonds", members: [us_highyield]}
+    b: {name: "Government bonds", members: [us_treasury]}
+    min_members_each_side: 1
+
+  - id: cyclicals
+    name: "Growth sectors versus defensive sectors"
+    kind: relative
+    question: "Are sectors that need a strong economy (consumer, industrial, materials) doing better than steady ones (food, utilities, healthcare)?"
+    a: {name: "Growth-linked sectors", members: [us_consumer, us_industrials, us_materials]}
+    b: {name: "Defensive sectors", members: [us_staples, us_utilities, us_healthcare]}
+    min_members_each_side: 2
+
+  - id: size
+    name: "Small companies versus large companies"
+    kind: relative
+    question: "Are small companies doing better than large ones? Small companies tend to lead when investors are confident."
+    a: {name: "Small companies", members: [russell2000, niftysmall]}
+    b: {name: "Large companies", members: [sp500, nifty50]}
+    min_members_each_side: 1
+
+  - id: copper_gold
+    name: "Copper versus gold"
+    kind: relative
+    question: "Is copper (needed by factories) doing better than gold (a safe place to park money)?"
+    a: {name: "Copper", members: [copper]}
+    b: {name: "Gold", members: [gold]}
+    min_members_each_side: 1

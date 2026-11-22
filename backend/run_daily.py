@@ -26,9 +26,15 @@ import pandas as pd
 import requests
 import yaml
 
-from backend.flow_windows import (build_rotation, compute_flow_windows,
+from backend.events_calendar import (brief_lines, build_calendar,
+                                     load_config as load_events_config)
+from backend.flow_windows import (build_rotation, completed_closes, compute_flow_windows,
                                   not_available as flow_not_available)
+from backend.market_news import (build_market_news, digest_market_news,
+                                 load_config as load_news_config)
 from backend.net import HTTP, scrub_secrets
+from backend.regime import (build_regime, health_of as regime_health,
+                            load_config as load_regime_config, regime_sentence)
 
 ROOT = Path(__file__).resolve().parent.parent
 FAMILIES = ("money_flow", "price_trend", "breadth", "positioning",
@@ -338,7 +344,8 @@ def macro_family(asset, macro, today):
     return state_record(state, reason, sheet["source"], day, "official_macro_context")
 
 
-def assess(asset, today, macro, positioning=None, breadth=None, flow_cfg=None, now=None):
+def assess(asset, today, macro, positioning=None, breadth=None, flow_cfg=None, now=None,
+           closes_sink=None):
     families = {name: na() for name in FAMILIES}
     symbol = asset["symbol"]
     result = {"id": asset["id"], "item": asset["name"], "group": asset["group"],
@@ -375,6 +382,15 @@ def assess(asset, today, macro, positioning=None, breadth=None, flow_cfg=None, n
             tag = momentum_tag(bars["Close"],
                                bars["Volume"] if "Volume" in bars else [])
             result["freshness"] = "current"
+            if closes_sink is not None and flow_cfg is not None:
+                # The risk-on / risk-off banner reads closes already fetched for this item:
+                # no extra download, and nothing from here is published as a number.
+                try:
+                    closes = completed_closes(bars, asset, now or now_utc(), flow_cfg)
+                    if closes is not None:
+                        closes_sink[asset["id"]] = closes
+                except Exception:
+                    pass
             if flow_cfg is not None:
                 # Day / week / month "price up on rising volume" check. Categories only;
                 # a failure here must never stop the rest of the item from being published.
@@ -483,13 +499,18 @@ def context_brief(feed, news):
                else "rule-based, no AI used")
         summary_block = ("\n## Executive summary (" + how + ")\n" + summary["headline"] +
                          "\n\n" + summary["rotation_view"] + "\n")
+    tone = regime_sentence(feed.get("regime"))
+    tone_block = ("\n## Risk tone\n" + tone + "\n") if tone else ""
+    upcoming = brief_lines(feed.get("calendar"))
+    watch_next = ("\n".join(upcoming) if upcoming else
+                  "Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.")
     top = news[:3]
     drivers = "\n".join("- " + x["title"] + " — unconfirmed; [source](" +
                         x["url"] + ")" for x in top) or "- No validated new catalysts."
     return f"""# Global Money-Flow Brief | {date_string}
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
-{summary_block}
+{summary_block}{tone_block}
 ## Where money is flowing
 **Data — supportive evidence:**\n{lines(pos)}
 **Data — opposing evidence:**\n{lines(neg)}
@@ -507,7 +528,7 @@ def context_brief(feed, news):
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-Check official central-bank release calendars. Scheduled dates are not inferred when unavailable.
+{watch_next}
 
 _Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of {date_string}. Public research, not investment advice. Draft for human review. No trade recommendations._
 """
@@ -540,6 +561,7 @@ def publish(feed, news, health):
         "\n\nData: Supportive evidence: " + (", ".join(into) or "not independently confirmed") +
         ". Opposing evidence: " + (", ".join(out) or "not independently confirmed") +
         ".\n\n" + (("Flow rotation: " + flow_headline + "\n\n") if flow_headline else "") +
+        ((regime_sentence(feed.get("regime")) + "\n\n") if feed.get("regime") else "") +
         "Reading: Volume patterns are not direct fund flows. Verify source freshness and the six evidence families before making financial decisions." +
         "\n\nFor CEO, CFO and Treasury readers, watch monetary conditions, liquidity and cross-market confirmation." +
         "\n\nSources and observation dates: see the evidence dashboard. Informational only, not advice.\n",
@@ -549,6 +571,8 @@ def publish(feed, news, health):
               (", ".join(out) or "not confirmed") + "."]
     if flow_headline:
         thread.append("Flow rotation: " + flow_headline)
+    if feed.get("regime"):
+        thread.append(regime_sentence(feed["regime"]))
     thread += ["Drivers require next-session confirmation; headlines alone do not establish a directional move.",
                "Finance leaders: treat Fed liquidity as context, not measured allocation into assets.",
                "Observe freshness and full source citations on the dashboard. Informational only; human approval required."]
@@ -689,12 +713,13 @@ def main():
         flow_cfg = None
         errors.append({"source": "flow_windows_config", "error": type(exc).__name__})
     items = []
+    closes = {}          # completed daily closes, read only by the risk-on / risk-off banner
     for asset in universe:
         LOG.info("Checking %s", asset["id"])
         record = assess(asset, today, macro,
                         positioning=cftc.get("entries", {}).get(asset["id"]),
                         breadth=breadth_records.get(asset["id"]),
-                        flow_cfg=flow_cfg, now=current)
+                        flow_cfg=flow_cfg, now=current, closes_sink=closes)
         items.append(record)
         if record.get("source_error"):
             errors.append({"source": "price:" + asset["id"],
@@ -706,6 +731,13 @@ def main():
         except Exception as exc:
             errors.append({"source": "flow_rotation",
                            "error": type(exc).__name__ + ": " + str(exc)[:110]})
+    regime = None
+    if flow_cfg is not None:
+        try:
+            regime = build_regime(closes, load_regime_config(), flow_cfg, current)
+        except Exception as exc:
+            errors.append({"source": "regime",
+                           "error": type(exc).__name__ + ": " + scrub_secrets(str(exc))[:110]})
     fresh = sum(x.get("freshness") == "current" for x in items)
     macro_current = sum(v.get("freshness") == "current" for v in macro.values())
     macro_stale = sorted(k for k, v in macro.items() if v.get("freshness") != "current")
@@ -749,6 +781,7 @@ def main():
         "institutional_flow_status": institution["nse_cash_via_authorized_broker"].get("status"),
         "ai_classification": classifier_health,
         "flow_windows": (rotation or {}).get("coverage", {"status": "not_available"}),
+        "regime": regime_health(regime),
         "missing": [x["id"] for x in items if x["freshness"] != "current"],
         "errors": errors, "vendor_price_exported": False,
         "publication": "categorical_research_only",
@@ -758,6 +791,33 @@ def main():
         health["status"] = "failed"
         save_json("docs/status.json", health)
         raise RuntimeError("No usable market or macro sources: previous feed retained")
+    # Calendar and market news use the network, so they come only after the run is known to be
+    # worth publishing. Neither can stop the refresh: a failure becomes a note in the health report.
+    calendar, calendar_health = None, {"status": "not_available"}
+    try:
+        calendar, calendar_health = build_calendar(
+            load_events_config(), today, api_key=os.environ.get("FRED_API_KEY", ""))
+        if calendar_health["fred"]["status"] == "unavailable":
+            # A named source that failed. The name does not start with "fred" on purpose:
+            # a missing calendar must not keep the backup refresh slots running.
+            errors.append({"source": "calendar_fred",
+                           "error": calendar_health["fred"].get("error", "unavailable")})
+    except Exception as exc:
+        errors.append({"source": "calendar",
+                       "error": type(exc).__name__ + ": " + scrub_secrets(str(exc))[:110]})
+    market_news, market_news_health = None, {"status": "not_available"}
+    try:
+        market_news, market_news_health = build_market_news(load_news_config(), current)
+        if market_news_health["status"] == "unavailable":
+            errors.append({"source": "market_news", "error": scrub_secrets(
+                (market_news_health["errors"] or ["unavailable"])[0])[:110]})
+    except Exception as exc:
+        errors.append({"source": "market_news",
+                       "error": type(exc).__name__ + ": " + scrub_secrets(str(exc))[:110]})
+    health["calendar"] = calendar_health
+    health["market_news"] = market_news_health
+    if errors:
+        health["status"] = "degraded"
     feed = {
         "schema_version": "1.0", "generated_at_utc": current.isoformat(),
         "as_of_ist": now_ist.isoformat(), "run_date_ist": day,
@@ -779,6 +839,12 @@ def main():
     }
     if rotation is not None:
         feed["rotation"] = rotation
+    if regime is not None:
+        feed["regime"] = regime
+    if calendar is not None:
+        feed["calendar"] = calendar
+    if market_news is not None:
+        feed["market_news"] = market_news
     from backend.exec_summary import build_executive_summary
     try:
         feed["executive_summary"], health["executive_summary"] = build_executive_summary(
