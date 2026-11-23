@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-23T16:10:42.103909+05:30
+# Global Money-Flow Brief | 2026-11-23T20:44:49.580949+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
-## Executive summary (rule-based, no AI used)
-Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
+## Executive summary (AI-written, rule-checked)
+Broad outflows persist across global equities, sectors, and risk assets; Indian equities and select domestic sectors attract inflows; risk-off tone steady.
 
-Over the week, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs), and no asset class shows a clear inflow. Over the month, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals and Crypto, and no asset class shows a clear inflow. Among sectors and themes this week, inflow is visible in Nifty Bank ETF (BANKBEES), Nifty Pharma ETF (PHARMABEES) and Nifty India Consumption ETF (CONSUMBEES) and outflow in AI and big-data theme, US technology, US financials, US banks, US healthcare and US energy. Flow is improving in Equity sectors and themes, Metals and Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.
+Day, week, and month all show outflow-led moves across country markets, size and style, and real estate. Week adds sector, metals, and crypto outflows. Month adds sector, size, metals, and crypto outflows. Only India equities and Indian bank, pharma, consumption sectors see inflows. Bonds mixed with long Treasury and investment-grade credit inflows week, but high-yield outflows. Dollar gains versus euro and pound. Risk tone risk-off for both month and week, shift steady.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -14,9 +14,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
-- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- China equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
 - Japan equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EN225/history/)
-- Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
 - Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 11 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 16 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-23T16:10:42.103909+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-23T20:44:49.580949+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

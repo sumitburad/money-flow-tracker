@@ -1,8 +1,8 @@
-1/ Global money flow | 2026-11-23T16:10:42.103909+05:30. Categorical, evidence-based signals; no scores.
+1/ Global money flow | 2026-11-23T20:44:49.580949+05:30. Categorical, evidence-based signals; no scores.
 
-2/ Supportive: not confirmed; opposing: China equities proxy, Japan equities.
+2/ Supportive: not confirmed; opposing: China equities proxy, Euro area equities proxy.
 
-3/ Flow rotation: Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).
+3/ Flow rotation: Broad outflows persist across global equities, sectors, and risk assets; Indian equities and select domestic sectors attract inflows; risk-off tone steady.
 
 4/ Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 
