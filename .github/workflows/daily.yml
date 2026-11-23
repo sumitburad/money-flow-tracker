@@ -31,6 +31,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
+          # Always start from the newest saved version of main. Without this, a run that had
+          # to wait for another run would start from the older version that existed when it
+          # was triggered, and its data could get mixed with the other run's (23 Nov 2026).
+          ref: main
 
       - name: Is this run needed?
         id: gate

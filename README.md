@@ -61,6 +61,7 @@ Three more additive blocks in the feed (`regime`, `calendar`, `market_news`). Th
 
 - Every web request goes through one shared client (`backend/net.py`): three tries with growing waits, `Retry-After` honoured, and a host is skipped for the rest of the run after two fully failed calls.
 - The workflow retries the whole collection up to three times, then validates the feed, tops up history, syncs the dashboard and pushes with its own retries.
+- Publishing is guarded (`scripts/commit_and_push.sh`, `scripts/check_published_data.py`): runs start from the newest `main`, a run never merges its data files with another run's (if both changed the same file it publishes nothing), and the feed, its copies and the status file are checked to belong to one run right before every push. See "Publishing safely" in `docs/RUNBOOK.md`.
 - Backup schedules run only if `docs/status.json` does not show a complete snapshot for that session (`scripts/should_run.py`).
 - Every run writes a plain-language summary to its run page (`scripts/summarize_run.py`).
 - Secrets live only in GitHub Actions secrets. They are redacted from error text and scrubbed from every JSON file written.
