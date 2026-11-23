@@ -27,10 +27,12 @@ RETRY_STATUS = frozenset({408, 425, 429, 500, 502, 503, 504})
 RETRY_ERRORS = (requests.ConnectionError, requests.Timeout,
                 requests.exceptions.ChunkedEncodingError)
 # Environment variables that hold credentials. Values are never logged or saved.
-SECRET_ENV_NAMES = ("FRED_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY",
+SECRET_ENV_NAMES = ("FRED_API_KEY", "GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY",
                     "UPSTOX_ANALYTICS_TOKEN")
 _QUERY_SECRET = re.compile(
     r"(?i)\b(api[_-]?key|access[_-]?token|token|key)=([^&\s'\"]+)")
+# The look of a Google API key, as a second safety net next to the exact-value check above.
+_GOOGLE_KEY = re.compile(r"AIza[0-9A-Za-z_-]{30,}")
 
 
 def _secret_values():
@@ -47,7 +49,7 @@ def scrub_secrets(text):
     out = str(text)
     for value in _secret_values():
         out = out.replace(value, "***")
-    return out
+    return _GOOGLE_KEY.sub("***", out)
 
 
 def redact(text):

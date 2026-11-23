@@ -1,7 +1,7 @@
 # Connect the free data and AI providers — a plain guide
 
-Written 22 November 2026 and updated later the same day. You do not need to read or write code. Each step lists exactly what to click.
-The dashboard keeps working without the keys; the keys only make it more reliable or smarter. Steps 1, 2 and 4 are already done on your side. Step 3 (Groq) is skipped because its sign-up page did not work for you.
+Written 22 November 2026 and updated on 23 November 2026. You do not need to read or write code. Each step lists exactly what to click.
+The dashboard keeps working without the keys; the keys only make it more reliable or smarter. Steps 1, 2 and 4 are already done on your side. Step 3 (Groq) is skipped because its sign-up page did not work for you. Step 4b (Google Gemini) is a new, optional second AI.
 
 ## What to do, in order
 
@@ -11,6 +11,7 @@ The dashboard keeps working without the keys; the keys only make it more reliabl
 | 2. FRED key | A more reliable way to read official US data, and the calendar of coming release dates | Free | Done |
 | 3. Groq key | A faster AI for the executive summary and news tags | Free, no card | Skipped: sign-up did not work for you. Not needed |
 | 4. OpenRouter key | The AI that writes the executive summary and tags headlines | Free, no card | Done |
+| 4b. Google Gemini key | A second, steadier free AI, asked before OpenRouter | Free tier, no card as far as I could check | Optional, about 5 minutes |
 | 5. INDstocks daily data | India prices and volume for the money-flow signals | Free with your existing account | Handled inside your private trading project |
 | 6. Optional extras | Backup price sources, only if ever needed | Free tiers | Not needed now |
 | 7. New feeds (calendar, news) | Coming events, market and company news | Free, no extra key | Nothing to do. Read it so you know where the data comes from |
@@ -90,7 +91,7 @@ OpenRouter is a switchboard to many AI models, including free ones. With no Groq
 2. Open https://openrouter.ai/keys and create a key. Do not add money or a card; the free models need neither.
 3. Save it in GitHub. Name: `OPENROUTER_API_KEY`.
 
-**What it does.** It tags headlines and writes the **Executive summary**, in at most 4 small requests per refresh (up to 3 for headline tags, 5 headlines each, and 1 for the summary). OpenRouter's `openrouter/free` option picks one free model at random for each request, and in the first two real runs it kept landing on "thinking" models that sent back blank answers. So the program now does the choosing itself. Once per refresh it reads the list of models your account may use, keeps the free ones that answer directly (no hidden thinking, a big enough size, room for a full answer) and names up to three of them in the request. The first is asked; if it is busy or fails, OpenRouter automatically tries the next. Only models whose names end in `:free` are ever named, so a backup can never cost money. If the list cannot be read, or holds no suitable free model, the program goes back to `openrouter/free` exactly as before. Either way, the **Data quality** box has a line starting "AI models:" (which free models were asked) or a warning that says in plain words why none could be chosen. The steering words are in `config/ai_models.yaml`; you never need to edit it. The summary is checked by code every time, so a weaker model only means the rule-written summary is shown that day.
+**What it does.** It tags headlines and writes the **Executive summary**, in at most 4 small requests per refresh (up to 3 for headline tags, 5 headlines each, and 1 for the summary). OpenRouter's `openrouter/free` option picks one free model at random for each request, and in the first two real runs it kept landing on "thinking" models that sent back blank answers. So the program now does the choosing itself. Once per refresh it reads the list of models your account may use, keeps the free ones with a big enough size and room for a full answer, and names up to three of them in the request. Models that answer directly come first. Models that "think" before answering fill the places that are left, and they are asked to think only briefly and given more room (see "The thinking models" below). The first is asked; if it is busy or fails, OpenRouter automatically tries the next. Only models whose names end in `:free` are ever named, so a backup can never cost money. If the list cannot be read, or holds no suitable free model, the program goes back to `openrouter/free` exactly as before. Either way, the **Data quality** box has a line starting "AI models:" (which free models were asked) or a warning that says in plain words why none could be chosen. The steering words are in `config/ai_models.yaml`; you never need to edit it. The summary is checked by code every time, so a weaker model only means the rule-written summary is shown that day.
 
 **Limits (checked on 22 November 2026).** OpenRouter's pricing page (https://openrouter.ai/pricing) and its free-models page (https://openrouter.ai/collections/free-models) say that free models are capped at 20 requests a minute and 50 requests a day. The daily cap rises to 1,000 once an account has bought about $10 of credit (a one-time purchase, not a subscription). If you followed these steps and added no money, 50 a day is the number that applies to you. OpenRouter's own guides add that a failed request still counts towards the day's total. I could not open the separate limits page itself, so these numbers come from those two pages.
 
@@ -100,7 +101,26 @@ Each refresh makes about 4 requests (up to 10 on a bad day, when a free model se
 
 **Still blank after that (second real run, 22 November 2026).** The extra room and the "think less" retry were not enough: the random pick kept landing on thinking models (NVIDIA's Nemotron family) and the summary and the headline tags were still blank. That is why the program now names the free models itself, as described above. I could only test this against stand-in answers. It relies on OpenRouter's list having the shape its documentation describes, and on at least one free model that answers directly being open to your account. OpenRouter lists only the models your account's privacy settings allow, and free models may keep what they are sent, so if you have switched that kind of use off in your OpenRouter account, no free model may be listed. If the **Data quality** box says "No free model could be chosen", tell Claude and we will go through that setting together. I also could not find out whether OpenRouter counts a backup attempt as a separate request against the 50 a day; the numbers above assume it does not.
 
+**The thinking models (live runs of 22 and 23 November 2026).** Five real refreshes tried the AI and the summary worked in only one. Your OpenRouter account lists a "thinking" setting for every one of its free models, so the old rule "skip models that think" left the list empty and the random pick did the work. Across the five runs, nemotron-3-ultra and particle-1 sent a usable answer every time they were asked (3 of 3 each). A few others (gemma-4-26b, dots-3, ernie-5.5-flash, nemotron-3-nano-omni) answered some of the time. Two NVIDIA models (nemotron-3.5-super-vl and nemotron-3.5-lightning), a very small one (lfm-3-1.7b) and flint sent blank answers in almost every case. So thinking models are now allowed, the ones that worked are tried first (`prefer_thinking` in `config/ai_models.yaml`), the two NVIDIA ones are left out by name, and the small and unknown-size ones are left out by the size rules. With the models seen so far the program should ask nemotron-3-ultra first, with particle-1 and gemma-4-26b as backups. This is my plan from the evidence; it is untested against the real service until the next real run. The **Data quality** box now shows the models asked, a fold-out list of every free model seen with the reason each was used or skipped, and what each model did in that run. If a model that used to work starts failing, the list shows it. To go back to the old rule, change `use_thinking_models` to `false` in `config/ai_models.yaml`.
+
 **Privacy.** Free models may keep what they are sent. The system sends only category words, names and public business headlines. No price, no account, no key and nothing private leaves the repository.
+
+## Step 4b — Google Gemini key (optional second AI)
+
+Gemini is Google's AI. Its free tier is another source for the same two jobs (tagging headlines and writing the **Executive summary**). If you save a key, Gemini is asked **before** OpenRouter. If Gemini is busy, refuses the key or sends an answer that fails the checks, the program carries on with OpenRouter exactly as today. Without a key, nothing changes.
+
+1. Open https://aistudio.google.com/app/apikey and sign in with a Google account.
+2. Click **Create API key**. If it asks you to choose or create a project, choose **Create API key in new project**.
+3. Copy the key. It starts with `AIza`.
+4. Save it in GitHub with the five clicks above. Name: `GEMINI_API_KEY`.
+5. Do **not** paste the key in chat. Tell Claude when it is saved; the next refresh (or one you start yourself) will use it, and the **Data quality** box will show a Gemini line under **What each AI model did this run**.
+
+**What to know.**
+- **Free tier and privacy.** Google's free tier may use what is sent to improve its products. The program sends only category words, names and public business headlines, the same as to OpenRouter. No price, no account and no key goes with them.
+- **Limits.** Google gives limits per project and per model, and AI Studio shows the ones that apply to you. I could not find fixed free-tier numbers on Google's page, so I cannot state them here. The program asks Gemini about 4 times a refresh, and it keeps a list of up to three model names in `config/ai_models.yaml` (`gemini-flash-latest`, `gemini-3.5-flash`, `gemini-2.5-flash`). The next name is used only when the one before it fails, and every Gemini model has its own free allowance.
+- **Your country.** I could not confirm that the free tier is open to accounts in India. If the key page or a later run says it is not, tell Claude. Nothing breaks: OpenRouter takes over.
+- **Where the key goes.** Only to Google's own address (`generativelanguage.googleapis.com`), in a hidden request header, never in a web address, a file, a log or `status.json`. If Google refuses the key, the program stops asking Gemini for the rest of that refresh and says so in plain words in the **Data quality** box.
+- **How to switch it off.** Remove the secret in GitHub, or set `enabled: false` in the `gemini` part of `config/ai_models.yaml`.
 
 ## "Grok or any other free AI?"
 
@@ -109,7 +129,7 @@ Each refresh makes about 4 requests (up to 10 on a bad day, when a free model se
 | **OpenRouter free models** | Yes, free models with limits and no card | **In use** (Step 4) |
 | **Groq** (spelled differently from Grok) | Yes, a free plan with limits and no card | Good, but its sign-up did not work for you, so it is skipped |
 | Grok by xAI (https://console.x.ai) | As far as I could check, its API is pay as you go with no dependable free plan | Not recommended unless you decide to pay |
-| Google Gemini (https://aistudio.google.com/app/apikey) | A free tier exists. Google's limits page (last updated 28 October 2026) lists no free-tier numbers and says to look up your own limits inside Google AI Studio. It does not say whether a card is needed | Possible later; we would first read your limits in AI Studio, then add it |
+| Google Gemini (https://aistudio.google.com/app/apikey) | A free tier exists. Google's limits page (last updated 28 October 2026) lists no free-tier numbers and says to look up your own limits inside Google AI Studio. Free-tier content may be used to improve Google's products. I could not confirm that it is open in India | **Wired in as an optional second AI** (Step 4b). It is asked before OpenRouter once you save a key |
 | ChatGPT or Claude chat windows | They need a person to type; the daily job cannot call them | Not suitable for automatic updates |
 
 ---

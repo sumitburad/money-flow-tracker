@@ -110,6 +110,23 @@ def test_secret_values_never_survive(monkeypatch):
     assert scrub_secrets('{"x": "supersecretvalue123"}') == '{"x": "***"}'
 
 
+def test_the_gemini_key_is_one_of_the_values_that_never_survive(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "gemini-key-value-12345")
+    assert "gemini-key-value-12345" not in redact("oops gemini-key-value-12345 leaked")
+    assert scrub_secrets("x gemini-key-value-12345") == "x ***"
+
+
+def test_anything_shaped_like_a_google_key_is_hidden_even_when_it_is_not_configured(monkeypatch):
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    key = "AIza" + "Sy" + "R" * 33                          # built in pieces so no scanner takes it for real
+    assert scrub_secrets("seen " + key + " here") == "seen *** here"
+    assert key not in redact("GET /v1/models?key=" + key) and key not in redact("bad key " + key)
+    assert key not in scrub_secrets('{"error": "' + key + '"}')
+    # ordinary words and short look-alikes are left alone
+    assert scrub_secrets("AIza is a prefix") == "AIza is a prefix"
+    assert scrub_secrets("AIza" + "x" * 10) == "AIza" + "x" * 10
+
+
 def test_short_values_are_not_treated_as_secrets(monkeypatch):
     monkeypatch.setenv("FRED_API_KEY", "abc")
     assert scrub_secrets("abc def") == "abc def"

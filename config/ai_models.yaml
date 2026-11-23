@@ -1,17 +1,38 @@
 version: 1
-# Which free AI models the program asks for on OpenRouter.
+# Which free AI models the program asks for. You never need to edit this file for the system to work.
+# Edit it only to steer the choice. Nothing here can stop the daily refresh: if an AI cannot be reached
+# or its answer is not usable, the next one is asked, and in the end the plain rule-written text is used.
 #
-# Why this file exists: OpenRouter's "free router" (openrouter/free) picks a free model at
-# random. In the first live runs (22 Nov 2026) it kept picking "thinking" models. They spend
-# their whole answer allowance thinking and send back a blank reply, so the AI summary and the
-# headline tags could not be used. So, once per run, the program reads the list of models your
-# OpenRouter account may use, keeps the free ones that answer directly (no hidden thinking), and
-# names up to three of them in the request: the first is asked, the others are automatic backups.
-#
-# Nothing here can stop the daily refresh. If the list cannot be read, or no model qualifies,
-# the program goes back to the free router, exactly as before, and the dashboard says why.
-# You never need to edit this file for the system to work. Edit it only to steer the choice.
+# THE ORDER THE AIs ARE ASKED (each only if its key is saved in GitHub):
+#   1. Groq (not used: its sign-up did not work)   2. Google Gemini   3. OpenRouter's free models.
+# The first AI whose answer passes the checks is used; the others are not asked.
 
+# ---------------------------------------------------------------------------------------------
+# Google Gemini (key from Google AI Studio, saved in GitHub as GEMINI_API_KEY). Without the key this
+# section does nothing. Google gives every model its own free daily allowance, so a second name is a
+# real backup, not a repeat.
+gemini:
+  enabled: true                  # false = never use Gemini, even if the key is saved
+  models:                        # asked in this order; the next one only if the one before it fails (at most 3)
+    - gemini-flash-latest        # always points at Google's newest "Flash" model, so a rename cannot break it
+    - gemini-3.5-flash
+    - gemini-2.5-flash
+
+# ---------------------------------------------------------------------------------------------
+# OpenRouter's free models (key saved in GitHub as OPENROUTER_API_KEY).
+#
+# Why this section exists: OpenRouter's "free router" (openrouter/free) picks a free model at random.
+# In the first live runs (22 Nov 2026) it kept picking "thinking" models. They spend their whole
+# answer allowance thinking and send back a blank reply, so the AI summary and the headline tags could
+# not be used. So, once per run, the program reads the list of models your OpenRouter account may use,
+# keeps the free ones, and names up to three of them in the request: the first is asked, the others are
+# automatic backups.
+#
+# Thinking models (23 Nov 2026): the first version skipped every model that "thinks". Five live runs
+# then showed that EVERY free model on this account is one of those, so the list was always empty and
+# the random router did all the work (the AI summary worked in 1 run of 5). Now the program names
+# thinking models too, asks them to think only briefly, and gives them more room to answer. Models that
+# answer directly would still come first if one ever appears.
 openrouter:
   enabled: true                  # false = always use the free router
   max_models: 3                  # the first is asked, the rest are automatic backups (keep at 3 or less)
@@ -19,10 +40,13 @@ openrouter:
   min_answer_tokens: 3500        # models that cannot send an answer this long are skipped
   min_billions: 20               # a model whose name states a smaller size is skipped (small models fail our checks)
 
+  use_thinking_models: true      # false = skip models that think (they then never get a place in the list)
+  thinking_effort: low           # how long a thinking model may think: minimal, low, medium or high
+  thinking_answer_tokens: 6000   # room for its thinking AND its answer (never more than the model allows)
+
   # Words looked for in the model's name, in order of preference. A model that matches an earlier
   # word is tried first. Models that match none can still be used if their name states a size of
-  # at least min_billions. A model that "thinks" (OpenRouter lists a "reasoning" setting for it)
-  # is never used here, whatever its name.
+  # at least min_billions.
   prefer:
     - gemma-4
     - gemma-3-27b
@@ -35,7 +59,20 @@ openrouter:
     - qwen3.5
     - ling-
 
-  # Models whose name contains one of these words are never used (they are not chat models).
+  # Same idea for models that think. Seeded from the live runs of 22 to 23 Nov 2026, in this order:
+  # models that sent a usable answer every time (nemotron-3-ultra, particle-1), then ones that answered
+  # at least once (gemma-4, dots-3, ernie-5.5-flash) or sometimes (nemotron-3-nano-omni).
+  prefer_thinking:
+    - nemotron-3-ultra
+    - particle-1
+    - gemma-4
+    - dots-3
+    - ernie-5.5-flash
+    - nemotron-3-nano-omni
+
+  # Models whose name contains one of these words are never used. The first group are not chat models.
+  # The last two kept sending blank replies in every live run (they use up their room thinking).
+  # (liquid/lfm-3-1.7b and recursive/flint-v1.0 also failed, but they are left out by the size rules.)
   avoid:
     - guard
     - safety
@@ -47,3 +84,5 @@ openrouter:
     - ocr
     - image
     - diffusion
+    - nemotron-3.5-super-vl
+    - nemotron-3.5-lightning

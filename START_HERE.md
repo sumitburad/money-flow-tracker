@@ -12,7 +12,7 @@ You do not need to read or write any code. This page lists every step that needs
 
 ## What is new on the dashboard (22 November 2026)
 
-- **Executive summary** (near the top of the page): a few plain sentences on where money is moving. A free AI (OpenRouter) writes it from the dashboard's own categories, and code checks it. If no AI key is saved, or the AI answer fails the checks, a rule-written summary is shown and the badge says so. Read it as a draft. It is never advice.
+- **Executive summary** (near the top of the page): a few plain sentences on where money is moving. A free AI (Google Gemini if you save its key, otherwise OpenRouter) writes it from the dashboard's own categories, and code checks it. If no AI key is saved, or the AI answer fails the checks, a rule-written summary is shown and the badge says so. Read it as a draft. It is never advice.
 - **Money-flow windows**: for every tracked item, whether money is moving **in** or **out** over the last day, the last week and the last month. Price up with volume up is **inflow**. Price down with volume up is **outflow**. Price up with volume down is shown as *inflow fading*, and price down with volume down as *outflow fading*.
 - **Rotation map**: the same signals grouped into markets, sectors, bonds, currencies, metals, energy, crypto and real estate, with a verdict for each group and whether the picture is improving or weakening.
 - More items are tracked (73 instead of 50): Taiwan, Korea, Brazil, India, AI, global property, short bonds, inflation-linked bonds, emerging-market bonds, the dollar, euro, yen, pound, gold, silver and eight Indian ETFs.
@@ -95,6 +95,18 @@ Both runs proved that the futures positions, Japan's balance sheet and the false
 
 These are only confirmed after the next real run.
 
+## What the later real runs showed (22 and 23 November 2026), and what this update changes
+
+Five real refreshes in a row tried the AI, and the summary worked in only one of them. The cause was found in the model list on your OpenRouter account: **every free model on it has a "thinking" setting**. The previous rule was "never use thinking models", so the list was always empty and the program went back to OpenRouter's random pick, which kept landing on models that send blank answers. The models that did answer were all thinking models. Two of them (nemotron-3-ultra and particle-1) answered every time they were asked. A few others answered some of the time. Two NVIDIA models, one very small model and one called flint sent blank answers almost every time.
+
+This update is waiting for your OK as a pull request. Nothing changes until you approve it. It does three things:
+
+1. **Thinking models are allowed**, with the ones that worked so far tried first and the ones that never worked left out by name. They are asked to think only briefly and are given more room to answer.
+2. **The dashboard shows which models it saw.** In the **Data quality** box you will see which models were asked, a fold-out list of every free model it saw with the reason each was used or skipped, and a line saying what each model did in that run (answers used, answers that failed the checks, blank answers).
+3. **Google Gemini can be added as a second, steadier free AI** (Step 4b in `docs/CONNECT_DATA_PROVIDERS.md`). If you save a Gemini key, it is asked before OpenRouter. If Gemini is busy, refuses the key or sends an answer that fails the checks, the program carries on with OpenRouter as before. Without a key nothing changes.
+
+The rules for what the AI may say are the same as before: it sees only categories and names, never prices, and its answer is thrown away unless it passes the same checks. Nothing here is confirmed until a real run uses it, so read the **Data quality** box after the first refresh.
+
 ## After the first refresh with the new features (2 minutes, once)
 
 Open the dashboard and find the **Data quality** box (the last section). Look at these five things and copy anything odd to Claude, which will fix it:
@@ -102,7 +114,7 @@ Open the dashboard and find the **Data quality** box (the last section). Look at
 1. **Unavailable items**: a few of the 23 new items may be listed. That is expected for any ticker the free price source does not return.
 2. **Coming events**: a note such as "No upcoming FRED date was found for…" means one release name needs correcting. Fix it by telling Claude. The Fed list note about 31 December 2026 is expected.
 3. **Market news**: a note that a question failed, or that no headline came from a listed publisher, means the free news index answered oddly. The page then shows what it has. Nothing else is affected. The line **News detail** says how many headlines came back, how many were from the listed publishers and how many were kept. A note that the publisher filter was turned off means the index would not take the request to send only the listed publishers, so the program asked again without it; expect fewer usable headlines until that is looked at.
-4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe. When it is rule-based, the Data quality box now gives the reason in plain words (for example "empty reply from a model: it used all its room thinking", or "HTTP 429: the daily free limit is used up"). The line **Headline tagging** does the same for the news tags. A line starting **AI models:** names the free models the program asked, or, in a warning, says why none could be chosen (then it used OpenRouter's random pick, as before). If you see "No free model could be chosen", tell Claude: it may be a setting in your OpenRouter account.
+4. The badge above the **Executive summary**. **AI-written · openrouter** means the key works and the answer passed the checks. **Rule-based** means the key is missing, the free AI was busy, or its answer was rejected. Both are safe. When it is rule-based, the Data quality box now gives the reason in plain words (for example "empty reply from a model: it used all its room thinking", or "HTTP 429: the daily free limit is used up"). The line **Headline tagging** does the same for the news tags. A line starting **AI models:** names the free models the program asked, in order, and says which of them think briefly before answering, or, in a warning, says why none could be chosen (then it used OpenRouter's random pick, as before). Click **Free models seen on this account** to see every model it found and why each was used, kept as a spare or skipped. The line **What each AI model did this run** counts, for each model, the answers that were used, the ones that failed the checks and the blank ones (it also shows Gemini if you saved a key). If you see "No free model could be chosen", tell Claude: it may be a setting in your OpenRouter account.
 5. The **Risk tone** banner at the top should show a month reading and a week reading. **Not enough data** means fewer than five of the eight checks had prices that day.
 
 None of these new parts can stop the daily refresh. If any of them fails, the page says so and keeps going.
@@ -123,7 +135,7 @@ Open the dashboard. The banner at the top tells you how fresh the data is:
 2. Click **Run workflow**, then the green **Run workflow** button.
 3. Wait 5 to 10 minutes. The banner turns green 1 to 2 minutes after the run finishes, once the dashboard site has updated.
 
-Good to know: the free AI that writes the summary allows 50 requests a day, and each refresh uses about 4 (a bad day, when the AI is slow or busy and every step is retried once, can use up to 10). Two refreshes a day happen by themselves, so you have room for about eight extra clicks a day. If you press it more often, nothing breaks. The summary just switches to the rule-written version until the allowance resets the next day.
+Good to know: the free AI that writes the summary (OpenRouter) allows 50 requests a day, and each refresh uses about 4 (a bad day, when the AI is slow or busy and every step is retried once, can use up to 10). Two refreshes a day happen by themselves, so you have room for about eight extra clicks a day. If you press it more often, nothing breaks. The summary just switches to the rule-written version until the allowance resets the next day.
 
 ## If something looks wrong
 
@@ -145,7 +157,8 @@ The very first run is the real test, because it has not yet been run on GitHub's
 | What | Free? | What you do |
 |---|---|---|
 | FRED key | Yes | Done (Step 2 above) |
-| AI executive summary and AI tagging of news headlines (OpenRouter) | Free models with limits, no card | Done: you saved `OPENROUTER_API_KEY`. It is the only AI in use, because Groq's sign-up did not work for you |
+| AI executive summary and AI tagging of news headlines (OpenRouter) | Free models with limits, no card | Done: you saved `OPENROUTER_API_KEY`. It is the AI in use today, because Groq's sign-up did not work for you |
+| Google Gemini (a second free AI, asked before OpenRouter) | Free tier with limits, no card. I could not confirm that it is open to accounts in India, so the key page will tell you | Optional: make a key at aistudio.google.com/app/apikey and save it as `GEMINI_API_KEY`, exactly like Step 2. Steps are in `docs/CONNECT_DATA_PROVIDERS.md`, Step 4b. Google's free tier may use what is sent to improve its products; the program sends only categories, names and public headlines. Do not paste the key in chat |
 | Groq (a faster free AI) | Free tier with limits, no card | Optional, and only if its sign-up page starts working: make a key at console.groq.com and save it as `GROQ_API_KEY`, exactly like Step 2. It would then be used first. Skipping it costs nothing |
 | India daily buyer and seller direction (Upstox read-only token) | Free, needs an Upstox account | Tell Claude when you want it. Your trading broker is not affected |
 | India foreign-investor reports (NSDL) | Free, public | Needs your decision on automatic downloading. Ask Claude |

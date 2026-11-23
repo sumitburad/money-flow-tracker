@@ -6,6 +6,10 @@
 # Update (seventh pass): for OpenRouter's default openrouter/free, backend/free_models.py swaps in
 # named free models that answer directly, read once per run from OpenRouter's own model list
 # (settings: config/ai_models.yaml). If that fails, the request goes to openrouter/free as below.
+# Update (eighth pass, 23 Nov 2026): models that think are now allowed (they fill the places the direct
+# models leave, with brief thinking and more room), and Google Gemini (backend/gemini.py, secret
+# GEMINI_API_KEY) is asked between Groq and OpenRouter when its key exists. The order is Groq, Gemini,
+# OpenRouter; the first answer that passes the checks is used. A model never sets a market label.
 mode: validated_optional_model
 external_model_calls: true
 # News tagging: headlines are tagged in batches of 5, at most 3 requests per run (15 headlines),

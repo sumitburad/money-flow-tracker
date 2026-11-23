@@ -2,6 +2,7 @@
 import pytest
 import requests
 
+from backend import gemini
 from backend.ai_reply import (AI_TIMEOUT, OPENROUTER_ANSWER_TOKENS, AIReplyError, answer_tokens,
                               failure_reason, read_reply, reply_from, think_less_fields,
                               unreadable)
@@ -178,3 +179,67 @@ def test_a_reason_is_cut_short_and_never_holds_a_key(monkeypatch):
     text = failure_reason(leaky)
     assert len(text) <= 140 and "sk-or-very-secret-value" not in text
     assert failure_reason(ValueError("token=abcdef123456 was rejected")).count("abcdef123456") == 0
+
+
+# ------------------------------------------------- the model that sent a bad reply (23 Nov 2026)
+
+def test_an_error_names_the_model_that_really_answered_so_it_can_be_counted():
+    with pytest.raises(AIReplyError) as caught:
+        read_reply(completion(None, finish="length", model="vendor/slow-one:free"))
+    assert caught.value.model == "vendor/slow-one:free" and caught.value.empty is True
+    with pytest.raises(AIReplyError) as caught:
+        read_reply(completion("", finish="stop", model="vendor/blank-one:free"))
+    assert caught.value.model == "vendor/blank-one:free"
+    with pytest.raises(AIReplyError) as caught:
+        read_reply(completion(None, refusal="No.", model="vendor/refuser:free"))
+    assert caught.value.model == "vendor/refuser:free" and caught.value.empty is False
+
+
+def test_an_error_without_a_model_in_the_reply_has_no_model():
+    with pytest.raises(AIReplyError) as caught:
+        read_reply({"choices": [{"finish_reason": "stop", "message": {"content": ""}}]})
+    assert caught.value.model is None
+    with pytest.raises(AIReplyError) as caught:
+        read_reply({"choices": []})
+    assert caught.value.model is None and AIReplyError("plain").model is None
+
+
+def test_an_unreadable_text_carries_the_model_too():
+    reply = read_reply(completion("Sorry, no.", finish="stop", model="vendor/chatty:free"))
+    assert unreadable(reply).model == "vendor/chatty:free"
+    cut = read_reply(completion("{\"a\": ", finish="length", model="vendor/cut:free"))
+    assert unreadable(cut).model == "vendor/cut:free" and unreadable(cut).empty is True
+
+
+# ------------------------------------------------------------ Google Gemini
+
+def test_gemini_gets_room_for_its_brief_thinking_and_no_openrouter_retry_fields():
+    assert answer_tokens(gemini.URL, 1500) == gemini.ANSWER_TOKENS == 4000
+    assert answer_tokens(gemini.URL, 1800) == 4000
+    assert think_less_fields(gemini.URL) is None          # its effort is already low on the first try
+
+
+def test_a_look_alike_address_does_not_get_gemini_room():
+    assert answer_tokens("https://generativelanguage.googleapis.com.evil.example/x", 1500) == 1500
+    assert answer_tokens("https://evil.example/?u=generativelanguage.googleapis.com", 1500) == 1500
+
+
+def test_an_error_that_google_sends_inside_a_list_is_read():
+    body = [{"error": {"code": 429, "message": "Quota exceeded for this model today",
+                       "status": "RESOURCE_EXHAUSTED"}}]
+    text = failure_reason(requests.HTTPError("x", response=Response(body, status=429)))
+    assert text.startswith("HTTP 429 (busy, or the daily free limit is used up)")
+    assert "Quota exceeded for this model today" in text
+
+
+@pytest.mark.parametrize("body", [[], [None], ["text"], [{"nothing": 1}], [[]]])
+def test_a_list_shaped_error_without_a_message_still_gives_the_status(body):
+    text = failure_reason(requests.HTTPError("x", response=Response(body, status=403)))
+    assert text == "HTTP 403 (the key is not allowed to do this)"
+
+
+def test_a_google_key_in_an_error_message_is_hidden_even_when_it_is_not_in_the_environment():
+    key = "AIza" + "Sy" + "Q" * 33                        # built in pieces so no scanner takes it for real
+    body = [{"error": {"message": "API key not valid. Key " + key}}]
+    text = failure_reason(requests.HTTPError("x", response=Response(body, status=400)))
+    assert key not in text and "AIza" not in text and "***" in text

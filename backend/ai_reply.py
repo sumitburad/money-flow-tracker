@@ -18,11 +18,12 @@ from collections import namedtuple
 
 import requests
 
+from backend import gemini
 from backend.net import redact
 
 # Room for the model's thinking AND its answer. The visible JSON is a few hundred words; the
 # rest is room to think. (Groq's models run at their lowest thinking effort, so they keep the
-# smaller limit each step passes in.)
+# smaller limit each step passes in. Gemini has its own, set in backend/gemini.py.)
 OPENROUTER_ANSWER_TOKENS = 3500
 # Seconds to connect, then to wait for the answer: a thinking model can need a minute.
 AI_TIMEOUT = (10, 75)
@@ -47,16 +48,22 @@ class AIReplyError(ValueError):
     """The model answered, but there was nothing usable to read.
 
     ``empty`` is True when no text came back at all, or the text was cut off by the length
-    limit. That is worth exactly one more try that asks the model to think less."""
+    limit. That is worth exactly one more try that asks the model to think less.
+    ``model`` is the model that really answered, when the reply said which one."""
 
-    def __init__(self, message, *, empty=False):
+    def __init__(self, message, *, empty=False, model=None):
         super().__init__(message)
         self.empty = empty
+        self.model = model
 
 
 def answer_tokens(url, default):
     """How many tokens the model may use (thinking plus answer) for this provider."""
-    return OPENROUTER_ANSWER_TOKENS if "openrouter.ai" in str(url) else default
+    if "openrouter.ai" in str(url):
+        return OPENROUTER_ANSWER_TOKENS
+    if gemini.is_gemini(url):
+        return gemini.ANSWER_TOKENS
+    return default
 
 
 def think_less_fields(url):
@@ -104,12 +111,12 @@ def read_reply(body):
     if not text.strip():
         refusal = message.get("refusal")
         if isinstance(refusal, str) and refusal.strip():
-            raise AIReplyError("%s declined to answer" % who)
+            raise AIReplyError("%s declined to answer" % who, model=model)
         if finish == "length":
             raise AIReplyError("empty reply from %s: it used all its room thinking (finish: length)"
-                               % who, empty=True)
+                               % who, empty=True, model=model)
         raise AIReplyError("empty reply from %s%s" % (who, " (finish: %s)" % finish if finish else ""),
-                           empty=True)
+                           empty=True, model=model)
     return ModelReply(text, model, finish)
 
 
@@ -134,8 +141,9 @@ def unreadable(reply, problem="is not valid JSON"):
     one retry; any other broken text is not."""
     who = reply.model or "the model"
     if reply.finish == "length":
-        return AIReplyError("reply from %s was cut off by the length limit" % who, empty=True)
-    return AIReplyError("reply from %s %s" % (who, problem))
+        return AIReplyError("reply from %s was cut off by the length limit" % who, empty=True,
+                            model=reply.model)
+    return AIReplyError("reply from %s %s" % (who, problem), model=reply.model)
 
 
 def failure_reason(exc, limit=140):
@@ -148,7 +156,10 @@ def failure_reason(exc, limit=140):
             code = int(found.group(1)) if found else None
         detail = ""
         try:
-            error = response.json().get("error")
+            body = response.json()
+            if isinstance(body, list) and body:       # Google sends its errors inside a list
+                body = body[0]
+            error = body.get("error")
             detail = error.get("message") if isinstance(error, dict) else error
         except Exception:
             detail = ""

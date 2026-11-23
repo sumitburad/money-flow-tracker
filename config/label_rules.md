@@ -24,7 +24,7 @@ This is an additive layer. The six-family label policy above is unchanged, and n
 - Volume is a participation proxy, never net investor fund flow.
 
 ## Addendum — 2026-11-22: executive summary
-- The dashboard's executive summary may be written by a free-tier language model (Groq, then OpenRouter). The model sees only a digest of categories and names, never prices or numbers.
+- The dashboard's executive summary may be written by a free-tier language model (Groq, then Google Gemini, then OpenRouter, each only if its key is saved). The model sees only a digest of categories and names, never prices or numbers.
 - Its answer is rejected unless it uses only the allowed fields (headline, rotation_view, drivers_view, watch, evidence_refs), stays inside the word limits, has no digits (except 2-year, 10-year and M2), no buy, sell or advice wording, no links or markup, only names that exist in the feed, and a rotation view that names a tracked item or bucket.
 - If no provider answer passes, a rule-written summary is shown. The feed labels it `ai_validated` (provider and model named) or `rules_only`, and `human_review_required` is always true. A model never sets a market label.
 
