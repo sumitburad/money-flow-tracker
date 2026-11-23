@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-23T09:01:44.104344+05:30",
+  "as_of_ist": "2026-11-23T09:10:44.224055+05:30",
   "run_slot": "manual",
-  "completed_at_utc": "2026-11-23T03:34:47.285255+00:00",
+  "completed_at_utc": "2026-11-23T03:42:36.125518+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,22 +61,24 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 0,
-    "rule_fallback": 30,
-    "rejected_model_responses": 3,
-    "providers_used": [],
-    "empty_reply_retries": 1,
-    "models_seen": [],
-    "failure_reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3.5-lightning:free: it used all its room thinking (finish: length)",
-      "openrouter: empty reply from liquid/lfm-3-1.7b:free: it used all its room thinking (finish: length)",
-      "openrouter: empty reply from recursive/flint-v1.0:free: it used all its room thinking (finish: length)"
+    "model_classified": 15,
+    "rule_fallback": 15,
+    "rejected_model_responses": 0,
+    "providers_used": [
+      "openrouter"
     ],
+    "empty_reply_retries": 1,
+    "models_seen": [
+      "dots-studio/dots-3-note-preview:free",
+      "baidu/ernie-5.5-flash-preview:free",
+      "particle-ai/particle-1:free"
+    ],
+    "failure_reasons": [],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
     "pool_counts": {
-      "free models that think (skipped on purpose)": 11,
-      "free models seen": 11
+      "free models that think (skipped on purpose)": 12,
+      "free models seen": 12
     },
     "human_tag_review_required": true,
     "no_ai_is_not_model_inference": false
@@ -137,8 +139,8 @@
     "from_listed_publishers": 12,
     "kept": 11,
     "company_stories": 0,
-    "seconds": 245.1,
-    "slowest_answer_seconds": 16.0,
+    "seconds": 145.8,
+    "slowest_answer_seconds": 0.0,
     "errors": [
       "no answer from the news index within 45 seconds (3 tries)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
@@ -148,33 +150,8 @@
       "The news index did not take the publisher filter (news index did not answer with JSON: Your query was too short or too long.), so the filter was turned off for the rest of this refresh and the question was asked again without it."
     ],
     "publisher_filter": "switched off during this refresh",
-    "dropped": {
-      "not_a_listed_publisher": 44,
-      "not_english": 57,
-      "same_headline_again": 1
-    },
-    "top_other_sites": [
-      {
-        "site": "aol.com",
-        "headlines": 7
-      },
-      {
-        "site": "androidpolice.com",
-        "headlines": 1
-      },
-      {
-        "site": "apr.org",
-        "headlines": 1
-      },
-      {
-        "site": "argentinastar.com",
-        "headlines": 1
-      },
-      {
-        "site": "businesstoday.in",
-        "headlines": 1
-      }
-    ]
+    "dropped": {},
+    "top_other_sites": []
   },
   "executive_summary": {
     "method": "rules_only",
@@ -191,8 +168,8 @@
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
     "pool_counts": {
-      "free models that think (skipped on purpose)": 11,
-      "free models seen": 11
+      "free models that think (skipped on purpose)": 12,
+      "free models seen": 12
     }
   }
 }

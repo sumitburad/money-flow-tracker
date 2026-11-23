@@ -17,11 +17,13 @@
       ],
       "affected": [],
       "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
+      "horizon": "intraday",
+      "novelty": "repeat",
       "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "one_line_reason": "Announcing winners of an academic competition does not affect financial markets or policy.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -42,13 +44,18 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
       "direction": "unclear",
       "horizon": "days",
-      "novelty": "new",
+      "novelty": "follow_up",
       "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "one_line_reason": "Release of survey results on bank reserve management is informational and does not change policy.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -74,8 +81,10 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "one_line_reason": "Enforcement action against a former employee of a single small bank has negligible market impact.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -96,13 +105,19 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US dollar index",
+        "US short-term Treasuries",
+        "US financials"
+      ],
       "direction": "unclear",
       "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "novelty": "follow_up",
+      "confidence": "medium",
+      "one_line_reason": "FOMC minutes clarify past policy discussions but are retrospective and largely expected.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -123,13 +138,18 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
       "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
+      "horizon": "weeks",
+      "novelty": "follow_up",
       "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "one_line_reason": "Extending a comment period for proposed guidance is a routine procedural delay.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -146,17 +166,21 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "697d000e72a48d8d",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "months",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Fed sets pricing for bank payment services and streamlines check services; effect on bank costs unclear.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -179,11 +203,13 @@
       ],
       "affected": [],
       "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "horizon": "months",
+      "novelty": "follow_up",
+      "confidence": "high",
+      "one_line_reason": "Fed revises its tentative FOMC meeting calendar for next year; no policy change indicated.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -200,7 +226,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f6a5d6fe91ea2450",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
@@ -208,9 +234,11 @@
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "high",
+      "one_line_reason": "Fed takes enforcement action against a former bank employee; no market impact indicated.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -227,7 +255,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "83a40e1376ed5923",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
@@ -235,9 +263,11 @@
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "high",
+      "one_line_reason": "Fed approves two applications from a small bank holding company and its subsidiary; no market impact indicated.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -254,17 +284,19 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "451bf10485d71230",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
       "affected": [],
       "direction": "unclear",
       "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "novelty": "follow_up",
+      "confidence": "high",
+      "one_line_reason": "Fed terminates an earlier enforcement action against a bank holding company and its subsidiary; no market impact indicated.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -281,17 +313,22 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "68ab46e128b42907",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Bank approval is regulatory action with limited broad market impact.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -310,15 +347,22 @@
       "headline_id": "beacfe1806dadbf1",
       "event_type": "central_bank",
       "region": [
-        "US"
+        "US",
+        "GLOBAL"
       ],
-      "affected": [],
+      "affected": [
+        "S&P 500",
+        "US long Treasury proxy",
+        "US dollar index"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "intraday",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "high",
+      "one_line_reason": "Policy statement can shift rate expectations across markets.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -335,17 +379,22 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "3c40d7e034eb31eb",
-      "event_type": "central_bank",
+      "event_type": "regulation",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Ending enforcement actions affects specific banks, not broad market.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -362,17 +411,22 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "13bcdbfd6a06c614",
-      "event_type": "other",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US short-term Treasuries",
+        "US banks"
+      ],
       "direction": "unclear",
       "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "novelty": "follow_up",
+      "confidence": "medium",
+      "one_line_reason": "Discount rate minutes offer policy context but no new decision.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -389,17 +443,22 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "37905465dacd3a6e",
-      "event_type": "central_bank",
+      "event_type": "other",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US consumer discretionary",
+        "US consumer staples"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "months",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Household finance survey informs consumption outlook but lacks market catalyst.",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
