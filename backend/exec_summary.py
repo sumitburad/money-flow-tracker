@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 
 import requests
 
+from backend import gemini
 from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_reason,
                               reply_from, think_less_fields, unreadable)
 from backend.events_calendar import digest_events
@@ -28,9 +29,12 @@ from backend.market_news import digest_market_news
 from backend.regime import REGIME_WORDS, digest_regime
 
 # (provider, url, secret name, model override variable, default model, extra request fields)
+# Asked in this order; the first answer that passes the checks is used. Gemini appears here once and
+# is expanded into one entry per model named in config/ai_models.yaml (see _providers).
 PROVIDERS = (
     ("groq", "https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY",
      "GROQ_SUMMARY_MODEL", "openai/gpt-oss-120b", {"reasoning_effort": "low"}),
+    ("gemini", gemini.URL, gemini.SECRET, "GEMINI_SUMMARY_MODEL", gemini.DEFAULT_MODELS[0], {}),
     ("openrouter", "https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_API_KEY",
      "OPENROUTER_SUMMARY_MODEL", "openrouter/free", {}),
 )
@@ -333,26 +337,47 @@ def _prompt(digest):
             {"role": "user", "content": json.dumps(digest, ensure_ascii=True)}]
 
 
+def _providers(env):
+    """PROVIDERS, with Gemini once for each model named in config/ai_models.yaml (asked in that order)."""
+    listed = []
+    for entry in PROVIDERS:
+        provider, url, secret, model_var, _default, extra = entry
+        if provider != "gemini":
+            listed.append(entry)
+            continue
+        for name in gemini.models(env.get(model_var, "")):
+            listed.append((provider, url, secret, "", name, extra))
+    return listed
+
+
 def _ask(url, key, model, extra, digest, http, attempt=0):
     """One request. Returns (the answer as a dict, the model that really answered).
 
-    On OpenRouter's free router the request names specific free models that answer directly
-    (backend/free_models.py); ``attempt`` makes a retry start with a different one."""
+    On OpenRouter's free router the request names specific free models (backend/free_models.py);
+    ``attempt`` makes a retry start with a different one. Gemini gets a few adjustments
+    (backend/gemini.py). An empty or unreadable reply is counted against the model that sent it."""
     body = {"model": model, "temperature": 0.2, "max_tokens": answer_tokens(url, 1500),
             "response_format": {"type": "json_object"}, "messages": _prompt(digest), **extra}
     response = http.post(
         url, headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
                       "User-Agent": "global-money-flow-research/2.0"},
-        json=shape_request(body, url=url, model=model, attempt=attempt, http=http, key=key),
+        json=shape_request(gemini.fit_request(body, url), url=url, model=model, attempt=attempt,
+                           http=http, key=key),
         timeout=AI_TIMEOUT)
-    reply = reply_from(response)
+    try:
+        reply = reply_from(response)
+    except AIReplyError as exc:
+        POOL.record(exc.model, "empty" if exc.empty else "rejected")
+        raise
     start, end = reply.text.find("{"), reply.text.rfind("}")
     try:
         if start < 0 or end <= start:
             raise ValueError("no JSON object")
         return json.loads(reply.text[start:end + 1]), reply.model
     except ValueError:
-        raise unreadable(reply) from None
+        problem = unreadable(reply)
+        POOL.record(reply.model, "empty" if problem.empty else "rejected")
+        raise problem from None
 
 
 def _ask_with_one_retry(url, key, model, extra, digest, http, sleep, notes=None):
@@ -398,23 +423,31 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
                   "items_without_volume": 0}
         health["reasons"].append("digest: " + type(exc).__name__)
     summary = None
+    refused = set()      # providers whose key was turned away: another model of theirs cannot help
     if digest.get("groups"):
-        for provider, url, secret, model_var, default_model, extra in PROVIDERS:
+        for provider, url, secret, model_var, default_model, extra in _providers(env):
             key = env.get(secret, "").strip()
-            if not key:
+            if not key or provider in refused:
                 continue
             health["ai_configured"] = True
             model = env.get(model_var, "").strip() or default_model
-            health["providers_tried"].append(provider)
+            if provider not in health["providers_tried"]:
+                health["providers_tried"].append(provider)
+            used = None
             try:
                 answer, used = _ask_with_one_retry(url, key, model, extra, digest, http, sleep, health)
                 if used and used not in health["models_seen"]:
                     health["models_seen"].append(used)
                 clean = check_summary(answer, digest)
             except (ValueError, TypeError, KeyError, requests.RequestException) as exc:
+                if used:      # it answered but failed our checks (empty replies were counted where they were read)
+                    POOL.record(used, "rejected")
                 health["rejected_answers"] += 1
                 health["reasons"].append(provider + ": " + failure_reason(exc))
+                if provider == "gemini" and gemini.key_refused(exc):
+                    refused.add(provider)
                 continue
+            POOL.record(used, "accepted")
             summary = {**clean, "method": "ai_validated", "provider": provider, "model": used or model}
             health["method"] = "ai_validated"
             break
@@ -424,6 +457,6 @@ def build_executive_summary(feed, *, http=requests, env=None, macro_names=None, 
                    notice=NOTICE, human_review_required=True)
     health["reasons"] = health["reasons"][:4]
     health["models_seen"] = health["models_seen"][:4]
-    if POOL.tried:
+    if POOL.active():
         health.update(POOL.summary())
     return summary, health

@@ -1,6 +1,7 @@
 import json
 import pytest
 import requests
+from backend import gemini
 from backend.news_classifier import (check_tag, classify_headlines, fallback_tag)
 
 UNIVERSE = [{"name": "S&P 500"}]
@@ -199,7 +200,7 @@ class Recorder:
         self.steps, self.sent = list(steps), []
 
     def post(self, url, headers, json, timeout):
-        self.sent.append({"url": url, "payload": json, "timeout": timeout})
+        self.sent.append({"url": url, "headers": headers, "payload": json, "timeout": timeout})
         step = self.steps.pop(0)
         return step(json) if callable(step) else step
 
@@ -396,3 +397,156 @@ def test_groq_tagging_is_not_changed_and_never_reads_the_model_list(model_list):
     _, h = classify_headlines([news()], UNIVERSE, env=GROQ_ENV, http=rec)
     assert rec.sent[0]["payload"]["model"] == "openai/gpt-oss-20b" and rec.list_calls == []
     assert "free_pool" not in h
+
+
+# ------------------------------------------------------------------- thinking models (23 Nov 2026)
+
+DEEP_THINKER = "vendor/deep-think-120b:free"
+
+
+def test_a_thinking_model_fills_the_place_the_direct_ones_leave_for_tagging(model_list):
+    rec = PoolRecorder(model_list(GEMMA, thinkers=[DEEP_THINKER]), valid_answer(model=DEEP_THINKER))
+    tagged, h = classify_headlines([news()], UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    sent = rec.sent[0]["payload"]
+    assert sent["model"] == GEMMA and sent["models"] == [DEEP_THINKER]
+    assert sent["reasoning"] == {"effort": "low"} and sent["max_tokens"] == 6000
+    assert tagged[0]["classification"]["classifier"] == "validated_model_json"
+    assert h["free_pool"] == [GEMMA, DEEP_THINKER] and h["pool_thinking"] == [DEEP_THINKER]
+    assert h["model_results"] == [{"model": "vendor/deep-think-120b", "accepted": 1, "rejected": 0, "empty": 0}]
+
+
+def test_a_tag_that_fails_the_checks_is_counted_against_the_model_that_wrote_it(model_list):
+    def bad(payload):
+        sent = json.loads(payload["messages"][1]["content"])
+        return said(json.dumps({"tags": [tag_for(h, event_type="made_up") for h in sent["headlines"]]}),
+                    model=GEMMA)
+    rec = PoolRecorder(model_list(GEMMA, LLAMA), bad)
+    _, h = classify_headlines([news()], UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    assert h["model_classified"] == 0 and h["rule_fallback"] == 1
+    assert h["model_results"] == [{"model": "google/gemma-4-31b-it", "accepted": 0, "rejected": 1, "empty": 0}]
+
+
+def test_an_empty_reply_is_counted_against_the_model_that_sent_it(model_list):
+    rec = PoolRecorder(model_list(GEMMA, LLAMA), used_up_its_room(), valid_answer(model=LLAMA))
+    _, h = classify_headlines([news()], UNIVERSE, env=OPENROUTER_ENV, http=rec)
+    assert h["model_results"] == [
+        {"model": "vendor/thinking-model", "accepted": 0, "rejected": 0, "empty": 1},
+        {"model": "meta-llama/llama-3.3-70b-instruct", "accepted": 1, "rejected": 0, "empty": 0}]
+
+
+# ------------------------------------------------------------------- Google Gemini (23 Nov 2026)
+
+# Built from pieces, so a scanner reading this file never mistakes the test value for a real key.
+GEMINI_KEY = "AIza" + "Sy" + "T" * 33
+GEMINI_ENV = {"GEMINI_API_KEY": GEMINI_KEY}
+GEMINI_HOST = "generativelanguage.googleapis.com"
+
+
+def host(call):
+    return call["url"].split("/")[2]
+
+
+class Refused(Reply):
+    """An HTTP error that carries its response, as the real library's errors do."""
+
+    def __init__(self, status, body=None):
+        super().__init__(status=status)
+        self._outer = body if body is not None else {"error": {"message": "refused"}}
+
+    def raise_for_status(self):
+        raise requests.HTTPError("%d Client Error" % self.status_code, response=self)
+
+
+def test_gemini_tags_headlines_at_its_own_address_with_adjusted_request_fields():
+    rec = Recorder(valid_answer(model="gemini-flash-latest"))
+    tagged, h = classify_headlines([news()], UNIVERSE, env=GEMINI_ENV, http=rec)
+    sent = rec.sent[0]
+    assert sent["url"] == gemini.URL and GEMINI_KEY not in sent["url"]
+    assert sent["headers"]["Authorization"] == "Bearer " + GEMINI_KEY
+    body = sent["payload"]
+    assert body["model"] == "gemini-flash-latest" and body["max_tokens"] == 4000
+    assert body["reasoning_effort"] == "low" and sent["timeout"] == (10, 75)
+    assert not {"response_format", "temperature", "reasoning", "models"} & set(body)
+    assert GEMINI_KEY not in json.dumps(body)
+    tag = tagged[0]["classification"]
+    assert tag["classifier"] == "validated_model_json" and tag["model_provider"] == "gemini"
+    assert tag["model_name"] == "gemini-flash-latest"
+    assert h["providers_used"] == ["gemini"] and h["model_classified"] == 1 and "free_pool" not in h
+    assert h["model_results"] == [{"model": "gemini-flash-latest", "accepted": 1, "rejected": 0, "empty": 0}]
+    assert GEMINI_KEY not in json.dumps([tagged, h])
+
+
+def test_gemini_is_asked_after_groq_and_only_for_what_groq_did_not_tag():
+    heads = [news(i) for i in range(3)]
+
+    def answer(url, sent):
+        if "groq" in url:
+            a, b, c = sent["headlines"]
+            return Reply([tag_for(a), tag_for(b, event_type="made_up"), tag_for(c)])
+        return echo_valid(url, sent)
+    http = Fake(answer)
+    tagged, h = classify_headlines(heads, UNIVERSE, env={"GROQ_API_KEY": "g" * 12, **GEMINI_ENV,
+                                                         "OPENROUTER_API_KEY": "o" * 12}, http=http)
+    assert [(GEMINI_HOST in u, "groq" in u, len(s["headlines"])) for u, s in http.calls] == [
+        (False, True, 3), (True, False, 1)]                  # OpenRouter is never needed
+    assert [t["classification"]["model_provider"] for t in tagged] == ["groq", "gemini", "groq"]
+    assert h["providers_used"] == ["groq", "gemini"] and h["model_classified"] == 3
+
+
+def test_when_every_gemini_model_fails_the_headlines_go_on_to_openrouter(model_list):
+    names = gemini.models("")
+    rec = PoolRecorder(model_list(GEMMA), *[Reply(status=500)] * len(names), valid_answer(model=GEMMA))
+    tagged, h = classify_headlines([news()], UNIVERSE, env={**GEMINI_ENV, **OPENROUTER_ENV}, http=rec)
+    assert [host(c) for c in rec.sent] == [GEMINI_HOST] * len(names) + ["openrouter.ai"]
+    assert [c["payload"]["model"] for c in rec.sent[:len(names)]] == names
+    assert tagged[0]["classification"]["model_provider"] == "openrouter"
+    assert any(reason.startswith("gemini: HTTP 500") for reason in h["failure_reasons"])
+    assert GEMINI_KEY not in json.dumps([tagged, h])
+
+
+def test_a_refused_gemini_key_rules_out_every_gemini_model_for_the_rest_of_the_run(model_list):
+    heads = [news(i) for i in range(10)]                    # two batches of five
+    rec = PoolRecorder(model_list(GEMMA), Refused(403), valid_answer(model=GEMMA), valid_answer(model=GEMMA))
+    _, h = classify_headlines(heads, UNIVERSE, env={**GEMINI_ENV, **OPENROUTER_ENV}, http=rec)
+    assert [host(c) for c in rec.sent] == [GEMINI_HOST, "openrouter.ai", "openrouter.ai"]
+    assert h["model_classified"] == 10 and h["rule_fallback"] == 0
+    assert h["failure_reasons"] == ["gemini: HTTP 403 (the key is not allowed to do this): refused"]   # once, not three times
+
+
+def test_a_gemini_model_that_is_not_found_is_skipped_but_the_next_gemini_model_is_still_asked():
+    names = gemini.models("")
+    heads = [news(i) for i in range(10)]
+    rec = Recorder(Refused(404), valid_answer(model=names[1]), valid_answer(model=names[1]))
+    _, h = classify_headlines(heads, UNIVERSE, env=GEMINI_ENV, http=rec)
+    assert [c["payload"]["model"] for c in rec.sent] == [names[0], names[1], names[1]]
+    assert h["model_classified"] == 10 and h["providers_used"] == ["gemini"]
+
+
+def test_a_gemini_model_named_in_the_environment_replaces_the_list():
+    rec = Recorder(valid_answer(model="gemini-9-pro"))
+    classify_headlines([news()], UNIVERSE, env={**GEMINI_ENV, "GEMINI_CLASSIFIER_MODEL": "gemini-9-pro"}, http=rec)
+    assert [c["payload"]["model"] for c in rec.sent] == ["gemini-9-pro"]
+
+
+def test_gemini_is_skipped_when_the_settings_switch_it_off(tmp_path, monkeypatch):
+    off = tmp_path / "off.yaml"
+    off.write_text("gemini:\n  enabled: false\n", encoding="utf-8")
+    monkeypatch.setattr(gemini, "CONFIG_PATH", off)
+    rec = Recorder()
+    _, h = classify_headlines([news()], UNIVERSE, env=GEMINI_ENV, http=rec)
+    assert rec.sent == [] and h["model_configured"] is False and h["rule_fallback"] == 1
+
+
+def test_a_blank_gemini_key_counts_as_no_key():
+    rec = Recorder()
+    _, h = classify_headlines([news()], UNIVERSE, env={"GEMINI_API_KEY": "   "}, http=rec)
+    assert rec.sent == [] and h["model_configured"] is False
+
+
+def test_a_google_key_inside_an_error_body_is_never_published():
+    leaky = [{"error": {"message": "API key not valid: " + GEMINI_KEY, "status": "INVALID_ARGUMENT"}}]
+    rec = Recorder(*[Refused(400, leaky) for _ in range(len(gemini.models("")))])
+    _, h = classify_headlines([news()], UNIVERSE, env=GEMINI_ENV, http=rec)
+    text = json.dumps(h)
+    assert GEMINI_KEY not in text and "AIza" not in text
+    assert h["failure_reasons"] and h["failure_reasons"][0].startswith("gemini: HTTP 400") and "***" in text

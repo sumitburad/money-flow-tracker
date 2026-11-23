@@ -1,4 +1,4 @@
-"""Choosing free OpenRouter models that answer directly (backend/free_models.py).
+"""Choosing free OpenRouter models (backend/free_models.py): direct answerers first, thinking models after.
 
 Nothing here touches the internet: the model list is faked."""
 import copy
@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parent.parent
 KEY = "sk-or-test-secret-5678"
 CFG = {**fm.DEFAULTS, "prefer": ["gemma-4", "llama-3.3-70b", "mistral-small", "qwen3-next"],
        "avoid": ["guard", "safety", "embed"]}
+CFG_NO_THINK = {**CFG, "use_thinking_models": False}      # the first version's rule: skip every thinker
+THINKS = ["max_tokens", "reasoning", "include_reasoning"]
 
 
 def model(model_id="google/gemma-4-31b-it:free", **changes):
@@ -46,9 +48,6 @@ def test_a_free_model_that_answers_directly_qualifies():
     ({"architecture": {"input_modalities": ["text"], "output_modalities": ["text", "image"]}}, "not_text"),
     ({"architecture": {"input_modalities": ["image"], "output_modalities": ["text"]}}, "not_text"),
     ({"id": "nvidia/nemotron-guard-70b:free"}, "avoided"),
-    ({"supported_parameters": ["max_tokens", "reasoning", "include_reasoning"]}, "thinks"),
-    ({"supported_parameters": ["max_tokens", "include_reasoning"]}, "thinks"),
-    ({"supported_parameters": ["Reasoning"]}, "thinks"),                        # case does not matter
     ({"supported_parameters": None}, "no_parameter_list"),
     ({"context_length": 8192, "top_provider": {"context_length": 8192, "max_completion_tokens": None}}, "short_context"),
     ({"top_provider": {"context_length": 131072, "max_completion_tokens": 2048}}, "short_answer"),
@@ -68,8 +67,17 @@ def test_an_unknown_size_is_allowed_when_the_name_is_on_the_preferred_list():
     assert why_not(model("google/gemma-4-flash:free"), CFG) is None          # "gemma-4" is preferred
 
 
-def test_a_thinking_model_is_skipped_even_when_it_is_the_most_preferred_name():
-    assert why_not(model("google/gemma-4-31b-it:free", supported_parameters=["reasoning"]), CFG) == "thinks"
+@pytest.mark.parametrize("params", [THINKS, ["max_tokens", "include_reasoning"], ["Reasoning"]])
+def test_a_thinking_model_is_skipped_only_when_the_settings_switch_thinking_models_off(params):
+    row = model(supported_parameters=params)                  # case does not matter
+    assert why_not(row, CFG_NO_THINK) == "thinks"
+    assert why_not(row, CFG) is None                          # the default: thinking models may be used
+    assert fm.is_thinker(row) and not fm.is_thinker(model())
+
+
+def test_a_thinking_model_is_skipped_even_when_it_is_the_most_preferred_name_if_switched_off():
+    row = model("google/gemma-4-31b-it:free", supported_parameters=["reasoning"])
+    assert why_not(row, CFG_NO_THINK) == "thinks"
 
 
 @pytest.mark.parametrize("name,billions", [
@@ -110,19 +118,31 @@ def test_models_not_on_the_preferred_list_follow_biggest_first_and_the_number_is
     assert chosen == ["vendor/b-120b:free"]
 
 
+ROWS_WITH_THINKERS = [
+    model("openai/gpt-5"), model("vendor/paid-70b", pricing={"prompt": "1", "completion": "1"}),
+    model("nvidia/nemotron-3-nano-30b-a3b:free", supported_parameters=["reasoning"]),
+    model("nvidia/nemotron-3.5-lightning:free", supported_parameters=["reasoning"]),
+    model("liquid/lfm-1.2b:free"), model("google/gemma-4-31b-it:free"), "not a model", None]
+
+
 def test_the_counts_say_what_was_skipped_and_do_not_count_paid_models():
-    rows = [model("openai/gpt-5"), model("vendor/paid-70b", pricing={"prompt": "1", "completion": "1"}),
-            model("nvidia/nemotron-3-nano-30b-a3b:free", supported_parameters=["reasoning"]),
-            model("nvidia/nemotron-3.5-lightning:free", supported_parameters=["reasoning"]),
-            model("liquid/lfm-1.2b:free"), model("google/gemma-4-31b-it:free"), "not a model", None]
-    chosen, counts = pick(rows, CFG)
+    chosen, counts = pick(ROWS_WITH_THINKERS, CFG_NO_THINK)
     assert chosen == ["google/gemma-4-31b-it:free"]
     assert counts == {"free_seen": 4, "thinks": 2, "too_small": 1, "usable": 1}
 
 
+def test_with_thinking_models_allowed_they_fill_the_places_the_direct_ones_leave():
+    chosen, counts = pick(ROWS_WITH_THINKERS, CFG)
+    # the direct model first, then the thinker whose name states a usable size; "lightning" states none
+    assert chosen == ["google/gemma-4-31b-it:free", "nvidia/nemotron-3-nano-30b-a3b:free"]
+    assert counts == {"free_seen": 4, "too_small": 1, "size_unknown": 1, "usable": 2}
+
+
 def test_nothing_usable_gives_an_empty_choice():
-    chosen, counts = pick([model(supported_parameters=["reasoning"])], CFG)
+    chosen, counts = pick([model(supported_parameters=["reasoning"])], CFG_NO_THINK)
     assert chosen == [] and counts["thinks"] == 1 and counts["usable"] == 0
+    chosen, counts = pick([model("vendor/tiny-4b:free")], CFG)
+    assert chosen == [] and counts["too_small"] == 1 and counts["usable"] == 0
 
 
 # ------------------------------------------------------------------ the settings file
@@ -223,12 +243,19 @@ def test_when_the_accounts_list_cannot_be_read_the_public_list_is_used():
 
 def test_when_the_accounts_list_is_fine_but_has_no_usable_model_the_public_list_is_not_used():
     thinkers = {"data": [model("nvidia/nemotron-3.5-lightning:free", supported_parameters=["reasoning"])]}
-    pool, http = read({ACCOUNT: ListReply(thinkers), PUBLIC: ListReply(LIST)})
+    pool, http = read({ACCOUNT: ListReply(thinkers), PUBLIC: ListReply(LIST)}, CFG_NO_THINK)
     assert [c["url"] for c in http.calls] == [ACCOUNT]          # the public list would name models this account may not use
     assert pool.ids == [] and "no free model that answers directly" in pool.note
     summary = pool.summary()
     assert summary["free_pool"] == [] and summary["pool_counts"]["free models seen"] == 1
     assert summary["pool_counts"]["free models that think (skipped on purpose)"] == 1
+
+
+def test_when_thinking_models_are_allowed_but_none_can_be_used_the_note_says_so():
+    tiny = {"data": [model("vendor/tiny-4b:free", supported_parameters=THINKS)]}
+    pool, http = read({ACCOUNT: ListReply(tiny), PUBLIC: ListReply(LIST)})
+    assert [c["url"] for c in http.calls] == [ACCOUNT]
+    assert pool.ids == [] and "had no free model that could be used" in pool.note
 
 
 def test_when_neither_list_can_be_read_the_note_says_why_in_plain_words():
@@ -374,3 +401,231 @@ def test_summary_is_small_and_plain():
     assert out["free_pool"] == pool.ids and "pool_note" not in out
     assert out["pool_counts"]["free models seen"] == 3
     assert KEY not in json.dumps(out)
+
+
+# ------------------------------------------------------------------ thinking models (23 Nov 2026)
+
+LIVE_IDS = [
+    "nvidia/nemotron-3-ultra-550b-a55b:free", "particle-ai/particle-1:free", "google/gemma-4-26b-a4b-it:free",
+    "dots-studio/dots-3-note-preview:free", "baidu/ernie-5.5-flash-preview:free",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", "nvidia/nemotron-3.5-super-vl:free",
+    "nvidia/nemotron-3.5-lightning:free", "liquid/lfm-3-1.7b:free", "recursive/flint-v1.0:free",
+]
+
+
+def live_list():
+    """The free models seen in the live runs of 22 and 23 Nov 2026: every one lists a "reasoning" setting."""
+    return [model(i, supported_parameters=THINKS) for i in LIVE_IDS]
+
+
+def test_the_real_settings_choose_the_models_that_worked_in_the_live_runs():
+    result = fm.plan(live_list(), load_config())
+    assert result["chosen"] == ["nvidia/nemotron-3-ultra-550b-a55b:free", "particle-ai/particle-1:free",
+                                "google/gemma-4-26b-a4b-it:free"]
+    assert result["thinking"] == result["chosen"]
+    why = {row["id"]: row["result"] for row in result["seen"]}
+    assert why["nvidia/nemotron-3.5-super-vl:free"] == "on the avoid list"
+    assert why["nvidia/nemotron-3.5-lightning:free"] == "on the avoid list"
+    assert why["liquid/lfm-3-1.7b:free"] == "too small"
+    assert why["recursive/flint-v1.0:free"] == "size unknown"
+    assert why["dots-studio/dots-3-note-preview:free"] == "spare, thinks"
+    assert why["nvidia/nemotron-3-ultra-550b-a55b:free"] == "asked first, thinks briefly"
+    assert why["particle-ai/particle-1:free"] == "backup, thinks briefly"
+    assert result["counts"]["free_seen"] == 10 and result["counts"]["usable"] == 6
+
+
+def test_with_thinking_switched_off_the_same_live_list_leaves_nothing_to_choose():
+    result = fm.plan(live_list(), {**load_config(), "use_thinking_models": False})
+    assert result["chosen"] == []
+    # the two avoid-list models are named first; the other eight all think
+    assert result["counts"]["avoided"] == 2 and result["counts"]["thinks"] == 8
+
+
+def test_the_real_settings_file_knows_the_live_run_results():
+    cfg = load_config()
+    assert cfg["use_thinking_models"] is True and cfg["thinking_effort"] in fm.EFFORTS
+    assert 3500 <= cfg["thinking_answer_tokens"] <= 16000
+    assert cfg["prefer_thinking"][:2] == ["nemotron-3-ultra", "particle-1"]
+    assert "nemotron-3.5-super-vl" in cfg["avoid"] and "nemotron-3.5-lightning" in cfg["avoid"]
+
+
+def test_models_that_think_are_ordered_by_the_thinking_list_then_biggest_first():
+    cfg = {**CFG, "prefer_thinking": ["alpha", "beta"], "max_models": 3}
+    rows = [model(i, supported_parameters=THINKS) for i in
+            ("v/zeta-30b:free", "v/beta-24b:free", "v/yotta-120b:free", "v/alpha-70b:free")]
+    chosen, _ = pick(rows, cfg)
+    assert chosen == ["v/alpha-70b:free", "v/beta-24b:free", "v/yotta-120b:free"]
+    chosen, _ = pick(rows, {**cfg, "max_models": 1})
+    assert chosen == ["v/alpha-70b:free"]
+
+
+def test_direct_models_keep_their_places_and_thinkers_only_fill_what_is_left():
+    rows = [model("v/direct-70b:free"), model("v/think-a-120b:free", supported_parameters=THINKS),
+            model("v/think-b-80b:free", supported_parameters=THINKS)]
+    result = fm.plan(rows, {**CFG, "prefer": [], "max_models": 3})
+    assert result["chosen"] == ["v/direct-70b:free", "v/think-a-120b:free", "v/think-b-80b:free"]
+    assert result["thinking"] == ["v/think-a-120b:free", "v/think-b-80b:free"]
+    one = fm.plan(rows, {**CFG, "prefer": [], "max_models": 1})
+    assert one["chosen"] == ["v/direct-70b:free"] and one["thinking"] == []     # a direct model is never pushed out
+
+
+def test_a_name_on_the_thinking_prefer_list_may_have_an_unknown_size():
+    row = model("v/particle-1:free", supported_parameters=THINKS)
+    assert why_not(row, CFG) == "size_unknown"
+    assert why_not(row, {**CFG, "prefer_thinking": ["particle-1"]}) is None
+
+
+def test_the_seen_list_is_short_and_says_what_each_model_is():
+    rows = [model("v/a-%db:free" % n) for n in range(30, 50)] + [model("v/tiny-4b:free")]
+    result = fm.plan(rows, {**CFG, "prefer": []})
+    assert len(result["seen"]) == fm.MAX_SEEN and result["counts"]["free_seen"] == 21
+    assert [r["result"] for r in result["seen"][:4]] == ["asked first", "backup", "backup", "spare"]
+
+
+def test_the_longest_answer_each_chosen_model_allows_is_reported():
+    rows = [model("v/a-70b:free", supported_parameters=THINKS,
+                  top_provider={"context_length": 131072, "max_completion_tokens": 4096}),
+            model("v/b-60b:free", supported_parameters=THINKS,
+                  top_provider={"context_length": 131072, "max_completion_tokens": None})]
+    assert fm.plan(rows, CFG)["caps"] == {"v/a-70b:free": 4096, "v/b-60b:free": None}
+
+
+def test_the_room_for_thinking_models_is_the_setting_but_never_more_than_a_model_allows():
+    cfg = {**CFG, "prefer": []}
+    big = [model("v/a-70b:free", supported_parameters=THINKS), model("v/b-60b:free", supported_parameters=THINKS)]
+    pool, _ = read({ACCOUNT: ListReply({"data": big})}, cfg)
+    assert pool.thinking == ["v/a-70b:free", "v/b-60b:free"] and pool.think == {"effort": "low", "room": 6000}
+    small = [model("v/a-70b:free", supported_parameters=THINKS,
+                   top_provider={"context_length": 131072, "max_completion_tokens": 4096}), big[1]]
+    pool, _ = read({ACCOUNT: ListReply({"data": small})}, cfg)
+    assert pool.think["room"] == 4096
+    pool, _ = read({ACCOUNT: ListReply({"data": [model("v/a-70b:free")]})}, cfg)
+    assert pool.thinking == [] and pool.think is None          # only direct models: nothing extra is asked
+
+
+def test_the_summary_lists_the_models_seen_and_the_thinkers_chosen():
+    pool, _ = read({ACCOUNT: ListReply({"data": live_list()})}, load_config())
+    out = pool.summary()
+    assert out["free_pool"] == pool.ids and out["pool_thinking"] == pool.ids
+    assert len(out["pool_seen"]) == 10
+    assert out["pool_seen"][0] == {"id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                                   "result": "asked first, thinks briefly"}
+    assert KEY not in json.dumps(out)
+
+
+def test_the_settings_for_thinking_models_are_checked_and_kept_in_range(tmp_path):
+    path = tmp_path / "t.yaml"
+    path.write_text("openrouter:\n  use_thinking_models: 'yes'\n  thinking_effort: Ludicrous\n"
+                    "  thinking_answer_tokens: 99999999\n  prefer_thinking: [Particle-1, '']\n", encoding="utf-8")
+    cfg = load_config(path)
+    assert cfg["use_thinking_models"] is True and cfg["thinking_effort"] == "low"
+    assert cfg["thinking_answer_tokens"] == 16000 and cfg["prefer_thinking"] == ["particle-1"]
+    path.write_text("openrouter:\n  use_thinking_models: false\n  thinking_effort: HIGH\n"
+                    "  thinking_answer_tokens: 10\n", encoding="utf-8")
+    cfg = load_config(path)
+    assert cfg["use_thinking_models"] is False and cfg["thinking_effort"] == "high"
+    assert cfg["thinking_answer_tokens"] == 3500
+
+
+# ------------------------------------------------------------------ changing a request for thinking models
+
+def pool_with_thinkers(*ids, thinking=(), room=6000):
+    pool = pool_of(*ids)
+    pool.thinking = list(thinking)
+    pool.think = {"effort": "low", "room": room} if thinking else None
+    return pool
+
+
+def test_thinking_models_get_a_brief_thinking_request_and_more_room():
+    pool = pool_with_thinkers("a/x-70b:free", "b/y-70b:free", thinking=["a/x-70b:free"])
+    before = copy.deepcopy(BODY)
+    out = shaped(pool=pool)
+    assert out["reasoning"] == {"effort": "low"} and out["max_tokens"] == 6000
+    assert out["model"] == "a/x-70b:free" and out["models"] == ["b/y-70b:free"]
+    assert BODY == before                                       # the input is never changed
+
+
+def test_a_retry_that_already_asks_for_less_thinking_keeps_its_own_setting():
+    body = {**BODY, "reasoning": {"effort": "minimal"}}
+    out = shaped(body, pool=pool_with_thinkers("a/x-70b:free", thinking=["a/x-70b:free"]))
+    assert out["reasoning"] == {"effort": "minimal"}
+
+
+def test_only_direct_models_means_no_extra_thinking_fields():
+    out = shaped(pool=pool_with_thinkers("a/x-70b:free", "b/y-70b:free"))
+    assert "reasoning" not in out and out["max_tokens"] == 3500
+
+
+def test_a_room_smaller_than_the_request_already_has_never_lowers_it():
+    out = shaped(pool=pool_with_thinkers("a/x-70b:free", thinking=["a/x-70b:free"], room=3000))
+    assert out["max_tokens"] == 3500
+
+
+def test_a_retry_that_rotates_to_a_direct_model_first_still_carries_the_thinking_fields():
+    pool = pool_with_thinkers("a/direct-70b:free", "b/think-70b:free", thinking=["b/think-70b:free"])
+    out = shaped(pool=pool, attempt=1)                          # the thinker is now asked first
+    assert out["model"] == "b/think-70b:free" and out["reasoning"] == {"effort": "low"}
+    out = shaped(pool=pool, attempt=0)                          # the thinker is a backup, so the fields stay
+    assert out["model"] == "a/direct-70b:free" and out["reasoning"] == {"effort": "low"}
+
+
+# ------------------------------------------------------------------ what each model did
+
+def test_what_each_model_did_is_counted_and_reported():
+    pool = FreePool()
+    pool.record("nvidia/nemotron-3-ultra-550b-a55b:free", "accepted")
+    pool.record("nvidia/nemotron-3-ultra-550b-a55b", "accepted")        # the ":free" ending does not matter
+    pool.record("particle-ai/particle-1:free", "empty")
+    pool.record("particle-ai/particle-1:free", "rejected")
+    assert pool.active() and not pool.tried
+    out = pool.summary()
+    assert out["model_results"] == [
+        {"model": "nvidia/nemotron-3-ultra-550b-a55b", "accepted": 2, "rejected": 0, "empty": 0},
+        {"model": "particle-ai/particle-1", "accepted": 0, "rejected": 1, "empty": 1}]
+    assert "free_pool" not in out            # the list was never read, so there is nothing to say about it
+
+
+@pytest.mark.parametrize("model_id,outcome", [(None, "accepted"), ("", "accepted"), ("  ", "accepted"),
+                                              (7, "accepted"), ("m/x", "good"), ("m/x", None)])
+def test_junk_is_ignored_when_counting(model_id, outcome):
+    pool = FreePool()
+    pool.record(model_id, outcome)
+    assert pool.outcomes == {} and not pool.active()
+
+
+def test_only_a_few_models_are_counted():
+    pool = FreePool()
+    for number in range(20):
+        pool.record("m/model-%d" % number, "accepted")
+    assert len(pool.outcomes) == fm.MAX_RESULT_MODELS
+    pool.record("m/model-0", "empty")                           # a model already counted still counts
+    assert pool.outcomes["m/model-0"]["empty"] == 1
+
+
+def test_reset_forgets_everything_including_results():
+    pool, _ = read({ACCOUNT: ListReply(LIST)})
+    pool.record("m/x", "accepted")
+    pool.reset()
+    assert (not pool.tried and pool.ids == [] and pool.seen == [] and pool.outcomes == {}
+            and pool.thinking == [] and pool.think is None and pool.summary() == {})
+
+
+def test_a_model_called_by_a_forbidden_field_name_cannot_break_the_published_feed():
+    """Model names come from outside. They are values in the published data, never field names."""
+    from backend.feed_contract import FORBIDDEN
+    pool = FreePool()
+    for word in sorted(FORBIDDEN):
+        pool.record(word, "accepted")
+    out = pool.summary()
+    assert all(isinstance(row, dict) and set(row) == {"model", "accepted", "rejected", "empty"}
+               for row in out["model_results"])
+
+    def keys(obj):
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                yield key
+                yield from keys(value)
+        elif isinstance(obj, list):
+            for value in obj:
+                yield from keys(value)
+    assert not {k.lower() for k in keys(out)} & FORBIDDEN

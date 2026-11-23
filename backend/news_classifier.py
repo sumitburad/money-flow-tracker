@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 
 import requests
 
+from backend import gemini
 from backend.ai_reply import (AI_TIMEOUT, AIReplyError, answer_tokens, failure_reason,
                               reply_from, think_less_fields, unreadable)
 from backend.free_models import POOL, shape_request
@@ -28,12 +29,28 @@ DIRECTIONS = {"supportive", "opposing", "mixed", "unclear"}
 HORIZONS = {"intraday","days","weeks","months"}
 NOVELTIES = {"new","follow_up","repeat"}
 CONFIDENCES = {"low","medium","high"}
+# Asked in this order; a headline goes to the next one only if the one before did not tag it. Gemini
+# appears once and is expanded into one entry per model named in config/ai_models.yaml (see _hosts).
 HOSTS = [
  ("groq", "https://api.groq.com/openai/v1/chat/completions",
   "GROQ_API_KEY", "GROQ_CLASSIFIER_MODEL", "openai/gpt-oss-20b"),
+ ("gemini", gemini.URL, gemini.SECRET, "GEMINI_CLASSIFIER_MODEL", gemini.DEFAULT_MODELS[0]),
  ("openrouter", "https://openrouter.ai/api/v1/chat/completions",
   "OPENROUTER_API_KEY", "OPENROUTER_CLASSIFIER_MODEL", "openrouter/free"),
 ]
+
+
+def _hosts(env):
+    """HOSTS, with Gemini once for each model named in config/ai_models.yaml (asked in that order)."""
+    listed = []
+    for entry in HOSTS:
+        provider, url, key_name, model_name, _default = entry
+        if provider != "gemini":
+            listed.append(entry)
+            continue
+        for name in gemini.models(env.get(model_name, "")):
+            listed.append((provider, url, key_name, "", name))
+    return listed
 EVENT_PATTERNS = (
  ("inflation", r"\b(cpi|inflation|consumer prices|pce|producer price|wages)\b"),
  ("rates", r"\b(interest rate|rate cut|rate hike|yield|funds rate)\b"),
@@ -149,8 +166,9 @@ def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=reque
 
     Returns (the model's raw tag objects, not yet checked; the model that really answered).
     ``think_less`` holds extra request fields that ask a "thinking" model to think less.
-    On OpenRouter's free router the request names specific free models that answer directly
-    (backend/free_models.py); ``attempt`` makes a retry start with a different one."""
+    On OpenRouter's free router the request names specific free models (backend/free_models.py);
+    ``attempt`` makes a retry start with a different one. Gemini gets a few adjustments
+    (backend/gemini.py). An empty or unreadable reply is counted against the model that sent it."""
     prompt = {
         "headlines": [{"headline_id": h["headline_id"],
                        "headline": h.get("title", "")[:250],
@@ -176,14 +194,21 @@ def _call_model_batch(batch, universe_names, *, endpoint, key, model, http=reque
         headers={"Authorization": "Bearer " + key,
                  "Content-Type": "application/json",
                  "User-Agent": "global-money-flow-research/2.0"},
-        json=shape_request(body, url=endpoint, model=model, attempt=attempt, http=http, key=key),
+        json=shape_request(gemini.fit_request(body, endpoint), url=endpoint, model=model,
+                           attempt=attempt, http=http, key=key),
         timeout=AI_TIMEOUT)
-    reply = reply_from(response)
+    try:
+        reply = reply_from(response)
+    except AIReplyError as exc:
+        POOL.record(exc.model, "empty" if exc.empty else "rejected")
+        raise
     try:
         return _parse_tags(reply.text), reply.model
     except ValueError as exc:
-        raise unreadable(reply, "has no tag list" if "tag list" in str(exc)
-                         else "is not valid JSON") from None
+        problem = unreadable(reply, "has no tag list" if "tag list" in str(exc)
+                             else "is not valid JSON")
+        POOL.record(reply.model, "empty" if problem.empty else "rejected")
+        raise problem from None
 
 
 def classify_headlines(headlines, universe, *, http=requests, env=None, max_calls=MAX_CALLS,
@@ -199,8 +224,8 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
     env = os.environ if env is None else env
     names = [a["name"] for a in universe]
     config = []
-    for provider, url, key_name, model_name, default_model in HOSTS:
-        key = env.get(key_name, "")
+    for provider, url, key_name, model_name, default_model in _hosts(env):
+        key = env.get(key_name, "").strip()
         if key:
             config.append((provider, url, key, env.get(model_name, default_model)))
     health = {"model_configured": bool(config), "model_calls": 0,
@@ -214,11 +239,13 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
         batches = [headlines[i:i + size] for i in range(0, len(headlines), size)][:max(0, max_calls)]
         calls = 0
         retries_left = 1          # one "think less" retry per run: a free plan has few requests a day
+        dead = set()              # Gemini entries a wrong name or a refused key has ruled out for this run
 
         def ask(provider, url, key, model, pending):
             """One request for these headlines, plus at most one more after an empty reply.
 
-            Returns the model's raw answers, or None (the reason is counted in ``problems``)."""
+            Returns (the model's raw answers, the model that really answered), or (None, None)
+            (the reason is counted in ``problems``)."""
             nonlocal calls, retries_left
             extra = None
             for attempt in (0, 1):
@@ -239,18 +266,26 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
                         continue
                     health["rejected_model_responses"] += 1
                     problems[provider + ": " + failure_reason(exc)] += 1
-                    return None
+                    status = getattr(getattr(exc, "response", None), "status_code", None)
+                    if provider == "gemini" and status in (400, 401, 403, 404):
+                        # A wrong name or a refused key will not fix itself within this run.
+                        for other, _url, _key, name in config:
+                            if other == provider and (status in (401, 403) or name == model):
+                                dead.add((other, name))
+                    return None, None
                 if used and used not in health["models_seen"] and len(health["models_seen"]) < 4:
                     health["models_seen"].append(used)
-                return answers
-            return None
+                return answers, used
+            return None, None
 
         for batch in batches:
             pending = list(batch)
             for provider, url, key, model in config:
                 if not pending:
                     break
-                answers = ask(provider, url, key, model, pending)
+                if (provider, model) in dead:
+                    continue
+                answers, used = ask(provider, url, key, model, pending)
                 if answers is None:
                     continue
                 by_id = {a.get("headline_id"): a for a in answers if isinstance(a, dict)}
@@ -261,11 +296,13 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
                         check_tag(tag, headline, names)
                     except (ValueError, TypeError, KeyError) as exc:
                         health["rejected_model_responses"] += 1
+                        POOL.record(used, "rejected")
                         problems[provider + ": " + (
                             "the model left a headline out" if tag is None
                             else "a tag failed the checks (" + failure_reason(exc, 60) + ")")] += 1
                         still.append(headline)
                         continue
+                    POOL.record(used, "accepted")
                     if tag["direction"] not in ("unclear", "mixed"):
                         # Headlines alone cannot establish observed market response.
                         tag["direction"] = "unclear"
@@ -274,7 +311,7 @@ def classify_headlines(headlines, universe, *, http=requests, env=None, max_call
         health["model_calls"] = calls
         health["failure_reasons"] = [text if count == 1 else "%s (x%d)" % (text, count)
                                      for text, count in problems.most_common(4)]
-        if POOL.tried:
+        if POOL.active():
             health.update(POOL.summary())
     output = []
     for headline in headlines:

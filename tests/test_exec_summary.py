@@ -8,6 +8,7 @@ import pandas as pd
 import pytest
 import requests
 
+from backend import gemini
 from backend.exec_summary import (PROVIDERS, build_digest, build_executive_summary,
                                   check_summary, rules_summary)
 from backend.feed_contract import validate_executive_summary, validate_feed
@@ -404,7 +405,7 @@ def test_feed_contract_checks_the_summary_block():
         validate_feed(bad)
 
 
-def test_both_providers_use_secret_names_the_run_protects():
+def test_every_provider_uses_secret_names_the_run_protects():
     from backend.net import SECRET_ENV_NAMES
     assert all(secret in SECRET_ENV_NAMES for _, _, secret, *_ in PROVIDERS)
 
@@ -592,8 +593,9 @@ def test_the_request_names_free_models_that_answer_directly_instead_of_the_rando
     assert sent["model"] == GEMMA and sent["models"] == [LLAMA]
     assert "openrouter/free" not in json.dumps(sent) and THINKER not in json.dumps(sent)
     assert summary["method"] == "ai_validated" and summary["model"] == GEMMA     # the model that really answered
+    assert "reasoning" not in sent and sent["max_tokens"] == 3500     # nothing that thinks was chosen
     assert health["free_pool"] == [GEMMA, LLAMA] and "pool_note" not in health
-    assert health["pool_counts"]["free models that think (skipped on purpose)"] == 1
+    assert health["pool_counts"]["models on the avoid list"] == 1     # the real settings avoid this one
     assert http.list_calls == [ACCOUNT_LIST]
     validate_executive_summary(summary)
 
@@ -644,6 +646,163 @@ def test_without_a_key_nothing_asks_for_the_model_list(model_list):
     http = PoolHttp(model_list(GEMMA))
     summary, health = build_executive_summary(make_feed(), http=http, env={}, now=NOW)
     assert summary["method"] == "rules_only" and http.list_calls == [] and "free_pool" not in health
+
+
+# ------------------------------------------- thinking models (23 Nov 2026)
+
+DEEP_THINKER = "vendor/deep-think-120b:free"
+
+
+def test_a_thinking_model_fills_the_place_the_direct_ones_leave(model_list):
+    http = PoolHttp(model_list(GEMMA, thinkers=[DEEP_THINKER]), said(json.dumps(GOOD), model=DEEP_THINKER))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == GEMMA and sent["models"] == [DEEP_THINKER]      # the direct model is still first
+    assert sent["reasoning"] == {"effort": "low"} and sent["max_tokens"] == 6000
+    assert summary["method"] == "ai_validated" and summary["model"] == DEEP_THINKER
+    assert health["free_pool"] == [GEMMA, DEEP_THINKER] and health["pool_thinking"] == [DEEP_THINKER]
+    assert [row["id"] for row in health["pool_seen"]] == [GEMMA, DEEP_THINKER]
+    assert health["model_results"] == [{"model": "vendor/deep-think-120b", "accepted": 1, "rejected": 0, "empty": 0}]
+    validate_executive_summary(summary)
+
+
+def test_when_every_free_model_thinks_the_biggest_preferred_ones_are_asked_first(model_list):
+    only_thinkers = ["nvidia/nemotron-3-ultra-550b-a55b:free", "particle-ai/particle-1:free",
+                     "google/gemma-4-26b-a4b-it:free", "recursive/flint-v1.0:free"]
+    http = PoolHttp(model_list(thinkers=only_thinkers), said(json.dumps(GOOD), model=only_thinkers[0]))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    sent = http.calls[0]["payload"]
+    assert sent["model"] == only_thinkers[0] and sent["models"] == only_thinkers[1:3]
+    assert "recursive/flint-v1.0:free" not in json.dumps(sent)           # size unknown, not on a preferred list
+    assert sent["reasoning"] == {"effort": "low"} and "openrouter/free" not in json.dumps(sent)
+    assert health["pool_thinking"] == only_thinkers[:3] and summary["method"] == "ai_validated"
+
+
+def test_each_model_is_counted_by_what_it_did(model_list):
+    http = PoolHttp(model_list(GEMMA, thinkers=[DEEP_THINKER]), used_up_its_room(),
+                    said(json.dumps(GOOD), model=DEEP_THINKER))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "ai_validated" and health["empty_reply_retries"] == 1
+    assert health["model_results"] == [
+        {"model": "vendor/thinking-model", "accepted": 0, "rejected": 0, "empty": 1},    # the model that sent nothing
+        {"model": "vendor/deep-think-120b", "accepted": 1, "rejected": 0, "empty": 0}]
+
+
+def test_an_answer_that_fails_the_checks_is_counted_as_rejected(model_list):
+    bad = dict(GOOD, headline="You should buy sector funds now.")
+    http = PoolHttp(model_list(GEMMA, LLAMA), said(json.dumps(bad), model=GEMMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert summary["method"] == "rules_only" and health["rejected_answers"] == 1
+    assert health["model_results"] == [{"model": "google/gemma-4-31b-it", "accepted": 0, "rejected": 1, "empty": 0}]
+
+
+# ------------------------------------------------------------------- Google Gemini (23 Nov 2026)
+
+# Built from pieces, so a scanner reading this file never mistakes the test value for a real key.
+GEMINI_KEY = "AIza" + "Sy" + "T" * 33
+GEMINI_ONLY = {"GEMINI_API_KEY": GEMINI_KEY}
+
+
+def host(call):
+    return call["url"].split("/")[2]
+
+
+def test_gemini_is_asked_at_its_own_address_with_the_key_in_the_header_only():
+    http = FakeHttp(said(json.dumps(GOOD), model="gemini-flash-latest"))
+    summary, health = build_executive_summary(make_feed(), http=http, env=GEMINI_ONLY, now=NOW)
+    sent = http.calls[0]
+    assert sent["url"] == gemini.URL and GEMINI_KEY not in sent["url"]
+    assert sent["headers"]["Authorization"] == "Bearer " + GEMINI_KEY
+    body = sent["payload"]
+    assert body["model"] == "gemini-flash-latest" and body["max_tokens"] == 4000
+    assert body["reasoning_effort"] == "low"
+    assert not {"response_format", "temperature", "reasoning", "models"} & set(body)
+    assert GEMINI_KEY not in json.dumps(body) and sent["timeout"] == (10, 75)
+    assert summary["method"] == "ai_validated" and summary["provider"] == "gemini"
+    assert summary["model"] == "gemini-flash-latest"
+    assert health["providers_tried"] == ["gemini"] and health["ai_configured"] is True
+    assert health["model_results"] == [{"model": "gemini-flash-latest", "accepted": 1, "rejected": 0, "empty": 0}]
+    assert "free_pool" not in health                      # Gemini never reads OpenRouter's model list
+    validate_executive_summary(summary)
+    assert GEMINI_KEY not in json.dumps([summary, health])
+
+
+def test_the_providers_are_asked_in_the_order_groq_gemini_openrouter(model_list):
+    names = gemini.models("")
+    http = PoolHttp(model_list(GEMMA), Reply(status=500), *[Reply(status=500)] * len(names),
+                    said(json.dumps(GOOD), model=GEMMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env={**ENV, **GEMINI_ONLY}, now=NOW)
+    assert [host(c) for c in http.calls] == (["api.groq.com"] + ["generativelanguage.googleapis.com"] * len(names)
+                                             + ["openrouter.ai"])
+    assert [c["payload"]["model"] for c in http.calls[1:1 + len(names)]] == names
+    assert health["providers_tried"] == ["groq", "gemini", "openrouter"]
+    assert summary["provider"] == "openrouter" and health["rejected_answers"] == 1 + len(names)
+    assert GEMINI_KEY not in json.dumps([summary, health])
+
+
+def test_a_gemini_model_that_fails_hands_over_to_the_next_one_in_the_list():
+    names = gemini.models("")
+    http = FakeHttp(Reply(status=404), said(json.dumps(GOOD), model=names[1]))
+    summary, health = build_executive_summary(make_feed(), http=http, env=GEMINI_ONLY, now=NOW)
+    assert [c["payload"]["model"] for c in http.calls] == names[:2]
+    assert summary["provider"] == "gemini" and summary["model"] == names[1]
+    assert health["providers_tried"] == ["gemini"] and health["rejected_answers"] == 1
+
+
+@pytest.mark.parametrize("status", [401, 403])
+def test_a_refused_gemini_key_is_not_tried_again_with_the_other_gemini_models(model_list, status):
+    http = PoolHttp(model_list(GEMMA), Reply(status=status), said(json.dumps(GOOD), model=GEMMA))
+    summary, health = build_executive_summary(make_feed(), http=http, env={**GEMINI_ONLY, **OPENROUTER_ONLY},
+                                              now=NOW)
+    assert [host(c) for c in http.calls] == ["generativelanguage.googleapis.com", "openrouter.ai"]
+    assert summary["provider"] == "openrouter" and health["rejected_answers"] == 1
+    assert health["reasons"][0].startswith("gemini: HTTP %d" % status)
+    assert GEMINI_KEY not in json.dumps([summary, health])
+
+
+def test_a_busy_gemini_model_is_retried_once_and_then_the_next_model_is_used():
+    names = gemini.models("")
+    http = FakeHttp(Reply(status=429), Reply(status=429), said(json.dumps(GOOD), model=names[1]))
+    waits = []
+    summary, health = build_executive_summary(make_feed(), http=http, env=GEMINI_ONLY, now=NOW,
+                                              sleep=waits.append)
+    assert [c["payload"]["model"] for c in http.calls] == [names[0], names[0], names[1]]
+    assert waits == [3.0] and summary["model"] == names[1]
+
+
+def test_a_gemini_model_named_in_the_environment_replaces_the_list():
+    http = FakeHttp(said(json.dumps(GOOD), model="gemini-9-pro"))
+    env = {**GEMINI_ONLY, "GEMINI_SUMMARY_MODEL": "gemini-9-pro"}
+    summary, _ = build_executive_summary(make_feed(), http=http, env=env, now=NOW)
+    assert [c["payload"]["model"] for c in http.calls] == ["gemini-9-pro"] and summary["model"] == "gemini-9-pro"
+
+
+def test_gemini_is_skipped_when_the_settings_switch_it_off(tmp_path, monkeypatch):
+    off = tmp_path / "off.yaml"
+    off.write_text("gemini:\n  enabled: false\n", encoding="utf-8")
+    monkeypatch.setattr(gemini, "CONFIG_PATH", off)
+    http = FakeHttp()
+    summary, health = build_executive_summary(make_feed(), http=http, env=GEMINI_ONLY, now=NOW)
+    assert http.calls == [] and summary["method"] == "rules_only" and health["providers_tried"] == []
+
+
+def test_without_a_gemini_key_gemini_is_never_asked():
+    http = FakeHttp(ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env=OPENROUTER_ONLY, now=NOW)
+    assert [host(c) for c in http.calls] == ["openrouter.ai"]
+    http = FakeHttp(ai(GOOD))
+    build_executive_summary(make_feed(), http=http, env={"GEMINI_API_KEY": "   "}, now=NOW)
+    assert http.calls == []                                # a blank key counts as no key
+
+
+def test_a_google_key_inside_an_error_body_never_reaches_the_published_reasons():
+    leaky = Reply(status=400)
+    leaky._body = [{"error": {"message": "API key not valid: " + GEMINI_KEY, "status": "INVALID_ARGUMENT"}}]
+    http = FakeHttp(leaky, leaky, leaky)
+    summary, health = build_executive_summary(make_feed(), http=http, env=GEMINI_ONLY, now=NOW)
+    text = json.dumps([summary, health])
+    assert GEMINI_KEY not in text and "AIza" not in text
+    assert health["reasons"][0].startswith("gemini: HTTP 400") and "***" in health["reasons"][0]
 
 
 # ------------------------------------------------------------------- the rule-written sentence

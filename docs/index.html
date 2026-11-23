@@ -150,6 +150,8 @@ footer{color:#718394;font-size:12px;margin-top:30px;border-top:1px solid #dbe6ec
 .cobar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:2px 0 6px;font-size:13px;color:var(--ink-2)}
 .hnotes{margin:10px 0 0 18px;padding:0;font-size:13px;line-height:1.65;color:var(--ink-2)}
 .hnotes .warn{font-weight:500}
+.hnotes details{border-top:0;margin-top:2px;padding-top:0;font-size:13px}
+.hnotes details ul{margin:4px 0 2px 18px;padding:0;color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -1152,11 +1154,31 @@ function renderHealth(h,feed){
     else note("Executive summary: rule-based, because the AI answer could not be used"+
       ((es.reasons||[]).length?" ("+es.reasons.join("; ")+")":"")+".",true);
   }
+  const plain=m=>String(m).replace(/:free$/,"");
   const pool=[es,ai].find(x=>x&&x.free_pool!==undefined);
   if(pool){
-    const names=(pool.free_pool||[]).map(m=>String(m).replace(/:free$/,""));
-    if(names.length)note("AI models: asked "+names.join(", ")+" (free models that answer directly; if one is busy, OpenRouter tries the next).");
+    const names=(pool.free_pool||[]).map(plain);
+    const thinkers=(pool.pool_thinking||[]).map(plain);
+    if(names.length)note("AI models: asked "+names.join(", ")+" in that order; if one is busy, OpenRouter tries the next."+
+      (thinkers.length?" Models that think briefly before they answer: "+thinkers.join(", ")+".":""));
     else if(pool.pool_note)note(pool.pool_note,true);
+    const seen=Array.isArray(pool.pool_seen)?pool.pool_seen:[];
+    if(seen.length){
+      const total=(pool.pool_counts||{})["free models seen"];
+      const item=add(list,"li");
+      const more=add(item,"details");
+      add(more,"summary","Free models seen on this account"+(total?": "+total:"")+
+        (total>seen.length?" (first "+seen.length+" shown)":""));
+      const rows=add(more,"ul");
+      seen.forEach(r=>add(rows,"li",plain(r.id)+" — "+r.result));
+    }
+  }
+  // Both AI steps share one record, and the later one (the summary) holds everything, so take the last.
+  const did=[ai,es].map(x=>x&&x.model_results).filter(Array.isArray).pop();
+  if(did&&did.length){
+    const part=r=>[(r.accepted||0)+" used"].concat(r.rejected?[r.rejected+" failed the checks"]:[],r.empty?[r.empty+" blank"]:[]).join(", ");
+    note("What each AI model did this run: "+did.map(r=>plain(r.model)+" ("+part(r)+")").join("; ")+".",
+      !did.some(r=>r.accepted>0));
   }
 }
 

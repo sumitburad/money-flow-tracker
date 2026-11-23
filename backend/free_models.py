@@ -1,22 +1,29 @@
-"""Free OpenRouter models that answer directly, chosen from OpenRouter's own model list.
+"""Free OpenRouter models chosen from OpenRouter's own model list.
 
-Why this exists. OpenRouter's "free router" (``openrouter/free``) picks a free model at random.
-In the first live runs (22 Nov 2026) it kept picking "thinking" models, for example NVIDIA's
-Nemotron family. Those spend their whole answer allowance on hidden thinking and send back a blank
-reply (``finish_reason: "length"``), even with extra room and a "think less" retry. So neither the
-AI summary nor the headline tags could be used.
+Why this exists. OpenRouter's "free router" (``openrouter/free``) picks a free model at random. In
+the first live runs (22 Nov 2026) it kept picking "thinking" models, for example NVIDIA's Nemotron
+family. Those spend their whole answer allowance on hidden thinking and send back a blank reply
+(``finish_reason: "length"``), so neither the AI summary nor the headline tags could be used.
 
-What this does. Once per run it reads the list of models this account may use, keeps the free
-ones that do not think, and puts up to three of them into the request: the first is asked, the
-others are automatic backups (OpenRouter's ``models`` list). Only ``:free`` models are ever named,
-because OpenRouter bills a backup at its own price and a paid backup would not be free.
+What this does. Once per run it reads the list of models this account may use, keeps the free ones,
+and puts up to three of them into the request: the first is asked, the others are automatic backups
+(OpenRouter's ``models`` list). Only ``:free`` models are ever named, because OpenRouter bills a
+backup at its own price and a paid backup would not be free.
 
-Nothing in this file can stop a refresh. Any problem means "no choice made": the request goes to
-the free router exactly as before, and ``summary()`` says in plain words what happened.
+Two kinds of model. Models that answer directly come first. A model that lists a ``reasoning``
+setting "thinks" before it answers. The first version skipped every one of them, and five live runs
+(22 to 23 Nov 2026) showed that every free model on this account lists that setting. So the list was
+always empty, the random router did all the work, and the AI summary was written by AI in 1 run of 5.
+Now thinking models fill the places that direct ones leave free. The ones that worked in the live
+runs are asked first, the ones that kept sending blank answers are never named, and the request asks
+them to think briefly (``reasoning: {"effort": "low"}``) and gives them more room.
+
+Nothing in this file can stop a refresh. Any problem means "no choice made": the request goes to the
+free router exactly as before, and ``summary()`` says in plain words what happened.
 
 Model facts used, all from OpenRouter's public model list:
 * ``pricing`` (both prices zero), ``architecture.output_modalities`` (text only),
-* ``supported_parameters`` (a model that lists ``reasoning`` thinks, so it is skipped),
+* ``supported_parameters`` (a model that lists ``reasoning`` thinks),
 * ``context_length`` and ``top_provider.max_completion_tokens`` (room for our prompt and answer),
 * the size in the model's name, when it states one (small models fail our answer checks).
 """
@@ -41,10 +48,16 @@ LIST_PATHS = ("/api/v1/models/user", "/api/v1/models")
 LIST_TIMEOUT = (10, 30)
 MAX_LIST_BYTES = 8_000_000
 MAX_EXTRA_PAGES = 2
+EFFORTS = ("minimal", "low", "medium", "high")
+OUTCOMES = ("accepted", "rejected", "empty")
+MAX_SEEN = 16               # models listed in the health report
+MAX_RESULT_MODELS = 8       # models whose results are counted in the health report
 
 DEFAULTS = {
     "enabled": True, "max_models": 3, "min_context_tokens": 32000, "min_answer_tokens": 3500,
     "min_billions": 20.0, "prefer": [], "avoid": [],
+    "use_thinking_models": True, "thinking_effort": "low", "thinking_answer_tokens": 6000,
+    "prefer_thinking": [],
 }
 # "27b", "70b", "1t", "1.2b": a size standing alone between separators (so "a3b" and "e2b" do not count).
 SIZE = re.compile(r"(?<![a-z0-9.])(\d+(?:\.\d+)?)([bt])(?![a-z0-9])")
@@ -57,7 +70,13 @@ WORDS = {
     "short_context": "free models that read too little at once",
     "short_answer": "free models that cannot send a long enough answer",
     "too_small": "free models whose name says they are small",
-    "size_unknown": "free models with an unknown size that are not on the preferred list",
+    "size_unknown": "free models with an unknown size that are not on a preferred list",
+}
+# The same reasons as one short phrase for the model list on the dashboard.
+SHORT = {
+    "not_text": "not text-only", "avoided": "on the avoid list", "no_parameter_list": "no settings listed",
+    "thinks": "thinks (switched off in the settings)", "short_context": "reads too little at once",
+    "short_answer": "answer room too small", "too_small": "too small", "size_unknown": "size unknown",
 }
 
 
@@ -87,10 +106,14 @@ def load_config(path=None):
         elif isinstance(default, (int, float)):
             usable = isinstance(value, (int, float)) and not isinstance(value, bool)
             cfg[key] = (float(value) if isinstance(default, float) else int(value)) if usable else default
+        elif isinstance(default, str):
+            text = value.strip().lower() if isinstance(value, str) else ""
+            cfg[key] = text if text in EFFORTS else default
         else:
             cfg[key] = [str(x).strip().lower() for x in value if str(x).strip()] \
                 if isinstance(value, list) else []
     cfg["max_models"] = min(max(int(cfg["max_models"]), 1), 3)
+    cfg["thinking_answer_tokens"] = min(max(int(cfg["thinking_answer_tokens"]), 3500), 16000)
     return cfg
 
 
@@ -126,6 +149,13 @@ def preference(model_id, prefer):
     return len(prefer)
 
 
+def is_thinker(model):
+    """True when OpenRouter lists a reasoning setting for this model, which means it thinks first."""
+    params = model.get("supported_parameters")
+    return isinstance(params, list) and bool({str(p).lower() for p in params}
+                                             & {"reasoning", "include_reasoning"})
+
+
 def why_not(model, cfg):
     """None if this model can be used, else a short code saying why not (see WORDS)."""
     model_id = str(model.get("id", ""))
@@ -139,10 +169,9 @@ def why_not(model, cfg):
         return "not_text"
     if any(word in model_id.lower() for word in cfg["avoid"]):
         return "avoided"
-    params = model.get("supported_parameters")
-    if not isinstance(params, list):
+    if not isinstance(model.get("supported_parameters"), list):
         return "no_parameter_list"
-    if {str(p).lower() for p in params} & {"reasoning", "include_reasoning"}:
+    if is_thinker(model) and not cfg["use_thinking_models"]:
         return "thinks"
     top = model.get("top_provider") if isinstance(model.get("top_provider"), dict) else {}
     context = _number(model.get("context_length")) or _number(top.get("context_length")) or 0
@@ -154,15 +183,20 @@ def why_not(model, cfg):
     size = stated_billions(model_id)
     if size is not None and size < cfg["min_billions"]:
         return "too_small"
-    if size is None and preference(model_id, cfg["prefer"]) >= len(cfg["prefer"]):
+    known = cfg["prefer"] + cfg["prefer_thinking"]
+    if size is None and preference(model_id, known) >= len(known):
         return "size_unknown"
     return None
 
 
-def pick(models, cfg):
-    """(ordered ids to use, counts of what was seen). Pure: no network."""
+def plan(models, cfg):
+    """What to use and why. Pure: no network.
+
+    Returns {"chosen": ids in the order to ask, "thinking": the chosen ids that think first,
+    "counts": how many models were seen and skipped, "seen": a short line per free model,
+    "caps": the longest answer each chosen model allows, when it says}."""
     counts = {"free_seen": 0}
-    usable = []
+    direct, thinking, skipped = [], [], []
     for model in models:
         if not isinstance(model, dict):
             continue
@@ -172,13 +206,37 @@ def pick(models, cfg):
         counts["free_seen"] += 1
         if reason:
             counts[reason] = counts.get(reason, 0) + 1
+            skipped.append({"id": str(model.get("id"))[:60], "result": SHORT.get(reason, reason)})
             continue
-        usable.append(model)
-    usable.sort(key=lambda m: (preference(m["id"], cfg["prefer"]),
-                               -(stated_billions(m["id"]) or 0.0), m["id"]))
-    chosen = [m["id"] for m in usable[:cfg["max_models"]]]
-    counts["usable"] = len(usable)
-    return chosen, counts
+        (thinking if is_thinker(model) else direct).append(model)
+    size_of = lambda m: -(stated_billions(m["id"]) or 0.0)
+    direct.sort(key=lambda m: (preference(m["id"], cfg["prefer"]), size_of(m), m["id"]))
+    thinker_words = cfg["prefer_thinking"] + cfg["prefer"]
+    thinking.sort(key=lambda m: (preference(m["id"], thinker_words), size_of(m), m["id"]))
+    # Models that answer directly first; thinking models fill the places that are left.
+    chosen_rows = direct[:cfg["max_models"]]
+    if cfg["use_thinking_models"]:
+        chosen_rows += thinking[:max(cfg["max_models"] - len(chosen_rows), 0)]
+    chosen = [m["id"] for m in chosen_rows]
+    seen = []
+    for position, row in enumerate(chosen_rows):
+        label = "asked first" if position == 0 else "backup"
+        seen.append({"id": row["id"][:60], "result": label + (", thinks briefly" if is_thinker(row) else "")})
+    for row in direct + thinking:
+        if row["id"] not in chosen:
+            seen.append({"id": row["id"][:60], "result": "spare" + (", thinks" if is_thinker(row) else "")})
+    seen.extend(skipped)
+    counts["usable"] = len(direct) + len(thinking)
+    top = lambda m: m.get("top_provider") if isinstance(m.get("top_provider"), dict) else {}
+    return {"chosen": chosen, "counts": counts, "seen": seen[:MAX_SEEN],
+            "thinking": [m["id"] for m in chosen_rows if is_thinker(m)],
+            "caps": {m["id"]: _number(top(m).get("max_completion_tokens")) for m in chosen_rows}}
+
+
+def pick(models, cfg):
+    """(ordered ids to use, counts of what was seen). Pure: no network."""
+    result = plan(models, cfg)
+    return result["chosen"], result["counts"]
 
 
 def _rows(payload):
@@ -189,7 +247,7 @@ def _rows(payload):
 
 
 class FreePool:
-    """The free, non-thinking models for this run. Read once, shared by every AI step."""
+    """The free models for this run. Read once, shared by every AI step."""
 
     def __init__(self):
         self.reset()
@@ -197,9 +255,13 @@ class FreePool:
     def reset(self):
         self.tried = False
         self.ids = []
+        self.thinking = []          # the chosen models that think before they answer
+        self.think = None           # {"effort", "room"} asked of thinking models, else None
         self.counts = {}
+        self.seen = []
         self.note = ""
         self.source = ""
+        self.outcomes = {}          # model -> {"accepted", "rejected", "empty"} for this run
 
     # -- reading the list -------------------------------------------------------------
     def _read(self, getter, path, key):
@@ -237,36 +299,71 @@ class FreePool:
         for path in LIST_PATHS:
             label = "your account's model list" if path.endswith("/user") else "OpenRouter's public model list"
             try:
-                chosen, counts = pick(self._read(getter, path, key), cfg)
+                result = plan(self._read(getter, path, key), cfg)
             except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
                 problems.append("%s could not be read (%s)" % (label, _why(exc)))
                 continue
-            self.counts = counts
-            if chosen:
-                self.ids, self.source = chosen, label
+            self.counts, self.seen = result["counts"], result["seen"]
+            if result["chosen"]:
+                self.ids, self.source = result["chosen"], label
+                self.thinking = [i for i in self.ids if i in result["thinking"]]
+                if self.thinking:
+                    limits = [result["caps"][i] for i in self.thinking if result["caps"].get(i)]
+                    self.think = {"effort": cfg["thinking_effort"],
+                                  "room": int(min([cfg["thinking_answer_tokens"]] + limits))}
                 return
-            problems.append("%s had no free model that answers directly" % label)
+            problems.append("%s had no free model that %s" % (
+                label, "could be used" if cfg["use_thinking_models"] else "answers directly"))
             break          # read fine: another list would only name models this account may not use
         self.note = ("No free model could be chosen, so the free router was used: "
                      + "; ".join(problems) + ".")
 
     # -- using it -------------------------------------------------------------------------
     def choose(self, attempt=0):
-        """The chosen models in the order to try. Each retry starts one place further on."""
+        """The chosen models in the order to try. Each retry starts one model further on."""
         if not self.ids:
             return []
         start = int(attempt) % len(self.ids)
         return self.ids[start:] + self.ids[:start]
 
+    def record(self, model, outcome):
+        """Count what a model did in this run: accepted, rejected or empty. Never raises."""
+        try:
+            if outcome not in OUTCOMES or not isinstance(model, str) or not model.strip():
+                return
+            name = re.sub(r":free$", "", model.strip())[:60]
+            row = self.outcomes.get(name)
+            if row is None:
+                if len(self.outcomes) >= MAX_RESULT_MODELS:
+                    return
+                row = self.outcomes[name] = {key: 0 for key in OUTCOMES}
+            row[outcome] += 1
+        except Exception:      # a diagnostic must never stop a refresh
+            return
+
+    def active(self):
+        """True when there is something to report: the list was tried, or a model answered."""
+        return self.tried or bool(self.outcomes)
+
     def summary(self):
         """Plain facts for the status file (no secrets, nothing long)."""
-        out = {"free_pool": list(self.ids)}
-        if self.note:
-            out["pool_note"] = self.note[:300]
-        if self.counts:
-            out["pool_counts"] = {WORDS.get(k, k): v for k, v in self.counts.items()
-                                  if k not in ("usable", "free_seen")}
-            out["pool_counts"]["free models seen"] = self.counts.get("free_seen", 0)
+        out = {}
+        if self.tried:
+            out["free_pool"] = list(self.ids)
+            if self.thinking:
+                out["pool_thinking"] = list(self.thinking)
+            if self.note:
+                out["pool_note"] = self.note[:300]
+            if self.counts:
+                out["pool_counts"] = {WORDS.get(k, k): v for k, v in self.counts.items()
+                                      if k not in ("usable", "free_seen")}
+                out["pool_counts"]["free models seen"] = self.counts.get("free_seen", 0)
+            if self.seen:
+                out["pool_seen"] = [dict(row) for row in self.seen[:MAX_SEEN]]
+        if self.outcomes:
+            # A list of rows, not a table keyed by name: a model's name is outside text and must never
+            # become a field name in the published data (the feed refuses a few field names).
+            out["model_results"] = [{"model": name, **row} for name, row in self.outcomes.items()]
         return out
 
 
@@ -285,7 +382,8 @@ def _is_openrouter(url):
 def shape_request(body, *, url, model, attempt, http, key, pool=None):
     """For the free router only: name specific free models instead. Otherwise returns ``body`` unchanged.
 
-    A model named by the person in an environment variable is never replaced."""
+    When a thinking model is among the named ones, the request also asks for brief thinking and
+    allows more room for it. A model named by the person in an environment variable is never replaced."""
     if not _is_openrouter(url) or model != ROUTER:
         return body
     pool = pool or POOL
@@ -296,4 +394,7 @@ def shape_request(body, *, url, model, attempt, http, key, pool=None):
     shaped = {**body, "model": chosen[0]}
     if len(chosen) > 1:
         shaped["models"] = chosen[1:]
+    if pool.think and any(name in pool.thinking for name in chosen):
+        shaped.setdefault("reasoning", {"effort": pool.think["effort"]})
+        shaped["max_tokens"] = max(int(shaped.get("max_tokens") or 0), pool.think["room"])
     return shaped
