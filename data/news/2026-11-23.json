@@ -11,7 +11,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "2ac9b0f860cb1108",
-      "event_type": "other",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
@@ -19,11 +19,9 @@
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "high",
-      "one_line_reason": "Educational competition announcement with no direct market or policy implications.",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -40,21 +38,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "82acfac704767e41",
-      "event_type": "liquidity",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Survey on bank reserve balance management practices; no policy change disclosed.",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -71,21 +65,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "dd74b69dec10c4fd",
-      "event_type": "regulation",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "high",
-      "one_line_reason": "Enforcement action against a former bank employee; limited market relevance.",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -102,22 +92,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "a34973bc4d957dc2",
-      "event_type": "central_bank",
+      "event_type": "other",
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks",
-        "US dollar index"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "high",
-      "one_line_reason": "Release of central bank meeting minutes; market reaction unconfirmed.",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -134,21 +119,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "bbea3780f69cefa3",
-      "event_type": "regulation",
+      "event_type": "other",
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks"
-      ],
+      "affected": [],
       "direction": "unclear",
-      "horizon": "weeks",
-      "novelty": "follow_up",
-      "confidence": "medium",
-      "one_line_reason": "Extension of comment period on proposed guidance; procedural follow-up.",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"

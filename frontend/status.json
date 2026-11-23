@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-23T03:13:18.945572+05:30",
-  "run_slot": "backup",
-  "completed_at_utc": "2026-11-22T21:45:22.519839+00:00",
+  "as_of_ist": "2026-11-23T09:01:44.104344+05:30",
+  "run_slot": "manual",
+  "completed_at_utc": "2026-11-23T03:34:47.285255+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,19 +61,16 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 5,
-    "rule_fallback": 25,
-    "rejected_model_responses": 2,
-    "providers_used": [
-      "openrouter"
-    ],
+    "model_classified": 0,
+    "rule_fallback": 30,
+    "rejected_model_responses": 3,
+    "providers_used": [],
     "empty_reply_retries": 1,
-    "models_seen": [
-      "baidu/ernie-5.5-flash-preview:free"
-    ],
+    "models_seen": [],
     "failure_reasons": [
       "openrouter: empty reply from nvidia/nemotron-3.5-lightning:free: it used all its room thinking (finish: length)",
-      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from liquid/lfm-3-1.7b:free: it used all its room thinking (finish: length)",
+      "openrouter: empty reply from recursive/flint-v1.0:free: it used all its room thinking (finish: length)"
     ],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
@@ -114,8 +111,8 @@
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     },
     {
-      "source": "market_news",
-      "error": "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@"
+      "source": "news_classifier",
+      "error": "No accepted AI responses; transparent deterministic tag fallback"
     }
   ],
   "vendor_price_exported": false,
@@ -132,25 +129,52 @@
     "advisories": []
   },
   "market_news": {
-    "status": "unavailable",
-    "queries_asked": 3,
-    "queries_answered": 0,
-    "queries_skipped": 7,
-    "articles_seen": 0,
-    "from_listed_publishers": 0,
-    "kept": 0,
+    "status": "partial",
+    "queries_asked": 5,
+    "queries_answered": 2,
+    "queries_skipped": 5,
+    "articles_seen": 113,
+    "from_listed_publishers": 12,
+    "kept": 11,
     "company_stories": 0,
-    "seconds": 141.1,
-    "slowest_answer_seconds": 0.0,
+    "seconds": 245.1,
+    "slowest_answer_seconds": 16.0,
     "errors": [
-      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
+      "no answer from the news index within 45 seconds (3 tries)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "The news index failed twice, so the remaining questions were skipped."
     ],
-    "advisories": [],
-    "publisher_filter": "on",
-    "dropped": {},
-    "top_other_sites": []
+    "advisories": [
+      "The news index did not take the publisher filter (news index did not answer with JSON: Your query was too short or too long.), so the filter was turned off for the rest of this refresh and the question was asked again without it."
+    ],
+    "publisher_filter": "switched off during this refresh",
+    "dropped": {
+      "not_a_listed_publisher": 44,
+      "not_english": 57,
+      "same_headline_again": 1
+    },
+    "top_other_sites": [
+      {
+        "site": "aol.com",
+        "headlines": 7
+      },
+      {
+        "site": "androidpolice.com",
+        "headlines": 1
+      },
+      {
+        "site": "apr.org",
+        "headlines": 1
+      },
+      {
+        "site": "argentinastar.com",
+        "headlines": 1
+      },
+      {
+        "site": "businesstoday.in",
+        "headlines": 1
+      }
+    ]
   },
   "executive_summary": {
     "method": "rules_only",
@@ -159,7 +183,7 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "openrouter: empty reply from nvidia/nemotron-3.5-super-vl:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from recursive/flint-v1.0:free: it used all its room thinking (finish: length)"
     ],
     "ai_configured": true,
     "empty_reply_retries": 1,
