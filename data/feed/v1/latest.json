@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-23T03:40:44.224055+00:00",
-  "as_of_ist": "2026-11-23T09:10:44.224055+05:30",
+  "generated_at_utc": "2026-11-23T10:40:42.103909+00:00",
+  "as_of_ist": "2026-11-23T16:10:42.103909+05:30",
   "run_date_ist": "2026-11-23",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
@@ -95,9 +95,9 @@
           "value": 4.76
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:44.617393+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:42.492375+00:00",
       "source": "https://fred.stlouisfed.org/series/DGS2",
-      "raw_sha256": "d6b66df608415444b01ba80cbe4132a62b6b210ded7d780e10489a1cc25f386e",
+      "raw_sha256": "765b1fd1ba030902d6534806f332c6ab01c22c6c7e21def1736368d0f0e2d695",
       "raw_file": "data/raw/2026-11-23/DGS2.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -192,9 +192,9 @@
           "value": 5.04
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:44.820134+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:42.699808+00:00",
       "source": "https://fred.stlouisfed.org/series/DGS10",
-      "raw_sha256": "66a66be84fe928142656a02247bb4e764148751123a34e59c8c74aa118461f99",
+      "raw_sha256": "f659a2ca50193e74b7a2fd99a152b709be6cd7e5d1735e0e3eb472fbb56ac129",
       "raw_file": "data/raw/2026-11-23/DGS10.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -289,9 +289,9 @@
           "value": 6741452.0
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:45.013098+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:42.901829+00:00",
       "source": "https://fred.stlouisfed.org/series/WALCL",
-      "raw_sha256": "1b0b88774f33e38247e817c2b15283e599a62f6209c54d3ca696d250c9824fce",
+      "raw_sha256": "878bf7f28d7d63142054effc0b131a171dbe471b3f43a05838c00b10822dd5be",
       "raw_file": "data/raw/2026-11-23/WALCL.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -386,9 +386,9 @@
           "value": 916613.0
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:45.523525+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:43.116039+00:00",
       "source": "https://fred.stlouisfed.org/series/WTREGEN",
-      "raw_sha256": "7cf7aa92c579bfa4c050ee518fe5833ad358abdf6659c8d541c33828b483e2dd",
+      "raw_sha256": "94b7ae824d7327d08ce1ddb3bbbcae376394f6ca01b3cf9a95217a936cfa7fbc",
       "raw_file": "data/raw/2026-11-23/WTREGEN.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -483,9 +483,9 @@
           "value": 0.401
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:45.704756+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:43.325702+00:00",
       "source": "https://fred.stlouisfed.org/series/RRPONTSYD",
-      "raw_sha256": "16c91c8107842975e4f734d979a1e7695c029a01a36d4a7f2c8de853c7177dc2",
+      "raw_sha256": "91443b4c6dc8a8d91e8406decf81a5daddd0ec1c26c3ed709326620a60ef07ca",
       "raw_file": "data/raw/2026-11-23/RRPONTSYD.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -580,9 +580,9 @@
           "value": 23413.9
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:45.934594+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:43.531845+00:00",
       "source": "https://fred.stlouisfed.org/series/M2SL",
-      "raw_sha256": "dd597063612488d258ffa02a6f04514751a9ac09f8a3a6de805b84e2cf1837cf",
+      "raw_sha256": "98595ca7a318a0884e15fadfafeaa98c04bd62ec4da18d4f8768bcbd3f3a5651",
       "raw_file": "data/raw/2026-11-23/M2SL.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -677,9 +677,9 @@
           "value": 94.24
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:46.190855+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:43.723709+00:00",
       "source": "https://fred.stlouisfed.org/series/DEXINUS",
-      "raw_sha256": "b420815e970e50b39dee317b3618d97f90661083bf0eb9762e930ebad7982ee4",
+      "raw_sha256": "b1adf6f3635750798e09f615403f2ea477069116ef8b0eab01915b8260c79af0",
       "raw_file": "data/raw/2026-11-23/DEXINUS.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -782,7 +782,7 @@
       "mirror": false,
       "raw_sha256": "01bb160b31d5aa4b38be0cd9b1de116cd49e689e72ee653e20920764fa862f23",
       "raw_file": "data/raw/2026-11-23/ECB_ILM_TOTAL_ASSETS.gz",
-      "fetched_at_utc": "2026-11-23T03:40:48.345621+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:45.309893+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-13",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -875,9 +875,9 @@
           "value": 6261882.0
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:48.726194+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:45.485824+00:00",
       "source": "https://fred.stlouisfed.org/series/JPNASSETS",
-      "raw_sha256": "45ad4cb524a604a790ac8518dd5c81045951769ec26c96e643ac7051b7cbadc1",
+      "raw_sha256": "7e6ff14ccfd978c11a0e1de266b800fe01b0c76134ad94c58f1a0f37a258a800",
       "raw_file": "data/raw/2026-11-23/JPNASSETS.api.json.gz",
       "fetch_path": "fred_api",
       "source_series_id": "JPNASSETS",
@@ -976,7 +976,7 @@
           "value": 4.63
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:48.898283+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:45.858602+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -1076,7 +1076,7 @@
           "value": 4.92
         }
       ],
-      "fetched_at_utc": "2026-11-23T03:40:48.898283+00:00",
+      "fetched_at_utc": "2026-11-23T10:40:45.858602+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -1123,7 +1123,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:24.211304+00:00",
+      "collected_at_utc": "2026-11-23T10:44:00.318141+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1204,7 +1204,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:24.418260+00:00",
+      "collected_at_utc": "2026-11-23T10:44:00.535148+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1266,26 +1266,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
           "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "mixed"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:24.553812+00:00",
+      "collected_at_utc": "2026-11-23T10:44:00.738995+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1341,26 +1341,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
           "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "mixed"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:24.722791+00:00",
+      "collected_at_utc": "2026-11-23T10:44:00.972978+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1416,26 +1416,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
           "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
-          "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
-          "price": "down",
-          "volume": "down",
-          "signal": "outflow_fading"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "improving"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:24.981985+00:00",
+      "collected_at_utc": "2026-11-23T10:44:01.229645+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1491,26 +1491,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
           "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "weakening"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:25.125191+00:00",
+      "collected_at_utc": "2026-11-23T10:44:01.427366+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1561,7 +1561,7 @@
       "symbol": "MID150BEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
@@ -1569,7 +1569,7 @@
         "reason": "Fewer than 25 completed sessions of history"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:25.255914+00:00",
+      "collected_at_utc": "2026-11-23T10:44:01.631949+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1578,7 +1578,7 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
@@ -1620,16 +1620,16 @@
       "symbol": "SMALLADD.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "up",
-          "signal": "inflow"
+          "signal": "outflow"
         },
         "week": {
           "price": "down",
@@ -1641,26 +1641,26 @@
           "volume": "down",
           "signal": "inflow_fading"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:25.391538+00:00",
+      "collected_at_utc": "2026-11-23T10:44:01.827420+00:00",
       "label": "Neutral/Mixed",
-      "tag": "Strengthening",
+      "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
-          "state": "supportive",
+          "state": "neutral",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -1721,7 +1721,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:25.563161+00:00",
+      "collected_at_utc": "2026-11-23T10:44:02.094685+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -1779,26 +1779,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "steady"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:25.723228+00:00",
+      "collected_at_utc": "2026-11-23T10:44:02.313887+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1873,7 +1873,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:25.896191+00:00",
+      "collected_at_utc": "2026-11-23T10:44:02.584531+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1950,7 +1950,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.023579+00:00",
+      "collected_at_utc": "2026-11-23T10:44:02.812043+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2003,7 +2003,7 @@
       "symbol": "^FTSE",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
       "freshness": "current",
       "flow_windows": {
@@ -2026,24 +2026,22 @@
         },
         "trend": "steady"
       },
-      "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.152077+00:00",
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-23T10:44:03.051769+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "neutral",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
-          "observed_at": "2026-11-20",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -2069,7 +2067,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "em",
@@ -2104,7 +2102,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.319790+00:00",
+      "collected_at_utc": "2026-11-23T10:44:03.457769+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2181,7 +2179,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.517493+00:00",
+      "collected_at_utc": "2026-11-23T10:44:03.859317+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2258,7 +2256,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.691514+00:00",
+      "collected_at_utc": "2026-11-23T10:44:04.151805+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2335,7 +2333,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:26.863072+00:00",
+      "collected_at_utc": "2026-11-23T10:44:04.418590+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2412,7 +2410,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.051581+00:00",
+      "collected_at_utc": "2026-11-23T10:44:04.757611+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2489,7 +2487,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.266314+00:00",
+      "collected_at_utc": "2026-11-23T10:44:05.069819+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2566,7 +2564,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.445077+00:00",
+      "collected_at_utc": "2026-11-23T10:44:05.336557+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2643,7 +2641,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.615461+00:00",
+      "collected_at_utc": "2026-11-23T10:44:05.581239+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2720,7 +2718,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.788835+00:00",
+      "collected_at_utc": "2026-11-23T10:44:05.883336+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2797,7 +2795,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:27.975876+00:00",
+      "collected_at_utc": "2026-11-23T10:44:06.169677+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2874,7 +2872,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:28.152510+00:00",
+      "collected_at_utc": "2026-11-23T10:44:06.491417+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2951,7 +2949,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:28.317693+00:00",
+      "collected_at_utc": "2026-11-23T10:44:06.768765+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3028,7 +3026,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:28.494608+00:00",
+      "collected_at_utc": "2026-11-23T10:44:07.024730+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3105,7 +3103,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:28.672486+00:00",
+      "collected_at_utc": "2026-11-23T10:44:07.315353+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3182,7 +3180,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:28.866511+00:00",
+      "collected_at_utc": "2026-11-23T10:44:07.581526+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3259,7 +3257,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:29.050525+00:00",
+      "collected_at_utc": "2026-11-23T10:44:07.842881+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3336,7 +3334,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:29.217760+00:00",
+      "collected_at_utc": "2026-11-23T10:44:08.094437+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3413,7 +3411,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:29.389351+00:00",
+      "collected_at_utc": "2026-11-23T10:44:08.352567+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3492,7 +3490,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:29.554713+00:00",
+      "collected_at_utc": "2026-11-23T10:44:08.615877+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3569,7 +3567,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:29.751150+00:00",
+      "collected_at_utc": "2026-11-23T10:44:08.880444+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3622,19 +3620,19 @@
       "symbol": "DX-Y.NYB",
       "asset_type": "currency",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "flat",
+          "price": "down",
           "volume": "not_available",
           "signal": "not_available"
         },
         "week": {
-          "price": "flat",
+          "price": "up",
           "volume": "not_available",
           "signal": "not_available"
         },
@@ -3646,7 +3644,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:29.879764+00:00",
+      "collected_at_utc": "2026-11-23T10:44:09.080481+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3660,7 +3658,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -3721,7 +3719,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:30.025188+00:00",
+      "collected_at_utc": "2026-11-23T10:44:09.325629+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3794,7 +3792,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:30.196557+00:00",
+      "collected_at_utc": "2026-11-23T10:44:09.557769+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3867,7 +3865,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:30.326131+00:00",
+      "collected_at_utc": "2026-11-23T10:44:09.771381+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3940,7 +3938,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:30.508249+00:00",
+      "collected_at_utc": "2026-11-23T10:44:10.046352+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4013,7 +4011,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:30.659387+00:00",
+      "collected_at_utc": "2026-11-23T10:44:10.293475+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4062,21 +4060,21 @@
       "symbol": "GC=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/GC%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
-        },
-        "week": {
           "price": "down",
           "volume": "flat",
           "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
         },
         "month": {
           "price": "down",
@@ -4086,7 +4084,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:30.792617+00:00",
+      "collected_at_utc": "2026-11-23T10:44:10.549700+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4095,14 +4093,14 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4137,16 +4135,16 @@
       "symbol": "SI=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/SI%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -4161,7 +4159,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:30.919685+00:00",
+      "collected_at_utc": "2026-11-23T10:44:10.753721+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4170,14 +4168,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4212,31 +4210,31 @@
       "symbol": "HG=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/HG%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "month": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:31.118705+00:00",
+      "collected_at_utc": "2026-11-23T10:44:10.964098+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4245,14 +4243,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4287,14 +4285,14 @@
       "symbol": "PL=F",
       "asset_type": "metal",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/PL%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "not_available",
           "signal": "not_available"
         },
@@ -4311,7 +4309,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:31.296021+00:00",
+      "collected_at_utc": "2026-11-23T10:44:11.173409+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4325,7 +4323,7 @@
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/PL%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4360,16 +4358,16 @@
       "symbol": "BZ=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "down",
-          "volume": "down",
-          "signal": "outflow_fading"
+          "price": "flat",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -4381,10 +4379,10 @@
           "volume": "down",
           "signal": "outflow_fading"
         },
-        "trend": "steady"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:31.450937+00:00",
+      "collected_at_utc": "2026-11-23T10:44:11.375373+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4393,14 +4391,14 @@
           "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4435,16 +4433,16 @@
       "symbol": "CL=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/CL%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
-          "price": "down",
-          "volume": "down",
-          "signal": "outflow_fading"
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -4456,10 +4454,10 @@
           "volume": "down",
           "signal": "outflow_fading"
         },
-        "trend": "steady"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:31.599044+00:00",
+      "collected_at_utc": "2026-11-23T10:44:11.610271+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4468,14 +4466,14 @@
           "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4510,16 +4508,16 @@
       "symbol": "NG=F",
       "asset_type": "energy",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-22",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/NG%3DF/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-20",
         "day": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "up",
@@ -4531,10 +4529,10 @@
           "volume": "down",
           "signal": "inflow_fading"
         },
-        "trend": "steady"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:31.764915+00:00",
+      "collected_at_utc": "2026-11-23T10:44:11.826966+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4543,14 +4541,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
-          "observed_at": "2026-11-22",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4590,11 +4588,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-21",
+        "as_of": "2026-11-22",
         "day": {
           "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -4609,7 +4607,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:31.918826+00:00",
+      "collected_at_utc": "2026-11-23T10:44:12.053535+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4667,7 +4665,7 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-21",
+        "as_of": "2026-11-22",
         "day": {
           "price": "up",
           "volume": "down",
@@ -4675,8 +4673,8 @@
         },
         "week": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "month": {
           "price": "down",
@@ -4686,13 +4684,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:32.048297+00:00",
-      "label": "Neutral/Mixed",
-      "tag": "Steady",
-      "agreement": "Weak",
+      "collected_at_utc": "2026-11-23T10:44:12.386315+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
-          "state": "neutral",
+          "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
           "observed_at": "2026-11-23",
@@ -4728,7 +4726,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
     },
     {
       "id": "vix",
@@ -4739,7 +4737,7 @@
       "symbol": "^VIX",
       "asset_type": "risk",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/%5EVIX/history/",
       "freshness": "current",
       "flow_windows": {
@@ -4747,7 +4745,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:32.175370+00:00",
+      "collected_at_utc": "2026-11-23T10:44:12.581993+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4761,7 +4759,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EVIX/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4796,7 +4794,7 @@
       "symbol": "^INDIAVIX",
       "asset_type": "risk",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
       "freshness": "current",
       "flow_windows": {
@@ -4804,7 +4802,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-23T03:42:32.301385+00:00",
+      "collected_at_utc": "2026-11-23T10:44:12.775885+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4818,7 +4816,7 @@
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -4877,7 +4875,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:32.475423+00:00",
+      "collected_at_utc": "2026-11-23T10:44:13.038569+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4954,7 +4952,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:32.640633+00:00",
+      "collected_at_utc": "2026-11-23T10:44:13.293688+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5031,7 +5029,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:32.859155+00:00",
+      "collected_at_utc": "2026-11-23T10:44:13.539084+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5108,7 +5106,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.021564+00:00",
+      "collected_at_utc": "2026-11-23T10:44:13.753315+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5185,7 +5183,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.178188+00:00",
+      "collected_at_utc": "2026-11-23T10:44:13.983259+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5262,7 +5260,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.339868+00:00",
+      "collected_at_utc": "2026-11-23T10:44:14.230280+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5339,7 +5337,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.534294+00:00",
+      "collected_at_utc": "2026-11-23T10:44:14.503825+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5416,7 +5414,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.721875+00:00",
+      "collected_at_utc": "2026-11-23T10:44:14.746674+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5493,7 +5491,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:33.917813+00:00",
+      "collected_at_utc": "2026-11-23T10:44:15.026693+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5570,7 +5568,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.098374+00:00",
+      "collected_at_utc": "2026-11-23T10:44:15.257576+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5645,7 +5643,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.263788+00:00",
+      "collected_at_utc": "2026-11-23T10:44:15.505518+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5720,7 +5718,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.399434+00:00",
+      "collected_at_utc": "2026-11-23T10:44:15.709724+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5795,7 +5793,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.568033+00:00",
+      "collected_at_utc": "2026-11-23T10:44:15.958191+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5870,7 +5868,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.775471+00:00",
+      "collected_at_utc": "2026-11-23T10:44:16.157340+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5945,7 +5943,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:34.910894+00:00",
+      "collected_at_utc": "2026-11-23T10:44:16.380189+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5996,31 +5994,31 @@
       "symbol": "NIFTYBEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
           "volume": "up",
           "signal": "inflow"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.060197+00:00",
+      "collected_at_utc": "2026-11-23T10:44:16.579963+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6029,14 +6027,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6073,31 +6071,31 @@
       "symbol": "BANKBEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "up",
+          "signal": "inflow"
         },
         "month": {
           "price": "up",
           "volume": "up",
           "signal": "inflow"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.196222+00:00",
+      "collected_at_utc": "2026-11-23T10:44:16.779666+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6106,14 +6104,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6150,31 +6148,31 @@
       "symbol": "ITBEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
           "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
-          "price": "down",
+          "price": "flat",
           "volume": "down",
-          "signal": "outflow_fading"
+          "signal": "unclear"
         },
-        "trend": "mixed"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.337140+00:00",
+      "collected_at_utc": "2026-11-23T10:44:16.977272+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -6183,14 +6181,14 @@
           "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "neutral",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6227,31 +6225,31 @@
       "symbol": "PHARMABEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
           "price": "flat",
-          "volume": "down",
+          "volume": "up",
           "signal": "unclear"
         },
         "week": {
-          "price": "down",
+          "price": "up",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "inflow"
         },
         "month": {
           "price": "up",
           "volume": "up",
           "signal": "inflow"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.512551+00:00",
+      "collected_at_utc": "2026-11-23T10:44:17.191101+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6260,14 +6258,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6304,16 +6302,16 @@
       "symbol": "CONSUMBEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
@@ -6325,10 +6323,10 @@
           "volume": "up",
           "signal": "inflow"
         },
-        "trend": "steady"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.644905+00:00",
+      "collected_at_utc": "2026-11-23T10:44:17.405022+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6337,14 +6335,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6381,21 +6379,21 @@
       "symbol": "PSUBNKBEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "flat",
           "signal": "unclear"
         },
         "week": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
@@ -6405,7 +6403,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.798647+00:00",
+      "collected_at_utc": "2026-11-23T10:44:17.614777+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6414,14 +6412,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6458,31 +6456,31 @@
       "symbol": "INFRABEES.NS",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-20",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
-          "price": "up",
+          "price": "flat",
           "volume": "up",
-          "signal": "inflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
           "volume": "up",
           "signal": "inflow"
         },
-        "trend": "steady"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:35.953567+00:00",
+      "collected_at_utc": "2026-11-23T10:44:17.817591+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6491,14 +6489,14 @@
           "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "supportive",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
-          "observed_at": "2026-11-20",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -6540,11 +6538,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-20",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -6556,10 +6554,10 @@
           "volume": "up",
           "signal": "outflow"
         },
-        "trend": "steady"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-23T03:42:36.108645+00:00",
+      "collected_at_utc": "2026-11-23T10:44:18.038202+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -6621,13 +6619,11 @@
         ],
         "affected": [],
         "direction": "unclear",
-        "horizon": "intraday",
-        "novelty": "repeat",
+        "horizon": "days",
+        "novelty": "new",
         "confidence": "low",
-        "one_line_reason": "Announcing winners of an academic competition does not affect financial markets or policy.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6648,18 +6644,13 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "US banks",
-          "US financials"
-        ],
+        "affected": [],
         "direction": "unclear",
         "horizon": "days",
-        "novelty": "follow_up",
+        "novelty": "new",
         "confidence": "low",
-        "one_line_reason": "Release of survey results on bank reserve management is informational and does not change policy.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6685,10 +6676,8 @@
         "horizon": "days",
         "novelty": "new",
         "confidence": "low",
-        "one_line_reason": "Enforcement action against a former employee of a single small bank has negligible market impact.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6709,19 +6698,13 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "US dollar index",
-          "US short-term Treasuries",
-          "US financials"
-        ],
+        "affected": [],
         "direction": "unclear",
         "horizon": "days",
-        "novelty": "follow_up",
-        "confidence": "medium",
-        "one_line_reason": "FOMC minutes clarify past policy discussions but are retrospective and largely expected.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6742,18 +6725,13 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "US banks",
-          "US financials"
-        ],
+        "affected": [],
         "direction": "unclear",
-        "horizon": "weeks",
-        "novelty": "follow_up",
+        "horizon": "days",
+        "novelty": "new",
         "confidence": "low",
-        "one_line_reason": "Extending a comment period for proposed guidance is a routine procedural delay.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6770,21 +6748,17 @@
       "reading": "No verified causal market reaction",
       "classification": {
         "headline_id": "697d000e72a48d8d",
-        "event_type": "regulation",
+        "event_type": "central_bank",
         "region": [
           "US"
         ],
-        "affected": [
-          "US banks"
-        ],
+        "affected": [],
         "direction": "unclear",
-        "horizon": "months",
+        "horizon": "days",
         "novelty": "new",
-        "confidence": "medium",
-        "one_line_reason": "Fed sets pricing for bank payment services and streamlines check services; effect on bank costs unclear.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6807,13 +6781,11 @@
         ],
         "affected": [],
         "direction": "unclear",
-        "horizon": "months",
-        "novelty": "follow_up",
-        "confidence": "high",
-        "one_line_reason": "Fed revises its tentative FOMC meeting calendar for next year; no policy change indicated.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "horizon": "days",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6830,7 +6802,7 @@
       "reading": "No verified causal market reaction",
       "classification": {
         "headline_id": "f6a5d6fe91ea2450",
-        "event_type": "regulation",
+        "event_type": "central_bank",
         "region": [
           "US"
         ],
@@ -6838,11 +6810,9 @@
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
-        "confidence": "high",
-        "one_line_reason": "Fed takes enforcement action against a former bank employee; no market impact indicated.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6859,7 +6829,7 @@
       "reading": "No verified causal market reaction",
       "classification": {
         "headline_id": "83a40e1376ed5923",
-        "event_type": "regulation",
+        "event_type": "central_bank",
         "region": [
           "US"
         ],
@@ -6867,11 +6837,9 @@
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
-        "confidence": "high",
-        "one_line_reason": "Fed approves two applications from a small bank holding company and its subsidiary; no market impact indicated.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6888,19 +6856,17 @@
       "reading": "No verified causal market reaction",
       "classification": {
         "headline_id": "451bf10485d71230",
-        "event_type": "regulation",
+        "event_type": "central_bank",
         "region": [
           "US"
         ],
         "affected": [],
         "direction": "unclear",
         "horizon": "days",
-        "novelty": "follow_up",
-        "confidence": "high",
-        "one_line_reason": "Fed terminates an earlier enforcement action against a bank holding company and its subsidiary; no market impact indicated.",
-        "classifier": "validated_model_json",
-        "model_provider": "openrouter",
-        "model_name": "openrouter/free",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -6922,14 +6888,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
         "confidence": "medium",
-        "one_line_reason": "Bank approval is regulatory action with limited broad market impact.",
+        "one_line_reason": "Fed approves Bank of Nova Scotia application",
         "classifier": "validated_model_json",
         "model_provider": "openrouter",
         "model_name": "openrouter/free",
@@ -6951,8 +6916,7 @@
         "headline_id": "beacfe1806dadbf1",
         "event_type": "central_bank",
         "region": [
-          "US",
-          "GLOBAL"
+          "US"
         ],
         "affected": [
           "S&P 500",
@@ -6963,7 +6927,7 @@
         "horizon": "intraday",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Policy statement can shift rate expectations across markets.",
+        "one_line_reason": "Fed releases FOMC policy statement",
         "classifier": "validated_model_json",
         "model_provider": "openrouter",
         "model_name": "openrouter/free",
@@ -6988,14 +6952,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
         "confidence": "medium",
-        "one_line_reason": "Ending enforcement actions affects specific banks, not broad market.",
+        "one_line_reason": "Fed ends enforcement actions against two banks",
         "classifier": "validated_model_json",
         "model_provider": "openrouter",
         "model_name": "openrouter/free",
@@ -7021,13 +6984,13 @@
         ],
         "affected": [
           "US short-term Treasuries",
-          "US banks"
+          "US dollar index"
         ],
         "direction": "unclear",
         "horizon": "days",
-        "novelty": "follow_up",
+        "novelty": "new",
         "confidence": "medium",
-        "one_line_reason": "Discount rate minutes offer policy context but no new decision.",
+        "one_line_reason": "Fed publishes discount rate meeting minutes",
         "classifier": "validated_model_json",
         "model_provider": "openrouter",
         "model_name": "openrouter/free",
@@ -7056,13 +7019,40 @@
           "US consumer staples"
         ],
         "direction": "unclear",
-        "horizon": "months",
+        "horizon": "weeks",
         "novelty": "new",
-        "confidence": "medium",
-        "one_line_reason": "Household finance survey informs consumption outlook but lacks market catalyst.",
+        "confidence": "low",
+        "one_line_reason": "Fed releases consumer finance survey data",
         "classifier": "validated_model_json",
         "model_provider": "openrouter",
         "model_name": "openrouter/free",
+        "human_review_required": true
+      },
+      "confirmation": "too_early_or_unverified"
+    },
+    {
+      "headline_id": "a5e0631506d4a4e0",
+      "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
+      "event_type": "other",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction",
+      "classification": {
+        "headline_id": "a5e0631506d4a4e0",
+        "event_type": "central_bank",
+        "region": [
+          "EU"
+        ],
+        "affected": [],
+        "direction": "unclear",
+        "horizon": "days",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -7444,33 +7434,6 @@
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
-    },
-    {
-      "headline_id": "f4a0adedfd13d6ae",
-      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
-      "publisher": "European Central Bank",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
-      "event_type": "rates",
-      "impact": "unconfirmed",
-      "direction": "unclear",
-      "data": "Headline only",
-      "reading": "No verified causal market reaction",
-      "classification": {
-        "headline_id": "f4a0adedfd13d6ae",
-        "event_type": "other",
-        "region": [
-          "EU"
-        ],
-        "affected": [],
-        "direction": "unclear",
-        "horizon": "days",
-        "novelty": "new",
-        "confidence": "low",
-        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-        "classifier": "deterministic_rules_NOT_AI",
-        "human_review_required": true
-      },
-      "confirmation": "too_early_or_unverified"
     }
   ],
   "institutional_flows": {
@@ -7540,7 +7503,7 @@
       }
     },
     "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
-    "fetched_at_utc": "2026-11-23T03:40:49.880836+00:00",
+    "fetched_at_utc": "2026-11-23T10:40:48.781797+00:00",
     "raw_sha256": "bef5bd1c1e94223ae9bc43b0eaceeeb5b8807c2c9cd30b0609d5077c3240204d",
     "raw_file": "data/raw/2026-11-23/CFTC_TFF_FUTURES_ONLY.gz",
     "type": "TFF_FUTURES_ONLY",
@@ -7606,19 +7569,20 @@
   "classification_health": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 15,
-    "rule_fallback": 15,
-    "rejected_model_responses": 0,
+    "model_classified": 5,
+    "rule_fallback": 25,
+    "rejected_model_responses": 2,
     "providers_used": [
       "openrouter"
     ],
     "empty_reply_retries": 1,
     "models_seen": [
-      "dots-studio/dots-3-note-preview:free",
-      "baidu/ernie-5.5-flash-preview:free",
-      "particle-ai/particle-1:free"
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
     ],
-    "failure_reasons": [],
+    "failure_reasons": [
+      "openrouter: reply from recursive/flint-v1.0:free was cut off by the length limit",
+      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
+    ],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
     "pool_counts": {
@@ -7657,35 +7621,24 @@
         "day": {
           "verdict": "outflow_led",
           "counts": {
-            "inflow": 14,
-            "inflow_fading": 4,
-            "not_available": 2,
-            "outflow": 25,
+            "inflow": 4,
+            "inflow_fading": 5,
+            "not_available": 7,
+            "outflow": 24,
             "outflow_fading": 5,
-            "unclear": 11
+            "unclear": 16
           },
           "inflow": [
-            "nifty50",
-            "niftybees",
             "india_etf",
-            "niftyit",
-            "bankbees",
-            "niftybank",
             "us_staples",
-            "consumbees",
-            "infrabees",
-            "niftysmall",
             "us_treasury",
-            "us_credit",
-            "silver",
-            "copper"
+            "us_credit"
           ],
           "outflow": [
             "sp500",
             "nasdaq100",
             "japan",
             "china",
-            "hongkong",
             "taiwan",
             "korea",
             "europe",
@@ -7696,13 +7649,13 @@
             "us_energy",
             "us_industrials",
             "us_materials",
+            "niftysmall",
             "russell2000",
             "us_growth",
             "us_value",
             "us_highyield",
             "em_bonds",
             "gold_etf",
-            "goldbees",
             "silver_etf",
             "us_realestate",
             "global_reit"
@@ -7711,17 +7664,18 @@
         "week": {
           "verdict": "outflow_led",
           "counts": {
-            "inflow": 5,
-            "inflow_fading": 8,
-            "not_available": 2,
-            "outflow": 36,
-            "outflow_fading": 5,
-            "unclear": 5
+            "inflow": 6,
+            "inflow_fading": 2,
+            "not_available": 7,
+            "outflow": 32,
+            "outflow_fading": 6,
+            "unclear": 8
           },
           "inflow": [
             "india_etf",
+            "bankbees",
+            "pharmabees",
             "consumbees",
-            "infrabees",
             "us_treasury",
             "us_credit"
           ],
@@ -7729,7 +7683,6 @@
             "sp500",
             "nasdaq100",
             "china",
-            "hongkong",
             "taiwan",
             "korea",
             "europe",
@@ -7737,11 +7690,9 @@
             "em",
             "ai_theme",
             "us_technology",
-            "itbees",
             "us_financials",
             "us_banks",
             "us_healthcare",
-            "pharmabees",
             "us_energy",
             "us_industrials",
             "us_staples",
@@ -7753,13 +7704,12 @@
             "us_growth",
             "us_value",
             "us_highyield",
+            "gold",
             "gold_etf",
             "goldbees",
             "silver",
             "silver_etf",
-            "copper",
             "bitcoin",
-            "ethereum",
             "us_realestate",
             "global_reit"
           ]
@@ -7767,20 +7717,17 @@
         "month": {
           "verdict": "outflow_led",
           "counts": {
-            "inflow": 11,
+            "inflow": 8,
             "inflow_fading": 2,
-            "not_available": 3,
-            "outflow": 28,
-            "outflow_fading": 7,
-            "unclear": 10
+            "not_available": 8,
+            "outflow": 26,
+            "outflow_fading": 6,
+            "unclear": 11
           },
           "inflow": [
-            "nifty50",
             "niftybees",
-            "nifty500",
             "india_etf",
             "bankbees",
-            "niftybank",
             "psubnkbees",
             "pharmabees",
             "us_staples",
@@ -7792,7 +7739,6 @@
             "nasdaq100",
             "japan",
             "china",
-            "hongkong",
             "taiwan",
             "korea",
             "europe",
@@ -7813,7 +7759,6 @@
             "gold_etf",
             "goldbees",
             "silver_etf",
-            "copper",
             "bitcoin",
             "ethereum"
           ]
@@ -7846,16 +7791,14 @@
           "day": {
             "verdict": "outflow_led",
             "counts": {
-              "inflow": 3,
+              "inflow": 1,
               "inflow_fading": 0,
-              "not_available": 0,
-              "outflow": 9,
-              "outflow_fading": 1,
-              "unclear": 2
+              "not_available": 3,
+              "outflow": 8,
+              "outflow_fading": 2,
+              "unclear": 1
             },
             "inflow": [
-              "nifty50",
-              "niftybees",
               "india_etf"
             ],
             "outflow": [
@@ -7863,7 +7806,6 @@
               "nasdaq100",
               "japan",
               "china",
-              "hongkong",
               "taiwan",
               "korea",
               "europe",
@@ -7874,11 +7816,11 @@
             "verdict": "outflow_led",
             "counts": {
               "inflow": 1,
-              "inflow_fading": 3,
-              "not_available": 0,
-              "outflow": 9,
+              "inflow_fading": 0,
+              "not_available": 3,
+              "outflow": 8,
               "outflow_fading": 1,
-              "unclear": 1
+              "unclear": 2
             },
             "inflow": [
               "india_etf"
@@ -7887,7 +7829,6 @@
               "sp500",
               "nasdaq100",
               "china",
-              "hongkong",
               "taiwan",
               "korea",
               "europe",
@@ -7898,17 +7839,15 @@
           "month": {
             "verdict": "outflow_led",
             "counts": {
-              "inflow": 4,
+              "inflow": 2,
               "inflow_fading": 0,
-              "not_available": 0,
-              "outflow": 10,
+              "not_available": 3,
+              "outflow": 9,
               "outflow_fading": 0,
               "unclear": 1
             },
             "inflow": [
-              "nifty50",
               "niftybees",
-              "nifty500",
               "india_etf"
             ],
             "outflow": [
@@ -7916,7 +7855,6 @@
               "nasdaq100",
               "japan",
               "china",
-              "hongkong",
               "taiwan",
               "korea",
               "europe",
@@ -7957,20 +7895,15 @@
           "day": {
             "verdict": "mixed",
             "counts": {
-              "inflow": 6,
-              "inflow_fading": 0,
-              "not_available": 0,
+              "inflow": 1,
+              "inflow_fading": 1,
+              "not_available": 2,
               "outflow": 6,
-              "outflow_fading": 2,
-              "unclear": 7
+              "outflow_fading": 3,
+              "unclear": 8
             },
             "inflow": [
-              "niftyit",
-              "bankbees",
-              "niftybank",
-              "us_staples",
-              "consumbees",
-              "infrabees"
+              "us_staples"
             ],
             "outflow": [
               "semis",
@@ -7984,25 +7917,24 @@
           "week": {
             "verdict": "outflow_led",
             "counts": {
-              "inflow": 2,
-              "inflow_fading": 3,
-              "not_available": 0,
-              "outflow": 14,
+              "inflow": 3,
+              "inflow_fading": 0,
+              "not_available": 2,
+              "outflow": 12,
               "outflow_fading": 0,
-              "unclear": 2
+              "unclear": 4
             },
             "inflow": [
-              "consumbees",
-              "infrabees"
+              "bankbees",
+              "pharmabees",
+              "consumbees"
             ],
             "outflow": [
               "ai_theme",
               "us_technology",
-              "itbees",
               "us_financials",
               "us_banks",
               "us_healthcare",
-              "pharmabees",
               "us_energy",
               "us_industrials",
               "us_staples",
@@ -8013,18 +7945,17 @@
             ]
           },
           "month": {
-            "verdict": "mixed",
+            "verdict": "outflow_led",
             "counts": {
-              "inflow": 7,
+              "inflow": 6,
               "inflow_fading": 0,
-              "not_available": 0,
+              "not_available": 2,
               "outflow": 8,
-              "outflow_fading": 2,
-              "unclear": 4
+              "outflow_fading": 0,
+              "unclear": 5
             },
             "inflow": [
               "bankbees",
-              "niftybank",
               "psubnkbees",
               "pharmabees",
               "us_staples",
@@ -8043,7 +7974,7 @@
             ]
           }
         },
-        "trend": "mixed"
+        "trend": "improving"
       },
       {
         "id": "size_style",
@@ -8059,17 +7990,16 @@
           "day": {
             "verdict": "outflow_led",
             "counts": {
-              "inflow": 1,
+              "inflow": 0,
               "inflow_fading": 0,
               "not_available": 1,
-              "outflow": 3,
+              "outflow": 4,
               "outflow_fading": 0,
               "unclear": 0
             },
-            "inflow": [
-              "niftysmall"
-            ],
+            "inflow": [],
             "outflow": [
+              "niftysmall",
               "russell2000",
               "us_growth",
               "us_value"
@@ -8262,22 +8192,18 @@
         ],
         "windows": {
           "day": {
-            "verdict": "outflow_led",
+            "verdict": "mixed",
             "counts": {
-              "inflow": 2,
+              "inflow": 0,
               "inflow_fading": 1,
               "not_available": 1,
-              "outflow": 3,
+              "outflow": 2,
               "outflow_fading": 0,
-              "unclear": 0
+              "unclear": 3
             },
-            "inflow": [
-              "silver",
-              "copper"
-            ],
+            "inflow": [],
             "outflow": [
               "gold_etf",
-              "goldbees",
               "silver_etf"
             ]
           },
@@ -8288,16 +8214,16 @@
               "inflow_fading": 0,
               "not_available": 1,
               "outflow": 5,
-              "outflow_fading": 0,
-              "unclear": 1
+              "outflow_fading": 1,
+              "unclear": 0
             },
             "inflow": [],
             "outflow": [
+              "gold",
               "gold_etf",
               "goldbees",
               "silver",
-              "silver_etf",
-              "copper"
+              "silver_etf"
             ]
           },
           "month": {
@@ -8306,8 +8232,8 @@
               "inflow": 0,
               "inflow_fading": 0,
               "not_available": 2,
-              "outflow": 5,
-              "outflow_fading": 0,
+              "outflow": 4,
+              "outflow_fading": 1,
               "unclear": 0
             },
             "inflow": [],
@@ -8315,12 +8241,11 @@
               "gold",
               "gold_etf",
               "goldbees",
-              "silver_etf",
-              "copper"
+              "silver_etf"
             ]
           }
         },
-        "trend": "steady"
+        "trend": "improving"
       },
       {
         "id": "energy",
@@ -8335,11 +8260,11 @@
             "verdict": "mixed",
             "counts": {
               "inflow": 0,
-              "inflow_fading": 1,
+              "inflow_fading": 0,
               "not_available": 0,
               "outflow": 0,
-              "outflow_fading": 2,
-              "unclear": 0
+              "outflow_fading": 0,
+              "unclear": 3
             },
             "inflow": [],
             "outflow": []
@@ -8385,11 +8310,11 @@
             "verdict": "mixed",
             "counts": {
               "inflow": 0,
-              "inflow_fading": 1,
+              "inflow_fading": 2,
               "not_available": 0,
               "outflow": 0,
               "outflow_fading": 0,
-              "unclear": 1
+              "unclear": 0
             },
             "inflow": [],
             "outflow": []
@@ -8400,14 +8325,13 @@
               "inflow": 0,
               "inflow_fading": 0,
               "not_available": 0,
-              "outflow": 2,
+              "outflow": 1,
               "outflow_fading": 0,
-              "unclear": 0
+              "unclear": 1
             },
             "inflow": [],
             "outflow": [
-              "bitcoin",
-              "ethereum"
+              "bitcoin"
             ]
           },
           "month": {
@@ -8492,7 +8416,6 @@
         "out_of": [
           "markets",
           "size_style",
-          "metals",
           "real_estate"
         ]
       },
@@ -8511,6 +8434,7 @@
         "into": [],
         "out_of": [
           "markets",
+          "sectors",
           "size_style",
           "metals",
           "crypto"
@@ -8518,9 +8442,14 @@
       }
     },
     "coverage": {
-      "items_with_signal": 59,
+      "items_with_signal": 54,
       "items_in_rotation": 61,
       "items_without_volume": [
+        "nifty50",
+        "niftybank",
+        "niftyit",
+        "nifty500",
+        "hongkong",
         "dollar",
         "usdinr",
         "eurusd",
@@ -8532,7 +8461,7 @@
     }
   },
   "regime": {
-    "as_of": "2026-11-22",
+    "as_of": "2026-11-23",
     "label": "risk_off",
     "short_term_label": "risk_off",
     "shift": "steady",
@@ -8541,9 +8470,9 @@
         "title": "This week",
         "label": "risk_off",
         "tally": {
-          "neutral": 0,
+          "neutral": 2,
           "not_available": 0,
-          "risk_off": 8,
+          "risk_off": 6,
           "risk_on": 0
         }
       },
@@ -8551,9 +8480,9 @@
         "title": "This month",
         "label": "risk_off",
         "tally": {
-          "neutral": 1,
+          "neutral": 3,
           "not_available": 0,
-          "risk_off": 7,
+          "risk_off": 5,
           "risk_on": 0
         }
       }
@@ -8567,7 +8496,7 @@
         "windows": {
           "week": {
             "vote": "risk_off",
-            "reading": "1 of 6 stock markets up, 5 down"
+            "reading": "0 of 6 stock markets up, 5 down, 1 flat"
           },
           "month": {
             "vote": "risk_off",
@@ -8586,8 +8515,8 @@
             "reading": "2 of 2 fear gauges up, 0 down"
           },
           "month": {
-            "vote": "risk_off",
-            "reading": "2 of 2 fear gauges up, 0 down"
+            "vote": "neutral",
+            "reading": "1 of 2 fear gauges up, 0 down, 1 flat"
           }
         }
       },
@@ -8598,8 +8527,8 @@
         "question": "Is the US dollar weakening? Investors tend to buy dollars when they feel unsafe.",
         "windows": {
           "week": {
-            "vote": "neutral",
-            "reading": "1 of 2 dollar measures up, 0 down, 1 flat"
+            "vote": "risk_off",
+            "reading": "2 of 2 dollar measures up, 0 down"
           },
           "month": {
             "vote": "risk_off",
@@ -8662,12 +8591,12 @@
         "question": "Are small companies doing better than large ones? Small companies tend to lead when investors are confident.",
         "windows": {
           "week": {
-            "vote": "risk_off",
-            "reading": "Large companies did better than small companies"
+            "vote": "neutral",
+            "reading": "Small companies and large companies did about the same"
           },
           "month": {
-            "vote": "risk_off",
-            "reading": "Large companies did better than small companies"
+            "vote": "neutral",
+            "reading": "Small companies and large companies did about the same"
           }
         }
       },
@@ -8678,8 +8607,8 @@
         "question": "Is copper (needed by factories) doing better than gold (a safe place to park money)?",
         "windows": {
           "week": {
-            "vote": "risk_off",
-            "reading": "Gold did better than copper"
+            "vote": "neutral",
+            "reading": "Copper and gold did about the same"
           },
           "month": {
             "vote": "risk_off",
@@ -8820,15 +8749,15 @@
   },
   "market_news": {
     "status": "unavailable",
-    "as_of_utc": "2026-11-23T03:40:44.224055+00:00",
+    "as_of_utc": "2026-11-23T10:40:42.103909+00:00",
     "source": {
       "id": "gdelt_doc_2",
       "name": "GDELT news index",
       "url": "https://www.gdeltproject.org/"
     },
     "queries": {
-      "asked": 5,
-      "answered": 2
+      "asked": 4,
+      "answered": 0
     },
     "themes": [
       {
@@ -8882,140 +8811,17 @@
       "HDFC Bank",
       "ICICI Bank"
     ],
-    "stories": [
-      {
-        "id": "da661ef3c27d4350",
-        "title": "Stock market outlook today , 23 Nov : Sensex , Nifty prediction - DJIA , S & P , NASDAQ , GIFT Nifty , Kospi , Nikkei , Taiwan cues",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/stock-market-outlook-today-23-nov-sensex-nifty-prediction-djia-s-p-nasdaq-gift-nifty-kospi-nikkei-taiwan-cues-11795394068928.html",
-        "seen_at_utc": "2026-11-23T03:30:00+00:00",
-        "topics": [
-          "india_markets",
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "90ceb8b632a1e46a",
-        "title": "Top stocks to watch today : Tata Steel , APL Apollo Tubes , Maruti Suzuki , RVNL , Waaree Energies & 17 others in focus",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/top-stocks-to-watch-today-tata-steel-apl-apollo-tubes-maruti-suzuki-rvnl-waaree-energies-17-others-in-focus-11795399384907.html",
-        "seen_at_utc": "2026-11-23T03:30:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "9f5d9af53ed6357c",
-        "title": "Raja Venkatraman recommends three stocks for 23 November",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/raja-venkatraman-recommends-three-stocks-for-23-november-11795350488392.html",
-        "seen_at_utc": "2026-11-23T03:30:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "c89516b70488c78b",
-        "title": "Indian shares set to open higher on foreign inflows as AI selloff persists",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/indian-shares-set-to-open-higher-on-foreign-inflows-as-ai-selloff-persists-11795402774674.html",
-        "seen_at_utc": "2026-11-23T03:30:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "88b0364052f41e4c",
-        "title": "Current rally in large - caps a bear market one : veteran investor Shankar Sharma",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/current-rally-in-large-caps-a-bear-market-one-veteran-investor-shankar-sharma-11795325109594.html",
-        "seen_at_utc": "2026-11-23T03:30:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "64c16cf4b19fb7ca",
-        "title": "3 big things were watching in the market this Thanksgiving week",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/investingclub/2026/11/22/3-big-things-were-watching-in-the-market-this-thanksgiving-week.html",
-        "seen_at_utc": "2026-11-23T02:30:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "d18a7efc07b6fc5f",
-        "title": "US Stock Market prediction for Monday : S & P 500 , Nasdaq , Dow Jones investors hope for positive start . Here what to expect ?",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/world/business/us-stock-market-prediction-for-monday-sp-500-nasdaq-dow-jones-investors-hope-for-positive-start-heres-what-to-expect/articleshow/136085659.cms",
-        "seen_at_utc": "2026-11-23T00:30:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "5ba64a4aac6ea418",
-        "title": "Stock market today : Live updates",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html",
-        "seen_at_utc": "2026-11-23T00:30:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "28f2c8f77438805d",
-        "title": "Stock Radar : Bharti Airtel rallies 14 % in a month ; multi - month triangle breakout signals further upside",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-radar-bharti-airtel-rallies-14-in-a-month-multi-month-triangle-breakout-signals-further-upside/articleshow/136071921.cms",
-        "seen_at_utc": "2026-11-23T00:30:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "bfba0767c3ca0b5f",
-        "title": "Anthropic record IPO fails to calm investor fears over AI spending boom",
-        "publisher": "Business Standard",
-        "url": "https://www.business-standard.com/world-news/anthropic-s-record-ipo-fails-to-calm-investor-fears-over-ai-spending-boom-126112200810_1.html",
-        "seen_at_utc": "2026-11-22T20:30:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "e4069b790436af98",
-        "title": "Editorial . GiANT move - The HinduBusinessLine",
-        "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/opinion/editorial/giant-move/article71731312.ece",
-        "seen_at_utc": "2026-11-22T19:00:00+00:00",
-        "topics": [
-          "india_markets"
-        ],
-        "companies": []
-      }
-    ],
+    "stories": [],
     "notice": "Headlines are shown as published, with a link to the publisher. They are not verified here, and a headline is not proof that a price moved because of it."
   },
   "executive_summary": {
     "headline": "Money flow across the tracked markets is outflow-led in all three windows (month, week and latest day).",
-    "rotation_view": "Over the week, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs), and no asset class shows a clear inflow. Over the month, money appears to be moving out of Country and regional markets, Size and style, Metals and Crypto, and no asset class shows a clear inflow. Among sectors and themes this week, inflow is visible in Nifty India Consumption ETF (CONSUMBEES) and Nifty Infrastructure ETF (INFRABEES) and outflow in AI and big-data theme, US technology, Nifty IT ETF (ITBEES), US financials, US banks and US healthcare. Flow is improving in Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.",
-    "drivers_view": "8 recent official headlines were reviewed; none is confirmed as having moved markets. Official series over recent observations: US 2-year Treasury yield fell, US 10-year Treasury yield fell, Federal Reserve total assets fell and Treasury General Account fell. 11 market and company headlines from listed publishers were also collected, and none is confirmed as having moved markets.",
+    "rotation_view": "Over the week, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs), and no asset class shows a clear inflow. Over the month, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals and Crypto, and no asset class shows a clear inflow. Among sectors and themes this week, inflow is visible in Nifty Bank ETF (BANKBEES), Nifty Pharma ETF (PHARMABEES) and Nifty India Consumption ETF (CONSUMBEES) and outflow in AI and big-data theme, US technology, US financials, US banks, US healthcare and US energy. Flow is improving in Equity sectors and themes, Metals and Crypto and weakening in Real estate (REITs). The risk-tone checklist reads risk-off over both the month and the week.",
+    "drivers_view": "8 recent official headlines were reviewed; none is confirmed as having moved markets. Official series over recent observations: US 2-year Treasury yield fell, US 10-year Treasury yield fell, Federal Reserve total assets fell and Treasury General Account fell.",
     "watch": [
       "US personal income and spending (PCE inflation) is due within a week.",
       "US economic growth (GDP) is due within a week.",
-      "Week and month disagree, so rotation is not confirmed in: Equity sectors and themes."
+      "12 tracked items have no volume (mostly spot currencies), so they carry no flow signal."
     ],
     "evidence_refs": [
       "crypto",
@@ -9028,8 +8834,8 @@
     "method": "rules_only",
     "provider": null,
     "model": null,
-    "generated_at_utc": "2026-11-23T03:40:44.224055+00:00",
-    "as_of_ist": "2026-11-23T09:10:44.224055+05:30",
+    "generated_at_utc": "2026-11-23T10:40:42.103909+00:00",
+    "as_of_ist": "2026-11-23T16:10:42.103909+05:30",
     "notice": "Generated from the categorical data on this dashboard. Volume is a participation proxy, not a measured fund flow. Informational only, not investment advice.",
     "human_review_required": true
   }

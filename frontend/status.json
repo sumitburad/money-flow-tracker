@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-23T09:10:44.224055+05:30",
-  "run_slot": "manual",
-  "completed_at_utc": "2026-11-23T03:42:36.125518+00:00",
+  "as_of_ist": "2026-11-23T16:10:42.103909+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-23T10:44:18.050996+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,19 +61,20 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 4,
-    "model_classified": 15,
-    "rule_fallback": 15,
-    "rejected_model_responses": 0,
+    "model_classified": 5,
+    "rule_fallback": 25,
+    "rejected_model_responses": 2,
     "providers_used": [
       "openrouter"
     ],
     "empty_reply_retries": 1,
     "models_seen": [
-      "dots-studio/dots-3-note-preview:free",
-      "baidu/ernie-5.5-flash-preview:free",
-      "particle-ai/particle-1:free"
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
     ],
-    "failure_reasons": [],
+    "failure_reasons": [
+      "openrouter: reply from recursive/flint-v1.0:free was cut off by the length limit",
+      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
+    ],
     "free_pool": [],
     "pool_note": "No free model could be chosen, so the free router was used: your account's model list had no free model that answers directly.",
     "pool_counts": {
@@ -84,9 +85,14 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 59,
+    "items_with_signal": 54,
     "items_in_rotation": 61,
     "items_without_volume": [
+      "nifty50",
+      "niftybank",
+      "niftyit",
+      "nifty500",
+      "hongkong",
       "dollar",
       "usdinr",
       "eurusd",
@@ -113,8 +119,8 @@
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     },
     {
-      "source": "news_classifier",
-      "error": "No accepted AI responses; transparent deterministic tag fallback"
+      "source": "market_news",
+      "error": "no answer from the news index within 45 seconds (3 tries)"
     }
   ],
   "vendor_price_exported": false,
@@ -131,18 +137,19 @@
     "advisories": []
   },
   "market_news": {
-    "status": "partial",
-    "queries_asked": 5,
-    "queries_answered": 2,
-    "queries_skipped": 5,
-    "articles_seen": 113,
-    "from_listed_publishers": 12,
-    "kept": 11,
+    "status": "unavailable",
+    "queries_asked": 4,
+    "queries_answered": 0,
+    "queries_skipped": 6,
+    "articles_seen": 0,
+    "from_listed_publishers": 0,
+    "kept": 0,
     "company_stories": 0,
-    "seconds": 145.8,
+    "seconds": 269.8,
     "slowest_answer_seconds": 0.0,
     "errors": [
       "no answer from the news index within 45 seconds (3 tries)",
+      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
       "The news index failed twice, so the remaining questions were skipped."
     ],
@@ -160,7 +167,7 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "openrouter: empty reply from recursive/flint-v1.0:free: it used all its room thinking (finish: length)"
+      "openrouter: empty reply from nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free: it used all its room thinking (finish: length)"
     ],
     "ai_configured": true,
     "empty_reply_retries": 1,
