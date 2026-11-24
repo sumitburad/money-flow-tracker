@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-24T06:41:50.433769+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-24T01:14:41.725900+00:00",
+  "as_of_ist": "2026-11-24T08:06:12.871194+05:30",
+  "run_slot": "manual",
+  "completed_at_utc": "2026-11-24T02:41:22.346610+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -60,24 +60,23 @@
   "institutional_flow_status": "not_configured",
   "ai_classification": {
     "model_configured": true,
-    "model_calls": 6,
-    "model_classified": 14,
-    "rule_fallback": 16,
-    "rejected_model_responses": 4,
+    "model_calls": 8,
+    "model_classified": 15,
+    "rule_fallback": 15,
+    "rejected_model_responses": 5,
     "providers_used": [
-      "gemini",
-      "openrouter"
+      "openrouter",
+      "gemini"
     ],
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-flash-latest",
-      "nvidia/nemotron-3-ultra-550b-a55b:free"
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "gemini-3.5-flash"
     ],
     "failure_reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "gemini: no answer within 75 seconds",
-      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
-      "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions)"
+      "gemini: no answer within 75 seconds (x2)",
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x2)",
+      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -147,15 +146,15 @@
     ],
     "model_results": [
       {
-        "model": "gemini-flash-latest",
-        "accepted": 10,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 5,
         "rejected": 0,
         "empty": 0
       },
       {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 4,
-        "rejected": 1,
+        "model": "gemini-3.5-flash",
+        "accepted": 10,
+        "rejected": 0,
         "empty": 0
       }
     ],
@@ -190,10 +189,6 @@
     {
       "source": "institutional_flows",
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
-    },
-    {
-      "source": "market_news",
-      "error": "no answer from the news index within 45 seconds (3 tries)"
     }
   ],
   "vendor_price_exported": false,
@@ -210,24 +205,145 @@
     "advisories": []
   },
   "market_news": {
-    "status": "unavailable",
-    "queries_asked": 3,
-    "queries_answered": 0,
-    "queries_skipped": 7,
-    "articles_seen": 0,
-    "from_listed_publishers": 0,
-    "kept": 0,
-    "company_stories": 0,
-    "seconds": 133.2,
-    "slowest_answer_seconds": 0.0,
+    "status": "partial",
+    "queries_asked": 16,
+    "queries_answered": 14,
+    "queries_skipped": 0,
+    "articles_seen": 400,
+    "from_listed_publishers": 400,
+    "kept": 36,
+    "company_stories": 17,
+    "seconds": 10.9,
+    "slowest_answer_seconds": 0.5,
     "errors": [
-      "no answer from the news index within 45 seconds (3 tries)",
-      "news index answered HTTP 429 (it said: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for large)",
-      "The news index failed twice, so the remaining questions were skipped."
+      "Business Standard (bs_markets): the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)",
+      "Business Standard (bs_companies): the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
     ],
     "advisories": [],
-    "publisher_filter": "on",
-    "dropped": {},
+    "feeds": {
+      "asked": 16,
+      "answered": 14,
+      "results": [
+        {
+          "id": "cnbc_finance",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 5
+        },
+        {
+          "id": "cnbc_earnings",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 1
+        },
+        {
+          "id": "cnbc_technology",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 25
+        },
+        {
+          "id": "cnbc_economy",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 2
+        },
+        {
+          "id": "cnbc_energy",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 6
+        },
+        {
+          "id": "wsj_markets",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 61,
+          "usable": 30
+        },
+        {
+          "id": "wsj_technology",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 40,
+          "usable": 27
+        },
+        {
+          "id": "wsj_economy",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 36,
+          "usable": 5
+        },
+        {
+          "id": "marketwatch_top",
+          "publisher": "MarketWatch",
+          "status": "ok",
+          "items": 10,
+          "usable": 10
+        },
+        {
+          "id": "et_markets",
+          "publisher": "The Economic Times",
+          "status": "ok",
+          "items": 50,
+          "usable": 30
+        },
+        {
+          "id": "et_stocks",
+          "publisher": "The Economic Times",
+          "status": "ok",
+          "items": 50,
+          "usable": 30
+        },
+        {
+          "id": "bs_markets",
+          "publisher": "Business Standard",
+          "status": "failed",
+          "items": 0,
+          "usable": 0,
+          "error": "the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
+        },
+        {
+          "id": "bs_companies",
+          "publisher": "Business Standard",
+          "status": "failed",
+          "items": 0,
+          "usable": 0,
+          "error": "the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
+        },
+        {
+          "id": "businessline",
+          "publisher": "BusinessLine",
+          "status": "ok",
+          "items": 60,
+          "usable": 30
+        },
+        {
+          "id": "mint_markets",
+          "publisher": "Mint",
+          "status": "ok",
+          "items": 35,
+          "usable": 30
+        },
+        {
+          "id": "mint_companies",
+          "publisher": "Mint",
+          "status": "ok",
+          "items": 35,
+          "usable": 30
+        }
+      ]
+    },
+    "dropped": {
+      "older_than_limit": 139,
+      "same_headline_again": 29
+    },
     "top_other_sites": []
   },
   "executive_summary": {
@@ -235,12 +351,14 @@
     "providers_tried": [
       "gemini"
     ],
-    "rejected_answers": 0,
-    "reasons": [],
+    "rejected_answers": 1,
+    "reasons": [
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ],
     "ai_configured": true,
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-flash-latest"
+      "gemini-3.5-flash"
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -310,15 +428,15 @@
     ],
     "model_results": [
       {
-        "model": "gemini-flash-latest",
-        "accepted": 11,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 5,
         "rejected": 0,
         "empty": 0
       },
       {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 4,
-        "rejected": 1,
+        "model": "gemini-3.5-flash",
+        "accepted": 11,
+        "rejected": 0,
         "empty": 0
       }
     ]

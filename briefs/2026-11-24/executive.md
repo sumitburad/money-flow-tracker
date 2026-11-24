@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-24T06:41:50.433769+05:30
+# Global Money-Flow Brief | 2026-11-24T08:06:12.871194+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Money flows reflect pervasive defensive positioning as broad equities, credit, and precious metals face steady outflows, while Indian thematic assets and long-term US Treasuries attract selective interest.
+Capital flows indicate a risk-off mood as broad equity indices, technology sectors, and commodities experience persistent weekly and monthly outflows despite an improving overall trend.
 
-The overall money-flow picture reflects an outflow-led backdrop across the month and week, though the daily signal shows an improving tone. The risk tone remains firmly risk-off across both monthly and weekly lenses. Outflows dominate country and regional markets, equity sectors, style factors, real estate, and crypto. Selling pressure is notable in the S&P 500, US technology, small caps, and gold. Conversely, selective inflows appear in India equities, domestic thematic funds like consumption and pharmaceuticals, and safe-haven proxies such as long Treasuries.
+The risk tone across the market is risk-off for both the month and the week. Outflows dominate over the weekly and monthly periods across regional equities, size and style categories, metals, and digital assets. Defensive shifts are visible as flows enter healthcare, pharma, and consumption funds locally, while technology, semiconductors, and high-yield credit suffer redemptions. US Treasuries and investment-grade bonds are attracting inflows. Meanwhile, India equity products show resilience with positive monthly participation.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -14,7 +14,7 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
-- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- China equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
 - Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 - US small-cap stocks: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/IWM/history/)
 
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 10 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 15 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T06:41:50.433769+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T08:06:12.871194+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
