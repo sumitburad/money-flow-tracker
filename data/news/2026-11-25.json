@@ -1,0 +1,872 @@
+[
+  {
+    "headline_id": "f5859676338445cf",
+    "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "f5859676338445cf",
+      "event_type": "rates",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve released discount rate meeting minutes without specified policy changes or immediate financial market impact.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "2ac9b0f860cb1108",
+    "title": "Federal Reserve announces College Fed Challenge winners",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "2ac9b0f860cb1108",
+      "event_type": "other",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "intraday",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Announcement of student challenge winners is an administrative update with no material impact on financial markets.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "82acfac704767e41",
+    "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "82acfac704767e41",
+      "event_type": "liquidity",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks"
+      ],
+      "direction": "unclear",
+      "horizon": "months",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Survey on bank reserve management provides insight into liquidity strategy without immediate market direction.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "dd74b69dec10c4fd",
+    "title": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "dd74b69dec10c4fd",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks"
+      ],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Regulatory enforcement action against a former banking employee has negligible broader market implications.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "a34973bc4d957dc2",
+    "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "a34973bc4d957dc2",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Release of policy meeting minutes reflects monetary discussions with unclear market reaction indicated.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "bbea3780f69cefa3",
+    "title": "Agencies extend comment period for proposed third-party risk management guidance",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "bbea3780f69cefa3",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Agencies extending the public comment period for proposed risk guidance creates regulatory timing uncertainty.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "697d000e72a48d8d",
+    "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "697d000e72a48d8d",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
+      "direction": "unclear",
+      "horizon": "months",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve updates pricing and check services for banking institutions starting in a future year.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "8780e9f08f2f30f4",
+    "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "8780e9f08f2f30f4",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "months",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve publishes a revised tentative meeting schedule for the open market committee.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "f6a5d6fe91ea2450",
+    "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "f6a5d6fe91ea2450",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks"
+      ],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve issues an enforcement action regarding a former bank employee.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "83a40e1376ed5923",
+    "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "83a40e1376ed5923",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks"
+      ],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve approves regulatory applications for specified banking institutions.",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "451bf10485d71230",
+    "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "451bf10485d71230",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve terminates regulatory enforcement action against specified banking institutions",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "68ab46e128b42907",
+    "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "68ab46e128b42907",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve approves regulatory application submitted by Bank of Nova Scotia",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "beacfe1806dadbf1",
+    "title": "Federal Reserve issues FOMC statement",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "beacfe1806dadbf1",
+      "event_type": "central_bank",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "S&P 500",
+        "US dollar index",
+        "US long Treasury proxy"
+      ],
+      "direction": "unclear",
+      "horizon": "intraday",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve releases policy statement with unconfirmed immediate market direction",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "3c40d7e034eb31eb",
+    "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "3c40d7e034eb31eb",
+      "event_type": "regulation",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US banks",
+        "US financials"
+      ],
+      "direction": "unclear",
+      "horizon": "weeks",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve terminates enforcement actions against Gardner Bancshares and Small Business Bank",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "13bcdbfd6a06c614",
+    "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+    "publisher": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "13bcdbfd6a06c614",
+      "event_type": "rates",
+      "region": [
+        "US"
+      ],
+      "affected": [
+        "US short-term Treasuries",
+        "US dollar index"
+      ],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve releases minutes detailing past discount rate meeting discussions",
+      "classifier": "validated_model_json",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "6d853591759b92c5",
+    "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "6d853591759b92c5",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "fe3aaff655420e21",
+    "title": "Philip R. Lane: Climate change and monetary policy",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261123~b5816801a0.en.pdf",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "fe3aaff655420e21",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "a5e0631506d4a4e0",
+    "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "a5e0631506d4a4e0",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "791a2599c3216027",
+    "title": "Christine Lagarde: Acting in time",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "791a2599c3216027",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "2825673f31efff32",
+    "title": "Boris Vujčić: Financial Stability Review - November 2026",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "2825673f31efff32",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "2b5ca3a2f0c9a4fe",
+    "title": "Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "2b5ca3a2f0c9a4fe",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "d29361839763aac7",
+    "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "d29361839763aac7",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "c4768f7f969a2ed9",
+    "title": "Frank Elderson: Smart supervision for small banks",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "c4768f7f969a2ed9",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "b082065da5343683",
+    "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "b082065da5343683",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "fd0775022c84a7c8",
+    "title": "Isabel Schnabel: Made in Europe",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "fd0775022c84a7c8",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "7c2cb421a660685d",
+    "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "7c2cb421a660685d",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "8e1b1d63568ba41e",
+    "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "8e1b1d63568ba41e",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "0477ebfc41ad1eea",
+    "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "0477ebfc41ad1eea",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "c5cdf90c2e4d6ce8",
+    "title": "ECB publishes consolidated banking data for end-June 2026",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "c5cdf90c2e4d6ce8",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "1674d1a2208e7db3",
+    "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
+    "event_type": "rates",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "1674d1a2208e7db3",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  }
+]

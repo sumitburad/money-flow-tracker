@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-24T20:43:13.274925+05:30
+# Global Money-Flow Brief | 2026-11-25T04:44:58.684562+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
-## Executive summary (rule-based, no AI used)
-Money flow across the tracked markets is outflow-led over the month, outflow-led over the week and mixed on the latest day; the picture is improving.
+## Executive summary (AI-written, rule-checked)
+Capital exits regional equities and crypto as risk-off tone persists
 
-Over the week, money appears to be moving out of Country and regional markets, Equity sectors and themes, Size and style, Metals, Crypto and Real estate (REITs), and no asset class shows a clear inflow. Over the month, money appears to be moving out of Country and regional markets, Size and style, Metals and Crypto, and no asset class shows a clear inflow. Among sectors and themes this week, inflow is visible in Nifty Bank ETF (BANKBEES), Nifty Pharma ETF (PHARMABEES) and Nifty India Consumption ETF (CONSUMBEES) and outflow in AI and big-data theme, US technology, US financials, US banks, US healthcare and US energy. Flow is improving in Country and regional markets, Size and style and Metals and weakening in none. The risk-tone checklist reads risk-off over both the month and the week.
+Across the month and week, outflows led broad country markets, metals, crypto, and size-style proxies, though overall market trends show signs of improving. Equity sectors lead monthly inflows, supported by defensive healthcare, consumer staples, and domestic bank funds. In contrast, technology, semiconductors, and big data face weekly and monthly pressure. Fixed income exhibits mixed movement, with weekly gains in long Treasuries alongside steady energy flows. The rotation view indicates a risk-off risk tone across both the monthly and weekly horizons.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -14,14 +14,14 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
+- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- Hong Kong equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EHSI/history/)
 - Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
-- Japan equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EN225/history/)
-- Emerging markets: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
+- Minutes of the Board's discount rate meetings on October 19 and October 28, 2026 — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm)
 - Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
 - Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm)
-- Federal Reserve Board issues enforcement action with former employee of First Security Bancorp — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm)
 
 ## Liquidity check
 **Data:** Official U.S. macro series and their dates appear in the feed's macro section.
@@ -33,9 +33,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-- US personal income and spending (PCE inflation): 2026-11-25 (tomorrow). Date from FRED's release calendar.
-- US economic growth (GDP): 2026-11-25 (tomorrow). Date from FRED's release calendar.
-- US jobs report: 2026-12-04 (in 10 days). Date from FRED's release calendar.
-- Fed interest-rate decision (FOMC): 2026-12-09 (in 15 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
+- US personal income and spending (PCE inflation): 2026-11-25 (today). Date from FRED's release calendar.
+- US economic growth (GDP): 2026-11-25 (today). Date from FRED's release calendar.
+- US jobs report: 2026-12-04 (in 9 days). Date from FRED's release calendar.
+- Fed interest-rate decision (FOMC): 2026-12-09 (in 14 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T20:43:13.274925+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-25T04:44:58.684562+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

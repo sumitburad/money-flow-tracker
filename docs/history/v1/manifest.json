@@ -1,7 +1,7 @@
 {
   "schema": "history-1.0",
   "usage": "research_only_not_order_authorization",
-  "generated_at_utc": "2026-11-24T15:19:39.120209+00:00",
+  "generated_at_utc": "2026-11-24T23:21:37.963373+00:00",
   "start_date": "2021-11-22",
   "no_price_data": true,
   "availability_basis": "available_from_estimate is a conservative publication-lag estimate, not a true vintage date. Values are the current vintage; later revisions are not tracked.",
@@ -23,7 +23,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "d3adbc02e4daa526eb03b20f8119930eab53c210c4810cf8aea66281f165f8a8",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -43,7 +43,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "ee5bc2310f56c223f3a1bdd128ea6c13d270eed95fce0faf5a27b27d299e1ac5",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -63,7 +63,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "6b57af5e45ad71510423f7e15e5d0dfeee79f81ae8174093e8686bde555f48b7",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -83,7 +83,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "b4d4018045eff725884b9168900db292669d446aeb198d04ac5a135dabc4df76",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -103,7 +103,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/CPILFENS",
       "sha256": "a339f1a4a63f7d52c0ae95d7326ba6b27c22e293b06286fe02b896b3276a2854",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok",
       "derived_from": "CPILFENS",
       "method": "year_on_year_percent",
@@ -128,7 +128,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/CPIAUCNS",
       "sha256": "7b5fdcf66c21f19fb2d0dd7bd1154f0ea9da30deb032518ac783d19f87fb1569",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok",
       "derived_from": "CPIAUCNS",
       "method": "year_on_year_percent",
@@ -153,7 +153,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DEXINUS",
       "sha256": "2f93c4aa8734dcc248054ba6376a895f8fe0ee52e284880fbb601a3631f13cfa",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -163,17 +163,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "fred/DFF.csv",
-      "rows": 1825,
+      "rows": 1828,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-20",
+      "last_observation": "2026-11-23",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DFF",
-      "sha256": "3764827a465848d9a0f3c1a3a4b06edd29672e8b267aa33d22b06b569b8a4b0e",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "7eb8cc833d7ca4bdddd0f7dd765ef5e5bfc3689501219beff571fafe201fb3b4",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -183,17 +183,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "fred/DGS10.csv",
-      "rows": 1249,
+      "rows": 1250,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-20",
+      "last_observation": "2026-11-23",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "sha256": "e48651e297540361e414f822916e5995fc2116669f3718c25a91d6ced20110e8",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "ef685041d20a5dab65cce4870df3ae0c5cd2f4ef6d1de1067fb2dde3038d9519",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -203,17 +203,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "fred/DGS2.csv",
-      "rows": 1249,
+      "rows": 1250,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-20",
+      "last_observation": "2026-11-23",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DGS2",
-      "sha256": "d8a32a9932be980a25fc0ff4aafc5bfa3a98dca6120021e2cf08e8a800993cae",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "7dab7e5ccd2a80d7d3b16ccddcf54eedcd276ea2c39937f0e3f1204f857b0b94",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -233,7 +233,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS",
       "sha256": "2dbc1c939b08e20e62f84f55441040f32033438dcb0939e4036276234b0df5db",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -243,17 +243,17 @@
       "frequency": "weekly",
       "unit": "millions_eur",
       "file": "fred/ECBASSETSW.csv",
-      "rows": 260,
+      "rows": 261,
       "first_observation": "2021-11-26",
-      "last_observation": "2026-11-13",
+      "last_observation": "2026-11-20",
       "lag_rule": {
         "calendar_days": 6
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/ECBASSETSW",
-      "sha256": "383741a913bf9289d2bd03ea3c74038b553e2a7eacbeb006ee9e5f44c287d7bd",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "218658b55c40e47356a422bf24b0ab702515c9c034546f60783b03553a9ed62e",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -273,7 +273,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/JPNASSETS",
       "sha256": "3a28f3c17d9e35a8dd3f63c770fee2e7c40879f700ace1f54fb831e477089dc4",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -283,17 +283,17 @@
       "frequency": "monthly",
       "unit": "billions_usd",
       "file": "fred/M2SL.csv",
-      "rows": 58,
+      "rows": 59,
       "first_observation": "2021-12-01",
-      "last_observation": "2026-09-01",
+      "last_observation": "2026-10-01",
       "lag_rule": {
         "calendar_days": 65
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/M2SL",
-      "sha256": "a84c6a5fffe0f198874c4e1b65cc65f9766e00ce5488af73e607064ddfb760d7",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "abf2370e4cc0ab3a8b213c61c66913bcf100556fe3aa7b3f1d454265c0a5eabb",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -313,7 +313,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/PCEPILFE",
       "sha256": "49311c1396c9c18231a7609cd9e458aed05f9d884b50196a1667c5ae468851f4",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok",
       "derived_from": "PCEPILFE",
       "method": "year_on_year_percent",
@@ -338,7 +338,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/PCEPI",
       "sha256": "f6e2870fd8f25990cc7d891f6a3ad79f9b4b9484601bfd1eb6de0553fd4c7160",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok",
       "derived_from": "PCEPI",
       "method": "year_on_year_percent",
@@ -353,17 +353,17 @@
       "frequency": "daily",
       "unit": "billions_usd",
       "file": "fred/RRPONTSYD.csv",
-      "rows": 1248,
+      "rows": 1249,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/RRPONTSYD",
-      "sha256": "42f8e7d304bf37cd4ebe67583e89b13497a7233d81edba9d2d8d2773bab03d78",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "66914f13a0b92e795bc88af58607175f9aeb8f46926a543c7f406a57ca055acb",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -373,17 +373,17 @@
       "frequency": "daily",
       "unit": "percentage_points",
       "file": "fred/T10Y2Y.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
-      "sha256": "07db130c6b98e0a1d6868f96f49ac3150b7dc27a4d17ea77df488ae7aa91a710",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "138b5fbb36a91cec8c0e5d93e186cdb1bee0f2a401ecc35f84acf99c304e853d",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -393,17 +393,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "fred/T10YIE.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 2
       },
       "transport": "fred_api",
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/T10YIE",
-      "sha256": "bace1a5a83193aa6cc16f5a99a3150bf247acb2947792b59a69f9b59fb7e199c",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "f40279a631c094033beb2c511aa272aa08c333f5b9f315e198938a37d0a334cb",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -423,7 +423,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/UNRATE",
       "sha256": "794e02cb477b52be6f3f5b0394c487b3bea56347b050992db8701a67064fa4fb",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -433,17 +433,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "treasury/UST_PAR_10Y.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 1
       },
       "transport": "us_treasury_csv",
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
-      "sha256": "3fce3963667b1f28ee18c20d64924bef698b5ad0a0b1fc85f25e005c1cc5e861",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "4a0ae65dfcd3a11538bf65e3fc7061ce16a3f372a9cdcbbe5399615ddeeff650",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -453,17 +453,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "treasury/UST_PAR_2Y.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 1
       },
       "transport": "us_treasury_csv",
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
-      "sha256": "f66de77d382710539072ff89fe6d106f2ce7bcff4c4a7c44dd2aef48a99a88bd",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "ea583a2d84e20475c682ba514aaacf12810c2729423ea3398df48998d3d11027",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -473,17 +473,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "treasury/UST_PAR_30Y.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 1
       },
       "transport": "us_treasury_csv",
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
-      "sha256": "dc4efed19305026fb7df452d999f50a68df3dade4b04eec7fabf1ac8b725ad61",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "0aee48f02a42c53ba83d9d6e302fc6eb63f93a1289b4c29986e75d856b3d9c0a",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -493,17 +493,17 @@
       "frequency": "daily",
       "unit": "percent",
       "file": "treasury/UST_PAR_3M.csv",
-      "rows": 1250,
+      "rows": 1251,
       "first_observation": "2021-11-22",
-      "last_observation": "2026-11-23",
+      "last_observation": "2026-11-24",
       "lag_rule": {
         "business_days": 1
       },
       "transport": "us_treasury_csv",
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
-      "sha256": "d9dc6737143ff6a4c3495636127cb27134f3f597a6d79b3e64a5de03a9690f5e",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "sha256": "f69bb1decde7a555265ea3f4777695da6917a4243237983cf496889a39d800c8",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -523,7 +523,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/WALCL",
       "sha256": "ea0f6820c5004116705bf4d19448e030be7f9a860dd0b9010c153f3ef53b5ebd",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     },
     {
@@ -543,7 +543,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/WTREGEN",
       "sha256": "67b2e385eaa09c9571126f5cd63bbc4839170637431701e7fcc6cf6bc7a9a95b",
-      "fetched_at_utc": "2026-11-24T15:19:39.120209+00:00",
+      "fetched_at_utc": "2026-11-24T23:21:37.963373+00:00",
       "status": "ok"
     }
   ],

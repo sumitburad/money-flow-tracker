@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-24T15:13:13.274925+00:00",
+  "generated_at": "2026-11-24T23:14:58.684562+00:00",
   "assets": [
     {
       "id": "sp500",
@@ -16,11 +16,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -35,7 +35,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:41.484279+00:00",
+      "collected_at_utc": "2026-11-24T23:19:44.052619+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -97,16 +97,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "month": {
           "price": "down",
@@ -116,7 +116,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:41.728892+00:00",
+      "collected_at_utc": "2026-11-24T23:19:44.273199+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -197,7 +197,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:41.932077+00:00",
+      "collected_at_utc": "2026-11-24T23:19:44.522080+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -274,7 +274,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:42.079559+00:00",
+      "collected_at_utc": "2026-11-24T23:19:44.782919+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -351,7 +351,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:42.300582+00:00",
+      "collected_at_utc": "2026-11-24T23:19:45.017681+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -428,7 +428,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:42.483918+00:00",
+      "collected_at_utc": "2026-11-24T23:19:45.290990+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -489,7 +489,7 @@
         "reason": "Fewer than 25 completed sessions of history"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:42.685359+00:00",
+      "collected_at_utc": "2026-11-24T23:19:45.505235+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -564,7 +564,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:42.871868+00:00",
+      "collected_at_utc": "2026-11-24T23:19:45.716415+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -622,11 +622,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -641,13 +641,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:43.098977+00:00",
-      "label": "Neutral/Mixed",
-      "tag": "Strengthening",
-      "agreement": "Weak",
+      "collected_at_utc": "2026-11-24T23:19:45.979243+00:00",
+      "label": "Bearish",
+      "tag": "Steady",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
-          "state": "neutral",
+          "state": "opposing",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/FXI/history/",
           "observed_at": "2026-11-24",
@@ -683,7 +683,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
     },
     {
       "id": "hongkong",
@@ -694,45 +694,47 @@
       "symbol": "^HSI",
       "asset_type": "equity",
       "proxy_is_not_direct_flow": true,
-      "observation_date": "2026-11-24",
+      "observation_date": "2026-11-23",
       "price_source": "https://finance.yahoo.com/quote/%5EHSI/history/",
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-24",
+        "as_of": "2026-11-23",
         "day": {
-          "price": "down",
-          "volume": "not_available",
-          "signal": "not_available"
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
-          "volume": "not_available",
-          "signal": "not_available"
+          "volume": "up",
+          "signal": "outflow"
         },
         "month": {
           "price": "down",
-          "volume": "not_available",
-          "signal": "not_available"
+          "volume": "up",
+          "signal": "outflow"
         },
-        "trend": "not_available"
+        "trend": "improving"
       },
-      "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:43.332961+00:00",
-      "label": "Neutral/Mixed",
-      "tag": "Steady",
-      "agreement": "Weak",
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-24T23:19:46.182968+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
       "families": {
         "money_flow": {
-          "state": "not_available",
-          "evidence": "Trading volume insufficient; no measured fund flow",
-          "source": null
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+          "observed_at": "2026-11-23",
+          "method": "volume_participation_proxy"
         },
         "price_trend": {
           "state": "opposing",
           "evidence": "Close and 50/200-session trend confirmation",
           "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
-          "observed_at": "2026-11-24",
+          "observed_at": "2026-11-23",
           "method": "price_trend"
         },
         "breadth": {
@@ -758,7 +760,7 @@
           "source": null
         }
       },
-      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
     },
     {
       "id": "europe",
@@ -774,11 +776,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "flat",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -793,7 +795,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:43.548539+00:00",
+      "collected_at_utc": "2026-11-24T23:19:46.516223+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -848,46 +850,26 @@
       "proxy_is_not_direct_flow": true,
       "observation_date": "2026-11-20",
       "price_source": "https://finance.yahoo.com/quote/%5EN225/history/",
-      "freshness": "current",
+      "freshness": "stale",
       "flow_windows": {
-        "status": "ok",
-        "as_of": "2026-11-20",
-        "day": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
-        },
-        "week": {
-          "price": "down",
-          "volume": "down",
-          "signal": "outflow_fading"
-        },
-        "month": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
-        },
-        "trend": "mixed"
+        "status": "not_available",
+        "reason": "Price history stale; last session 2026-11-20"
       },
-      "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:43.771511+00:00",
-      "label": "Bearish",
-      "tag": "Weakening",
-      "agreement": "Moderate",
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-24T23:19:46.769104+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
-          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
-          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
-          "observed_at": "2026-11-20",
-          "method": "volume_participation_proxy"
+          "state": "not_available",
+          "evidence": "Price/volume proxy stale; last session 2026-11-20",
+          "source": null
         },
         "price_trend": {
-          "state": "opposing",
-          "evidence": "Close and 50/200-session trend confirmation",
-          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
-          "observed_at": "2026-11-20",
-          "method": "price_trend"
+          "state": "not_available",
+          "evidence": "Price proxy stale; last session 2026-11-20",
+          "source": null
         },
         "breadth": {
           "state": "not_available",
@@ -912,7 +894,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+      "reason": "Data: Price/volume proxy stale; last session 2026-11-20; Price proxy stale; last session 2026-11-20. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "uk",
@@ -928,26 +910,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "week": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "not_available",
+          "signal": "not_available"
         },
         "month": {
           "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "not_available",
+          "signal": "not_available"
         },
-        "trend": "mixed"
+        "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:43.971191+00:00",
+      "collected_at_utc": "2026-11-24T23:19:46.974522+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1003,11 +985,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -1022,7 +1004,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:44.242392+00:00",
+      "collected_at_utc": "2026-11-24T23:19:47.449970+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -1080,16 +1062,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "down",
@@ -1099,13 +1081,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:44.575316+00:00",
-      "label": "Bearish",
+      "collected_at_utc": "2026-11-24T23:19:47.796847+00:00",
+      "label": "Neutral/Mixed",
       "tag": "Weakening",
-      "agreement": "Moderate",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
+          "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/IWM/history/",
           "observed_at": "2026-11-24",
@@ -1141,7 +1123,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "us_growth",
@@ -1157,11 +1139,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -1176,7 +1158,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:44.939875+00:00",
+      "collected_at_utc": "2026-11-24T23:19:48.128034+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1234,7 +1216,7 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
           "volume": "flat",
@@ -1253,13 +1235,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:45.180836+00:00",
+      "collected_at_utc": "2026-11-24T23:19:48.392436+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
+          "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/IWD/history/",
           "observed_at": "2026-11-24",
@@ -1311,16 +1293,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
-          "price": "flat",
+          "price": "down",
           "volume": "up",
-          "signal": "unclear"
+          "signal": "outflow"
         },
         "month": {
           "price": "down",
@@ -1330,7 +1312,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:45.552348+00:00",
+      "collected_at_utc": "2026-11-24T23:19:48.736873+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1388,11 +1370,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -1407,7 +1389,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:45.759684+00:00",
+      "collected_at_utc": "2026-11-24T23:19:49.030231+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1465,7 +1447,7 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
           "volume": "down",
@@ -1484,7 +1466,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:46.111376+00:00",
+      "collected_at_utc": "2026-11-24T23:19:49.329949+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1542,11 +1524,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -1561,7 +1543,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:46.347011+00:00",
+      "collected_at_utc": "2026-11-24T23:19:49.660735+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1619,26 +1601,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
-        },
-        "month": {
           "price": "flat",
           "volume": "up",
           "signal": "unclear"
         },
-        "trend": "mixed"
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:46.706428+00:00",
+      "collected_at_utc": "2026-11-24T23:19:49.946918+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1696,11 +1678,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
+          "price": "up",
           "volume": "down",
-          "signal": "outflow_fading"
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -1715,7 +1697,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:47.021702+00:00",
+      "collected_at_utc": "2026-11-24T23:19:50.234641+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1773,11 +1755,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -1792,7 +1774,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:47.241153+00:00",
+      "collected_at_utc": "2026-11-24T23:19:50.495183+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1850,16 +1832,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "flat",
+          "price": "up",
           "volume": "down",
-          "signal": "unclear"
+          "signal": "inflow_fading"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
@@ -1869,7 +1851,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:47.489617+00:00",
+      "collected_at_utc": "2026-11-24T23:19:50.753621+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1927,16 +1909,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
@@ -1946,7 +1928,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:47.771998+00:00",
+      "collected_at_utc": "2026-11-24T23:19:51.017424+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2004,26 +1986,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "up",
           "volume": "down",
           "signal": "inflow_fading"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:48.002011+00:00",
+      "collected_at_utc": "2026-11-24T23:19:51.402333+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2081,26 +2063,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
           "price": "up",
           "volume": "flat",
           "signal": "unclear"
         },
-        "week": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
-        },
-        "month": {
-          "price": "flat",
-          "volume": "flat",
-          "signal": "unclear"
-        },
-        "trend": "mixed"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:48.257270+00:00",
+      "collected_at_utc": "2026-11-24T23:19:51.785157+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2158,7 +2140,7 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
           "volume": "down",
@@ -2177,13 +2159,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:48.556026+00:00",
-      "label": "Bearish",
+      "collected_at_utc": "2026-11-24T23:19:52.043708+00:00",
+      "label": "Neutral/Mixed",
       "tag": "Weakening",
-      "agreement": "Moderate",
+      "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
+          "state": "neutral",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/XLB/history/",
           "observed_at": "2026-11-24",
@@ -2219,7 +2201,7 @@
           "source": null
         }
       },
-      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
     },
     {
       "id": "us_communications",
@@ -2235,26 +2217,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
           "volume": "down",
           "signal": "inflow_fading"
         },
         "week": {
-          "price": "down",
+          "price": "flat",
           "volume": "up",
-          "signal": "outflow"
+          "signal": "unclear"
         },
         "month": {
           "price": "flat",
           "volume": "up",
           "signal": "unclear"
         },
-        "trend": "mixed"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:48.837057+00:00",
+      "collected_at_utc": "2026-11-24T23:19:52.336998+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2312,11 +2294,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
@@ -2331,7 +2313,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:49.132813+00:00",
+      "collected_at_utc": "2026-11-24T23:19:52.622079+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2391,11 +2373,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
@@ -2403,14 +2385,14 @@
           "signal": "inflow"
         },
         "month": {
-          "price": "flat",
+          "price": "down",
           "volume": "down",
-          "signal": "unclear"
+          "signal": "outflow_fading"
         },
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:49.457650+00:00",
+      "collected_at_utc": "2026-11-24T23:19:52.875839+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2468,11 +2450,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -2487,7 +2469,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:49.679095+00:00",
+      "collected_at_utc": "2026-11-24T23:19:53.142858+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2564,7 +2546,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:49.881481+00:00",
+      "collected_at_utc": "2026-11-24T23:19:53.334785+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2639,7 +2621,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:50.116673+00:00",
+      "collected_at_utc": "2026-11-24T23:19:53.562063+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2712,7 +2694,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:50.342084+00:00",
+      "collected_at_utc": "2026-11-24T23:19:53.821146+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2785,7 +2767,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:50.555717+00:00",
+      "collected_at_utc": "2026-11-24T23:19:54.047149+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2858,7 +2840,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:50.769674+00:00",
+      "collected_at_utc": "2026-11-24T23:19:54.313165+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2931,7 +2913,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:50.950711+00:00",
+      "collected_at_utc": "2026-11-24T23:19:54.603380+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2985,11 +2967,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -3004,7 +2986,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:51.165608+00:00",
+      "collected_at_utc": "2026-11-24T23:19:54.817383+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3060,26 +3042,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
         },
         "week": {
           "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "month": {
           "price": "down",
           "volume": "not_available",
           "signal": "not_available"
         },
-        "trend": "steady"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:51.435002+00:00",
+      "collected_at_utc": "2026-11-24T23:19:55.024233+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3135,11 +3117,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -3154,13 +3136,13 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:51.686516+00:00",
+      "collected_at_utc": "2026-11-24T23:19:55.223283+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
       "families": {
         "money_flow": {
-          "state": "opposing",
+          "state": "supportive",
           "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
           "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
           "observed_at": "2026-11-24",
@@ -3210,9 +3192,9 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "not_available",
           "signal": "not_available"
         },
@@ -3229,7 +3211,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:51.906621+00:00",
+      "collected_at_utc": "2026-11-24T23:19:55.482555+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3283,11 +3265,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -3299,10 +3281,10 @@
           "volume": "down",
           "signal": "outflow_fading"
         },
-        "trend": "improving"
+        "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:52.150692+00:00",
+      "collected_at_utc": "2026-11-24T23:19:55.681509+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3358,11 +3340,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -3377,7 +3359,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:52.499402+00:00",
+      "collected_at_utc": "2026-11-24T23:19:55.890465+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3433,11 +3415,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "up",
@@ -3449,10 +3431,10 @@
           "volume": "flat",
           "signal": "unclear"
         },
-        "trend": "mixed"
+        "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:52.670664+00:00",
+      "collected_at_utc": "2026-11-24T23:19:56.106755+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3527,7 +3509,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:52.922660+00:00",
+      "collected_at_utc": "2026-11-24T23:19:56.344021+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3604,7 +3586,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:53.169638+00:00",
+      "collected_at_utc": "2026-11-24T23:19:56.661705+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3665,7 +3647,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:53.590878+00:00",
+      "collected_at_utc": "2026-11-24T23:19:56.866424+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3722,7 +3704,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-24T15:17:53.788619+00:00",
+      "collected_at_utc": "2026-11-24T23:19:57.071672+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3776,11 +3758,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "up",
-          "signal": "inflow"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -3795,7 +3777,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:54.057207+00:00",
+      "collected_at_utc": "2026-11-24T23:19:57.403937+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3853,16 +3835,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
-          "price": "flat",
+          "price": "down",
           "volume": "up",
-          "signal": "unclear"
+          "signal": "outflow"
         },
         "month": {
           "price": "down",
@@ -3872,7 +3854,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:54.258622+00:00",
+      "collected_at_utc": "2026-11-24T23:19:57.654587+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -3930,10 +3912,10 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "flat",
+          "price": "flat",
+          "volume": "down",
           "signal": "unclear"
         },
         "week": {
@@ -3949,7 +3931,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:54.530858+00:00",
+      "collected_at_utc": "2026-11-24T23:19:57.987773+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4007,11 +3989,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "up",
@@ -4026,7 +4008,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:54.783101+00:00",
+      "collected_at_utc": "2026-11-24T23:19:58.216704+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4084,11 +4066,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -4103,7 +4085,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:55.028050+00:00",
+      "collected_at_utc": "2026-11-24T23:19:58.458379+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4161,7 +4143,7 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "up",
           "volume": "down",
@@ -4180,7 +4162,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:55.331533+00:00",
+      "collected_at_utc": "2026-11-24T23:19:58.710902+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4238,11 +4220,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
         },
         "week": {
           "price": "up",
@@ -4250,14 +4232,14 @@
           "signal": "inflow_fading"
         },
         "month": {
-          "price": "flat",
+          "price": "up",
           "volume": "up",
-          "signal": "unclear"
+          "signal": "inflow"
         },
-        "trend": "mixed"
+        "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:55.604673+00:00",
+      "collected_at_utc": "2026-11-24T23:19:58.961700+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4315,16 +4297,16 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
           "price": "down",
-          "volume": "up",
-          "signal": "outflow"
+          "volume": "down",
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
-          "volume": "flat",
-          "signal": "unclear"
+          "volume": "down",
+          "signal": "inflow_fading"
         },
         "month": {
           "price": "down",
@@ -4334,7 +4316,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:55.828147+00:00",
+      "collected_at_utc": "2026-11-24T23:19:59.235659+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4392,26 +4374,26 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "flat",
           "signal": "unclear"
         },
         "week": {
-          "price": "flat",
-          "volume": "down",
-          "signal": "unclear"
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
         },
         "month": {
           "price": "down",
           "volume": "down",
           "signal": "outflow_fading"
         },
-        "trend": "improving"
+        "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:56.063238+00:00",
+      "collected_at_utc": "2026-11-24T23:19:59.573359+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4469,11 +4451,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "up",
@@ -4488,7 +4470,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:56.265572+00:00",
+      "collected_at_utc": "2026-11-24T23:19:59.827902+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4544,11 +4526,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
-          "volume": "down",
-          "signal": "outflow_fading"
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
         },
         "week": {
           "price": "down",
@@ -4563,7 +4545,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:56.451513+00:00",
+      "collected_at_utc": "2026-11-24T23:20:00.118589+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4638,7 +4620,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:56.634575+00:00",
+      "collected_at_utc": "2026-11-24T23:20:00.317851+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4694,11 +4676,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "down",
+          "price": "up",
           "volume": "down",
-          "signal": "outflow_fading"
+          "signal": "inflow_fading"
         },
         "week": {
           "price": "down",
@@ -4713,7 +4695,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:56.895717+00:00",
+      "collected_at_utc": "2026-11-24T23:20:00.686164+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4769,11 +4751,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
+          "price": "down",
           "volume": "down",
-          "signal": "inflow_fading"
+          "signal": "outflow_fading"
         },
         "week": {
           "price": "down",
@@ -4788,7 +4770,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:57.137143+00:00",
+      "collected_at_utc": "2026-11-24T23:20:00.931766+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4844,11 +4826,11 @@
       "freshness": "current",
       "flow_windows": {
         "status": "ok",
-        "as_of": "2026-11-23",
+        "as_of": "2026-11-24",
         "day": {
-          "price": "up",
-          "volume": "down",
-          "signal": "inflow_fading"
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
         },
         "week": {
           "price": "down",
@@ -4863,7 +4845,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:57.343372+00:00",
+      "collected_at_utc": "2026-11-24T23:20:01.142769+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4938,7 +4920,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:57.570246+00:00",
+      "collected_at_utc": "2026-11-24T23:20:01.400458+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5015,7 +4997,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:57.786302+00:00",
+      "collected_at_utc": "2026-11-24T23:20:01.609274+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5092,7 +5074,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:58.044684+00:00",
+      "collected_at_utc": "2026-11-24T23:20:01.809523+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5169,7 +5151,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:58.234568+00:00",
+      "collected_at_utc": "2026-11-24T23:20:02.015634+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5246,7 +5228,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:58.481653+00:00",
+      "collected_at_utc": "2026-11-24T23:20:02.227608+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5323,7 +5305,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:58.725748+00:00",
+      "collected_at_utc": "2026-11-24T23:20:02.498753+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5400,7 +5382,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:58.941884+00:00",
+      "collected_at_utc": "2026-11-24T23:20:02.706448+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5477,7 +5459,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-24T15:17:59.160184+00:00",
+      "collected_at_utc": "2026-11-24T23:20:02.917864+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",

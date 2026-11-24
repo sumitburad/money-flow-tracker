@@ -1,0 +1,280 @@
+{
+  "as_of_ist": "2026-11-25T04:44:58.684562+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-24T23:20:02.930027+00:00",
+  "needs_retry": false,
+  "official_source_problems": 0,
+  "status": "degraded",
+  "items_configured": 73,
+  "price_proxies_current": 72,
+  "macro_series_available": 11,
+  "macro_series_current": 11,
+  "macro_series_stale": [],
+  "macro_series_unavailable": [
+    "PBOC_TOTAL_ASSETS",
+    "RBI_SYSTEM_LIQUIDITY"
+  ],
+  "liquidity_regions": {
+    "US": {
+      "series_id": "WALCL",
+      "status": "current",
+      "observation_date": "2026-11-18",
+      "source": "https://fred.stlouisfed.org/series/WALCL",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "EU": {
+      "series_id": "ECB_ILM_TOTAL_ASSETS",
+      "status": "current",
+      "observation_date": "2026-11-20",
+      "source": "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "JP": {
+      "series_id": "BOJ_TOTAL_ASSETS",
+      "status": "current",
+      "observation_date": "2026-10-01",
+      "source": "https://fred.stlouisfed.org/series/JPNASSETS",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "IN": {
+      "series_id": "RBI_SYSTEM_LIQUIDITY",
+      "status": "not_available",
+      "observation_date": null,
+      "source": "https://data.rbi.org.in/",
+      "note": "Not a complete cross-border money flow measurement"
+    },
+    "CN": {
+      "series_id": "PBOC_TOTAL_ASSETS",
+      "status": "not_available",
+      "observation_date": null,
+      "source": "http://www.pbc.gov.cn/en/",
+      "note": "Not a complete cross-border money flow measurement"
+    }
+  },
+  "cftc_markets_with_evidence": [
+    "nasdaq100",
+    "sp500",
+    "dollar",
+    "us_treasury"
+  ],
+  "institutional_flow_status": "not_configured",
+  "ai_classification": {
+    "model_configured": true,
+    "model_calls": 6,
+    "model_classified": 15,
+    "rule_fallback": 15,
+    "rejected_model_responses": 3,
+    "providers_used": [
+      "gemini"
+    ],
+    "empty_reply_retries": 0,
+    "models_seen": [
+      "gemini-3.5-flash"
+    ],
+    "failure_reasons": [
+      "gemini: no answer within 75 seconds (x3)"
+    ],
+    "model_results": [
+      {
+        "model": "gemini-3.5-flash",
+        "accepted": 15,
+        "rejected": 0,
+        "empty": 0
+      }
+    ],
+    "human_tag_review_required": true,
+    "no_ai_is_not_model_inference": false
+  },
+  "flow_windows": {
+    "items_with_signal": 57,
+    "items_in_rotation": 61,
+    "items_without_volume": [
+      "uk",
+      "dollar",
+      "usdinr",
+      "eurusd",
+      "usdjpy",
+      "usdcny",
+      "gbpusd",
+      "platinum"
+    ]
+  },
+  "regime": {
+    "status": "ok",
+    "label": "risk_off",
+    "short_term_label": "risk_off",
+    "checks_with_data": {
+      "week": 8,
+      "month": 8
+    },
+    "checks_total": 8
+  },
+  "missing": [
+    "japan"
+  ],
+  "errors": [
+    {
+      "source": "institutional_flows",
+      "error": "Authorized NSE broker feed or final NSDL access unavailable"
+    }
+  ],
+  "vendor_price_exported": false,
+  "publication": "categorical_research_only",
+  "note": "No privately licensed price tables, broker data, or portfolio records published.",
+  "calendar": {
+    "status": "ok",
+    "fred": {
+      "status": "ok",
+      "rows_seen": 1036,
+      "unmatched_releases": []
+    },
+    "events": 9,
+    "advisories": []
+  },
+  "market_news": {
+    "status": "ok",
+    "queries_asked": 14,
+    "queries_answered": 14,
+    "queries_skipped": 0,
+    "articles_seen": 400,
+    "from_listed_publishers": 400,
+    "kept": 36,
+    "company_stories": 16,
+    "seconds": 9.9,
+    "slowest_answer_seconds": 0.4,
+    "errors": [],
+    "advisories": [],
+    "feeds": {
+      "asked": 14,
+      "answered": 14,
+      "results": [
+        {
+          "id": "cnbc_finance",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 6
+        },
+        {
+          "id": "cnbc_earnings",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 4
+        },
+        {
+          "id": "cnbc_technology",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 30
+        },
+        {
+          "id": "cnbc_economy",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 3
+        },
+        {
+          "id": "cnbc_energy",
+          "publisher": "CNBC",
+          "status": "ok",
+          "items": 30,
+          "usable": 6
+        },
+        {
+          "id": "wsj_markets",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 61,
+          "usable": 30
+        },
+        {
+          "id": "wsj_technology",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 40,
+          "usable": 30
+        },
+        {
+          "id": "wsj_economy",
+          "publisher": "The Wall Street Journal",
+          "status": "ok",
+          "items": 36,
+          "usable": 10
+        },
+        {
+          "id": "marketwatch_top",
+          "publisher": "MarketWatch",
+          "status": "ok",
+          "items": 10,
+          "usable": 10
+        },
+        {
+          "id": "et_markets",
+          "publisher": "The Economic Times",
+          "status": "ok",
+          "items": 50,
+          "usable": 30
+        },
+        {
+          "id": "et_stocks",
+          "publisher": "The Economic Times",
+          "status": "ok",
+          "items": 50,
+          "usable": 30
+        },
+        {
+          "id": "businessline",
+          "publisher": "BusinessLine",
+          "status": "ok",
+          "items": 60,
+          "usable": 30
+        },
+        {
+          "id": "mint_markets",
+          "publisher": "Mint",
+          "status": "ok",
+          "items": 35,
+          "usable": 30
+        },
+        {
+          "id": "mint_companies",
+          "publisher": "Mint",
+          "status": "ok",
+          "items": 35,
+          "usable": 30
+        }
+      ]
+    },
+    "dropped": {
+      "older_than_limit": 121,
+      "same_headline_again": 18
+    },
+    "top_other_sites": []
+  },
+  "executive_summary": {
+    "method": "ai_validated",
+    "providers_tried": [
+      "gemini"
+    ],
+    "rejected_answers": 1,
+    "reasons": [
+      "gemini: no answer within 75 seconds"
+    ],
+    "ai_configured": true,
+    "empty_reply_retries": 0,
+    "models_seen": [
+      "gemini-3.5-flash"
+    ],
+    "model_results": [
+      {
+        "model": "gemini-3.5-flash",
+        "accepted": 16,
+        "rejected": 0,
+        "empty": 0
+      }
+    ]
+  }
+}
