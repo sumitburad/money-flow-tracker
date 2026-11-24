@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-24T17:53:54.783688+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-24T12:28:36.093238+00:00",
+  "as_of_ist": "2026-11-24T20:43:13.274925+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-24T15:17:59.173229+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -25,7 +25,7 @@
     "EU": {
       "series_id": "ECB_ILM_TOTAL_ASSETS",
       "status": "current",
-      "observation_date": "2026-11-13",
+      "observation_date": "2026-11-20",
       "source": "https://data-api.ecb.europa.eu/service/data/ILM/W.U2.C.T000000.Z5.Z01",
       "note": "Not a complete cross-border money flow measurement"
     },
@@ -60,25 +60,93 @@
   "institutional_flow_status": "not_configured",
   "ai_classification": {
     "model_configured": true,
-    "model_calls": 6,
-    "model_classified": 15,
-    "rule_fallback": 15,
-    "rejected_model_responses": 3,
+    "model_calls": 10,
+    "model_classified": 13,
+    "rule_fallback": 17,
+    "rejected_model_responses": 9,
     "providers_used": [
-      "gemini"
+      "openrouter"
     ],
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-3.5-flash"
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
     ],
     "failure_reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x3)"
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x6)",
+      "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions) (x2)",
+      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
+    ],
+    "free_pool": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "particle-ai/particle-1:free",
+      "google/gemma-4-31b-it:free"
+    ],
+    "pool_thinking": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "particle-ai/particle-1:free",
+      "google/gemma-4-31b-it:free"
+    ],
+    "pool_counts": {
+      "free models whose name says they are small": 1,
+      "free models with an unknown size that are not on a preferred list": 1,
+      "models on the avoid list": 2,
+      "free models seen": 12
+    },
+    "pool_seen": [
+      {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "result": "asked first, thinks briefly"
+      },
+      {
+        "id": "particle-ai/particle-1:free",
+        "result": "backup, thinks briefly"
+      },
+      {
+        "id": "google/gemma-4-31b-it:free",
+        "result": "backup, thinks briefly"
+      },
+      {
+        "id": "google/gemma-4-26b-a4b-it:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "dots-studio/dots-3-note-preview:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "inclusionai/ling-3.2-flash:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "liquid/lfm-3-1.7b:free",
+        "result": "too small"
+      },
+      {
+        "id": "recursive/flint-v1.0:free",
+        "result": "size unknown"
+      },
+      {
+        "id": "nvidia/nemotron-3.5-super-vl:free",
+        "result": "on the avoid list"
+      },
+      {
+        "id": "nvidia/nemotron-3.5-lightning:free",
+        "result": "on the avoid list"
+      }
     ],
     "model_results": [
       {
-        "model": "gemini-3.5-flash",
-        "accepted": 15,
-        "rejected": 0,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 13,
+        "rejected": 2,
         "empty": 0
       }
     ],
@@ -86,11 +154,10 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 57,
+    "items_with_signal": 58,
     "items_in_rotation": 61,
     "items_without_volume": [
       "hongkong",
-      "japan",
       "dollar",
       "usdinr",
       "eurusd",
@@ -138,9 +205,9 @@
     "articles_seen": 400,
     "from_listed_publishers": 400,
     "kept": 36,
-    "company_stories": 15,
-    "seconds": 11.5,
-    "slowest_answer_seconds": 1.9,
+    "company_stories": 14,
+    "seconds": 10.4,
+    "slowest_answer_seconds": 0.4,
     "errors": [],
     "advisories": [],
     "feeds": {
@@ -173,14 +240,14 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 3
+          "usable": 2
         },
         {
           "id": "cnbc_energy",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 7
+          "usable": 6
         },
         {
           "id": "wsj_markets",
@@ -201,7 +268,7 @@
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 36,
-          "usable": 8
+          "usable": 9
         },
         {
           "id": "marketwatch_top",
@@ -229,7 +296,7 @@
           "publisher": "BusinessLine",
           "status": "ok",
           "items": 60,
-          "usable": 30
+          "usable": 29
         },
         {
           "id": "mint_markets",
@@ -248,30 +315,101 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 127,
-      "same_headline_again": 21
+      "older_than_limit": 128,
+      "same_headline_again": 21,
+      "unusable_headline": 1
     },
     "top_other_sites": []
   },
   "executive_summary": {
-    "method": "ai_validated",
+    "method": "rules_only",
     "providers_tried": [
-      "gemini"
+      "gemini",
+      "openrouter"
     ],
-    "rejected_answers": 1,
+    "rejected_answers": 4,
     "reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
+      "openrouter: rotation_view is too long"
     ],
     "ai_configured": true,
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-3.5-flash"
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
+    ],
+    "free_pool": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "particle-ai/particle-1:free",
+      "google/gemma-4-31b-it:free"
+    ],
+    "pool_thinking": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "particle-ai/particle-1:free",
+      "google/gemma-4-31b-it:free"
+    ],
+    "pool_counts": {
+      "free models whose name says they are small": 1,
+      "free models with an unknown size that are not on a preferred list": 1,
+      "models on the avoid list": 2,
+      "free models seen": 12
+    },
+    "pool_seen": [
+      {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "result": "asked first, thinks briefly"
+      },
+      {
+        "id": "particle-ai/particle-1:free",
+        "result": "backup, thinks briefly"
+      },
+      {
+        "id": "google/gemma-4-31b-it:free",
+        "result": "backup, thinks briefly"
+      },
+      {
+        "id": "google/gemma-4-26b-a4b-it:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "dots-studio/dots-3-note-preview:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "inclusionai/ling-3.2-flash:free",
+        "result": "spare, thinks"
+      },
+      {
+        "id": "liquid/lfm-3-1.7b:free",
+        "result": "too small"
+      },
+      {
+        "id": "recursive/flint-v1.0:free",
+        "result": "size unknown"
+      },
+      {
+        "id": "nvidia/nemotron-3.5-super-vl:free",
+        "result": "on the avoid list"
+      },
+      {
+        "id": "nvidia/nemotron-3.5-lightning:free",
+        "result": "on the avoid list"
+      }
     ],
     "model_results": [
       {
-        "model": "gemini-3.5-flash",
-        "accepted": 16,
-        "rejected": 0,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 13,
+        "rejected": 3,
         "empty": 0
       }
     ]

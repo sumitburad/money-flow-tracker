@@ -1,8 +1,8 @@
-Global money-flow monitor — 2026-11-24T17:53:54.783688+05:30
+Global money-flow monitor — 2026-11-24T20:43:13.274925+05:30
 
-Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Emerging markets.
+Data: Supportive evidence: not independently confirmed. Opposing evidence: Euro area equities proxy, Japan equities.
 
-Flow rotation: Money flows indicate widespread monthly and weekly outflows across equities, technology, and crypto, even as broader flow trends show subtle signs of improving momentum.
+Flow rotation: Money flow across the tracked markets is outflow-led over the month, outflow-led over the week and mixed on the latest day; the picture is improving.
 
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 
