@@ -1,8 +1,8 @@
-Global money-flow monitor — 2026-11-24T08:06:12.871194+05:30
+Global money-flow monitor — 2026-11-24T08:22:44.932319+05:30
 
 Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Emerging markets.
 
-Flow rotation: Capital flows indicate a risk-off mood as broad equity indices, technology sectors, and commodities experience persistent weekly and monthly outflows despite an improving overall trend.
+Flow rotation: Capital flows indicate an overall outflow-led environment across monthly and weekly horizons, though short-term momentum shows signs of improving, while risk tone remains firmly risk-off.
 
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 

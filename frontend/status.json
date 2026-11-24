@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-24T08:06:12.871194+05:30",
-  "run_slot": "manual",
-  "completed_at_utc": "2026-11-24T02:41:22.346610+00:00",
+  "as_of_ist": "2026-11-24T08:22:44.932319+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-24T02:56:21.106443+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -61,22 +61,23 @@
   "ai_classification": {
     "model_configured": true,
     "model_calls": 8,
-    "model_classified": 15,
-    "rule_fallback": 15,
-    "rejected_model_responses": 5,
+    "model_classified": 13,
+    "rule_fallback": 17,
+    "rejected_model_responses": 7,
     "providers_used": [
-      "openrouter",
-      "gemini"
+      "gemini",
+      "openrouter"
     ],
     "empty_reply_retries": 0,
     "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "gemini-3.5-flash"
+      "gemini-3.5-flash",
+      "nvidia/nemotron-3-ultra-550b-a55b:free"
     ],
     "failure_reasons": [
-      "gemini: no answer within 75 seconds (x2)",
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x2)",
-      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x3)",
+      "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions) (x2)",
+      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
+      "gemini: no answer within 75 seconds"
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -146,15 +147,15 @@
     ],
     "model_results": [
       {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 5,
+        "model": "gemini-3.5-flash",
+        "accepted": 10,
         "rejected": 0,
         "empty": 0
       },
       {
-        "model": "gemini-3.5-flash",
-        "accepted": 10,
-        "rejected": 0,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 3,
+        "rejected": 2,
         "empty": 0
       }
     ],
@@ -213,7 +214,7 @@
     "from_listed_publishers": 400,
     "kept": 36,
     "company_stories": 17,
-    "seconds": 10.9,
+    "seconds": 11.6,
     "slowest_answer_seconds": 0.5,
     "errors": [
       "Business Standard (bs_markets): the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)",
@@ -353,7 +354,7 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "gemini: no answer within 75 seconds"
     ],
     "ai_configured": true,
     "empty_reply_retries": 0,
@@ -428,15 +429,15 @@
     ],
     "model_results": [
       {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 5,
+        "model": "gemini-3.5-flash",
+        "accepted": 11,
         "rejected": 0,
         "empty": 0
       },
       {
-        "model": "gemini-3.5-flash",
-        "accepted": 11,
-        "rejected": 0,
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "accepted": 3,
+        "rejected": 2,
         "empty": 0
       }
     ]

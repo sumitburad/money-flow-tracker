@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-24T08:06:12.871194+05:30
+# Global Money-Flow Brief | 2026-11-24T08:22:44.932319+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Capital flows indicate a risk-off mood as broad equity indices, technology sectors, and commodities experience persistent weekly and monthly outflows despite an improving overall trend.
+Capital flows indicate an overall outflow-led environment across monthly and weekly horizons, though short-term momentum shows signs of improving, while risk tone remains firmly risk-off.
 
-The risk tone across the market is risk-off for both the month and the week. Outflows dominate over the weekly and monthly periods across regional equities, size and style categories, metals, and digital assets. Defensive shifts are visible as flows enter healthcare, pharma, and consumption funds locally, while technology, semiconductors, and high-yield credit suffer redemptions. US Treasuries and investment-grade bonds are attracting inflows. Meanwhile, India equity products show resilience with positive monthly participation.
+Across the month and week, outflows lead across Country and regional markets, Size and style, Metals, and Crypto. Over the week, money left US technology, AI and big-data theme, and major equity benchmarks like S&P 500, while moving into defensive pockets such as Nifty Pharma ETF (PHARMABEES) and US long Treasury proxy. Daily activity is mixed, but the overall trend shows signs of improving. The rotation view remains risk-off over both weekly and monthly windows.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 10 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 15 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T08:06:12.871194+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T08:22:44.932319+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
