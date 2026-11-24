@@ -13,7 +13,10 @@ from backend.market_news import (HEADERS, _plain, _site_of, ask, build_market_ne
                                  load_config, parse_seen, publisher_for, publisher_group)
 from backend.net import RetryingHttp
 
-REAL = load_config()                     # the settings file as shipped (publisher filter on)
+SHIPPED = load_config()                  # the settings file exactly as shipped (feeds on, news index off)
+REAL = copy.deepcopy(SHIPPED)            # the news index tests below ask the index, not the publisher feeds
+REAL["source"]["enabled"] = True
+REAL["feeds"]["enabled"] = False
 CFG = copy.deepcopy(REAL)
 CFG["source"]["publisher_filter"] = False   # most tests exercise the plain questions; the filter has its own section
 NOW = datetime(2026, 11, 22, 13, 37, tzinfo=timezone.utc)

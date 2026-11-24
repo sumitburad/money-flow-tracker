@@ -92,3 +92,72 @@ def test_odd_values_inside_the_news_block_never_crash_the_summary():
 def test_odd_values_never_crash_the_summary():
     status = {"status": "ok", "regime": "oops", "calendar": ["x"], "market_news": 3}
     assert "Money-flow refresh result" in summarize_run.build(status, {})
+
+
+# ------------------------------------------------------------------ the publishers' own news feeds
+
+def feeds_status(**extra):
+    news = {"status": "partial", "queries_asked": 16, "queries_answered": 13, "kept": 30, "company_stories": 9,
+            "articles_seen": 400, "from_listed_publishers": 380,
+            "feeds": {"asked": 16, "answered": 13, "results": [
+                {"id": "cnbc_finance", "publisher": "CNBC", "status": "ok", "items": 30, "usable": 30},
+                {"id": "wsj_markets", "publisher": "The Wall Street Journal", "status": "failed",
+                 "items": 0, "usable": 0, "error": "the feed answered HTTP 403 (it said: Access Denied)"},
+                {"id": "marketwatch_top", "publisher": "MarketWatch", "status": "failed",
+                 "items": 0, "usable": 0, "error": "no answer within 20 seconds (2 tries)"},
+                {"id": "mint_markets", "publisher": "Mint", "status": "skipped", "items": 0, "usable": 0,
+                 "error": "not asked: this website failed twice"}]}}
+    news.update(extra)
+    status = good_status()
+    status["market_news"] = news
+    return status
+
+
+def news_lines(status):
+    text = summarize_run.build(status, {})
+    return [l for l in text.splitlines() if "Market news" in l or "Feeds with a problem" in l]
+
+
+def test_feed_news_says_feeds_and_names_the_ones_with_a_problem():
+    assert news_lines(feeds_status()) == [
+        "- **Market news:** 30 headlines kept (9 about companies); 13 of 16 news feeds answered (some failed); "
+        "the feeds sent 400 headlines, 380 from the listed publishers",
+        "  - Feeds with a problem: The Wall Street Journal (the feed answered HTTP 403 (it said: Access Denied)); "
+        "MarketWatch (no answer within 20 seconds (2 tries)); Mint (not asked: this website failed twice)"]
+
+
+def test_a_clean_feed_run_has_no_problem_line():
+    status = feeds_status(status="ok", queries_answered=16)
+    for row in status["market_news"]["feeds"]["results"]:
+        row["status"] = "ok"
+    lines = news_lines(status)
+    assert lines == ["- **Market news:** 30 headlines kept (9 about companies); 16 of 16 news feeds answered; "
+                     "the feeds sent 400 headlines, 380 from the listed publishers"]
+
+
+def test_feeds_and_the_news_index_together_say_requests_and_sources():
+    lines = news_lines(feeds_status(publisher_filter="on"))
+    assert "13 of 16 news requests answered (some failed)" in lines[0]
+    assert "the news sources sent 400 headlines" in lines[0]
+
+
+def test_every_feed_failing_is_said_plainly_and_names_the_feeds():
+    status = feeds_status(status="unavailable", queries_answered=0, kept=0, company_stories=0)
+    lines = news_lines(status)
+    assert lines[0] == "- **Market news:** none of the publishers' news feeds could be read; the page says so"
+    assert lines[1].startswith("  - Feeds with a problem: The Wall Street Journal")
+
+
+def test_a_long_feed_error_is_cut_short_and_only_four_feeds_are_named():
+    status = feeds_status()
+    status["market_news"]["feeds"]["results"] = [
+        {"id": "f%d" % n, "publisher": "Publisher %d" % n, "status": "failed", "error": "x" * 300} for n in range(7)]
+    line = news_lines(status)[1]
+    assert line.count("Publisher ") == 4 and line.endswith("; and 3 more") and len(line) < 500
+
+
+def test_odd_values_inside_the_feed_notes_never_crash_the_summary():
+    for odd in ("x", 5, None, [1, None, "a"], {"results": "x"}, {"results": [1, None, {"status": "failed"}]}):
+        status = feeds_status()
+        status["market_news"]["feeds"] = odd
+        assert "Market news" in summarize_run.build(status, {})
