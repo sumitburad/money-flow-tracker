@@ -181,8 +181,18 @@ def build_questions(cfg, filtered=None):
 
 
 def _plain(text, limit=90):
-    """Text from a server made safe to show: no markup, no web addresses, no secrets, short."""
-    text = re.sub(r"https?://\S+", " ", re.sub(r"<[^>]*>", " ", str(text or "")))
+    """Text from a server made safe to show: no markup, no web addresses, no secrets, short.
+
+    Some error pages write their words as HTML codes (Business Standard's "Access Denied" page spells the
+    blocked address as ``http&#58;&#47;&#47;www...``), which hid the address from the clean-up and left
+    junk on the dashboard. The codes are turned into letters first (twice, in case a page encoded them
+    twice), and only then are markup and web addresses removed. A web address inside quotation marks
+    is removed together with its quotation marks."""
+    text = str(text or "")
+    for _ in range(2):
+        text = html.unescape(text)
+    text = re.sub(r"<[^>]*>", " ", text)
+    text = re.sub(r"[\"']?https?://[^\s\"']*[\"']?", " ", text)
     return redact(" ".join(text.split()))[:limit]
 
 

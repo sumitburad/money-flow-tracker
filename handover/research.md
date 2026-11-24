@@ -302,3 +302,30 @@ Open items (these replace the earlier lists)
 2. After the first live run read the Data quality box: every "News feed problem" line, "News detail", the executive-summary badge, "AI models:" and the publish lines from PR #18 ("Publish attempt 1 of 4", "Published on attempt 1"). Remove or replace dead feeds in `config/market_news.yaml`.
 3. Decisions listed above (terms, `dashboard_url`, scheduler R-10, a keyed news service).
 4. Minor warts, not changed: the tagger adds "No accepted AI responses" even when there are no headlines to tag; `PBOC_TOTAL_ASSETS` and `RBI_SYSTEM_LIQUIDITY` have no source; the June-dashboard gap list (sortable table, journal page, crypto extras, theme toggle) is unbuilt.
+
+## Update — 2026-11-24 (twelfth pass): the live run after the merges, and a clean-up (branch `research/news-error-cleanup`, pull request #20)
+**What happened.** On Sumit's words of 24 Nov, 08:00 IST ("merge 18, merge 19, run it"): PR #18 (publish safety) was merged at 08:01 IST as `675d236`; PR #19 (news from the publishers' own feeds) at 08:04:57 IST as `31a858e`; Research then started one refresh after checking that nothing was queued or running (daily.yml run 45313556621, slot `manual`, dispatched about 08:06 IST, finished successfully about 08:12 IST, data commit `72c0b7d`).
+
+**What the live run showed.**
+- News is back. 14 of the 16 listed feeds answered and 36 headlines were kept: 6 each from Mint, CNBC, The Wall Street Journal, The Economic Times, MarketWatch and BusinessLine. Each publisher hit its cap of 6 and the total hit the cap of 36, so more feeds would not add stories. The block status is `partial` (16 asked, 14 answered).
+- Business Standard refused both of its feeds (`bs_markets`, `bs_companies`) with HTTP 403 "Access Denied". Nothing else failed. The refusal page spells the blocked address as HTML codes (`http&#58;&#47;&#47;www...`), which the error-text cleaner did not decode, so the Data quality box showed junk after "it said:".
+- The algo app's rules still hold on the live feed (`tests/test_feed_consumer_contract.py`, 27 tests; 810 tests pass in all with the live data in place). The feed has 73 items, `regime`, `calendar`, `market_news` and `generated_at_utc` 2026-11-24T02:36:12Z.
+- PR #18's publish steps worked on a real run: "Publish attempt 1 of 4", the files-belong-together check, "Published on attempt 1".
+- The executive summary was written by AI and passed the rule check (AI-written in 3 of 3 runs since PR #17; this one by `gemini-3.5-flash`). The overall run status is "degraded" only because of the long-known `institutional_flows` gap (no authorised NSE broker feed or final NSDL access).
+- Three stories carry a time up to about 3.6 minutes after `generated_at_utc`: that stamp is set when the run starts and the news is read later. It is not a real future date; the advisory list was empty and the dashboard clamps negative ages. Not changed.
+
+**Changed in pull request #20 (not merged).**
+- `config/market_news.yaml`: `enabled: false` on `bs_markets` and `bs_companies`, with a comment saying why and how to turn them back on. 16 stay listed, 14 are read.
+- `backend/market_news.py` `_plain`: HTML codes are decoded (twice, in case a page coded them twice) before markup and web addresses are removed, and a web address inside quotation marks is removed together with its quotes.
+- Tests: 3 new in `tests/test_market_news_feeds.py` (the Business Standard page as it was; a page coded twice; markup written as codes; all three fail on the old cleaner); 2 changed to count only the feeds that are on, to check that a switched-off feed is never asked, and that every `enabled` is a real true or false.
+- Docs: `README.md`, `START_HERE.md` (its "not proven yet" and "waits for your OK" lines were stale), `docs/RUNBOOK.md`.
+- Expected on the next run: 14 asked and 14 answered, news status `ok`, no "News feed problem" lines. The overall run status stays "degraded" because of the institutional-flows gap.
+
+**Decisions for Sumit.** (1) Terms for the feeds before any charging: the full terms pages of CNBC, The Economic Times, Mint and BusinessLine are still unread, and snippets say Dow Jones and the NBC family allow feeds for personal, non-commercial use. (2) `dashboard_url` (left out; the dashboard is behind his Vercel sign-in and the address would sit in a public file). (3) The scheduler (R-10). (4) Whether to chase Business Standard (ask the publisher, or find another India source) or leave it off.
+
+**Left alone on purpose.** `gemini-2.5-flash` in `config/ai_models.yaml` still returns 404 for new accounts; GDELT's HTTP 429 text once carried its operator's email address into the public `docs/status.json`, so scrub email addresses from error text before ever switching GDELT back on; PBOC and RBI liquidity have no source; the tagger adds "No accepted AI responses" even with no headlines to tag.
+
+Open items (these replace the earlier lists)
+1. Pull request #20 waits for Sumit's words ("merge 20"). After it merges, one refresh shows whether the Business Standard lines are gone.
+2. Decisions listed above (terms, `dashboard_url`, scheduler R-10, Business Standard).
+3. Minor warts, not changed: the tagger line above; `PBOC_TOTAL_ASSETS` and `RBI_SYSTEM_LIQUIDITY` have no source; `gemini-2.5-flash` should be dropped from `config/ai_models.yaml` later; the June-dashboard gap list (sortable table, journal page, crypto extras, theme toggle) is unbuilt.
