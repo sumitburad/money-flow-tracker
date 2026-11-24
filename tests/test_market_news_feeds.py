@@ -152,6 +152,38 @@ def test_text_an_error_page_says_is_cleaned_before_it_is_shown():
     assert "api_key=abc" not in str(caught.value) and "https://" not in str(caught.value)
 
 
+# What Business Standard's "Access Denied" page looked like to GitHub's computers on 24 Nov 2026: the blocked
+# address is spelled as HTML codes, which used to slip past the clean-up and reach the dashboard as junk.
+CODED_DENIED_PAGE = (
+    b"<HTML><HEAD><TITLE>Access Denied</TITLE></HEAD><BODY><H1>Access Denied</H1> You don't have permission to access "
+    b'"http&#58;&#47;&#47;www&#46;business&#45;standard&#46;com&#47;rss&#47;markets&#45;106&#46;rss" on this server.<P>'
+    b"Reference&#32;&#35;18&#46;5c3a1002&#46;1763960000&#46;1b2c3d4e <P>"
+    b"https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;5c3a1002&#46;1763960000&#46;1b2c3d4e</BODY></HTML>")
+
+
+def test_an_error_page_that_writes_its_words_as_html_codes_is_shown_in_plain_letters():
+    with pytest.raises(requests.HTTPError) as caught:
+        read_feed(FeedFake({CNBC["url"]: Reply(CODED_DENIED_PAGE, status=403)}), CNBC, SHIPPED["feeds"])
+    message = str(caught.value)
+    assert message.startswith("the feed answered HTTP 403 (it said: Access Denied")
+    assert "permission to access on this server" in message      # the words are readable, the address and its quotes are gone
+    for junk in ("&", "#58", "http", "www", "business-standard", ".rss", "<", ">", '"'):
+        assert junk not in message, junk
+
+
+@pytest.mark.parametrize("page", [
+    b"Blocked http&amp;#58;&amp;#47;&amp;#47;secret.example&amp;#47;x?api_key=abc123456789",          # coded twice
+    b"&lt;b&gt;Blocked&lt;/b&gt; http&#58;&#47;&#47;secret.example&#47;x?api_key=abc123456789",       # markup written as codes
+])
+def test_codes_inside_an_error_page_never_bring_back_markup_or_web_addresses(page):
+    with pytest.raises(requests.HTTPError) as caught:
+        read_feed(FeedFake({CNBC["url"]: Reply(page, status=403)}), CNBC, SHIPPED["feeds"])
+    message = str(caught.value)
+    assert "Blocked" in message
+    for junk in ("&", "<", ">", "http", "secret.example", "api_key=abc"):
+        assert junk not in message, junk
+
+
 @pytest.mark.parametrize("exc,expected", [
     (requests.ReadTimeout("slow"), "no answer within 20 seconds (2 tries)"),
     (requests.ConnectTimeout("slow"), "could not be reached within 8 seconds (2 tries)"),
@@ -457,7 +489,8 @@ def test_the_shipped_settings_read_the_publisher_feeds_and_leave_the_news_index_
 def test_the_shipped_feed_list_is_sound():
     feeds, domains = SHIPPED["feeds"], [p["domain"] for p in SHIPPED["publishers"]]
     theme_ids = [t["id"] for t in SHIPPED["themes"]]
-    assert len(feeds["list"]) >= 8
+    assert len([f for f in feeds["list"] if f.get("enabled", True)]) >= 8     # the feeds that are switched on
+    assert all(isinstance(f.get("enabled", True), bool) for f in feeds["list"])   # "false" in quotes would count as on
     ids = [f["id"] for f in feeds["list"]]
     assert len(ids) == len(set(ids)) and all(i == i.lower() and " " not in i for i in ids)
     urls = [f["url"] for f in feeds["list"]]
@@ -490,7 +523,11 @@ def test_a_full_default_run_with_every_shipped_feed_answering_stays_inside_the_l
     block, health, pauses, fake = run(cfg, answers)
     valid(block)
     limits = cfg["limits"]
-    assert len(fake.calls) == len(cfg["feeds"]["list"]) and block["status"] == "ok"
+    switched_on = [f for f in cfg["feeds"]["list"] if f.get("enabled", True)]
+    asked = [c["url"] for c in fake.calls]
+    assert sorted(asked) == sorted(f["url"] for f in switched_on) and block["status"] == "ok"
+    assert not [f["id"] for f in cfg["feeds"]["list"] if not f.get("enabled", True) and f["url"] in asked]
+    assert block["queries"] == {"asked": len(switched_on), "answered": len(switched_on)}
     assert len(block["stories"]) <= limits["max_stories"]
     per = {}
     for s in block["stories"]:

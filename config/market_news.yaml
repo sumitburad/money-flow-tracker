@@ -50,8 +50,11 @@ feeds:
     - {id: marketwatch_top, domain: marketwatch.com, theme: us_markets, url: "https://feeds.marketwatch.com/marketwatch/topstories"}
     - {id: et_markets,      domain: economictimes.indiatimes.com, theme: india_markets, url: "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"}
     - {id: et_stocks,       domain: economictimes.indiatimes.com, theme: india_markets, url: "https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms"}
-    - {id: bs_markets,      domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/markets-106.rss"}
-    - {id: bs_companies,    domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/companies-101.rss"}
+    # Business Standard: both feeds are OFF. In the first live run (24 Nov 2026) its website answered "Access Denied"
+    # (HTTP 403) to GitHub's computers for both addresses, so asking only adds a problem line to the dashboard.
+    # To try them again, change "enabled: false" to "enabled: true" (or delete it) and read the Data quality box.
+    - {id: bs_markets,      domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/markets-106.rss", enabled: false}
+    - {id: bs_companies,    domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/companies-101.rss", enabled: false}
     - {id: businessline,    domain: thehindubusinessline.com, theme: india_markets, url: "https://www.thehindubusinessline.com/feeder/default.rss"}
     - {id: mint_markets,    domain: livemint.com, theme: india_markets, url: "https://www.livemint.com/rss/markets"}
     - {id: mint_companies,  domain: livemint.com, theme: india_markets, url: "https://www.livemint.com/rss/companies"}
