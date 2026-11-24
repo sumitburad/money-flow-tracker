@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-24T08:22:44.932319+05:30",
-  "run_slot": "backup",
-  "completed_at_utc": "2026-11-24T02:56:21.106443+00:00",
+  "as_of_ist": "2026-11-24T17:53:54.783688+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-24T12:28:36.093238+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -60,102 +60,25 @@
   "institutional_flow_status": "not_configured",
   "ai_classification": {
     "model_configured": true,
-    "model_calls": 8,
-    "model_classified": 13,
-    "rule_fallback": 17,
-    "rejected_model_responses": 7,
+    "model_calls": 6,
+    "model_classified": 15,
+    "rule_fallback": 15,
+    "rejected_model_responses": 3,
     "providers_used": [
-      "gemini",
-      "openrouter"
+      "gemini"
     ],
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-3.5-flash",
-      "nvidia/nemotron-3-ultra-550b-a55b:free"
+      "gemini-3.5-flash"
     ],
     "failure_reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x3)",
-      "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions) (x2)",
-      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
-      "gemini: no answer within 75 seconds"
-    ],
-    "free_pool": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "particle-ai/particle-1:free",
-      "google/gemma-4-31b-it:free"
-    ],
-    "pool_thinking": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "particle-ai/particle-1:free",
-      "google/gemma-4-31b-it:free"
-    ],
-    "pool_counts": {
-      "free models whose name says they are small": 1,
-      "free models with an unknown size that are not on a preferred list": 1,
-      "models on the avoid list": 2,
-      "free models seen": 12
-    },
-    "pool_seen": [
-      {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "result": "asked first, thinks briefly"
-      },
-      {
-        "id": "particle-ai/particle-1:free",
-        "result": "backup, thinks briefly"
-      },
-      {
-        "id": "google/gemma-4-31b-it:free",
-        "result": "backup, thinks briefly"
-      },
-      {
-        "id": "google/gemma-4-26b-a4b-it:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "dots-studio/dots-3-note-preview:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "baidu/ernie-5.5-flash-preview:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "inclusionai/ling-3.2-flash:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "liquid/lfm-3-1.7b:free",
-        "result": "too small"
-      },
-      {
-        "id": "recursive/flint-v1.0:free",
-        "result": "size unknown"
-      },
-      {
-        "id": "nvidia/nemotron-3.5-super-vl:free",
-        "result": "on the avoid list"
-      },
-      {
-        "id": "nvidia/nemotron-3.5-lightning:free",
-        "result": "on the avoid list"
-      }
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x3)"
     ],
     "model_results": [
       {
         "model": "gemini-3.5-flash",
-        "accepted": 10,
+        "accepted": 15,
         "rejected": 0,
-        "empty": 0
-      },
-      {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 3,
-        "rejected": 2,
         "empty": 0
       }
     ],
@@ -163,9 +86,11 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 59,
+    "items_with_signal": 57,
     "items_in_rotation": 61,
     "items_without_volume": [
+      "hongkong",
+      "japan",
       "dollar",
       "usdinr",
       "eurusd",
@@ -206,23 +131,20 @@
     "advisories": []
   },
   "market_news": {
-    "status": "partial",
-    "queries_asked": 16,
+    "status": "ok",
+    "queries_asked": 14,
     "queries_answered": 14,
     "queries_skipped": 0,
     "articles_seen": 400,
     "from_listed_publishers": 400,
     "kept": 36,
-    "company_stories": 17,
-    "seconds": 11.6,
-    "slowest_answer_seconds": 0.5,
-    "errors": [
-      "Business Standard (bs_markets): the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)",
-      "Business Standard (bs_companies): the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
-    ],
+    "company_stories": 15,
+    "seconds": 11.5,
+    "slowest_answer_seconds": 1.9,
+    "errors": [],
     "advisories": [],
     "feeds": {
-      "asked": 16,
+      "asked": 14,
       "answered": 14,
       "results": [
         {
@@ -230,35 +152,35 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 5
+          "usable": 4
         },
         {
           "id": "cnbc_earnings",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 1
+          "usable": 2
         },
         {
           "id": "cnbc_technology",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 25
+          "usable": 30
         },
         {
           "id": "cnbc_economy",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 2
+          "usable": 3
         },
         {
           "id": "cnbc_energy",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 6
+          "usable": 7
         },
         {
           "id": "wsj_markets",
@@ -272,14 +194,14 @@
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 40,
-          "usable": 27
+          "usable": 29
         },
         {
           "id": "wsj_economy",
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 36,
-          "usable": 5
+          "usable": 8
         },
         {
           "id": "marketwatch_top",
@@ -301,22 +223,6 @@
           "status": "ok",
           "items": 50,
           "usable": 30
-        },
-        {
-          "id": "bs_markets",
-          "publisher": "Business Standard",
-          "status": "failed",
-          "items": 0,
-          "usable": 0,
-          "error": "the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
-        },
-        {
-          "id": "bs_companies",
-          "publisher": "Business Standard",
-          "status": "failed",
-          "items": 0,
-          "usable": 0,
-          "error": "the feed answered HTTP 403 (it said: Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;www&#4)"
         },
         {
           "id": "businessline",
@@ -342,8 +248,8 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 139,
-      "same_headline_again": 29
+      "older_than_limit": 127,
+      "same_headline_again": 21
     },
     "top_other_sites": []
   },
@@ -354,90 +260,18 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "gemini: no answer within 75 seconds"
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     ],
     "ai_configured": true,
     "empty_reply_retries": 0,
     "models_seen": [
       "gemini-3.5-flash"
     ],
-    "free_pool": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "particle-ai/particle-1:free",
-      "google/gemma-4-31b-it:free"
-    ],
-    "pool_thinking": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "particle-ai/particle-1:free",
-      "google/gemma-4-31b-it:free"
-    ],
-    "pool_counts": {
-      "free models whose name says they are small": 1,
-      "free models with an unknown size that are not on a preferred list": 1,
-      "models on the avoid list": 2,
-      "free models seen": 12
-    },
-    "pool_seen": [
-      {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "result": "asked first, thinks briefly"
-      },
-      {
-        "id": "particle-ai/particle-1:free",
-        "result": "backup, thinks briefly"
-      },
-      {
-        "id": "google/gemma-4-31b-it:free",
-        "result": "backup, thinks briefly"
-      },
-      {
-        "id": "google/gemma-4-26b-a4b-it:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "dots-studio/dots-3-note-preview:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "baidu/ernie-5.5-flash-preview:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "inclusionai/ling-3.2-flash:free",
-        "result": "spare, thinks"
-      },
-      {
-        "id": "liquid/lfm-3-1.7b:free",
-        "result": "too small"
-      },
-      {
-        "id": "recursive/flint-v1.0:free",
-        "result": "size unknown"
-      },
-      {
-        "id": "nvidia/nemotron-3.5-super-vl:free",
-        "result": "on the avoid list"
-      },
-      {
-        "id": "nvidia/nemotron-3.5-lightning:free",
-        "result": "on the avoid list"
-      }
-    ],
     "model_results": [
       {
         "model": "gemini-3.5-flash",
-        "accepted": 11,
+        "accepted": 16,
         "rejected": 0,
-        "empty": 0
-      },
-      {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 3,
-        "rejected": 2,
         "empty": 0
       }
     ]

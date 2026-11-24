@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-24T08:22:44.932319+05:30
+# Global Money-Flow Brief | 2026-11-24T17:53:54.783688+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Capital flows indicate an overall outflow-led environment across monthly and weekly horizons, though short-term momentum shows signs of improving, while risk tone remains firmly risk-off.
+Money flows indicate widespread monthly and weekly outflows across equities, technology, and crypto, even as broader flow trends show subtle signs of improving momentum.
 
-Across the month and week, outflows lead across Country and regional markets, Size and style, Metals, and Crypto. Over the week, money left US technology, AI and big-data theme, and major equity benchmarks like S&P 500, while moving into defensive pockets such as Nifty Pharma ETF (PHARMABEES) and US long Treasury proxy. Daily activity is mixed, but the overall trend shows signs of improving. The rotation view remains risk-off over both weekly and monthly windows.
+The market risk tone is risk-off across both monthly and weekly periods. Money flows are outflow-led across regional equity markets, tech sectors, growth style assets, and metals over the week and month. However, overall trends are improving. Capital appears to move into select Indian equity trackers, fixed income proxies such as the US long Treasury proxy, and the US dollar (ETF proxy), while capital continues exiting major technology and broader stock proxies.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 10 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 15 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T08:22:44.932319+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T17:53:54.783688+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
