@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-23T20:44:49.580949+05:30
+# Global Money-Flow Brief | 2026-11-24T06:41:50.433769+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Broad outflows persist across global equities, sectors, and risk assets; Indian equities and select domestic sectors attract inflows; risk-off tone steady.
+Money flows reflect pervasive defensive positioning as broad equities, credit, and precious metals face steady outflows, while Indian thematic assets and long-term US Treasuries attract selective interest.
 
-Day, week, and month all show outflow-led moves across country markets, size and style, and real estate. Week adds sector, metals, and crypto outflows. Month adds sector, size, metals, and crypto outflows. Only India equities and Indian bank, pharma, consumption sectors see inflows. Bonds mixed with long Treasury and investment-grade credit inflows week, but high-yield outflows. Dollar gains versus euro and pound. Risk tone risk-off for both month and week, shift steady.
+The overall money-flow picture reflects an outflow-led backdrop across the month and week, though the daily signal shows an improving tone. The risk tone remains firmly risk-off across both monthly and weekly lenses. Outflows dominate country and regional markets, equity sectors, style factors, real estate, and crypto. Selling pressure is notable in the S&P 500, US technology, small caps, and gold. Conversely, selective inflows appear in India equities, domestic thematic funds like consumption and pharmaceuticals, and safe-haven proxies such as long Treasuries.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -14,9 +14,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
-- China equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
-- Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
-- Japan equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EN225/history/)
+- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
+- US small-cap stocks: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/IWM/history/)
 
 ## What is driving it
 - Federal Reserve announces College Fed Challenge winners — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm)
@@ -33,9 +33,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-- US personal income and spending (PCE inflation): 2026-11-25 (in 2 days). Date from FRED's release calendar.
-- US economic growth (GDP): 2026-11-25 (in 2 days). Date from FRED's release calendar.
-- US jobs report: 2026-12-04 (in 11 days). Date from FRED's release calendar.
-- Fed interest-rate decision (FOMC): 2026-12-09 (in 16 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
+- US personal income and spending (PCE inflation): 2026-11-25 (tomorrow). Date from FRED's release calendar.
+- US economic growth (GDP): 2026-11-25 (tomorrow). Date from FRED's release calendar.
+- US jobs report: 2026-12-04 (in 10 days). Date from FRED's release calendar.
+- Fed interest-rate decision (FOMC): 2026-12-09 (in 15 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-23T20:44:49.580949+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-24T06:41:50.433769+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
