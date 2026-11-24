@@ -2,15 +2,62 @@ version: 1
 # Market and company news (headlines beyond the Fed and ECB).
 #
 # Why: so the executive summary can explain stories such as a chip company's results.
-# Where from: GDELT, a free public news index (no key needed). Only the headline, the
-# publisher's name, a link and the time are kept. No article text is stored or shown.
-# Only the publishers listed below are used; everything else is dropped.
-# Nothing here can stop the daily refresh: if the news source is down the dashboard says so.
+#
+# Where from (since 24 Nov 2026): the news feeds that the publishers themselves put out for
+# readers and feed-reader programs (RSS). They are listed under "feeds" below. Only the
+# headline, the publisher's name, a link and the time are kept. No article text is stored
+# or shown, and every headline links back to the publisher.
+#
+# The free GDELT news index (section "source") was used before. It refuses or times out when
+# asked from GitHub's shared computers (4 to 6 live tries, all failed), so it is switched
+# off. The code for it is still there: set source.enabled to true to use it again.
+#
+# Only the publishers listed under "publishers" are used; everything else is dropped.
+# Nothing here can stop the daily refresh: if a news source is down the dashboard says so.
 # Set "enabled" to false to switch the whole feature off.
+#
+# Terms of use (read this before charging anyone for anything built on this page):
+#   Several publishers allow their feeds for personal, non-commercial use only. This applies to
+#   Dow Jones (The Wall Street Journal, MarketWatch, Barron's), and to NBCUniversal pages
+#   (CNBC's own terms were not read). The dashboard is free and carries headline, publisher
+#   and link only. If this project ever earns money, switch those feeds off (set
+#   "enabled: false" on a feed, or "feeds.enabled: false" for all) or ask the publisher.
 
 enabled: true
 
+feeds:
+  enabled: true
+  id: publisher_feeds
+  name: "The publishers' own news feeds"
+  home_page: "https://github.com/sumitburad/money-flow-tracker/blob/main/config/market_news.yaml"   # the list below
+  timeout_seconds: [8, 20]    # connect, read. A feed is a small file; a slow one is skipped
+  pause_seconds: 1.0          # wait between two requests to the same website
+  max_items_per_feed: 30      # newest headlines read from each feed
+  total_seconds: 150          # the feeds step stops asking new feeds after this long, to keep the refresh on time
+  # Each feed: its own short id, the publisher's website (must be listed under "publishers"), the
+  # address of the feed, and the theme used when a headline matches none of the theme keywords.
+  # Addresses were checked on public feed directories in Oct and Nov 2026. The first live run
+  # shows which of them GitHub's computers can really read (see the Data quality box).
+  list:
+    - {id: cnbc_finance,    domain: cnbc.com, theme: us_markets,      url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"}
+    - {id: cnbc_earnings,   domain: cnbc.com, theme: us_markets,      url: "https://www.cnbc.com/id/15839135/device/rss/rss.html"}
+    - {id: cnbc_technology, domain: cnbc.com, theme: ai_chips,        url: "https://www.cnbc.com/id/19854910/device/rss/rss.html"}
+    - {id: cnbc_economy,    domain: cnbc.com, theme: rates_inflation, url: "https://www.cnbc.com/id/20910258/device/rss/rss.html"}
+    - {id: cnbc_energy,     domain: cnbc.com, theme: commodities_fx,  url: "https://www.cnbc.com/id/19836768/device/rss/rss.html"}
+    - {id: wsj_markets,     domain: wsj.com,  theme: us_markets,      url: "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"}
+    - {id: wsj_technology,  domain: wsj.com,  theme: ai_chips,        url: "https://feeds.content.dowjones.io/public/rss/RSSWSJD"}
+    - {id: wsj_economy,     domain: wsj.com,  theme: rates_inflation, url: "https://feeds.content.dowjones.io/public/rss/socialeconomyfeed"}
+    - {id: marketwatch_top, domain: marketwatch.com, theme: us_markets, url: "https://feeds.marketwatch.com/marketwatch/topstories"}
+    - {id: et_markets,      domain: economictimes.indiatimes.com, theme: india_markets, url: "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"}
+    - {id: et_stocks,       domain: economictimes.indiatimes.com, theme: india_markets, url: "https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms"}
+    - {id: bs_markets,      domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/markets-106.rss"}
+    - {id: bs_companies,    domain: business-standard.com, theme: india_markets, url: "https://www.business-standard.com/rss/companies-101.rss"}
+    - {id: businessline,    domain: thehindubusinessline.com, theme: india_markets, url: "https://www.thehindubusinessline.com/feeder/default.rss"}
+    - {id: mint_markets,    domain: livemint.com, theme: india_markets, url: "https://www.livemint.com/rss/markets"}
+    - {id: mint_companies,  domain: livemint.com, theme: india_markets, url: "https://www.livemint.com/rss/companies"}
+
 source:
+  enabled: false            # the GDELT news index is off (see the top of this file). true = ask it as well
   id: gdelt_doc_2
   name: "GDELT news index"
   url: "https://api.gdeltproject.org/api/v2/doc/doc"      # what the program calls
@@ -36,6 +83,8 @@ limits:
   max_title_chars: 220
 
 # Only these publishers are used. A link must point to one of these websites.
+# (Reuters, AP, Bloomberg, the Financial Times and Barron's have no public headline feed, and Moneycontrol's
+# and the Financial Express's feeds were stale or unconfirmed in Nov 2026. They stay listed for the GDELT index.)
 publishers:
   - {domain: reuters.com, name: "Reuters"}
   - {domain: apnews.com, name: "Associated Press"}
@@ -52,27 +101,39 @@ publishers:
   - {domain: thehindubusinessline.com, name: "BusinessLine"}
   - {domain: financialexpress.com, name: "The Financial Express"}
 
-# Each theme is one question to the news index. Use plain words, "quoted phrases" and
-# (a OR b) groups. Avoid words shorter than three letters.
+# Each theme is one question to the GDELT news index (use plain words, "quoted phrases" and
+# (a OR b) groups; avoid words shorter than three letters). "keywords" are what a feed headline
+# is matched against, as whole words and ignoring capitals. A headline that matches none of them
+# gets the theme of the feed it came from.
 themes:
   - id: us_markets
     name: "US markets"
     query: '("stock market" OR "Wall Street" OR Nasdaq OR "Dow Jones")'
+    keywords: ["Wall Street", "Nasdaq", "Dow Jones", "S&P 500", "Russell 2000", "US stocks", "U.S. stocks"]
   - id: india_markets
     name: "India markets"
     query: '(Sensex OR Nifty OR "Dalal Street" OR "Indian stocks")'
+    keywords: ["Sensex", "Nifty", "Bank Nifty", "Dalal Street", "Indian stocks", "Indian shares", "FPI", "FII", "SEBI"]
   - id: rates_inflation
     name: "Rates and inflation"
     query: '("Federal Reserve" OR "Treasury yields" OR "interest rates" OR inflation)'
+    keywords: ["Federal Reserve", "Fed rate", "Fed cut", "Fed hike", "Fed minutes", "Fed chair", "Treasury yield",
+               "Treasury yields", "interest rate", "interest rates", "inflation", "CPI", "PCE", "rate cut",
+               "rate hike", "repo rate", "RBI policy", "monetary policy"]
   - id: ai_chips
     name: "AI and chips"
     query: '(Nvidia OR semiconductor OR "chip stocks" OR "artificial intelligence")'
+    keywords: ["Nvidia", "semiconductor", "semiconductors", "chip", "chips", "chipmaker", "chipmakers",
+               "artificial intelligence", "AI", "data center", "data centre"]
   - id: commodities_fx
     name: "Commodities and currencies"
     query: '("oil prices" OR "gold prices" OR "copper prices" OR "US dollar")'
+    keywords: ["oil", "crude", "Brent", "OPEC", "gold", "silver", "copper", "natural gas", "US dollar",
+               "dollar index", "rupee", "yen", "euro", "currency"]
   - id: crypto
     name: "Crypto"
     query: '(bitcoin OR ethereum OR cryptocurrency)'
+    keywords: ["bitcoin", "ethereum", "crypto", "cryptocurrency", "stablecoin", "Solana", "XRP"]
 
 # Companies whose results and news can move a market. A headline counts as a company
 # story only when the company's name appears in the headline itself.

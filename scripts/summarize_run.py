@@ -58,23 +58,50 @@ def new_feature_lines(status):
     news = status.get("market_news")
     if isinstance(news, dict) and news.get("status") != "not_available":
         state = news.get("status")
+        feeds = news.get("feeds")
+        results = feeds.get("results") if isinstance(feeds, dict) else None
+        by_feeds = isinstance(results, list)           # the publishers' own feeds were read
+        both = by_feeds and "publisher_filter" in news   # ... and the news index was asked as well
         if state == "disabled":
             lines.append("- **Market news:** switched off in the settings")
         elif state == "unavailable":
-            lines.append("- **Market news:** the free news index could not be reached; the page says so")
+            lines.append("- **Market news:** " + (
+                "none of the publishers' news feeds could be read; the page says so" if by_feeds
+                else "the free news index could not be reached; the page says so"))
+            lines.extend(_feed_problems(results))
         else:
-            text = "%s headlines kept (%s about companies); %s of %s questions answered%s" % (
+            unit = "news requests" if both else "news feeds" if by_feeds else "questions"
+            text = "%s headlines kept (%s about companies); %s of %s %s answered%s" % (
                 news.get("kept", 0), news.get("company_stories", 0), news.get("queries_answered", "?"),
-                news.get("queries_asked", "?"), "" if state == "ok" else " (some failed)")
+                news.get("queries_asked", "?"), unit, "" if state == "ok" else " (some failed)")
             if news.get("queries_skipped"):
                 text += "; %s more not asked" % news["queries_skipped"]
             if "articles_seen" in news and "from_listed_publishers" in news:
-                text += "; the news index sent %s headlines, %s from the listed publishers" % (
+                text += "; %s sent %s headlines, %s from the listed publishers" % (
+                    "the news sources" if both else "the feeds" if by_feeds else "the news index",
                     news["articles_seen"], news["from_listed_publishers"])
             if news.get("publisher_filter") == "switched off during this refresh":
                 text += "; the index refused the publisher filter, so it was turned off for this run"
             lines.append("- **Market news:** " + text)
+            lines.extend(_feed_problems(results))
     return lines
+
+
+def _feed_problems(results, limit=4):
+    """One short line naming the feeds that did not answer, or nothing. Odd values never crash this."""
+    if not isinstance(results, list):
+        return []
+    bad = [r for r in results if isinstance(r, dict) and r.get("status") in ("failed", "skipped", "empty")]
+    if not bad:
+        return []
+    def short(text, size=70):
+        text = " ".join(str(text).split())
+        return text if len(text) <= size else text[:size - 1].rstrip() + "…"
+
+    names = ["%s (%s)" % (short(r.get("publisher", "?"), 40), short(r.get("error") or r.get("status")))
+             for r in bad[:limit]]
+    more = len(bad) - limit
+    return ["  - Feeds with a problem: " + "; ".join(names) + ("; and %d more" % more if more > 0 else "")]
 
 
 def build(status, feed):
