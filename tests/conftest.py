@@ -1,10 +1,12 @@
 """Shared test setup."""
 import json
+from pathlib import Path
 
 import pytest
 import requests
 
 from backend import free_models
+from backend.feed_contract import FAMILIES
 
 
 @pytest.fixture(autouse=True)
@@ -39,3 +41,41 @@ class ModelList:
 @pytest.fixture
 def model_list():
     return ModelList
+
+
+@pytest.fixture
+def published_tree():
+    """Writes, into any folder, the files one healthy run leaves for publication.
+
+    Returns the feed it wrote (a dict). ``feed_extra`` adds or replaces top-level feed fields."""
+
+    def build(folder, day="2026-11-23", stamp="2026-11-23T16:10:42+05:30", **feed_extra):
+        folder = Path(folder)
+        blank = {"state": "not_available", "evidence": "none", "source": None}
+        item = {"id": "x", "item": "T", "group": "g", "symbol": "T", "region": "US",
+                "currency": "USD", "label": "Neutral/Mixed", "tag": "Steady",
+                "agreement": "Weak", "freshness": "current",
+                "families": {name: dict(blank) for name in FAMILIES}}
+        feed = {"schema_version": "1.0", "usage": "research_only_not_order_authorization",
+                "generated_at_utc": "2026-11-23T10:40:42+00:00", "as_of_ist": stamp,
+                "run_date_ist": day, "items": [item], "macro": {}}
+        feed.update(feed_extra)
+        status = {"as_of_ist": stamp, "run_slot": "primary", "status": "degraded"}
+
+        def put(relative, value):
+            path = folder / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(value, indent=2) + "\n" if isinstance(value, dict) else value,
+                            encoding="utf-8")
+
+        for relative in ("data/feed/v1/latest.json", "docs/feed/v1/latest.json",
+                         "frontend/feed/v1/latest.json", "data/feed/v1/daily/%s.json" % day):
+            put(relative, feed)
+        for relative in ("docs/status.json", "frontend/status.json", "data/health/%s.json" % day):
+            put(relative, status)
+        for base in ("data/history/v1", "docs/history/v1", "frontend/history/v1"):
+            put(base + "/manifest.json", {"series": 1})
+            put(base + "/fred/DGS2.csv", "observation_date,DGS2\n2026-11-12,4.10\n")
+        return feed
+
+    return build
