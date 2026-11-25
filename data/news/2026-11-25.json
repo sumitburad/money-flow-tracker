@@ -15,12 +15,14 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Release of central bank discount rate meeting minutes with unconfirmed market reaction.",
+      "one_line_reason": "Federal Reserve discount rate minutes released without explicit market impact confirmed",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -49,7 +51,7 @@
       "horizon": "intraday",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Announcement of student competition winners has no direct financial market impact.",
+      "one_line_reason": "Announcement regarding a college competition winner has no market impact",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -74,14 +76,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Survey on bank reserve balance management strategies has unconfirmed market reaction.",
+      "one_line_reason": "Survey results on bank reserve balances published with unclear market direction",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -106,14 +107,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Enforcement action against a former employee with unconfirmed market reaction.",
+      "one_line_reason": "Enforcement action against an individual employee lacks direct market reaction",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -137,12 +137,15 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "S&P 500",
+        "US long Treasury proxy"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Release of central bank policy meeting minutes with unconfirmed market reaction.",
+      "one_line_reason": "Federal Open Market Committee minutes published without immediate directional market consensus",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -167,14 +170,14 @@
         "US"
       ],
       "affected": [
-        "US financials",
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal agencies extended the public comment period for proposed third-party risk management guidance.",
+      "one_line_reason": "Regulatory agencies extended the public comment period for third party risk management guidance.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -199,14 +202,14 @@
         "US"
       ],
       "affected": [
-        "US financials",
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Federal Reserve announced future payment service pricing and check service adjustments for banking institutions.",
+      "one_line_reason": "The central bank announced future pricing adjustments and changes for payment and check services.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -235,7 +238,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Federal Reserve released a revised tentative schedule for future monetary policy meetings.",
+      "one_line_reason": "The Federal Reserve published a revised tentative schedule for policy meetings.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -266,7 +269,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The regulator issued an enforcement action regarding a former employee of a specific bank.",
+      "one_line_reason": "The regulatory board issued an enforcement action regarding a former bank employee.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -294,10 +297,10 @@
         "US banks"
       ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Regulators approved applications submitted by banking entities.",
+      "one_line_reason": "The regulatory board approved corporate applications for bank holding entities.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -329,7 +332,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Federal Reserve ended enforcement actions against specified banking entities, relieving regulatory oversight constraints.",
+      "one_line_reason": "Termination of enforcement action relieves regulatory pressure on specified banking institutions.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -361,7 +364,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve approved a bank application, facilitating regulatory expansion approval.",
+      "one_line_reason": "Regulatory approval permits the bank application to proceed.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -385,15 +388,12 @@
       "region": [
         "US"
       ],
-      "affected": [
-        "S&P 500",
-        "US long Treasury proxy"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Open Market Committee statement release provides monetary policy decisions without immediate directional outcome disclosed.",
+      "one_line_reason": "Release of central bank monetary policy statement without specific policy outcomes cited.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -425,7 +425,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Termination of bank enforcement actions removes regulatory operational restrictions.",
+      "one_line_reason": "Ending regulatory actions reduces operational burdens for the listed banking entities.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -445,19 +445,16 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "13bcdbfd6a06c614",
-      "event_type": "central_bank",
+      "event_type": "rates",
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks",
-        "US long Treasury proxy"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve discount rate meeting minutes reveal internal policy discussions without implicit market bias.",
+      "one_line_reason": "Publication of discount rate meeting minutes without specified rate changes.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
