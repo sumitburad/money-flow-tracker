@@ -1,8 +1,8 @@
-Global money-flow monitor — 2026-11-25T06:06:28.993902+05:30
+Global money-flow monitor — 2026-11-25T16:42:24.436725+05:30
 
-Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Hong Kong equities.
+Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Euro area equities proxy.
 
-Flow rotation: Outflows dominate global equities and commodities across weekly and monthly windows despite daily trend improvements, as market sentiment maintains a firm risk-off posture overall.
+Flow rotation: Capital overall experiences an outflow-led month and week despite improving broad trends, while equity sectors show resilience alongside a persistent risk-off environment across major asset classes.
 
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 

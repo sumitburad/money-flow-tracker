@@ -1,8 +1,8 @@
-1/ Global money flow | 2026-11-25T06:06:28.993902+05:30. Categorical, evidence-based signals; no scores.
+1/ Global money flow | 2026-11-25T16:42:24.436725+05:30. Categorical, evidence-based signals; no scores.
 
-2/ Supportive: not confirmed; opposing: China equities proxy, Hong Kong equities.
+2/ Supportive: not confirmed; opposing: China equities proxy, Euro area equities proxy.
 
-3/ Flow rotation: Outflows dominate global equities and commodities across weekly and monthly windows despite daily trend improvements, as market sentiment maintains a firm risk-off posture overall.
+3/ Flow rotation: Capital overall experiences an outflow-led month and week despite improving broad trends, while equity sectors show resilience alongside a persistent risk-off environment across major asset classes.
 
 4/ Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
 

@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-25T06:06:28.993902+05:30
+# Global Money-Flow Brief | 2026-11-25T16:42:24.436725+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Outflows dominate global equities and commodities across weekly and monthly windows despite daily trend improvements, as market sentiment maintains a firm risk-off posture overall.
+Capital overall experiences an outflow-led month and week despite improving broad trends, while equity sectors show resilience alongside a persistent risk-off environment across major asset classes.
 
-Across the month and week, money flows show widespread outflows across Country and regional markets, Size and style, Metals, and Crypto. S&P 500, Semiconductors, and Bitcoin face sustained selling pressure, though Indian equity proxies like Nifty 50 ETF (NIFTYBEES) attract gains. Broad market participation remains negative across short and medium horizons despite minor day-level stabilization. The risk tone is risk-off across both weekly and monthly measures.
+The overall rotation view shows money flows remain risk-off across both the month and week windows. Across weekly frames, outflows lead across Country and regional markets, Size and style, Metals, Crypto, and Real estate (REITs). Money moved out of S&P 500, Nasdaq 100, Bitcoin, Gold, and Semiconductors. However, positive weekly participation entered regional assets like Nifty 50 ETF (NIFTYBEES) and targeted groups such as US long Treasury proxy and Nifty IT ETF (ITBEES). Overall monthly trends show improving conditions despite broad selling pressure.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -15,8 +15,8 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
 - China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
-- Hong Kong equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EHSI/history/)
 - Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
+- Emerging markets: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
 - Minutes of the Board's discount rate meetings on October 19 and October 28, 2026 — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm)
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 9 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 14 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-25T06:06:28.993902+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-25T16:42:24.436725+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
