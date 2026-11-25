@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-25T04:44:58.684562+05:30
+# Global Money-Flow Brief | 2026-11-25T06:06:28.993902+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Capital exits regional equities and crypto as risk-off tone persists
+Outflows dominate global equities and commodities across weekly and monthly windows despite daily trend improvements, as market sentiment maintains a firm risk-off posture overall.
 
-Across the month and week, outflows led broad country markets, metals, crypto, and size-style proxies, though overall market trends show signs of improving. Equity sectors lead monthly inflows, supported by defensive healthcare, consumer staples, and domestic bank funds. In contrast, technology, semiconductors, and big data face weekly and monthly pressure. Fixed income exhibits mixed movement, with weekly gains in long Treasuries alongside steady energy flows. The rotation view indicates a risk-off risk tone across both the monthly and weekly horizons.
+Across the month and week, money flows show widespread outflows across Country and regional markets, Size and style, Metals, and Crypto. S&P 500, Semiconductors, and Bitcoin face sustained selling pressure, though Indian equity proxies like Nifty 50 ETF (NIFTYBEES) attract gains. Broad market participation remains negative across short and medium horizons despite minor day-level stabilization. The risk tone is risk-off across both weekly and monthly measures.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US jobs report: 2026-12-04 (in 9 days). Date from FRED's release calendar.
 - Fed interest-rate decision (FOMC): 2026-12-09 (in 14 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-25T04:44:58.684562+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-25T06:06:28.993902+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

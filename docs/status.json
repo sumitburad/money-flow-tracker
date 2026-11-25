@@ -1,12 +1,12 @@
 {
-  "as_of_ist": "2026-11-25T04:44:58.684562+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-24T23:20:02.930027+00:00",
+  "as_of_ist": "2026-11-25T06:06:28.993902+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-25T00:40:13.223141+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
   "items_configured": 73,
-  "price_proxies_current": 72,
+  "price_proxies_current": 73,
   "macro_series_available": 11,
   "macro_series_current": 11,
   "macro_series_stale": [],
@@ -72,7 +72,8 @@
       "gemini-3.5-flash"
     ],
     "failure_reasons": [
-      "gemini: no answer within 75 seconds (x3)"
+      "gemini: no answer within 75 seconds (x2)",
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     ],
     "model_results": [
       {
@@ -86,10 +87,9 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 57,
+    "items_with_signal": 59,
     "items_in_rotation": 61,
     "items_without_volume": [
-      "uk",
       "dollar",
       "usdinr",
       "eurusd",
@@ -109,9 +109,7 @@
     },
     "checks_total": 8
   },
-  "missing": [
-    "japan"
-  ],
+  "missing": [],
   "errors": [
     {
       "source": "institutional_flows",
@@ -139,9 +137,9 @@
     "articles_seen": 400,
     "from_listed_publishers": 400,
     "kept": 36,
-    "company_stories": 16,
-    "seconds": 9.9,
-    "slowest_answer_seconds": 0.4,
+    "company_stories": 15,
+    "seconds": 51.1,
+    "slowest_answer_seconds": 24.6,
     "errors": [],
     "advisories": [],
     "feeds": {
