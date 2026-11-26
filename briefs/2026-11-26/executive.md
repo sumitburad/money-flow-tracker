@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-26T04:13:04.855115+05:30
+# Global Money-Flow Brief | 2026-11-26T05:45:00.005917+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Broad equity outflows persist while defensive sectors and bonds attract money; risk-off tone holds as trend improves
+Mixed daily flows; weekly and monthly outflows persist but trend improving; sectors attract money while markets metals crypto see withdrawals; risk-off tone holds.
 
-Day shows mixed signals with money entering bonds, metals and real estate. Week and month both show outflows from broad country markets, metals and crypto, while equity sectors led by Indian financials, healthcare and US staples see inflows. Size and style sees persistent outflows from US growth and value. Bond inflows favor long Treasuries and investment-grade credit. Risk tone remains risk-off across month and week with steady shift. Overall trend is improving as outflows moderate.
+Day shows mixed participation with money moving into bonds metals and real estate. Week shows equity sectors drawing inflows led by Indian technology banking and pharma alongside US healthcare and staples while country markets metals and crypto see outflows. Month mirrors weekly pattern with sectors still gaining but broader markets size and style metals and crypto losing flow. Overall trend is improving. Risk tone remains risk-off across both month and week with no shift.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and r
 - US consumer price inflation (CPI): 2026-12-10 (in 14 days). Date from FRED's release calendar.
 - US producer prices (PPI): 2026-12-15 (in 19 days). Date from FRED's release calendar.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-26T04:13:04.855115+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-26T05:45:00.005917+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
