@@ -1,10 +1,10 @@
-Global money-flow monitor — 2026-11-26T05:45:00.005917+05:30
+Global money-flow monitor — 2026-11-26T16:17:33.063295+05:30
 
-Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Hong Kong equities.
+Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Euro area equities proxy.
 
-Flow rotation: Mixed daily flows; weekly and monthly outflows persist but trend improving; sectors attract money while markets metals crypto see withdrawals; risk-off tone holds.
+Flow rotation: Indian equities and defensive sectors attract flows while US large-cap technology and metals see outflows; monthly trend improving from risk-off base
 
-Risk tone, from a checklist of market groups: risk-off over the last month and risk-off over the last week.
+Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
 
 Reading: Volume patterns are not direct fund flows. Verify source freshness and the six evidence families before making financial decisions.
 

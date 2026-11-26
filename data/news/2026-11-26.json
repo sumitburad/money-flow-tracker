@@ -17,13 +17,14 @@
       ],
       "affected": [
         "US banks",
-        "US financials"
+        "US financials",
+        "US consumer discretionary"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Regulatory threshold announcement for consumer lending rules",
+      "one_line_reason": "Regulatory thresholds set for consumer credit and leasing rules",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -56,7 +57,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Mortgage appraisal exemption threshold announcement",
+      "one_line_reason": "Mortgage appraisal exemption thresholds announced for smaller loans",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -76,23 +77,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f5859676338445cf",
-      "event_type": "central_bank",
+      "event_type": "other",
       "region": [
         "US"
       ],
-      "affected": [
-        "US short-term Treasuries",
-        "US dollar index",
-        "US banks"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Discount rate meeting minutes released",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -118,7 +113,7 @@
       "horizon": "intraday",
       "novelty": "new",
       "confidence": "low",
-      "one_line_reason": "Educational competition winners announced",
+      "one_line_reason": "College Fed Challenge winners announced by Federal Reserve",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -151,7 +146,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Survey on bank reserve management strategies released",
+      "one_line_reason": "Survey results on bank reserve management strategies published",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -179,7 +174,7 @@
         "US banks"
       ],
       "direction": "unclear",
-      "horizon": "weeks",
+      "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
       "one_line_reason": "Fed enforcement action against former bank employee",
@@ -202,17 +197,23 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "a34973bc4d957dc2",
-      "event_type": "other",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "S&P 500",
+        "US long Treasury proxy",
+        "US dollar index"
+      ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "FOMC minutes released for October meeting",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -234,14 +235,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "follow_up",
       "confidence": "medium",
-      "one_line_reason": "Agencies extend comment period for third-party risk guidance",
+      "one_line_reason": "Agencies extend comment period for risk guidance",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -265,13 +265,17 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US banks"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "months",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Fed announces new payment services pricing",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -419,7 +423,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Fed approves application for Bank of Nova Scotia",
+      "one_line_reason": "Fed approves application for international bank",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -444,10 +448,7 @@
         "US"
       ],
       "affected": [
-        "S&P 500",
-        "US long Treasury proxy",
-        "US dollar index",
-        "US VIX"
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "intraday",
