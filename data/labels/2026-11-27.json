@@ -1,0 +1,5522 @@
+{
+  "as_of": "2026-11-27T04:04:12.545427+05:30",
+  "items": [
+    {
+      "id": "sp500",
+      "item": "S&P 500",
+      "group": "equity_market",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^GSPC",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:30.903882+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "opposing",
+          "evidence": "CFTC TFF weekly asset-manager net futures position decreased; positions do not reveal why traders hold them",
+          "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+          "observed_at": "2026-11-17",
+          "method": "cftc_asset_manager_futures_only_weekly"
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "nasdaq100",
+      "item": "Nasdaq 100",
+      "group": "equity_market",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^NDX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.019792+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENDX/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "neutral",
+          "evidence": "Equal-weight and cap-weight ETF performance broadly matched; NOT constituent breadth or direct flows",
+          "source": "https://finance.yahoo.com/quote/QQEW/",
+          "observed_at": "2026-11-25",
+          "method": "relative_equal_weight_vs_cap_weight_etf_proxy"
+        },
+        "positioning": {
+          "state": "supportive",
+          "evidence": "CFTC TFF weekly asset-manager net futures position increased; positions do not reveal why traders hold them",
+          "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+          "observed_at": "2026-11-17",
+          "method": "cftc_asset_manager_futures_only_weekly"
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "nifty50",
+      "item": "Nifty 50",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^NSEI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.126024+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENSEI/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftybank",
+      "item": "Nifty Bank",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^NSEBANK",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.231117+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ENSEBANK/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftyit",
+      "item": "Nifty IT",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^CNXIT",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.334371+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ECNXIT/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "nifty500",
+      "item": "Nifty 500",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^CRSLDX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.444436+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5ECRSLDX/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftymid",
+      "item": "Nifty Midcap 150 ETF proxy",
+      "group": "style",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "MID150BEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "not_available",
+        "reason": "Fewer than 25 completed sessions of history"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.551779+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/MID150BEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "not_available",
+          "evidence": "Insufficient 200-session price history",
+          "source": null
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Insufficient 200-session price history. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftysmall",
+      "item": "Nifty Smallcap 250 ETF proxy",
+      "group": "style",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "SMALLADD.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "week": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.654770+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SMALLADD.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "china",
+      "item": "China equities proxy",
+      "group": "equity_market",
+      "region": "CN",
+      "currency": "USD",
+      "symbol": "FXI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/FXI/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.802154+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FXI/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FXI/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "hongkong",
+      "item": "Hong Kong equities",
+      "group": "equity_market",
+      "region": "HK",
+      "currency": "HKD",
+      "symbol": "^HSI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:31.913009+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EHSI/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "europe",
+      "item": "Euro area equities proxy",
+      "group": "equity_market",
+      "region": "EU",
+      "currency": "USD",
+      "symbol": "FEZ",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/FEZ/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.060008+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FEZ/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FEZ/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "japan",
+      "item": "Japan equities",
+      "group": "equity_market",
+      "region": "JP",
+      "currency": "JPY",
+      "symbol": "^N225",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5EN225/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.172010+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EN225/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "uk",
+      "item": "UK equities",
+      "group": "equity_market",
+      "region": "UK",
+      "currency": "GBP",
+      "symbol": "^FTSE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:32.313697+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EFTSE/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "em",
+      "item": "Emerging markets",
+      "group": "equity_market",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "EEM",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/EEM/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.450494+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EEM/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EEM/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "russell2000",
+      "item": "US small-cap stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWM",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/IWM/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.634558+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWM/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWM/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_growth",
+      "item": "US growth stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWF",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/IWF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.796516+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWF/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWF/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "us_value",
+      "item": "US value stocks",
+      "group": "style",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "IWD",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/IWD/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:32.944128+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/IWD/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/IWD/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "semis",
+      "item": "Semiconductors",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "SOXX",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/SOXX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.090698+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SOXX/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SOXX/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "us_technology",
+      "item": "US technology",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLK",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLK/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.247287+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLK/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLK/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "us_financials",
+      "item": "US financials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLF",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.433845+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLF/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLF/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_banks",
+      "item": "US banks",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "KBE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/KBE/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.618290+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/KBE/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/KBE/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "us_healthcare",
+      "item": "US healthcare",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLV",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLV/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.762258+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLV/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLV/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_energy",
+      "item": "US energy",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLE/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:33.912429+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLE/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLE/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_industrials",
+      "item": "US industrials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLI/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.073845+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLI/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLI/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "us_staples",
+      "item": "US consumer staples",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLP",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLP/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.220810+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLP/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLP/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_consumer",
+      "item": "US consumer discretionary",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLY",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLY/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.380344+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLY/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLY/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_utilities",
+      "item": "US utilities",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLU",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLU/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.524531+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLU/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLU/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_realestate",
+      "item": "US real estate",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLRE",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLRE/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.668991+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLRE/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLRE/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_materials",
+      "item": "US materials",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLB",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLB/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.816324+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLB/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLB/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_communications",
+      "item": "US communications",
+      "group": "global_sector",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "XLC",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/XLC/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:34.960252+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/XLC/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/XLC/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_treasury",
+      "item": "US long Treasury proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "TLT",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/TLT/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:35.107775+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/TLT/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/TLT/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "supportive",
+          "evidence": "CFTC TFF weekly asset-manager net futures position increased; positions do not reveal why traders hold them",
+          "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+          "observed_at": "2026-11-17",
+          "method": "cftc_asset_manager_futures_only_weekly"
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_credit",
+      "item": "US investment-grade credit proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "LQD",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/LQD/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:35.257374+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/LQD/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/LQD/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_highyield",
+      "item": "US high-yield credit proxy",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "HYG",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/HYG/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:35.401563+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/HYG/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/HYG/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "dollar",
+      "item": "US dollar index",
+      "group": "currency",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "DX-Y.NYB",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:35.503068+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "supportive",
+          "evidence": "CFTC TFF weekly asset-manager net futures position increased; positions do not reveal why traders hold them",
+          "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+          "observed_at": "2026-11-17",
+          "method": "cftc_asset_manager_futures_only_weekly"
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdinr",
+      "item": "USD/INR",
+      "group": "currency",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "INR=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/INR%3DX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:35.612641+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/INR%3DX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "eurusd",
+      "item": "EUR/USD",
+      "group": "currency",
+      "region": "EU",
+      "currency": "USD",
+      "symbol": "EURUSD=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:35.742363+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EURUSD%3DX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdjpy",
+      "item": "USD/JPY",
+      "group": "currency",
+      "region": "JP",
+      "currency": "JPY",
+      "symbol": "JPY=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:35.844739+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/JPY%3DX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "usdcny",
+      "item": "USD/CNY",
+      "group": "currency",
+      "region": "CN",
+      "currency": "CNY",
+      "symbol": "CNY=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:35.947704+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/CNY%3DX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "gbpusd",
+      "item": "GBP/USD",
+      "group": "currency",
+      "region": "UK",
+      "currency": "USD",
+      "symbol": "GBPUSD=X",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:36.063084+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GBPUSD%3DX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "gold",
+      "item": "Gold",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "GC=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.173072+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GC%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "silver",
+      "item": "Silver",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "SI=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.315283+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SI%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "copper",
+      "item": "Copper",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "HG=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.422666+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/HG%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "platinum",
+      "item": "Platinum",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "PL=F",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/PL%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "week": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "month": {
+          "price": "down",
+          "volume": "not_available",
+          "signal": "not_available"
+        },
+        "trend": "not_available"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:36.522239+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/PL%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "brent",
+      "item": "Brent crude",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "BZ=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.623630+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/BZ%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "wti",
+      "item": "WTI crude",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "CL=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.724327+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/CL%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "naturalgas",
+      "item": "Natural gas",
+      "group": "energy",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "NG=F",
+      "asset_type": "energy",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.843918+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/NG%3DF/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "bitcoin",
+      "item": "Bitcoin",
+      "group": "crypto",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "BTC-USD",
+      "asset_type": "crypto",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:36.959152+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/BTC-USD/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "ethereum",
+      "item": "Ethereum",
+      "group": "crypto",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "ETH-USD",
+      "asset_type": "crypto",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:37.078736+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/ETH-USD/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "vix",
+      "item": "US VIX",
+      "group": "risk",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "^VIX",
+      "asset_type": "risk",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/%5EVIX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "not_available",
+        "reason": "Risk gauge, not an investable money-flow candidate"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:37.182961+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EVIX/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "indiavix",
+      "item": "India VIX",
+      "group": "risk",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "^INDIAVIX",
+      "asset_type": "risk",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "not_available",
+        "reason": "Risk gauge, not an investable money-flow candidate"
+      },
+      "volume_observed": false,
+      "collected_at_utc": "2026-11-26T22:44:37.295293+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "not_available",
+          "evidence": "Trading volume insufficient; no measured fund flow",
+          "source": null
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/%5EINDIAVIX/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Trading volume insufficient; no measured fund flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "taiwan",
+      "item": "Taiwan equities (ETF proxy)",
+      "group": "equity_market",
+      "region": "TW",
+      "currency": "USD",
+      "symbol": "EWT",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/EWT/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:37.452462+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EWT/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EWT/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "korea",
+      "item": "South Korea equities (ETF proxy)",
+      "group": "equity_market",
+      "region": "KR",
+      "currency": "USD",
+      "symbol": "EWY",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/EWY/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:37.602040+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EWY/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EWY/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "brazil",
+      "item": "Brazil equities (ETF proxy)",
+      "group": "equity_market",
+      "region": "BR",
+      "currency": "USD",
+      "symbol": "EWZ",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/EWZ/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:37.777240+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EWZ/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EWZ/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "india_etf",
+      "item": "India equities (US-listed ETF)",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "USD",
+      "symbol": "INDA",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/INDA/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:37.904364+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/INDA/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/INDA/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "ai_theme",
+      "item": "AI and big-data theme",
+      "group": "global_sector",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "AIQ",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/AIQ/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.033043+00:00",
+      "label": "Bearish",
+      "tag": "Weakening",
+      "agreement": "Moderate",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/AIQ/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/AIQ/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Bearish under documented rules."
+    },
+    {
+      "id": "global_reit",
+      "item": "Global ex-US real estate (REITs)",
+      "group": "global_sector",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "VNQI",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/VNQI/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.158733+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/VNQI/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/VNQI/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_short_treasury",
+      "item": "US short-term Treasuries",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "SHY",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/SHY/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.300745+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SHY/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SHY/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "us_tips",
+      "item": "US inflation-protected bonds (TIPS)",
+      "group": "bond",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "TIP",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/TIP/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.447344+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/TIP/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/TIP/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "em_bonds",
+      "item": "Emerging-market USD bonds",
+      "group": "bond",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "EMB",
+      "asset_type": "bond",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/EMB/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.610808+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/EMB/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/EMB/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "neutral",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "dollar_etf",
+      "item": "US dollar (ETF proxy)",
+      "group": "currency",
+      "region": "US",
+      "currency": "USD",
+      "symbol": "UUP",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/UUP/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "flat",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.756053+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/UUP/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/UUP/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "euro_etf",
+      "item": "Euro (ETF proxy)",
+      "group": "currency",
+      "region": "EU",
+      "currency": "USD",
+      "symbol": "FXE",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/FXE/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:38.904767+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FXE/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FXE/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "yen_etf",
+      "item": "Japanese yen (ETF proxy)",
+      "group": "currency",
+      "region": "JP",
+      "currency": "USD",
+      "symbol": "FXY",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/FXY/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.012984+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FXY/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FXY/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "pound_etf",
+      "item": "British pound (ETF proxy)",
+      "group": "currency",
+      "region": "UK",
+      "currency": "USD",
+      "symbol": "FXB",
+      "asset_type": "currency",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/FXB/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.157528+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/FXB/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/FXB/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "gold_etf",
+      "item": "Gold (ETF proxy)",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "GLD",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/GLD/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.272359+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/GLD/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GLD/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "silver_etf",
+      "item": "Silver (ETF proxy)",
+      "group": "metal",
+      "region": "GLOBAL",
+      "currency": "USD",
+      "symbol": "SLV",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/SLV/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "improving"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.399196+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/SLV/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/SLV/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "niftybees",
+      "item": "Nifty 50 ETF (NIFTYBEES)",
+      "group": "equity_market",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "NIFTYBEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.515047+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/NIFTYBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "bankbees",
+      "item": "Nifty Bank ETF (BANKBEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "BANKBEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.628616+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/BANKBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "itbees",
+      "item": "Nifty IT ETF (ITBEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "ITBEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "flat",
+          "volume": "down",
+          "signal": "unclear"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.752842+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Weakening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "neutral",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "neutral",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/ITBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "pharmabees",
+      "item": "Nifty Pharma ETF (PHARMABEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "PHARMABEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.859302+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/PHARMABEES.NS/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "consumbees",
+      "item": "Nifty India Consumption ETF (CONSUMBEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "CONSUMBEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-26",
+      "price_source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-26",
+        "day": {
+          "price": "down",
+          "volume": "down",
+          "signal": "outflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:39.961003+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
+          "observed_at": "2026-11-26",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/CONSUMBEES.NS/history/",
+          "observed_at": "2026-11-26",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "psubnkbees",
+      "item": "PSU Bank ETF (PSUBNKBEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "PSUBNKBEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "weakening"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:40.067701+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/PSUBNKBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "infrabees",
+      "item": "Nifty Infrastructure ETF (INFRABEES)",
+      "group": "india_sector",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "INFRABEES.NS",
+      "asset_type": "equity",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "up",
+          "volume": "down",
+          "signal": "inflow_fading"
+        },
+        "week": {
+          "price": "flat",
+          "volume": "up",
+          "signal": "unclear"
+        },
+        "month": {
+          "price": "up",
+          "volume": "up",
+          "signal": "inflow"
+        },
+        "trend": "mixed"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:40.183074+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Strengthening",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "supportive",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "supportive",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/INFRABEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "opposing",
+          "evidence": "Fed assets contracted over four observations; contextual hypothesis, not proven asset flow",
+          "source": "https://fred.stlouisfed.org/series/WALCL",
+          "observed_at": "2026-11-18",
+          "method": "official_macro_context"
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    },
+    {
+      "id": "goldbees",
+      "item": "Gold ETF in rupees (GOLDBEES)",
+      "group": "metal",
+      "region": "IN",
+      "currency": "INR",
+      "symbol": "GOLDBEES.NS",
+      "asset_type": "metal",
+      "proxy_is_not_direct_flow": true,
+      "observation_date": "2026-11-25",
+      "price_source": "https://finance.yahoo.com/quote/GOLDBEES.NS/history/",
+      "freshness": "current",
+      "flow_windows": {
+        "status": "ok",
+        "as_of": "2026-11-25",
+        "day": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "week": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "month": {
+          "price": "down",
+          "volume": "up",
+          "signal": "outflow"
+        },
+        "trend": "steady"
+      },
+      "volume_observed": true,
+      "collected_at_utc": "2026-11-26T22:44:40.291807+00:00",
+      "label": "Neutral/Mixed",
+      "tag": "Steady",
+      "agreement": "Weak",
+      "families": {
+        "money_flow": {
+          "state": "opposing",
+          "evidence": "Up-session versus down-session volume over 20 observations; NOT net institutional flow",
+          "source": "https://finance.yahoo.com/quote/GOLDBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "volume_participation_proxy"
+        },
+        "price_trend": {
+          "state": "opposing",
+          "evidence": "Close and 50/200-session trend confirmation",
+          "source": "https://finance.yahoo.com/quote/GOLDBEES.NS/history/",
+          "observed_at": "2026-11-25",
+          "method": "price_trend"
+        },
+        "breadth": {
+          "state": "not_available",
+          "evidence": "No independently sourced constituent breadth",
+          "source": null
+        },
+        "positioning": {
+          "state": "not_available",
+          "evidence": "No verified CFTC/positioning series mapped",
+          "source": null
+        },
+        "macro_liquidity": {
+          "state": "not_available",
+          "evidence": "Macro effect varies by asset; no verified mapping",
+          "source": null
+        },
+        "news": {
+          "state": "not_available",
+          "evidence": "Headline impact not confirmed by next-session prices",
+          "source": null
+        }
+      },
+      "reason": "Data: Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation. Reading: Neutral/Mixed under documented rules."
+    }
+  ]
+}

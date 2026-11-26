@@ -1,15 +1,18 @@
 {
-  "as_of_ist": "2026-11-26T19:49:08.286797+05:30",
-  "run_slot": "backup",
-  "completed_at_utc": "2026-11-26T14:24:50.436901+00:00",
+  "as_of_ist": "2026-11-27T04:04:12.545427+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-26T22:44:40.303880+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
   "items_configured": 73,
   "price_proxies_current": 73,
   "macro_series_available": 11,
-  "macro_series_current": 11,
-  "macro_series_stale": [],
+  "macro_series_current": 9,
+  "macro_series_stale": [
+    "DGS10",
+    "DGS2"
+  ],
   "macro_series_unavailable": [
     "PBOC_TOTAL_ASSETS",
     "RBI_SYSTEM_LIQUIDITY"
@@ -72,10 +75,10 @@
       "nvidia/nemotron-3-ultra-550b-a55b:free"
     ],
     "failure_reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x5)",
+      "gemini: no answer within 75 seconds (x5)",
       "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions) (x3)",
       "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
-      "gemini: no answer within 75 seconds"
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -151,15 +154,10 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 54,
+    "items_with_signal": 58,
     "items_in_rotation": 61,
     "items_without_volume": [
-      "nifty50",
-      "niftybank",
-      "niftyit",
-      "nifty500",
-      "hongkong",
-      "japan",
+      "uk",
       "dollar",
       "usdinr",
       "eurusd",
@@ -182,6 +180,18 @@
   "missing": [],
   "errors": [
     {
+      "source": "macro_stale:DGS2",
+      "error": "Last observation 2026-11-24; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "macro_stale:DGS10",
+      "error": "Last observation 2026-11-24; permitted 2 weekday sessions (exchange holidays require review)"
+    },
+    {
+      "source": "breadth:sp500",
+      "error": "ValueError"
+    },
+    {
       "source": "institutional_flows",
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     }
@@ -193,7 +203,7 @@
     "status": "ok",
     "fred": {
       "status": "ok",
-      "rows_seen": 982,
+      "rows_seen": 968,
       "unmatched_releases": []
     },
     "events": 7,
@@ -207,9 +217,9 @@
     "articles_seen": 400,
     "from_listed_publishers": 400,
     "kept": 36,
-    "company_stories": 14,
-    "seconds": 9.5,
-    "slowest_answer_seconds": 0.2,
+    "company_stories": 15,
+    "seconds": 9.4,
+    "slowest_answer_seconds": 0.3,
     "errors": [],
     "advisories": [],
     "feeds": {
@@ -228,7 +238,7 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 4
+          "usable": 3
         },
         {
           "id": "cnbc_technology",
@@ -317,8 +327,8 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 102,
-      "same_headline_again": 35
+      "older_than_limit": 103,
+      "same_headline_again": 36
     },
     "top_other_sites": []
   },
@@ -330,7 +340,7 @@
     ],
     "rejected_answers": 3,
     "reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "gemini: no answer within 75 seconds",
       "gemini: no answer within 75 seconds",
       "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
     ],
