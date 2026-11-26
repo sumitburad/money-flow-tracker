@@ -24,7 +24,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Regulatory thresholds set for consumer credit and leasing rules",
+      "one_line_reason": "Regulatory thresholds announced for consumer credit rules",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -57,7 +57,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Mortgage appraisal exemption thresholds announced for smaller loans",
+      "one_line_reason": "Mortgage appraisal exemption thresholds announced",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -77,17 +77,23 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f5859676338445cf",
-      "event_type": "other",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US short-term Treasuries",
+        "US dollar index",
+        "US banks"
+      ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
+      "confidence": "medium",
+      "one_line_reason": "Discount rate meeting minutes released",
+      "classifier": "validated_model_json",
+      "model_provider": "openrouter",
+      "model_name": "openrouter/free",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -113,7 +119,7 @@
       "horizon": "intraday",
       "novelty": "new",
       "confidence": "low",
-      "one_line_reason": "College Fed Challenge winners announced by Federal Reserve",
+      "one_line_reason": "Educational competition winners announced",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -133,7 +139,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "82acfac704767e41",
-      "event_type": "central_bank",
+      "event_type": "liquidity",
       "region": [
         "US"
       ],
@@ -146,7 +152,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Survey results on bank reserve management strategies published",
+      "one_line_reason": "Survey on bank reserve management released",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -171,10 +177,11 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
       "confidence": "medium",
       "one_line_reason": "Fed enforcement action against former bank employee",
@@ -197,23 +204,17 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "a34973bc4d957dc2",
-      "event_type": "central_bank",
+      "event_type": "other",
       "region": [
         "US"
       ],
-      "affected": [
-        "S&P 500",
-        "US long Treasury proxy",
-        "US dollar index"
-      ],
+      "affected": [],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "FOMC minutes released for October meeting",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -235,13 +236,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "follow_up",
       "confidence": "medium",
-      "one_line_reason": "Agencies extend comment period for risk guidance",
+      "one_line_reason": "Agencies extend comment period for third-party risk guidance",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -265,17 +267,13 @@
       "region": [
         "US"
       ],
-      "affected": [
-        "US banks"
-      ],
+      "affected": [],
       "direction": "unclear",
-      "horizon": "months",
+      "horizon": "days",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Fed announces new payment services pricing",
-      "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -330,7 +328,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Fed enforcement action against former bank employee",
+      "one_line_reason": "Fed enforcement action on former bank employee",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -361,7 +359,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Fed approves applications for two banking entities",
+      "one_line_reason": "Fed approves applications for two bank holding companies",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -392,7 +390,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Fed terminates enforcement action against banking entities",
+      "one_line_reason": "Fed ends enforcement action against bank entities",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -423,7 +421,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "medium",
-      "one_line_reason": "Fed approves application for international bank",
+      "one_line_reason": "Fed approves application for Canadian bank",
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
@@ -448,7 +446,10 @@
         "US"
       ],
       "affected": [
-        "US financials"
+        "S&P 500",
+        "US dollar index",
+        "US long Treasury proxy",
+        "US short-term Treasuries"
       ],
       "direction": "unclear",
       "horizon": "intraday",
@@ -458,6 +459,33 @@
       "classifier": "validated_model_json",
       "model_provider": "openrouter",
       "model_name": "openrouter/free",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "bed7eecc397001b2",
+    "title": "Meeting of 28-29 October 2026",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "bed7eecc397001b2",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -825,33 +853,6 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "8e1b1d63568ba41e",
-      "event_type": "other",
-      "region": [
-        "EU"
-      ],
-      "affected": [],
-      "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
-      "human_review_required": true
-    },
-    "confirmation": "too_early_or_unverified"
-  },
-  {
-    "headline_id": "0477ebfc41ad1eea",
-    "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
-    "publisher": "European Central Bank",
-    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
-    "event_type": "other",
-    "impact": "unconfirmed",
-    "direction": "unclear",
-    "data": "Headline only",
-    "reading": "No verified causal market reaction",
-    "classification": {
-      "headline_id": "0477ebfc41ad1eea",
       "event_type": "other",
       "region": [
         "EU"
