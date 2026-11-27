@@ -17,17 +17,16 @@
       ],
       "affected": [
         "US banks",
-        "US financials",
-        "US consumer discretionary"
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Regulatory thresholds for consumer lending rules announced",
+      "confidence": "high",
+      "one_line_reason": "Federal agencies announced dollar threshold updates for consumer credit and leasing rules.",
       "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -50,17 +49,16 @@
       ],
       "affected": [
         "US banks",
-        "US financials",
-        "US real estate"
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Mortgage appraisal exemption thresholds announced",
+      "confidence": "high",
+      "one_line_reason": "Federal agencies announced dollar thresholds for mortgage loan appraisal exemptions.",
       "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -77,24 +75,22 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f5859676338445cf",
-      "event_type": "central_bank",
+      "event_type": "rates",
       "region": [
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials",
         "US short-term Treasuries",
-        "US dollar index"
+        "US long Treasury proxy"
       ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Discount rate meeting minutes released",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve released discount rate meeting minutes.",
       "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -117,13 +113,13 @@
       ],
       "affected": [],
       "direction": "unclear",
-      "horizon": "intraday",
+      "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Educational competition winners announced",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve announced winners of an educational challenge competition.",
       "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -146,17 +142,16 @@
       ],
       "affected": [
         "US banks",
-        "US financials",
-        "US short-term Treasuries"
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Bank reserve management survey results released",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve released survey results on bank reserve balance management strategies.",
       "classifier": "validated_model_json",
-      "model_provider": "openrouter",
-      "model_name": "openrouter/free",
+      "model_provider": "gemini",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -184,10 +179,10 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve enforcement action against a former employee carries unclear impact on the broader banking sector.",
+      "one_line_reason": "Enforcement action against a bank employee indicates regulatory oversight with unclear market impact.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -210,17 +205,16 @@
       ],
       "affected": [
         "S&P 500",
-        "US long Treasury proxy",
         "US dollar index"
       ],
       "direction": "unclear",
       "horizon": "intraday",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Open Market Committee minutes can impact broader financial markets depending on interest rate and monetary policy discussions.",
+      "one_line_reason": "Release of central bank meeting minutes provides monetary policy details with unconfirmed market reaction.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -242,17 +236,16 @@
         "US"
       ],
       "affected": [
-        "US financials",
         "US banks"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Extending the comment period for third party risk management guidance yields an unclear immediate market impact.",
+      "one_line_reason": "Extension of comment period for banking risk guidance affects regulatory timelines without immediate price effect.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -280,10 +273,10 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Changes to Federal Reserve payment and check service fees have an unclear financial impact on commercial banks.",
+      "one_line_reason": "Announcement of payment service pricing adjustments for financial institutions has an unclear market impact.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -312,10 +305,10 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Revisions to the tentative meeting calendar represent an administrative update with unclear market direction.",
+      "one_line_reason": "Revised central bank meeting schedule updates administrative dates with neutral market implications.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -337,16 +330,17 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
-      "horizon": "intraday",
+      "horizon": "days",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Federal Reserve enforcement action on an individual has limited broader banking sector impact.",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve issued an enforcement action against a former bank employee.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -368,16 +362,17 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Regulatory application approvals permit banking activities to proceed normally.",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve approved banking applications for specified financial entities.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -399,16 +394,17 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
-      "confidence": "medium",
-      "one_line_reason": "Termination of an enforcement action removes regulatory constraints from the affected entities.",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve terminated enforcement actions involving designated financial holding companies.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -430,16 +426,17 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Federal Reserve application approval supports operational expansion for the institution.",
+      "confidence": "high",
+      "one_line_reason": "Federal Reserve approved an application by The Bank of Nova Scotia.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -456,23 +453,50 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "beacfe1806dadbf1",
-      "event_type": "central_bank",
+      "event_type": "rates",
       "region": [
         "US"
       ],
       "affected": [
         "S&P 500",
-        "US dollar index",
-        "US long Treasury proxy"
+        "US long Treasury proxy",
+        "US dollar index"
       ],
       "direction": "unclear",
-      "horizon": "intraday",
+      "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The policy statement details are unspecified leading to an unclear market direction.",
+      "one_line_reason": "Federal Reserve issued its regular Federal Open Market Committee policy statement.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
-      "model_name": "gemini-flash-latest",
+      "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "26e0d13c666dc892",
+    "title": "ECB Consumer Expectations Survey results – October 2026",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "26e0d13c666dc892",
+      "event_type": "central_bank",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -841,33 +865,6 @@
     "classification": {
       "headline_id": "7c2cb421a660685d",
       "event_type": "central_bank",
-      "region": [
-        "EU"
-      ],
-      "affected": [],
-      "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
-      "human_review_required": true
-    },
-    "confirmation": "too_early_or_unverified"
-  },
-  {
-    "headline_id": "8e1b1d63568ba41e",
-    "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
-    "publisher": "European Central Bank",
-    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
-    "event_type": "other",
-    "impact": "unconfirmed",
-    "direction": "unclear",
-    "data": "Headline only",
-    "reading": "No verified causal market reaction",
-    "classification": {
-      "headline_id": "8e1b1d63568ba41e",
-      "event_type": "other",
       "region": [
         "EU"
       ],
