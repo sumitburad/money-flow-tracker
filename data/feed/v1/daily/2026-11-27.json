@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-27T10:47:39.039841+00:00",
-  "as_of_ist": "2026-11-27T16:17:39.039841+05:30",
+  "generated_at_utc": "2026-11-27T14:14:17.735710+00:00",
+  "as_of_ist": "2026-11-27T19:44:17.735710+05:30",
   "run_date_ist": "2026-11-27",
   "methodology": "six-family deterministic rules, not a score",
   "provider_license": "Public feed excludes unofficial-vendor price tables",
@@ -95,9 +95,9 @@
           "value": 4.63
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:39.403021+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.014401+00:00",
       "source": "https://fred.stlouisfed.org/series/DGS2",
-      "raw_sha256": "8f91f8c8c77740ae7fdba80a5f7ca179d5e23d25be5a8364fb19120328cd7f18",
+      "raw_sha256": "c8ff405495b3745bd69f50486fdb108c22c757d671e0465fe71d8c6b3f950674",
       "raw_file": "data/raw/2026-11-27/DGS2.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "stale",
@@ -192,9 +192,9 @@
           "value": 4.91
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:39.675010+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.188668+00:00",
       "source": "https://fred.stlouisfed.org/series/DGS10",
-      "raw_sha256": "5e1bdec756d63573c48c99c8576cbd69d30d8f422f62ccb13127a088bbf5dfb1",
+      "raw_sha256": "85869577579e84d6284b008c5dc7fa4c6be731efbabfaca7870a45a8c4210aee",
       "raw_file": "data/raw/2026-11-27/DGS10.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "stale",
@@ -289,9 +289,9 @@
           "value": 6741452.0
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:39.955142+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.357327+00:00",
       "source": "https://fred.stlouisfed.org/series/WALCL",
-      "raw_sha256": "c74135c7be67271a80626e814cd06570aab9f5de3e6f06bfaae13790e8dd6cfb",
+      "raw_sha256": "00d340abbb9da7206c322d2f8efa3c36394bc6fde672c4d0b370446e6f32863f",
       "raw_file": "data/raw/2026-11-27/WALCL.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -386,9 +386,9 @@
           "value": 916613.0
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:40.370918+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.521991+00:00",
       "source": "https://fred.stlouisfed.org/series/WTREGEN",
-      "raw_sha256": "0c9b7ef96c220fd35e761d2b32372a8052c58c4ebe8cbcf2f34bac385f9683a5",
+      "raw_sha256": "758e8bc4ecb5632448354b393877be11a10b7824cc9fa0c83aca29423d3f940c",
       "raw_file": "data/raw/2026-11-27/WTREGEN.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -483,9 +483,9 @@
           "value": 0.3
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:40.681115+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.723944+00:00",
       "source": "https://fred.stlouisfed.org/series/RRPONTSYD",
-      "raw_sha256": "0c26a8b3cea7cde27b62fe98a466925bd4c53ce46068eb02c248a61dc62d5583",
+      "raw_sha256": "c51489502c71fb320bf347366f243aba0e5dff1730649877cc72eb837d98aeaf",
       "raw_file": "data/raw/2026-11-27/RRPONTSYD.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -580,9 +580,9 @@
           "value": 23532.8
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:41.590903+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:18.893241+00:00",
       "source": "https://fred.stlouisfed.org/series/M2SL",
-      "raw_sha256": "b6db8ac64ae07b0c8da454cb58690a23421a9e05397b01e013e1be3f31210edf",
+      "raw_sha256": "5dbc1725a8d32c9c3c88db4058a8bb59d36b84cc28a9f5b099ebd007edd9abf9",
       "raw_file": "data/raw/2026-11-27/M2SL.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -677,9 +677,9 @@
           "value": 92.67
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:41.879046+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:19.049881+00:00",
       "source": "https://fred.stlouisfed.org/series/DEXINUS",
-      "raw_sha256": "7ceb599e3b435daddbac86645e17d1d3b8652b618407c8417796d03c5ef01871",
+      "raw_sha256": "a54741d60c6c800951269b58f69ade0e5e525656630d435204d85e8a030a1ac2",
       "raw_file": "data/raw/2026-11-27/DEXINUS.api.json.gz",
       "fetch_path": "fred_api",
       "freshness": "current",
@@ -782,7 +782,7 @@
       "mirror": false,
       "raw_sha256": "0cb35e3d50e7b09fb5331a233323e89ecd0346dccf4f55e16a57fc52964d4111",
       "raw_file": "data/raw/2026-11-27/ECB_ILM_TOTAL_ASSETS.gz",
-      "fetched_at_utc": "2026-11-27T10:47:43.504841+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:20.397762+00:00",
       "freshness": "current",
       "last_good_date": "2026-11-20",
       "allowed_age": "10 weekday sessions (exchange holidays require review)"
@@ -875,9 +875,9 @@
           "value": 6261882.0
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:43.757833+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:20.570367+00:00",
       "source": "https://fred.stlouisfed.org/series/JPNASSETS",
-      "raw_sha256": "2d0b9293b111ad02f1ea5387b36eeb26266d415969a8739b538b4a9c37b34688",
+      "raw_sha256": "3ce4523fada72bb2accf68fa21bd7970def38a16110cba16e986e7afef7fbb11",
       "raw_file": "data/raw/2026-11-27/JPNASSETS.api.json.gz",
       "fetch_path": "fred_api",
       "source_series_id": "JPNASSETS",
@@ -976,7 +976,7 @@
           "value": 4.61
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:43.899005+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:21.152936+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -1076,7 +1076,7 @@
           "value": 4.85
         }
       ],
-      "fetched_at_utc": "2026-11-27T10:47:43.899005+00:00",
+      "fetched_at_utc": "2026-11-27T14:14:21.152936+00:00",
       "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "source_provider": "U.S. Department of the Treasury",
       "methodology": "Daily Treasury par yield curve, not Federal Reserve H.15 yields",
@@ -1123,7 +1123,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:09.938152+00:00",
+      "collected_at_utc": "2026-11-27T14:15:33.275006+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1204,7 +1204,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:10.089817+00:00",
+      "collected_at_utc": "2026-11-27T14:15:33.580370+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1285,7 +1285,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:10.224584+00:00",
+      "collected_at_utc": "2026-11-27T14:15:33.780496+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1360,7 +1360,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:10.362150+00:00",
+      "collected_at_utc": "2026-11-27T14:15:33.989764+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1435,7 +1435,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:10.505708+00:00",
+      "collected_at_utc": "2026-11-27T14:15:34.204905+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1510,7 +1510,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:10.657015+00:00",
+      "collected_at_utc": "2026-11-27T14:15:34.463241+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1585,7 +1585,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:10.789215+00:00",
+      "collected_at_utc": "2026-11-27T14:15:34.662226+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1660,7 +1660,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:10.920689+00:00",
+      "collected_at_utc": "2026-11-27T14:15:34.870182+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -1737,7 +1737,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:11.092529+00:00",
+      "collected_at_utc": "2026-11-27T14:15:35.200520+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1814,7 +1814,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:11.242161+00:00",
+      "collected_at_utc": "2026-11-27T14:15:35.457349+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1889,7 +1889,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:11.430557+00:00",
+      "collected_at_utc": "2026-11-27T14:15:35.779342+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1966,7 +1966,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:11.578007+00:00",
+      "collected_at_utc": "2026-11-27T14:15:36.076189+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2041,7 +2041,7 @@
         "trend": "mixed"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:11.711635+00:00",
+      "collected_at_utc": "2026-11-27T14:15:36.279534+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2116,7 +2116,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:11.884307+00:00",
+      "collected_at_utc": "2026-11-27T14:15:36.548686+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2193,7 +2193,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:12.073968+00:00",
+      "collected_at_utc": "2026-11-27T14:15:36.810536+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2270,7 +2270,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:12.255432+00:00",
+      "collected_at_utc": "2026-11-27T14:15:37.080096+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2347,7 +2347,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:12.468504+00:00",
+      "collected_at_utc": "2026-11-27T14:15:37.349130+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2424,7 +2424,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:12.691263+00:00",
+      "collected_at_utc": "2026-11-27T14:15:37.676163+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2501,7 +2501,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:12.893405+00:00",
+      "collected_at_utc": "2026-11-27T14:15:37.934588+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2578,7 +2578,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:13.072759+00:00",
+      "collected_at_utc": "2026-11-27T14:15:38.205407+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2655,7 +2655,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:13.278214+00:00",
+      "collected_at_utc": "2026-11-27T14:15:38.478253+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2732,7 +2732,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:13.466717+00:00",
+      "collected_at_utc": "2026-11-27T14:15:38.741475+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2809,7 +2809,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:13.646344+00:00",
+      "collected_at_utc": "2026-11-27T14:15:39.013686+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2886,7 +2886,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:13.834990+00:00",
+      "collected_at_utc": "2026-11-27T14:15:39.364372+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -2963,7 +2963,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.026903+00:00",
+      "collected_at_utc": "2026-11-27T14:15:39.663881+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3040,7 +3040,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.206194+00:00",
+      "collected_at_utc": "2026-11-27T14:15:39.985668+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3117,7 +3117,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.417047+00:00",
+      "collected_at_utc": "2026-11-27T14:15:40.343224+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3194,7 +3194,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.578567+00:00",
+      "collected_at_utc": "2026-11-27T14:15:40.577313+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3271,7 +3271,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.792183+00:00",
+      "collected_at_utc": "2026-11-27T14:15:40.847264+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3348,7 +3348,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:14.956994+00:00",
+      "collected_at_utc": "2026-11-27T14:15:41.095731+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3425,7 +3425,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:15.152164+00:00",
+      "collected_at_utc": "2026-11-27T14:15:41.352557+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3504,7 +3504,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:15.408175+00:00",
+      "collected_at_utc": "2026-11-27T14:15:41.623665+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3581,7 +3581,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:15.648927+00:00",
+      "collected_at_utc": "2026-11-27T14:15:41.950255+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3658,7 +3658,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:15.781116+00:00",
+      "collected_at_utc": "2026-11-27T14:15:42.148112+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3733,7 +3733,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:15.927885+00:00",
+      "collected_at_utc": "2026-11-27T14:15:42.440483+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3806,7 +3806,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:16.071576+00:00",
+      "collected_at_utc": "2026-11-27T14:15:42.673013+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3879,7 +3879,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:16.212763+00:00",
+      "collected_at_utc": "2026-11-27T14:15:42.955750+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3952,7 +3952,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:16.349592+00:00",
+      "collected_at_utc": "2026-11-27T14:15:43.156483+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4025,7 +4025,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:16.499784+00:00",
+      "collected_at_utc": "2026-11-27T14:15:43.446338+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4098,7 +4098,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:16.665354+00:00",
+      "collected_at_utc": "2026-11-27T14:15:43.665530+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4173,7 +4173,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:16.831339+00:00",
+      "collected_at_utc": "2026-11-27T14:15:43.866443+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4248,7 +4248,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:16.963064+00:00",
+      "collected_at_utc": "2026-11-27T14:15:44.092420+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4323,7 +4323,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:17.093175+00:00",
+      "collected_at_utc": "2026-11-27T14:15:44.409877+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4396,7 +4396,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:17.279970+00:00",
+      "collected_at_utc": "2026-11-27T14:15:44.627901+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4471,7 +4471,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:17.416793+00:00",
+      "collected_at_utc": "2026-11-27T14:15:44.852675+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4546,7 +4546,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:17.552598+00:00",
+      "collected_at_utc": "2026-11-27T14:15:45.156243+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4621,7 +4621,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:17.700888+00:00",
+      "collected_at_utc": "2026-11-27T14:15:45.383501+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4698,7 +4698,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:17.859058+00:00",
+      "collected_at_utc": "2026-11-27T14:15:45.614229+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4759,7 +4759,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:17.993087+00:00",
+      "collected_at_utc": "2026-11-27T14:15:45.815257+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4816,7 +4816,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-27T10:49:18.122569+00:00",
+      "collected_at_utc": "2026-11-27T14:15:46.013703+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4889,7 +4889,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:18.327099+00:00",
+      "collected_at_utc": "2026-11-27T14:15:46.262445+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4966,7 +4966,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:18.518299+00:00",
+      "collected_at_utc": "2026-11-27T14:15:46.514572+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5043,7 +5043,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:18.713073+00:00",
+      "collected_at_utc": "2026-11-27T14:15:46.767756+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5120,7 +5120,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:18.883439+00:00",
+      "collected_at_utc": "2026-11-27T14:15:46.987625+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5197,7 +5197,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:19.067676+00:00",
+      "collected_at_utc": "2026-11-27T14:15:47.213092+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -5274,7 +5274,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:19.234595+00:00",
+      "collected_at_utc": "2026-11-27T14:15:47.443097+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5351,7 +5351,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:19.436568+00:00",
+      "collected_at_utc": "2026-11-27T14:15:47.772064+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5428,7 +5428,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:19.620903+00:00",
+      "collected_at_utc": "2026-11-27T14:15:48.033222+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5505,7 +5505,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:19.871753+00:00",
+      "collected_at_utc": "2026-11-27T14:15:48.291106+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5582,7 +5582,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.039381+00:00",
+      "collected_at_utc": "2026-11-27T14:15:48.517997+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5657,7 +5657,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.264811+00:00",
+      "collected_at_utc": "2026-11-27T14:15:48.828663+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5732,7 +5732,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.397410+00:00",
+      "collected_at_utc": "2026-11-27T14:15:49.032049+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5807,7 +5807,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.574196+00:00",
+      "collected_at_utc": "2026-11-27T14:15:49.290823+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -5882,7 +5882,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.711956+00:00",
+      "collected_at_utc": "2026-11-27T14:15:49.519667+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5957,7 +5957,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:20.874011+00:00",
+      "collected_at_utc": "2026-11-27T14:15:49.750006+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -6032,7 +6032,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.021861+00:00",
+      "collected_at_utc": "2026-11-27T14:15:49.958503+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6109,7 +6109,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.157985+00:00",
+      "collected_at_utc": "2026-11-27T14:15:50.159952+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6186,7 +6186,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.340301+00:00",
+      "collected_at_utc": "2026-11-27T14:15:50.365124+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -6263,7 +6263,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.475251+00:00",
+      "collected_at_utc": "2026-11-27T14:15:50.576607+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6340,7 +6340,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.602873+00:00",
+      "collected_at_utc": "2026-11-27T14:15:50.775533+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6417,7 +6417,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.777058+00:00",
+      "collected_at_utc": "2026-11-27T14:15:51.001662+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6494,7 +6494,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:21.910547+00:00",
+      "collected_at_utc": "2026-11-27T14:15:51.251750+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -6571,7 +6571,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-27T10:49:22.053231+00:00",
+      "collected_at_utc": "2026-11-27T14:15:51.486205+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -6631,15 +6631,12 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "US banks",
-          "US financials"
-        ],
+        "affected": [],
         "direction": "unclear",
-        "horizon": "months",
+        "horizon": "weeks",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal agencies announced dollar threshold updates for consumer credit and leasing rules.",
+        "one_line_reason": "Federal agencies announced dollar threshold updates for consumer credit rules.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6665,13 +6662,13 @@
         ],
         "affected": [
           "US banks",
-          "US financials"
+          "US real estate"
         ],
         "direction": "unclear",
-        "horizon": "months",
+        "horizon": "weeks",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal agencies announced dollar thresholds for mortgage loan appraisal exemptions.",
+        "one_line_reason": "Agencies set revised loan exemption dollar thresholds for appraisal requirements.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6695,15 +6692,12 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "US short-term Treasuries",
-          "US long Treasury proxy"
-        ],
+        "affected": [],
         "direction": "unclear",
-        "horizon": "weeks",
+        "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve released discount rate meeting minutes.",
+        "one_line_reason": "Federal Reserve published minutes from recent discount rate meetings.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6729,10 +6723,10 @@
         ],
         "affected": [],
         "direction": "unclear",
-        "horizon": "days",
+        "horizon": "intraday",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve announced winners of an educational challenge competition.",
+        "one_line_reason": "Federal Reserve declared the winners of an academic college competition.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6757,14 +6751,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
         "horizon": "weeks",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve released survey results on bank reserve balance management strategies.",
+        "one_line_reason": "Federal Reserve published survey results detailing bank reserve management strategies.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6795,7 +6788,7 @@
         "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Enforcement action against a bank employee indicates regulatory oversight with unclear market impact.",
+        "one_line_reason": "Enforcement action against a former bank employee lacks confirmed market impact.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6819,15 +6812,12 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "S&P 500",
-          "US dollar index"
-        ],
+        "affected": [],
         "direction": "unclear",
         "horizon": "intraday",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Release of central bank meeting minutes provides monetary policy details with unconfirmed market reaction.",
+        "one_line_reason": "Release of central bank meeting minutes without explicit details on market direction.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6852,13 +6842,14 @@
           "US"
         ],
         "affected": [
-          "US banks"
+          "US banks",
+          "US financials"
         ],
         "direction": "unclear",
         "horizon": "weeks",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Extension of comment period for banking risk guidance affects regulatory timelines without immediate price effect.",
+        "one_line_reason": "Extension of comment period for risk guidance has unclear immediate market impact.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6883,13 +6874,14 @@
           "US"
         ],
         "affected": [
-          "US banks"
+          "US banks",
+          "US financials"
         ],
         "direction": "unclear",
         "horizon": "months",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Announcement of payment service pricing adjustments for financial institutions has an unclear market impact.",
+        "one_line_reason": "Changes to bank payment and check service pricing have unconfirmed market effect.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6913,15 +6905,12 @@
         "region": [
           "US"
         ],
-        "affected": [
-          "S&P 500",
-          "US dollar index"
-        ],
+        "affected": [],
         "direction": "unclear",
         "horizon": "months",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Revised central bank meeting schedule updates administrative dates with neutral market implications.",
+        "one_line_reason": "Revised schedule for central bank meetings has no immediate market direction.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6946,14 +6935,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve issued an enforcement action against a former bank employee.",
+        "one_line_reason": "Federal Reserve issues enforcement action against a bank employee.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -6978,14 +6966,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
-        "horizon": "weeks",
+        "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve approved banking applications for specified financial entities.",
+        "one_line_reason": "Federal Reserve approves banking entity applications.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -7010,14 +6997,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
         "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve terminated enforcement actions involving designated financial holding companies.",
+        "one_line_reason": "Federal Reserve terminates regulatory enforcement action.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -7042,14 +7028,13 @@
           "US"
         ],
         "affected": [
-          "US banks",
-          "US financials"
+          "US banks"
         ],
         "direction": "unclear",
-        "horizon": "weeks",
+        "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve approved an application by The Bank of Nova Scotia.",
+        "one_line_reason": "Federal Reserve approves application by a major bank.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
@@ -7069,23 +7054,50 @@
       "reading": "No verified causal market reaction",
       "classification": {
         "headline_id": "beacfe1806dadbf1",
-        "event_type": "rates",
+        "event_type": "central_bank",
         "region": [
           "US"
         ],
         "affected": [
           "S&P 500",
-          "US long Treasury proxy",
-          "US dollar index"
+          "US dollar index",
+          "US long Treasury proxy"
         ],
         "direction": "unclear",
-        "horizon": "months",
+        "horizon": "days",
         "novelty": "new",
         "confidence": "high",
-        "one_line_reason": "Federal Reserve issued its regular Federal Open Market Committee policy statement.",
+        "one_line_reason": "Federal Reserve releases policy statement with unconfirmed market reaction.",
         "classifier": "validated_model_json",
         "model_provider": "gemini",
         "model_name": "gemini-3.5-flash",
+        "human_review_required": true
+      },
+      "confirmation": "too_early_or_unverified"
+    },
+    {
+      "headline_id": "f06dd40c4bcbb8b0",
+      "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261127~13ecadc0f2.en.html",
+      "event_type": "rates",
+      "impact": "unconfirmed",
+      "direction": "unclear",
+      "data": "Headline only",
+      "reading": "No verified causal market reaction",
+      "classification": {
+        "headline_id": "f06dd40c4bcbb8b0",
+        "event_type": "central_bank",
+        "region": [
+          "EU"
+        ],
+        "affected": [],
+        "direction": "unclear",
+        "horizon": "days",
+        "novelty": "new",
+        "confidence": "low",
+        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+        "classifier": "deterministic_rules_NOT_AI",
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
@@ -7467,33 +7479,6 @@
         "human_review_required": true
       },
       "confirmation": "too_early_or_unverified"
-    },
-    {
-      "headline_id": "7c2cb421a660685d",
-      "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
-      "publisher": "European Central Bank",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
-      "event_type": "rates",
-      "impact": "unconfirmed",
-      "direction": "unclear",
-      "data": "Headline only",
-      "reading": "No verified causal market reaction",
-      "classification": {
-        "headline_id": "7c2cb421a660685d",
-        "event_type": "central_bank",
-        "region": [
-          "EU"
-        ],
-        "affected": [],
-        "direction": "unclear",
-        "horizon": "days",
-        "novelty": "new",
-        "confidence": "low",
-        "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-        "classifier": "deterministic_rules_NOT_AI",
-        "human_review_required": true
-      },
-      "confirmation": "too_early_or_unverified"
     }
   ],
   "institutional_flows": {
@@ -7563,7 +7548,7 @@
       }
     },
     "source": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
-    "fetched_at_utc": "2026-11-27T10:47:44.735027+00:00",
+    "fetched_at_utc": "2026-11-27T14:14:26.136504+00:00",
     "raw_sha256": "bef5bd1c1e94223ae9bc43b0eaceeeb5b8807c2c9cd30b0609d5077c3240204d",
     "raw_file": "data/raw/2026-11-27/CFTC_TFF_FUTURES_ONLY.gz",
     "type": "TFF_FUTURES_ONLY",
@@ -8770,7 +8755,7 @@
   },
   "market_news": {
     "status": "ok",
-    "as_of_utc": "2026-11-27T10:47:39.039841+00:00",
+    "as_of_utc": "2026-11-27T14:14:17.735710+00:00",
     "source": {
       "id": "publisher_feeds",
       "name": "The publishers' own news feeds",
@@ -8834,117 +8819,308 @@
     ],
     "stories": [
       {
-        "id": "134bf956186cc377",
-        "title": "KUFOS hosts Czech biodiversity experts for academic exchange",
+        "id": "2bfcc51036c94ce1",
+        "title": "Editorial. Strange proposal",
         "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/news/education/kufos-hosts-czech-biodiversity-experts-for-academic-exchange/article71750324.ece",
-        "seen_at_utc": "2026-11-27T10:39:37+00:00",
+        "url": "https://www.thehindubusinessline.com/opinion/editorial/strange-proposal/article71746554.ece",
+        "seen_at_utc": "2026-11-27T14:12:43+00:00",
         "topics": [
           "india_markets"
         ],
         "companies": []
       },
       {
-        "id": "2ee405d987581a80",
-        "title": "IBM to end US visa and green card sponsorship for most consulting roles",
+        "id": "a11c75ab9ddc0060",
+        "title": "Platform workers in India rally for fair wages and social security in ‘Make Amazon Pay’ global campaign",
         "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/info-tech/ibm-to-end-us-visa-and-green-card-sponsorship-for-most-consulting-roles/article71750070.ece",
-        "seen_at_utc": "2026-11-27T10:37:39+00:00",
+        "url": "https://www.thehindubusinessline.com/news/platform-workers-in-india-rally-for-fair-wages-and-social-security-in-make-amazon-pay-global-campaign/article71750807.ece",
+        "seen_at_utc": "2026-11-27T14:09:26+00:00",
+        "topics": [
+          "companies",
+          "india_markets"
+        ],
+        "companies": [
+          "Amazon"
+        ]
+      },
+      {
+        "id": "9b12a5b4a8288924",
+        "title": "TCI Seaways to launch direct container service between Chennai port and Thailand’s Ranong port",
+        "publisher": "BusinessLine",
+        "url": "https://www.thehindubusinessline.com/news/tci-seaways-to-launch-direct-container-service-between-chennai-port-and-thailands-ranong-port/article71750251.ece",
+        "seen_at_utc": "2026-11-27T14:07:09+00:00",
         "topics": [
           "india_markets"
         ],
         "companies": []
       },
       {
-        "id": "252a1e60f231fb11",
-        "title": "This investment strategist is 100% in cash — and warns that buying the Nasdaq dip is like catching a falling knife",
+        "id": "805dae4dba2ffd65",
+        "title": "RBI Guv to MSMEs: Take advantage of the lower tariffs available under India’s FTAs",
+        "publisher": "BusinessLine",
+        "url": "https://www.thehindubusinessline.com/economy/rbi-guv-to-msmes-take-advantage-of-the-lower-tariffs-available-under-indias-ftas/article71750841.ece",
+        "seen_at_utc": "2026-11-27T14:07:03+00:00",
+        "topics": [
+          "india_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "60342074ae4b707d",
+        "title": "India’s milk production rises 2.4% to top 253 million tonnes in 2025-26",
+        "publisher": "BusinessLine",
+        "url": "https://www.thehindubusinessline.com/economy/agri-business/indias-milk-production-rises-24-to-top-253-million-tonnes-in-2025-26/article71750999.ece",
+        "seen_at_utc": "2026-11-27T14:06:04+00:00",
+        "topics": [
+          "india_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "ce29d4a541a36fd8",
+        "title": "BMW targets 20,000 plus sales in 2026, MINI volumes seen doubling",
+        "publisher": "BusinessLine",
+        "url": "https://www.thehindubusinessline.com/companies/bmw-targets-20000-plus-sales-in-2026-mini-volumes-seen-doubling/article71751039.ece",
+        "seen_at_utc": "2026-11-27T14:04:17+00:00",
+        "topics": [
+          "india_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "84c9556109238952",
+        "title": "Stock Futures Jump as AI Trade Set for Rebound",
+        "publisher": "The Wall Street Journal",
+        "url": "https://www.wsj.com/finance/stocks/stock-futures-jump-as-ai-trade-set-for-rebound-98318fc0?mod=rss_markets_main",
+        "seen_at_utc": "2026-11-27T13:46:00+00:00",
+        "topics": [
+          "ai_chips"
+        ],
+        "companies": []
+      },
+      {
+        "id": "9166dbe7461c6dd3",
+        "title": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
         "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/this-investment-strategist-is-100-in-cash-and-warns-that-buying-the-nasdaq-dip-is-like-catching-a-falling-knife-64f5b233?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T10:37:00+00:00",
+        "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T13:45:00+00:00",
         "topics": [
           "us_markets"
         ],
         "companies": []
       },
       {
-        "id": "4f48c4093823569d",
-        "title": "TVS Motor launches Armado, a new cargo tricycle",
-        "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/companies/tvs-motor-introduces-tvs-armado-a-new-cargo-tricycle/article71750150.ece",
-        "seen_at_utc": "2026-11-27T10:36:27+00:00",
+        "id": "0e596f906fa1c9ac",
+        "title": "The French economy tipped into a recession in the third quarter as summer heat waves slowed Airbus’s factories, complicating the government’s plans to narrow its yawning budget deficit",
+        "publisher": "The Wall Street Journal",
+        "url": "https://www.wsj.com/world/europe/french-economy-slips-into-recession-as-exports-sag-47e934c5?mod=rss_socialeconomyfeed",
+        "seen_at_utc": "2026-11-27T13:39:00+00:00",
+        "topics": [
+          "rates_inflation"
+        ],
+        "companies": []
+      },
+      {
+        "id": "f6e4593f2b7a8aa2",
+        "title": "Sterlite Electric, Svatantra Microfin among 8 firms cleared for IPOs",
+        "publisher": "Mint",
+        "url": "https://www.livemint.com/market/ipo/sebi-approves-eight-ipos-sterlite-electric-svatantra-microfin-11795783678926.html",
+        "seen_at_utc": "2026-11-27T13:34:09+00:00",
         "topics": [
           "india_markets"
         ],
         "companies": []
       },
       {
-        "id": "c1a40856c5a0726d",
-        "title": "4 Indian deep-tech startups selected for Israel Aerospace Industries’ to develop technologies",
-        "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/info-tech/four-indian-deep-tech-startups-selected-for-israel-aerospace-industries-neusphere-programme/article71745469.ece",
-        "seen_at_utc": "2026-11-27T10:34:03+00:00",
+        "id": "b9417fd47da40d23",
+        "title": "No stay for Tata Trusts: HC lets Tata Sons board meet, casting vote intact",
+        "publisher": "Mint",
+        "url": "https://www.livemint.com/companies/tata-trusts-vs-tata-sons-bombay-high-court-11795785693009.html",
+        "seen_at_utc": "2026-11-27T13:30:52+00:00",
         "topics": [
           "india_markets"
         ],
         "companies": []
       },
       {
-        "id": "6e402aba2afac072",
-        "title": "The AI stock crash is mostly over, JPMorgan says — but a worse phase could be coming in 2027",
+        "id": "ad9eee83341bd605",
+        "title": "Renters are now a national political constituency that can influence elections",
         "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/the-ai-stock-crash-is-mostly-over-jpmorgan-says-but-a-worse-phase-could-be-coming-in-2027-fa769fbd?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T10:32:00+00:00",
+        "url": "https://www.marketwatch.com/story/renters-are-now-a-national-political-constituency-that-can-influence-elections-8f028445?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T13:30:00+00:00",
+        "topics": [
+          "us_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "3db9cc249e1ff2b3",
+        "title": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2026/11/25/nvidia-kevin-warsh-fed-market-signals.html",
+        "seen_at_utc": "2026-11-27T13:29:43+00:00",
         "topics": [
           "ai_chips",
           "companies"
         ],
         "companies": [
-          "JPMorgan"
+          "Nvidia"
         ]
       },
       {
-        "id": "b3a071df685ebd7b",
-        "title": "US stock market open or closed today Friday, 27 Nov? Check NYSE and Nasdaq trading schedule, holiday calendar",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/us-stock-market-open-or-closed-today-friday-27-nov-check-nyse-and-nasdaq-trading-schedule-holiday-calendar-11795773710345.html",
-        "seen_at_utc": "2026-11-27T10:30:40+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "4dca10c385b17ad7",
-        "title": "Sensex today | Stock Market Live: Sensex tumbles nearly 1,000 points, Nifty falls 1.07% as investors book profits",
-        "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-live-updates-27-november-2026/article71746210.ece",
-        "seen_at_utc": "2026-11-27T10:30:05+00:00",
+        "id": "ad1ee808ba735eae",
+        "title": "Capital market industry hopes for relief in capital gains taxation in Budget 2027-28: Axis Capital MD",
+        "publisher": "The Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/capital-market-industry-hopes-for-relief-in-capital-gains-taxation-in-budget-2027-28-axis-capital-md/articleshow/136224186.cms",
+        "seen_at_utc": "2026-11-27T13:26:12+00:00",
         "topics": [
           "india_markets"
         ],
         "companies": []
       },
       {
-        "id": "62fc5668287fc6ff",
-        "title": "Trump Can’t Rescue the Stock Market. Here’s What Can.",
-        "publisher": "The Wall Street Journal",
-        "url": "https://www.wsj.com/finance/stocks/trump-cant-rescue-the-stock-market-heres-what-can-1b97a560?mod=rss_markets_main",
-        "seen_at_utc": "2026-11-27T10:30:00+00:00",
+        "id": "a033e8ab9cacfff1",
+        "title": "New-home sales just hit a 2026 high as builders dangle low mortgages and Black Friday deals",
+        "publisher": "MarketWatch",
+        "url": "https://www.marketwatch.com/story/new-home-sales-just-hit-a-2026-high-as-builders-dangle-low-mortgages-and-black-friday-deals-291a3b62?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T13:22:00+00:00",
         "topics": [
           "us_markets"
         ],
         "companies": []
       },
       {
-        "id": "e4220d4046985472",
-        "title": "A Buyer’s Guide to Stress-Free Electronics Shopping This Season",
+        "id": "8ba2f9ce1d9dcc35",
+        "title": "The S&P 500 is in a correction. Bear markets and recessions don't always follow",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2026/11/27/the-sp-500-is-in-a-correction-bear-markets-and-recessions-dont-always-follow.html",
+        "seen_at_utc": "2026-11-27T13:21:56+00:00",
+        "topics": [
+          "us_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "7be2078d42dd0169",
+        "title": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
+        "publisher": "MarketWatch",
+        "url": "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T13:15:00+00:00",
+        "topics": [
+          "ai_chips",
+          "companies"
+        ],
+        "companies": [
+          "Nvidia"
+        ]
+      },
+      {
+        "id": "7c5358ff551cca0d",
+        "title": "Swiss Bourse to Launch IPO Academy in Bid to Encourage European Listings",
         "publisher": "The Wall Street Journal",
-        "url": "https://www.wsj.com/tech/personal-tech/a-buyers-guide-to-stress-free-electronics-shopping-this-season-8291ed38?mod=rss_Technology",
-        "seen_at_utc": "2026-11-27T10:30:00+00:00",
+        "url": "https://www.wsj.com/finance/swiss-bourse-to-launch-ipo-academy-in-bid-to-encourage-european-listings-d98da166?mod=rss_markets_main",
+        "seen_at_utc": "2026-11-27T13:03:00+00:00",
+        "topics": [
+          "us_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "15c9bacad4b49e3a",
+        "title": "Week Ahead for FX, Bonds: Key Labor Data in Focus Ahead of Fed’s December Rate Decision",
+        "publisher": "The Wall Street Journal",
+        "url": "https://www.wsj.com/finance/investing/week-ahead-for-fx-bonds-key-labor-data-in-focus-ahead-of-feds-december-rate-decision-52cad754?mod=rss_markets_main",
+        "seen_at_utc": "2026-11-27T12:51:00+00:00",
+        "topics": [
+          "rates_inflation",
+          "us_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "772b1682dc222088",
+        "title": "Nasdaq futures rise as investors return to battered AI stocks: Stock Market Live Updates",
+        "publisher": "The Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-gold-silver-price-coreqeave-nebius-meta-nvidia-ai-stocks-fed-rate-hike-treasury-yield-news-27th-november-2026/liveblog/136223511.cms",
+        "seen_at_utc": "2026-11-27T12:46:59+00:00",
+        "topics": [
+          "ai_chips",
+          "us_markets"
+        ],
+        "companies": []
+      },
+      {
+        "id": "0597ad5ddc7b0efb",
+        "title": "How to spot Black Friday shopping scams like ‘bogus boutiques’ and AI-generated product images",
+        "publisher": "MarketWatch",
+        "url": "https://www.marketwatch.com/story/how-to-spot-bogus-boutiques-and-other-black-friday-shopping-scams-86cc182d?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T12:42:00+00:00",
         "topics": [
           "ai_chips"
         ],
         "companies": []
+      },
+      {
+        "id": "e2eb96f456911de8",
+        "title": "Nvidia’s stock has tumbled 27% over one chaotic month. The next big test lies in the week ahead",
+        "publisher": "MarketWatch",
+        "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
+        "seen_at_utc": "2026-11-27T12:29:00+00:00",
+        "topics": [
+          "ai_chips",
+          "companies"
+        ],
+        "companies": [
+          "Nvidia"
+        ]
+      },
+      {
+        "id": "b1246a0623ec14ad",
+        "title": "The Tech Download: Will Jensen Huang’s return be the spark the shaky AI market needs?",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2026/11/27/tech-download-jensen-huang-ai-market.html",
+        "seen_at_utc": "2026-11-27T12:00:22+00:00",
+        "topics": [
+          "ai_chips"
+        ],
+        "companies": []
+      },
+      {
+        "id": "21e98b4928ca431a",
+        "title": "Tech rally lifts stock futures to wrap up a volatile week of trading",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2026/11/27/tech-rally-lifts-stock-futures-to-wrap-up-a-volatile-week-of-trading.html",
+        "seen_at_utc": "2026-11-27T11:55:41+00:00",
+        "topics": [
+          "ai_chips"
+        ],
+        "companies": []
+      },
+      {
+        "id": "062571f9452dfdd4",
+        "title": "Tech German software major SAP is reportedly weighing cutting at least 10,000 jobs in AI push",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html",
+        "seen_at_utc": "2026-11-27T11:49:18+00:00",
+        "topics": [
+          "ai_chips"
+        ],
+        "companies": []
+      },
+      {
+        "id": "0ed3cfaf35ad8589",
+        "title": "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
+        "publisher": "Mint",
+        "url": "https://www.livemint.com/market/stock-market-news/stock-market-today-sensex-tumbles-1-000-points-nifty-drops-277-points-as-tcs-infosys-shriram-finance-lead-losses-11795774138976.html",
+        "seen_at_utc": "2026-11-27T11:18:48+00:00",
+        "topics": [
+          "companies",
+          "india_markets"
+        ],
+        "companies": [
+          "TCS",
+          "Infosys"
+        ]
       },
       {
         "id": "191955827f540645",
@@ -8954,131 +9130,6 @@
         "seen_at_utc": "2026-11-27T10:20:39+00:00",
         "topics": [
           "ai_chips"
-        ],
-        "companies": []
-      },
-      {
-        "id": "5cf295eb6a849844",
-        "title": "Dubai’s Benchmark Stock Index Erases Wartime Losses as Banks, Property Shares Rise",
-        "publisher": "The Wall Street Journal",
-        "url": "https://www.wsj.com/finance/stocks/dubais-benchmark-stock-index-erases-wartime-losses-as-banks-property-shares-rise-8b5a7a52?mod=rss_markets_main",
-        "seen_at_utc": "2026-11-27T10:16:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "77b5f0939cfaf22d",
-        "title": "Clearing out my parents’ house was a legal nightmare. How can I downsize without putting my children through the same ordeal?",
-        "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/clearing-out-my-parents-house-was-a-legal-nightmare-how-can-i-downsize-without-putting-my-children-through-the-same-ordeal-6537d804?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T10:15:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "30c14d3051f12a1d",
-        "title": "Chinese chip stocks notch biggest ever one-day gains as Beijing signals broader market support",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/27/china-chip-stocks-beijing-market-support.html",
-        "seen_at_utc": "2026-11-27T10:13:44+00:00",
-        "topics": [
-          "ai_chips"
-        ],
-        "companies": []
-      },
-      {
-        "id": "1a22af0e534afed2",
-        "title": "Hollywood Hills home of the late Presley Gerber listed for $3.6 million, 2 months after his death",
-        "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/hollywood-hills-home-of-the-late-presley-gerber-listed-for-3-6-million-2-months-after-his-death-92497183?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T09:59:00+00:00",
-        "topics": [
-          "us_markets"
-        ],
-        "companies": []
-      },
-      {
-        "id": "47d9ee85238ad5cd",
-        "title": "Gold ETFs vs Gold Mutual Funds: Amid ups and downs in rates, which is better instrument to buy for good returns?",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/stock-market-news/gold-etfs-vs-gold-mutual-funds-amid-ups-and-downs-in-rates-which-is-better-instrument-to-buy-for-good-returns-11795767297944.html",
-        "seen_at_utc": "2026-11-27T09:23:14+00:00",
-        "topics": [
-          "commodities_fx"
-        ],
-        "companies": []
-      },
-      {
-        "id": "d6a630759d51f2a9",
-        "title": "Silver price prediction: After 67% crash from peak, is the white metal finally close to a bottom? Key levels to watch",
-        "publisher": "Mint",
-        "url": "https://www.livemint.com/market/commodities/silver-price-prediction-after-67-crash-from-peak-is-the-white-metal-finally-close-to-a-bottom-key-levels-to-watch-11795768037657.html",
-        "seen_at_utc": "2026-11-27T09:18:08+00:00",
-        "topics": [
-          "commodities_fx"
-        ],
-        "companies": []
-      },
-      {
-        "id": "2d35524d998069eb",
-        "title": "‘Ready for any storm’: UAE minister optimistic on economy as IMF lifts forecast",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/25/uae-iran-war-economy-oil.html",
-        "seen_at_utc": "2026-11-27T08:47:36+00:00",
-        "topics": [
-          "commodities_fx",
-          "rates_inflation"
-        ],
-        "companies": []
-      },
-      {
-        "id": "04ee4cc2fb5cfe8d",
-        "title": "HDFC Bank shares tread water as rally loses steam",
-        "publisher": "BusinessLine",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/hdfc-bank-shares-tread-water-as-rally-loses-steam/article71749701.ece",
-        "seen_at_utc": "2026-11-27T08:45:26+00:00",
-        "topics": [
-          "companies",
-          "india_markets"
-        ],
-        "companies": [
-          "HDFC Bank"
-        ]
-      },
-      {
-        "id": "062571f9452dfdd4",
-        "title": "Tech German software major SAP is reportedly weighing cutting at least 10,000 jobs in AI push",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html",
-        "seen_at_utc": "2026-11-27T07:15:44+00:00",
-        "topics": [
-          "ai_chips"
-        ],
-        "companies": []
-      },
-      {
-        "id": "b102d99e76ab174e",
-        "title": "Can SpaceX's AI ambitions drive further upside in its stock?",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/can-spacexs-ai-ambitions-drive-further-upside-in-its-stock/slideshow/136213079.cms",
-        "seen_at_utc": "2026-11-27T06:53:29+00:00",
-        "topics": [
-          "ai_chips"
-        ],
-        "companies": []
-      },
-      {
-        "id": "4b7e55af08698cc7",
-        "title": "Spain’s Pablo Hernández de Cos set to lead European Central Bank",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
-        "seen_at_utc": "2026-11-27T06:50:38+00:00",
-        "topics": [
-          "rates_inflation"
         ],
         "companies": []
       },
@@ -9096,29 +9147,6 @@
           "HDFC Bank",
           "ICICI Bank"
         ]
-      },
-      {
-        "id": "b45859c9208d5643",
-        "title": "India bonds decline ahead of fresh debt sale as elevated oil prices fan inflation worries",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-decline-ahead-of-fresh-debt-sale-as-elevated-oil-prices-fan-inflation-worries/articleshow/136211546.cms",
-        "seen_at_utc": "2026-11-27T06:10:03+00:00",
-        "topics": [
-          "commodities_fx",
-          "rates_inflation"
-        ],
-        "companies": []
-      },
-      {
-        "id": "49d3ff00d7d81ada",
-        "title": "China’s factories are growing profits again, but the AI boom is picking the winners",
-        "publisher": "CNBC",
-        "url": "https://www.cnbc.com/2026/11/27/china-industrial-profits-october.html",
-        "seen_at_utc": "2026-11-27T06:09:51+00:00",
-        "topics": [
-          "ai_chips"
-        ],
-        "companies": []
       },
       {
         "id": "8db629e66ca951f0",
@@ -9150,17 +9178,45 @@
         ]
       },
       {
-        "id": "6d321a8033102997",
-        "title": "ICICI Bank Share Price Live Updates: ICICI Bank Dividend Updates",
+        "id": "a81f7e88f8ae28f9",
+        "title": "HDFC Bank Share Price Highlights: HDFC Bank Stock Price History",
         "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/icici-bank-stock-price-today-live-27-nov-2026/liveblog/136209072.cms",
-        "seen_at_utc": "2026-11-27T04:33:08+00:00",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-bank-share-price-today-live-27-nov-2026/liveblog/136209175.cms",
+        "seen_at_utc": "2026-11-27T04:35:17+00:00",
         "topics": [
           "companies",
           "india_markets"
         ],
         "companies": [
-          "ICICI Bank"
+          "HDFC Bank"
+        ]
+      },
+      {
+        "id": "654c5b241f051023",
+        "title": "TCS Share Price Highlights: TCS Stock Price History",
+        "publisher": "The Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-updates-27-nov-2026/liveblog/136209164.cms",
+        "seen_at_utc": "2026-11-27T04:35:03+00:00",
+        "topics": [
+          "companies",
+          "india_markets"
+        ],
+        "companies": [
+          "TCS"
+        ]
+      },
+      {
+        "id": "18482d1ee9b7c1a2",
+        "title": "Infosys Share Price Highlights: Infosys Stock Price History",
+        "publisher": "The Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/infosys-share-price-today-live-27-nov-2026/liveblog/136209111.cms",
+        "seen_at_utc": "2026-11-27T04:33:49+00:00",
+        "topics": [
+          "companies",
+          "india_markets"
+        ],
+        "companies": [
+          "Infosys"
         ]
       },
       {
@@ -9175,63 +9231,6 @@
         ],
         "companies": [
           "Nvidia"
-        ]
-      },
-      {
-        "id": "e216f339540deeac",
-        "title": "HDFC Bank, SBI, 8 other stocks JPMorgan is bullish on as markets gear up to enter 2027. See full list",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hdfc-bank-sbi-8-other-stocks-jpmorgan-is-bullish-on-as-markets-gear-up-to-enter-2027-see-full-list/slideshow/136208713.cms",
-        "seen_at_utc": "2026-11-27T04:05:05+00:00",
-        "topics": [
-          "companies",
-          "india_markets"
-        ],
-        "companies": [
-          "JPMorgan",
-          "HDFC Bank"
-        ]
-      },
-      {
-        "id": "2e27232e253ebe58",
-        "title": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
-        "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T01:15:00+00:00",
-        "topics": [
-          "ai_chips",
-          "companies"
-        ],
-        "companies": [
-          "Nvidia"
-        ]
-      },
-      {
-        "id": "7be2078d42dd0169",
-        "title": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
-        "publisher": "MarketWatch",
-        "url": "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
-        "seen_at_utc": "2026-11-27T00:31:00+00:00",
-        "topics": [
-          "ai_chips",
-          "companies"
-        ],
-        "companies": [
-          "Nvidia"
-        ]
-      },
-      {
-        "id": "fa9bb03f375a07e4",
-        "title": "SC asks HDFC Bank, three others to ok staff prosecution",
-        "publisher": "The Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sc-asks-hdfc-bank-three-others-to-ok-staff-prosecution/articleshow/136206787.cms",
-        "seen_at_utc": "2026-11-26T20:02:16+00:00",
-        "topics": [
-          "companies",
-          "india_markets"
-        ],
-        "companies": [
-          "HDFC Bank"
         ]
       },
       {
@@ -9261,28 +9260,14 @@
         "companies": [
           "Nvidia"
         ]
-      },
-      {
-        "id": "aac7f178e127e1cd",
-        "title": "Nvidia Tells Partners to Pause Shipments to Southeast Asia",
-        "publisher": "The Wall Street Journal",
-        "url": "https://www.wsj.com/tech/nvidia-tells-partners-to-pause-shipments-to-southeast-asia-5b791cb0?mod=rss_Technology",
-        "seen_at_utc": "2026-11-26T17:06:00+00:00",
-        "topics": [
-          "ai_chips",
-          "companies"
-        ],
-        "companies": [
-          "Nvidia"
-        ]
       }
     ],
     "notice": "Headlines are shown as published, with a link to the publisher. They are not verified here, and a headline is not proof that a price moved because of it."
   },
   "executive_summary": {
-    "headline": "Capital flows exhibit mixed daily performance amidst broader monthly weakness as market participants assess equity sector rotations and ongoing central bank balance sheet contractions.",
-    "rotation_view": "Across the month and week, money flows show an outflow-led landscape across Country and regional markets and Metals. However, overall daily performance shows an improving trend. Equity sectors and themes remain inflow-led over the month, supported by defensive groups such as US healthcare and US consumer staples, despite tech-related weakening. Size and style trends are improving daily. Overall, the market risk tone is risk-off over the monthly horizon, shifting to a mixed risk tone across the weekly window.",
-    "drivers_view": "Press commentary features technology and banking developments, with discussions surrounding Nvidia, JPMorgan, and SpaceX alongside Indian banking names HDFC Bank and ICICI Bank. Regional IT firms TCS and Infosys are also cited in news coverage. Meanwhile, official macro metrics show reductions in Federal Reserve total assets, ECB balance sheet size, and the Bank of Japan balance sheet, while US M2 money stock has increased.",
+    "headline": "Capital flows show an improving daily trend despite monthly outflow dominance in major global markets, as metals face heavy selling while select domestic equity sectors and debt instruments attract interest.",
+    "rotation_view": "The overall market flow shows an outflow-led pattern over the month and week windows, but the daily trend is improving. Equity sectors and themes attracted monthly inflows, while country and regional markets, metals, crypto, and size and style categories experienced monthly outflows. Across asset classes, risk tone reads risk-off for the month and mixed for the week, representing an improving shift.",
+    "drivers_view": "In corporate and market developments, news reports highlight significant stock volatility and price declines surrounding Nvidia, alongside domestic market movements affecting firms such as TCS, Infosys, HDFC Bank, and ICICI Bank, as well as global worker campaigns concerning Amazon.",
     "watch": [
       "US jobs report within a week",
       "Fed interest-rate decision (FOMC) within two weeks",
@@ -9291,18 +9276,15 @@
     "evidence_refs": [
       "markets",
       "sectors",
-      "size_style",
       "metals",
-      "WALCL",
-      "ECB_ILM_TOTAL_ASSETS",
-      "BOJ_TOTAL_ASSETS",
-      "M2SL"
+      "crypto",
+      "size_style"
     ],
     "method": "ai_validated",
     "provider": "gemini",
     "model": "gemini-3.5-flash",
-    "generated_at_utc": "2026-11-27T10:47:39.039841+00:00",
-    "as_of_ist": "2026-11-27T16:17:39.039841+05:30",
+    "generated_at_utc": "2026-11-27T14:14:17.735710+00:00",
+    "as_of_ist": "2026-11-27T19:44:17.735710+05:30",
     "notice": "Generated from the categorical data on this dashboard. Volume is a participation proxy, not a measured fund flow. Informational only, not investment advice.",
     "human_review_required": true
   }

@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-27T16:17:39.039841+05:30
+# Global Money-Flow Brief | 2026-11-27T19:44:17.735710+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Capital flows exhibit mixed daily performance amidst broader monthly weakness as market participants assess equity sector rotations and ongoing central bank balance sheet contractions.
+Capital flows show an improving daily trend despite monthly outflow dominance in major global markets, as metals face heavy selling while select domestic equity sectors and debt instruments attract interest.
 
-Across the month and week, money flows show an outflow-led landscape across Country and regional markets and Metals. However, overall daily performance shows an improving trend. Equity sectors and themes remain inflow-led over the month, supported by defensive groups such as US healthcare and US consumer staples, despite tech-related weakening. Size and style trends are improving daily. Overall, the market risk tone is risk-off over the monthly horizon, shifting to a mixed risk tone across the weekly window.
+The overall market flow shows an outflow-led pattern over the month and week windows, but the daily trend is improving. Equity sectors and themes attracted monthly inflows, while country and regional markets, metals, crypto, and size and style categories experienced monthly outflows. Across asset classes, risk tone reads risk-off for the month and mixed for the week, representing an improving shift.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 - US consumer price inflation (CPI): 2026-12-10 (in 13 days). Date from FRED's release calendar.
 - US producer prices (PPI): 2026-12-15 (in 18 days). Date from FRED's release calendar.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-27T16:17:39.039841+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-27T19:44:17.735710+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

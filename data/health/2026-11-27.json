@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-27T16:17:39.039841+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-27T10:49:22.065882+00:00",
+  "as_of_ist": "2026-11-27T19:44:17.735710+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-27T14:15:51.498964+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -188,7 +188,7 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 9
+          "usable": 8
         },
         {
           "id": "cnbc_energy",
@@ -263,8 +263,8 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 103,
-      "same_headline_again": 27
+      "older_than_limit": 104,
+      "same_headline_again": 37
     },
     "top_other_sites": []
   },
