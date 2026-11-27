@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-27T19:44:17.735710+05:30
+# Global Money-Flow Brief | 2026-11-28T03:48:55.144326+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Capital flows show an improving daily trend despite monthly outflow dominance in major global markets, as metals face heavy selling while select domestic equity sectors and debt instruments attract interest.
+Money flows show improving trends overall despite weekly outflows from regional markets and metals, while defensive US equity sectors and Indian equities attract participation.
 
-The overall market flow shows an outflow-led pattern over the month and week windows, but the daily trend is improving. Equity sectors and themes attracted monthly inflows, while country and regional markets, metals, crypto, and size and style categories experienced monthly outflows. Across asset classes, risk tone reads risk-off for the month and mixed for the week, representing an improving shift.
+The monthly risk tone is risk-off while the weekly tone is mixed, reflecting an improving shift. Overall flow is improving from monthly outflow-led conditions to mixed weekly and daily activity. Over the month, money departed Country and regional markets, Size and style, Metals, and Crypto, while moving into Equity sectors and themes. Across the week, outflows continued from metals and major regional indices, including the S&P 500 and Nasdaq 100. However, Nifty 50, US healthcare, and US long Treasury proxies recorded inflows.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
@@ -14,9 +14,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
-- China equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- China equities proxy: Bearish (Steady); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
+- Hong Kong equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EHSI/history/)
 - Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
-- Emerging markets: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/EEM/history/)
 
 ## What is driving it
 - Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm)
@@ -33,9 +33,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 - **Treasurer:** Separate liquidity changes from asset-specific flows; review stale-series alerts.
 
 ## Watch next
-- US jobs report: 2026-12-04 (in 7 days). Date from FRED's release calendar.
-- Fed interest-rate decision (FOMC): 2026-12-09 (in 12 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
-- US consumer price inflation (CPI): 2026-12-10 (in 13 days). Date from FRED's release calendar.
-- US producer prices (PPI): 2026-12-15 (in 18 days). Date from FRED's release calendar.
+- US jobs report: 2026-12-04 (in 6 days). Date from FRED's release calendar.
+- Fed interest-rate decision (FOMC): 2026-12-09 (in 11 days). Date from a built-in list; confirm at https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
+- US consumer price inflation (CPI): 2026-12-10 (in 12 days). Date from FRED's release calendar.
+- US producer prices (PPI): 2026-12-15 (in 17 days). Date from FRED's release calendar.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-27T19:44:17.735710+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-28T03:48:55.144326+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

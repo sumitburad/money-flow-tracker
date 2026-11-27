@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-27T19:44:17.735710+05:30",
-  "run_slot": "backup",
-  "completed_at_utc": "2026-11-27T14:15:51.498964+00:00",
+  "as_of_ist": "2026-11-28T03:48:55.144326+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-27T22:20:31.863875+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -21,7 +21,7 @@
     "US": {
       "series_id": "WALCL",
       "status": "current",
-      "observation_date": "2026-11-18",
+      "observation_date": "2026-11-25",
       "source": "https://fred.stlouisfed.org/series/WALCL",
       "note": "Not a complete cross-border money flow measurement"
     },
@@ -89,15 +89,10 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 54,
+    "items_with_signal": 59,
     "items_in_rotation": 61,
     "items_without_volume": [
-      "nifty50",
-      "niftybank",
-      "niftyit",
-      "nifty500",
-      "hongkong",
-      "japan",
+      "uk",
       "dollar",
       "usdinr",
       "eurusd",
@@ -121,11 +116,11 @@
   "errors": [
     {
       "source": "macro_stale:DGS2",
-      "error": "Last observation 2026-11-24; permitted 2 weekday sessions (exchange holidays require review)"
+      "error": "Last observation 2026-11-25; permitted 2 weekday sessions (exchange holidays require review)"
     },
     {
       "source": "macro_stale:DGS10",
-      "error": "Last observation 2026-11-24; permitted 2 weekday sessions (exchange holidays require review)"
+      "error": "Last observation 2026-11-25; permitted 2 weekday sessions (exchange holidays require review)"
     },
     {
       "source": "institutional_flows",
@@ -139,7 +134,7 @@
     "status": "ok",
     "fred": {
       "status": "ok",
-      "rows_seen": 968,
+      "rows_seen": 933,
       "unmatched_releases": []
     },
     "events": 7,
@@ -154,7 +149,7 @@
     "from_listed_publishers": 400,
     "kept": 36,
     "company_stories": 14,
-    "seconds": 9.6,
+    "seconds": 10.4,
     "slowest_answer_seconds": 0.3,
     "errors": [],
     "advisories": [],
@@ -167,14 +162,14 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 10
+          "usable": 9
         },
         {
           "id": "cnbc_earnings",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 3
+          "usable": 0
         },
         {
           "id": "cnbc_technology",
@@ -188,7 +183,7 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 8
+          "usable": 7
         },
         {
           "id": "cnbc_energy",
@@ -209,14 +204,14 @@
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 40,
-          "usable": 30
+          "usable": 27
         },
         {
           "id": "wsj_economy",
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 36,
-          "usable": 16
+          "usable": 13
         },
         {
           "id": "marketwatch_top",
@@ -263,8 +258,8 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 104,
-      "same_headline_again": 37
+      "older_than_limit": 115,
+      "same_headline_again": 33
     },
     "top_other_sites": []
   },
@@ -273,19 +268,23 @@
     "providers_tried": [
       "gemini"
     ],
-    "rejected_answers": 1,
-    "reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
-    ],
+    "rejected_answers": 0,
+    "reasons": [],
     "ai_configured": true,
     "empty_reply_retries": 0,
     "models_seen": [
-      "gemini-3.5-flash"
+      "gemini-flash-latest"
     ],
     "model_results": [
       {
         "model": "gemini-3.5-flash",
-        "accepted": 16,
+        "accepted": 15,
+        "rejected": 0,
+        "empty": 0
+      },
+      {
+        "model": "gemini-flash-latest",
+        "accepted": 1,
         "rejected": 0,
         "empty": 0
       }
