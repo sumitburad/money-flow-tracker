@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-27T04:04:12.545427+05:30
+# Global Money-Flow Brief | 2026-11-27T06:02:17.038231+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Money flows favor Indian equities and healthcare while retreating from US tech and gold; bonds and crypto gain
+Cross-asset money flows improve to mixed as equity sectors and crypto attract weekly volume, though broader regional indices and metals remain burdened by monthly outflows.
 
-Day shows mixed flows with inflows into bonds metals crypto and real estate. Week shows inflows into equity sectors and crypto outflows from country markets and metals. Month shows inflows into equity sectors outflows from country markets size styles metals and crypto. Trend improving overall. Risk tone is risk-off for the month mixed for the week with improving shift.
+Across the month, money movement reflects an outflow-led stance, but trends are improving into mixed conditions over the week and day. Risk tone shifted from a monthly risk-off environment to mixed over the week. Weekly inflows favoured select equity sectors such as Indian banking and technology proxies, alongside US healthcare and Bitcoin. Conversely, regional equities including S&P five hundred and Nasdaq one hundred, alongside metals like Gold and Copper, experienced weekly outflows. Yields on two-year and ten-year Treasuries trended down.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
@@ -14,9 +14,9 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 **Data — supportive evidence:**
 - No qualifying directional signal; data may be incomplete.
 **Data — opposing evidence:**
-- S&P 500: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EGSPC/history/)
 - China equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FXI/history/)
 - Hong Kong equities: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/%5EHSI/history/)
+- Euro area equities proxy: Bearish (Weakening); Up-session versus down-session volume over 20 observations; NOT net institutional flow; Close and 50/200-session trend confirmation [source](https://finance.yahoo.com/quote/FEZ/history/)
 
 ## What is driving it
 - Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions — unconfirmed; [source](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm)
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 - US consumer price inflation (CPI): 2026-12-10 (in 13 days). Date from FRED's release calendar.
 - US producer prices (PPI): 2026-12-15 (in 18 days). Date from FRED's release calendar.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-27T04:04:12.545427+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-27T06:02:17.038231+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

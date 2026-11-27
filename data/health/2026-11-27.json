@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-27T04:04:12.545427+05:30",
-  "run_slot": "primary",
-  "completed_at_utc": "2026-11-26T22:44:40.303880+00:00",
+  "as_of_ist": "2026-11-27T06:02:17.038231+05:30",
+  "run_slot": "backup",
+  "completed_at_utc": "2026-11-27T00:37:28.188671+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -63,22 +63,23 @@
   "institutional_flow_status": "not_configured",
   "ai_classification": {
     "model_configured": true,
-    "model_calls": 10,
-    "model_classified": 12,
-    "rule_fallback": 18,
-    "rejected_model_responses": 10,
+    "model_calls": 6,
+    "model_classified": 15,
+    "rule_fallback": 15,
+    "rejected_model_responses": 3,
     "providers_used": [
-      "openrouter"
+      "openrouter",
+      "gemini"
     ],
     "empty_reply_retries": 0,
     "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free"
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "gemini-flash-latest"
     ],
     "failure_reasons": [
-      "gemini: no answer within 75 seconds (x5)",
-      "openrouter: a tag failed the checks (free-form rationale must have no numerical assertions) (x3)",
-      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use...",
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "gemini: no answer within 75 seconds",
+      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -145,8 +146,14 @@
     "model_results": [
       {
         "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 12,
-        "rejected": 3,
+        "accepted": 5,
+        "rejected": 0,
+        "empty": 0
+      },
+      {
+        "model": "gemini-flash-latest",
+        "accepted": 10,
+        "rejected": 0,
         "empty": 0
       }
     ],
@@ -154,10 +161,9 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 58,
+    "items_with_signal": 59,
     "items_in_rotation": 61,
     "items_without_volume": [
-      "uk",
       "dollar",
       "usdinr",
       "eurusd",
@@ -188,10 +194,6 @@
       "error": "Last observation 2026-11-24; permitted 2 weekday sessions (exchange holidays require review)"
     },
     {
-      "source": "breadth:sp500",
-      "error": "ValueError"
-    },
-    {
       "source": "institutional_flows",
       "error": "Authorized NSE broker feed or final NSDL access unavailable"
     }
@@ -218,8 +220,8 @@
     "from_listed_publishers": 400,
     "kept": 36,
     "company_stories": 15,
-    "seconds": 9.4,
-    "slowest_answer_seconds": 0.3,
+    "seconds": 11.4,
+    "slowest_answer_seconds": 0.8,
     "errors": [],
     "advisories": [],
     "feeds": {
@@ -231,7 +233,7 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 11
+          "usable": 10
         },
         {
           "id": "cnbc_earnings",
@@ -327,27 +329,22 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 103,
-      "same_headline_again": 36
+      "older_than_limit": 104,
+      "same_headline_again": 35
     },
     "top_other_sites": []
   },
   "executive_summary": {
     "method": "ai_validated",
     "providers_tried": [
-      "gemini",
-      "openrouter"
+      "gemini"
     ],
-    "rejected_answers": 3,
-    "reasons": [
-      "gemini: no answer within 75 seconds",
-      "gemini: no answer within 75 seconds",
-      "gemini: HTTP 404 (no model was available): This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use..."
-    ],
+    "rejected_answers": 0,
+    "reasons": [],
     "ai_configured": true,
     "empty_reply_retries": 0,
     "models_seen": [
-      "nvidia/nemotron-3-ultra-550b-a55b:free"
+      "gemini-flash-latest"
     ],
     "free_pool": [
       "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -414,8 +411,14 @@
     "model_results": [
       {
         "model": "nvidia/nemotron-3-ultra-550b-a55b",
-        "accepted": 13,
-        "rejected": 3,
+        "accepted": 5,
+        "rejected": 0,
+        "empty": 0
+      },
+      {
+        "model": "gemini-flash-latest",
+        "accepted": 11,
+        "rejected": 0,
         "empty": 0
       }
     ]
