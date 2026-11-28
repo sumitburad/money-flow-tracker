@@ -1,11 +1,11 @@
-# Global Money-Flow Brief | 2026-11-28T03:48:55.144326+05:30
+# Global Money-Flow Brief | 2026-11-28T05:30:06.405465+05:30
 
 **Headline:** Independently confirmed flows are limited; unsupported signals remain Neutral/Mixed.
 
 ## Executive summary (AI-written, rule-checked)
-Money flows show improving trends overall despite weekly outflows from regional markets and metals, while defensive US equity sectors and Indian equities attract participation.
+Capital flows show a mixed daily picture, but weekly inflow momentum across regional equities, credit, and real estate helps improve short-term risk tone despite monthly outflows.
 
-The monthly risk tone is risk-off while the weekly tone is mixed, reflecting an improving shift. Overall flow is improving from monthly outflow-led conditions to mixed weekly and daily activity. Over the month, money departed Country and regional markets, Size and style, Metals, and Crypto, while moving into Equity sectors and themes. Across the week, outflows continued from metals and major regional indices, including the S&P 500 and Nasdaq 100. However, Nifty 50, US healthcare, and US long Treasury proxies recorded inflows.
+Across the monthly timeframe, capital flows reflect an outflow-led trend with a risk-off rotation tone across country markets, metals, and crypto. Over the weekly horizon, flows turned inflow-led, making the risk tone mixed as participation improved across regional markets, credit, real estate, and select size and style segments. Daily moves remain mixed overall. Metals show improving flow, while equity sectors display a weakening trend despite weekly inflows into the AI and big-data theme and banking sectors.
 
 ## Risk tone
 Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
@@ -38,4 +38,4 @@ Risk tone, from a checklist of market groups: risk-off over the last month and m
 - US consumer price inflation (CPI): 2026-12-10 (in 12 days). Date from FRED's release calendar.
 - US producer prices (PPI): 2026-12-15 (in 17 days). Date from FRED's release calendar.
 
-_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-28T03:48:55.144326+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._
+_Data: [FRED](https://fred.stlouisfed.org/) and cited market-proxy sources. As of 2026-11-28T05:30:06.405465+05:30. Public research, not investment advice. Draft for human review. No trade recommendations._

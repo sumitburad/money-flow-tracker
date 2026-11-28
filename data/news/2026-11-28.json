@@ -20,7 +20,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal agencies announced dollar threshold adjustments for consumer lending and leasing rules.",
+      "one_line_reason": "Federal agencies announced updated dollar thresholds for consumer lending rules.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -49,7 +49,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Agencies published updated appraisal exemption thresholds for higher priced mortgage loans.",
+      "one_line_reason": "Federal agencies set dollar thresholds for small loan appraisal exemptions.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -69,7 +69,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f5859676338445cf",
-      "event_type": "central_bank",
+      "event_type": "rates",
       "region": [
         "US"
       ],
@@ -78,7 +78,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Federal Reserve released minutes covering recent Board discount rate discussions.",
+      "one_line_reason": "The Board released minutes from discount rate meetings.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -107,7 +107,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve announced student competition winners with no macroeconomic impact.",
+      "one_line_reason": "The Federal Reserve announced winners of a student competition.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -138,7 +138,7 @@
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Survey details bank strategies for managing reserve balances at the central bank.",
+      "one_line_reason": "Survey results detailed bank strategies for managing reserve balances.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -163,14 +163,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
-      "horizon": "weeks",
+      "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Enforcement action against a former bank employee indicates regulatory oversight with unclear market impact.",
+      "one_line_reason": "Federal Reserve issued an enforcement action involving a former employee of a banking entity.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -196,10 +195,10 @@
       ],
       "affected": [],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Release of central bank meeting minutes without explicit market outcome leads to an unclear direction.",
+      "one_line_reason": "Release of official meeting minutes from the Federal Open Market Committee.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -229,9 +228,9 @@
       ],
       "direction": "unclear",
       "horizon": "weeks",
-      "novelty": "follow_up",
+      "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Extension of the comment period for regulatory risk management guidance has an unclear direct market impact.",
+      "one_line_reason": "Regulatory agencies extended the public comment period for proposed risk management guidance.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -256,14 +255,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Announced adjustments to payment service pricing and check service streamlining have unclear overall market direction.",
+      "one_line_reason": "Federal Reserve announced fee schedules and operational changes for payment and check services.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -292,7 +290,7 @@
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Procedural update to future meeting schedules has no immediate market direction impact.",
+      "one_line_reason": "Federal Reserve published a revised schedule for future policy decision meetings.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -317,14 +315,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve issued an enforcement action against a bank employee.",
+      "one_line_reason": "Federal Reserve issues enforcement action regarding a former bank employee.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -349,14 +346,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve approved banking applications.",
+      "one_line_reason": "Federal Reserve approves banking applications for corporate structures.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -381,14 +377,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve terminated an enforcement action against bank entities.",
+      "one_line_reason": "Federal Reserve terminates an enforcement action against banking entities.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -413,14 +408,13 @@
         "US"
       ],
       "affected": [
-        "US banks",
-        "US financials"
+        "US banks"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve approved a bank application.",
+      "one_line_reason": "Federal Reserve approves application by a major banking institution.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -440,7 +434,7 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "beacfe1806dadbf1",
-      "event_type": "central_bank",
+      "event_type": "rates",
       "region": [
         "US"
       ],
@@ -453,7 +447,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve released its central bank policy statement.",
+      "one_line_reason": "Federal Reserve releases a central bank monetary policy statement.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",

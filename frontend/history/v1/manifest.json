@@ -1,7 +1,7 @@
 {
   "schema": "history-1.0",
   "usage": "research_only_not_order_authorization",
-  "generated_at_utc": "2026-11-27T22:21:24.994319+00:00",
+  "generated_at_utc": "2026-11-28T00:05:47.577233+00:00",
   "start_date": "2021-11-22",
   "no_price_data": true,
   "availability_basis": "available_from_estimate is a conservative publication-lag estimate, not a true vintage date. Values are the current vintage; later revisions are not tracked.",
@@ -23,7 +23,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "d3adbc02e4daa526eb03b20f8119930eab53c210c4810cf8aea66281f165f8a8",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -43,7 +43,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "ee5bc2310f56c223f3a1bdd128ea6c13d270eed95fce0faf5a27b27d299e1ac5",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -63,7 +63,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "6b57af5e45ad71510423f7e15e5d0dfeee79f81ae8174093e8686bde555f48b7",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -83,7 +83,7 @@
       "mirror": false,
       "source_url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "sha256": "b4d4018045eff725884b9168900db292669d446aeb198d04ac5a135dabc4df76",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -103,7 +103,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/CPILFENS",
       "sha256": "a339f1a4a63f7d52c0ae95d7326ba6b27c22e293b06286fe02b896b3276a2854",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok",
       "derived_from": "CPILFENS",
       "method": "year_on_year_percent",
@@ -128,7 +128,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/CPIAUCNS",
       "sha256": "7b5fdcf66c21f19fb2d0dd7bd1154f0ea9da30deb032518ac783d19f87fb1569",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok",
       "derived_from": "CPIAUCNS",
       "method": "year_on_year_percent",
@@ -153,7 +153,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DEXINUS",
       "sha256": "2f93c4aa8734dcc248054ba6376a895f8fe0ee52e284880fbb601a3631f13cfa",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -173,7 +173,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DFF",
       "sha256": "0b51f4a36faa9cb5a93f06bfb1d75fd09133190c44a7a61cdf69717e18a30b34",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -193,7 +193,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
       "sha256": "cbf386360071ea71c7dea9dc918848f46c3f3af1e4d0b5b8621aa324f8b27eaf",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -213,7 +213,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DGS2",
       "sha256": "9bfcf23275467b0340a49b7d55dad8f359cb60778cb318aba9561ec8a611d919",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -233,7 +233,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS",
       "sha256": "2dbc1c939b08e20e62f84f55441040f32033438dcb0939e4036276234b0df5db",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -253,7 +253,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/ECBASSETSW",
       "sha256": "218658b55c40e47356a422bf24b0ab702515c9c034546f60783b03553a9ed62e",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -273,7 +273,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/JPNASSETS",
       "sha256": "3a28f3c17d9e35a8dd3f63c770fee2e7c40879f700ace1f54fb831e477089dc4",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -293,7 +293,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/M2SL",
       "sha256": "abf2370e4cc0ab3a8b213c61c66913bcf100556fe3aa7b3f1d454265c0a5eabb",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -313,7 +313,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/PCEPILFE",
       "sha256": "9acbe12cf2bc7c8d933215324ba4922781ed8c23f9869bd8ae6a7a9ce4710bcf",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok",
       "derived_from": "PCEPILFE",
       "method": "year_on_year_percent",
@@ -338,7 +338,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/PCEPI",
       "sha256": "fe88846fdb74a01ec134d1d05035b0fc8bf70eceaa6cf480a554875ce7f75d70",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok",
       "derived_from": "PCEPI",
       "method": "year_on_year_percent",
@@ -363,7 +363,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/RRPONTSYD",
       "sha256": "f3be231880a1925ea71bdd9efd521dcadd035fbb9947de4e921b8448d7ab8ac3",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -383,7 +383,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
       "sha256": "2b54ae4edcae6d32a228be361c37e7b0983ad702775fdfabb33ef5d52b581f93",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -403,7 +403,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/T10YIE",
       "sha256": "b2cb04e8345b793bb71d4c7a6ba4387ed836fb8741f8ea6d080cd7417852f2a1",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -423,7 +423,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/UNRATE",
       "sha256": "794e02cb477b52be6f3f5b0394c487b3bea56347b050992db8701a67064fa4fb",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -443,7 +443,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "977ca3a490640e2e36034df1431091839c4cb34184d77f95b32e1419447778f8",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -463,7 +463,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "79aa1db79da9edcbb88afe41aa1787344269783dbf240a2c84f2a62363714797",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -483,7 +483,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "8df4d56970743f2588bbb407b1a0729bd9a75f5de3ae1841a269a6c60e1ea6c1",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -503,7 +503,7 @@
       "mirror": false,
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all",
       "sha256": "2172bb997f80de817dec6828c2eb1200a28b4c59528400a7b4c99d1e70076b10",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -523,7 +523,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/WALCL",
       "sha256": "1cb8b7b7739bdd4813c871b091d4bb4d9775e0b97febe9fddb061f1d403a34a4",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     },
     {
@@ -543,7 +543,7 @@
       "mirror": false,
       "source_url": "https://fred.stlouisfed.org/series/WTREGEN",
       "sha256": "54e33f8ba56f6a0fbc7902724d7cfd1114143aa1218aaad13715cd62c9d5c7b9",
-      "fetched_at_utc": "2026-11-27T22:21:24.994319+00:00",
+      "fetched_at_utc": "2026-11-28T00:05:47.577233+00:00",
       "status": "ok"
     }
   ],
