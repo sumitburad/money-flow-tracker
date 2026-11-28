@@ -15,12 +15,15 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US financials",
+        "US banks"
+      ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal agencies announced updated dollar thresholds for consumer lending rules.",
+      "one_line_reason": "Federal agencies updated dollar threshold exemptions for consumer lending and leasing regulations.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -44,12 +47,16 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US financials",
+        "US banks",
+        "US real estate"
+      ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal agencies set dollar thresholds for small loan appraisal exemptions.",
+      "one_line_reason": "Federal agencies announced updated dollar thresholds for mortgage appraisal exemptions.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -69,16 +76,19 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "f5859676338445cf",
-      "event_type": "rates",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "US long Treasury proxy",
+        "US short-term Treasuries"
+      ],
       "direction": "unclear",
-      "horizon": "weeks",
+      "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Board released minutes from discount rate meetings.",
+      "one_line_reason": "The Federal Reserve released minutes from recent discount rate meetings.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -104,10 +114,10 @@
       ],
       "affected": [],
       "direction": "unclear",
-      "horizon": "days",
+      "horizon": "intraday",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "The Federal Reserve announced winners of a student competition.",
+      "one_line_reason": "Federal Reserve announced winners of an academic competition without market impact.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -132,13 +142,15 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials",
+        "US short-term Treasuries"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Survey results detailed bank strategies for managing reserve balances.",
+      "one_line_reason": "Federal Reserve published survey results detailing bank strategies for managing reserve balances.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -169,7 +181,7 @@
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve issued an enforcement action involving a former employee of a banking entity.",
+      "one_line_reason": "Enforcement action against a former bank employee impacts regulatory compliance perceptions for United States banks.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -193,12 +205,16 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "S&P 500",
+        "US long Treasury proxy",
+        "US dollar index"
+      ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Release of official meeting minutes from the Federal Open Market Committee.",
+      "one_line_reason": "Federal Open Market Committee meeting minutes provide crucial monetary policy details for United States financial markets.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -227,10 +243,10 @@
         "US financials"
       ],
       "direction": "unclear",
-      "horizon": "weeks",
+      "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Regulatory agencies extended the public comment period for proposed risk management guidance.",
+      "one_line_reason": "Extending the comment period for third party risk guidance affects regulatory timelines for United States financial institutions.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -255,13 +271,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve announced fee schedules and operational changes for payment and check services.",
+      "one_line_reason": "Changes to Federal Reserve payment services pricing directly affect operational costs for United States banks.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -285,12 +302,15 @@
       "region": [
         "US"
       ],
-      "affected": [],
+      "affected": [
+        "S&P 500",
+        "US long Treasury proxy"
+      ],
       "direction": "unclear",
       "horizon": "months",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve published a revised schedule for future policy decision meetings.",
+      "one_line_reason": "Revised Federal Open Market Committee meeting schedules update operational calendars for global market participants.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -315,13 +335,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve issues enforcement action regarding a former bank employee.",
+      "one_line_reason": "Federal Reserve issued an enforcement action involving a former bank employee.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -346,13 +367,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve approves banking applications for corporate structures.",
+      "one_line_reason": "Federal Reserve approved banking applications for bank holding companies.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -377,13 +399,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve terminates an enforcement action against banking entities.",
+      "one_line_reason": "Federal Reserve terminated an existing enforcement action against banking entities.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -408,13 +431,14 @@
         "US"
       ],
       "affected": [
-        "US banks"
+        "US banks",
+        "US financials"
       ],
       "direction": "unclear",
       "horizon": "weeks",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve approves application by a major banking institution.",
+      "one_line_reason": "Federal Reserve approved an application submitted by a major banking institution.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
@@ -434,23 +458,50 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "beacfe1806dadbf1",
-      "event_type": "rates",
+      "event_type": "central_bank",
       "region": [
         "US"
       ],
       "affected": [
         "S&P 500",
-        "US long Treasury proxy",
-        "US dollar index"
+        "US dollar index",
+        "US long Treasury proxy"
       ],
       "direction": "unclear",
       "horizon": "days",
       "novelty": "new",
       "confidence": "high",
-      "one_line_reason": "Federal Reserve releases a central bank monetary policy statement.",
+      "one_line_reason": "Federal Reserve released its official policy statement following the committee meeting.",
       "classifier": "validated_model_json",
       "model_provider": "gemini",
       "model_name": "gemini-3.5-flash",
+      "human_review_required": true
+    },
+    "confirmation": "too_early_or_unverified"
+  },
+  {
+    "headline_id": "cfb2996d15dcbd14",
+    "title": "Boris Vujčić: Interview with Kurier",
+    "publisher": "European Central Bank",
+    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261128~10e11f78f1.en.html",
+    "event_type": "other",
+    "impact": "unconfirmed",
+    "direction": "unclear",
+    "data": "Headline only",
+    "reading": "No verified causal market reaction",
+    "classification": {
+      "headline_id": "cfb2996d15dcbd14",
+      "event_type": "other",
+      "region": [
+        "EU"
+      ],
+      "affected": [],
+      "direction": "unclear",
+      "horizon": "days",
+      "novelty": "new",
+      "confidence": "low",
+      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
+      "classifier": "deterministic_rules_NOT_AI",
       "human_review_required": true
     },
     "confirmation": "too_early_or_unverified"
@@ -818,33 +869,6 @@
     "reading": "No verified causal market reaction",
     "classification": {
       "headline_id": "b082065da5343683",
-      "event_type": "other",
-      "region": [
-        "EU"
-      ],
-      "affected": [],
-      "direction": "unclear",
-      "horizon": "days",
-      "novelty": "new",
-      "confidence": "low",
-      "one_line_reason": "Official headline metadata only; market reaction not independently confirmed",
-      "classifier": "deterministic_rules_NOT_AI",
-      "human_review_required": true
-    },
-    "confirmation": "too_early_or_unverified"
-  },
-  {
-    "headline_id": "fd0775022c84a7c8",
-    "title": "Isabel Schnabel: Made in Europe",
-    "publisher": "European Central Bank",
-    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
-    "event_type": "other",
-    "impact": "unconfirmed",
-    "direction": "unclear",
-    "data": "Headline only",
-    "reading": "No verified causal market reaction",
-    "classification": {
-      "headline_id": "fd0775022c84a7c8",
       "event_type": "other",
       "region": [
         "EU"

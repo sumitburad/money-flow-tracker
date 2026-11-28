@@ -1,7 +1,7 @@
 {
-  "as_of_ist": "2026-11-28T05:30:06.405465+05:30",
-  "run_slot": "backup",
-  "completed_at_utc": "2026-11-28T00:05:30.287025+00:00",
+  "as_of_ist": "2026-11-28T15:47:54.114252+05:30",
+  "run_slot": "primary",
+  "completed_at_utc": "2026-11-28T10:20:40.417297+00:00",
   "needs_retry": false,
   "official_source_problems": 0,
   "status": "degraded",
@@ -75,8 +75,8 @@
       "gemini-3.5-flash"
     ],
     "failure_reasons": [
-      "gemini: no answer within 75 seconds (x2)",
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. (x2)",
+      "gemini: no answer within 75 seconds"
     ],
     "model_results": [
       {
@@ -90,7 +90,7 @@
     "no_ai_is_not_model_inference": false
   },
   "flow_windows": {
-    "items_with_signal": 60,
+    "items_with_signal": 61,
     "items_in_rotation": 61,
     "items_without_volume": [
       "dollar",
@@ -98,8 +98,7 @@
       "eurusd",
       "usdjpy",
       "usdcny",
-      "gbpusd",
-      "platinum"
+      "gbpusd"
     ]
   },
   "regime": {
@@ -149,8 +148,8 @@
     "from_listed_publishers": 400,
     "kept": 36,
     "company_stories": 14,
-    "seconds": 10.8,
-    "slowest_answer_seconds": 0.6,
+    "seconds": 10.4,
+    "slowest_answer_seconds": 0.4,
     "errors": [],
     "advisories": [],
     "feeds": {
@@ -176,14 +175,14 @@
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 29
+          "usable": 26
         },
         {
           "id": "cnbc_economy",
           "publisher": "CNBC",
           "status": "ok",
           "items": 30,
-          "usable": 7
+          "usable": 8
         },
         {
           "id": "cnbc_energy",
@@ -204,7 +203,7 @@
           "publisher": "The Wall Street Journal",
           "status": "ok",
           "items": 40,
-          "usable": 24
+          "usable": 23
         },
         {
           "id": "wsj_economy",
@@ -258,8 +257,8 @@
       ]
     },
     "dropped": {
-      "older_than_limit": 120,
-      "same_headline_again": 33
+      "older_than_limit": 123,
+      "same_headline_again": 30
     },
     "top_other_sites": []
   },
@@ -270,7 +269,7 @@
     ],
     "rejected_answers": 1,
     "reasons": [
-      "gemini: HTTP 503 (provider error): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "gemini: no answer within 75 seconds"
     ],
     "ai_configured": true,
     "empty_reply_retries": 0,
