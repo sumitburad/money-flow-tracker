@@ -1,8 +1,8 @@
-Global money-flow monitor — 2026-11-28T15:47:54.114252+05:30
+Global money-flow monitor — 2026-11-28T19:00:28.679793+05:30
 
 Data: Supportive evidence: not independently confirmed. Opposing evidence: China equities proxy, Hong Kong equities.
 
-Flow rotation: Global money flows show monthly risk-off conditions easing into a mixed weekly picture, as participation improves across fixed income, equity sectors, and real estate while metals face recent outflows.
+Flow rotation: Capital flows improve over shorter windows as money moves into selective sectors, small caps, and fixed income despite persistent monthly pressure across risk assets and metals.
 
 Risk tone, from a checklist of market groups: risk-off over the last month and mixed over the last week (the short-term picture is improving).
 

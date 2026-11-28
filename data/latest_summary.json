@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-28T10:17:54.114252+00:00",
+  "generated_at": "2026-11-28T13:30:28.679793+00:00",
   "assets": [
     {
       "id": "sp500",
@@ -35,7 +35,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:16.653697+00:00",
+      "collected_at_utc": "2026-11-28T13:38:47.912316+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -116,7 +116,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:16.989034+00:00",
+      "collected_at_utc": "2026-11-28T13:38:48.170595+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -197,7 +197,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:17.277196+00:00",
+      "collected_at_utc": "2026-11-28T13:38:48.416539+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -274,7 +274,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:17.550466+00:00",
+      "collected_at_utc": "2026-11-28T13:38:48.650670+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -351,7 +351,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:17.840641+00:00",
+      "collected_at_utc": "2026-11-28T13:38:48.909376+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -428,7 +428,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:18.140159+00:00",
+      "collected_at_utc": "2026-11-28T13:38:49.170208+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -505,7 +505,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:18.424131+00:00",
+      "collected_at_utc": "2026-11-28T13:38:49.402709+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -580,7 +580,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:18.703769+00:00",
+      "collected_at_utc": "2026-11-28T13:38:49.631837+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -657,7 +657,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:19.059775+00:00",
+      "collected_at_utc": "2026-11-28T13:38:49.914587+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -734,7 +734,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:19.376984+00:00",
+      "collected_at_utc": "2026-11-28T13:38:50.176147+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -811,7 +811,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:19.747828+00:00",
+      "collected_at_utc": "2026-11-28T13:38:50.466228+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -888,7 +888,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:20.069098+00:00",
+      "collected_at_utc": "2026-11-28T13:38:50.767515+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -965,7 +965,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:20.385750+00:00",
+      "collected_at_utc": "2026-11-28T13:38:51.070679+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1042,7 +1042,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:20.720589+00:00",
+      "collected_at_utc": "2026-11-28T13:38:51.351131+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -1119,7 +1119,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:21.084244+00:00",
+      "collected_at_utc": "2026-11-28T13:38:51.652991+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1196,7 +1196,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:21.441980+00:00",
+      "collected_at_utc": "2026-11-28T13:38:51.974234+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1273,7 +1273,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:21.817257+00:00",
+      "collected_at_utc": "2026-11-28T13:38:52.272656+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1350,7 +1350,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:22.169476+00:00",
+      "collected_at_utc": "2026-11-28T13:38:52.571172+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1427,7 +1427,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:22.541893+00:00",
+      "collected_at_utc": "2026-11-28T13:38:52.926666+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1504,7 +1504,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:22.899902+00:00",
+      "collected_at_utc": "2026-11-28T13:38:53.233014+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1581,7 +1581,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:23.274776+00:00",
+      "collected_at_utc": "2026-11-28T13:38:53.517328+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1658,7 +1658,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:23.646207+00:00",
+      "collected_at_utc": "2026-11-28T13:38:53.803826+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -1735,7 +1735,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:24.010311+00:00",
+      "collected_at_utc": "2026-11-28T13:38:54.093826+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -1812,7 +1812,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:24.365939+00:00",
+      "collected_at_utc": "2026-11-28T13:38:54.390037+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -1889,7 +1889,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:24.750864+00:00",
+      "collected_at_utc": "2026-11-28T13:38:54.681303+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -1966,7 +1966,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:25.109903+00:00",
+      "collected_at_utc": "2026-11-28T13:38:54.989503+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2043,7 +2043,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:25.483490+00:00",
+      "collected_at_utc": "2026-11-28T13:38:55.280719+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2120,7 +2120,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:25.852571+00:00",
+      "collected_at_utc": "2026-11-28T13:38:55.547347+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2197,7 +2197,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:26.224261+00:00",
+      "collected_at_utc": "2026-11-28T13:38:55.840041+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2274,7 +2274,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:26.563663+00:00",
+      "collected_at_utc": "2026-11-28T13:38:56.114833+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2351,7 +2351,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:26.919572+00:00",
+      "collected_at_utc": "2026-11-28T13:38:56.408088+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2430,7 +2430,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:27.284973+00:00",
+      "collected_at_utc": "2026-11-28T13:38:56.701219+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -2507,7 +2507,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:27.634265+00:00",
+      "collected_at_utc": "2026-11-28T13:38:56.993530+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -2584,7 +2584,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:27.929901+00:00",
+      "collected_at_utc": "2026-11-28T13:38:57.226135+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2659,7 +2659,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:28.245649+00:00",
+      "collected_at_utc": "2026-11-28T13:38:57.487511+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2732,7 +2732,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:28.577024+00:00",
+      "collected_at_utc": "2026-11-28T13:38:57.744329+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2805,7 +2805,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:28.892335+00:00",
+      "collected_at_utc": "2026-11-28T13:38:57.967415+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2878,7 +2878,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:29.186161+00:00",
+      "collected_at_utc": "2026-11-28T13:38:58.194258+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -2951,7 +2951,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:29.510529+00:00",
+      "collected_at_utc": "2026-11-28T13:38:58.450567+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3024,7 +3024,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:29.792275+00:00",
+      "collected_at_utc": "2026-11-28T13:38:58.702380+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3099,7 +3099,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:30.100409+00:00",
+      "collected_at_utc": "2026-11-28T13:38:59.008919+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3174,7 +3174,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:30.396832+00:00",
+      "collected_at_utc": "2026-11-28T13:38:59.262676+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -3249,7 +3249,7 @@
         "trend": "not_available"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:30.696189+00:00",
+      "collected_at_utc": "2026-11-28T13:38:59.491515+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3322,7 +3322,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:30.990202+00:00",
+      "collected_at_utc": "2026-11-28T13:38:59.745223+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3397,7 +3397,7 @@
         "trend": "steady"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:31.300557+00:00",
+      "collected_at_utc": "2026-11-28T13:39:00.002391+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3472,7 +3472,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:31.669966+00:00",
+      "collected_at_utc": "2026-11-28T13:39:00.260614+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -3547,7 +3547,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:32.006020+00:00",
+      "collected_at_utc": "2026-11-28T13:39:00.581083+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3624,7 +3624,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:32.346498+00:00",
+      "collected_at_utc": "2026-11-28T13:39:00.836692+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -3685,7 +3685,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:32.642722+00:00",
+      "collected_at_utc": "2026-11-28T13:39:01.110196+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3742,7 +3742,7 @@
         "reason": "Risk gauge, not an investable money-flow candidate"
       },
       "volume_observed": false,
-      "collected_at_utc": "2026-11-28T10:20:32.926899+00:00",
+      "collected_at_utc": "2026-11-28T13:39:01.334406+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -3815,7 +3815,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:33.285945+00:00",
+      "collected_at_utc": "2026-11-28T13:39:01.619385+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -3892,7 +3892,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:33.648931+00:00",
+      "collected_at_utc": "2026-11-28T13:39:01.902425+00:00",
       "label": "Bearish",
       "tag": "Steady",
       "agreement": "Moderate",
@@ -3969,7 +3969,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:34.007403+00:00",
+      "collected_at_utc": "2026-11-28T13:39:02.197476+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4046,7 +4046,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:34.311111+00:00",
+      "collected_at_utc": "2026-11-28T13:39:02.451637+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -4123,7 +4123,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:34.652506+00:00",
+      "collected_at_utc": "2026-11-28T13:39:02.718454+00:00",
       "label": "Bearish",
       "tag": "Weakening",
       "agreement": "Moderate",
@@ -4200,7 +4200,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:34.963731+00:00",
+      "collected_at_utc": "2026-11-28T13:39:02.997732+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4277,7 +4277,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:35.316367+00:00",
+      "collected_at_utc": "2026-11-28T13:39:03.291989+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4354,7 +4354,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:35.689229+00:00",
+      "collected_at_utc": "2026-11-28T13:39:03.652845+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4431,7 +4431,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:36.033842+00:00",
+      "collected_at_utc": "2026-11-28T13:39:03.995929+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4508,7 +4508,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:36.349927+00:00",
+      "collected_at_utc": "2026-11-28T13:39:04.251970+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4583,7 +4583,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:36.705801+00:00",
+      "collected_at_utc": "2026-11-28T13:39:04.542965+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4658,7 +4658,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:36.996971+00:00",
+      "collected_at_utc": "2026-11-28T13:39:04.774772+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4733,7 +4733,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:37.345783+00:00",
+      "collected_at_utc": "2026-11-28T13:39:05.056178+00:00",
       "label": "Neutral/Mixed",
       "tag": "Weakening",
       "agreement": "Weak",
@@ -4808,7 +4808,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:37.698529+00:00",
+      "collected_at_utc": "2026-11-28T13:39:05.314031+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4883,7 +4883,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:37.992997+00:00",
+      "collected_at_utc": "2026-11-28T13:39:05.549992+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -4958,7 +4958,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:38.292789+00:00",
+      "collected_at_utc": "2026-11-28T13:39:05.781800+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5035,7 +5035,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:38.600058+00:00",
+      "collected_at_utc": "2026-11-28T13:39:06.033503+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5112,7 +5112,7 @@
         "trend": "mixed"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:38.937037+00:00",
+      "collected_at_utc": "2026-11-28T13:39:06.295346+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
@@ -5189,7 +5189,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:39.235875+00:00",
+      "collected_at_utc": "2026-11-28T13:39:06.532338+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5266,7 +5266,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:39.530316+00:00",
+      "collected_at_utc": "2026-11-28T13:39:06.843691+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5343,7 +5343,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:39.820910+00:00",
+      "collected_at_utc": "2026-11-28T13:39:07.098825+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5420,7 +5420,7 @@
         "trend": "weakening"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:40.108554+00:00",
+      "collected_at_utc": "2026-11-28T13:39:07.351839+00:00",
       "label": "Neutral/Mixed",
       "tag": "Strengthening",
       "agreement": "Weak",
@@ -5497,7 +5497,7 @@
         "trend": "improving"
       },
       "volume_observed": true,
-      "collected_at_utc": "2026-11-28T10:20:40.397956+00:00",
+      "collected_at_utc": "2026-11-28T13:39:07.604567+00:00",
       "label": "Neutral/Mixed",
       "tag": "Steady",
       "agreement": "Weak",
